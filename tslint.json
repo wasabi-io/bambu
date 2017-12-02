@@ -1,0 +1,20 @@
+{
+	"extends": "tslint:recommended",
+	"rules": {
+		"no-console": [
+			false
+		],
+		"interface-name": false,
+		"max-line-length": [
+			250
+		],
+		"max-classes-per-file": [
+			false
+		],
+		"no-var-requires": false,
+		"trailing-comma": false
+	},
+	"jsRules": {
+
+	}
+}

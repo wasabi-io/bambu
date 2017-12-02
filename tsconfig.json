@@ -1,0 +1,41 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+
+    "baseUrl": "./",
+    "target": "es2015",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "removeComments": false,
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "pretty": true,
+    "experimentalDecorators": true,
+    "preserveConstEnums": true,
+    "allowJs": false,
+    "sourceMap": true,
+    "jsx": "react",
+    "outDir": "lib",
+    "paths": {
+      "rebul/lib/*": [
+        "./src/*"
+      ],
+      "rebul$": [
+        "./src"
+      ]
+    }
+  },
+  "include": [
+    "typings/**/*",
+    "src/**/*",
+    "showcase/**/*",
+    "wasabi-ui/**/*"
+  ],
+  "exclude": [
+    "__test__/**/*",
+    "./build",
+    "./tools",
+    "./node_modules/**/*"
+  ]
+}
