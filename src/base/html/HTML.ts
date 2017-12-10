@@ -37,6 +37,7 @@ export default AbstractDom;
 /**
  * Refers properties of HTML Elements.
  */
+export type HTMLAllAttributes = React.AllHTMLAttributes<HTMLElement>;
 export type HTMLElementProps = React.HTMLAttributes<HTMLElement>;
 export type HTMLAProps = React.AnchorHTMLAttributes<HTMLAnchorElement>;
 export type HTMLAbbrProps = React.HTMLAttributes<HTMLElement>;

@@ -1,7 +1,7 @@
 import * as ClassNames from "classnames";
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import HTMLComponent, {HTMLDivProps} from "../../base/html/HTML";
+import HTMLComponent, { HTMLDivProps } from "../../base/html/HTML";
 import NavbarStyle from "./NavbarStyle";
 
 export interface NavbarMenuProps extends HTMLDivProps {
@@ -10,7 +10,7 @@ export interface NavbarMenuProps extends HTMLDivProps {
 
 const NavbarMenu: React.SFC<NavbarMenuProps> = (props: NavbarMenuProps) => {
 
-    const {active, className, ...inputProps} = props;
+    const { active, className, ...inputProps } = props;
 
     const classNames = ClassNames([
         NavbarStyle.navbarMenu,

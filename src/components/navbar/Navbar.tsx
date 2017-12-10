@@ -1,9 +1,9 @@
 import * as ClassNames from "classnames";
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import {Objects, Strings} from "wasabi-common";
-import {Color, colorValues, Vertical, verticalValues} from "rebul/lib/base/css";
-import HTMLComponent, {HTMLNavProps} from "../../base/html/HTML";
+import { Objects, Strings } from "wasabi-common";
+import { Color, colorValues, Vertical, verticalValues } from "rebul/lib/base/css";
+import HTMLComponent, { HTMLNavProps } from "../../base/html/HTML";
 import NavbarStyle from "./NavbarStyle";
 
 export enum navBarArialLabel {
@@ -18,7 +18,7 @@ export enum navBarRole {
 export interface NavbarProps extends HTMLNavProps {
     arialLabel?: string | navBarArialLabel;
     color?: string | Color;
-    fixed?: Vertical;
+    isFixed?: string | Vertical;
     hasShadow?: boolean;
     role?: navBarRole | string;
     transparent?: boolean;
@@ -26,15 +26,16 @@ export interface NavbarProps extends HTMLNavProps {
 
 const Navbar: React.SFC<NavbarProps> = (props: NavbarProps) => {
 
-    const {arialLabel, fixed, hasShadow, transparent, className, ...inputProps} = props;
+    const { color, arialLabel, isFixed, hasShadow, transparent, className, ...inputProps } = props;
 
-    const fixedClassName = Strings.has(fixed) ? `isFixed${Strings.capitalizeFirstLetter(fixed)}` : undefined;
+    const fixedClassName = Strings.has(isFixed) ? `isFixed${Strings.capitalizeFirstLetter(isFixed)}` : undefined;
 
     const classNames = ClassNames([
         NavbarStyle.navbar,
         fixedClassName,
-        hasShadow ? NavbarStyle.hasShadow :  undefined,
-        transparent ? NavbarStyle.isTransparent :  undefined,
+        hasShadow ? NavbarStyle.hasShadow : undefined,
+        transparent ? NavbarStyle.isTransparent : undefined,
+        color ? NavbarStyle[color] : undefined,
         className
     ]);
 
@@ -49,7 +50,7 @@ Navbar.propTypes = {
     ...HTMLComponent.propTypes,
     arialLabel: PropTypes.oneOf(Objects.values(navBarArialLabel)),
     color: PropTypes.oneOf(colorValues),
-    fixed: PropTypes.oneOf(verticalValues),
+    isFixed: PropTypes.oneOf(verticalValues),
     hasShadow: PropTypes.bool,
     role: PropTypes.oneOf(Objects.values(navBarRole)),
     transparent: PropTypes.bool

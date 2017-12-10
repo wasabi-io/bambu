@@ -1,12 +1,12 @@
 import * as ClassNames from "classnames";
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import {has} from "wasabi-common";
+import { has } from "wasabi-common";
 import Objects from "wasabi-common/lib/types/Objects";
-import {State, StateValues} from "rebul/lib/base/css/state";
-import HTMLComponent, {HTMLElementProps} from "rebul/lib/base/html/HTML";
-import {Color, colorValues, Size, SizeValues} from "../../base/css";
-import {default as Icon, IconOptions} from "../icon/Icon";
+import { State, StateValues } from "rebul/lib/base/css/state";
+import HTMLComponent, { HTMLElementProps } from "rebul/lib/base/html/HTML";
+import { Color, colorValues, Size, SizeValues } from "../../base/css";
+import { default as Icon, IconOptions } from "../icon/Icon";
 import ButtonStyle from "./ButtonStyle";
 
 export enum BtnType {
@@ -49,10 +49,10 @@ export default class Button extends HTMLComponent<ButtonProps> {
     };
 
     public static createClass(buttonState: string | State,
-                              buttonStyle: string | BtnStyle,
-                              color: string | Color,
-                              size: string | Size,
-                              className: string) {
+        buttonStyle: string | BtnStyle,
+        color: string | Color,
+        size: string | Size,
+        className: string) {
         return ClassNames([
             ButtonStyle.button,
             ButtonStyle[buttonState],
@@ -67,12 +67,12 @@ export default class Button extends HTMLComponent<ButtonProps> {
         if (!has(icon)) {
             return null;
         }
-        return <Icon icon={icon} size={size}/>;
+        return <Icon icon={icon} size={size} />;
     }
 
     public static renderButton(props: ButtonProps): JSX.Element {
 
-        const {buttonType, icon, state, buttonStyle, color, size, className, ...inputProps} = props;
+        const { buttonType, icon, state, buttonStyle, color, size, className, ...inputProps } = props;
 
         const classNames = Button.createClass(state, buttonStyle, color, size, className);
 
@@ -88,7 +88,7 @@ export default class Button extends HTMLComponent<ButtonProps> {
 
     public static renderSubmit(props: ButtonProps): JSX.Element {
 
-        const {buttonType, icon, state, buttonStyle, color, size, className, ...inputProps} = props;
+        const { buttonType, icon, state, buttonStyle, color, size, className, ...inputProps } = props;
 
         const classNames = Button.createClass(state, buttonStyle, color, size, className);
 
@@ -101,7 +101,7 @@ export default class Button extends HTMLComponent<ButtonProps> {
 
     public static renderReset(props: ButtonProps): JSX.Element {
 
-        const {buttonType, icon, state, buttonStyle, color, size, className, ...inputProps} = props;
+        const { buttonType, icon, state, buttonStyle, color, size, className, ...inputProps } = props;
 
         const classNames = Button.createClass(state, buttonStyle, color, size, className);
 
@@ -114,7 +114,7 @@ export default class Button extends HTMLComponent<ButtonProps> {
 
     public static renderLink(props: ButtonProps): JSX.Element {
 
-        const {buttonType, icon, state, buttonStyle, color, size, className, ...inputProps} = props;
+        const { buttonType, icon, state, buttonStyle, color, size, className, ...inputProps } = props;
 
         const classNames = Button.createClass(state, buttonStyle, color, size, className);
 

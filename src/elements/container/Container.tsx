@@ -1,30 +1,30 @@
 import * as ClassNames from "classnames";
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import HTMLComponent, {HTMLDivProps} from "../../base/html/HTML";
+import HTMLComponent, { HTMLDivProps } from "../../base/html/HTML";
 import ContainerStyle from "./ContainerStyle";
 
 /**
  * Refers Html Props and Additional Props.
  */
 export interface ContainerProps extends HTMLDivProps {
-    fluid?: boolean;
-    fullHd?: boolean;
-    textCentered?: boolean;
-    wideScreen?: boolean;
+    isFluid?: boolean;
+    isFullhd?: boolean;
+    isTextCentered?: boolean;
+    isWidescreen?: boolean;
 }
 
 const Container: React.SFC<ContainerProps> = (props: ContainerProps) => {
 
-    const {fluid, fullHd, wideScreen, textCentered, className, ...inputProps} = props;
+    const { isFluid, isFullhd, isWidescreen, isTextCentered, className, ...inputProps } = props;
 
     const classNames = ClassNames([
-            ContainerStyle.container,
-            fluid ? ContainerStyle.isFluid : undefined,
-            fullHd ? ContainerStyle.isFullhd : undefined,
-            wideScreen ? ContainerStyle.isWidescreen : undefined,
-            textCentered ? ContainerStyle.isGapless : undefined,
-            className
+        ContainerStyle.container,
+        isFluid ? ContainerStyle.isFluid : undefined,
+        isFullhd ? ContainerStyle.isFullhd : undefined,
+        isWidescreen ? ContainerStyle.isWidescreen : undefined,
+        isTextCentered ? ContainerStyle.isTextCentered : undefined,
+        className
     ]);
 
     return (
@@ -36,18 +36,18 @@ const Container: React.SFC<ContainerProps> = (props: ContainerProps) => {
 
 Container.propTypes = {
     ...HTMLComponent.propTypes,
-    fluid: PropTypes.bool,
-    fullHd: PropTypes.bool,
-    textCentered: PropTypes.bool,
-    wideScreen: PropTypes.bool,
+    isFluid: PropTypes.bool,
+    isFullhd: PropTypes.bool,
+    isTextCentered: PropTypes.bool,
+    isWidescreen: PropTypes.bool,
 };
 
 Container.defaultProps = {
     ...HTMLComponent.defaultProps,
-    fluid: false,
-    fullHd: false,
-    textCentered: false,
-    wideScreen: false,
+    isFluid: false,
+    isFullhd: false,
+    isTextCentered: false,
+    isWidescreen: false,
 };
 
 Container.displayName = "Container";
