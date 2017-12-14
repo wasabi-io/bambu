@@ -76,8 +76,6 @@ export default class Button extends HTMLComponent<ButtonProps> {
 
         const classNames = Button.createClass(state, buttonStyle, color, size, className);
 
-        console.log(classNames);
-
         return (
             <button className={classNames} {...inputProps} >
                 {Button.renderIcon(size, icon)}

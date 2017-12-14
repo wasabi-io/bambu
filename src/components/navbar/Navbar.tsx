@@ -32,7 +32,7 @@ const Navbar: React.SFC<NavbarProps> = (props: NavbarProps) => {
 
     const classNames = ClassNames([
         NavbarStyle.navbar,
-        fixedClassName,
+        NavbarStyle[fixedClassName],
         hasShadow ? NavbarStyle.hasShadow : undefined,
         transparent ? NavbarStyle.isTransparent : undefined,
         color ? NavbarStyle[color] : undefined,

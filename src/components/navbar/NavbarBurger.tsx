@@ -11,11 +11,12 @@ export interface NavbarBurgerProps extends ButtonProps {
     isActive?: boolean;
     color?: string | Color;
     dataTarget?: string;
+    tagName?: string;
 }
 
 const NavbarBurger: React.SFC<ButtonProps> = (props: NavbarBurgerProps) => {
 
-    const { isActive, color, className, dataTarget, ...inputProps } = props;
+    const { tagName, isActive, color, className, dataTarget, ...inputProps } = props;
 
     const classNames = ClassNames([
         NavbarStyle.navbarBurger,
@@ -23,26 +24,21 @@ const NavbarBurger: React.SFC<ButtonProps> = (props: NavbarBurgerProps) => {
         color ? NavbarStyle[color] : undefined,
         className
     ]);
-
-    return (
-        <Button className={classNames} {...inputProps} data-target={dataTarget}>
-            {props.children}
-            <span />
-            <span />
-            <span />
-        </Button>
-    );
+    (inputProps as any).className = classNames;
+    return React.createElement(tagName, inputProps, [props.children, <span key="navbar-burger-span-0" />, <span key="navbar-burger-span-1" />, <span key="navbar-burger-span-2" />]);
 };
 
 NavbarBurger.propTypes = {
     ...HTMLComponent.propTypes,
     color: PropTypes.oneOf(colorValues),
-    isActive: PropTypes.bool
+    isActive: PropTypes.bool,
+    tagName: PropTypes.string
 };
 
 NavbarBurger.defaultProps = {
     ...HTMLComponent.defaultProps,
-    isActive: false
+    isActive: false,
+    tagName: "button"
 };
 
 NavbarBurger.displayName = "NavbarBurger";

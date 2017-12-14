@@ -6,7 +6,7 @@ import NavbarStyle from "./NavbarStyle";
 
 export interface NavbarItemProps extends HTMLAllAttributes {
     isActive?: boolean;
-    tagName?: string
+    tagName?: string;
 }
 
 const NavbarItem: React.SFC<NavbarItemProps> = (props: NavbarItemProps) => {
@@ -18,7 +18,8 @@ const NavbarItem: React.SFC<NavbarItemProps> = (props: NavbarItemProps) => {
 
 NavbarItem.propTypes = {
     ...HTMLComponent.propTypes,
-    isActive: PropTypes.bool
+    isActive: PropTypes.bool,
+    tagName: PropTypes.string
 };
 
 NavbarItem.defaultProps = {
