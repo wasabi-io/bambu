@@ -1,9 +1,10 @@
-import * as ClassNames from "classnames";
-import * as PropTypes from "prop-types";
-import * as React from "react";
-import {Size, SizeValues} from "rebul/lib/base/css";
-import HTMLComponent, {HTMLLabelProps} from "../../base/html/HTML";
-import FormStyle from "./FormStyle";
+import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import { Size, SizeValues } from 'rebul/lib/base/css';
+
+import HTMLComponent, { HTMLLabelProps } from '../../base/html/HTML';
+import FormStyle from './FormStyle';
 
 /**
  * Refers Html Props and Additional Props.

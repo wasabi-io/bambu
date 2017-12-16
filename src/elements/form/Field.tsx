@@ -1,8 +1,9 @@
-import * as ClassNames from "classnames";
-import * as PropTypes from "prop-types";
-import * as React from "react";
-import HTMLComponent, {HTMLDivProps} from "../../base/html/HTML";
-import FormStyle from "./FormStyle";
+import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+
+import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
+import FormStyle from './FormStyle';
 
 /**
  * Refers Html Props and Additional Props.
@@ -11,18 +12,18 @@ export interface FieldProps extends HTMLDivProps {
     hasAddons?: boolean;
     hasAddonsCentered?: boolean;
     hasAddonsRight?: boolean;
-    horizontal?: boolean;
+    isHorizontal?: boolean;
     isGrouped?: boolean;
     isGroupedCentered?: boolean;
     isGroupedMultiline?: boolean;
     isGroupedRight?: boolean;
-    isNarrow: boolean;
+    isNarrow?: boolean;
 }
 
 const Field: React.SFC<FieldProps> = (props: FieldProps) => {
 
     const {
-        horizontal,
+        isHorizontal,
         hasAddons,
         hasAddonsCentered,
         hasAddonsRight,
@@ -37,7 +38,7 @@ const Field: React.SFC<FieldProps> = (props: FieldProps) => {
 
     const classNames = ClassNames([
         FormStyle.field,
-        horizontal ? FormStyle.isHorizontal : undefined,
+        isHorizontal ? FormStyle.isHorizontal : undefined,
         hasAddons ? FormStyle.hasAddons : undefined,
         hasAddonsCentered ? FormStyle.hasAddonsCentered : undefined,
         hasAddonsRight ? FormStyle.hasAddonsRight : undefined,
@@ -61,7 +62,7 @@ Field.propTypes = {
     hasAddons: PropTypes.bool,
     hasAddonsCentered: PropTypes.bool,
     hasAddonsRight: PropTypes.bool,
-    horizontal: PropTypes.bool,
+    isHorizontal: PropTypes.bool,
     isGrouped: PropTypes.bool,
     isGroupedCentered: PropTypes.bool,
     isGroupedMultiline: PropTypes.bool,
@@ -74,7 +75,7 @@ Field.defaultProps = {
     hasAddons: false,
     hasAddonsCentered: false,
     hasAddonsRight: false,
-    horizontal: false,
+    isHorizontal: false,
     isGrouped: false,
     isGroupedCentered: false,
     isGroupedMultiline: false,
