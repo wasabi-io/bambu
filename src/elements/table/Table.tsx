@@ -1,35 +1,32 @@
-import * as ClassNames from "classnames";
-import * as PropTypes from "prop-types";
-import * as React from "react";
-import HTMLComponent, {HTMLTableProps} from "../../base/html/HTML";
-import TableStyle from "./TableStyle";
+import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
 
-/**
- * Refers Html Props and Additional Props.
- */
+import HTMLComponent, { HTMLTableProps } from '../../base/html/HTML';
+import TableStyle from './TableStyle';
+
 export interface TableProps extends HTMLTableProps {
-    bordered?: boolean;
-    narrow?: boolean;
-    striped?: boolean;
+    isBordered?: boolean;
+    isNarrow?: boolean;
+    isStriped?: boolean;
+    isHoverable?: boolean;
 }
 
 const Table: React.SFC<TableProps> = (props: TableProps) => {
 
-    const {bordered, striped, narrow, className, ...inputProps} = props;
+    const { isBordered, isStriped, isHoverable, isNarrow, className, ...inputProps } = props;
 
     const classNames = ClassNames([
         TableStyle.table,
-        bordered ? TableStyle.isBordered : undefined,
-        striped ? TableStyle.isStriped : undefined,
-        narrow ? TableStyle.isNarrow : undefined,
+        isBordered ? TableStyle.isBordered : undefined,
+        isStriped ? TableStyle.isStriped : undefined,
+        isNarrow ? TableStyle.isNarrow : undefined,
+        isHoverable ? TableStyle.isHoverable : undefined,
         className
     ]);
 
     return (
-        <table
-            className={classNames}
-            {...inputProps}
-        >
+        <table className={classNames} {...inputProps}>
             {props.children}
         </table>
     );
@@ -37,16 +34,18 @@ const Table: React.SFC<TableProps> = (props: TableProps) => {
 
 Table.propTypes = {
     ...HTMLComponent.propTypes,
-    bordered: PropTypes.bool,
-    narrow: PropTypes.bool,
-    striped: PropTypes.bool,
+    isBordered: PropTypes.bool,
+    isNarrow: PropTypes.bool,
+    isStriped: PropTypes.bool,
+    isHoverable: PropTypes.bool,
 };
 
 Table.defaultProps = {
     ...HTMLComponent.defaultProps,
-    bordered: false,
-    narrow: false,
-    striped: false,
+    isBordered: false,
+    isNarrow: false,
+    isStriped: false,
+    isHoverable: false,
 };
 
 Table.displayName = "Table";
