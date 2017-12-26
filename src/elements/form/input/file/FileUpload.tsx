@@ -10,9 +10,6 @@ import HTMLComponent, { HTMLInputProps } from '../../../../base/html/HTML';
 import ControlLabel from '../../ControlLabel';
 import FormStyle from '../../FormStyle';
 
-/**
- * Refers Html Props and Additional Props.
- */
 export interface FileUploadProps extends HTMLInputProps {
     color?: string | Color;
     iSize?: string | Size;
@@ -26,7 +23,6 @@ export interface FileUploadProps extends HTMLInputProps {
 }
 
 const FileUpload: React.SFC<FileUploadProps> = (props: FileUploadProps) => {
-
     const {
         color,
         iSize,
@@ -39,18 +35,20 @@ const FileUpload: React.SFC<FileUploadProps> = (props: FileUploadProps) => {
         isBoxed,
         alignment,
         placeholder,
-        ...inputProps
+        ...fileUploadProps
     } = props;
 
-    const classNames = ClassNames([
+    const classNames = ClassNames(
         FormStyle.file,
         FormStyle[color],
         FormStyle[iSize],
         FormStyle[alignment],
-        className],
-        { [`${FormStyle.hasName}`]: hasName },
-        { [`${FormStyle.isFullwidth}`]: isFullwidth },
-        { [`${FormStyle.isBoxed}`]: isBoxed });
+        className,
+        {
+            [`${FormStyle.hasName}`]: hasName,
+            [`${FormStyle.isFullwidth}`]: isFullwidth,
+            [`${FormStyle.isFullwidth}`]: isFullwidth,
+        });
 
     const hasIcon = has(icon);
     const hasLabel = Strings.has(label);
@@ -58,7 +56,7 @@ const FileUpload: React.SFC<FileUploadProps> = (props: FileUploadProps) => {
     return (
         <div className={classNames}>
             <ControlLabel className={FormStyle.fileLabel}>
-                <input className={FormStyle.fileInput} {...inputProps} type="file" />
+                <input className={FormStyle.fileInput} {...fileUploadProps} type="file" />
                 {(hasIcon || hasLabel) && <span className={FormStyle.fileCta}>
                     {hasIcon && <span className={FormStyle.fileIcon} ><Icon icon={icon} size={iconSize} /></span>}
                     {hasLabel && <span className={FormStyle.fileLabel}> {label}</span>}
@@ -73,12 +71,10 @@ FileUpload.propTypes = {
     ...HTMLComponent.propTypes,
     alignment: PropTypes.oneOf(AlignmentValues),
 };
-
 FileUpload.defaultProps = {
     ...HTMLComponent.defaultProps,
     hasName: false
 };
-
 FileUpload.displayName = "FileUpload";
 
 export default FileUpload;

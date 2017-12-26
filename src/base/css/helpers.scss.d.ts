@@ -95,6 +95,7 @@ export const hasTextRightFullhd: string;
 export const isCapitalized: string;
 export const isLowercase: string;
 export const isUppercase: string;
+export const isItalic: string;
 export const hasTextWhite: string;
 export const hasTextBlack: string;
 export const hasTextLight: string;

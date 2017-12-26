@@ -7,26 +7,30 @@ import TableStyle from './TableStyle';
 
 export interface TableProps extends HTMLTableProps {
     isBordered?: boolean;
-    isNarrow?: boolean;
     isStriped?: boolean;
+    isNarrow?: boolean;
     isHoverable?: boolean;
+    isFullwidth?: boolean;
 }
 
 const Table: React.SFC<TableProps> = (props: TableProps) => {
 
-    const { isBordered, isStriped, isHoverable, isNarrow, className, ...inputProps } = props;
+    const { isBordered, isStriped, isHoverable, isNarrow, isFullwidth, className, ...tableProps } = props;
 
-    const classNames = ClassNames([
+    const classNames = ClassNames(
         TableStyle.table,
-        isBordered ? TableStyle.isBordered : undefined,
-        isStriped ? TableStyle.isStriped : undefined,
-        isNarrow ? TableStyle.isNarrow : undefined,
-        isHoverable ? TableStyle.isHoverable : undefined,
-        className
-    ]);
+        className,
+        {
+            [`${TableStyle.isBordered}`]: isBordered,
+            [`${TableStyle.isStriped}`]: isStriped,
+            [`${TableStyle.isNarrow}`]: isNarrow,
+            [`${TableStyle.isHoverable}`]: isHoverable,
+            [`${TableStyle.isFullwidth}`]: isFullwidth,
+        }
+    );
 
     return (
-        <table className={classNames} {...inputProps}>
+        <table className={classNames} {...tableProps}>
             {props.children}
         </table>
     );
@@ -38,6 +42,7 @@ Table.propTypes = {
     isNarrow: PropTypes.bool,
     isStriped: PropTypes.bool,
     isHoverable: PropTypes.bool,
+    isFullwidth: PropTypes.bool,
 };
 
 Table.defaultProps = {
@@ -46,6 +51,7 @@ Table.defaultProps = {
     isNarrow: false,
     isStriped: false,
     isHoverable: false,
+    isFullwidth: false,
 };
 
 Table.displayName = "Table";
