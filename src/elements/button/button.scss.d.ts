@@ -23,6 +23,7 @@ export const isDanger: string;
 export const isFullwidth: string;
 export const spinAround: string;
 export const isStatic: string;
+export const isRounded: string;
 export const buttons: string;
 export const hasAddons: string;
 export const isSelected: string;

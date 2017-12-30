@@ -1,2 +1,1 @@
-export {default as Button, ButtonProps, BtnStyle, BtnType} from "./Button";
-export {default as ButtonStyle} from "./ButtonStyle";
+export { default as Button, ButtonProps } from "./Button";

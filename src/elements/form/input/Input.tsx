@@ -35,7 +35,7 @@ const Input: React.SFC<InputProps> = (props: InputProps) => {
 
     return (
         <input className={classNames} {...inputProps} >
-            {this.props.children}
+            {props.children}
         </input>
     );
 };

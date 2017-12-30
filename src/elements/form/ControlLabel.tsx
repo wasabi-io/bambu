@@ -29,7 +29,7 @@ const ControlLabel: React.SFC<ControlLabelProps> = (props: ControlLabelProps) =>
 
     return (
         <label className={classNames} {...inputProps} >
-            {this.props.children}
+            {props.children}
         </label>
     );
 };

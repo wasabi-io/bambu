@@ -1,20 +1,15 @@
-import * as ClassNames from "classnames";
-import * as React from "react";
-import HTMLComponent, {HTMLDivProps} from "../../base/html/HTML";
-import FormStyle from "./FormStyle";
+import * as React from 'react';
 
-export type FormProps = HTMLDivProps;
+import HTMLComponent, { HTMLFormProps } from '../../base/html/HTML';
+
+export type FormProps = HTMLFormProps;
 
 const Form: React.SFC<FormProps> = (props: FormProps) => {
 
-    const {className, ...inputProps} = props;
-
-    const classNames = ClassNames([FormStyle.box, className]);
-
     return (
-        <div className={classNames} {...inputProps} >
+        <form {...props} >
             {props.children}
-        </div>
+        </form>
     );
 };
 

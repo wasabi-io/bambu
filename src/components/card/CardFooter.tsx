@@ -1,12 +1,13 @@
-import * as ClassNames from "classnames";
-import * as React from "react";
-import CardStyle from "rebul/lib/components/card/CardStyle";
-import HTMLComponent, {HTMLElementProps} from "../../base/html/HTML";
+import * as ClassNames from 'classnames';
+import * as React from 'react';
+import CardStyle from 'rebul/lib/components/card/CardStyle';
+
+import HTMLComponent, { HTMLElementProps } from '../../base/html/HTML';
 
 export type CardFooterProps = HTMLElementProps;
 
 const CardFooter: React.SFC<CardFooterProps> = (props: CardFooterProps) => {
-    const {className, ...inputProps} = props;
+    const { className, ...cardFooterProps } = props;
 
     const classNames = ClassNames([
         CardStyle.cardFooter,
@@ -14,7 +15,7 @@ const CardFooter: React.SFC<CardFooterProps> = (props: CardFooterProps) => {
     ]);
 
     return (
-        <footer className={classNames} {...inputProps} >
+        <footer className={classNames} {...cardFooterProps} >
             {props.children}
         </footer>
     );

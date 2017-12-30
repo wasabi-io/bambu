@@ -33,7 +33,7 @@ const Control: React.SFC<ControlProps> = (props: ControlProps) => {
 
     return (
         <div className={classNames} {...inputProps} >
-            {this.props.children}
+            {props.children}
         </div>
     );
 };

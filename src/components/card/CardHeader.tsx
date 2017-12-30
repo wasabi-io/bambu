@@ -1,12 +1,13 @@
-import * as ClassNames from "classnames";
-import * as React from "react";
-import CardStyle from "rebul/lib/components/card/CardStyle";
-import HTMLComponent, {HTMLElementProps} from "../../base/html/HTML";
+import * as ClassNames from 'classnames';
+import * as React from 'react';
+import CardStyle from 'rebul/lib/components/card/CardStyle';
+
+import HTMLComponent, { HTMLElementProps } from '../../base/html/HTML';
 
 export type CardHeaderProps = HTMLElementProps;
 
 const CardHeader: React.SFC<CardHeaderProps> = (props: CardHeaderProps) => {
-    const {className, ...inputProps} = props;
+    const { className, ...cardHeaderProps } = props;
 
     const classNames = ClassNames([
         CardStyle.cardHeader,
@@ -14,7 +15,7 @@ const CardHeader: React.SFC<CardHeaderProps> = (props: CardHeaderProps) => {
     ]);
 
     return (
-        <header className={classNames} {...inputProps} >
+        <header className={classNames} {...cardHeaderProps} >
             {props.children}
         </header>
     );

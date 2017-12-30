@@ -1,9 +1,10 @@
-import * as ClassNames from "classnames";
-import * as PropTypes from "prop-types";
-import * as React from "react";
-import {Color, colorValues} from "rebul/lib/base/css";
-import HTMLComponent, {HTMLPProps} from "../../base/html/HTML";
-import FormStyle from "./FormStyle";
+import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import { Color, colorValues } from 'rebul/lib/base/css';
+
+import HTMLComponent, { HTMLPProps } from '../../base/html/HTML';
+import FormStyle from './FormStyle';
 
 /**
  * Refers Html Props and Additional Props.
@@ -17,7 +18,7 @@ const FieldHelp: React.SFC<FieldHelpProps> = (props: FieldHelpProps) => {
     const {
         color,
         className,
-        ...inputProps
+        ...fieldHelpProps
     } = props;
 
     const classNames = ClassNames([
@@ -27,8 +28,8 @@ const FieldHelp: React.SFC<FieldHelpProps> = (props: FieldHelpProps) => {
     ]);
 
     return (
-        <p className={classNames} {...inputProps} >
-            {this.props.children}
+        <p className={classNames} {...fieldHelpProps} >
+            {props.children}
         </p>
     );
 };

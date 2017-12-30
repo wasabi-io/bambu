@@ -1,12 +1,13 @@
-import * as ClassNames from "classnames";
-import * as React from "react";
-import CardStyle from "rebul/lib/components/card/CardStyle";
-import HTMLComponent, {HTMLSpanProps} from "../../base/html/HTML";
+import * as ClassNames from 'classnames';
+import * as React from 'react';
+import CardStyle from 'rebul/lib/components/card/CardStyle';
+
+import HTMLComponent, { HTMLSpanProps } from '../../base/html/HTML';
 
 export type CardFooterItemProps = HTMLSpanProps;
 
 const CardFooterItem: React.SFC<CardFooterItemProps> = (props: CardFooterItemProps) => {
-    const {className, ...inputProps} = props;
+    const { className, ...cardFooterItemProps } = props;
 
     const classNames = ClassNames([
         CardStyle.cardFooterItem,
@@ -14,7 +15,7 @@ const CardFooterItem: React.SFC<CardFooterItemProps> = (props: CardFooterItemPro
     ]);
 
     return (
-        <span className={classNames} {...inputProps}>
+        <span className={classNames} {...cardFooterItemProps}>
             {props.children}
         </span>
     );

@@ -1,13 +1,14 @@
-import * as ClassNames from "classnames";
-import * as React from "react";
-import CardStyle from "rebul/lib/components/card/CardStyle";
-import HTMLComponent, {HTMLDivProps} from "../../base/html/HTML";
+import * as ClassNames from 'classnames';
+import * as React from 'react';
+import CardStyle from 'rebul/lib/components/card/CardStyle';
+
+import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
 
 export type CardContentProps = HTMLDivProps;
 
 const CardContent: React.SFC<CardContentProps> = (props: CardContentProps) => {
 
-    const {className, ...inputProps} = props;
+    const { className, ...cardContentProps } = props;
 
     const classNames = ClassNames([
         CardStyle.cardContent,
@@ -15,7 +16,7 @@ const CardContent: React.SFC<CardContentProps> = (props: CardContentProps) => {
     ]);
 
     return (
-        <div className={classNames} {...inputProps} >
+        <div className={classNames} {...cardContentProps} >
             {props.children}
         </div>
     );

@@ -1,139 +1,76 @@
-import * as ClassNames from "classnames";
-import * as PropTypes from "prop-types";
-import * as React from "react";
-import { has } from "wasabi-common";
-import Objects from "wasabi-common/lib/types/Objects";
-import { State, StateValues } from "rebul/lib/base/css/state";
-import HTMLComponent, { HTMLElementProps } from "rebul/lib/base/html/HTML";
-import { Color, colorValues, Size, SizeValues } from "../../base/css";
-import { default as Icon, IconOptions } from "../icon/Icon";
-import ButtonStyle from "./ButtonStyle";
+import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import Objects from 'wasabi-common/lib/types/Objects';
 
-export enum BtnType {
-    link = "link",
+import { Color, colorValues, Size, SizeValues, State, StateValues } from '../../base/css';
+import HTMLComponent, { HTMLElementProps } from '../../base/html/HTML';
+import Icon, { IconOptions } from '../icon/Icon';
+import ButtonStyle from './ButtonStyle';
+
+export enum ButtonTagNames {
+    a = "a",
     button = "button",
-    submit = "submit",
-    reset = "reset",
-}
-
-export enum BtnStyle {
-    outlined = "isOutlined",
-    inverted = "isInverted",
+    input = "input",
 }
 
 export interface ButtonProps extends HTMLElementProps {
-    buttonStyle?: string | BtnStyle;
-    buttonType?: string | BtnType;
+    tagName?: ButtonTagNames | string,
+    type?: string;
     color?: string | Color;
     icon?: IconOptions;
     size?: string | Size;
     state?: string | State;
-
-    [key: string]: any;
+    isOutlined?: boolean,
+    isInverted?: boolean,
+    disabled?: boolean
 }
 
-export default class Button extends HTMLComponent<ButtonProps> {
+const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
+    const { tagName, isOutlined, isInverted, icon, state, color, size, type, className, ...buttonProps } = props;
 
-    public static propTypes = {
-        ...HTMLComponent.propTypes,
-        buttonStyle: PropTypes.oneOf(Objects.values(BtnStyle)),
-        buttonType: PropTypes.oneOf(Objects.values(BtnType)),
-        color: PropTypes.oneOf(colorValues),
-        size: PropTypes.oneOf(SizeValues),
-        state: PropTypes.oneOf(StateValues),
-    };
-
-    public static defaultProps = {
-        ...HTMLComponent.defaultProps,
-        buttonType: BtnType.link,
-    };
-
-    public static createClass(buttonState: string | State,
-        buttonStyle: string | BtnStyle,
-        color: string | Color,
-        size: string | Size,
-        className: string) {
-        return ClassNames([
-            ButtonStyle.button,
-            ButtonStyle[buttonState],
-            ButtonStyle[buttonStyle],
-            ButtonStyle[color],
-            ButtonStyle[size],
-            className,
-        ]);
+    const classNames = ClassNames(
+        ButtonStyle.button,
+        ButtonStyle[state],
+        ButtonStyle[color],
+        ButtonStyle[size],
+        {
+            [`${ButtonStyle.isOutlined}`]: isOutlined,
+            [`${ButtonStyle.isInverted}`]: isInverted,
+        },
+        className,
+    );
+    (buttonProps as any).className = classNames;
+    if (buttonProps.disabled) {
+        buttonProps.onClick = null;
     }
 
-    public static renderIcon(size: string | Size, icon: IconOptions) {
-        if (!has(icon)) {
-            return null;
-        }
-        return <Icon icon={icon} size={size} />;
+    if (tagName === ButtonTagNames.input) {
+        (buttonProps as any).type = type;
+        // return React.createElement(tagName, buttonProps, [icon && <Icon icon={icon} size={size} />, props.children]);
+        return <input {...buttonProps} >
+            {/* {icon && <Icon icon={icon} size={size} />} */}
+            {undefined}
+        </input>
+    } else {
+        return React.createElement(tagName, buttonProps, [icon && <Icon icon={icon} size={size} />, props.children]);
     }
+};
 
-    public static renderButton(props: ButtonProps): JSX.Element {
+Button.propTypes = {
+    ...HTMLComponent.propTypes,
+    tagName: PropTypes.oneOf(Objects.values(ButtonTagNames)),
+    color: PropTypes.oneOf(colorValues),
+    size: PropTypes.oneOf(SizeValues),
+    state: PropTypes.oneOf(StateValues),
+};
 
-        const { buttonType, icon, state, buttonStyle, color, size, className, ...inputProps } = props;
+Button.defaultProps = {
+    ...HTMLComponent.defaultProps,
+    tagName: "a",
+    type: "submit"
+};
 
-        const classNames = Button.createClass(state, buttonStyle, color, size, className);
+Button.displayName = "Button";
 
-        return (
-            <button className={classNames} {...inputProps} >
-                {Button.renderIcon(size, icon)}
-                {props.children}
-            </button>
-        );
-    }
-
-    public static renderSubmit(props: ButtonProps): JSX.Element {
-
-        const { buttonType, icon, state, buttonStyle, color, size, className, ...inputProps } = props;
-
-        const classNames = Button.createClass(state, buttonStyle, color, size, className);
-
-        return (
-            <input type={buttonType + ""} className={classNames} {...inputProps} >
-                {Button.renderIcon(size, icon)}
-            </input>
-        );
-    }
-
-    public static renderReset(props: ButtonProps): JSX.Element {
-
-        const { buttonType, icon, state, buttonStyle, color, size, className, ...inputProps } = props;
-
-        const classNames = Button.createClass(state, buttonStyle, color, size, className);
-
-        return (
-            <input type={buttonType + ""} className={classNames}  {...inputProps} >
-                {Button.renderIcon(size, icon)}
-            </input>
-        );
-    }
-
-    public static renderLink(props: ButtonProps): JSX.Element {
-
-        const { buttonType, icon, state, buttonStyle, color, size, className, ...inputProps } = props;
-
-        const classNames = Button.createClass(state, buttonStyle, color, size, className);
-
-        return (
-            <a className={classNames} {...inputProps} >
-                {Button.renderIcon(size, icon)}
-                {props.children}
-            </a>
-        );
-    }
-
-    public render(): JSX.Element {
-        switch (this.props.buttonType) {
-            case BtnType.button:
-                return Button.renderButton(this.props);
-            case BtnType.submit:
-                return Button.renderSubmit(this.props);
-            case BtnType.reset:
-                return Button.renderReset(this.props);
-            default:
-                return Button.renderLink(this.props);
-        }
-    }
-}
+export default Button;

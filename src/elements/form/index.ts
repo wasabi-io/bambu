@@ -1,3 +1,4 @@
+export { default as Form, FormProps } from "./Form";
 export { default as Field, FieldProps } from "./Field";
 export { default as Control, ControlProps } from "./Control";
 export { default as ControlLabel, ControlLabelProps } from "./ControlLabel";

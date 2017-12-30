@@ -3,6 +3,8 @@ export const navbar: string;
 export const tabs: string;
 export const isWhite: string;
 export const button: string;
+export const dropdownItem: string;
+export const tag: string;
 export const title: string;
 export const subtitle: string;
 export const navbarMenu: string;

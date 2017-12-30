@@ -36,19 +36,21 @@ const Field: React.SFC<FieldProps> = (props: FieldProps) => {
         ...inputProps
     } = props;
 
-    const classNames = ClassNames([
+    const classNames = ClassNames(
         FormStyle.field,
-        isHorizontal ? FormStyle.isHorizontal : undefined,
-        hasAddons ? FormStyle.hasAddons : undefined,
-        hasAddonsCentered ? FormStyle.hasAddonsCentered : undefined,
-        hasAddonsRight ? FormStyle.hasAddonsRight : undefined,
-        isGrouped ? FormStyle.isGrouped : undefined,
-        isGroupedCentered ? FormStyle.isGroupedCentered : undefined,
-        isGroupedRight ? FormStyle.isGroupedCentered : undefined,
-        isGroupedMultiline ? FormStyle.isGroupedCentered : undefined,
-        isNarrow ? FormStyle.isNarrow : undefined,
+        {
+            [`${FormStyle.isHorizontal}`]: isHorizontal,
+            [`${FormStyle.hasAddons}`]: hasAddons,
+            [`${FormStyle.hasAddonsCentered}`]: hasAddonsCentered,
+            [`${FormStyle.hasAddonsRight}`]: hasAddonsRight,
+            [`${FormStyle.isGrouped}`]: isGrouped,
+            [`${FormStyle.isGroupedCentered}`]: isGroupedCentered,
+            [`${FormStyle.isGroupedRight}`]: isGroupedRight,
+            [`${FormStyle.isGroupedMultiline}`]: isGroupedMultiline,
+            [`${FormStyle.isNarrow}`]: isNarrow,
+        },
         className
-    ]);
+    );
 
     return (
         <div className={classNames} {...inputProps} >
