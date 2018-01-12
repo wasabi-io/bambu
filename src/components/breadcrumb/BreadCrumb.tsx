@@ -1,10 +1,11 @@
-import * as ClassNames from "classnames";
-import * as PropTypes from "prop-types";
-import * as React from "react";
-import Objects from "wasabi-common/lib/types/Objects";
-import {Alignment, AlignmentValues, Size, SizeValues} from "../../base/css";
-import HTMLComponent, {HTMLElementProps} from "../../base/html/HTML";
-import BreadCrumbStyle from "./BreadCrumbStyle";
+import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import Objects from 'wasabi-common/lib/types/Objects';
+
+import { Alignment, AlignmentValues, Size, SizeValues } from '../../base/css';
+import HTMLComponent, { HTMLElementProps } from '../../base/html/HTML';
+import BreadCrumbStyle from './BreadCrumbStyle';
 
 export enum BreadCrumbSeperator {
     arrow = "hasArrowSeparator",
@@ -17,24 +18,26 @@ export enum BreadCrumbSeperator {
  * Refers Html Props and Additional Props.
  */
 export interface BreadCrumbProps extends HTMLElementProps {
-    alignment?: Alignment;
+    alignment?: string | Alignment;
     separator?: string | BreadCrumbSeperator;
     size?: string | Size;
 }
 
 const BreadCrumb: React.SFC<BreadCrumbProps> = (props: BreadCrumbProps) => {
 
-    const {alignment, separator, className, ...inputProps} = props;
+    const { alignment, separator, className, ...breadCrumbProps } = props;
 
-    const classNames = ClassNames([
+    const alignmentClass = alignment == Alignment.center ? `${Alignment.center}ed` : alignment;
+
+    const classNames = ClassNames(
         BreadCrumbStyle.breadcrumb,
-        BreadCrumbStyle[alignment],
+        BreadCrumbStyle[alignmentClass],
         BreadCrumbStyle[separator],
         className,
-    ]);
+    );
 
     return (
-        <nav className={classNames} aria-label="breadcrumbs" {...inputProps} >
+        <nav className={classNames} {...breadCrumbProps} >
             {props.children}
         </nav>
     );

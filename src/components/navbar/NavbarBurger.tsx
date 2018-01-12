@@ -1,20 +1,19 @@
-import * as ClassNames from "classnames";
-import * as PropTypes from "prop-types";
-import * as React from "react";
-import { ButtonProps } from "rebul/lib/elements/button";
-import Button from "rebul/lib/elements/button/Button";
-import HTMLComponent from "../../base/html/HTML";
-import NavbarStyle from "./NavbarStyle";
-import { Color, colorValues } from "rebul/lib/base/css";
+import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import { Color, colorValues } from 'rebul/lib/base/css';
 
-export interface NavbarBurgerProps extends ButtonProps {
+import HTMLComponent, { HTMLAllAttributes } from '../../base/html/HTML';
+import NavbarStyle from './NavbarStyle';
+
+export interface NavbarBurgerProps extends HTMLAllAttributes {
     isActive?: boolean;
     color?: string | Color;
     dataTarget?: string;
     tagName?: string;
 }
 
-const NavbarBurger: React.SFC<ButtonProps> = (props: NavbarBurgerProps) => {
+const NavbarBurger: React.SFC<NavbarBurgerProps> = (props: NavbarBurgerProps) => {
 
     const { tagName, isActive, color, className, dataTarget, ...inputProps } = props;
 

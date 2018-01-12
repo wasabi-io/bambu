@@ -1,28 +1,35 @@
-import * as ClassNames from "classnames";
-import * as React from "react";
-import HTMLComponent, {HTMLDivProps} from "../../base/html/HTML";
-import LevelStyle from "./LevelStyle";
+import * as ClassNames from 'classnames';
+import * as React from 'react';
 
-export type LevelLeftProps = HTMLDivProps;
+import HTMLComponent, { HTMLAllAttributes } from '../../base/html/HTML';
+import LevelStyle from './LevelStyle';
+
+export interface LevelLeftProps extends HTMLAllAttributes {
+    tagName?: string;
+}
 
 const LevelLeft: React.SFC<LevelLeftProps> = (props: LevelLeftProps) => {
 
-    const {className, ...inputProps} = props;
+    const { tagName, className, ...levelLeftProps } = props;
 
-    const classNames = ClassNames([
+    const classNames = ClassNames(
         LevelStyle.levelLeft,
         className
-    ]);
-
-    return (
-        <div className={classNames} {...inputProps}>
-            {props.children}
-        </div>
     );
+    (levelLeftProps as any).className = classNames;
+    return React.createElement(tagName, levelLeftProps, props.children);
 };
 
-LevelLeft.propTypes = HTMLComponent.propTypes;
+LevelLeft.propTypes = {
+    ...HTMLComponent.propTypes
+};
 
-LevelLeft.defaultProps = HTMLComponent.defaultProps;
+LevelLeft.defaultProps = {
+    ...HTMLComponent.defaultProps,
+    tagName: "div"
+};
 
 LevelLeft.displayName = "LevelLeft";
+
+export default LevelLeft;
+

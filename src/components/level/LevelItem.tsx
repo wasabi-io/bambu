@@ -1,28 +1,31 @@
-import * as ClassNames from "classnames";
-import * as PropTypes from "prop-types";
-import * as React from "react";
-import HTMLComponent, {HTMLDivProps} from "../../base/html/HTML";
-import LevelStyle from "./LevelStyle";
+import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+
+import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
+import LevelStyle from './LevelStyle';
 
 /**
  * Refers Html Props and Additional Props.
  */
 export interface LevelItemProps extends HTMLDivProps {
-    textCentered?: boolean;
+    hasTextCentered?: boolean;
 }
 
 const LevelItem: React.SFC<LevelItemProps> = (props: LevelItemProps) => {
 
-    const {textCentered, className, ...inputProps} = props;
+    const { hasTextCentered, className, ...levelItemProps } = props;
 
-    const classNames = ClassNames([
+    const classNames = ClassNames(
         LevelStyle.levelItem,
-        textCentered ? LevelStyle.hasTextCentered : undefined,
+        {
+            [`${LevelStyle.hasTextCentered}`]: hasTextCentered,
+        },
         className
-    ]);
+    );
 
     return (
-        <div className={classNames} {...inputProps} >
+        <div className={classNames} {...levelItemProps} >
             {props.children}
         </div>
     );
@@ -30,12 +33,12 @@ const LevelItem: React.SFC<LevelItemProps> = (props: LevelItemProps) => {
 
 LevelItem.propTypes = {
     ...HTMLComponent.propTypes,
-    textCentered: PropTypes.bool
+    hasTextCentered: PropTypes.bool
 };
 
 LevelItem.defaultProps = {
     ...HTMLComponent.defaultProps,
-    textCentered: false
+    hasTextCentered: false
 };
 
 LevelItem.displayName = "LevelItem";

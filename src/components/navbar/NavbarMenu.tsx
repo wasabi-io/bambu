@@ -1,25 +1,28 @@
-import * as ClassNames from "classnames";
-import * as PropTypes from "prop-types";
-import * as React from "react";
-import HTMLComponent, { HTMLDivProps } from "../../base/html/HTML";
-import NavbarStyle from "./NavbarStyle";
+import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+
+import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
+import NavbarStyle from './NavbarStyle';
 
 export interface NavbarMenuProps extends HTMLDivProps {
-    active?: boolean;
+    isActive?: boolean;
 }
 
 const NavbarMenu: React.SFC<NavbarMenuProps> = (props: NavbarMenuProps) => {
 
-    const { active, className, ...inputProps } = props;
+    const { isActive, className, ...navbarMenuProps } = props;
 
-    const classNames = ClassNames([
+    const classNames = ClassNames(
         NavbarStyle.navbarMenu,
-        active ? NavbarStyle.isActive : undefined,
+        {
+            [`${NavbarStyle.isActive}`]: isActive,
+        },
         className
-    ]);
+    );
 
     return (
-        <div className={classNames} role="navigation" aria-label="main navigation" {...inputProps}>
+        <div className={classNames} role="navigation" aria-label="main navigation" {...navbarMenuProps}>
             {props.children}
         </div>
     );
@@ -27,12 +30,12 @@ const NavbarMenu: React.SFC<NavbarMenuProps> = (props: NavbarMenuProps) => {
 
 NavbarMenu.propTypes = {
     ...HTMLComponent.propTypes,
-    active: PropTypes.bool
+    isActive: PropTypes.bool
 };
 
 NavbarMenu.defaultProps = {
     ...HTMLComponent.defaultProps,
-    active: false
+    isActive: false
 };
 
 NavbarMenu.displayName = "NavbarMenu";

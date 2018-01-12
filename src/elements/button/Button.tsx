@@ -23,11 +23,13 @@ export interface ButtonProps extends HTMLElementProps {
     state?: string | State;
     isOutlined?: boolean,
     isInverted?: boolean,
-    disabled?: boolean
+    disabled?: boolean;
+    isRounded?: boolean;
+    onClick?: any;
 }
 
 const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
-    const { tagName, isOutlined, isInverted, icon, state, color, size, type, className, ...buttonProps } = props;
+    const { tagName, isOutlined, isRounded, isInverted, icon, state, color, size, type, className, ...buttonProps } = props;
 
     const classNames = ClassNames(
         ButtonStyle.button,
@@ -37,6 +39,7 @@ const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
         {
             [`${ButtonStyle.isOutlined}`]: isOutlined,
             [`${ButtonStyle.isInverted}`]: isInverted,
+            [`${ButtonStyle.isRounded}`]: isRounded,
         },
         className,
     );
@@ -53,7 +56,7 @@ const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
             {undefined}
         </input>
     } else {
-        return React.createElement(tagName, buttonProps, [icon && <Icon icon={icon} size={size} />, props.children]);
+        return React.createElement(tagName, buttonProps, icon && <Icon icon={icon} size={size} />, props.children);
     }
 };
 

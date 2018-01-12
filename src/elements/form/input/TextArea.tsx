@@ -1,9 +1,9 @@
 import * as ClassNames from "classnames";
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import {Color, colorValues, Size, SizeValues} from "rebul/lib/base/css";
-import {State, StateValues} from "rebul/lib/base/css/state";
-import HTMLComponent, {HTMLTextareaProps} from "../../../base/html/HTML";
+import { Color, colorValues, Size, SizeValues } from "rebul/lib/base/css";
+import { State, StateValues } from "rebul/lib/base/css/state";
+import HTMLComponent, { HTMLTextareaProps } from "../../../base/html/HTML";
 import FormStyle from "../FormStyle";
 
 /**
@@ -25,13 +25,13 @@ const TextArea: React.SFC<TextAreaProps> = (props: TextAreaProps) => {
         ...inputProps
     } = props;
 
-    const classNames = ClassNames([
+    const classNames = ClassNames(
         FormStyle.textarea,
         FormStyle[color],
         FormStyle[size],
         FormStyle[state],
         className
-    ]);
+    );
 
     return (
         <textarea className={classNames} {...inputProps} >

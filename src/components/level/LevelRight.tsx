@@ -1,28 +1,35 @@
-import * as ClassNames from "classnames";
-import * as React from "react";
-import LevelStyle from "rebul/lib/components/level/LevelStyle";
-import HTMLComponent, {HTMLDivProps} from "../../base/html/HTML";
+import * as ClassNames from 'classnames';
+import * as React from 'react';
 
-export type LevelRightProps = HTMLDivProps;
+import HTMLComponent, { HTMLAllAttributes } from '../../base/html/HTML';
+import LevelStyle from './LevelStyle';
+
+export interface LevelRightProps extends HTMLAllAttributes {
+    tagName?: string;
+}
 
 const LevelRight: React.SFC<LevelRightProps> = (props: LevelRightProps) => {
 
-    const {className, ...inputProps} = props;
+    const { tagName, className, ...levelRightProps } = props;
 
-    const classNames = ClassNames([
+    const classNames = ClassNames(
         LevelStyle.levelRight,
         className
-    ]);
-
-    return (
-        <div {...inputProps} className={classNames}>
-            {props.children}
-        </div>
     );
+    (levelRightProps as any).className = classNames;
+    return React.createElement(tagName, levelRightProps, props.children);
 };
 
-LevelRight.propTypes = HTMLComponent.propTypes;
+LevelRight.propTypes = {
+    ...HTMLComponent.propTypes
+};
 
-LevelRight.defaultProps = HTMLComponent.defaultProps;
+LevelRight.defaultProps = {
+    ...HTMLComponent.defaultProps,
+    tagName: "div"
+};
 
 LevelRight.displayName = "LevelRight";
+
+export default LevelRight;
+

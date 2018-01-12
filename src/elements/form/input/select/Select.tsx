@@ -40,13 +40,16 @@ const Select: React.SFC<SelectProps> = (props: SelectProps) => {
         ...inputProps
     } = props;
 
-    const classNames = ClassNames({ [`${FormStyle.isMultiple}`]: multiple }, [
+    const classNames = ClassNames(
+        {
+            [`${FormStyle.isMultiple}`]: multiple
+        },
         FormStyle.select,
         FormStyle[color],
         FormStyle[iSize],
         FormStyle[state],
         className
-    ])
+    )
 
     return (
         <div className={classNames} {...inputProps} >

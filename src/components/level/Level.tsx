@@ -1,9 +1,10 @@
-import * as ClassNames from "classnames";
-import * as PropTypes from "prop-types";
-import * as React from "react";
-import {Responsive, ResponsiveValues} from "rebul/lib/base/css";
-import HTMLComponent, {HTMLElementProps} from "../../base/html/HTML";
-import LevelStyle from "./LevelStyle";
+import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import { Responsive, ResponsiveValues } from 'rebul/lib/base/css';
+
+import HTMLComponent, { HTMLElementProps } from '../../base/html/HTML';
+import LevelStyle from './LevelStyle';
 
 /**
  * Refers Html Props and Additional Props.
@@ -13,16 +14,16 @@ export interface LevelProps extends HTMLElementProps {
 }
 
 const Level: React.SFC<LevelProps> = (props: LevelProps) => {
-    const {responsive, className, ...inputProps} = props;
+    const { responsive, className, ...levelProps } = props;
 
-    const classNames = ClassNames([
+    const classNames = ClassNames(
         LevelStyle.level,
         LevelStyle[responsive],
         className
-    ]);
+    );
 
     return (
-        <nav className={classNames} {...inputProps} >
+        <nav className={classNames} {...levelProps} >
             {props.children}
         </nav>
     );

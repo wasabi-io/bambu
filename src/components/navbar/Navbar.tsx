@@ -21,26 +21,28 @@ export interface NavbarProps extends HTMLNavProps {
     isFixed?: string | Vertical;
     hasShadow?: boolean;
     role?: navBarRole | string;
-    transparent?: boolean;
+    isTransparent?: boolean;
 }
 
 const Navbar: React.SFC<NavbarProps> = (props: NavbarProps) => {
 
-    const { color, arialLabel, isFixed, hasShadow, transparent, className, ...inputProps } = props;
+    const { color, arialLabel, isFixed, hasShadow, isTransparent, className, ...navbarProps } = props;
 
     const fixedClassName = Strings.has(isFixed) ? `isFixed${Strings.capitalizeFirstLetter(isFixed)}` : undefined;
 
-    const classNames = ClassNames([
+    const classNames = ClassNames(
         NavbarStyle.navbar,
         NavbarStyle[fixedClassName],
-        hasShadow ? NavbarStyle.hasShadow : undefined,
-        transparent ? NavbarStyle.isTransparent : undefined,
-        color ? NavbarStyle[color] : undefined,
+        {
+            [`${NavbarStyle.hasShadow}`]: hasShadow,
+            [`${NavbarStyle.isTransparent}`]: isTransparent,
+            [`${NavbarStyle[color]}`]: color ? true : false,
+        },
         className
-    ]);
+    );
 
     return (
-        <nav className={classNames} aria-label={`${arialLabel} navigation`} {...inputProps}>
+        <nav className={classNames} aria-label={`${arialLabel} navigation`} {...navbarProps}>
             {props.children}
         </nav>
     );
@@ -53,7 +55,7 @@ Navbar.propTypes = {
     isFixed: PropTypes.oneOf(verticalValues),
     hasShadow: PropTypes.bool,
     role: PropTypes.oneOf(Objects.values(navBarRole)),
-    transparent: PropTypes.bool
+    isTransparent: PropTypes.bool
 };
 
 Navbar.defaultProps = {
@@ -61,7 +63,7 @@ Navbar.defaultProps = {
     arialLabel: "main",
     hasShadow: false,
     role: navBarRole.navigation,
-    transparent: false
+    isTransparent: false
 };
 
 Navbar.displayName = "Navbar";

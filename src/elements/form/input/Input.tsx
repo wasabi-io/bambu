@@ -1,10 +1,11 @@
-import * as ClassNames from "classnames";
-import * as PropTypes from "prop-types";
-import * as React from "react";
-import { Color, colorValues, Size, SizeValues } from "rebul/lib/base/css";
-import { State, StateValues } from "rebul/lib/base/css/state";
-import HTMLComponent, { HTMLInputProps } from "../../../base/html/HTML";
-import FormStyle from "../FormStyle";
+import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import { Color, colorValues, Size, SizeValues } from 'rebul/lib/base/css';
+import { State, StateValues } from 'rebul/lib/base/css/state';
+
+import HTMLComponent, { HTMLInputProps } from '../../../base/html/HTML';
+import FormStyle from '../FormStyle';
 
 /**
  * Refers Html Props and Additional Props.
@@ -21,20 +22,24 @@ const Input: React.SFC<InputProps> = (props: InputProps) => {
         color,
         iSize,
         state,
+        type,
         className,
         ...inputProps
     } = props;
 
-    const classNames = ClassNames([
-        FormStyle.input,
+
+    const typeClass = (!type || type === "text") ? "input" : type;
+
+    const classNames = ClassNames(
+        FormStyle[typeClass],
         FormStyle[color],
         FormStyle[iSize],
         FormStyle[state],
         className
-    ]);
+    );
 
     return (
-        <input className={classNames} {...inputProps} >
+        <input type={type} className={classNames} {...inputProps} >
             {props.children}
         </input>
     );

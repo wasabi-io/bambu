@@ -47,11 +47,11 @@ export default class Icon extends HTMLComponent<IconProps> {
     public render() {
         const { size, icon, className, ...props } = this.props;
 
-        const classNames = ClassNames([
+        const classNames = ClassNames(
             IconStyle.icon,
             IconStyle[size],
             className
-        ]);
+        );
 
         return (
             <span className={classNames} {...props} >
