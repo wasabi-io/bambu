@@ -1,8 +1,8 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { Color, colorValues, Size, SizeValues } from 'rebul/lib/base/css';
-import { State, StateValues } from 'rebul/lib/base/css/state';
+import { Color, colorValues, Size, SizeValues } from '../../../base/css';
+import { State, StateValues } from '../../../base/css/state';
 
 import HTMLComponent, { HTMLInputProps } from '../../../base/html/HTML';
 import FormStyle from '../FormStyle';
