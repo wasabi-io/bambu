@@ -12,19 +12,21 @@ import ColumnsStyle from './ColumnStyle';
  */
 export interface ColumnsProps extends HTMLDivProps {
     isMultiline?: boolean;
+    isVcentered?: boolean;
     isGapless?: boolean;
     responsive?: string | Responsive;
 }
 
 const Columns: React.SFC<ColumnsProps> = (props: ColumnsProps) => {
 
-    const { responsive, isMultiline, isGapless, className, ...inputProps } = props;
+    const { responsive, isMultiline, isVcentered, isGapless, className, ...inputProps } = props;
 
     const classNames = ClassNames(
         ColumnsStyle.columns,
         ColumnsStyle[responsive],
         {
             [`${ColumnsStyle.isMultiline}`]: isMultiline,
+            [`${ColumnsStyle.isVcentered}`]: isVcentered,
             [`${ColumnsStyle.isGapless}`]: isGapless,
         },
         className,

@@ -22,7 +22,7 @@ const NavbarMenu: React.SFC<NavbarMenuProps> = (props: NavbarMenuProps) => {
     );
 
     return (
-        <div className={classNames} role="navigation" aria-label="main navigation" {...navbarMenuProps}>
+        <div className={classNames} {...navbarMenuProps}>
             {props.children}
         </div>
     );

@@ -7,15 +7,19 @@ import NavbarStyle from './NavbarStyle';
 
 export interface NavbarItemProps extends HTMLAllAttributes {
     isActive?: boolean;
+    isHoverable?: boolean;
+    hasDropdown?: boolean;
     tagName?: string;
 }
 
 const NavbarItem: React.SFC<NavbarItemProps> = (props: NavbarItemProps) => {
-    const { tagName, isActive, className, ...navbarItemProps } = props;
+    const { tagName, isActive, isHoverable, hasDropdown, className, ...navbarItemProps } = props;
     const classNames = ClassNames(
         NavbarStyle.navbarItem,
         {
             [`${NavbarStyle.isActive}`]: isActive,
+            [`${NavbarStyle.isHoverable}`]: isHoverable,
+            [`${NavbarStyle.hasDropdown}`]: hasDropdown,
         },
         className
     );
@@ -26,12 +30,16 @@ const NavbarItem: React.SFC<NavbarItemProps> = (props: NavbarItemProps) => {
 NavbarItem.propTypes = {
     ...HTMLComponent.propTypes,
     isActive: PropTypes.bool,
+    isHoverable: PropTypes.bool,
+    hasDropdown: PropTypes.bool,
     tagName: PropTypes.string
 };
 
 NavbarItem.defaultProps = {
     ...HTMLComponent.defaultProps,
     isActive: false,
+    isHoverable: false,
+    hasDropdown: false,
     tagName: "a"
 };
 

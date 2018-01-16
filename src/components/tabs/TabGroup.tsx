@@ -1,8 +1,8 @@
 import * as ClassNames from "classnames";
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import {Alignment, AlignmentValues} from "../../base/css";
-import HTMLComponent, {HTMLDivProps} from "../../base/html/HTML";
+import { Alignment, AlignmentValues } from "../../base/css";
+import HTMLComponent, { HTMLDivProps } from "../../base/html/HTML";
 import TabGroupStyle from "./TabsStyle";
 
 export interface TabGroupProps extends HTMLDivProps {
@@ -11,12 +11,12 @@ export interface TabGroupProps extends HTMLDivProps {
 
 const TabGroup: React.SFC<TabGroupProps> = (props: TabGroupProps) => {
 
-    const {alignment, className, ...inputProps} = props;
+    const { alignment, className, ...inputProps } = props;
 
-    const classNames = ClassNames([
+    const classNames = ClassNames(
         TabGroupStyle[alignment],
         className
-    ]);
+    );
 
     return (
         <div className={classNames} {...inputProps}>

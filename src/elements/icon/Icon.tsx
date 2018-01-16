@@ -4,9 +4,8 @@ import * as React from 'react';
 import { has } from 'wasabi-common';
 import JSXUtil from 'wasabi-ui/lib/jsx/JSXUtil';
 
-import { Size, SizeValues } from '../../base/css';
 import HTMLComponent, { HTMLSpanProps } from '../../base/html/HTML';
-import FaIcon, { FaIconProps } from './FaIcon';
+import FaIcon, { FaIconProps, IconSize, IconSizeValues } from './FaIcon';
 import IconStyle from './IconStyle';
 
 export type IconOptions = string | FaIconProps | JSX.Element;
@@ -15,25 +14,25 @@ export type IconOptions = string | FaIconProps | JSX.Element;
  * Refers Html Props and Additional Props.
  */
 export interface IconProps extends HTMLSpanProps {
-    icon: IconOptions;
-    size?: string | Size;
+    icon: string | IconOptions;
+    size?: string | IconSize;
 }
 
 export default class Icon extends HTMLComponent<IconProps> {
     public static propTypes = {
         ...HTMLComponent.propTypes,
         icon: PropTypes.any,
-        size: PropTypes.oneOf(SizeValues),
+        size: PropTypes.oneOf(IconSizeValues),
     };
 
     public static defaultProps = HTMLComponent.defaultProps;
 
-    public static renderIcon(icon: IconOptions) {
+    public static renderIcon(icon: IconOptions, size?: string | IconSize) {
         if (!has(icon)) {
             return null;
         }
         if (typeof icon === "string") {
-            return <FaIcon name={icon} />;
+            return <FaIcon name={icon} size={size} />;
         }
         if ((icon as any).type) {
             if (JSXUtil.isJsx(icon)) {
@@ -49,13 +48,12 @@ export default class Icon extends HTMLComponent<IconProps> {
 
         const classNames = ClassNames(
             IconStyle.icon,
-            IconStyle[size],
             className
         );
 
         return (
-            <span className={classNames} {...props} >
-                {Icon.renderIcon(icon)}
+            <span className={IconStyle.icon} {...props} >
+                {Icon.renderIcon(icon, size)}
             </span>
         );
     }

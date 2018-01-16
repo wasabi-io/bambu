@@ -1,7 +1,7 @@
 import * as React from "react";
 import { render } from "react-dom";
 import "./index.scss";
-import Workspace from "./Workspace";
+import Routes from "./Routes";
 
 export interface ApplicationProps {
     mountId: string;
@@ -19,7 +19,7 @@ export default class Application {
 
     public render() {
         render(
-            <Workspace />,
+            <Routes />,
             document.getElementById(this.props.mountId)
         );
     }

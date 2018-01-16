@@ -1,37 +1,39 @@
 import * as ClassNames from "classnames";
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import HTMLComponent, {HTMLDivProps} from "../../base/html/HTML";
+import HTMLComponent, { HTMLLiProps } from "../../base/html/HTML";
 import TabsStyle from "./TabsStyle";
 
-export interface TabProps extends HTMLDivProps {
-    active?: boolean;
+export interface TabProps extends HTMLLiProps {
+    isActive?: boolean;
 }
 
 const Tab: React.SFC<TabProps> = (props: TabProps) => {
 
-    const {active, className, ...inputProps} = props;
+    const { isActive, className, ...inputProps } = props;
 
-    const classNames = ClassNames([
-        active ? TabsStyle.isActive : undefined,
+    const classNames = ClassNames(
+        {
+            [`${TabsStyle.isActive}`]: isActive,
+        },
         className
-    ]);
+    );
 
     return (
-        <div className={classNames} {...inputProps}>
+        <li className={classNames} {...inputProps}>
             {props.children}
-        </div>
+        </li>
     );
 };
 
 Tab.propTypes = {
     ...HTMLComponent.propTypes,
-    active: PropTypes.bool
+    isActive: PropTypes.bool
 };
 
 Tab.defaultProps = {
     ...HTMLComponent.defaultProps,
-    active: false,
+    isActive: false,
 };
 
 Tab.displayName = "Tab";

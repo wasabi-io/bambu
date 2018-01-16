@@ -19,6 +19,7 @@
     "@types/prop-types": "^15.5.2",
     "@types/react": "^16.0.25",
     "@types/react-dom": "^16.0.3",
+    "@types/react-router-dom": "^4.2.3",
     "@types/systemjs": "^0.20.6",
     "app-root-path": "^2.0.1",
     "awesome-typescript-loader": "^3.4.0",
@@ -56,6 +57,7 @@
     "classnames": "^2.2.5",
     "prop-types": "^15.6.0",
     "react": "^16.1.1",
+    "react-router-dom": "^4.2.2",
     "wasabi-common": "2.2.3",
     "wasabi-ui": "1.0.0-alpha.2"
   }
