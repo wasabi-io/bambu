@@ -35,7 +35,8 @@ module.exports = {
     aliases: {
         "rebul$": "./src/index",
         "rebul/lib": "./src",
-        "bulma": "./node_modules/bulma"
+        "bulma": "./node_modules/bulma",
+        "modules": "./showcase/app/modules/"
     },
     copy: {
         move: [

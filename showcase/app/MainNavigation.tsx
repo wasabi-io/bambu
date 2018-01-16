@@ -2,8 +2,9 @@ import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { Tab, Tabs } from 'rebul/lib/components/tabs';
 import Stateless from 'wasabi-ui/lib/Stateless';
-
+import locationStore, { LocationProps } from './stores/LocationStore';
 import WorkspaceStyle from './WorkspaceStyle';
+import { observer } from 'mobx-react';
 
 const navigaions = [
     {
@@ -12,17 +13,17 @@ const navigaions = [
     },
     {
         "text": "Columns",
-        "path": "/columns/start"
+        "path": "/columns/hello"
     }
 ];
 
-
+@observer
 export default class MainNavigation extends Stateless<{}> {
     public render(): JSX.Element {
-
+        const paths = locationStore.getPaths();
         let elements: any[] = [];
         for (let navigaion of navigaions) {
-            elements.push(<Tab className={WorkspaceStyle.isFirstTabIsNotActive} key={navigaion.path}><Link to={`${navigaion.path}`}>{navigaion.text}</Link></Tab>);
+            elements.push(<Tab key={navigaion.path} {...this.configureTab(paths[0], navigaion.path) }><Link to={`${navigaion.path}`}>{navigaion.text}</Link></Tab>);
         }
 
         return (
@@ -30,5 +31,16 @@ export default class MainNavigation extends Stateless<{}> {
                 {elements}
             </Tabs>
         );
+    }
+    private configureTab(locationPath: string, path: string) {
+        let config: any = {};
+        if (path.startsWith(`/${locationPath}`)) {
+            config["isActive"] = true;
+        } else {
+            config["className"] = WorkspaceStyle.isFirstTabIsNotActive;
+        }
+
+        return config;
+
     }
 }

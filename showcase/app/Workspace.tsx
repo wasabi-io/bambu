@@ -77,8 +77,6 @@ class Workspace extends Stateless<WorkspaceProps> {
     }
 
     private configure(location: LocationProps) {
-
-        console.log(location);
         locationStore.setLocation(location);
     }
 }
