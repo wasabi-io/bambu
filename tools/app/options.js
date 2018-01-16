@@ -8,7 +8,7 @@ module.exports = {
             lastModified: new Date().toString(),
             appMountId: settings.options.mountId,
             links: [
-                "./vendor/font-awesome/css/bulma.css",
+                "./vendor/bulma/css/bulma.css",
                 "./vendor/font-awesome/css/font-awesome.css"
             ],
             template: settings.paths.index_template,

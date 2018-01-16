@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <base href="/" />
     <!-- version: <%= htmlWebpackPlugin.options.version%> -->
     <!-- build time: <%= htmlWebpackPlugin.options.lastModified%> -->
     <meta charset="UTF-8">
@@ -14,14 +15,14 @@
     <%
     for (item of htmlWebpackPlugin.options.links) {
     %>
-       <link href="<%=item%>" rel="stylesheet" />
-    <%}%>
+        <link href="<%=item%>" rel="stylesheet" />
+        <%}%>
 </head>
 
 <body>
-<% if (htmlWebpackPlugin.options.appMountId) { %>
-<div id="<%= htmlWebpackPlugin.options.appMountId %>"></div>
-<% } %>
+    <% if (htmlWebpackPlugin.options.appMountId) { %>
+        <div id="<%= htmlWebpackPlugin.options.appMountId %>"></div>
+        <% } %>
 </body>
 
 </html>
