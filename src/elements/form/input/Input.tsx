@@ -14,6 +14,7 @@ export interface InputProps extends HTMLInputProps {
     color?: string | Color;
     iSize?: string | Size;
     state?: string | State;
+    onChange?: any,
 }
 
 const Input: React.SFC<InputProps> = (props: InputProps) => {

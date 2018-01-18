@@ -11,6 +11,7 @@ import FormStyle from './FormStyle';
  */
 export interface ControlLabelProps extends HTMLLabelProps {
     size?: string | Size;
+    isRadio?: boolean
 }
 
 const ControlLabel: React.SFC<ControlLabelProps> = (props: ControlLabelProps) => {
@@ -18,14 +19,18 @@ const ControlLabel: React.SFC<ControlLabelProps> = (props: ControlLabelProps) =>
     const {
         size,
         className,
+        isRadio,
         ...inputProps
     } = props;
 
-    const classNames = ClassNames([
-        FormStyle.label,
+    const classNames = ClassNames(
+        {
+            [`${FormStyle.label}`]: !isRadio,
+            [`${FormStyle.radio}`]: isRadio,
+        },
         FormStyle[size],
         className
-    ]);
+    );
 
     return (
         <label className={classNames} {...inputProps} >
@@ -39,7 +44,10 @@ ControlLabel.propTypes = {
     size: PropTypes.oneOf(SizeValues),
 };
 
-ControlLabel.defaultProps = HTMLComponent.defaultProps;
+ControlLabel.defaultProps = {
+    ...HTMLComponent.defaultProps,
+    isRadio: false
+};
 
 ControlLabel.displayName = "ControlLabel";
 

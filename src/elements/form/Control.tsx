@@ -1,8 +1,9 @@
-import * as ClassNames from "classnames";
-import * as PropTypes from "prop-types";
-import * as React from "react";
-import HTMLComponent, { HTMLDivProps } from "../../base/html/HTML";
-import FormStyle from "./FormStyle";
+import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
+import * as React from 'react';
+
+import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
+import FormStyle from './FormStyle';
 
 /**
  * Refers Html Props and Additional Props.
@@ -11,6 +12,7 @@ export interface ControlProps extends HTMLDivProps {
     hasIconsLeft?: boolean;
     hasIconsRight?: boolean;
     isExpanded?: boolean;
+    isLoading?: boolean;
 }
 
 const Control: React.SFC<ControlProps> = (props: ControlProps) => {
@@ -19,17 +21,21 @@ const Control: React.SFC<ControlProps> = (props: ControlProps) => {
         isExpanded,
         hasIconsLeft,
         hasIconsRight,
+        isLoading,
         className,
         ...inputProps
     } = props;
 
-    const classNames = ClassNames([
+    const classNames = ClassNames(
         FormStyle.control,
-        isExpanded ? FormStyle.isExpanded : undefined,
-        hasIconsLeft ? FormStyle.hasIconsLeft : undefined,
-        hasIconsRight ? FormStyle.hasIconsRight : undefined,
+        {
+            [`${FormStyle.isExpanded}`]: isExpanded,
+            [`${FormStyle.hasIconsLeft}`]: hasIconsLeft,
+            [`${FormStyle.hasIconsRight}`]: hasIconsRight,
+            [`${FormStyle.isLoading}`]: isLoading,
+        },
         className
-    ]);
+    );
 
     return (
         <div className={classNames} {...inputProps} >
@@ -50,6 +56,7 @@ Control.defaultProps = {
     hasIconsLeft: false,
     hasIconsRight: false,
     isExpanded: false,
+    isLoading: false,
 };
 
 Control.displayName = "Control";

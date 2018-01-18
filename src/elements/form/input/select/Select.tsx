@@ -54,7 +54,7 @@ const Select: React.SFC<SelectProps> = (props: SelectProps) => {
     return (
         <div className={classNames} {...inputProps} >
             <select name={name} multiple={multiple} form={form} autoFocus={autoFocus} disabled={disabled} size={size} value={value} onChange={onChange}>
-                {this.props.children}
+                {props.children}
             </select>
         </div>
     );

@@ -9,16 +9,18 @@ import TableStyle from './TableStyle';
  * Refers Html Props and Additional Props.
  */
 export interface CellProps extends HTMLTdProps {
-    icon?: boolean;
+    isIcon?: boolean;
 }
 
 const Cell: React.SFC<CellProps> = (props: CellProps) => {
 
-    const { icon, className, ...cellProps } = props;
+    const { isIcon, className, ...cellProps } = props;
 
     const classNames = ClassNames(
         TableStyle.td,
-        icon ? TableStyle.isIcon : undefined,
+        {
+            [`${TableStyle.isIcon}`]: isIcon,
+        },
         className
     );
 
@@ -31,12 +33,12 @@ const Cell: React.SFC<CellProps> = (props: CellProps) => {
 
 Cell.propTypes = {
     ...HTMLComponent.propTypes,
-    icon: PropTypes.bool
+    isIcon: PropTypes.bool
 };
 
 Cell.defaultProps = {
     ...HTMLComponent.defaultProps,
-    icon: false
+    isIcon: false
 };
 
 Cell.displayName = "Cell";
