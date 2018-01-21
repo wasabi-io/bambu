@@ -7,6 +7,13 @@
 
 ### Showcase
 
+* build showcase in production mode.
+
+```ssh
+yarn build
+```
+
+* start showcase in development mode.
 ```ssh
 yarn start
 ```

@@ -14,6 +14,8 @@ jsonConfig = merge({
     loader: {
         ts: true,
         css: true,
+        sass: true,
+        scss: true,
         url: true,
         file: true,
         html: true
