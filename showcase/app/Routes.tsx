@@ -4,20 +4,10 @@ import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import Stateless from 'wasabi-ui/lib/Stateless';
 
 import asyncComponent from './AsyncComponent';
+import Navigaion from './Navigation';
 import Workspace from './Workspace';
 
-const navigaions = [
-    {
-        "text": "Overview",
-        "path": "overview",
-        "module": "overview/index.tsx"
-    },
-    {
-        "text": "Columns",
-        "path": "columns",
-        "module": "columns/index.tsx"
-    }
-];
+const navigaions: Navigaion[] = require("./navigaions.json");
 
 export default class Routes extends Stateless<{}> {
     public render(): JSX.Element {

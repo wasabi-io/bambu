@@ -5,17 +5,24 @@ import Stateless from 'wasabi-ui/lib/Stateless';
 import locationStore, { LocationProps } from './stores/LocationStore';
 import WorkspaceStyle from './WorkspaceStyle';
 import { observer } from 'mobx-react';
+import Navigaion from './Navigation';
 
-const navigaions = [
-    {
-        "text": "Overview",
-        "path": "/overview/start"
-    },
-    {
-        "text": "Columns",
-        "path": "/columns/hello"
-    }
-];
+const navigaions: Navigaion[] = require("./navigaions.json");
+
+// const navigaions = [
+//     {
+//         "text": "Overview",
+//         "path": "/overview/start"
+//     },
+//     {
+//         "text": "Columns",
+//         "path": "/columns/hello"
+//     },
+//     {
+//         "text": "Layout",
+//         "path": "/layout/container"
+//     }
+// ];
 
 @observer
 export default class MainNavigation extends Stateless<{}> {
@@ -23,7 +30,7 @@ export default class MainNavigation extends Stateless<{}> {
         const paths = locationStore.getPaths();
         let elements: any[] = [];
         for (let navigaion of navigaions) {
-            elements.push(<Tab key={navigaion.path} {...this.configureTab(paths[0], navigaion.path) }><Link to={`${navigaion.path}`}>{navigaion.text}</Link></Tab>);
+            elements.push(<Tab key={navigaion.path} {...this.configureTab(paths[0], navigaion.start) }><Link to={`${navigaion.start}`}>{navigaion.text}</Link></Tab>);
         }
 
         return (
