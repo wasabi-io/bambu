@@ -12,7 +12,7 @@
     "sass": "node ./tools/app/sass_build.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "wtfpl",
   "devDependencies": {
     "@types/classnames": "2.2.3",
     "@types/history": "4.6.2",
