@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node ./tools/app/start.js",
     "start:app": "webpack-dev-server --port 8181 --config tools/app/dev/webpack.js --colors",
-    "build": "rimraf ./build && node ./tools/app/build.js",
+    "build": "rimraf ./docs && node ./tools/app/build.js",
     "build:app": "webpack --config tools/app/build/webpack.js --colors",
     "compile": "tsc -p .",
     "sass": "node ./tools/app/sass_build.js"

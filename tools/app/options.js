@@ -27,7 +27,7 @@ module.exports = {
     },
     paths: {
         app: "showcase",
-        www: "build",
+        www: "docs",
         assets: "assets",
         node_modules: "node_modules",
         index_template: "tools/template/index.template.ejs"
