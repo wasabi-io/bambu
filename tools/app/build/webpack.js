@@ -1,4 +1,4 @@
-process.env.NODE_ENV = process.env.NODE_ENV || "development";
+process.env.NODE_ENV = process.env.NODE_ENV || "production";
 const webpack = require("webpack");
 const WebpackNotifierPlugin = require("webpack-notifier");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -41,7 +41,7 @@ settings
 settings
     .webpack
     .plugins
-    .push(new HtmlWebpackPlugin(new HtmlWebpackPlugin(jsonConfig.template(settings))));
+    .push(new HtmlWebpackPlugin(jsonConfig.template(settings)));
 
 if (jsonConfig.copy && jsonConfig.copy.move) {
     settings

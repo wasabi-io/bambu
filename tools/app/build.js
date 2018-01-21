@@ -1,5 +1,5 @@
 const PipeTasks = require("../common/PipeTasks");
-process.env.NODE_ENV = "development";
+process.env.NODE_ENV = "production";
 PipeTasks(
     [
         {

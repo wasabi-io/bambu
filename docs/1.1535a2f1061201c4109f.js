@@ -1,18 +1,18 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
-/***/ 230:
+/***/ 224:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(0);
-const react_router_dom_1 = __webpack_require__(35);
-const tabs_1 = __webpack_require__(103);
-const container_1 = __webpack_require__(102);
-const Stateless_1 = __webpack_require__(17);
-const AsyncComponent_1 = __webpack_require__(101);
-const LocationStore_1 = __webpack_require__(77);
+const react_router_dom_1 = __webpack_require__(31);
+const tabs_1 = __webpack_require__(97);
+const container_1 = __webpack_require__(96);
+const Stateless_1 = __webpack_require__(13);
+const AsyncComponent_1 = __webpack_require__(95);
+const LocationStore_1 = __webpack_require__(71);
 class StatelessComponent extends Stateless_1.default {
     render() {
         const match = this.props.match;
@@ -33,7 +33,7 @@ class StatelessComponent extends Stateless_1.default {
             routes));
     }
     getModule(module) {
-        return __webpack_require__(104)(`./${this.getModuleName()}/${module}`);
+        return __webpack_require__(98)(`./${this.getModuleName()}/${module}`);
     }
 }
 exports.default = StatelessComponent;
@@ -41,36 +41,31 @@ exports.default = StatelessComponent;
 
 /***/ }),
 
-/***/ 38:
+/***/ 33:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const StatelessComponent_1 = __webpack_require__(230);
-class Overview extends StatelessComponent_1.default {
+const StatelessComponent_1 = __webpack_require__(224);
+class Layout extends StatelessComponent_1.default {
     getNavigations() {
         return [
             {
-                "text": "Start",
-                "path": "start",
-                "module": "Start.tsx"
-            },
-            {
-                "text": "Customize",
-                "path": "customize",
-                "module": "Customize.tsx"
+                "text": "Container",
+                "path": "container",
+                "module": "Container.tsx"
             }
         ];
     }
     getModuleName() {
-        return "overview";
+        return "layout";
     }
 }
-exports.default = Overview;
+exports.default = Layout;
 
 
 /***/ })
 
 });
-//# sourceMappingURL=0.065a62aaa5b0db33779d.js.map
+//# sourceMappingURL=1.1535a2f1061201c4109f.js.map

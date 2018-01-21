@@ -7,13 +7,21 @@
 
 ### Showcase
 
-* build showcase in production mode.
+### Build showcase in production mode.
 
+* build showcase
 ```ssh
-yarn build
+yarn showcase:build
+```
+* serve showcase (port: 8282)
+```ssh
+yarn showcase:serve
 ```
 
-* start showcase in development mode.
+
+### Start showcase in development mode
+
+* Start showcase in development mode.
 ```ssh
 yarn start
 ```

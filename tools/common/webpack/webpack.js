@@ -10,7 +10,7 @@ function configure(config) {
 
 
     var options = config.options || {};
-    if(process.env.options) {
+    if (process.env.options) {
         options = Objects.merge(JSON.parse(process.env.options), options);
     }
     var settings = {
@@ -59,10 +59,6 @@ function configure(config) {
         settings.webpack = Objects.merge(config.webpack, settings.webpack);
     }
     if (nodeEnv === "production") {
-        settings
-            .webpack
-            .plugins
-            .push(new webpack.optimize.UglifyJsPlugin());
         settings
             .webpack
             .plugins
