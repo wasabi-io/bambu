@@ -35,6 +35,6 @@ BreadCrumbItem.defaultProps = {
     ...HTMLComponent.defaultProps,
 };
 
-BreadCrumbItem.displayName = "BreadCrumbItem";
+BreadCrumbItem.displayName = 'BreadCrumbItem';
 
 export default BreadCrumbItem;

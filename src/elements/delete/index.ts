@@ -1,2 +1,2 @@
-export { default as Delete, DeleteProps } from "./Delete";
-export { default as DeleteStyle } from "./DeleteStyle"
+export { default as Delete, DeleteProps } from './Delete';
+export { default as DeleteStyle } from './DeleteStyle';

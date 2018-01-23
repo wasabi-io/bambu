@@ -1,3 +1,3 @@
-const BreadCrumbStyle = require("./breadcrumb.scss");
+const BreadCrumbStyle = require('./breadcrumb.scss');
 
 export default BreadCrumbStyle;

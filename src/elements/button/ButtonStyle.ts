@@ -1,3 +1,3 @@
-const ButtonStyle = require("./button.scss");
+const ButtonStyle = require('./button.scss');
 
 export default ButtonStyle;

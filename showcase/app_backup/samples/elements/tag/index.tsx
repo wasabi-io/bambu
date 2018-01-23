@@ -1,13 +1,13 @@
-import * as React from "react";
-import TagSample from "./TagSample";
+import * as React from 'react';
+import TagSample from './TagSample';
 
 export default {
-    name: "Tag Sample",
-    subs: [
-        {
-            name: "Tag Sample",
-            description: "TagSample='...'",
-            element: <TagSample />
-        }
-    ]
+  name: 'Tag Sample',
+  subs: [
+    {
+      name: 'Tag Sample',
+      description: 'TagSample=\'...\'',
+      element: <TagSample />
+    }
+  ]
 };

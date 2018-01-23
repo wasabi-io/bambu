@@ -11,22 +11,22 @@ export type HCellProps = HTMLThProps;
 
 const HCell: React.SFC<HCellProps> = (props: HCellProps) => {
 
-    const { className, ...hCellProps } = props;
+  const { className, ...hCellProps } = props;
 
-    const classNames = ClassNames(
-        TableStyle.th,
-        className
-    );
+  const classNames = ClassNames(
+    TableStyle.th,
+    className
+  );
 
-    return (
-        <th className={classNames} {...hCellProps} >
-            {props.children}
-        </th>
-    );
+  return (
+    <th className={classNames} {...hCellProps} >
+      {props.children}
+    </th>
+  );
 };
 
 HCell.propTypes = HTMLComponent.propTypes;
 HCell.defaultProps = HTMLComponent.defaultProps;
-HCell.displayName = "HCell";
+HCell.displayName = 'HCell';
 
 export default HCell;

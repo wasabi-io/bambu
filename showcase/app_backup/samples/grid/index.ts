@@ -1,7 +1,7 @@
-import ColumnSample from "./column";
-import TileSample from "./tile";
+import ColumnSample from './column';
+import TileSample from './tile';
 
 export default [
-    ColumnSample,
-    TileSample
+  ColumnSample,
+  TileSample
 ];

@@ -1,3 +1,3 @@
-const CardStyle = require("./card.scss");
+const CardStyle = require('./card.scss');
 
 export default CardStyle;

@@ -8,21 +8,21 @@ export type BoxProps = HTMLDivProps;
 
 const Box: React.SFC<BoxProps> = (props: BoxProps) => {
 
-    const { className, ...boxProps } = props;
+  const { className, ...boxProps } = props;
 
-    const classNames = ClassNames(BoxStyle.box, className);
+  const classNames = ClassNames(BoxStyle.box, className);
 
-    return (
-        <div className={classNames} {...boxProps} >
-            {props.children}
-        </div>
-    );
+  return (
+    <div className={classNames} {...boxProps} >
+      {props.children}
+    </div>
+  );
 };
 
 Box.propTypes = HTMLComponent.propTypes;
 
 Box.defaultProps = HTMLComponent.defaultProps;
 
-Box.displayName = "Box";
+Box.displayName = 'Box';
 
 export default Box;

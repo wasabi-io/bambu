@@ -1,2 +1,2 @@
-const TagStyle = require("./tag.scss");
+const TagStyle = require('./tag.scss');
 export default TagStyle;

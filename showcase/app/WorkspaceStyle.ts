@@ -1,3 +1,3 @@
-const WorkspaceStyle = require("./index.scss");
+const WorkspaceStyle = require('./index.scss');
 
 export default WorkspaceStyle;

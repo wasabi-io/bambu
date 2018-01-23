@@ -11,24 +11,24 @@ export interface CardProps extends HTMLDivProps {
 }
 
 const Card: React.SFC<CardProps> = (props: CardProps) => {
-    const { className, ...cardProps } = props;
+  const { className, ...cardProps } = props;
 
-    const classNames = ClassNames([
-        CardStyle.card,
-        className
-    ]);
+  const classNames = ClassNames([
+    CardStyle.card,
+    className
+  ]);
 
-    return (
-        <div className={classNames} {...cardProps} >
-            {props.children}
-        </div>
-    );
+  return (
+    <div className={classNames} {...cardProps} >
+      {props.children}
+    </div>
+  );
 };
 
 Card.propTypes = HTMLComponent.propTypes;
 
 Card.defaultProps = HTMLComponent.defaultProps;
 
-Card.displayName = "Card";
+Card.displayName = 'Card';
 
 export default Card;

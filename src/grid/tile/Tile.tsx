@@ -8,57 +8,57 @@ import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
 import TileStyle from './TileStyle';
 
 export enum TileContext {
-    ancestor = "isAncestor",
-    parent = "isParent",
-    child = "isChild",
+  ancestor = 'isAncestor',
+  parent = 'isParent',
+  child = 'isChild',
 }
 
 /**
  * Refers Html Props and Additional Props.
  */
 export interface TileProps extends HTMLDivProps {
-    context?: string | TileContext;
-    isDesktop?: boolean;
-    isVertical?: boolean;
-    size?: string | Size12;
+  context?: string | TileContext;
+  isDesktop?: boolean;
+  isVertical?: boolean;
+  size?: string | Size12;
 }
 
 const Tile: React.SFC<TileProps> = (props: TileProps) => {
 
-    const { context, isDesktop, size, isVertical, className, ...tileProps } = props;
+  const { context, isDesktop, size, isVertical, className, ...tileProps } = props;
 
-    const classNames = ClassNames(
-        TileStyle.tile,
-        TileStyle[size],
-        TileStyle[context],
-        {
-            [`${TileStyle.isVertical}`]: isVertical,
-            [`${TileStyle.isDesktop}`]: isDesktop,
-        },
-        className
-    );
+  const classNames = ClassNames(
+    TileStyle.tile,
+    TileStyle[size],
+    TileStyle[context],
+    {
+      [`${TileStyle.isVertical}`]: isVertical,
+      [`${TileStyle.isDesktop}`]: isDesktop,
+    },
+    className
+  );
 
-    return (
-        <div className={classNames} {...tileProps} >
-            {props.children}
-        </div>
-    );
+  return (
+    <div className={classNames} {...tileProps} >
+      {props.children}
+    </div>
+  );
 };
 
 Tile.propTypes = {
-    ...HTMLComponent.propTypes,
-    context: PropTypes.oneOf(Objects.values(TileContext)),
-    size: PropTypes.oneOf(Objects.values(Size12Values)),
-    isVertical: PropTypes.bool,
-    isDesktop: PropTypes.bool,
+  ...HTMLComponent.propTypes,
+  context: PropTypes.oneOf(Objects.values(TileContext)),
+  size: PropTypes.oneOf(Objects.values(Size12Values)),
+  isVertical: PropTypes.bool,
+  isDesktop: PropTypes.bool,
 };
 
 Tile.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isDesktop: false,
-    isVertical: false
+  ...HTMLComponent.defaultProps,
+  isDesktop: false,
+  isVertical: false
 };
 
-Tile.displayName = "Tile";
+Tile.displayName = 'Tile';
 
 export default Tile;

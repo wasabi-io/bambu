@@ -1,2 +1,2 @@
-const ProgressStyle = require("./progress.scss");
+const ProgressStyle = require('./progress.scss');
 export default ProgressStyle;

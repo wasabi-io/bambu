@@ -11,50 +11,50 @@ import FormStyle from '../FormStyle';
  * Refers Html Props and Additional Props.
  */
 export interface InputProps extends HTMLInputProps {
-    color?: string | Color;
-    iSize?: string | Size;
-    state?: string | State;
-    onChange?: any,
+  color?: string | Color;
+  iSize?: string | Size;
+  state?: string | State;
+  onChange?: any;
 }
 
 const Input: React.SFC<InputProps> = (props: InputProps) => {
 
-    const {
+  const {
         color,
-        iSize,
-        state,
-        type,
-        className,
-        ...inputProps
+    iSize,
+    state,
+    type,
+    className,
+    ...inputProps
     } = props;
 
 
-    const typeClass = (!type || type === "text") ? "input" : type;
+  const typeClass = (!type || type === 'text') ? 'input' : type;
 
-    const classNames = ClassNames(
-        FormStyle[typeClass],
-        FormStyle[color],
-        FormStyle[iSize],
-        FormStyle[state],
-        className
-    );
+  const classNames = ClassNames(
+    FormStyle[typeClass],
+    FormStyle[color],
+    FormStyle[iSize],
+    FormStyle[state],
+    className
+  );
 
-    return (
-        <input type={type} className={classNames} {...inputProps} >
-            {props.children}
-        </input>
-    );
+  return (
+    <input type={type} className={classNames} {...inputProps} >
+      {props.children}
+    </input>
+  );
 };
 
 Input.propTypes = {
-    ...HTMLComponent.propTypes,
-    color: PropTypes.oneOf(colorValues),
-    iSize: PropTypes.oneOf(SizeValues),
-    state: PropTypes.oneOf(StateValues),
+  ...HTMLComponent.propTypes,
+  color: PropTypes.oneOf(colorValues),
+  iSize: PropTypes.oneOf(SizeValues),
+  state: PropTypes.oneOf(StateValues),
 };
 
 Input.defaultProps = HTMLComponent.defaultProps;
 
-Input.displayName = "Input";
+Input.displayName = 'Input';
 
 export default Input;

@@ -5,33 +5,33 @@ import HTMLComponent, { HTMLHeaderProps } from '../../base/html/HTML';
 import ModalStyle from './ModalStyle';
 
 export interface ModalCardHeaderProps extends HTMLHeaderProps {
-    header?: string;
+  header?: string;
 }
 
 const ModalCardHeader: React.SFC<ModalCardHeaderProps> = (props: ModalCardHeaderProps) => {
-    const { className, ...modalCardHeaderProps } = props;
+  const { className, ...modalCardHeaderProps } = props;
 
-    const classNames = ClassNames(
-        ModalStyle.modalCardHead,
-        className
-    );
+  const classNames = ClassNames(
+    ModalStyle.modalCardHead,
+    className
+  );
 
-    return (
-        <header className={classNames} {...modalCardHeaderProps}>
-            {props.header && <p className={ModalStyle.modalCardTitle}>{props.header}</p>}
-            {props.children}
-        </header>
-    );
+  return (
+    <header className={classNames} {...modalCardHeaderProps}>
+      {props.header && <p className={ModalStyle.modalCardTitle}>{props.header}</p>}
+      {props.children}
+    </header>
+  );
 };
 
 ModalCardHeader.propTypes = {
-    ...HTMLComponent.propTypes
+  ...HTMLComponent.propTypes
 };
 
 ModalCardHeader.defaultProps = {
-    ...HTMLComponent.defaultProps
+  ...HTMLComponent.defaultProps
 };
 
-ModalCardHeader.displayName = "ModalCardHeader";
+ModalCardHeader.displayName = 'ModalCardHeader';
 
 export default ModalCardHeader;

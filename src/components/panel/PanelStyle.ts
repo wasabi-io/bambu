@@ -1,3 +1,3 @@
-const PanelStyle = require("./panel.scss");
+const PanelStyle = require('./panel.scss');
 
 export default PanelStyle;

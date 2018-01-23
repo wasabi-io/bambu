@@ -9,38 +9,38 @@ import LevelStyle from './LevelStyle';
  * Refers Html Props and Additional Props.
  */
 export interface LevelItemProps extends HTMLDivProps {
-    hasTextCentered?: boolean;
+  hasTextCentered?: boolean;
 }
 
 const LevelItem: React.SFC<LevelItemProps> = (props: LevelItemProps) => {
 
-    const { hasTextCentered, className, ...levelItemProps } = props;
+  const { hasTextCentered, className, ...levelItemProps } = props;
 
-    const classNames = ClassNames(
-        LevelStyle.levelItem,
-        {
-            [`${LevelStyle.hasTextCentered}`]: hasTextCentered,
-        },
-        className
-    );
+  const classNames = ClassNames(
+    LevelStyle.levelItem,
+    {
+      [`${LevelStyle.hasTextCentered}`]: hasTextCentered,
+    },
+    className
+  );
 
-    return (
-        <div className={classNames} {...levelItemProps} >
-            {props.children}
-        </div>
-    );
+  return (
+    <div className={classNames} {...levelItemProps} >
+      {props.children}
+    </div>
+  );
 };
 
 LevelItem.propTypes = {
-    ...HTMLComponent.propTypes,
-    hasTextCentered: PropTypes.bool
+  ...HTMLComponent.propTypes,
+  hasTextCentered: PropTypes.bool
 };
 
 LevelItem.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    hasTextCentered: false
+  ...HTMLComponent.defaultProps,
+  hasTextCentered: false
 };
 
-LevelItem.displayName = "LevelItem";
+LevelItem.displayName = 'LevelItem';
 
 export default LevelItem;

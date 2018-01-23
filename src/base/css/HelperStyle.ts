@@ -1,2 +1,2 @@
-const HelperStyle = require("./helpers.scss");
+const HelperStyle = require('./helpers.scss');
 export default HelperStyle;

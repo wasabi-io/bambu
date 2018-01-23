@@ -1,9 +1,9 @@
-import * as ClassNames from "classnames";
-import * as PropTypes from "prop-types";
-import {ValidationMap} from "prop-types";
-import * as React from "react";
-import Stateless from "wasabi-ui/lib/Stateless";
-import Arrays from "wasabi-common/lib/types/Arrays";
+import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
+import { ValidationMap } from 'prop-types';
+import * as React from 'react';
+import Stateless from 'wasabi-ui/lib/Stateless';
+import Arrays from 'wasabi-common/lib/types/Arrays';
 
 /**
  * Provides abstraction from HTML Elements.
@@ -11,24 +11,24 @@ import Arrays from "wasabi-common/lib/types/Arrays";
 
 abstract class AbstractDom<P extends HTMLElementProps> extends Stateless<P> {
 
-    public static propTypes = {
-        className: PropTypes.string,
-        style: PropTypes.object,
-    };
+  public static propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+  };
 
-    public static defaultProps = {
-        className: "",
-        style: {},
-    };
+  public static defaultProps = {
+    className: '',
+    style: {},
+  };
 
-    public static create() {
+  public static create() {
 
-    }
+  }
 
-    public classNames(clazzNames: string[]) {
-        clazzNames.push(this.props.className);
-        return ClassNames(clazzNames);
-    }
+  public classNames(clazzNames: string[]) {
+    clazzNames.push(this.props.className);
+    return ClassNames(clazzNames);
+  }
 
 }
 

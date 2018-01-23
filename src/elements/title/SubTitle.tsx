@@ -10,33 +10,33 @@ import TitleStyle from './TitleStyle';
  * Refers Html Props and Additional Props.
  */
 export interface SubTitleProps extends HTMLPProps {
-    size?: string | Size6;
-    tagName?: string;
+  size?: string | Size6;
+  tagName?: string;
 }
 
 const SubTitle: React.SFC<SubTitleProps> = (props: SubTitleProps) => {
 
-    const { tagName, size, className, ...subTitleProps } = props;
+  const { tagName, size, className, ...subTitleProps } = props;
 
-    const classNames = ClassNames(
-        TitleStyle.subtitle,
-        TitleStyle[size],
-        className
-    );
-    (subTitleProps as any).className = classNames;
-    return React.createElement(tagName, subTitleProps, props.children);
+  const classNames = ClassNames(
+    TitleStyle.subtitle,
+    TitleStyle[size],
+    className
+  );
+  (subTitleProps as any).className = classNames;
+  return React.createElement(tagName, subTitleProps, props.children);
 };
 
 SubTitle.propTypes = {
-    ...HTMLComponent.propTypes,
-    size: PropTypes.oneOf(Size6Values),
+  ...HTMLComponent.propTypes,
+  size: PropTypes.oneOf(Size6Values),
 };
 
 SubTitle.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    tagName: "h2"
+  ...HTMLComponent.defaultProps,
+  tagName: 'h2'
 };
 
-SubTitle.displayName = "SubTitle";
+SubTitle.displayName = 'SubTitle';
 
 export default SubTitle;

@@ -8,24 +8,24 @@ export type HeroBodyProps = HTMLSectionProps;
 
 const HeroBody: React.SFC<HeroBodyProps> = (props: HeroBodyProps) => {
 
-    const { className, ...heroBodyProps } = props;
+  const { className, ...heroBodyProps } = props;
 
-    const classNames = ClassNames(
-        HeroStyle.heroBody,
-        className
-    );
+  const classNames = ClassNames(
+    HeroStyle.heroBody,
+    className
+  );
 
-    return (
-        <section className={classNames} {...heroBodyProps} >
-            {props.children}
-        </section>
-    );
+  return (
+    <section className={classNames} {...heroBodyProps} >
+      {props.children}
+    </section>
+  );
 };
 
 HeroBody.propTypes = HTMLComponent.propTypes;
 
 HeroBody.defaultProps = HTMLComponent.defaultProps;
 
-HeroBody.displayName = "HeroBody";
+HeroBody.displayName = 'HeroBody';
 
 export default HeroBody;

@@ -1,3 +1,3 @@
-const ColumnsStyle = require("./columns.scss");
+const ColumnsStyle = require('./columns.scss');
 
 export default ColumnsStyle;

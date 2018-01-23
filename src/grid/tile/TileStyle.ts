@@ -1,3 +1,3 @@
-const TileStyle = require("./tile.scss");
+const TileStyle = require('./tile.scss');
 
 export default TileStyle;

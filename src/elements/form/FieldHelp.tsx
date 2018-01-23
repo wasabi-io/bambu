@@ -10,37 +10,37 @@ import FormStyle from './FormStyle';
  * Refers Html Props and Additional Props.
  */
 export interface FieldHelpProps extends HTMLPProps {
-    color?: string | Color;
+  color?: string | Color;
 }
 
 const FieldHelp: React.SFC<FieldHelpProps> = (props: FieldHelpProps) => {
 
-    const {
+  const {
         color,
-        className,
-        ...fieldHelpProps
+    className,
+    ...fieldHelpProps
     } = props;
 
-    const classNames = ClassNames([
-        FormStyle.help,
-        FormStyle[color],
-        className
-    ]);
+  const classNames = ClassNames([
+    FormStyle.help,
+    FormStyle[color],
+    className
+  ]);
 
-    return (
-        <p className={classNames} {...fieldHelpProps} >
-            {props.children}
-        </p>
-    );
+  return (
+    <p className={classNames} {...fieldHelpProps} >
+      {props.children}
+    </p>
+  );
 };
 
 FieldHelp.propTypes = {
-    ...HTMLComponent.propTypes,
-    color: PropTypes.oneOf(colorValues),
+  ...HTMLComponent.propTypes,
+  color: PropTypes.oneOf(colorValues),
 };
 
 FieldHelp.defaultProps = HTMLComponent.defaultProps;
 
-FieldHelp.displayName = "FieldHelp";
+FieldHelp.displayName = 'FieldHelp';
 
 export default FieldHelp;

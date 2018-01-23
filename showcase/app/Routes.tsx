@@ -7,35 +7,35 @@ import asyncComponent from './AsyncComponent';
 import Navigaion from './Navigation';
 import Workspace from './Workspace';
 
-const navigaions: Navigaion[] = require("./navigaions.json");
+const navigaions: Navigaion[] = require('./navigaions.json');
 
 export default class Routes extends Stateless<{}> {
-    public render(): JSX.Element {
+  public render(): JSX.Element {
 
-        let elements: any[] = [];
-        for (let navigaion of navigaions) {
-            const path = `/${navigaion.path}`;
-            const module = navigaion.module;
-            const Component = asyncComponent(() => this.getModule(module).then(module => module.default))
-            elements.push(<Route key={path} path={path} component={Component} />);
-        }
-        return (
-            <BrowserRouter>
-                <Workspace>
-                    <Switch>
-                        {elements}
-                        <Route exact path="/" render={() => (
-                            <Redirect to="/overview/start/" />
-                        )} />
-                        <Route component={NotFound} />
-                    </Switch>
-                </Workspace>
-            </BrowserRouter>
-
-        );
+    let elements: any[] = [];
+    for (let navigaion of navigaions) {
+      const path = `/${navigaion.path}`;
+      const module = navigaion.module;
+      const Component = asyncComponent(() => this.getModule(module).then(module => module.default))
+      elements.push(<Route key={path} path={path} component={Component} />);
     }
+    return (
+      <BrowserRouter>
+        <Workspace>
+          <Switch>
+            {elements}
+            <Route exact path="/" render={() => (
+              <Redirect to="/overview/start/" />
+            )} />
+            <Route component={NotFound} />
+          </Switch>
+        </Workspace>
+      </BrowserRouter>
 
-    getModule(module: string) {
-        return System.import("modules/" + module);
-    }
+    );
+  }
+
+  getModule(module: string) {
+    return System.import('modules/' + module);
+  }
 }
