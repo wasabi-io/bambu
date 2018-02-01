@@ -1,3 +1,3 @@
-const DeleteStyle = require("./delete.scss");
+const DeleteStyle = require('./delete.scss');
 
 export default DeleteStyle;

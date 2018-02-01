@@ -14,70 +14,70 @@ import locationStore, { LocationProps } from './stores/LocationStore';
 import WorkspaceStyle from './WorkspaceStyle';
 
 export interface WorkspaceProps {
-    location?: LocationProps;
+  location?: LocationProps;
 }
 
 class Workspace extends Stateless<WorkspaceProps> {
-    constructor(props: any) {
-        super(props);
-    }
-    public render(): JSX.Element {
-        return (
-            <div>
-                <Navbar isFixed={Vertical.top}>
-                    <Container>
-                        <NavbarBrand>
-                            <NavbarItem href="/">
-                                <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
-                            </NavbarItem>
-                            <NavbarItem href="https://github.com/wasabi-io/rebul" target="_blank">
-                                <Icon icon="github" size={IconSize.lg} style={{ display: "inline" }} />
-                            </NavbarItem>
-                        </NavbarBrand>
-                    </Container>
-                </Navbar>
+  constructor(props: any) {
+    super(props);
+  }
+  public render(): JSX.Element {
+    return (
+      <div>
+        <Navbar isFixed={Vertical.top}>
+          <Container>
+            <NavbarBrand>
+              <NavbarItem href="/">
+                <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
+              </NavbarItem>
+              <NavbarItem href="https://github.com/wasabi-io/rebul" target="_blank">
+                <Icon icon="github" size={IconSize.lg} style={{ display: 'inline' }} />
+              </NavbarItem>
+            </NavbarBrand>
+          </Container>
+        </Navbar>
 
-                <div className={WorkspaceStyle.mainContent}>
-                    <Hero className={WorkspaceStyle.isLink}>
-                        <HeroBody>
-                            <Container>
-                                <Columns isVcentered>
-                                    <Column>
-                                        <Title style={{ color: "white" }}>Documentation</Title>
-                                        <SubTitle style={{ color: "white" }}>
-                                            Everything you need to <strong style={{ color: "white" }}>create a website</strong> with Bulma
+        <div className={WorkspaceStyle.mainContent}>
+          <Hero className={WorkspaceStyle.isLink}>
+            <HeroBody>
+              <Container>
+                <Columns isVcentered>
+                  <Column>
+                    <Title style={{ color: 'white' }}>Documentation</Title>
+                    <SubTitle style={{ color: 'white' }}>
+                      Everything you need to <strong style={{ color: 'white' }}>create a website</strong> with Bulma
                                     </SubTitle>
-                                    </Column>
-                                </Columns>
-                            </Container>
-                        </HeroBody>
-                        <HeroFoot>
-                            <Container>
-                                <MainNavigation />
-                            </Container>
-                        </HeroFoot>
-                    </Hero>
+                  </Column>
+                </Columns>
+              </Container>
+            </HeroBody>
+            <HeroFoot>
+              <Container>
+                <MainNavigation />
+              </Container>
+            </HeroFoot>
+          </Hero>
 
-                    <Container>
-                        {this.props.children}
-                    </Container>
-                </div>
-            </div >
-        );
-    }
+          <Container>
+            {this.props.children}
+          </Container>
+        </div>
+      </div >
+    );
+  }
 
-    componentWillReceiveProps(nextProps: WorkspaceProps) {
-        if (nextProps.location !== this.props.location) {
-            this.configure(nextProps.location);
-        }
+  componentWillReceiveProps(nextProps: WorkspaceProps) {
+    if (nextProps.location !== this.props.location) {
+      this.configure(nextProps.location);
     }
+  }
 
-    componentWillMount() {
-        this.configure(this.props.location);
-    }
+  componentWillMount() {
+    this.configure(this.props.location);
+  }
 
-    private configure(location: LocationProps) {
-        locationStore.setLocation(location);
-    }
+  private configure(location: LocationProps) {
+    locationStore.setLocation(location);
+  }
 }
 export default withRouter(Workspace);

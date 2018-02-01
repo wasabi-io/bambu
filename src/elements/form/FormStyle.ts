@@ -1,3 +1,3 @@
-const FormStyle = require("./form.scss");
+const FormStyle = require('./form.scss');
 
 export default FormStyle;

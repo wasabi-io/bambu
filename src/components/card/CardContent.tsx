@@ -8,24 +8,24 @@ export type CardContentProps = HTMLDivProps;
 
 const CardContent: React.SFC<CardContentProps> = (props: CardContentProps) => {
 
-    const { className, ...cardContentProps } = props;
+  const { className, ...cardContentProps } = props;
 
-    const classNames = ClassNames([
-        CardStyle.cardContent,
-        className
-    ]);
+  const classNames = ClassNames([
+    CardStyle.cardContent,
+    className
+  ]);
 
-    return (
-        <div className={classNames} {...cardContentProps} >
-            {props.children}
-        </div>
-    );
+  return (
+    <div className={classNames} {...cardContentProps} >
+      {props.children}
+    </div>
+  );
 };
 
 CardContent.propTypes = HTMLComponent.propTypes;
 
 CardContent.defaultProps = HTMLComponent.defaultProps;
 
-CardContent.displayName = "CardContent";
+CardContent.displayName = 'CardContent';
 
 export default CardContent;

@@ -1,9 +1,9 @@
-import Objects from "wasabi-common/lib/types/Objects";
+import Objects from 'wasabi-common/lib/types/Objects';
 
 export enum Alignment {
-    left = "isLeft",
-    center = "isCentered",
-    right = "isRight"
+  left = 'isLeft',
+  center = 'isCentered',
+  right = 'isRight'
 }
 
 export const AlignmentValues = Objects.values(Alignment);

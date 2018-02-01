@@ -10,35 +10,35 @@ import TitleStyle from './TitleStyle';
  * Refers Html Props and Additional Props.
  */
 export interface TitleProps extends HTMLPProps {
-    size?: string | Size6;
-    tagName?: string;
+  size?: string | Size6;
+  tagName?: string;
 }
 
 const Title: React.SFC<TitleProps> = (props: TitleProps) => {
 
-    const { tagName, size, className, ...titleProps } = props;
+  const { tagName, size, className, ...titleProps } = props;
 
-    const classNames = ClassNames([
-        TitleStyle.title,
-        TitleStyle[size],
-        className
-    ]);
+  const classNames = ClassNames([
+    TitleStyle.title,
+    TitleStyle[size],
+    className
+  ]);
 
-    (titleProps as any).className = classNames;
-    return React.createElement(tagName, titleProps, props.children);
+  (titleProps as any).className = classNames;
+  return React.createElement(tagName, titleProps, props.children);
 };
 
 Title.propTypes = {
-    ...HTMLComponent.propTypes,
-    size: PropTypes.oneOf(Size6Values),
-    tagName: PropTypes.string
+  ...HTMLComponent.propTypes,
+  size: PropTypes.oneOf(Size6Values),
+  tagName: PropTypes.string
 };
 
 Title.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    tagName: "h1"
+  ...HTMLComponent.defaultProps,
+  tagName: 'h1'
 };
 
-Title.displayName = "Title";
+Title.displayName = 'Title';
 
 export default Title;

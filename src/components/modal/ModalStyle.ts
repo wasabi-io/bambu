@@ -1,2 +1,2 @@
-const ModalStyle = require("./modal.scss");
+const ModalStyle = require('./modal.scss');
 export default ModalStyle;

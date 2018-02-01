@@ -1,2 +1,2 @@
-const NotificationStyle = require("./notification.scss");
+const NotificationStyle = require('./notification.scss');
 export default NotificationStyle;

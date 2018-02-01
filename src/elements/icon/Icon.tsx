@@ -14,47 +14,47 @@ export type IconOptions = string | FaIconProps | JSX.Element;
  * Refers Html Props and Additional Props.
  */
 export interface IconProps extends HTMLSpanProps {
-    icon: string | IconOptions;
-    size?: string | IconSize;
+  icon: string | IconOptions;
+  size?: string | IconSize;
 }
 
 export default class Icon extends HTMLComponent<IconProps> {
-    public static propTypes = {
-        ...HTMLComponent.propTypes,
-        icon: PropTypes.any,
-        size: PropTypes.oneOf(IconSizeValues),
-    };
+  public static propTypes = {
+    ...HTMLComponent.propTypes,
+    icon: PropTypes.any,
+    size: PropTypes.oneOf(IconSizeValues),
+  };
 
-    public static defaultProps = HTMLComponent.defaultProps;
+  public static defaultProps = HTMLComponent.defaultProps;
 
-    public static renderIcon(icon: IconOptions, size?: string | IconSize) {
-        if (!has(icon)) {
-            return null;
-        }
-        if (typeof icon === "string") {
-            return <FaIcon name={icon} size={size} />;
-        }
-        if ((icon as any).type) {
-            if (JSXUtil.isJsx(icon)) {
-                return icon as JSX.Element;
-            }
-        }
-
-        return <FaIcon {...icon as FaIconProps} />;
+  public static renderIcon(icon: IconOptions, size?: string | IconSize) {
+    if (!has(icon)) {
+      return null;
+    }
+    if (typeof icon === 'string') {
+      return <FaIcon name={icon} size={size} />;
+    }
+    if ((icon as any).type) {
+      if (JSXUtil.isJsx(icon)) {
+        return icon as JSX.Element;
+      }
     }
 
-    public render() {
-        const { size, icon, className, ...props } = this.props;
+    return <FaIcon {...icon as FaIconProps} />;
+  }
 
-        const classNames = ClassNames(
-            IconStyle.icon,
-            className
-        );
+  public render() {
+    const { size, icon, className, ...props } = this.props;
 
-        return (
-            <span className={IconStyle.icon} {...props} >
-                {Icon.renderIcon(icon, size)}
-            </span>
-        );
-    }
+    const classNames = ClassNames(
+      IconStyle.icon,
+      className
+    );
+
+    return (
+      <span className={IconStyle.icon} {...props} >
+        {Icon.renderIcon(icon, size)}
+      </span>
+    );
+  }
 }

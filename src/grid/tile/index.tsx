@@ -1,1 +1,1 @@
-export { default as Tile, TileProps, TileContext } from "./Tile";
+export { default as Tile, TileProps, TileContext } from './Tile';

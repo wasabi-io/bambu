@@ -1,1 +1,1 @@
-export enum Orientation { "vertical", "horizontal" }
+export enum Orientation { 'vertical', 'horizontal' }

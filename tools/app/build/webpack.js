@@ -33,7 +33,7 @@ settings.webpack.devtool = "source-map";
 settings
     .webpack
     .plugins
-    .push(new WebpackNotifierPlugin({alwaysNotify: true}));
+    .push(new WebpackNotifierPlugin({alwaysNotify: false}));
 settings
     .webpack
     .plugins

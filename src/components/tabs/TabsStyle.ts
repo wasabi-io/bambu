@@ -1,3 +1,3 @@
-const TabsStyle = require("./tabs.scss");
+const TabsStyle = require('./tabs.scss');
 
 export default TabsStyle;

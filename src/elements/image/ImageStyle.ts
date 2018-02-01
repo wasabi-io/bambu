@@ -1,3 +1,3 @@
-const ImageStyle = require("./image.scss");
+const ImageStyle = require('./image.scss');
 
 export default ImageStyle;

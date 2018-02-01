@@ -8,28 +8,28 @@ export interface ModalCardFooterProps extends HTMLSectionProps {
 }
 
 const ModalCardFooter: React.SFC<ModalCardFooterProps> = (props: ModalCardFooterProps) => {
-    const { className, ...modalCardFooterProps } = props;
+  const { className, ...modalCardFooterProps } = props;
 
-    const classNames = ClassNames(
-        ModalStyle.modalCardFoot,
-        className
-    );
+  const classNames = ClassNames(
+    ModalStyle.modalCardFoot,
+    className
+  );
 
-    return (
-        <footer className={classNames} {...modalCardFooterProps}>
-            {props.children}
-        </footer>
-    );
+  return (
+    <footer className={classNames} {...modalCardFooterProps}>
+      {props.children}
+    </footer>
+  );
 };
 
 ModalCardFooter.propTypes = {
-    ...HTMLComponent.propTypes
+  ...HTMLComponent.propTypes
 };
 
 ModalCardFooter.defaultProps = {
-    ...HTMLComponent.defaultProps
+  ...HTMLComponent.defaultProps
 };
 
-ModalCardFooter.displayName = "ModalCardFooter";
+ModalCardFooter.displayName = 'ModalCardFooter';
 
 export default ModalCardFooter;

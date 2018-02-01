@@ -1,3 +1,3 @@
-const IconStyle = require("./icon.scss");
+const IconStyle = require('./icon.scss');
 
 export default IconStyle;

@@ -1,2 +1,2 @@
-const FooterStyle = require("./footer.scss");
+const FooterStyle = require('./footer.scss');
 export default FooterStyle;

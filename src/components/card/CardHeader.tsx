@@ -7,24 +7,24 @@ import HTMLComponent, { HTMLElementProps } from '../../base/html/HTML';
 export type CardHeaderProps = HTMLElementProps;
 
 const CardHeader: React.SFC<CardHeaderProps> = (props: CardHeaderProps) => {
-    const { className, ...cardHeaderProps } = props;
+  const { className, ...cardHeaderProps } = props;
 
-    const classNames = ClassNames([
-        CardStyle.cardHeader,
-        className
-    ]);
+  const classNames = ClassNames([
+    CardStyle.cardHeader,
+    className
+  ]);
 
-    return (
-        <header className={classNames} {...cardHeaderProps} >
-            {props.children}
-        </header>
-    );
+  return (
+    <header className={classNames} {...cardHeaderProps} >
+      {props.children}
+    </header>
+  );
 };
 
 CardHeader.propTypes = HTMLComponent.propTypes;
 
 CardHeader.defaultProps = HTMLComponent.defaultProps;
 
-CardHeader.displayName = "CardHeader";
+CardHeader.displayName = 'CardHeader';
 
 export default CardHeader;

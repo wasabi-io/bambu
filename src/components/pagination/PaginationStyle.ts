@@ -1,3 +1,3 @@
-const PaginationStyle = require("./pagination.scss");
+const PaginationStyle = require('./pagination.scss');
 
 export default PaginationStyle;

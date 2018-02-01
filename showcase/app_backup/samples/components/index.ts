@@ -1,5 +1,5 @@
-import MenuSample from "./menu";
+import MenuSample from './menu';
 
 export default [
-    MenuSample
+  MenuSample
 ];

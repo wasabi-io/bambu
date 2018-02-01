@@ -9,22 +9,22 @@ export type TFootProps = HTMLTfootProps;
 
 const TFoot: React.SFC<TFootProps> = (props: TFootProps) => {
 
-    const { className, ...tFootProps } = props;
+  const { className, ...tFootProps } = props;
 
-    const classNames = ClassNames(
-        TableStyle.tfoot,
-        className
-    );
+  const classNames = ClassNames(
+    TableStyle.tfoot,
+    className
+  );
 
-    return (
-        <tfoot className={classNames} {...tFootProps} >
-            {props.children}
-        </tfoot>
-    );
+  return (
+    <tfoot className={classNames} {...tFootProps} >
+      {props.children}
+    </tfoot>
+  );
 };
 
 TFoot.propTypes = HTMLComponent.propTypes;
 TFoot.defaultProps = HTMLComponent.defaultProps;
-TFoot.displayName = "TFoot";
+TFoot.displayName = 'TFoot';
 
 export default TFoot;

@@ -10,32 +10,32 @@ import LevelStyle from './LevelStyle';
  * Refers Html Props and Additional Props.
  */
 export interface LevelProps extends HTMLElementProps {
-    responsive?: Responsive;
+  responsive?: Responsive;
 }
 
 const Level: React.SFC<LevelProps> = (props: LevelProps) => {
-    const { responsive, className, ...levelProps } = props;
+  const { responsive, className, ...levelProps } = props;
 
-    const classNames = ClassNames(
-        LevelStyle.level,
-        LevelStyle[responsive],
-        className
-    );
+  const classNames = ClassNames(
+    LevelStyle.level,
+    LevelStyle[responsive],
+    className
+  );
 
-    return (
-        <nav className={classNames} {...levelProps} >
-            {props.children}
-        </nav>
-    );
+  return (
+    <nav className={classNames} {...levelProps} >
+      {props.children}
+    </nav>
+  );
 };
 
 Level.propTypes = {
-    ...HTMLComponent.propTypes,
-    responsive: PropTypes.oneOf(ResponsiveValues),
+  ...HTMLComponent.propTypes,
+  responsive: PropTypes.oneOf(ResponsiveValues),
 };
 
 Level.defaultProps = HTMLComponent.defaultProps;
 
-Level.displayName = "Level";
+Level.displayName = 'Level';
 
 export default Level;

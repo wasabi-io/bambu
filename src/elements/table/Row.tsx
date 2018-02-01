@@ -6,37 +6,37 @@ import HTMLComponent, { HTMLTrProps } from '../../base/html/HTML';
 import TableStyle from './TableStyle';
 
 export interface RowProps extends HTMLTrProps {
-    isSelected?: boolean
+  isSelected?: boolean
 }
 
 const Row: React.SFC<RowProps> = (props: RowProps) => {
 
-    const { className, isSelected, ...rowProps } = props;
+  const { className, isSelected, ...rowProps } = props;
 
-    const classNames = ClassNames(
-        TableStyle.tr,
-        className,
-        { [`${TableStyle.isSelected}`]: isSelected },
-    );
+  const classNames = ClassNames(
+    TableStyle.tr,
+    className,
+    { [`${TableStyle.isSelected}`]: isSelected },
+  );
 
-    return (
-        <tr className={classNames} {...rowProps} >
-            {props.children}
-        </tr>
-    );
+  return (
+    <tr className={classNames} {...rowProps} >
+      {props.children}
+    </tr>
+  );
 };
 
 
 Row.propTypes = {
-    ...HTMLComponent.propTypes,
-    isSelected: PropTypes.bool
+  ...HTMLComponent.propTypes,
+  isSelected: PropTypes.bool
 };
 
 Row.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isSelected: false
+  ...HTMLComponent.defaultProps,
+  isSelected: false
 };
 
-Row.displayName = "Row";
+Row.displayName = 'Row';
 
 export default Row;

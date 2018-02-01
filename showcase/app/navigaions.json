@@ -1,20 +1,20 @@
 [
-    {
-        "text": "Overview",
-        "path": "overview",
-        "module": "overview/index",
-        "start": "/overview/start"
-    },
-    {
-        "text": "Columns",
-        "path": "columns",
-        "module": "columns/index",
-        "start": "/columns/hello"
-    },
-    {
-        "text": "Layout",
-        "path": "layout",
-        "module": "layout/index",
-        "start": "/layout/container"
-    }
+  {
+    "text": "Overview",
+    "path": "overview",
+    "module": "overview/index",
+    "start": "/overview/start"
+  },
+  {
+    "text": "Columns",
+    "path": "columns",
+    "module": "columns/index",
+    "start": "/columns/hello"
+  },
+  {
+    "text": "Layout",
+    "path": "layout",
+    "module": "layout/index",
+    "start": "/layout/container"
+  }
 ]

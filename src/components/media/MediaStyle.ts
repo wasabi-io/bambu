@@ -1,3 +1,3 @@
-const MediaStyle = require("./media.scss");
+const MediaStyle = require('./media.scss');
 
 export default MediaStyle;

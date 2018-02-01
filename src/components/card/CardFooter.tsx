@@ -7,24 +7,24 @@ import HTMLComponent, { HTMLElementProps } from '../../base/html/HTML';
 export type CardFooterProps = HTMLElementProps;
 
 const CardFooter: React.SFC<CardFooterProps> = (props: CardFooterProps) => {
-    const { className, ...cardFooterProps } = props;
+  const { className, ...cardFooterProps } = props;
 
-    const classNames = ClassNames([
-        CardStyle.cardFooter,
-        className
-    ]);
+  const classNames = ClassNames([
+    CardStyle.cardFooter,
+    className
+  ]);
 
-    return (
-        <footer className={classNames} {...cardFooterProps} >
-            {props.children}
-        </footer>
-    );
+  return (
+    <footer className={classNames} {...cardFooterProps} >
+      {props.children}
+    </footer>
+  );
 };
 
 CardFooter.propTypes = HTMLComponent.propTypes;
 
 CardFooter.defaultProps = HTMLComponent.defaultProps;
 
-CardFooter.displayName = "CardFooter";
+CardFooter.displayName = 'CardFooter';
 
 export default CardFooter;

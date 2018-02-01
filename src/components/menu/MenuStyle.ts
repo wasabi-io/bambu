@@ -1,3 +1,3 @@
-const MenuStyle = require("./menu.scss");
+const MenuStyle = require('./menu.scss');
 
 export default MenuStyle;

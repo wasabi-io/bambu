@@ -7,24 +7,24 @@ import HTMLComponent, { HTMLSpanProps } from '../../base/html/HTML';
 export type CardFooterItemProps = HTMLSpanProps;
 
 const CardFooterItem: React.SFC<CardFooterItemProps> = (props: CardFooterItemProps) => {
-    const { className, ...cardFooterItemProps } = props;
+  const { className, ...cardFooterItemProps } = props;
 
-    const classNames = ClassNames([
-        CardStyle.cardFooterItem,
-        className
-    ]);
+  const classNames = ClassNames([
+    CardStyle.cardFooterItem,
+    className
+  ]);
 
-    return (
-        <span className={classNames} {...cardFooterItemProps}>
-            {props.children}
-        </span>
-    );
+  return (
+    <span className={classNames} {...cardFooterItemProps}>
+      {props.children}
+    </span>
+  );
 };
 
 CardFooterItem.propTypes = HTMLComponent.propTypes;
 
 CardFooterItem.defaultProps = HTMLComponent.defaultProps;
 
-CardFooterItem.displayName = "CardFooterItem";
+CardFooterItem.displayName = 'CardFooterItem';
 
 export default CardFooterItem;
