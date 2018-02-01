@@ -85,7 +85,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1535a2f1061201c4109f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0d14647df375e6a34062"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -935,7 +935,7 @@ AbstractDom.propTypes = {
     style: PropTypes.object,
 };
 AbstractDom.defaultProps = {
-    className: "",
+    className: '',
     style: {},
 };
 exports.default = AbstractDom;
@@ -3081,26 +3081,26 @@ class Page extends Stateless_1.default {
             this.props.title && React.createElement(title_1.Title, null, this.props.title),
             this.props.subTitle && React.createElement(title_1.SubTitle, null, this.props.subTitle),
             this.props.hasMeta && React.createElement(form_1.Field, { isGrouped: true, isGroupedMultiline: true },
-                this.checkAttributes(this.props.colors, "Colors"),
-                this.checkAttributes(this.props.sizes, "Sizes"),
-                this.checkAttributes(this.props.variables, "Variables")),
+                this.checkAttributes(this.props.colors, 'Colors'),
+                this.checkAttributes(this.props.sizes, 'Sizes'),
+                this.checkAttributes(this.props.variables, 'Variables')),
             React.createElement("hr", null),
             React.createElement(content_1.Content, null, this.props.children)));
     }
     checkAttributes(value, text) {
         let attr = {};
         if (value) {
-            // attr["tagName"] = "a";
-            // attr["href"] = "#" + text;
-            attr["color"] = css_1.Color.success;
+            // attr['tagName'] = 'a';
+            // attr['href'] = '#' + text;
+            attr['color'] = css_1.Color.success;
         }
         else {
-            attr["color"] = css_1.Color.danger;
+            attr['color'] = css_1.Color.danger;
         }
         return React.createElement(form_1.Control, null,
             React.createElement(tag_1.Tags, { hasAddons: true },
                 React.createElement(tag_1.Tag, null, text),
-                React.createElement(tag_1.Tag, Object.assign({}, attr), value ? "YES" : "NO")));
+                React.createElement(tag_1.Tag, Object.assign({}, attr), value ? 'YES' : 'NO')));
     }
 }
 exports.default = Page;
@@ -3802,7 +3802,7 @@ exports = module.exports = __webpack_require__(6)(false);
 
 
 // module
-exports.push([module.i, "html, body {\n  font-size: 16px;\n  line-height: 1.5;\n  height: 100%;\n  background: white;\n  overflow: hidden; }\n\nbody,\nbutton,\ninput,\nselect,\ntextarea {\n  font-family: BlinkMacSystemFont, -apple-system, \"Segoe UI\", \"Roboto\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", \"Helvetica\", \"Arial\", sans-serif; }\n\n._2FVKk7QNsITTnB9KSAP4Mh {\n  position: absolute;\n  height: 95%;\n  left: 0;\n  right: 0;\n  margin-top: 52px;\n  overflow-x: hidden;\n  overflow-y: auto;\n  -webkit-overflow-scrolling: touch; }\n\n._1_4NQCS7ggoj5e0QD3Wzcd {\n  background-color: #3273dc;\n  color: #fff; }\n\n._2BLapBIK-XwtYn5bJNjOqL a {\n  color: #fff !important; }\n\n._2BLapBIK-XwtYn5bJNjOqL a:hover {\n  background-color: rgba(10, 10, 10, 0.1) !important; }\n", ""]);
+exports.push([module.i, "html, body {\n  font-size: 16px;\n  line-height: 1.5;\n  height: 100%;\n  background: white;\n  overflow: hidden; }\n\nbody,\nbutton,\ninput,\nselect,\ntextarea {\n  font-family: BlinkMacSystemFont, -apple-system, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif; }\n\n._2FVKk7QNsITTnB9KSAP4Mh {\n  position: absolute;\n  height: 95%;\n  left: 0;\n  right: 0;\n  margin-top: 52px;\n  overflow-x: hidden;\n  overflow-y: auto;\n  -webkit-overflow-scrolling: touch; }\n\n._1_4NQCS7ggoj5e0QD3Wzcd {\n  background-color: #3273dc;\n  color: #fff; }\n\n._2BLapBIK-XwtYn5bJNjOqL a {\n  color: #fff !important; }\n\n._2BLapBIK-XwtYn5bJNjOqL a:hover {\n  background-color: rgba(10, 10, 10, 0.1) !important; }\n", ""]);
 
 // exports
 exports.locals = {
@@ -6202,13 +6202,13 @@ class LocationStore {
         return this._location;
     }
     setLocation(location) {
-        if (!location.pathname.endsWith("/")) {
-            location.pathname += "/";
+        if (!location.pathname.endsWith('/')) {
+            location.pathname += '/';
         }
         this._location = location;
     }
     getPaths() {
-        return this._location.pathname.split("/").filter(function (item) {
+        return this._location.pathname.split('/').filter((item) => {
             if (item && isNaN(item))
                 return item;
         });
@@ -7447,16 +7447,16 @@ var IconEffect;
 class FaIcon extends HTML_1.default {
     static iconName(name) {
         if (!wasabi_common_1.has(name)) {
-            return "";
+            return '';
         }
         const prefix = name.substring(0, 3);
         switch (prefix) {
-            case "fa ":
+            case 'fa ':
                 return name;
-            case "fa-":
-                return "fa " + name;
+            case 'fa-':
+                return 'fa ' + name;
             default:
-                return "fa fa-" + name;
+                return 'fa fa-' + name;
         }
     }
     static preEffect(effect) {
@@ -7480,12 +7480,12 @@ class FaIcon extends HTML_1.default {
     render() {
         const _a = this.props, { className, ariaHidden, border, effect, fixed, flip, inverse, isList, name, pull, rotate, size, stack } = _a, props = __rest(_a, ["className", "ariaHidden", "border", "effect", "fixed", "flip", "inverse", "isList", "name", "pull", "rotate", "size", "stack"]);
         const classNames = ClassNames(FaIcon.preEffect(effect), FaIcon.preFlip(flip), FaIcon.iconName(name), FaIcon.prePull(pull), FaIcon.preRotate(rotate), FaIcon.preSize(size), FaIcon.preStack(stack), {
-            "fa-border": border,
-            "fa-fw": fixed,
-            "fa-inverse": inverse,
-            "fa-li": isList,
+            'fa-border': border,
+            'fa-fw': fixed,
+            'fa-inverse': inverse,
+            'fa-li': isList,
         }, className);
-        return (React.createElement("i", Object.assign({ className: classNames, "aria-hidden": ariaHidden + "" }, props)));
+        return (React.createElement("i", Object.assign({ className: classNames, "aria-hidden": ariaHidden + '' }, props)));
     }
 }
 FaIcon.propTypes = Object.assign({}, HTML_1.default.propTypes, { ariaHidden: PropTypes.bool, border: PropTypes.bool, effect: PropTypes.oneOf(wasabi_common_1.Objects.values(IconEffect)), fixed: PropTypes.bool, flip: PropTypes.oneOf(wasabi_common_1.Objects.values(css_1.Orientation)), inverse: PropTypes.bool, isList: PropTypes.bool, name: PropTypes.string.isRequired, pull: PropTypes.oneOf(wasabi_common_1.Objects.values(css_1.Horizontal)), rotate: PropTypes.number, size: PropTypes.oneOf(wasabi_common_1.Objects.values(IconSize)), stack: PropTypes.oneOf(wasabi_common_1.Objects.values(IconStack)) });
@@ -11453,7 +11453,7 @@ module.exports = __webpack_require__(105);
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const Application_1 = __webpack_require__(106);
-const options = JSON.parse(JSON.stringify({"mountId":"app_container","api":"http://localhost:3000"}));
+const options = JSON.parse(JSON.stringify({"mountId":"app_container","api":"http://localhost:3000","base":"/rebul/"}));
 const application = new Application_1.default(options);
 application.render();
 
@@ -12592,7 +12592,7 @@ const Content = (props) => {
 };
 Content.propTypes = HTML_1.default.propTypes;
 Content.defaultProps = HTML_1.default.defaultProps;
-Content.displayName = "Content";
+Content.displayName = 'Content';
 exports.default = Content;
 
 
@@ -12671,7 +12671,7 @@ const Form = (props) => {
 };
 Form.propTypes = HTML_1.default.propTypes;
 Form.defaultProps = HTML_1.default.defaultProps;
-Form.displayName = "Form";
+Form.displayName = 'Form';
 exports.default = Form;
 
 
@@ -12713,7 +12713,7 @@ const Field = (props) => {
 };
 Field.propTypes = Object.assign({}, HTML_1.default.propTypes, { hasAddons: PropTypes.bool, hasAddonsCentered: PropTypes.bool, hasAddonsRight: PropTypes.bool, isHorizontal: PropTypes.bool, isGrouped: PropTypes.bool, isGroupedCentered: PropTypes.bool, isGroupedMultiline: PropTypes.bool, isGroupedRight: PropTypes.bool, isNarrow: PropTypes.bool });
 Field.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { hasAddons: false, hasAddonsCentered: false, hasAddonsRight: false, isHorizontal: false, isGrouped: false, isGroupedCentered: false, isGroupedMultiline: false, isGroupedRight: false, isNarrow: false });
-Field.displayName = "Field";
+Field.displayName = 'Field';
 exports.default = Field;
 
 
@@ -12781,7 +12781,7 @@ const Control = (props) => {
 };
 Control.propTypes = Object.assign({}, HTML_1.default.propTypes, { hasIconsLeft: PropTypes.bool, hasIconsRight: PropTypes.bool, isExpanded: PropTypes.bool });
 Control.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { hasIconsLeft: false, hasIconsRight: false, isExpanded: false, isLoading: false });
-Control.displayName = "Control";
+Control.displayName = 'Control';
 exports.default = Control;
 
 
@@ -12817,7 +12817,7 @@ const ControlLabel = (props) => {
 };
 ControlLabel.propTypes = Object.assign({}, HTML_1.default.propTypes, { size: PropTypes.oneOf(css_1.SizeValues) });
 ControlLabel.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { isRadio: false });
-ControlLabel.displayName = "ControlLabel";
+ControlLabel.displayName = 'ControlLabel';
 exports.default = ControlLabel;
 
 
@@ -12854,7 +12854,7 @@ const FieldHelp = (props) => {
 };
 FieldHelp.propTypes = Object.assign({}, HTML_1.default.propTypes, { color: PropTypes.oneOf(css_1.colorValues) });
 FieldHelp.defaultProps = HTML_1.default.defaultProps;
-FieldHelp.displayName = "FieldHelp";
+FieldHelp.displayName = 'FieldHelp';
 exports.default = FieldHelp;
 
 
@@ -12901,13 +12901,13 @@ const HTML_1 = __webpack_require__(3);
 const FormStyle_1 = __webpack_require__(12);
 const Input = (props) => {
     const { color, iSize, state, type, className } = props, inputProps = __rest(props, ["color", "iSize", "state", "type", "className"]);
-    const typeClass = (!type || type === "text") ? "input" : type;
+    const typeClass = (!type || type === 'text') ? 'input' : type;
     const classNames = ClassNames(FormStyle_1.default[typeClass], FormStyle_1.default[color], FormStyle_1.default[iSize], FormStyle_1.default[state], className);
     return (React.createElement("input", Object.assign({ type: type, className: classNames }, inputProps), props.children));
 };
 Input.propTypes = Object.assign({}, HTML_1.default.propTypes, { color: PropTypes.oneOf(css_1.colorValues), iSize: PropTypes.oneOf(css_1.SizeValues), state: PropTypes.oneOf(state_1.StateValues) });
 Input.defaultProps = HTML_1.default.defaultProps;
-Input.displayName = "Input";
+Input.displayName = 'Input';
 exports.default = Input;
 
 
@@ -12944,7 +12944,7 @@ const Select = (props) => {
 };
 Select.propTypes = Object.assign({}, HTML_1.default.propTypes, { color: PropTypes.oneOf(css_1.colorValues), size: PropTypes.oneOf(css_1.SizeValues), state: PropTypes.oneOf(state_1.StateValues) });
 Select.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { multiple: false });
-Select.displayName = "Select";
+Select.displayName = 'Select';
 exports.default = Select;
 
 
@@ -12978,7 +12978,7 @@ const TextArea = (props) => {
 };
 TextArea.propTypes = Object.assign({}, HTML_1.default.propTypes, { color: PropTypes.oneOf(css_1.colorValues), size: PropTypes.oneOf(css_1.SizeValues), state: PropTypes.oneOf(state_1.StateValues) });
 TextArea.defaultProps = HTML_1.default.defaultProps;
-TextArea.displayName = "TextArea";
+TextArea.displayName = 'TextArea';
 exports.default = TextArea;
 
 
@@ -13033,8 +13033,8 @@ const Tag = (props) => {
     return React.createElement(tagName, tagProps, props.children);
 };
 Tag.propTypes = Object.assign({}, HTML_1.default.propTypes, { color: PropTypes.oneOf(css_1.colorValues), bSize: PropTypes.oneOf(css_1.SizeValues) });
-Tag.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { tagName: "span" });
-Tag.displayName = "Tag";
+Tag.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { tagName: 'span' });
+Tag.displayName = 'Tag';
 exports.default = Tag;
 
 
@@ -13100,7 +13100,7 @@ const Tags = (props) => {
 };
 Tags.propTypes = Object.assign({}, HTML_1.default.propTypes, { color: PropTypes.oneOf(css_1.colorValues), size: PropTypes.oneOf(css_1.SizeValues) });
 Tags.defaultProps = HTML_1.default.defaultProps;
-Tags.displayName = "Tag";
+Tags.displayName = 'Tag';
 exports.default = Tags;
 
 
@@ -13137,8 +13137,8 @@ const Title = (props) => {
     return React.createElement(tagName, titleProps, props.children);
 };
 Title.propTypes = Object.assign({}, HTML_1.default.propTypes, { size: PropTypes.oneOf(css_1.Size6Values), tagName: PropTypes.string });
-Title.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { tagName: "h1" });
-Title.displayName = "Title";
+Title.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { tagName: 'h1' });
+Title.displayName = 'Title';
 exports.default = Title;
 
 
@@ -13202,8 +13202,8 @@ const SubTitle = (props) => {
     return React.createElement(tagName, subTitleProps, props.children);
 };
 SubTitle.propTypes = Object.assign({}, HTML_1.default.propTypes, { size: PropTypes.oneOf(css_1.Size6Values) });
-SubTitle.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { tagName: "h2" });
-SubTitle.displayName = "SubTitle";
+SubTitle.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { tagName: 'h2' });
+SubTitle.displayName = 'SubTitle';
 exports.default = SubTitle;
 
 
@@ -13250,7 +13250,7 @@ const Section = (props) => {
 };
 Section.propTypes = Object.assign({}, HTML_1.default.propTypes, { size: PropTypes.oneOf(css_1.SizeValues) });
 Section.defaultProps = Object.assign({}, HTML_1.default.defaultProps);
-Section.displayName = "Section";
+Section.displayName = 'Section';
 exports.default = Section;
 
 
@@ -16042,17 +16042,17 @@ class Workspace extends Stateless_1.default {
                         React.createElement(navbar_1.NavbarItem, { href: "/" },
                             React.createElement("img", { src: "https://bulma.io/images/bulma-logo.png", alt: "Bulma: a modern CSS framework based on Flexbox", width: "112", height: "28" })),
                         React.createElement(navbar_1.NavbarItem, { href: "https://github.com/wasabi-io/rebul", target: "_blank" },
-                            React.createElement(icon_1.Icon, { icon: "github", size: icon_1.IconSize.lg, style: { display: "inline" } }))))),
+                            React.createElement(icon_1.Icon, { icon: "github", size: icon_1.IconSize.lg, style: { display: 'inline' } }))))),
             React.createElement("div", { className: WorkspaceStyle_1.default.mainContent },
                 React.createElement(hero_1.Hero, { className: WorkspaceStyle_1.default.isLink },
                     React.createElement(hero_1.HeroBody, null,
                         React.createElement(container_1.Container, null,
                             React.createElement(column_1.Columns, { isVcentered: true },
                                 React.createElement(column_1.Column, null,
-                                    React.createElement(title_1.Title, { style: { color: "white" } }, "Documentation"),
-                                    React.createElement(title_1.SubTitle, { style: { color: "white" } },
+                                    React.createElement(title_1.Title, { style: { color: 'white' } }, "Documentation"),
+                                    React.createElement(title_1.SubTitle, { style: { color: 'white' } },
                                         "Everything you need to ",
-                                        React.createElement("strong", { style: { color: "white" } }, "create a website"),
+                                        React.createElement("strong", { style: { color: 'white' } }, "create a website"),
                                         " with Bulma"))))),
                     React.createElement(hero_1.HeroFoot, null,
                         React.createElement(container_1.Container, null,
@@ -16166,8 +16166,8 @@ const Navbar = (props) => {
     return (React.createElement("nav", Object.assign({ className: classNames, "aria-label": `${arialLabel} navigation` }, navbarProps), props.children));
 };
 Navbar.propTypes = Object.assign({}, HTML_1.default.propTypes, { arialLabel: PropTypes.oneOf(wasabi_common_1.Objects.values(navBarArialLabel)), color: PropTypes.oneOf(css_1.colorValues), isFixed: PropTypes.oneOf(css_1.verticalValues), hasShadow: PropTypes.bool, role: PropTypes.oneOf(wasabi_common_1.Objects.values(navBarRole)), isTransparent: PropTypes.bool });
-Navbar.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { arialLabel: "main", hasShadow: false, role: navBarRole.navigation, isTransparent: false });
-Navbar.displayName = "Navbar";
+Navbar.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { arialLabel: 'main', hasShadow: false, role: navBarRole.navigation, isTransparent: false });
+Navbar.displayName = 'Navbar';
 exports.default = Navbar;
 
 
@@ -16234,7 +16234,7 @@ const NavbarBrand = (props) => {
 };
 NavbarBrand.propTypes = Object.assign({}, HTML_1.default.propTypes, { hasShadow: PropTypes.bool });
 NavbarBrand.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { hasShadow: false });
-NavbarBrand.displayName = "NavbarBrand";
+NavbarBrand.displayName = 'NavbarBrand';
 exports.default = NavbarBrand;
 
 
@@ -16272,8 +16272,8 @@ const NavbarBurger = (props) => {
     return React.createElement(tagName, inputProps, [props.children, React.createElement("span", { key: "navbar-burger-span-0" }), React.createElement("span", { key: "navbar-burger-span-1" }), React.createElement("span", { key: "navbar-burger-span-2" })]);
 };
 NavbarBurger.propTypes = Object.assign({}, HTML_1.default.propTypes, { color: PropTypes.oneOf(css_1.colorValues), isActive: PropTypes.bool, tagName: PropTypes.string });
-NavbarBurger.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { isActive: false, tagName: "button" });
-NavbarBurger.displayName = "NavbarBurger";
+NavbarBurger.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { isActive: false, tagName: 'button' });
+NavbarBurger.displayName = 'NavbarBurger';
 exports.default = NavbarBurger;
 
 
@@ -16307,7 +16307,7 @@ const NavbarDivider = (props) => {
 };
 NavbarDivider.propTypes = HTML_1.default.propTypes;
 NavbarDivider.defaultProps = HTML_1.default.defaultProps;
-NavbarDivider.displayName = "NavbarDivider";
+NavbarDivider.displayName = 'NavbarDivider';
 exports.default = NavbarDivider;
 
 
@@ -16345,7 +16345,7 @@ const NavbarDropdown = (props) => {
 };
 NavbarDropdown.propTypes = Object.assign({}, HTML_1.default.propTypes, { active: PropTypes.bool, boxed: PropTypes.bool, right: PropTypes.bool });
 NavbarDropdown.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { active: false, boxed: false, right: false });
-NavbarDropdown.displayName = "NavbarDropdown";
+NavbarDropdown.displayName = 'NavbarDropdown';
 exports.default = NavbarDropdown;
 
 
@@ -16376,7 +16376,7 @@ const NavbarEnd = (props) => {
 };
 NavbarEnd.propTypes = HTML_1.default.propTypes;
 NavbarEnd.defaultProps = HTML_1.default.defaultProps;
-NavbarEnd.displayName = "NavbarEnd";
+NavbarEnd.displayName = 'NavbarEnd';
 exports.default = NavbarEnd;
 
 
@@ -16422,7 +16422,7 @@ const NavbarDropdownParent = (props) => {
 };
 NavbarDropdownParent.propTypes = Object.assign({}, HTML_1.default.propTypes, { active: PropTypes.bool, up: PropTypes.bool });
 NavbarDropdownParent.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { active: false, up: false });
-NavbarDropdownParent.displayName = "NavbarDropdownParent";
+NavbarDropdownParent.displayName = 'NavbarDropdownParent';
 exports.default = NavbarDropdownParent;
 
 
@@ -16454,7 +16454,7 @@ const NavbarItemLink = (props) => {
 };
 NavbarItemLink.propTypes = Object.assign({}, HTML_1.default.propTypes, { isActive: PropTypes.bool });
 NavbarItemLink.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { isActive: false });
-NavbarItemLink.displayName = "NavbarItemLink";
+NavbarItemLink.displayName = 'NavbarItemLink';
 exports.default = NavbarItemLink;
 
 
@@ -16490,8 +16490,8 @@ const NavbarItem = (props) => {
     return React.createElement(tagName, navbarItemProps, props.children);
 };
 NavbarItem.propTypes = Object.assign({}, HTML_1.default.propTypes, { isActive: PropTypes.bool, isHoverable: PropTypes.bool, hasDropdown: PropTypes.bool, tagName: PropTypes.string });
-NavbarItem.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { isActive: false, isHoverable: false, hasDropdown: false, tagName: "a" });
-NavbarItem.displayName = "NavbarItem";
+NavbarItem.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { isActive: false, isHoverable: false, hasDropdown: false, tagName: 'a' });
+NavbarItem.displayName = 'NavbarItem';
 exports.default = NavbarItem;
 
 
@@ -16526,7 +16526,7 @@ const NavbarLink = (props) => {
 };
 NavbarLink.propTypes = Object.assign({}, HTML_1.default.propTypes, { href: PropTypes.string });
 NavbarLink.defaultProps = Object.assign({}, HTML_1.default.defaultProps);
-NavbarLink.displayName = "NavbarLink";
+NavbarLink.displayName = 'NavbarLink';
 exports.default = NavbarLink;
 
 
@@ -16560,7 +16560,7 @@ const NavbarMenu = (props) => {
 };
 NavbarMenu.propTypes = Object.assign({}, HTML_1.default.propTypes, { isActive: PropTypes.bool });
 NavbarMenu.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { isActive: false });
-NavbarMenu.displayName = "NavbarMenu";
+NavbarMenu.displayName = 'NavbarMenu';
 exports.default = NavbarMenu;
 
 
@@ -16591,7 +16591,7 @@ const NavbarStart = (props) => {
 };
 NavbarStart.propTypes = HTML_1.default.propTypes;
 NavbarStart.defaultProps = HTML_1.default.defaultProps;
-NavbarStart.displayName = "NavbarStart";
+NavbarStart.displayName = 'NavbarStart';
 exports.default = NavbarStart;
 
 
@@ -16630,7 +16630,7 @@ const Container = (props) => {
 };
 Container.propTypes = Object.assign({}, HTML_1.default.propTypes, { isFluid: PropTypes.bool, isFullhd: PropTypes.bool, isTextCentered: PropTypes.bool, isWidescreen: PropTypes.bool });
 Container.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { isFluid: false, isFullhd: false, isTextCentered: false, isWidescreen: false });
-Container.displayName = "Container";
+Container.displayName = 'Container';
 exports.default = Container;
 
 
@@ -16716,7 +16716,7 @@ class Icon extends HTML_1.default {
         if (!wasabi_common_1.has(icon)) {
             return null;
         }
-        if (typeof icon === "string") {
+        if (typeof icon === 'string') {
             return React.createElement(FaIcon_1.default, { name: icon, size: size });
         }
         if (icon.type) {
@@ -16966,7 +16966,7 @@ const Columns = (props) => {
 };
 Columns.propTypes = Object.assign({}, HTML_1.default.propTypes, { isGapless: PropTypes.bool, isMultiline: PropTypes.bool, responsive: PropTypes.oneOf(Objects_1.default.values(css_1.Responsive)) });
 Columns.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { isGapless: false, isMultiline: false });
-Columns.displayName = "Columns";
+Columns.displayName = 'Columns';
 exports.default = Columns;
 
 
@@ -17031,7 +17031,7 @@ const Column = (props) => {
 };
 Column.propTypes = Object.assign({}, HTML_1.default.propTypes, { isMultiline: PropTypes.bool, offset: PropTypes.string, size: PropTypes.string });
 Column.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { isMultiline: false });
-Column.displayName = "Column";
+Column.displayName = 'Column';
 exports.default = Column;
 
 
@@ -17097,7 +17097,7 @@ const Hero = (props) => {
 };
 Hero.propTypes = Object.assign({}, HTML_1.default.propTypes, { color: PropTypes.oneOf(css_1.colorValues), isBold: PropTypes.bool, size: PropTypes.oneOf(Objects_1.default.values(HeroSize)) });
 Hero.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { isBold: false });
-Hero.displayName = "Hero";
+Hero.displayName = 'Hero';
 exports.default = Hero;
 
 
@@ -17159,7 +17159,7 @@ const HeroHead = (props) => {
 };
 HeroHead.propTypes = HTML_1.default.propTypes;
 HeroHead.defaultProps = HTML_1.default.defaultProps;
-HeroHead.displayName = "HeroHead";
+HeroHead.displayName = 'HeroHead';
 exports.default = HeroHead;
 
 
@@ -17190,7 +17190,7 @@ const HeroBody = (props) => {
 };
 HeroBody.propTypes = HTML_1.default.propTypes;
 HeroBody.defaultProps = HTML_1.default.defaultProps;
-HeroBody.displayName = "HeroBody";
+HeroBody.displayName = 'HeroBody';
 exports.default = HeroBody;
 
 
@@ -17221,7 +17221,7 @@ const HeroFoot = (props) => {
 };
 HeroFoot.propTypes = HTML_1.default.propTypes;
 HeroFoot.defaultProps = HTML_1.default.defaultProps;
-HeroFoot.displayName = "HeroFoot";
+HeroFoot.displayName = 'HeroFoot';
 exports.default = HeroFoot;
 
 
@@ -17248,16 +17248,16 @@ const mobx_react_1 = __webpack_require__(222);
 const navigaions = __webpack_require__(94);
 // const navigaions = [
 //     {
-//         "text": "Overview",
-//         "path": "/overview/start"
+//         'text': 'Overview',
+//         'path': '/overview/start'
 //     },
 //     {
-//         "text": "Columns",
-//         "path": "/columns/hello"
+//         'text': 'Columns',
+//         'path': '/columns/hello'
 //     },
 //     {
-//         "text": "Layout",
-//         "path": "/layout/container"
+//         'text': 'Layout',
+//         'path': '/layout/container'
 //     }
 // ];
 let MainNavigation = class MainNavigation extends Stateless_1.default {
@@ -17273,10 +17273,10 @@ let MainNavigation = class MainNavigation extends Stateless_1.default {
     configureTab(locationPath, path) {
         let config = {};
         if (path.startsWith(`/${locationPath}`)) {
-            config["isActive"] = true;
+            config['isActive'] = true;
         }
         else {
-            config["className"] = WorkspaceStyle_1.default.isFirstTabIsNotActive;
+            config['className'] = WorkspaceStyle_1.default.isFirstTabIsNotActive;
         }
         return config;
     }
@@ -17325,7 +17325,7 @@ const Tabs = (props) => {
 };
 Tabs.propTypes = Object.assign({}, HTML_1.default.propTypes, { alignment: PropTypes.oneOf(css_1.AlignmentValues), isFullwidth: PropTypes.bool, size: PropTypes.oneOf(css_1.SizeValues), tabStyle: PropTypes.oneOf(Objects_1.default.values(tabsStyle)) });
 Tabs.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { isFullwidth: false });
-Tabs.displayName = "Tabs";
+Tabs.displayName = 'Tabs';
 exports.default = Tabs;
 
 
@@ -17390,7 +17390,7 @@ const Tab = (props) => {
 };
 Tab.propTypes = Object.assign({}, HTML_1.default.propTypes, { isActive: PropTypes.bool });
 Tab.defaultProps = Object.assign({}, HTML_1.default.defaultProps, { isActive: false });
-Tab.displayName = "Tab";
+Tab.displayName = 'Tab';
 exports.default = Tab;
 
 
@@ -17423,7 +17423,7 @@ const TabGroup = (props) => {
 };
 TabGroup.propTypes = Object.assign({}, HTML_1.default.propTypes, { alignment: PropTypes.oneOf(css_1.AlignmentValues) });
 TabGroup.defaultProps = HTML_1.default.defaultProps;
-TabGroup.displayName = "TabGroup";
+TabGroup.displayName = 'TabGroup';
 exports.default = TabGroup;
 
 
@@ -18467,4 +18467,4 @@ if ((typeof __MOBX_DEVTOOLS_GLOBAL_HOOK__ === "undefined" ? "undefined" : _typeo
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=app.1535a2f1061201c4109f.js.map
+//# sourceMappingURL=app.0d14647df375e6a34062.js.map

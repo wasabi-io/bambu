@@ -52,19 +52,19 @@ class Columns extends StatelessComponent_1.default {
     getNavigations() {
         return [
             {
-                "text": "Hello",
-                "path": "hello",
-                "module": "Hello.tsx"
+                text: 'Hello',
+                path: 'hello',
+                module: 'Hello.tsx'
             },
             {
-                "text": "Hello1",
-                "path": "hello1",
-                "module": "Hello1.tsx"
+                text: 'Hello1',
+                path: 'hello1',
+                module: 'Hello1.tsx'
             }
         ];
     }
     getModuleName() {
-        return "columns";
+        return 'columns';
     }
 }
 exports.default = Columns;
@@ -73,4 +73,4 @@ exports.default = Columns;
 /***/ })
 
 });
-//# sourceMappingURL=2.1535a2f1061201c4109f.js.map
+//# sourceMappingURL=2.0d14647df375e6a34062.js.map
