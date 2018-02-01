@@ -20,4 +20,4 @@ exports.default = Hello1;
 /***/ })
 
 });
-//# sourceMappingURL=6.8f9f0ba96a331606277a.js.map
+//# sourceMappingURL=6.c87a3e6dc3646bbd696e.js.map
