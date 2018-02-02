@@ -85,7 +85,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "34e707e3a46e0f4b2c03"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "0cab43b1c5a2f1071c71"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -11453,7 +11453,7 @@ module.exports = __webpack_require__(105);
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const Application_1 = __webpack_require__(106);
-const options = JSON.parse(JSON.stringify({"mountId":"app_container","api":"http://localhost:3000","publicPath":"rebul"}));
+const options = JSON.parse(JSON.stringify({"mountId":"app_container","api":"http://localhost:3000"}));
 const application = new Application_1.default(options);
 application.render();
 
@@ -11474,7 +11474,7 @@ class Application {
         this.props = props;
     }
     render() {
-        react_dom_1.render(React.createElement(Routes_1.default, { publicPath: this.props.publicPath }), document.getElementById(this.props.mountId));
+        react_dom_1.render(React.createElement(Routes_1.default, null), document.getElementById(this.props.mountId));
     }
 }
 exports.default = Application;
@@ -11584,7 +11584,6 @@ module.exports = function (css) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const NotFound_1 = __webpack_require__(23);
 const React = __webpack_require__(0);
-const PropTypes = __webpack_require__(1);
 const react_router_dom_1 = __webpack_require__(31);
 const Stateless_1 = __webpack_require__(13);
 const AsyncComponent_1 = __webpack_require__(95);
@@ -11599,7 +11598,7 @@ class Routes extends Stateless_1.default {
             const Component = AsyncComponent_1.default(() => this.getModule(module).then(module => module.default));
             elements.push(React.createElement(react_router_dom_1.Route, { key: path, path: path, component: Component }));
         }
-        return (React.createElement(react_router_dom_1.BrowserRouter, { basename: this.props.publicPath },
+        return (React.createElement(react_router_dom_1.BrowserRouter, { basename: "/rebul" },
             React.createElement(Workspace_1.default, null,
                 React.createElement(react_router_dom_1.Switch, null,
                     elements,
@@ -11610,12 +11609,6 @@ class Routes extends Stateless_1.default {
         return __webpack_require__(98)("./" + module);
     }
 }
-Routes.propTypes = {
-    publicPath: PropTypes.string
-};
-Routes.defaultProps = {
-    publicPath: "/"
-};
 exports.default = Routes;
 
 
@@ -18474,4 +18467,4 @@ if ((typeof __MOBX_DEVTOOLS_GLOBAL_HOOK__ === "undefined" ? "undefined" : _typeo
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=app.34e707e3a46e0f4b2c03.js.map
+//# sourceMappingURL=app.0cab43b1c5a2f1071c71.js.map

@@ -20,7 +20,7 @@ export default class Routes extends Stateless<{}> {
       elements.push(<Route key={path} path={path} component={Component} />);
     }
     return (
-      <BrowserRouter>
+      <BrowserRouter basename="/rebul">
         <Workspace>
           <Switch>
             {elements}
