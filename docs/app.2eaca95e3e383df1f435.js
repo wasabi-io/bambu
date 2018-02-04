@@ -85,7 +85,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "c839e97ac4a93a727108"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "2eaca95e3e383df1f435"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -11598,7 +11598,7 @@ class Routes extends Stateless_1.default {
             const Component = AsyncComponent_1.default(() => this.getModule(module).then(module => module.default));
             elements.push(React.createElement(react_router_dom_1.Route, { key: path, path: path, component: Component }));
         }
-        return (React.createElement(react_router_dom_1.BrowserRouter, { basename: Object({"NODE_ENV":"production","options":{"mountId":"app_container","api":"http://localhost:3000"}}).PUBLIC_URL },
+        return (React.createElement(react_router_dom_1.HashRouter, null,
             React.createElement(Workspace_1.default, null,
                 React.createElement(react_router_dom_1.Switch, null,
                     elements,
@@ -18467,4 +18467,4 @@ if ((typeof __MOBX_DEVTOOLS_GLOBAL_HOOK__ === "undefined" ? "undefined" : _typeo
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=app.c839e97ac4a93a727108.js.map
+//# sourceMappingURL=app.2eaca95e3e383df1f435.js.map
