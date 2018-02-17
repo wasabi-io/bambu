@@ -1,4 +1,4 @@
-webpackJsonp([2],{
+webpackJsonp([0],{
 
 /***/ 223:
 /***/ (function(module, exports, __webpack_require__) {
@@ -41,31 +41,36 @@ exports.default = StatelessComponent;
 
 /***/ }),
 
-/***/ 32:
+/***/ 34:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 const StatelessComponent_1 = __webpack_require__(223);
-class Columns extends StatelessComponent_1.default {
+class Overview extends StatelessComponent_1.default {
     getNavigations() {
         return [
             {
-                text: 'Basics',
-                path: 'basics',
-                module: 'Basics.tsx'
+                text: 'Start',
+                path: 'start',
+                module: 'Start.tsx'
+            },
+            {
+                text: 'Customize',
+                path: 'customize',
+                module: 'Customize.tsx'
             }
         ];
     }
     getModuleName() {
-        return 'columns';
+        return 'overview';
     }
 }
-exports.default = Columns;
+exports.default = Overview;
 
 
 /***/ })
 
 });
-//# sourceMappingURL=2.2caa99a0e04c0c52f589.js.map
+//# sourceMappingURL=0.a075031a2b65cce223f8.js.map

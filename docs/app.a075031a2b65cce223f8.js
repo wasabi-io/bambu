@@ -85,7 +85,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "2caa99a0e04c0c52f589"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "a075031a2b65cce223f8"; // eslint-disable-line no-unused-vars
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
@@ -11624,7 +11624,7 @@ class Routes extends Stateless_1.default {
             React.createElement(Workspace_1.default, null,
                 React.createElement(react_router_dom_1.Switch, null,
                     elements,
-                    React.createElement(react_router_dom_1.Route, { exact: true, path: "/", render: () => (React.createElement(react_router_dom_1.Redirect, { to: "/columns/basics" })) }),
+                    React.createElement(react_router_dom_1.Route, { exact: true, path: "/", render: () => (React.createElement(react_router_dom_1.Redirect, { to: "/overview/start" })) }),
                     React.createElement(react_router_dom_1.Route, { component: NotFound_1.default })))));
     }
     getModule(module) {
@@ -16053,7 +16053,7 @@ class Workspace extends Stateless_1.default {
             React.createElement(navbar_1.Navbar, { isFixed: css_1.Vertical.top },
                 React.createElement(container_1.Container, null,
                     React.createElement(navbar_1.NavbarBrand, null,
-                        React.createElement(navbar_1.NavbarItem, { href: "/" },
+                        React.createElement(navbar_1.NavbarItem, { href: "/rebul" },
                             React.createElement("img", { src: "https://bulma.io/images/bulma-logo.png", alt: "Bulma: a modern CSS framework based on Flexbox", width: "112", height: "28" })),
                         React.createElement(navbar_1.NavbarItem, { href: "https://github.com/wasabi-io/rebul", target: "_blank" },
                             React.createElement(icon_1.Icon, { icon: "github", size: icon_1.IconSize.lg, style: { display: 'inline' } }))))),
@@ -18450,4 +18450,4 @@ exports.default = TabGroup;
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=app.2caa99a0e04c0c52f589.js.map
+//# sourceMappingURL=app.a075031a2b65cce223f8.js.map
