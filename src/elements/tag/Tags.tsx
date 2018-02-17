@@ -10,7 +10,7 @@ import TagStyle from './TagStyle';
  * Refers Html Props and Additional Props.
  */
 export interface TagsProps extends HTMLSpanProps {
-  hasAddons?: boolean
+  hasAddons?: boolean;
 }
 
 const Tags: React.SFC<TagsProps> = (props: TagsProps) => {
@@ -34,8 +34,7 @@ const Tags: React.SFC<TagsProps> = (props: TagsProps) => {
 
 Tags.propTypes = {
   ...HTMLComponent.propTypes,
-  color: PropTypes.oneOf(colorValues),
-  size: PropTypes.oneOf(SizeValues)
+  color: PropTypes.oneOf(colorValues)
 };
 
 Tags.defaultProps = HTMLComponent.defaultProps;

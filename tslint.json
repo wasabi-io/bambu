@@ -17,6 +17,7 @@
     ],
     "variable-name": [
       true,
+      "allow-pascal-case",
       "check-format",
       "allow-leading-underscore"
     ],
