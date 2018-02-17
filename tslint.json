@@ -18,7 +18,7 @@
     "variable-name": [
       true,
       "check-format",
-      "allow-leading-underscore",
+      "allow-leading-underscore"
     ],
     "import-name": false,
     "interface-name": false,
