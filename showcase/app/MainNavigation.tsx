@@ -1,7 +1,7 @@
 import { observer } from 'mobx-react';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import { Tab, Tabs, TabStyle } from 'rebul/lib/components/tabs';
+import { Tab, Tabs, tabsStyle } from 'rebul/lib/components/tabs';
 import Stateless from 'wasabi-ui/lib/Stateless';
 
 import Navigation from './Navigation';
@@ -20,7 +20,7 @@ export default class MainNavigation extends Stateless<{}> {
     }
 
     return (
-      <Tabs tabStyle={TabStyle.isBoxed}>
+      <Tabs tabStyle={tabsStyle.boxed}>
         {elements}
       </Tabs>
     );

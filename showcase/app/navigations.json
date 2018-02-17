@@ -9,7 +9,7 @@
     "text": "Columns",
     "path": "columns",
     "module": "columns/index",
-    "start": "/columns/hello"
+    "start": "/columns/basics"
   },
   {
     "text": "Layout",

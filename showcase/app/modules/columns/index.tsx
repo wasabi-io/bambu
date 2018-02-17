@@ -7,14 +7,9 @@ export default class Columns extends StatelessComponent {
   getNavigations(): Navigation[] {
     return [
       {
-        text: 'Hello',
-        path: 'hello',
-        module: 'Hello.tsx'
-      },
-      {
-        text: 'Hello1',
-        path: 'hello1',
-        module: 'Hello1.tsx'
+        text: 'Basics',
+        path: 'basics',
+        module: 'Basics.tsx'
       }
     ];
   }

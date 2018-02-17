@@ -21,7 +21,7 @@ abstract class StatelessComponent extends Stateless<{ match: { url: string } }> 
     for (const navigaion of this.getNavigations()) {
       const path = `${match.url}/${navigaion.path}`;
       const module = navigaion.module;
-      tabs.push(<Tab key={navigaion.path} isActive={paths[1] === navigaion.path}><Link to={path}>{navigaion.text}</Link></Tab>);
+      tabs.push(<Tab key={navigaion.path} isActive={paths[1] === navigaion.path}><Link style={{ borderBottomWidth: 3 }} to={path}>{navigaion.text}</Link></Tab>);
       const COMPONENT = asyncComponent(() => this.getModule(module).then(module => module.default));
       routes.push(<Route key={path} path={path} component={COMPONENT} />);
     }

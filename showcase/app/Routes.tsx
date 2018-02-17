@@ -7,7 +7,7 @@ import asyncComponent from './AsyncComponent';
 import Navigation from './Navigation';
 import Workspace from './Workspace';
 
-const navigaions: Navigation[] = require('./navigaions.json');
+const navigaions: Navigation[] = require('./navigations.json');
 
 export default class Routes extends Stateless<{}> {
   public render(): JSX.Element {
@@ -25,7 +25,7 @@ export default class Routes extends Stateless<{}> {
           <Switch>
             {elements}
             <Route exact path="/" render={() => (
-              <Redirect to="/overview/start/" />
+              <Redirect to="/columns/basics" />
             )} />
             <Route component={NotFound} />
           </Switch>
