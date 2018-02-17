@@ -11,7 +11,7 @@ import Stateless from 'wasabi-ui/lib/Stateless';
 
 import MainNavigation from './MainNavigation';
 import locationStore, { LocationProps } from './stores/LocationStore';
-import WorkspaceStyle from './WorkspaceStyle';
+import workspaceStyle from './WorkspaceStyle';
 
 export interface WorkspaceProps {
   location?: LocationProps;
@@ -37,8 +37,8 @@ class Workspace extends Stateless<WorkspaceProps> {
           </Container>
         </Navbar>
 
-        <div className={WorkspaceStyle.mainContent}>
-          <Hero className={WorkspaceStyle.isLink}>
+        <div className={workspaceStyle.mainContent}>
+          <Hero className={workspaceStyle.isLink}>
             <HeroBody>
               <Container>
                 <Columns isVcentered>
@@ -57,7 +57,6 @@ class Workspace extends Stateless<WorkspaceProps> {
               </Container>
             </HeroFoot>
           </Hero>
-
           <Container>
             {this.props.children}
           </Container>

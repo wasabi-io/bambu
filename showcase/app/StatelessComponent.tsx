@@ -5,13 +5,8 @@ import { Container } from 'rebul/lib/elements/container';
 import Stateless from 'wasabi-ui/lib/Stateless';
 
 import asyncComponent from './AsyncComponent';
+import Navigation from './Navigation';
 import locationStore from './stores/LocationStore';
-
-export interface Navigation {
-  text: string;
-  path: string;
-  module: string;
-}
 
 abstract class StatelessComponent extends Stateless<{ match: { url: string } }> {
   abstract getNavigations(): Navigation[];
@@ -20,15 +15,15 @@ abstract class StatelessComponent extends Stateless<{ match: { url: string } }> 
   public render(): JSX.Element {
     const match = this.props.match;
     const paths = locationStore.getPaths();
-    let tabs: any[] = [];
-    let routes: any[] = [];
+    const tabs: any[] = [];
+    const routes: any[] = [];
 
-    for (let navigaion of this.getNavigations()) {
+    for (const navigaion of this.getNavigations()) {
       const path = `${match.url}/${navigaion.path}`;
       const module = navigaion.module;
-      tabs.push(<Tab key={navigaion.path} isActive={paths[1] == navigaion.path}><Link to={path}>{navigaion.text}</Link></Tab>);
-      const Component = asyncComponent(() => this.getModule(module).then(module => module.default))
-      routes.push(<Route key={path} path={path} component={Component} />);
+      tabs.push(<Tab key={navigaion.path} isActive={paths[1] === navigaion.path}><Link to={path}>{navigaion.text}</Link></Tab>);
+      const COMPONENT = asyncComponent(() => this.getModule(module).then(module => module.default));
+      routes.push(<Route key={path} path={path} component={COMPONENT} />);
     }
 
 

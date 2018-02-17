@@ -1,30 +1,31 @@
 import * as React from 'react';
+
 import NotFound from './modules/NotFound';
 
 export default function asyncComponent(getComponent: Function) {
   return class AsyncComponent extends React.Component {
-    static Component: any = null;
+    static COMPONENT: any = null;
     state = {
-      Component: AsyncComponent.Component
+      COMPONENT: AsyncComponent.COMPONENT
     };
 
     componentWillMount() {
-      if (!this.state.Component) {
-        getComponent().then((Component: any) => {
-          AsyncComponent.Component = Component
-          this.setState({ Component })
+      if (!this.state.COMPONENT) {
+        getComponent().then((COMPONENT: any) => {
+          AsyncComponent.COMPONENT = COMPONENT;
+          this.setState({ COMPONENT });
         }).catch((error: Error) => {
           console.log(error);
-          this.setState({ Component: NotFound })
+          this.setState({ Component: NotFound });
         });
       }
     }
     render() {
-      const { Component } = this.state;
-      if (Component) {
-        return <Component {...this.props} />
+      const { COMPONENT } = this.state;
+      if (COMPONENT) {
+        return <COMPONENT {...this.props} />;
       }
-      return null
+      return null;
     }
-  }
+  };
 }
