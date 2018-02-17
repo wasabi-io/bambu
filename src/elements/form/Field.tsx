@@ -23,7 +23,7 @@ export interface FieldProps extends HTMLDivProps {
 const Field: React.SFC<FieldProps> = (props: FieldProps) => {
 
   const {
-        isHorizontal,
+    isHorizontal,
     hasAddons,
     hasAddonsCentered,
     hasAddonsRight,
@@ -34,7 +34,7 @@ const Field: React.SFC<FieldProps> = (props: FieldProps) => {
     isNarrow,
     className,
     ...inputProps
-    } = props;
+  } = props;
 
   const classNames = ClassNames(
     FormStyle.field,

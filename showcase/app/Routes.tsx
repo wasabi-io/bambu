@@ -1,6 +1,6 @@
 import NotFound from 'modules/NotFound';
 import * as React from 'react';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import { HashRouter, Redirect, Route, Switch } from 'react-router-dom';
 import Stateless from 'wasabi-ui/lib/Stateless';
 
 import asyncComponent from './AsyncComponent';
@@ -20,7 +20,7 @@ export default class Routes extends Stateless<{}> {
       elements.push(<Route key={path} path={path} component={Component} />);
     }
     return (
-      <BrowserRouter basename="/rebul">
+      <HashRouter>
         <Workspace>
           <Switch>
             {elements}
@@ -30,7 +30,7 @@ export default class Routes extends Stateless<{}> {
             <Route component={NotFound} />
           </Switch>
         </Workspace>
-      </BrowserRouter>
+      </HashRouter>
 
     );
   }
