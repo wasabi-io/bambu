@@ -27,7 +27,7 @@ class Workspace extends Stateless<WorkspaceProps> {
         <Navbar isFixed={Vertical.top}>
           <Container>
             <NavbarBrand>
-              <NavbarItem href="/">
+              <NavbarItem href="/rebul">
                 <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28" />
               </NavbarItem>
               <NavbarItem href="https://github.com/wasabi-io/rebul" target="_blank">

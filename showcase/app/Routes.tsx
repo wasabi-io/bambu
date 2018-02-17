@@ -25,7 +25,7 @@ export default class Routes extends Stateless<{}> {
           <Switch>
             {elements}
             <Route exact path="/" render={() => (
-              <Redirect to="/columns/basics" />
+              <Redirect to="/overview/start" />
             )} />
             <Route component={NotFound} />
           </Switch>
