@@ -1,0 +1,22 @@
+.snppt {
+  border: 1px solid #ffdd57;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.snppt-preview {
+  padding: 15px;
+}
+.snppt-copy {
+  background: none;
+  border: none;
+  position: absolute;
+  padding: 5px;
+  right: 5px;
+  top: 5px;
+}
+
+.snppt-copy:hover {
+  background-color: #ffdd57;
+  color: rgba(0, 0, 0, 0.7);
+}

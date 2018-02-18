@@ -25,18 +25,21 @@ export interface BreadCrumbProps extends HTMLElementProps {
 
 const BreadCrumb: React.SFC<BreadCrumbProps> = (props: BreadCrumbProps) => {
 
-  const { alignment, separator, className, ...breadCrumbProps } = props;
+  const { alignment, size, separator, className, ...breadCrumbProps } = props;
 
   const classNames = ClassNames(
     BreadCrumbStyle.breadcrumb,
     BreadCrumbStyle[alignment],
     BreadCrumbStyle[separator],
+    BreadCrumbStyle[size],
     className,
   );
 
   return (
     <nav className={classNames} {...breadCrumbProps} >
-      {props.children}
+      <ul>
+        {props.children}
+      </ul>
     </nav>
   );
 };

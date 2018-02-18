@@ -16,5 +16,11 @@
     "path": "layout",
     "module": "layout/index",
     "start": "/layout/container"
+  },
+  {
+    "text": "Components",
+    "path": "components",
+    "module": "components/index",
+    "start": "/components/breadcrumb"
   }
 ]
