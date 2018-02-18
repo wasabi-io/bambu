@@ -36,9 +36,7 @@ export default class Page extends Stateless<PageProps> {
     );
   }
   private checkAttributes(value: boolean, text: string) {
-    let attr: any = {
-
-    };
+    const attr: any = {};
     if (value) {
       // attr['tagName'] = 'a';
       // attr['href'] = '#' + text;

@@ -8,9 +8,23 @@
       true,
       2
     ],
+    "align": [
+      true,
+      "elements",
+      "members",
+      "parameters",
+      "statements"
+    ],
+    "variable-name": [
+      true,
+      "allow-pascal-case",
+      "check-format",
+      "allow-leading-underscore"
+    ],
     "import-name": false,
     "interface-name": false,
     "max-line-length": [
+      true,
       250
     ],
     "max-classes-per-file": [
