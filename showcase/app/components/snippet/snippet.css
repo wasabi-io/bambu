@@ -4,9 +4,37 @@
   position: relative;
 }
 
+.snppt:before {
+  background: #ffdd57;
+  border-radius: 3px 3px 0 0;
+  bottom: 100%;
+  color: rgba(0, 0, 0, 0.7);
+  content: "Example";
+  display: inline-block;
+  font-size: 7px;
+  font-weight: bold;
+  left: -1px;
+  letter-spacing: 1px;
+  padding: 3px 5px;
+  position: absolute;
+  text-transform: uppercase;
+  vertical-align: top;
+}
+
+.snppt:before {
+  content: "Snippet";
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .snppt-preview {
   padding: 15px;
 }
+
 .snppt-copy {
   background: none;
   border: none;
@@ -16,7 +44,7 @@
   top: 5px;
 }
 
-.snppt-copy:hover {
+.snppt-copy-hovered {
   background-color: #ffdd57;
   color: rgba(0, 0, 0, 0.7);
 }
