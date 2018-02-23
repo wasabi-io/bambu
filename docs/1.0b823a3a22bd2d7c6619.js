@@ -1,6 +1,6 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
-/***/ 223:
+/***/ 234:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8,11 +8,11 @@ webpackJsonp([0],{
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(0);
 const react_router_dom_1 = __webpack_require__(31);
-const tabs_1 = __webpack_require__(97);
-const container_1 = __webpack_require__(96);
+const tabs_1 = __webpack_require__(98);
+const container_1 = __webpack_require__(97);
 const Stateless_1 = __webpack_require__(13);
-const AsyncComponent_1 = __webpack_require__(95);
-const LocationStore_1 = __webpack_require__(71);
+const AsyncComponent_1 = __webpack_require__(96);
+const LocationStore_1 = __webpack_require__(72);
 class StatelessComponent extends Stateless_1.default {
     render() {
         const match = this.props.match;
@@ -33,7 +33,7 @@ class StatelessComponent extends Stateless_1.default {
             routes));
     }
     getModule(module) {
-        return __webpack_require__(98)(`./${this.getModuleName()}/${module}`);
+        return __webpack_require__(99)(`./${this.getModuleName()}/${module}`);
     }
 }
 exports.default = StatelessComponent;
@@ -47,30 +47,25 @@ exports.default = StatelessComponent;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const StatelessComponent_1 = __webpack_require__(223);
-class Overview extends StatelessComponent_1.default {
+const StatelessComponent_1 = __webpack_require__(234);
+class Layout extends StatelessComponent_1.default {
     getNavigations() {
         return [
             {
-                text: 'Start',
-                path: 'start',
-                module: 'Start.tsx'
-            },
-            {
-                text: 'Customize',
-                path: 'customize',
-                module: 'Customize.tsx'
+                text: 'Container',
+                path: 'container',
+                module: 'Container.tsx'
             }
         ];
     }
     getModuleName() {
-        return 'overview';
+        return 'layout';
     }
 }
-exports.default = Overview;
+exports.default = Layout;
 
 
 /***/ })
 
 });
-//# sourceMappingURL=0.7e77c4b65acfbe2315e8.js.map
+//# sourceMappingURL=1.0b823a3a22bd2d7c6619.js.map

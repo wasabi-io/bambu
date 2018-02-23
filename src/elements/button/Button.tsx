@@ -55,9 +55,8 @@ const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
       {/* {icon && <Icon icon={icon} size={size} />} */}
       {undefined}
     </input>;
-  } else {
-    return React.createElement(tagName, buttonProps, icon && <Icon icon={icon} size={size} />, props.children);
   }
+  return React.createElement(tagName, buttonProps, icon && <Icon icon={icon} size={size} />, props.children);
 };
 
 Button.propTypes = {

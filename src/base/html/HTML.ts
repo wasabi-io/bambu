@@ -1,9 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
-import { ValidationMap } from 'prop-types';
 import * as React from 'react';
 import Stateless from 'wasabi-ui/lib/Stateless';
-import Arrays from 'wasabi-common/lib/types/Arrays';
 
 /**
  * Provides abstraction from HTML Elements.

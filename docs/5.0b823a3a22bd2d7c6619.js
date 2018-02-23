@@ -1,6 +1,6 @@
-webpackJsonp([3],{
+webpackJsonp([5],{
 
-/***/ 101:
+/***/ 104:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -8,9 +8,9 @@ webpackJsonp([3],{
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(0);
 const css_1 = __webpack_require__(4);
-const content_1 = __webpack_require__(99);
-const notification_1 = __webpack_require__(226);
-const column_1 = __webpack_require__(100);
+const content_1 = __webpack_require__(100);
+const notification_1 = __webpack_require__(243);
+const column_1 = __webpack_require__(103);
 const Stateless_1 = __webpack_require__(13);
 const Page_1 = __webpack_require__(30);
 class Basics extends Stateless_1.default {
@@ -44,7 +44,7 @@ exports.default = Basics;
 
 /***/ }),
 
-/***/ 224:
+/***/ 235:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(6)(false);
@@ -98,34 +98,34 @@ exports.locals = {
 
 /***/ }),
 
-/***/ 225:
+/***/ 241:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-const NotificationStyle = __webpack_require__(228);
+const NotificationStyle = __webpack_require__(245);
 exports.default = NotificationStyle;
 
 
 /***/ }),
 
-/***/ 226:
+/***/ 243:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-var Notification_1 = __webpack_require__(227);
+var Notification_1 = __webpack_require__(244);
 exports.Notification = Notification_1.default;
 exports.NotificationProps = Notification_1.NotificationProps;
-var NotificationStyle_1 = __webpack_require__(225);
+var NotificationStyle_1 = __webpack_require__(241);
 exports.NotificationStyle = NotificationStyle_1.default;
 
 
 /***/ }),
 
-/***/ 227:
+/***/ 244:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -145,7 +145,7 @@ const PropTypes = __webpack_require__(1);
 const React = __webpack_require__(0);
 const css_1 = __webpack_require__(4);
 const HTML_1 = __webpack_require__(3);
-const NotificationStyle_1 = __webpack_require__(225);
+const NotificationStyle_1 = __webpack_require__(241);
 class Notification extends HTML_1.default {
     static renderCloseButton(closeable, buttonProps) {
         if (closeable) {
@@ -175,13 +175,13 @@ exports.default = Notification;
 
 /***/ }),
 
-/***/ 228:
+/***/ 245:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(224);
+var content = __webpack_require__(235);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -195,8 +195,8 @@ if(content.locals) module.exports = content.locals;
 if(true) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept(224, function() {
-			var newContent = __webpack_require__(224);
+		module.hot.accept(235, function() {
+			var newContent = __webpack_require__(235);
 			if(typeof newContent === 'string') newContent = [[module.i, newContent, '']];
 			update(newContent);
 		});
@@ -208,4 +208,4 @@ if(true) {
 /***/ })
 
 });
-//# sourceMappingURL=3.7e77c4b65acfbe2315e8.js.map
+//# sourceMappingURL=5.0b823a3a22bd2d7c6619.js.map
