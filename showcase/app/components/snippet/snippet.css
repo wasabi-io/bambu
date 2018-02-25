@@ -2,6 +2,8 @@
   border: 1px solid #ffdd57;
   margin-top: 2rem;
   position: relative;
+  padding: 0;
+  display: block;
 }
 
 .snppt:before {
@@ -33,6 +35,12 @@
 
 .snppt-preview {
   padding: 15px;
+  flex: 0;
+}
+
+.snppt-highlight {
+  padding: 0;
+  flex: 1;
 }
 
 .snppt-copy {
@@ -47,4 +55,16 @@
 .snppt-copy-hovered {
   background-color: #ffdd57;
   color: rgba(0, 0, 0, 0.7);
+}
+
+.snppt-borderless {
+  border: none;
+}
+
+.snppt-borderless:before {
+  display: none;
+}
+
+.snppt-slices {
+  display: flex;
 }
