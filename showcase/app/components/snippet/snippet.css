@@ -35,26 +35,12 @@
 
 .snppt-preview {
   padding: 15px;
-  flex: 0;
+  flex: 1;
 }
 
 .snppt-highlight {
   padding: 0;
-  flex: 1;
-}
-
-.snppt-copy {
-  background: none;
-  border: none;
-  position: absolute;
-  padding: 5px;
-  right: 5px;
-  top: 5px;
-}
-
-.snppt-copy-hovered {
-  background-color: #ffdd57;
-  color: rgba(0, 0, 0, 0.7);
+  flex: 0 1 40%;
 }
 
 .snppt-borderless {

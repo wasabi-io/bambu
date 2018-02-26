@@ -58,20 +58,22 @@ export default class Highlight extends Stateful<{}, { isHovered: boolean }> {
 
   public render(): JSX.Element {
     return (
-      <pre className={ClassNames('hljs-pre', { 'hljs-pre-hovered': this.state.isHovered })}>
+      <div className="hljs-content">
         <Button
           tagName="button"
           size={Size.small}
-          className={ClassNames('snppt-copy', { 'snppt-copy-hovered': this.state.isHovered })}
+          className={ClassNames('hljs-copy', { 'hljs-copy-hovered': this.state.isHovered })}
           onMouseOver={this.onMouseOvered}
           onMouseOut={this.onMouseOut}
           onClick={this.copyToClipboard}>
           copy
         </Button>
-        <code id={this.codeId} className="language-html">
-          {this.props.children}
-        </code>
-      </pre>
+        <pre className={ClassNames('hljs-pre', { 'hljs-pre-hovered': this.state.isHovered })}>
+          <code id={this.codeId} className="language-html">
+            {this.props.children}
+          </code>
+        </pre>
+      </div>
     );
   }
 }

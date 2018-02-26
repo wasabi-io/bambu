@@ -1,11 +1,12 @@
-.hljs {
-  background-color: whitesmoke !important;
+.hljs-content {
+  position: relative;
 }
 
 .hljs-pre {
   padding: 0 !important;
-  position: relative;
   border: 2px solid transparent;
+  max-height: 320px;
+  overflow: auto;
 }
 
 .hljs-pre-hovered {
@@ -16,7 +17,7 @@
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background: #fdf6e3;
+  background-color: whitesmoke !important;
   color: #657b83;
 }
 
@@ -70,4 +71,18 @@
 
 .hljs-strong {
   font-weight: bold;
+}
+
+.hljs-copy {
+  background: none;
+  border: none;
+  position: absolute;
+  padding: 5px;
+  right: 5px;
+  top: 5px;
+}
+
+.hljs-copy-hovered {
+  background-color: #ffdd57;
+  color: rgba(0, 0, 0, 0.7);
 }
