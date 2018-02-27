@@ -17,6 +17,7 @@ export enum ButtonTagNames {
 export interface ButtonProps extends HTMLElementProps {
   tagName?: ButtonTagNames | string;
   type?: string;
+  value?: string;
   color?: string | Color;
   icon?: IconOptions;
   size?: string | Size;
@@ -29,7 +30,13 @@ export interface ButtonProps extends HTMLElementProps {
 }
 
 const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
-  const { tagName, isOutlined, isRounded, isInverted, icon, state, color, size, type, className, ...buttonProps } = props;
+  const { 
+    tagName, isOutlined,
+    isRounded, isInverted,
+    icon, state, color, size,
+    className, children,
+    disabled, onClick, ...buttonProps,
+  } = props;
 
   const classNames = ClassNames(
     ButtonStyle.button,
@@ -43,20 +50,21 @@ const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
     },
     className,
   );
-  (buttonProps as any).className = classNames;
-  if (buttonProps.disabled) {
-    buttonProps.onClick = null;
-  }
 
   if (tagName === ButtonTagNames.input) {
-    (buttonProps as any).type = type;
-    // return React.createElement(tagName, buttonProps, [icon && <Icon icon={icon} size={size} />, props.children]);
-    return <input {...buttonProps} >
-      {/* {icon && <Icon icon={icon} size={size} />} */}
-      {undefined}
-    </input>;
+    return React.createElement(tagName, { 
+        ...buttonProps,
+        className: classNames,
+        disabled,
+        onClick,
+      });
   }
-  return React.createElement(tagName, buttonProps, icon && <Icon icon={icon} size={size} />, props.children);
+  return React.createElement(tagName, {
+    ...buttonProps,
+    className: classNames,
+    disabled,
+    onClick: disabled ? null : onClick,
+  }, icon && <Icon icon={icon} size={size} />, children);
 };
 
 Button.propTypes = {
@@ -70,7 +78,6 @@ Button.propTypes = {
 Button.defaultProps = {
   ...HTMLComponent.defaultProps,
   tagName: 'a',
-  type: 'submit'
 };
 
 Button.displayName = 'Button';

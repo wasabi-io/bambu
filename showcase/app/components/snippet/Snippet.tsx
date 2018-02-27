@@ -18,8 +18,6 @@ export default class Snippet extends Stateless<SnippetProps> {
       'snppt-borderless': borderless,
       'snppt-slices': slices,
     });
-    const highlightText = jsxToString(children, { shortBooleanSyntax: true });
-
     return (
       <div className={snpptClassName}>
         <div className="snppt-preview">
@@ -27,7 +25,7 @@ export default class Snippet extends Stateless<SnippetProps> {
         </div>
         <div className="snppt-highlight">
           <Highlight>
-            {highlightText}
+            {React.Children.map(children, child => `\n${jsxToString(child, { shortBooleanSyntax: true })}`)}
           </Highlight>
         </div>
       </div>

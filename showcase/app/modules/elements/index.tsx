@@ -10,6 +10,11 @@ export default class Elements extends StatelessComponent {
         text: 'Box',
         path: 'box',
         module: 'Box.tsx'
+      },
+      {
+        text: 'Button',
+        path: 'button',
+        module: 'Button.tsx'
       }
     ];
   }

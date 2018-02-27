@@ -47,10 +47,20 @@
   border: none;
 }
 
+.snppt-borderless
+.snppt-preview {
+  padding: 0;
+  padding-right: 15px;
+}
+
 .snppt-borderless:before {
   display: none;
 }
 
 .snppt-slices {
   display: flex;
+}
+
+.snppt a, input, button {
+  margin: 2px;
 }

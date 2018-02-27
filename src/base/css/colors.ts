@@ -10,7 +10,8 @@ export enum Color {
   white = 'isWhite',
   light = 'isLight',
   dark = 'isDark',
-  black = 'isBlack'
+  black = 'isBlack',
+  text = 'isText',
 }
 
 
