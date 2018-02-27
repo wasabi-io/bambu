@@ -15,9 +15,9 @@ const MediaContent: React.SFC<MediaContentProps> = (props: MediaContentProps) =>
   ]);
 
   return (
-    <article className={classNames} {...inputProps} >
+    <div className={classNames} {...inputProps} >
       {props.children}
-    </article>
+    </div>
   );
 };
 

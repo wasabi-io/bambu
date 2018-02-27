@@ -1,9 +1,9 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-import HTMLComponent, { HTMLFigureProps } from '../../base/html/HTML';
+import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
 import MediaStyle from './MediaStyle';
 
-export type MediaLeftProps = HTMLFigureProps;
+export type MediaLeftProps = HTMLDivProps;
 
 const MediaLeft: React.SFC<MediaLeftProps> = (props: MediaLeftProps) => {
 
@@ -15,9 +15,9 @@ const MediaLeft: React.SFC<MediaLeftProps> = (props: MediaLeftProps) => {
   ]);
 
   return (
-    <figure {...inputProps} className={classNames}>
+    <div {...inputProps} className={classNames}>
       {props.children}
-    </figure>
+    </div>
   );
 };
 

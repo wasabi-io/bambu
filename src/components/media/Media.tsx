@@ -9,10 +9,10 @@ const Media: React.SFC<MediaProps> = (props: MediaProps) => {
 
   const { className, ...inputProps } = props;
 
-  const classNames = ClassNames([
+  const classNames = ClassNames(
     MediaStyle.media,
     className
-  ]);
+  );
 
   return (
     <article className={classNames} {...inputProps}>

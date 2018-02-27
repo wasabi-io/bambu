@@ -15,9 +15,9 @@ const MediaRight: React.SFC<MediaRightProps> = (props: MediaRightProps) => {
   ]);
 
   return (
-    <figure className={classNames} {...inputProps}>
+    <div className={classNames} {...inputProps}>
       {props.children}
-    </figure>
+    </div>
   );
 };
 

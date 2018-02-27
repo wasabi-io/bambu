@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { Responsive, ResponsiveValues } from 'rebul/lib/base/css';
+import { Responsive, ResponsiveValues } from '../../base/css';
 
 import HTMLComponent, { HTMLElementProps } from '../../base/html/HTML';
 import LevelStyle from './LevelStyle';

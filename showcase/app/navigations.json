@@ -18,6 +18,12 @@
     "start": "/layout/container"
   },
   {
+    "text": "Elements",
+    "path": "elements",
+    "module": "elements/index",
+    "start": "/elements/box"
+  },
+  {
     "text": "Components",
     "path": "components",
     "module": "components/index",

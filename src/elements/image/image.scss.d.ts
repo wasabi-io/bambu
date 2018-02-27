@@ -1,4 +1,5 @@
 export const image: string;
+export const isRounded: string;
 export const isSquare: string;
 export const is1By1: string;
 export const is4By3: string;
