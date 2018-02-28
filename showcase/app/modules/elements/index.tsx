@@ -25,6 +25,11 @@ export default class Elements extends StatelessComponent {
         text: 'Delete',
         path: 'delete',
         module: 'Delete.tsx'
+      },
+      {
+        text: 'Notification',
+        path: 'notification',
+        module: 'Notification.tsx'
       }
     ];
   }
