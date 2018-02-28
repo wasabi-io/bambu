@@ -1,8 +1,6 @@
 import * as React from 'react';
 import Stateless from 'wasabi-ui/lib/Stateless';
-import { Box as BaseBox } from 'rebul/lib/elements/box';
-import { Image, ImageSize } from 'rebul/lib/elements/image';
-import { Responsive, Size } from 'rebul/lib/base/css';
+import { Size } from 'rebul/lib/base/css';
 import { Content as BaseContent } from 'rebul/lib/elements/content';
 
 import Page from '../Page';

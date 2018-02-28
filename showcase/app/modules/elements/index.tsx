@@ -20,6 +20,11 @@ export default class Elements extends StatelessComponent {
         text: 'Content',
         path: 'content',
         module: 'Content.tsx'
+      },
+      {
+        text: 'Delete',
+        path: 'delete',
+        module: 'Delete.tsx'
       }
     ];
   }

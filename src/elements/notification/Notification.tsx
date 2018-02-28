@@ -1,57 +1,38 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { colorValues } from '../../base/css';
-import HTMLComponent, { HTMLButtonProps, HTMLDivProps } from '../../base/html/HTML';
+import { Color } from '../../base/css';
+import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
 import NotificationStyle from './NotificationStyle';
 
-/**
- * Refers Html Props and Additional Props.
- */
 export interface NotificationProps extends HTMLDivProps {
-  closeButton?: HTMLButtonProps;
-  closeable?: boolean;
-  color?: string;
+  color?: string | Color;
 }
 
-export default class Notification extends HTMLComponent<NotificationProps> {
+const Notification: React.SFC<NotificationProps> = (props: NotificationProps) => {
+  const { color, children, className, ...ownProps } = props;
 
-  public static propTypes = {
-    ...HTMLComponent.propTypes,
-    closeButton: PropTypes.oneOf([
-      PropTypes.node,
-      PropTypes.object
-    ]),
-    closeable: PropTypes.bool,
-    color: PropTypes.oneOf(colorValues)
-  };
+  const classNames = ClassNames(
+    NotificationStyle.notification,
+    NotificationStyle[color],
+    className
+  );
+  return (
+    <div className={classNames} {...ownProps} >
+      {children}
+    </div>
+  );
+};
 
-  public static defaultProps = {
-    ...HTMLComponent.defaultProps,
-    closeable: false
-  };
+Notification.propTypes = {
+  ...HTMLComponent.propTypes,
+  color: PropTypes.string,
+};
 
-  public static renderCloseButton(closeable: boolean, buttonProps: HTMLButtonProps): JSX.Element {
-    if (closeable) {
-      return <button className={NotificationStyle.delete} {...buttonProps} />;
-    }
-    return null;
-  }
+Notification.defaultProps = {
+  ...HTMLComponent.defaultProps,
+};
 
-  public render(): JSX.Element {
-    const { color, closeable, closeButton, className, ...inputProps } = this.props;
+Notification.displayName = 'Notification';
 
-    const classNames = ClassNames([
-      NotificationStyle.notification,
-      NotificationStyle[color],
-      className
-    ]);
-
-    return (
-      <div className={classNames} {...inputProps} >
-        {Notification.renderCloseButton(closeable, closeButton)}
-        {this.props.children}
-      </div>
-    );
-  }
-}
+export default Notification;
