@@ -1,15 +1,22 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
+import HTMLComponent, { HTMLElementProps } from '../../base/html/HTML';
+import { Size } from '../../base/css';
 import ContentStyle from './ContentStyle';
 
-export type ContentProps = HTMLDivProps;
+export interface ContentProps extends HTMLElementProps {
+  size?: string | Size;
+}
 
 const Content: React.SFC<ContentProps> = (props: ContentProps) => {
 
-  const { className, ...inputProps } = props;
+  const { className, size, ...inputProps } = props;
 
-  const classNames = ClassNames([ContentStyle.content, className]);
+  const classNames = ClassNames(
+    ContentStyle.content,
+    ContentStyle[size],
+    className
+  );
 
   return (
     <div className={classNames} {...inputProps} >

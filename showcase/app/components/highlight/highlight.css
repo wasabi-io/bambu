@@ -1,11 +1,17 @@
 .hljs-content {
   position: relative;
+  height: 100%;
+  background-color: whitesmoke;
 }
 
 .hljs-pre {
   padding: 0 !important;
   border: 2px solid transparent;
-  max-height: 320px;
+  height: 100%;
+}
+
+.hljs-pre-scroll {
+  max-height: 350px;
   overflow: auto;
 }
 
@@ -17,7 +23,6 @@
   display: block;
   overflow-x: auto;
   padding: 0.5em;
-  background-color: whitesmoke !important;
   color: #657b83;
 }
 

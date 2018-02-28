@@ -3,7 +3,6 @@
   margin-top: 2rem;
   position: relative;
   padding: 0;
-  display: block;
 }
 
 .snppt:before {
@@ -35,12 +34,14 @@
 
 .snppt-preview {
   padding: 15px;
-  flex: 1;
+  display: block;
+  width: 100%;
 }
 
 .snppt-highlight {
   padding: 0;
-  flex: 0 1 40%;
+  display: block;
+  width: 100%;
 }
 
 .snppt-borderless {
@@ -56,9 +57,15 @@
 .snppt-borderless:before {
   display: none;
 }
-
 .snppt-slices {
   display: flex;
+}
+
+.snppt-slices .snppt-preview,
+.snppt-slices .snppt-highlight  {
+  display: inline-block;
+  max-width: 50%;
+  vertical-align: top;
 }
 
 .snppt a, input, button {

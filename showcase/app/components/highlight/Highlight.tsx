@@ -9,7 +9,7 @@ import Stateful from 'wasabi-ui/lib/Stateful';
 
 const hljs = require('highlight.js');
 
-export default class Highlight extends Stateful<{}, { isHovered: boolean }> {
+export default class Highlight extends Stateful<{ isScroll: boolean }, { isHovered: boolean }> {
   codeId = Math.random().toString(36);
 
   public constructor(props: any) {
@@ -57,16 +57,23 @@ export default class Highlight extends Stateful<{}, { isHovered: boolean }> {
   }
 
   public render(): JSX.Element {
+    const buttonClassName = ClassNames('hljs-copy', { 
+      'hljs-copy-hovered': this.state.isHovered, 
+    });
+    const preClassName = ClassNames('hljs-pre', { 
+      'hljs-pre-hovered': this.state.isHovered,
+      'hljs-pre-scroll': this.props.isScroll,
+    });
     return (
       <div className="hljs-content">
         <button
-          className={ClassNames('hljs-copy', { 'hljs-copy-hovered': this.state.isHovered })}
+          className={buttonClassName}
           onMouseOver={this.onMouseOvered}
           onMouseOut={this.onMouseOut}
           onClick={this.copyToClipboard}>
           copy
         </button>
-        <pre className={ClassNames('hljs-pre', { 'hljs-pre-hovered': this.state.isHovered })}>
+        <pre className={preClassName}>
           <code id={this.codeId} className="language-html">
             {this.props.children}
           </code>
