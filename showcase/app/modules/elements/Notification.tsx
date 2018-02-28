@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Stateless from 'wasabi-ui/lib/Stateless';
 import { Color } from 'rebul/lib/base/css';
-import { Notification as BaseNotification } from 'rebul/lib/elements/Notification';
+import { Notification as BaseNotification } from 'rebul/lib/elements/notification';
 import { Delete } from 'rebul/lib/elements/delete';
 
 import Page from '../Page';
@@ -34,7 +34,7 @@ export default class Notification extends Stateless<{}> {
             adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet,
             consectetur adipiscing elit
           </BaseNotification>
-          <BaseNotification color={Color.link}>ss
+          <BaseNotification color={Color.link}>
             <Delete />
             Lorem ipsum dolor sit amet, consectetur
             adipiscing elit lorem ipsum dolor. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Sit amet,

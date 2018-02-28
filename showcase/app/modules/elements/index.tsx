@@ -30,6 +30,11 @@ export default class Elements extends StatelessComponent {
         text: 'Notification',
         path: 'notification',
         module: 'Notification.tsx'
+      },
+      {
+        text: 'Progress',
+        path: 'progress',
+        module: 'Progress.tsx'
       }
     ];
   }
