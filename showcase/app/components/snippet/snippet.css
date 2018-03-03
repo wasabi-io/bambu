@@ -68,6 +68,10 @@
   vertical-align: top;
 }
 
-.snppt a, input, button {
+.snppt a, input, button, {
   margin: 2px;
+}
+
+.snppt ul {
+  list-style: none !important;
 }
