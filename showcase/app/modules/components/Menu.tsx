@@ -22,7 +22,7 @@ export default class Menu extends Stateless<{}> {
         hasMeta
         variables
       >
-        <Snippet slices isScroll={false} borderless>
+        <Snippet slices borderless scrolless>
           <BaseMenu>
             <MenuLabel> General </MenuLabel>
             <MenuList>

@@ -23,7 +23,7 @@ export default class Dropdown extends Stateless<{}> {
         hasMeta
         variables
       >
-        <Snippet slices borderless>
+        <Snippet slices borderless scrolless>
           <DropDown>
             <DropdownTrigger>
               <Button tagName="button">

@@ -64,7 +64,7 @@ export default class Card extends Stateless<{}> {
             </li>
           </ul>
         </Content>
-        <Snippet slices isScroll={false}>
+        <Snippet slices>
           <BaseCard>
             <CardImage>
               <Image src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image" />
@@ -94,7 +94,7 @@ export default class Card extends Stateless<{}> {
           </BaseCard>
         </Snippet> 
         <hr />
-        <Snippet slices isScroll={false}>
+        <Snippet slices>
           <BaseCard>
             <CardHeader>
               <CardHeaderTitle> Component </CardHeaderTitle>
@@ -117,7 +117,7 @@ export default class Card extends Stateless<{}> {
           </BaseCard>
         </Snippet> 
         <hr />
-        <Snippet slices isScroll={false}>
+        <Snippet slices>
           <BaseCard>
             <CardContent>
               <Content>

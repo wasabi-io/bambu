@@ -34,6 +34,7 @@
 
 .snppt-preview {
   padding: 15px;
+  padding-right: 0;
   display: block;
   width: 100%;
 }
@@ -50,7 +51,8 @@
 
 .snppt-borderless
 .snppt-preview {
-  padding: 15px 0;
+  padding-top: 0;
+  padding-left: 0;
 }
 
 .snppt-borderless:before {
@@ -58,6 +60,10 @@
 }
 .snppt-slices {
   display: flex;
+}
+
+.snppt-slices
+.snppt-preview {
   padding-right: 15px;
 }
 
