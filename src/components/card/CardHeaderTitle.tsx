@@ -8,10 +8,10 @@ export type CardHeaderTitleProps = HTMLPProps;
 const CardHeaderTitle: React.SFC<CardHeaderTitleProps> = (props: CardHeaderTitleProps) => {
   const { className, ...inputProps } = props;
 
-  const classNames = ClassNames([
+  const classNames = ClassNames(
     CardStyle.cardHeaderTitle,
     className
-  ]);
+  );
 
   return (
     <p className={classNames} {...inputProps} >

@@ -34,6 +34,7 @@
 
 .snppt-preview {
   padding: 15px;
+  padding-right: 0;
   display: block;
   width: 100%;
 }
@@ -50,8 +51,8 @@
 
 .snppt-borderless
 .snppt-preview {
-  padding: 0;
-  padding-right: 15px;
+  padding-top: 0;
+  padding-left: 0;
 }
 
 .snppt-borderless:before {
@@ -61,6 +62,11 @@
   display: flex;
 }
 
+.snppt-slices
+.snppt-preview {
+  padding-right: 15px;
+}
+
 .snppt-slices .snppt-preview,
 .snppt-slices .snppt-highlight  {
   display: inline-block;
@@ -68,6 +74,10 @@
   vertical-align: top;
 }
 
-.snppt a, input, button {
+.snppt a, input, button, {
   margin: 2px;
+}
+
+.snppt ul {
+  list-style: none !important;
 }

@@ -1,20 +1,22 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { Color } from '../../base/css';
+import { Color, Size } from '../../base/css';
 import HTMLComponent, { HTMLArticleProps } from '../../base/html/HTML';
 import MessageStyle from './MessageStyle';
 
 export interface MessageProps extends HTMLArticleProps {
-  color?: string | Color
+  color?: string | Color,
+  size?: string | Size
 }
 
 const Message: React.SFC<MessageProps> = (props: MessageProps) => {
-  const { children, className, color, ...ownProps } = props;
+  const { children, className, color, size, ...ownProps } = props;
 
   const classNames = ClassNames(
     MessageStyle.message,
     MessageStyle[color],
+    MessageStyle[size],
     className
   );
 

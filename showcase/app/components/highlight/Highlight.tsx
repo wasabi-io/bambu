@@ -9,7 +9,7 @@ import Stateful from 'wasabi-ui/lib/Stateful';
 
 const hljs = require('highlight.js');
 
-export default class Highlight extends Stateful<{ isScroll: boolean }, { isHovered: boolean }> {
+export default class Highlight extends Stateful<{ scrolless: boolean }, { isHovered: boolean }> {
   codeId = Math.random().toString(36);
 
   public constructor(props: any) {
@@ -62,7 +62,7 @@ export default class Highlight extends Stateful<{ isScroll: boolean }, { isHover
     });
     const preClassName = ClassNames('hljs-pre', { 
       'hljs-pre-hovered': this.state.isHovered,
-      'hljs-pre-scroll': this.props.isScroll,
+      'hljs-pre-scroll': !this.props.scrolless,
     });
     return (
       <div className="hljs-content">

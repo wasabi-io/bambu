@@ -26,7 +26,7 @@ export default class Box extends Stateless<{}> {
             For example, you can include a media object:
           </p>
         </div>
-        <Snippet>
+        <Snippet slices>
           <BaseBox>
             <Media>
               <MediaLeft>

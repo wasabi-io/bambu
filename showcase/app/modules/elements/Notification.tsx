@@ -17,7 +17,7 @@ export default class Notification extends Stateless<{}> {
         colors
         variables
       >
-        <Snippet slices isScroll={false}>
+        <Snippet slices>
           <BaseNotification>
             <Delete />
             Lorem ipsum dolor sit amet, consectetur
@@ -27,7 +27,7 @@ export default class Notification extends Stateless<{}> {
         </Snippet>
         <hr />
         <h3><b><a>#</a> Colors</b></h3>
-        <Snippet slices isScroll={false}>
+        <Snippet slices scrolless>
           <BaseNotification color={Color.primary}>
             <Delete />
             Lorem ipsum dolor sit amet, consectetur

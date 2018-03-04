@@ -45,7 +45,7 @@ export default class Delete extends Stateless<{}> {
         <p>
           Bulma uses it for the <code>Tag</code>, the <code>Notification</code>, and the <code>Message</code>:
         </p>
-        <Snippet slices isScroll={false}>
+        <Snippet slices scrolless>
           <Tag color={Color.success}>
             Hello World
             <BaseDelete bSize={Size.small}/>

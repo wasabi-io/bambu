@@ -8,15 +8,15 @@ const jsxToString =  require('jsx-to-string');
 interface SnippetProps {
   borderless?: boolean;
   slices?: boolean;
-  isScroll?: boolean;
+  scrolless?: boolean;
 }
 
 export default class Snippet extends Stateless<SnippetProps> {
   static defaultProps = {
-    isScroll: true,
+    scrolless: false,
   }
   public render(): JSX.Element {
-    const { props: { children, borderless, slices, isScroll } } = this;
+    const { props: { children, borderless, slices, scrolless } } = this;
 
     const snpptClassName = ClassNames('snppt', {
       'snppt-borderless': borderless,
@@ -28,7 +28,7 @@ export default class Snippet extends Stateless<SnippetProps> {
           {children}
         </div>
         <div className="snppt-highlight">
-          <Highlight isScroll={isScroll}>
+          <Highlight scrolless={scrolless}>
             {React.Children.map(children, child => `\n${jsxToString(child, { shortBooleanSyntax: true })}`)}
           </Highlight>
         </div>

@@ -52,7 +52,7 @@ export default class Icon extends HTMLComponent<IconProps> {
     );
 
     return (
-      <span className={IconStyle.icon} {...props} >
+      <span className={classNames} {...props} >
         {Icon.renderIcon(icon, size)}
       </span>
     );

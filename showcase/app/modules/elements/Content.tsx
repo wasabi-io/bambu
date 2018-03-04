@@ -19,7 +19,7 @@ export default class Content extends Stateless<{}> {
         <div>
           <p>This <code>content</code> class can be used in <em>any</em> context where you just want to (or can only) write some <strong>text</strong>. For example, it's used for the paragraph you're currently reading.</p>
         </div>
-        <Snippet slices isScroll={false}>
+        <Snippet slices scrolless>
           <BaseContent>
             <h1>Hello World</h1>
             <p>Lorem ipsum<sup><a>[1]</a></sup> dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque. Sub<sub>script</sub> works as well!</p>
@@ -114,7 +114,7 @@ export default class Content extends Stateless<{}> {
         <hr />
         <h3><b><a>#</a> Size</b></h3>
         <p>You can use the <code>isSmall</code>, <code>isMedium</code> and <code>isLarge</code> modifiers to change the font size.</p>
-        <Snippet slices isScroll={false}>
+        <Snippet slices scrolless>
           <BaseContent size={Size.small}>
             <h1>Hello World</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
@@ -128,7 +128,7 @@ export default class Content extends Stateless<{}> {
             </ul>
           </BaseContent>
         </Snippet>
-        <Snippet slices isScroll={false}>
+        <Snippet slices scrolless>
           <BaseContent size={Size.medium}>
             <h1>Hello World</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>
@@ -142,7 +142,7 @@ export default class Content extends Stateless<{}> {
             </ul>
           </BaseContent>
         </Snippet>
-        <Snippet slices isScroll={false}>
+        <Snippet slices scrolless>
           <BaseContent size={Size.large}>
             <h1>Hello World</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel erat vel, interdum mattis neque.</p>

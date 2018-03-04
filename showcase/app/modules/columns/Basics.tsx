@@ -6,6 +6,7 @@ import { Column, Columns } from 'rebul/lib/grid/column';
 import Stateless from 'wasabi-ui/lib/Stateless';
 
 import Page from '../Page';
+import Snippet from '../../components/snippet';
 
 export default class Basics extends Stateless<{}> {
   public render(): JSX.Element {
@@ -18,21 +19,22 @@ export default class Basics extends Stateless<{}> {
             <li>Add as many <code>Column</code> elements as you want</li>
           </ol>
           <p>Each column will have an equal width, no matter the number of columns.</p>
-
-          <Columns>
-            <Column>
-              <Notification color={Color.info} className={HelperStyle.hasTextCentered}>First column</Notification>
-            </Column>
-            <Column>
-              <Notification color={Color.success} className={HelperStyle.hasTextCentered}>Second column</Notification>
-            </Column>
-            <Column>
-              <Notification color={Color.warning} className={HelperStyle.hasTextCentered}>Third column</Notification>
-            </Column>
-            <Column>
-              <Notification color={Color.danger} className={HelperStyle.hasTextCentered}>Fourth column</Notification>
-            </Column>
-          </Columns>
+          <Snippet borderless>
+            <Columns>
+              <Column>
+                <Notification color={Color.info} className={HelperStyle.hasTextCentered}>First column</Notification>
+              </Column>
+              <Column>
+                <Notification color={Color.success} className={HelperStyle.hasTextCentered}>Second column</Notification>
+              </Column>
+              <Column>
+                <Notification color={Color.warning} className={HelperStyle.hasTextCentered}>Third column</Notification>
+              </Column>
+              <Column>
+                <Notification color={Color.danger} className={HelperStyle.hasTextCentered}>Fourth column</Notification>
+              </Column>
+            </Columns>
+          </Snippet>
         </Content>
       </Page>
     );

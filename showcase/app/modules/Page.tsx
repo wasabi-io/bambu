@@ -9,7 +9,7 @@ import Stateless from 'wasabi-ui/lib/Stateless';
 
 export interface PageProps {
   title?: string;
-  subTitle?: string;
+  subTitle?: string | JSX.Element;
   hasMeta?: boolean;
   colors?: boolean;
   sizes?: boolean;

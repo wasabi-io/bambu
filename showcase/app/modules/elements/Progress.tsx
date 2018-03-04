@@ -17,7 +17,7 @@ export default class Progress extends Stateless<{}> {
         colors
         variables
       >
-        <Snippet slices isScroll={false}>
+        <Snippet slices>
           <BaseProgress value={15} max={100}>%15</BaseProgress>
         </Snippet>
         <hr />
