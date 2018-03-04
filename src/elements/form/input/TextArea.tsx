@@ -3,6 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import { Color, colorValues, Size, SizeValues } from 'rebul/lib/base/css';
 import { State, StateValues } from 'rebul/lib/base/css/state';
+
 import HTMLComponent, { HTMLTextareaProps } from '../../../base/html/HTML';
 import FormStyle from '../FormStyle';
 
@@ -18,12 +19,12 @@ export interface TextAreaProps extends HTMLTextareaProps {
 const TextArea: React.SFC<TextAreaProps> = (props: TextAreaProps) => {
 
   const {
-        color,
+    color,
     size,
     state,
     className,
     ...inputProps
-    } = props;
+  } = props;
 
   const classNames = ClassNames(
     FormStyle.textarea,
@@ -35,7 +36,7 @@ const TextArea: React.SFC<TextAreaProps> = (props: TextAreaProps) => {
 
   return (
     <textarea className={classNames} {...inputProps} >
-      {this.props.children}
+      {props.children}
     </textarea>
   );
 };

@@ -2,23 +2,24 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import { Size, SizeValues } from 'rebul/lib/base/css';
-import HTMLComponent, { HTMLLabelProps } from '../../base/html/HTML';
+
+import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
 import FormStyle from './FormStyle';
 
 /**
  * Refers Html Props and Additional Props.
  */
-export interface FieldBodyProps extends HTMLLabelProps {
+export interface FieldBodyProps extends HTMLDivProps {
   size?: string | Size;
 }
 
 const FieldBody: React.SFC<FieldBodyProps> = (props: FieldBodyProps) => {
 
   const {
-        size,
+    size,
     className,
     ...inputProps
-    } = props;
+  } = props;
 
   const classNames = ClassNames([
     FormStyle.fieldBody,
@@ -27,9 +28,9 @@ const FieldBody: React.SFC<FieldBodyProps> = (props: FieldBodyProps) => {
   ]);
 
   return (
-    <label className={classNames} {...inputProps} >
-      {this.props.children}
-    </label>
+    <div className={classNames} {...inputProps} >
+      {props.children}
+    </div>
   );
 };
 

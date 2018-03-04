@@ -30,7 +30,7 @@ export interface ButtonProps extends HTMLElementProps {
 }
 
 const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
-  const { 
+  const {
     tagName, isOutlined,
     isRounded, isInverted,
     icon, state, color, size,
@@ -52,18 +52,18 @@ const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
   );
 
   if (tagName === ButtonTagNames.input) {
-    return React.createElement(tagName, { 
-        ...buttonProps,
-        className: classNames,
-        disabled,
-        onClick,
-      });
+    return React.createElement(tagName, {
+      onClick,
+      disabled,
+      className: classNames,
+      ...buttonProps,
+    });
   }
   return React.createElement(tagName, {
-    ...buttonProps,
-    className: classNames,
     disabled,
     onClick: disabled ? null : onClick,
+    className: classNames,
+    ...buttonProps,
   }, icon && <Icon icon={icon} size={size} />, children);
 };
 

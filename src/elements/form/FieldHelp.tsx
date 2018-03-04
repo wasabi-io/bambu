@@ -16,10 +16,10 @@ export interface FieldHelpProps extends HTMLPProps {
 const FieldHelp: React.SFC<FieldHelpProps> = (props: FieldHelpProps) => {
 
   const {
-        color,
+    color,
     className,
     ...fieldHelpProps
-    } = props;
+  } = props;
 
   const classNames = ClassNames([
     FormStyle.help,

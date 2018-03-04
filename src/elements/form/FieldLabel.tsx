@@ -1,8 +1,9 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import Objects from 'wasabi-common/lib/types/Objects';
 import ControlLabel, { ControlLabelProps } from 'rebul/lib/elements/form/ControlLabel';
+import Objects from 'wasabi-common/lib/types/Objects';
+
 import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
 import FormStyle from './FormStyle';
 
@@ -24,11 +25,11 @@ export interface FieldLabelProps extends HTMLDivProps {
 const FieldLabel: React.SFC<FieldLabelProps> = (props: FieldLabelProps) => {
 
   const {
-        size,
+    size,
     className,
     labelProps,
     ...inputProps
-    } = props;
+  } = props;
 
   const classNames = ClassNames([
     FormStyle.fieldLabel,
@@ -39,7 +40,7 @@ const FieldLabel: React.SFC<FieldLabelProps> = (props: FieldLabelProps) => {
   return (
     <div className={classNames} {...inputProps} >
       <ControlLabel {...labelProps}>
-        {this.props.children}
+        {props.children}
       </ControlLabel>
     </div>
   );

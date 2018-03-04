@@ -1,9 +1,9 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+
 import { Color, colorValues, Size, SizeValues } from '../../../base/css';
 import { State, StateValues } from '../../../base/css/state';
-
 import HTMLComponent, { HTMLInputProps } from '../../../base/html/HTML';
 import FormStyle from '../FormStyle';
 
@@ -20,16 +20,16 @@ export interface InputProps extends HTMLInputProps {
 const Input: React.SFC<InputProps> = (props: InputProps) => {
 
   const {
-        color,
+    color,
     iSize,
     state,
     type,
     className,
     ...inputProps
-    } = props;
+  } = props;
 
 
-  const typeClass = (!type || type === 'text') ? 'input' : type;
+  const typeClass = (!type || type === 'text' || type === 'password') ? 'input' : type;
 
   const classNames = ClassNames(
     FormStyle[typeClass],
