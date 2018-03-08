@@ -49,7 +49,6 @@ function configure(config) {
     Arrays.addAllAsUniqueToArray(config.rules, settings.webpack.module.rules);
 
     settings.webpack.entry = config.entries;
-    settings.webpack.devtool = "source-map";
     settings.webpack.context = paths.app;
     if (config.server) {
         settings.webpack.devServer = require("./devserver")(config.server);
@@ -59,6 +58,13 @@ function configure(config) {
         settings.webpack = Objects.merge(config.webpack, settings.webpack);
     }
     if (nodeEnv === "production") {
+        settings
+            .webpack
+            .plugins
+            .push(new webpack.optimize.UglifyJsPlugin({
+            include: /\.min\.js$/,
+            minimize: true
+        }));
         settings
             .webpack
             .plugins

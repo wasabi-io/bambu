@@ -29,7 +29,10 @@ settings.webpack.output = {
     filename: "[name].[hash].js"
 };
 
-settings.webpack.devtool = "source-map";
+if(process.NODE_ENV === "development") {
+    settings.webpack.devtool = "source-map";
+}
+
 settings
     .webpack
     .plugins
