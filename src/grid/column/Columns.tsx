@@ -20,7 +20,6 @@ export interface ColumnsProps extends HTMLDivProps {
 const Columns: React.SFC<ColumnsProps> = (props: ColumnsProps) => {
 
   const { responsive, isMultiline, isVcentered, isGapless, className, ...inputProps } = props;
-
   const classNames = ClassNames(
     ColumnsStyle.columns,
     ColumnsStyle[responsive],

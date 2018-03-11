@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+
 import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
 import ContainerStyle from './ContainerStyle';
 
@@ -18,14 +19,16 @@ const Container: React.SFC<ContainerProps> = (props: ContainerProps) => {
 
   const { isFluid, isFullhd, isWidescreen, isTextCentered, className, ...inputProps } = props;
 
-  const classNames = ClassNames([
+  const classNames = ClassNames(
     ContainerStyle.container,
-    isFluid ? ContainerStyle.isFluid : undefined,
-    isFullhd ? ContainerStyle.isFullhd : undefined,
-    isWidescreen ? ContainerStyle.isWidescreen : undefined,
-    isTextCentered ? ContainerStyle.isTextCentered : undefined,
+    {
+      [`${ContainerStyle.isFluid}`]: isFluid,
+      [`${ContainerStyle.isFullhd}`]: isFullhd,
+      [`${ContainerStyle.isWidescreen}`]: isWidescreen,
+      [`${ContainerStyle.isTextCentered}`]: isTextCentered,
+    },
     className
-  ]);
+  );
 
   return (
     <div className={classNames} {...inputProps} >

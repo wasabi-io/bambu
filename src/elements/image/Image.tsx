@@ -2,6 +2,7 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Objects, { Props } from 'wasabi-common/lib/types/Objects';
+
 import HTMLComponent, { HTMLImgProps } from '../../base/html/HTML';
 import ImageStyle from './ImageStyle';
 
@@ -21,7 +22,7 @@ export enum ImageRatio {
   is4By3 = 'is4By3',
   is3By2 = 'is3By2',
   is16By9 = 'is16By9',
-  is2By1 ='is2By1'
+  is2By1 = 'is2By1'
 }
 
 /**

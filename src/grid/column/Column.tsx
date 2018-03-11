@@ -9,21 +9,21 @@ import ColumnsStyle from './ColumnStyle';
  * Refers Html Props and Additional Props.
  */
 export interface ColumnProps extends HTMLDivProps {
-  isMultiline?: boolean;
+  isNarrow?: boolean;
   size?: string;
   offset?: string;
 }
 
 const Column: React.SFC<ColumnProps> = (props: ColumnProps) => {
 
-  const { isMultiline, size, offset, className, ...inputProps } = props;
+  const { isNarrow, size, offset, className, ...inputProps } = props;
 
   const classNames = ClassNames(
     ColumnsStyle.column,
     ColumnsStyle[size],
     ColumnsStyle[offset],
     {
-      [`${ColumnsStyle.isMultiline}`]: isMultiline,
+      [`${ColumnsStyle.isNarrow}`]: isNarrow,
     },
     className,
   );
@@ -37,14 +37,14 @@ const Column: React.SFC<ColumnProps> = (props: ColumnProps) => {
 
 Column.propTypes = {
   ...HTMLComponent.propTypes,
-  isMultiline: PropTypes.bool,
+  isNarrow: PropTypes.bool,
   offset: PropTypes.string,
   size: PropTypes.string,
 };
 
 Column.defaultProps = {
   ...HTMLComponent.defaultProps,
-  isMultiline: false,
+  isNarrow: false,
 };
 
 Column.displayName = 'Column';
