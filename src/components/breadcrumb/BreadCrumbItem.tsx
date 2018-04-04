@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
 
-import HTMLComponent, { HTMLAProps } from '../../base/html/HTML';
+import HTMLComponent, {HTMLAProps} from '../../base/html/HTML';
 import BreadCrumbStyle from './BreadCrumbStyle';
 
 export interface BreadCrumbItemProps extends HTMLAProps {
@@ -10,7 +10,7 @@ export interface BreadCrumbItemProps extends HTMLAProps {
 
 const BreadCrumbItem: React.SFC<BreadCrumbItemProps> = (props: BreadCrumbItemProps) => {
 
-    const { isActive, ...breadCrumbItemProps } = props;
+    const {isActive, ...breadCrumbItemProps} = props;
 
     const classNames = ClassNames(
         {
@@ -19,7 +19,7 @@ const BreadCrumbItem: React.SFC<BreadCrumbItemProps> = (props: BreadCrumbItemPro
     );
 
     return (
-        <li className={classNames} >
+        <li className={classNames}>
             <a {...breadCrumbItemProps}>
                 {props.children}
             </a>

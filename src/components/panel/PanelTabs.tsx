@@ -1,24 +1,24 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-import PanelStyle from 'rebul/lib/components/panel/PanelStyle';
-import HTMLComponent, { HTMLPProps } from '../../base/html/HTML';
+import PanelStyle from './PanelStyle';
+import HTMLComponent, {HTMLPProps} from '../../base/html/HTML';
 
 export type PanelTabsProps = HTMLPProps;
 
 const PanelTabs: React.SFC<PanelTabsProps> = (props: PanelTabsProps) => {
 
-  const { className, ...inputProps } = props;
+    const {className, ...inputProps} = props;
 
-  const classNames = ClassNames([
-    PanelStyle.panelTabs,
-    className
-  ]);
+    const classNames = ClassNames([
+        PanelStyle.panelTabs,
+        className
+    ]);
 
-  return (
-    <p className={classNames} {...inputProps}>
-      {props.children}
-    </p>
-  );
+    return (
+        <p className={classNames} {...inputProps}>
+            {props.children}
+        </p>
+    );
 };
 
 PanelTabs.propTypes = HTMLComponent.propTypes;

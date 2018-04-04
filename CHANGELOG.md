@@ -5,3 +5,7 @@
 * removed `app_backup` folder.
 * added `.editorconfig` file.
 * removed sourcemap. changed value of `devtools` property  as `eval`
+* added test configuration
+* added compile code configuration
+* fixed some problems about import path.
+

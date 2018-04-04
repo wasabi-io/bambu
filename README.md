@@ -1,34 +1,56 @@
 # rebul
 
+Bulma 0.6.2 components built with React.
+
+[![npm package](https://badge.fury.io/gh/wasabi-io%2Frebul.svg)](https://badge.fury.io/gh/wasabi-io%2Frebul.svg)
+[![Build Status](https://travis-ci.org/wasabi-io/rebul.svg?branch=master)](https://travis-ci.org/wasabi-io/rebul)
+[![codecov](https://codecov.io/gh/wasabi-io/rebul/branch/master/graph/badge.svg)](https://codecov.io/gh/wasabi-io/rebul)
+
 ## Motivation
 
+UI components built with `typescript` on top of `bulma` css framework.
 
-## Documentation
+## Summary
 
-### Showcase
+| Key Points    | Goal          |
+| ------------- |:-------------:|
+| Extended from `typescript` definition types of html elements for each react component so able to use native html attributes for each element which is supported.     | *Easy development with Typescript* |
+| Used *pure functional* and stateless `react` component  | *Performance*, *Minimum source code* |
+| Defined each component similar      | *Standardization* |
+| Used attribute names for each component similar to related css class names which are defined in **bulma**.| *Standardization*, *Simplicity* |
+| Used **bulma** sass files from node modules.| *Easy upgradable* |
 
-### Build showcase in production mode.
 
-* build showcase
-```ssh
-yarn showcase:build
+### Installation 
+
+```bash
+yarn
 ```
-* serve showcase (port: 8282)
-```ssh
-yarn showcase:serve
-```
 
+## Documentation ( Showcase )
 
-### Start showcase in development mode
+##### Development 
 
 * Start showcase in development mode.
-```ssh
+```bash
 yarn start
 ```
 
-## Installation
+##### Production 
 
-## Contributing
+* build showcase
+```bash
+yarn showcase:build
+```
+
+* serve showcase (port: 8282)
+```bash
+yarn showcase:serve
+```
+
+## Contributions
+
+Yes please! See the [contributing guidelines](./Contributing.md) for details.
 
 ## License
 

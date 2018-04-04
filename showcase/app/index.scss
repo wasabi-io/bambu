@@ -6,7 +6,6 @@ html, body {
   overflow: hidden;
 }
 
-
 body,
 button,
 input,
@@ -25,15 +24,16 @@ textarea {
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
+
 .is-link {
   background-color: #3273dc;
   color: #fff;
 }
 
-.is-first-tab-is-not-active a{
-  color: #fff!important;
+.is-first-tab-is-not-active a {
+  color: #fff !important;
 }
 
 .is-first-tab-is-not-active a:hover {
-  background-color: rgba(10, 10, 10, 0.1)!important;
+  background-color: rgba(10, 10, 10, 0.1) !important;
 }

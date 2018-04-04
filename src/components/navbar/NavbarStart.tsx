@@ -1,21 +1,21 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
 
-import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
+import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
 import NavbarStyle from './NavbarStyle';
 
 export type NavbarStartProps = HTMLDivProps;
 
 const NavbarStart: React.SFC<NavbarStartProps> = (props: NavbarStartProps) => {
 
-  const { className, ...navbarStartProps } = props;
-  const classNames = ClassNames(NavbarStyle.navbarStart, className);
+    const {className, ...navbarStartProps} = props;
+    const classNames = ClassNames(NavbarStyle.navbarStart, className);
 
-  return (
-    <div className={classNames} role="navigation" aria-label="main navigation" {...navbarStartProps}>
-      {props.children}
-    </div>
-  );
+    return (
+        <div className={classNames} role="navigation" aria-label="main navigation" {...navbarStartProps}>
+            {props.children}
+        </div>
+    );
 };
 
 NavbarStart.propTypes = HTMLComponent.propTypes;

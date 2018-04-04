@@ -15,4 +15,5 @@ export const isBordered: string;
 export const isFullwidth: string;
 export const isHoverable: string;
 export const isStriped: string;
+export const tableContainer: string;
 export const spinAround: string;

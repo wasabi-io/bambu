@@ -1,0 +1,10 @@
+--require ./tools/test/ts_register.js
+--require source-map-support/register
+--require ./tools/test/helper.ts
+--require ./tools/test/mockCss.js
+--timeout 5000
+-R spec
+--ui bdd
+--watch-extensions tsx,ts
+--recursive
+__test__/**/*.spec.{ts,tsx}

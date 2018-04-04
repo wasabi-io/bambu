@@ -9,24 +9,24 @@ import Stateless from 'wasabi-ui/lib/Stateless';
 
 abstract class AbstractDom<P extends HTMLElementProps> extends Stateless<P> {
 
-  public static propTypes = {
-    className: PropTypes.string,
-    style: PropTypes.object,
-  };
+    public static propTypes = {
+        className: PropTypes.string,
+        style: PropTypes.object,
+    };
 
-  public static defaultProps = {
-    className: '',
-    style: {},
-  };
+    public static defaultProps = {
+        className: '',
+        style: {},
+    };
 
-  public static create() {
+    public static create() {
 
-  }
+    }
 
-  public classNames(clazzNames: string[]) {
-    clazzNames.push(this.props.className);
-    return ClassNames(clazzNames);
-  }
+    public classNames(clazzNames: string[]) {
+        clazzNames.push(this.props.className);
+        return ClassNames(clazzNames);
+    }
 
 }
 

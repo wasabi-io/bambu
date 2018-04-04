@@ -2,8 +2,8 @@ import * as ClassNames from 'classnames';
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
 
-import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
-import { Icon } from '../../elements/icon';
+import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
+import {Icon} from '../../elements/icon';
 import DropdownStyle from './DropdownStyle';
 
 /**
@@ -13,22 +13,22 @@ export interface DropdownTriggerProps extends HTMLDivProps {
 }
 
 const DropdownTrigger: React.SFC<DropdownTriggerProps> = (props: DropdownTriggerProps) => {
-  const { children, className, ...ownProps } = props;
+    const {children, className, ...ownProps} = props;
 
-  const classNames = ClassNames(
-    'dropdown-trigger',
-    className
-  );
+    const classNames = ClassNames(
+        'dropdown-trigger',
+        className
+    );
 
-  return (
-    <div className={classNames} {...ownProps}>
-      {children}
-    </div>
-  );
+    return (
+        <div className={classNames} {...ownProps}>
+            {children}
+        </div>
+    );
 };
 
 DropdownTrigger.propTypes = {
-  ...HTMLComponent.propTypes,
+    ...HTMLComponent.propTypes,
 }
 
 DropdownTrigger.defaultProps = HTMLComponent.defaultProps;

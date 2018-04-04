@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
 
-import HTMLComponent, { HTMLThProps } from '../../base/html/HTML';
+import HTMLComponent, {HTMLThProps} from '../../base/html/HTML';
 import TableStyle from './TableStyle';
 
 /**
@@ -11,18 +11,18 @@ export type HCellProps = HTMLThProps;
 
 const HCell: React.SFC<HCellProps> = (props: HCellProps) => {
 
-  const { className, ...hCellProps } = props;
+    const {className, ...hCellProps} = props;
 
-  const classNames = ClassNames(
-    TableStyle.th,
-    className
-  );
+    const classNames = ClassNames(
+        TableStyle.th,
+        className
+    );
 
-  return (
-    <th className={classNames} {...hCellProps} >
-      {props.children}
-    </th>
-  );
+    return (
+        <th className={classNames} {...hCellProps} >
+            {props.children}
+        </th>
+    );
 };
 
 HCell.propTypes = HTMLComponent.propTypes;

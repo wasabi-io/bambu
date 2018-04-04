@@ -1,36 +1,36 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
-import CardStyle from 'rebul/lib/components/card/CardStyle';
+import CardStyle from './CardStyle';
 
-import HTMLComponent, { HTMLElementProps } from '../../base/html/HTML';
+import HTMLComponent, {HTMLElementProps} from '../../base/html/HTML';
 
 export interface CardFooterItemProps extends HTMLElementProps {
-  tagName?: string;
+    tagName?: string;
 }
 
 const CardFooterItem: React.SFC<CardFooterItemProps> = (props: CardFooterItemProps) => {
-  const { tagName, children, className, ...cardFooterItemProps } = props;
+    const {tagName, children, className, ...cardFooterItemProps} = props;
 
-  const classNames = ClassNames([
-    CardStyle.cardFooterItem,
-    className
-  ]);
+    const classNames = ClassNames([
+        CardStyle.cardFooterItem,
+        className
+    ]);
 
-  return React.createElement(tagName, {
-    className: classNames,
-    ...cardFooterItemProps
-  }, children);
+    return React.createElement(tagName, {
+        className: classNames,
+        ...cardFooterItemProps
+    }, children);
 };
 
 CardFooterItem.propTypes = {
-  ...HTMLComponent.propTypes,
-  tagName: PropTypes.string,
+    ...HTMLComponent.propTypes,
+    tagName: PropTypes.string,
 };
 
 CardFooterItem.defaultProps = {
-  ...HTMLComponent.defaultProps,
-  tagName: 'span',
+    ...HTMLComponent.defaultProps,
+    tagName: 'span',
 };
 
 CardFooterItem.displayName = 'CardFooterItem';

@@ -25,17 +25,20 @@
       ],
       "rebul$": [
         "./src"
+      ],
+      "*": [
+        "./src/*"
       ]
     }
   },
   "include": [
+    "__test__/**/*",
     "typings/**/*",
     "src/**/*",
     "showcase/**/*",
     "wasabi-ui/**/*"
   ],
   "exclude": [
-    "__test__/**/*",
     "./build",
     "./tools",
     "./node_modules/**/*"
