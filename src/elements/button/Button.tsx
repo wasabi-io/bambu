@@ -6,7 +6,7 @@ import Objects from 'wasabi-common/lib/types/Objects';
 import {Color, colorValues, Size, SizeValues, State, StateValues} from '../../base/css';
 import HTMLComponent, {HTMLElementProps} from '../../base/html/HTML';
 import Icon, {IconOptions} from '../icon/Icon';
-import ButtonStyle from './ButtonStyle';
+import ButtonStyle from '../../bulma';
 
 export enum ButtonTagNames {
     a = 'a',

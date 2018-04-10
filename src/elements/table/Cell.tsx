@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLTdProps} from '../../base/html/HTML';
-import TableStyle from './TableStyle';
+import TableStyle from '../../bulma';
 
 /**
  * Refers Html Props and Additional Props.

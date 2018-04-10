@@ -6,7 +6,7 @@ import JSXUtil from 'wasabi-ui/lib/jsx/JSXUtil';
 
 import HTMLComponent, {HTMLSpanProps} from '../../base/html/HTML';
 import FaIcon, {FaIconProps, IconSize, IconSizeValues} from './FaIcon';
-import IconStyle from './IconStyle';
+import IconStyle from '../../bulma';
 
 export type IconOptions = string | FaIconProps | JSX.Element;
 

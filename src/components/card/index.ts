@@ -6,4 +6,4 @@ export {default as CardContent, CardContentProps} from './CardContent';
 export {default as CardFooter, CardFooterProps} from './CardFooter';
 export {default as CardFooterItem, CardFooterItemProps} from './CardFooterItem';
 export {default as CardImage, CardImageProps} from './CardImage';
-export {default as CardStyle} from './CardStyle';
+

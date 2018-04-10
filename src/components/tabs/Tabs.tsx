@@ -2,10 +2,9 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Objects from 'wasabi-common/lib/types/Objects';
-
 import {Alignment, AlignmentValues, Size, SizeValues} from '../../base/css';
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import TabsStyle from './TabsStyle';
+import TabsStyle from '../../bulma';
 
 export enum tabsStyle { boxed = 'isBoxed', toggle = 'isToggle' }
 

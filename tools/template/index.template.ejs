@@ -2,12 +2,12 @@
 <html>
 
 <head>
-    <base href="<%= htmlWebpackPlugin.options.baseHref%>" />
-    <!-- version: <%= htmlWebpackPlugin.options.version%> -->
-    <!-- build time: <%= htmlWebpackPlugin.options.lastModified%> -->
+    <base href="<%= htmlWebpackPlugin.options.baseHref %>"/>
+    <!-- version: <%= htmlWebpackPlugin.options.version %> -->
+    <!-- build time: <%= htmlWebpackPlugin.options.lastModified %> -->
     <meta charset="UTF-8">
     <title>
-        <%= htmlWebpackPlugin.options.title%>
+        <%= htmlWebpackPlugin.options.title %>
     </title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="expires" content="0">
@@ -15,14 +15,14 @@
     <%
     for (item of htmlWebpackPlugin.options.links) {
     %>
-        <link href="<%=item%>" rel="stylesheet" />
-        <%}%>
+    <link href="<%= item %>" rel="stylesheet"/>
+    <% } %>
 </head>
 
 <body>
-    <% if (htmlWebpackPlugin.options.appMountId) { %>
-        <div id="<%= htmlWebpackPlugin.options.appMountId %>"></div>
-        <% } %>
+<% if (htmlWebpackPlugin.options.appMountId) { %>
+<div id="<%= htmlWebpackPlugin.options.appMountId %>"></div>
+<% } %>
 </body>
 
 </html>

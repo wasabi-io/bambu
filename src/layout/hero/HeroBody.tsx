@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLSectionProps} from '../../base/html/HTML';
-import HeroStyle from './HeroStyle';
+import HeroStyle from '../../bulma';
 
 export type HeroBodyProps = HTMLSectionProps;
 

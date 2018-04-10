@@ -5,7 +5,7 @@ import Objects from 'wasabi-common/lib/types/Objects';
 
 import {Color, colorValues} from '../../base/css';
 import HTMLComponent, {HTMLSectionProps} from '../../base/html/HTML';
-import HeroStyle from './HeroStyle';
+import HeroStyle from '../../bulma';
 
 export enum HeroSize {
     isSmall = 'isSmall',

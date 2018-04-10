@@ -34,8 +34,6 @@ const getSassLoader = function () {
                 loader: "typings-for-css-modules-loader",
                 options: {
                     sass: true,
-                    namedexport: true,
-                    camelcase: true,
                     modules: true
                 }
             },

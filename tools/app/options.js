@@ -9,7 +9,6 @@ module.exports = {
             appMountId: settings.options.mountId,
             baseHref: settings.baseHref,
             links: [
-                "./vendor/bulma/css/bulma.css",
                 "./vendor/font-awesome/css/font-awesome.css"
             ],
             template: settings.paths.index_template,

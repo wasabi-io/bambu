@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Hero_1 = require("./Hero");
+exports.Hero = Hero_1.default;
+exports.HeroSize = Hero_1.HeroSize;
+var HeroHead_1 = require("./HeroHead");
+exports.HeroHead = HeroHead_1.default;
+var HeroBody_1 = require("./HeroBody");
+exports.HeroBody = HeroBody_1.default;
+var HeroFoot_1 = require("./HeroFoot");
+exports.HeroFoot = HeroFoot_1.default;

@@ -61,10 +61,7 @@ function configure(config) {
         settings
             .webpack
             .plugins
-            .push(new webpack.optimize.UglifyJsPlugin({
-            include: /\.min\.js$/,
-            minimize: true
-        }));
+            .push(new webpack.optimize.UglifyJsPlugin({output: {comments: false}, minimize: true}));
         settings
             .webpack
             .plugins

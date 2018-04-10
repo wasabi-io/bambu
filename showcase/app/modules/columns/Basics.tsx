@@ -1,5 +1,6 @@
 import * as React from 'react';
-import {Color, HelperStyle} from 'rebul/lib/base/css';
+import {Color} from 'rebul/lib/base/css';
+import HelperStyle from 'rebul/lib/bulma';
 import {Content} from 'rebul/lib/elements/content';
 import {Notification} from 'rebul/lib/elements/notification';
 import {Column, Columns} from 'rebul/lib/grid/column';

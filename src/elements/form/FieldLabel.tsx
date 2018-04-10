@@ -5,7 +5,7 @@ import ControlLabel, {ControlLabelProps} from '../../elements/form/ControlLabel'
 import Objects from 'wasabi-common/lib/types/Objects';
 
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import FormStyle from './FormStyle';
+import FormStyle from '../../bulma';
 
 export enum FieldLabelSize {
     normal = 'isNormal',

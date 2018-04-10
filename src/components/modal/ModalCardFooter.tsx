@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLSectionProps} from '../../base/html/HTML';
-import ModalStyle from './ModalStyle';
+import ModalStyle from '../../bulma';
 
 export interface ModalCardFooterProps extends HTMLSectionProps {
 }

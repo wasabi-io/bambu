@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {Size, SizeValues} from '../../base/css';
 import HTMLComponent, {HTMLSectionProps} from '../../base/html/HTML';
-import SectionStyle from './SectionStyle';
+import SectionStyle from '../../bulma';
 
 export interface SectionProps extends HTMLSectionProps {
     size?: string | Size;

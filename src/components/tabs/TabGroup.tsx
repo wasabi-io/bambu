@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {Alignment, AlignmentValues} from '../../base/css';
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import TabGroupStyle from './TabsStyle';
+import TabGroupStyle from '../../bulma';
 
 export interface TabGroupProps extends HTMLDivProps {
     alignment?: string | Alignment;

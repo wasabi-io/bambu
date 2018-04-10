@@ -1,12 +1,12 @@
-import { resolve } from 'path';
+import {resolve} from 'path';
 import resolver from 'wasabi-common/lib/resolver';
 import * as chai from 'chai';
 // setup file
-import { configure } from 'enzyme';
+import {configure} from 'enzyme';
 import * as Adapter from 'enzyme-adapter-react-16';
 import * as chaiEnzyme from 'chai-enzyme';
 
-configure({ adapter: new Adapter() });
+configure({adapter: new Adapter()});
 
 resolver.electron().root('./src');
 

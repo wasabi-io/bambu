@@ -4,7 +4,7 @@ import * as React from 'react';
 import {Responsive, ResponsiveValues} from '../../base/css';
 
 import HTMLComponent, {HTMLElementProps} from '../../base/html/HTML';
-import LevelStyle from './LevelStyle';
+import LevelStyle from '../../bulma';
 
 /**
  * Refers Html Props and Additional Props.

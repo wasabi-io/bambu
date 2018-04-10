@@ -10,4 +10,3 @@ export {default as NavbarItem, NavbarItemProps} from './NavbarItem';
 export {default as NavbarLink, NavbarLinkProps} from './NavbarLink';
 export {default as NavbarMenu, NavbarMenuProps} from './NavbarMenu';
 export {default as NavbarStart, NavbarStartProps} from './NavbarStart';
-export {default as NavbarStyle} from './NavbarStyle';

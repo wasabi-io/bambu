@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import * as React from 'react';
 import {StatelessFC} from 'wasabi-ui/lib/Stateless';
 import HTMLComponent, {HTMLAsideProps} from '../../base/html/HTML';
-import MenuStyle from './MenuStyle';
+import MenuStyle from '../../bulma';
 
 export type MenuProps = HTMLAsideProps;
 

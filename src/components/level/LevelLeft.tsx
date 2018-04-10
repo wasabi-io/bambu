@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLAllAttributes} from '../../base/html/HTML';
-import LevelStyle from './LevelStyle';
+import LevelStyle from '../../bulma';
 
 export interface LevelLeftProps extends HTMLAllAttributes {
     tagName?: string;

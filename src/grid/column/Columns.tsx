@@ -5,7 +5,7 @@ import Objects from 'wasabi-common/lib/types/Objects';
 
 import {Responsive} from '../../base/css';
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import ColumnsStyle from './ColumnStyle';
+import ColumnsStyle from '../../bulma';
 
 /**
  * Refers Html Props and Additional Props.

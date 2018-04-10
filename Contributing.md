@@ -42,29 +42,39 @@ yarn showcase:build
 yarn showcase:serve
 ```
 
+
+
 ## Standardization
+
+* use *bulma* style module.
+
+Includes all defined css class names from `bulma` and extra css styles and classnames.
+
+```typescript
+import ComponentStyle from '../../bulma';
+
+
+...
+    const classNames = ClassNames(
+        ComponentStyle.component,
+        ComponentStyle[alignment],
+        ComponentStyle[separator],
+        ComponentStyle[size],
+        className,
+    );
+...
+
+```
 
 * Should use pure functional
 
 #### General folder structure for each related components.
 
 ```text
-component.scss
-component.scss.d.ts
 Component.ts
 AnotherRelatedComponent.ts
 index.ts
 ```
-
-* *component.scss*
-
-Includes all defined css files from `bulma` which are related to the component and extra css styles and classnames.
-
-* *component.scss.d.ts*
-
-Auto generated file by sass & css loader for using class names as programmatically.
-
-* *Component.ts*, *AnotherChildComponent.ts*
 
 * *index.ts*
 
@@ -75,19 +85,9 @@ export all react components as public.
 ##### Sample Component
 
 ```text
-breadcrumb.scss
-breadcrumb.scss.d.ts
 BreadCrumb.tsx
 BreadCrumbItem.tsx
-BreadCrumbStyle.ts
 index.ts
-```
-
-* *breadcrumb.scss*
-
-```scss
-@import '../../../node_modules/bulma/sass/utilities/all';
-@import '../../../node_modules/bulma/sass/components/breadcrumb';
 ```
 
 * *BreadCrumb.tsx*
@@ -100,7 +100,7 @@ import Objects from 'wasabi-common/lib/types/Objects';
 
 import {Alignment, AlignmentValues, Size, SizeValues} from '../../base/css';
 import HTMLComponent, {HTMLElementProps} from '../../base/html/HTML';
-import BreadCrumbStyle from './BreadCrumbStyle';
+import BreadCrumbStyle from '../../bulma';
 
 export enum BreadCrumbSeperator {
     arrow = 'hasArrowSeparator',
@@ -163,7 +163,7 @@ import * as ClassNames from 'classnames';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLAProps} from '../../base/html/HTML';
-import BreadCrumbStyle from './BreadCrumbStyle';
+import BreadCrumbStyle from '../../bulma';
 
 export interface BreadCrumbItemProps extends HTMLAProps {
     isActive?: boolean;
@@ -201,20 +201,11 @@ BreadCrumbItem.displayName = 'BreadCrumbItem';
 export default BreadCrumbItem;
 ```
 
-* *BreadCrumbStyle.ts*
-
-```typescript
-const BreadCrumbStyle = require('./breadcrumb.scss');
-
-export default BreadCrumbStyle;
-```
-
 
 * *index.ts*
 ```typescript
 export {default as BreadCrumb, BreadCrumbProps, BreadCrumbSeperator} from './BreadCrumb';
 export {default as BreadCrumbItem, BreadCrumbItemProps} from './BreadCrumbItem';
-export {default as BreadCrumbStyle} from './BreadCrumbStyle';
 ```
 
 

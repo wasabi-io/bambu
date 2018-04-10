@@ -15,7 +15,7 @@ const configuration = {
     port: process.env.PORT || 8080
 };
 
-const configurer = function(config) {
+const configurer = function (config) {
     return Objects.merge(config, configuration);
 };
 

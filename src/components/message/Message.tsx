@@ -3,11 +3,11 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {Color, Size} from '../../base/css';
 import HTMLComponent, {HTMLArticleProps} from '../../base/html/HTML';
-import MessageStyle from './MessageStyle';
+import MessageStyle from '../../bulma';
 
 export interface MessageProps extends HTMLArticleProps {
-    color?: string | Color,
-    size?: string | Size
+    color?: string | Color;
+    size?: string | Size;
 }
 
 const Message: React.SFC<MessageProps> = (props: MessageProps) => {

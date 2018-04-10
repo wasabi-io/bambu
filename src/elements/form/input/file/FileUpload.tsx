@@ -7,7 +7,7 @@ import {has} from 'wasabi-common/lib';
 import Strings from 'wasabi-common/lib/types/Strings';
 import HTMLComponent, {HTMLInputProps} from '../../../../base/html/HTML';
 import ControlLabel from '../../ControlLabel';
-import FormStyle from '../../FormStyle';
+import FormStyle from '../../../../bulma';
 
 export interface FileUploadProps extends HTMLInputProps {
     color?: string | Color;

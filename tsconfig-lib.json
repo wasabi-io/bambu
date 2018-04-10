@@ -2,7 +2,7 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
-    "target": "es2015",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
@@ -13,9 +13,11 @@
     "experimentalDecorators": true,
     "preserveConstEnums": true,
     "allowJs": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "jsx": "react",
-    "outDir": "lib"
+    "declaration": true,
+    "declarationDir": "./lib",
+    "outDir": "./lib"
   },
   "include": [
     "typings/**/*",

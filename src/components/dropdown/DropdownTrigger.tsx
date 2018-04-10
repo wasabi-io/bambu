@@ -4,7 +4,7 @@ import * as PropTypes from 'prop-types';
 
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
 import {Icon} from '../../elements/icon';
-import DropdownStyle from './DropdownStyle';
+import DropdownStyle from '../../bulma';
 
 /**
  * Refers Html Props and Additional Props.

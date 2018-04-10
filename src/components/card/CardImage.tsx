@@ -1,6 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-import CardStyle from './CardStyle';
+import CardStyle from '../../bulma';
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
 
 export type CardImageProps = HTMLDivProps;

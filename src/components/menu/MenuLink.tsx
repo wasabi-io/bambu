@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import HTMLComponent, {HTMLAProps} from '../../base/html/HTML';
-import MenuStyle from './MenuStyle';
+import MenuStyle from '../../bulma';
 
 export interface MenuLinkProps extends HTMLAProps {
     active?: boolean;

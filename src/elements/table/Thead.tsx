@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLTheadProps} from '../../base/html/HTML';
-import TableStyle from './TableStyle';
+import TableStyle from '../../bulma';
 
 export type THeadProps = HTMLTheadProps;
 

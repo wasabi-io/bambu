@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLSpanProps} from '../../base/html/HTML';
-import PaginationStyle from './PaginationStyle';
+import PaginationStyle from '../../bulma';
 
 export interface PaginationEllipsisProps extends HTMLSpanProps {
 }

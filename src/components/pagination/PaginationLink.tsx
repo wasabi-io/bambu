@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLAProps} from '../../base/html/HTML';
-import PaginationStyle from './PaginationStyle';
+import PaginationStyle from '../../bulma';
 
 export interface PaginationLinkProps extends HTMLAProps {
     isCurrent?: boolean;

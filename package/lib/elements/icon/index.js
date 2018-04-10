@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Icon_1 = require("./Icon");
+exports.Icon = Icon_1.default;
+var FaIcon_1 = require("./FaIcon");
+exports.FaIcon = FaIcon_1.default;
+exports.IconEffect = FaIcon_1.IconEffect;
+exports.IconSize = FaIcon_1.IconSize;
+exports.IconSizeValues = FaIcon_1.IconSizeValues;
+exports.IconStack = FaIcon_1.IconStack;

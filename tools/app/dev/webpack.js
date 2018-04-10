@@ -4,7 +4,7 @@ const WebpackNotifierPlugin = require("webpack-notifier");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const packageJson = require("../../../package.json");
-const { merge } = require("../../common/util/Objects");
+const {merge} = require("../../common/util/Objects");
 const configureWebpack = require("../../common/webpack/webpack");
 
 let jsonConfig = require("../options");
@@ -32,7 +32,7 @@ settings.webpack.devtool = "source-map";
 settings
     .webpack
     .plugins
-    .push(new WebpackNotifierPlugin({ alwaysNotify: false }));
+    .push(new WebpackNotifierPlugin({alwaysNotify: false}));
 settings
     .webpack
     .plugins

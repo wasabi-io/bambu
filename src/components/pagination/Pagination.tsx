@@ -3,7 +3,7 @@ import * as React from 'react';
 import {Alignment, Size} from '../../base/css';
 
 import HTMLComponent, {HTMLNavProps} from '../../base/html/HTML';
-import PaginationStyle from './PaginationStyle';
+import PaginationStyle from '../../bulma';
 
 export interface PaginationProps extends HTMLNavProps {
     alignment?: string | Alignment;

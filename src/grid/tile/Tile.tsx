@@ -5,7 +5,7 @@ import Objects from 'wasabi-common/lib/types/Objects';
 
 import {Size12, Size12Values} from '../../base/css';
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import TileStyle from './TileStyle';
+import TileStyle from '../../bulma';
 
 export enum TileContext {
     ancestor = 'isAncestor',

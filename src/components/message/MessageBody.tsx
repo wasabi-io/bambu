@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import MessageStyle from './MessageStyle';
+import MessageStyle from '../../bulma';
 
 export type MessageBodyProps = HTMLDivProps;
 

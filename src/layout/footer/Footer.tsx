@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
 import HTMLComponent, {HTMLFooterProps} from '../../base/html/HTML';
-import FooterStyle from './FooterStyle';
+import FooterStyle from '../../bulma';
 
 export type FooterProps = HTMLFooterProps;
 
