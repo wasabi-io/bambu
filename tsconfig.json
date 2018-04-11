@@ -20,10 +20,10 @@
       "modules/*": [
         "./showcase/app/modules/*"
       ],
-      "rebul/lib/*": [
+      "bambu/lib/*": [
         "./src/*"
       ],
-      "rebul$": [
+      "bambu$": [
         "./src"
       ],
       "*": [

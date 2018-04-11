@@ -1,8 +1,8 @@
 import * as React from 'react';
 import Stateless from 'wasabi-ui/lib/Stateless';
-import {Color} from 'rebul/lib/base/css';
-import {Notification as BaseNotification} from 'rebul/lib/elements/notification';
-import {Delete} from 'rebul/lib/elements/delete';
+import {Color} from 'bambu/lib/base/css';
+import {Notification as BaseNotification} from 'bambu/lib/elements/notification';
+import {Delete} from 'bambu/lib/elements/delete';
 
 import Page from '../Page';
 import Snippet from '../../components/snippet';

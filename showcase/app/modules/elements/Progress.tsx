@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Stateless from 'wasabi-ui/lib/Stateless';
-import {Color, Size} from 'rebul/lib/base/css';
-import {Progress as BaseProgress} from 'rebul/lib/elements/progress';
+import {Color, Size} from 'bambu/lib/base/css';
+import {Progress as BaseProgress} from 'bambu/lib/elements/progress';
 
 import Page from '../Page';
 import Snippet from '../../components/snippet';

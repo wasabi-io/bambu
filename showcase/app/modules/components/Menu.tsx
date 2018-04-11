@@ -8,7 +8,7 @@ import {
     MenuLinkGen,
     MenuLinkGenRoot,
     MenuList
-} from 'rebul/lib/components/menu';
+} from 'bambu/lib/components/menu';
 
 import Page from '../Page';
 import Snippet from '../../components/snippet';

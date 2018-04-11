@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Stateless from 'wasabi-ui/lib/Stateless';
-import {Button as BaseButton} from 'rebul/lib/elements/button';
-import {Icon, IconSize} from 'rebul/lib/elements/icon';
-import {Notification} from 'rebul/lib/elements/notification';
-import {Color, Size, State} from 'rebul/lib/base/css';
+import {Button as BaseButton} from 'bambu/lib/elements/button';
+import {Icon, IconSize} from 'bambu/lib/elements/icon';
+import {Notification} from 'bambu/lib/elements/notification';
+import {Color, Size, State} from 'bambu/lib/base/css';
 
 import Page from '../Page';
 import Snippet from '../../components/snippet';

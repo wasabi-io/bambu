@@ -33,8 +33,8 @@ module.exports = {
         index_template: "tools/template/index.template.ejs"
     },
     aliases: {
-        "rebul$": "./src/index",
-        "rebul/lib": "./src",
+        "bambu$": "./src/index",
+        "bambu/lib": "./src",
         "bulma": "./node_modules/bulma",
         "modules": "./showcase/app/modules/"
     },

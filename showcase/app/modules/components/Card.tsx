@@ -9,13 +9,13 @@ import {
     CardFooter,
     CardFooterItem,
     CardImage,
-} from 'rebul/lib/components/card';
-import {Size6} from 'rebul/lib/base/css';
-import {Image, ImageSize} from 'rebul/lib/elements/image';
-import {Media, MediaLeft, MediaContent} from 'rebul/lib/components/media';
-import {Title, SubTitle} from 'rebul/lib/elements/title';
-import {Content} from 'rebul/lib/elements/content';
-import {Icon} from 'rebul/lib/elements/icon';
+} from 'bambu/lib/components/card';
+import {Size6} from 'bambu/lib/base/css';
+import {Image, ImageSize} from 'bambu/lib/elements/image';
+import {Media, MediaLeft, MediaContent} from 'bambu/lib/components/media';
+import {Title, SubTitle} from 'bambu/lib/elements/title';
+import {Content} from 'bambu/lib/elements/content';
+import {Icon} from 'bambu/lib/elements/icon';
 
 import Page from '../Page';
 import Snippet from '../../components/snippet';

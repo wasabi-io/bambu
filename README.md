@@ -1,9 +1,9 @@
-# rebul
+# bambu
 
 Seamless integration with [**Bulma**](https://bulma.io/)
 
-[![npm package](https://badge.fury.io/gh/wasabi-io%2Frebul.svg)](https://badge.fury.io/gh/wasabi-io%2Frebul.svg)
-[![Build Status](https://travis-ci.org/wasabi-io/rebul.svg?branch=master)](https://travis-ci.org/wasabi-io/rebul)
+[![npm package](https://badge.fury.io/gh/wasabi-io%2Fbambu.svg)](https://badge.fury.io/gh/wasabi-io%2Fbambu.svg)
+[![Build Status](https://travis-ci.org/wasabi-io/bambu.svg?branch=master)](https://travis-ci.org/wasabi-io/bambu)
 
 ## Motivation
 
@@ -22,12 +22,19 @@ UI components built with `typescript` on top of `bulma` css framework.
 
 ### Configuration
 
-* install
+#### installation
+
+* install dependencies *bulma*, *react*,*prop-types*
 ```bash
-yarn
+yarn add bulma react prop-types
 ```
 
-##### conversion of **bulma** sass file.
+* install
+```bash
+yarn add bambu
+```
+
+#### conversion of **bulma** sass file.
 
 * webpack
 > add *sass-loader* to the webpack configuration.
@@ -44,14 +51,14 @@ yarn
 
 ## Documentation ( Showcase )
 
-##### Development 
+#### Development
 
 * Start showcase in development mode.
 ```bash
 yarn start
 ```
 
-##### Production 
+#### Production
 
 * build showcase
 ```bash
@@ -69,4 +76,4 @@ Yes please! See the [contributing guidelines](./Contributing.md) for details.
 
 ## License
 
-rebul is [wtfpl](http://www.wtfpl.net/) licensed.
+bambu is [wtfpl](http://www.wtfpl.net/) licensed.

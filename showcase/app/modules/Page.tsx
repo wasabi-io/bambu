@@ -1,10 +1,10 @@
 import * as React from 'react';
-import {Color} from 'rebul/lib/base/css';
-import {Content} from 'rebul/lib/elements/content';
-import {Control, Field} from 'rebul/lib/elements/form';
-import {Tag, Tags} from 'rebul/lib/elements/tag';
-import {SubTitle, Title} from 'rebul/lib/elements/title';
-import {Section} from 'rebul/lib/layout/section';
+import {Color} from 'bambu/lib/base/css';
+import {Content} from 'bambu/lib/elements/content';
+import {Control, Field} from 'bambu/lib/elements/form';
+import {Tag, Tags} from 'bambu/lib/elements/tag';
+import {SubTitle, Title} from 'bambu/lib/elements/title';
+import {Section} from 'bambu/lib/layout/section';
 import Stateless from 'wasabi-ui/lib/Stateless';
 
 export interface PageProps {

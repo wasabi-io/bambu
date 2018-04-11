@@ -1,9 +1,9 @@
 import * as React from 'react';
-import {Color} from 'rebul/lib/base/css';
-import HelperStyle from 'rebul/lib/bulma';
-import {Content} from 'rebul/lib/elements/content';
-import {Notification} from 'rebul/lib/elements/notification';
-import {Column, Columns} from 'rebul/lib/grid/column';
+import {Color} from 'bambu/lib/base/css';
+import HelperStyle from 'bambu/lib/bulma';
+import {Content} from 'bambu/lib/elements/content';
+import {Notification} from 'bambu/lib/elements/notification';
+import {Column, Columns} from 'bambu/lib/grid/column';
 import Stateless from 'wasabi-ui/lib/Stateless';
 
 import Page from '../Page';

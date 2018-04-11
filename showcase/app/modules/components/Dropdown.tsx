@@ -7,9 +7,9 @@ import {
     DropdownMenu,
     DropdownItem,
     DropdownDivider,
-} from 'rebul/lib/components/dropdown';
-import {Button} from 'rebul/lib/elements/button';
-import {Icon} from 'rebul/lib/elements/icon';
+} from 'bambu/lib/components/dropdown';
+import {Button} from 'bambu/lib/elements/button';
+import {Icon} from 'bambu/lib/elements/icon';
 
 import Page from '../Page';
 import Snippet from '../../components/snippet';

@@ -49,6 +49,6 @@ if (jsonConfig.copy && jsonConfig.copy.move) {
         .push(new CopyWebpackPlugin(jsonConfig.copy.move))
 }
 
-settings.baseHref = '/rebul/';
+settings.baseHref = '/bambu/';
 
 module.exports = settings.webpack;

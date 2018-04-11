@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Stateful from 'wasabi-ui/lib/Stateful';
-import {Color, Size} from 'rebul/lib/base/css';
+import {Color, Size} from 'bambu/lib/base/css';
 import {
     Modal as ImageModal,
     ModalCard,
@@ -8,10 +8,10 @@ import {
     ModalCardFooter,
     ModalCardHeader,
     ModalCardTitle,
-} from 'rebul/lib/components/modal';
-import {Button} from 'rebul/lib/elements/button';
-import {Delete} from 'rebul/lib/elements/delete';
-import {Image, ImageSize} from 'rebul/lib/elements/image';
+} from 'bambu/lib/components/modal';
+import {Button} from 'bambu/lib/elements/button';
+import {Delete} from 'bambu/lib/elements/delete';
+import {Image, ImageSize} from 'bambu/lib/elements/image';
 
 import Page from '../Page';
 import Snippet from '../../components/snippet';

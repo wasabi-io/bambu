@@ -1,11 +1,11 @@
 import * as React from 'react';
 import Stateless from 'wasabi-ui/lib/Stateless';
-import {Box as BaseBox} from 'rebul/lib/elements/box';
-import {Image, ImageSize} from 'rebul/lib/elements/image';
-import {Responsive} from 'rebul/lib/base/css';
-import {Icon, IconSize} from 'rebul/lib/elements/icon';
-import {Media, MediaContent, MediaLeft} from 'rebul/lib/components/media';
-import {Level, LevelLeft, LevelItem} from 'rebul/lib/components/level';
+import {Box as BaseBox} from 'bambu/lib/elements/box';
+import {Image, ImageSize} from 'bambu/lib/elements/image';
+import {Responsive} from 'bambu/lib/base/css';
+import {Icon, IconSize} from 'bambu/lib/elements/icon';
+import {Media, MediaContent, MediaLeft} from 'bambu/lib/components/media';
+import {Level, LevelLeft, LevelItem} from 'bambu/lib/components/level';
 
 import Page from '../Page';
 import Snippet from '../../components/snippet';

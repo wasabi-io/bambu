@@ -1,12 +1,12 @@
 import * as React from 'react';
 import {withRouter} from 'react-router-dom';
-import {Vertical} from 'rebul/lib/base/css';
-import {Navbar, NavbarBrand, NavbarItem} from 'rebul/lib/components/navbar';
-import {Container} from 'rebul/lib/elements/container';
-import {Icon, IconSize} from 'rebul/lib/elements/icon';
-import {SubTitle, Title} from 'rebul/lib/elements/title';
-import {Column, Columns} from 'rebul/lib/grid/column';
-import {Hero, HeroBody, HeroFoot} from 'rebul/lib/layout/hero';
+import {Vertical} from 'bambu/lib/base/css';
+import {Navbar, NavbarBrand, NavbarItem} from 'bambu/lib/components/navbar';
+import {Container} from 'bambu/lib/elements/container';
+import {Icon, IconSize} from 'bambu/lib/elements/icon';
+import {SubTitle, Title} from 'bambu/lib/elements/title';
+import {Column, Columns} from 'bambu/lib/grid/column';
+import {Hero, HeroBody, HeroFoot} from 'bambu/lib/layout/hero';
 import Stateless from 'wasabi-ui/lib/Stateless';
 
 import MainNavigation from './MainNavigation';
@@ -28,10 +28,10 @@ class Workspace extends Stateless<WorkspaceProps> {
                 <Navbar isFixed={Vertical.top}>
                     <Container>
                         <NavbarBrand>
-                            <NavbarItem href="/rebul">
+                            <NavbarItem href="/bambu">
                                 <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28"/>
                             </NavbarItem>
-                            <NavbarItem href="https://github.com/wasabi-io/rebul" target="_blank">
+                            <NavbarItem href="https://github.com/wasabi-io/bambu" target="_blank">
                                 <Icon icon="github" size={IconSize.lg} style={{display: 'inline'}}/>
                             </NavbarItem>
                         </NavbarBrand>

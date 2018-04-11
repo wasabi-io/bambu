@@ -1,10 +1,10 @@
 import * as React from 'react';
 import Stateless from 'wasabi-ui/lib/Stateless';
-import {Delete as BaseDelete} from 'rebul/lib/elements/delete';
-import {Size, Color} from 'rebul/lib/base/css';
-import {Tag} from 'rebul/lib/elements/tag';
-import {Notification} from 'rebul/lib/elements/notification';
-import {Message, MessageHeader, MessageBody} from 'rebul/lib/components/message';
+import {Delete as BaseDelete} from 'bambu/lib/elements/delete';
+import {Size, Color} from 'bambu/lib/base/css';
+import {Tag} from 'bambu/lib/elements/tag';
+import {Notification} from 'bambu/lib/elements/notification';
+import {Message, MessageHeader, MessageBody} from 'bambu/lib/components/message';
 
 import Page from '../Page';
 import Snippet from '../../components/snippet';

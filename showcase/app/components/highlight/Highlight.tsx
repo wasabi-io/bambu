@@ -3,8 +3,8 @@ import './highlight.css';
 import * as ClassNames from 'classnames';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import {Size} from 'rebul/lib/base/css';
-import {Button} from 'rebul/lib/elements/button';
+import {Size} from 'bambu/lib/base/css';
+import {Button} from 'bambu/lib/elements/button';
 import Stateful from 'wasabi-ui/lib/Stateful';
 
 const hljs = require('highlight.js');

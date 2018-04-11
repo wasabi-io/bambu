@@ -10,3 +10,5 @@
 * fixed some problems about import path.
 * changed version and documentation.
 * fixed building library.
+* added installation to *README*.
+* changed library name as **bambu**

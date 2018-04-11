@@ -1,5 +1,5 @@
 {
-  "name": "rebul",
+  "name": "bambu",
   "version": "0.0.1-alpha-01",
   "description": "",
   "main": "lib/index.js",
@@ -20,6 +20,7 @@
   "license": "wtfpl",
   "devDependencies": {
     "@types/chai": "^4.1.2",
+    "@types/chai-enzyme": "^0.6.4",
     "@types/classnames": "2.2.3",
     "@types/enzyme": "^3.1.9",
     "@types/enzyme-adapter-react-16": "^1.0.2",
@@ -31,6 +32,7 @@
     "@types/systemjs": "0.20.6",
     "app-root-path": "2.0.1",
     "awesome-typescript-loader": "3.4.1",
+    "bulma": "git+https://github.com/jgthms/bulma.git",
     "chai": "^4.1.2",
     "chai-enzyme": "^1.0.0-beta.0",
     "colors": "1.1.2",
@@ -54,7 +56,9 @@
     "node-sass": "4.7.2",
     "node-sass-chokidar": "^1.2.2",
     "postcss-loader": "2.0.10",
+    "prop-types": "^15.6.0",
     "raw-loader": "0.5.1",
+    "react": "^16.2.0",
     "react-dom": "16.2.0",
     "react-router-dom": "4.2.2",
     "replace-in-file": "^3.4.0",
@@ -74,17 +78,14 @@
     "vinyl-fs": "3.0.1",
     "webpack": "3.10.0",
     "webpack-dev-server": "2.11.1",
-    "webpack-notifier": "1.5.1",
-    "bulma": "git+https://github.com/jgthms/bulma.git",
-    "classnames": "2.2.5",
-    "prop-types": "^15.6.0",
-    "react": "^16.2.0"
+    "webpack-notifier": "1.5.1"
   },
   "peerDependencies": {
-    "react": ">=15",
-    "react-dom": ">=15"
+    "bulma": ">=0.6.2",
+    "react": ">=15"
   },
   "dependencies": {
+    "classnames": "2.2.5",
     "wasabi-common": "2.2.3",
     "wasabi-ui": "1.0.0-alpha.2"
   }

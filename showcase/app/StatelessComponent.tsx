@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {Link, Route} from 'react-router-dom';
-import {Tab, Tabs} from 'rebul/lib/components/tabs';
-import {Container} from 'rebul/lib/elements/container';
+import {Tab, Tabs} from 'bambu/lib/components/tabs';
+import {Container} from 'bambu/lib/elements/container';
 import Stateless from 'wasabi-ui/lib/Stateless';
 
 import asyncComponent from './AsyncComponent';

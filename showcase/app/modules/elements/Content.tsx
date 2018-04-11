@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Stateless from 'wasabi-ui/lib/Stateless';
-import {Size} from 'rebul/lib/base/css';
-import {Content as BaseContent} from 'rebul/lib/elements/content';
+import {Size} from 'bambu/lib/base/css';
+import {Content as BaseContent} from 'bambu/lib/elements/content';
 
 import Page from '../Page';
 import Snippet from '../../components/snippet';

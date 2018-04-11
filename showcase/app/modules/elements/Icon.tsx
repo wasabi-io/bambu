@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Stateless from 'wasabi-ui/lib/Stateless';
-import {Responsive, Color, Size} from 'rebul/lib/base/css';
-import {Icon as BaseIcon, IconSize} from 'rebul/lib/elements/icon';
-import {Tag} from 'rebul/lib/elements/tag';
-import {Message, MessageBody} from 'rebul/lib/components/message';
+import {Responsive, Color, Size} from 'bambu/lib/base/css';
+import {Icon as BaseIcon, IconSize} from 'bambu/lib/elements/icon';
+import {Tag} from 'bambu/lib/elements/tag';
+import {Message, MessageBody} from 'bambu/lib/components/message';
 
 import Page from '../Page';
 import Snippet from '../../components/snippet';

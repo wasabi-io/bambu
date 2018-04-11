@@ -4,9 +4,9 @@ import {
     Message as BaseMessage,
     MessageHeader,
     MessageBody
-} from 'rebul/lib/components/message';
-import {Delete} from 'rebul/lib/elements/delete';
-import {Color, Size} from 'rebul/lib/base/css';
+} from 'bambu/lib/components/message';
+import {Delete} from 'bambu/lib/elements/delete';
+import {Color, Size} from 'bambu/lib/base/css';
 
 import Page from '../Page';
 import Snippet from '../../components/snippet';
