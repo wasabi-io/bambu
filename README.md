@@ -2,7 +2,7 @@
 
 Seamless integration with [**Bulma**](https://bulma.io/)
 
-[![npm package](https://badge.fury.io/gh/wasabi-io%2Fbambu.svg)](https://badge.fury.io/gh/wasabi-io%2Fbambu.svg)
+[![npm version](https://badge.fury.io/js/bambu.svg)](https://badge.fury.io/js/bambu)
 [![Build Status](https://travis-ci.org/wasabi-io/bambu.svg?branch=master)](https://travis-ci.org/wasabi-io/bambu)
 
 ## Motivation

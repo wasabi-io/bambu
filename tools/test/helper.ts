@@ -1,4 +1,3 @@
-import {resolve} from 'path';
 import resolver from 'wasabi-common/lib/resolver';
 import * as chai from 'chai';
 // setup file
