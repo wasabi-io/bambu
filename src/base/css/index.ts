@@ -1,3 +1,4 @@
+export { default as bulma } from './bulma';
 export * from './alignment';
 export * from './colors';
 export * from './direction';

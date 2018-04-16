@@ -1,6 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-import MediaStyle from '../../bulma';
+import MediaStyle from '../../base/css/bulma';
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
 
 export type MediaRightProps = HTMLDivProps;

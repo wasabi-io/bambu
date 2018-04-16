@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import {Size, SizeValues} from '../../base/css';
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import ModalStyle from '../../bulma';
+import ModalStyle from '../../base/css/bulma';
 
 export interface ModalProps extends HTMLDivProps {
     isActive?: boolean;

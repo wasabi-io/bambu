@@ -71,18 +71,6 @@ const getUrlLoader = function () {
     };
 };
 
-const htmlLoader = function () {
-    return {
-        test: /\.html?$/,
-        use: [{
-            loader: 'html-loader',
-            options: {
-                minimize: true
-            }
-        }]
-    };
-};
-
 const rules = {
     ts: getTsLoader,
     tsLint: getTsLintLoader,
@@ -90,8 +78,7 @@ const rules = {
     sass: getSassLoader,
     scss: getScssLoader,
     file: getFileLoader,
-    url: getUrlLoader,
-    html: htmlLoader
+    url: getUrlLoader
 };
 
 const configurer = function (loader, webpackRules) {

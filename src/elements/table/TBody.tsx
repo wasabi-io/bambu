@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLTbodyProps} from '../../base/html/HTML';
-import TableStyle from '../../bulma';
+import TableStyle from '../../base/css/bulma';
 
 export type TBodyProps = HTMLTbodyProps;
 

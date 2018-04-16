@@ -6,7 +6,7 @@ import JSXUtil from 'wasabi-ui/lib/jsx/JSXUtil';
 
 import HTMLComponent, {HTMLSpanProps} from '../../base/html/HTML';
 import FaIcon, {FaIconProps, IconSize, IconSizeValues} from './FaIcon';
-import IconStyle from '../../bulma';
+import IconStyle from '../../base/css/bulma';
 
 export type IconOptions = string | FaIconProps | JSX.Element;
 
@@ -51,10 +51,6 @@ export default class Icon extends HTMLComponent<IconProps> {
             className
         );
 
-        return (
-            <span className={classNames} {...props} >
-        {Icon.renderIcon(icon, size)}
-      </span>
-        );
+        return <span className={classNames} {...props} >{Icon.renderIcon(icon, size)}</span>;
     }
 }

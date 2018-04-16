@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLAProps} from '../../base/html/HTML';
-import BreadCrumbStyle from '../../bulma';
+import BreadCrumbStyle from '../../base/css/bulma';
 
 export interface BreadCrumbItemProps extends HTMLAProps {
     isActive?: boolean;

@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import {Size6, Size6Values} from '../../base/css';
 import HTMLComponent, {HTMLPProps} from '../../base/html/HTML';
-import TitleStyle from '../../bulma';
+import TitleStyle from '../../base/css/bulma';
 
 /**
  * Refers Html Props and Additional Props.

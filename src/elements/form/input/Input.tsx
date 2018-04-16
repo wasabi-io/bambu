@@ -4,7 +4,7 @@ import * as React from 'react';
 import {Color, colorValues, Size, SizeValues} from '../../../base/css';
 import {State, StateValues} from '../../../base/css/state';
 import HTMLComponent, {HTMLInputProps} from '../../../base/html/HTML';
-import FormStyle from '../../../bulma';
+import FormStyle from '../../../base/css/bulma';
 
 /**
  * Refers Html Props and Additional Props.

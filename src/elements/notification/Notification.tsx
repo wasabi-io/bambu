@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {Color} from '../../base/css';
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import NotificationStyle from '../../bulma';
+import NotificationStyle from '../../base/css/bulma';
 
 export interface NotificationProps extends HTMLDivProps {
     color?: string | Color;

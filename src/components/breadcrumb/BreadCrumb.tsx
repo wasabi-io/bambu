@@ -5,7 +5,7 @@ import Objects from 'wasabi-common/lib/types/Objects';
 
 import {Alignment, AlignmentValues, Size, SizeValues} from '../../base/css';
 import HTMLComponent, {HTMLElementProps} from '../../base/html/HTML';
-import BreadCrumbStyle from '../../bulma';
+import BreadCrumbStyle from '../../base/css/bulma';
 
 export enum BreadCrumbSeperator {
     arrow = 'hasArrowSeparator',

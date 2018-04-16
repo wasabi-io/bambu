@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {Color, Size} from '../../base/css';
 import HTMLComponent, {HTMLArticleProps} from '../../base/html/HTML';
-import MessageStyle from '../../bulma';
+import MessageStyle from '../../base/css/bulma';
 
 export interface MessageProps extends HTMLArticleProps {
     color?: string | Color;

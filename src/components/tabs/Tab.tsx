@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLLiProps} from '../../base/html/HTML';
-import TabsStyle from '../../bulma';
+import TabsStyle from '../../base/css/bulma';
 
 export interface TabProps extends HTMLLiProps {
     isActive?: boolean;

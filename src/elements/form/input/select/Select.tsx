@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {Color, colorValues, Size, SizeValues, State, StateValues} from '../../../../base/css';
 import HTMLComponent, {HTMLDivProps} from '../../../../base/html/HTML';
-import FormStyle from '../../../../bulma';
+import FormStyle from '../../../../base/css/bulma';
 
 export interface SelectProps extends HTMLDivProps {
     color?: string | Color;

@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLTableProps} from '../../base/html/HTML';
-import TableStyle from '../../bulma';
+import TableStyle from '../../base/css/bulma';
 
 export interface TableProps extends HTMLTableProps {
     isBordered?: boolean;

@@ -1,4 +1,5 @@
 --require ./tools/test/ts_register.js
+--require ./tools/test/css-modules-compiler.js
 --require source-map-support/register
 --require ./tools/test/helper.ts
 --require ./tools/test/mockCss.js

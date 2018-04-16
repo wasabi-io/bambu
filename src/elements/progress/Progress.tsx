@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {Color, colorValues, Size, SizeValues} from '../../base/css';
 import HTMLComponent, {HTMLProgressProps} from '../../base/html/HTML';
-import ProgressStyle from '../../bulma';
+import ProgressStyle from '../../base/css/bulma';
 
 /**
  * Refers Html Props and Additional Props.

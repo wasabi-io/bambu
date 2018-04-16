@@ -1,6 +1,10 @@
 ## CHANGELOG
 
-#### v0.0.1-alpha.01 developing...
+#### v0.0.1-alpha.02 developing...
+
+* changed **bulma.sass** as **bulma.scss**
+
+#### v0.0.1-alpha.01
 * fixed `tslint.json` problems
 * removed `app_backup` folder.
 * added `.editorconfig` file.

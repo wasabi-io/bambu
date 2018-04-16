@@ -1,6 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-import PanelStyle from '../../bulma';
+import PanelStyle from '../../base/css/bulma';
 import HTMLComponent, {HTMLPProps} from '../../base/html/HTML';
 
 export type PanelTabsProps = HTMLPProps;

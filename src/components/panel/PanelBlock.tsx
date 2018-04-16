@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {has} from 'wasabi-common';
-import PanelStyle from '../../bulma';
+import PanelStyle from '../../base/css/bulma';
 import HTMLComponent, {HTMLDivProps, HTMLSpanProps} from '../../base/html/HTML';
 import {Icon, IconOptions, IconSize, IconSizeValues} from '../../elements/icon';
 

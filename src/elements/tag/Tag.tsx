@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import {Color, colorValues, Size, SizeValues} from '../../base/css';
 import HTMLComponent, {HTMLAllAttributes} from '../../base/html/HTML';
-import TagStyle from '../../bulma';
+import TagStyle from '../../base/css/bulma';
 
 /**
  * Refers Html Props and Additional Props.

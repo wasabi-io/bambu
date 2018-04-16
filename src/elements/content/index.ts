@@ -1,3 +1,3 @@
 export {default as Content, ContentProps} from './Content';
-export {default as ContentStyle} from '../../bulma';
+export {default as ContentStyle} from '../../base/css/bulma';
 

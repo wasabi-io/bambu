@@ -4,7 +4,7 @@ import * as React from 'react';
 import Objects from 'wasabi-common/lib/types/Objects';
 import {Alignment, AlignmentValues, Size, SizeValues} from '../../base/css';
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import TabsStyle from '../../bulma';
+import TabsStyle from '../../base/css/bulma';
 
 export enum tabsStyle { boxed = 'isBoxed', toggle = 'isToggle' }
 

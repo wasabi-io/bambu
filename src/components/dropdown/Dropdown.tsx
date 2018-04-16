@@ -4,7 +4,7 @@ import * as PropTypes from 'prop-types';
 import Stateless from 'wasabi-ui/lib/Stateless';
 
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import DropdownStyle from '../../bulma';
+import DropdownStyle from '../../base/css/bulma';
 
 /**
  * Refers Html Props and Additional Props.

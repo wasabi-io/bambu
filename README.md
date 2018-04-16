@@ -41,7 +41,7 @@ yarn add bambu
 
 ```javascript
 {
-        test: /\.sass$/,
+        test: /\.scss/,
         use: [
             {loader: 'style-loader', options: {sourceMap: true}},
             {loader: 'sass-loader', options: {sourceMap: true, modules: true}}

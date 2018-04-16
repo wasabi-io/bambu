@@ -4,7 +4,7 @@ import * as React from 'react';
 
 import {Size, SizeValues} from '../../base/css';
 import HTMLComponent, {HTMLAllAttributes} from '../../base/html/HTML';
-import DeleteStyle from '../../bulma';
+import DeleteStyle from '../../base/css/bulma';
 
 export interface DeleteProps extends HTMLAllAttributes {
     tagName?: string;

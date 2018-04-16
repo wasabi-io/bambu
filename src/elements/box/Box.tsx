@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import BoxStyle from '../../bulma';
+import BoxStyle from '../../base/css/bulma';
 
 export type BoxProps = HTMLDivProps;
 

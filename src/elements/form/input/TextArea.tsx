@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {Color, colorValues, Size, SizeValues, State, StateValues} from '../../../base/css';
 import HTMLComponent, {HTMLTextareaProps} from '../../../base/html/HTML';
-import FormStyle from '../../../bulma';
+import FormStyle from '../../../base/css/bulma';
 
 /**
  * Refers Html Props and Additional Props.

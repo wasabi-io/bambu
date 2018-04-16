@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import CardStyle from '../../bulma';
+import CardStyle from '../../base/css/bulma';
 import Icon, {IconOptions} from '../../elements/icon/Icon';
 import HTMLComponent, {HTMLAProps} from '../../base/html/HTML';
 

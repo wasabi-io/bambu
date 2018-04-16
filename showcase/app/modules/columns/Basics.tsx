@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Color} from 'bambu/lib/base/css';
-import HelperStyle from 'bambu/lib/bulma';
+import HelperStyle from 'bambu/lib/base/css/bulma';
 import {Content} from 'bambu/lib/elements/content';
 import {Notification} from 'bambu/lib/elements/notification';
 import {Column, Columns} from 'bambu/lib/grid/column';

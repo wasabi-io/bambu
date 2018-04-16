@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
 import HTMLComponent, {HTMLSectionProps} from '../../base/html/HTML';
-import HeroStyle from '../../bulma';
+import HeroStyle from '../../base/css/bulma';
 
 export type HeroHeadProps = HTMLSectionProps;
 

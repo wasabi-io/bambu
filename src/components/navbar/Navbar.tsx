@@ -4,7 +4,7 @@ import * as React from 'react';
 import {Objects, Strings} from 'wasabi-common';
 import {Color, colorValues, Vertical, verticalValues} from '../../base/css';
 import HTMLComponent, {HTMLNavProps} from '../../base/html/HTML';
-import NavbarStyle from '../../bulma';
+import NavbarStyle from '../../base/css/bulma';
 
 export enum navBarArialLabel {
     main = 'main',

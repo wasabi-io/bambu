@@ -7,3 +7,4 @@ export enum Alignment {
 }
 
 export const AlignmentValues = Objects.values(Alignment);
+

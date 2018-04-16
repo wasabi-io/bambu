@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import CardStyle from '../../bulma';
+import CardStyle from '../../base/css/bulma';
 
 /**
  * Refers Html Props and Additional Props.

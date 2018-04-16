@@ -64,12 +64,12 @@ export default class FaIcon extends HTMLComponent<FaIconProps> {
         }
         const prefix = name.substring(0, 3);
         switch (prefix) {
-            case 'fa ':
-                return name;
-            case 'fa-':
-                return 'fa ' + name;
-            default:
-                return 'fa fa-' + name;
+        case 'fa ':
+            return name;
+        case 'fa-':
+            return 'fa ' + name;
+        default:
+            return 'fa fa-' + name;
         }
     }
 

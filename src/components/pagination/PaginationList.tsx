@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLUlProps} from '../../base/html/HTML';
-import PaginationStyle from '../../bulma';
+import PaginationStyle from '../../base/css/bulma';
 
 export interface PaginationListProps extends HTMLUlProps {
 }

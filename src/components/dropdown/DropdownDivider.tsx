@@ -3,7 +3,7 @@ import * as React from 'react';
 import * as PropTypes from 'prop-types';
 
 import HTMLComponent, {HTMLHrProps} from '../../base/html/HTML';
-import DropdownStyle from '../../bulma';
+import DropdownStyle from '../../base/css/bulma';
 
 /**
  * Refers Html Props and Additional Props.

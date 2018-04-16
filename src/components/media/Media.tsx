@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
 import HTMLComponent, {HTMLArticleProps} from '../../base/html/HTML';
-import MediaStyle from '../../bulma';
+import MediaStyle from '../../base/css/bulma';
 
 export type MediaProps = HTMLArticleProps;
 

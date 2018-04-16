@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {Color, colorValues} from '../../base/css';
 import HTMLComponent, {HTMLAllAttributes} from '../../base/html/HTML';
-import NavbarStyle from '../../bulma';
+import NavbarStyle from '../../base/css/bulma';
 
 export interface NavbarBurgerProps extends HTMLAllAttributes {
     isActive?: boolean;

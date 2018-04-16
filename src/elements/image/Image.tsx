@@ -4,7 +4,7 @@ import * as React from 'react';
 import Objects, {Props} from 'wasabi-common/lib/types/Objects';
 
 import HTMLComponent, {HTMLImgProps} from '../../base/html/HTML';
-import ImageStyle from '../../bulma';
+import ImageStyle from '../../base/css/bulma';
 
 export enum ImageSize {
     is16X16 = 'is16X16',

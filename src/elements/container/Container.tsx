@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import ContainerStyle from '../../bulma';
+import ContainerStyle from '../../base/css/bulma';
 
 /**
  * Refers Html Props and Additional Props.

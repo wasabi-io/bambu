@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import LevelStyle from '../../bulma';
+import LevelStyle from '../../base/css/bulma';
 
 /**
  * Refers Html Props and Additional Props.

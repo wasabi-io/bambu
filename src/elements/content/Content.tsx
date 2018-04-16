@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import * as React from 'react';
 import HTMLComponent, {HTMLElementProps} from '../../base/html/HTML';
 import {Size} from '../../base/css';
-import ContentStyle from '../../bulma';
+import ContentStyle from '../../base/css/bulma';
 
 export interface ContentProps extends HTMLElementProps {
     size?: string | Size;

@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Strings from 'wasabi-common/lib/types/Strings';
 import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import NavbarStyle from '../../bulma';
+import NavbarStyle from '../../base/css/bulma';
 
 export enum ShowingState {
     active = 'active',

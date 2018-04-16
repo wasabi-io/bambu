@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 
 import HTMLComponent, {HTMLTrProps} from '../../base/html/HTML';
-import TableStyle from '../../bulma';
+import TableStyle from '../../base/css/bulma';
 
 export interface RowProps extends HTMLTrProps {
     isSelected?: boolean

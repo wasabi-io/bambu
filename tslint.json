@@ -16,6 +16,7 @@
       "parameters",
       "statements"
     ],
+    "quotemark": [false],
     "variable-name": [
       true,
       "allow-pascal-case",
