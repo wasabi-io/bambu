@@ -30,7 +30,7 @@ class Workspace extends Stateless<WorkspaceProps> {
                         <NavbarBrand>
                             <NavbarItem href="/bambu">
                                 <h1 style={{ fontWeight: 900 }}>
-                                    <span style={{color: "#80f47a",textShadow: '2px 2px #8ab2f2'}}>BAMBU</span>
+                                    <span style={{color: "#3273dc"}}>BAMBU</span>
                                 </h1>
                             </NavbarItem>
                             <NavbarItem href="https://github.com/wasabi-io/bambu" target="_blank">
