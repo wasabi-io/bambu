@@ -7,7 +7,7 @@ Seamless integration with [**Bulma**](https://bulma.io/)
 
 ## Motivation
 
-UI components built with `typescript` on top of `bulma` css framework.
+React Web components built with `typescript` on top of `bulma` css framework.
 
 #### Key Points
 

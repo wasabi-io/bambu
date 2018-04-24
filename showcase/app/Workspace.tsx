@@ -29,7 +29,9 @@ class Workspace extends Stateless<WorkspaceProps> {
                     <Container>
                         <NavbarBrand>
                             <NavbarItem href="/bambu">
-                                <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28"/>
+                                <h1 style={{ fontWeight: 900 }}>
+                                    <span style={{color: "#80f47a",textShadow: '2px 2px #8ab2f2'}}>BAMBU</span>
+                                </h1>
                             </NavbarItem>
                             <NavbarItem href="https://github.com/wasabi-io/bambu" target="_blank">
                                 <Icon icon="github" size={IconSize.lg} style={{display: 'inline'}}/>
@@ -46,7 +48,7 @@ class Workspace extends Stateless<WorkspaceProps> {
                                     <Column>
                                         <Title style={{color: 'white'}}>Documentation</Title>
                                         <SubTitle style={{color: 'white'}}>
-                                            Everything you need to <strong style={{color: 'white'}}>create a website</strong> with Bulma
+                                            <strong style={{color: 'white'}}>React Web Components</strong> built with  <strong style={{color: 'white'}}>typescript</strong> on top of <strong style={{color: 'white'}}>bulma</strong> css framework
                                         </SubTitle>
                                     </Column>
                                 </Columns>

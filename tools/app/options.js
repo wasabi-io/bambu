@@ -18,11 +18,6 @@ module.exports = {
     entries: {
         "app": [
             "./index"
-        ],
-        "vendors": [
-            "react",
-            "prop-types",
-            "react-dom"
         ]
     },
     paths: {
