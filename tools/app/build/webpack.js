@@ -37,6 +37,9 @@ settings
     .webpack
     .plugins
     .push(new WebpackNotifierPlugin({alwaysNotify: false}));
+
+settings.baseHref = '/bambu/';
+
 settings
     .webpack
     .plugins
@@ -49,6 +52,6 @@ if (jsonConfig.copy && jsonConfig.copy.move) {
         .push(new CopyWebpackPlugin(jsonConfig.copy.move))
 }
 
-settings.baseHref = '/bambu/';
+
 
 module.exports = settings.webpack;

@@ -16,3 +16,4 @@
 * fixed building library.
 * added installation to *README*.
 * changed library name as **bambu**
+* fixed **Showcase** docs path problem.
