@@ -1,8 +1,9 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
+
 import NavbarStyle from '../../base/css/bulma';
+import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
 
 export interface NavbarBrandProps extends HTMLDivProps {
     hasShadow?: boolean;
@@ -10,13 +11,15 @@ export interface NavbarBrandProps extends HTMLDivProps {
 
 const NavbarBrand: React.SFC<NavbarBrandProps> = (props: NavbarBrandProps) => {
 
-    const {hasShadow, className, ...inputProps} = props;
+    const { hasShadow, className, ...inputProps } = props;
 
-    const classNames = ClassNames([
+    const classNames = ClassNames(
         NavbarStyle.navbarBrand,
-        hasShadow ? NavbarStyle.hasShadow : undefined,
+        {
+            [`${NavbarStyle.hasShadow}`]: hasShadow
+        },
         className
-    ]);
+    );
 
     return (
         <div className={classNames} {...inputProps}>

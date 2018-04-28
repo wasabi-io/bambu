@@ -1,19 +1,25 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import HTMLComponent, {HTMLAProps} from '../../base/html/HTML';
+
 import MenuStyle from '../../base/css/bulma';
+import HTMLComponent, { HTMLAProps } from '../../base/html/HTML';
 
 export interface MenuLinkProps extends HTMLAProps {
-    active?: boolean;
+    isActive?: boolean;
     href?: string;
 }
 
 const MenuLink: React.SFC<MenuLinkProps> = (props: MenuLinkProps) => {
 
-    const {active, className, ...inputProps} = props;
+    const { isActive, className, ...inputProps } = props;
 
-    const classNames = ClassNames([active ? MenuStyle.isActive : undefined, className]);
+    const classNames = ClassNames(
+        {
+            [`${MenuStyle.isActive}`]: isActive
+        },
+        className
+    );
 
     return (
         <a className={classNames} {...inputProps}>
@@ -24,13 +30,13 @@ const MenuLink: React.SFC<MenuLinkProps> = (props: MenuLinkProps) => {
 
 MenuLink.propTypes = {
     ...HTMLComponent.propTypes,
-    active: PropTypes.bool,
+    isActive: PropTypes.bool,
     href: PropTypes.string
 };
 
 MenuLink.defaultProps = {
     ...HTMLComponent.defaultProps,
-    active: false
+    isActive: false
 };
 
 MenuLink.displayName = 'MenuLink';

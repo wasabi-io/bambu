@@ -1,8 +1,9 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import HTMLComponent, {HTMLAllAttributes} from '../../base/html/HTML';
+
 import NavbarStyle from '../../base/css/bulma';
+import HTMLComponent, { HTMLAllAttributes } from '../../base/html/HTML';
 
 export interface NavbarItemLinkProps extends HTMLAllAttributes {
     isActive?: boolean;
@@ -10,9 +11,15 @@ export interface NavbarItemLinkProps extends HTMLAllAttributes {
 
 const NavbarItemLink: React.SFC<NavbarItemLinkProps> = (props: NavbarItemLinkProps) => {
 
-    const {isActive, className, ...inputProps} = props;
+    const { isActive, className, ...inputProps } = props;
 
-    const classNames = ClassNames([NavbarStyle.navbarItem, isActive ? NavbarStyle.isActive : undefined, className]);
+    const classNames = ClassNames(
+        NavbarStyle.navbarItem,
+        {
+            [`${NavbarStyle.isActive}`]: isActive
+        },
+        className
+    );
 
     return (
         <a className={classNames} {...inputProps}>

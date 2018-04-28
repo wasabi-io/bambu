@@ -2,8 +2,9 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Strings from 'wasabi-common/lib/types/Strings';
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
+
 import NavbarStyle from '../../base/css/bulma';
+import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
 
 export enum ShowingState {
     active = 'active',
@@ -11,25 +12,25 @@ export enum ShowingState {
 }
 
 export interface NavbarDropdownParentProps extends HTMLDivProps {
-    active?: boolean;
-    up?: boolean;
+    isActive?: boolean;
+    hasDropdownUp?: boolean;
     state?: ShowingState;
 }
 
 const NavbarDropdownParent: React.SFC<NavbarDropdownParentProps> = (props: NavbarDropdownParentProps) => {
 
-    const {active, up, state, className, ...inputProps} = props;
+    const { isActive, hasDropdownUp, state, className, ...inputProps } = props;
 
-    const showSateClassName = Strings.has(state) ? NavbarStyle[`is${Strings.capitalizeFirstLetter(state)}`] : undefined;
-
-    const classNames = ClassNames([
+    const classNames = ClassNames(
         NavbarStyle.navbarItem,
         NavbarStyle.hasDropdown,
-        active ? NavbarStyle.isActive : undefined,
-        up ? NavbarStyle.hasDropdownUp : undefined,
-        showSateClassName,
+        {
+            [`${NavbarStyle.isActive}`]: isActive,
+            [`${NavbarStyle.hasDropdownUp}`]: hasDropdownUp,
+            [`${NavbarStyle[`is${Strings.capitalizeFirstLetter(state)}`]}`]: Strings.has(state),
+        },
         className
-    ]);
+    );
 
     return (
         <div className={classNames} {...inputProps}>
@@ -40,14 +41,14 @@ const NavbarDropdownParent: React.SFC<NavbarDropdownParentProps> = (props: Navba
 
 NavbarDropdownParent.propTypes = {
     ...HTMLComponent.propTypes,
-    active: PropTypes.bool,
-    up: PropTypes.bool
+    isActive: PropTypes.bool,
+    hasDropdownUp: PropTypes.bool
 };
 
 NavbarDropdownParent.defaultProps = {
     ...HTMLComponent.defaultProps,
-    active: false,
-    up: false
+    isActive: false,
+    hasDropdownUp: false
 };
 
 NavbarDropdownParent.displayName = 'NavbarDropdownParent';
