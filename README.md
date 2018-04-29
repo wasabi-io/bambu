@@ -39,14 +39,40 @@ yarn add bambu
 * webpack
 > add *sass-loader* to the webpack configuration.
 
+
+For Javascript :
+
 ```javascript
-{
-        test: /\.scss/,
-        use: [
-            {loader: 'style-loader', options: {sourceMap: true}},
-            {loader: 'sass-loader', options: {sourceMap: true, modules: true}}
-        ]
-}
+            {
+                test: /\.scss$/, use: [
+                    {loader: 'style-loader', options: {sourceMap: true}},
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: true
+                        }
+                    },
+                    {loader: 'sass-loader', options: {sourceMap: true}}
+                ]
+            }
+```
+
+For typescript :
+
+```javascript
+            {
+                test: /\.scss$/, use: [
+                    {loader: 'style-loader', options: {sourceMap: true}},
+                    {
+                        loader: "typings-for-css-modules-loader",
+                        options: {
+                            sass: true,
+                            modules: true
+                        }
+                    },
+                    {loader: 'sass-loader', options: {sourceMap: true}}
+                ]
+            }
 ```
 
 ## Documentation ( Showcase )
