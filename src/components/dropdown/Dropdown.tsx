@@ -1,10 +1,9 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
 import Stateless from 'wasabi-ui/lib/Stateless';
 
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
 import DropdownStyle from '../../base/css/bulma';
+import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
 
 /**
  * Refers Html Props and Additional Props.
@@ -30,15 +29,17 @@ export default class Dropdown extends Stateless<DropdownProps> {
     }
 
     render() {
-        const {children, className, isActive, isHoverable, isRight, isUp, ...dropdownProps} = this.props;
-        const classNames = ClassNames([
+        const { children, className, isActive, isHoverable, isRight, isUp, ...dropdownProps } = this.props;
+        const classNames = ClassNames(
             DropdownStyle.dropdown,
-            isActive ? DropdownStyle.isActive : undefined,
-            isHoverable ? DropdownStyle.isHoverable : undefined,
-            isRight ? DropdownStyle.isRight : undefined,
-            isUp ? DropdownStyle.isUp : undefined,
+            {
+                [`${DropdownStyle.isActive}`]: isActive,
+                [`${DropdownStyle.isHoverable}`]: isHoverable,
+                [`${DropdownStyle.isRight}`]: isRight,
+                [`${DropdownStyle.isUp}`]: isUp,
+            },
             className
-        ]);
+        );
 
         return (
             <div
@@ -50,5 +51,5 @@ export default class Dropdown extends Stateless<DropdownProps> {
                 {children}
             </div>
         );
-    };
+    }
 }

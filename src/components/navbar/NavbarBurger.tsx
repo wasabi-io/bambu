@@ -1,9 +1,10 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Color, colorValues} from '../../base/css';
-import HTMLComponent, {HTMLAllAttributes} from '../../base/html/HTML';
+
+import { Color, colorValues } from '../../base/css';
 import NavbarStyle from '../../base/css/bulma';
+import HTMLComponent, { HTMLAllAttributes } from '../../base/html/HTML';
 
 export interface NavbarBurgerProps extends HTMLAllAttributes {
     isActive?: boolean;
@@ -14,16 +15,18 @@ export interface NavbarBurgerProps extends HTMLAllAttributes {
 
 const NavbarBurger: React.SFC<NavbarBurgerProps> = (props: NavbarBurgerProps) => {
 
-    const {tagName, isActive, color, className, dataTarget, ...inputProps} = props;
+    const { tagName, isActive, color, className, dataTarget, ...inputProps } = props;
 
-    const classNames = ClassNames([
+    const classNames = ClassNames(
         NavbarStyle.navbarBurger,
-        isActive ? NavbarStyle.isActive : undefined,
-        color ? NavbarStyle[color] : undefined,
+        {
+            [`${NavbarStyle.isActive}`]: isActive,
+            [`${NavbarStyle[color]}`]: !!color,
+        },
         className
-    ]);
+    );
     (inputProps as any).className = classNames;
-    return React.createElement(tagName, inputProps, [props.children, <span key="navbar-burger-span-0"/>, <span key="navbar-burger-span-1"/>, <span key="navbar-burger-span-2"/>]);
+    return React.createElement(tagName, inputProps, [props.children, <span key="navbar-burger-span-0" />, <span key="navbar-burger-span-1" />, <span key="navbar-burger-span-2" />]);
 };
 
 NavbarBurger.propTypes = {

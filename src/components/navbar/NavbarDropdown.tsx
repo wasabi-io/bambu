@@ -1,26 +1,29 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
+
 import NavbarStyle from '../../base/css/bulma';
+import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
 
 export interface NavbarDropdownProps extends HTMLDivProps {
-    active?: boolean;
-    boxed?: boolean;
-    right?: boolean;
+    isActive?: boolean;
+    isBoxed?: boolean;
+    isRight?: boolean;
 }
 
 const NavbarDropdown: React.SFC<NavbarDropdownProps> = (props: NavbarDropdownProps) => {
 
-    const {active, boxed, right, className, ...inputProps} = props;
+    const { isActive, isBoxed, isRight, className, ...inputProps } = props;
 
-    const classNames = ClassNames([
+    const classNames = ClassNames(
         NavbarStyle.navbarDropdown,
-        active ? NavbarStyle.isActive : undefined,
-        boxed ? NavbarStyle.isBoxed : undefined,
-        right ? NavbarStyle.isRight : undefined,
+        {
+            [`${NavbarStyle.isActive}`]: isActive,
+            [`${NavbarStyle.isBoxed}`]: isBoxed,
+            [`${NavbarStyle.isRight}`]: isRight,
+        },
         className
-    ]);
+    );
 
     return (
         <div className={classNames} {...inputProps}>
@@ -31,16 +34,16 @@ const NavbarDropdown: React.SFC<NavbarDropdownProps> = (props: NavbarDropdownPro
 
 NavbarDropdown.propTypes = {
     ...HTMLComponent.propTypes,
-    active: PropTypes.bool,
-    boxed: PropTypes.bool,
-    right: PropTypes.bool
+    isActive: PropTypes.bool,
+    isBoxed: PropTypes.bool,
+    isRight: PropTypes.bool
 };
 
 NavbarDropdown.defaultProps = {
     ...HTMLComponent.defaultProps,
-    active: false,
-    boxed: false,
-    right: false
+    isActive: false,
+    isBoxed: false,
+    isRight: false
 };
 
 NavbarDropdown.displayName = 'NavbarDropdown';
