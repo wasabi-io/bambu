@@ -24,13 +24,14 @@ const Modal: React.SFC<ModalProps> = (props: ModalProps) => {
         className
     );
 
-    return <div className={classNames} {...modalProps}>
-        <div className={ModalStyle.modalBackground}></div>
-        <div className={ModalStyle.modalContent}>
-            {props.children}
-        </div>
-        {hasCloseButton && <button onClick={onCloseButtonClick} className={ClassNames(ModalStyle.modalClose, ModalStyle[buttonSize])} aria-label="close"></button>}
-    </div>
+    return (
+        <div className={classNames} {...modalProps}>
+            <div className={ModalStyle.modalBackground} />
+            <div className={ModalStyle.modalContent}>
+                {props.children}
+            </div>
+        {hasCloseButton && <button onClick={onCloseButtonClick} className={ClassNames(ModalStyle.modalClose, ModalStyle[buttonSize])} aria-label="close" />}
+    </div>);
 };
 
 Modal.propTypes = {

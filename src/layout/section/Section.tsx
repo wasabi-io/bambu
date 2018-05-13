@@ -20,9 +20,9 @@ const Section: React.SFC<SectionProps> = (props: SectionProps) => {
     );
 
     return (
-        <footer className={classNames} {...sectionProps} >
+        <section className={classNames} {...sectionProps} >
             {props.children}
-        </footer>
+        </section>
     );
 };
 

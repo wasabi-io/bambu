@@ -17,3 +17,8 @@
 * added installation to *README*.
 * changed library name as **bambu**
 * fixed **Showcase** docs path problem.
+* changed importing *bulma* css file.
+* removed *font-awesome* css from index.html.
+* changed version of the project as *bulma* version.
+* changed version of *bambu* from alpha as beta.
+

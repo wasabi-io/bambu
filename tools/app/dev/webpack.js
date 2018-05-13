@@ -3,7 +3,6 @@ const webpack = require("webpack");
 const WebpackNotifierPlugin = require("webpack-notifier");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const packageJson = require("../../../package.json");
 const {merge} = require("../../common/util/Objects");
 const configureWebpack = require("../../common/webpack/webpack");
 
@@ -14,10 +13,8 @@ jsonConfig = merge({
     loader: {
         ts: true,
         css: true,
-        sass: true,
         scss: true,
         url: true,
-        file: true,
         html: true
     }
 }, jsonConfig);
@@ -48,7 +45,5 @@ if (jsonConfig.copy && jsonConfig.copy.move) {
         .plugins
         .push(new CopyWebpackPlugin(jsonConfig.copy.move))
 }
-
-settings.baseHref = '/';
 
 module.exports = settings.webpack;

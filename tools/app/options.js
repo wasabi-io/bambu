@@ -7,10 +7,6 @@ module.exports = {
             version: packageJson.version,
             lastModified: new Date().toString(),
             appMountId: settings.options.mountId,
-            baseHref: settings.baseHref,
-            links: [
-                "./vendor/font-awesome/css/font-awesome.css"
-            ],
             template: settings.paths.index_template,
             inject: true
         }

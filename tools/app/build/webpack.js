@@ -17,7 +17,6 @@ jsonConfig = merge({
         sass: true,
         scss: true,
         url: true,
-        file: true,
         html: true
     }
 }, jsonConfig);
@@ -37,8 +36,6 @@ settings
     .webpack
     .plugins
     .push(new WebpackNotifierPlugin({alwaysNotify: false}));
-
-settings.baseHref = '/bambu/';
 
 settings
     .webpack

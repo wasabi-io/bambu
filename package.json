@@ -1,6 +1,6 @@
 {
   "name": "bambu",
-  "version": "0.0.1-alpha-02",
+  "version": "0.6.201-beta.1",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index",
@@ -10,8 +10,7 @@
     "showcase:build": "rimraf ./docs && node ./tools/app/build.js",
     "showcase:serve": "http-server ./docs -p 8282",
     "build:app": "webpack --config tools/app/build/webpack.js --colors",
-    "copy:css": "node ./tools/copy_css.js",
-    "build": "rimraf ./lib && tsc -p ./tsconfig-lib.json && node ./tools/copyscss.js",
+    "build": "rimraf ./lib && tsc -p ./tsconfig-lib.json",
     "test": "node ./tools/test.js",
     "testd": "node ./tools/testd.js",
     "test:electron:debug": "electron-mocha --renderer --interactive --opts ./tools/test/mocha.opts",

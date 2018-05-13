@@ -1,5 +1,5 @@
-import CssObject from "./CssObject";
+import CssModule from "./CssModule";
 
-const bulma = CssObject.exportModuleAsCamelCase(require('./bulma.scss'));
+const bulma = CssModule.exportModuleAsCamelCase(require('bulma/css/bulma.css'));
 
 export default bulma;

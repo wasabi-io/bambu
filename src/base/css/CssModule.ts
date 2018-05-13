@@ -1,6 +1,6 @@
 import {Props} from "wasabi-common";
 
-export class CssObject {
+export class CssModule {
 
     public static toCamelCase(str: string) {
         // Lower cases the string
@@ -26,7 +26,7 @@ export class CssObject {
             if (key.search(/[-_]+/g) === -1) {
                 continue;
             }
-            const camelCaseKey = CssObject.toCamelCase(key);
+            const camelCaseKey = CssModule.toCamelCase(key);
             if (!module[camelCaseKey]) {
                 module[camelCaseKey] = module[key];
             }
@@ -35,4 +35,4 @@ export class CssObject {
     }
 }
 
-export default CssObject;
+export default CssModule;

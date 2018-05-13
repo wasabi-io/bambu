@@ -2,7 +2,11 @@
 <html>
 
 <head>
-    <base href="<%= htmlWebpackPlugin.options.baseHref %>"/>
+    <script>
+        if(window.location.pathname.indexOf("bambu/") === 0) {
+            document.write('<base href="/bambu/"/>');
+        }
+    </script>
     <!-- version: <%= htmlWebpackPlugin.options.version %> -->
     <!-- build time: <%= htmlWebpackPlugin.options.lastModified %> -->
     <meta charset="UTF-8">
@@ -12,11 +16,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="expires" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
-    <%
-    for (item of htmlWebpackPlugin.options.links) {
-    %>
-    <link href="<%= item %>" rel="stylesheet"/>
-    <% } %>
+    <% if(htmlWebpackPlugin.options.links) for (item of htmlWebpackPlugin.options.links) {  %> <link href="<%= item %>" rel="stylesheet"/> <% } %>
 </head>
 
 <body>

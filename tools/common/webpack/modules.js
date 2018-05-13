@@ -1,4 +1,5 @@
 const Objects = require("../util/Objects");
+
 const getTsLoader = function () {
     return {
         test: /\.tsx?$/,
@@ -21,17 +22,29 @@ const getTsLintLoader = function () {
 };
 
 const getCssLoader = function () {
-    return {
-        test: /\.css$/, use: ["style-loader", "css-loader"]
-    };
+    return {test: /\.css$/,
+        use: [
+            "style-loader",
+            {
+                loader: 'css-loader',
+                options: {
+                    modules: true,
+                    getLocalIdent: (context, localIdentName, localName, options) => {
+                        return localName;
+                    }
+                }
+            }
+        ]
+    }
 };
+
 
 const getSassLoader = function () {
     return {
         test: /\.sass$/, use: [
             {loader: 'style-loader', options: {sourceMap: true}},
             {
-                loader: "typings-for-css-modules-loader",
+                loader: "css-loader",
                 options: {
                     sass: true,
                     modules: true
@@ -39,7 +52,7 @@ const getSassLoader = function () {
             },
             {loader: 'sass-loader', options: {sourceMap: true}}
         ]
-    };
+    }
 };
 
 const getScssLoader = function () {
@@ -59,11 +72,6 @@ const getScssLoader = function () {
     };
 };
 
-
-const getFileLoader = function () {
-    return {test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/, use: "file-loader", include: /fonts/};
-};
-
 const getUrlLoader = function () {
     return {
         test: /\.(eot|woff|woff2|ttf|svg|png|jpe?g|gif)(\?\S*)?$/,
@@ -77,7 +85,6 @@ const rules = {
     css: getCssLoader,
     sass: getSassLoader,
     scss: getScssLoader,
-    file: getFileLoader,
     url: getUrlLoader
 };
 

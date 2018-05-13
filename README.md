@@ -34,45 +34,31 @@ yarn add bulma react prop-types
 yarn add bambu
 ```
 
-#### conversion of **bulma** sass file.
+#### conversion of **bulma** css file.
 
 * webpack
-> add *sass-loader* to the webpack configuration.
 
+```bash
+yarn add --dev style-loader css-modules-loader sass-loader
+```
 
 For Javascript :
 
 ```javascript
-            {
-                test: /\.scss$/, use: [
-                    {loader: 'style-loader', options: {sourceMap: true}},
-                    {
-                        loader: "css-loader",
-                        options: {
-                            modules: true
-                        }
-                    },
-                    {loader: 'sass-loader', options: {sourceMap: true}}
-                ]
+{test: /\.css$/,
+    use: [
+        "style-loader",
+        {
+            loader: 'css-loader',
+            options: {
+                modules: true,
+                getLocalIdent: (context, localIdentName, localName, options) => {
+                    return localName;
+                }
             }
-```
-
-For typescript :
-
-```javascript
-            {
-                test: /\.scss$/, use: [
-                    {loader: 'style-loader', options: {sourceMap: true}},
-                    {
-                        loader: "typings-for-css-modules-loader",
-                        options: {
-                            sass: true,
-                            modules: true
-                        }
-                    },
-                    {loader: 'sass-loader', options: {sourceMap: true}}
-                ]
-            }
+        }
+    ]
+}
 ```
 
 ## Documentation ( Showcase )

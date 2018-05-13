@@ -1,3 +1,4 @@
+export { CssModule as CssObject} from "./CssModule";
 export { default as bulma } from './bulma';
 export * from './alignment';
 export * from './colors';
