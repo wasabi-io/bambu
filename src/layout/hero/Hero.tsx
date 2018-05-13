@@ -2,10 +2,7 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Objects from 'wasabi-common/lib/types/Objects';
-
-import {Color, colorValues} from '../../base/css';
-import HTMLComponent, {HTMLSectionProps} from '../../base/html/HTML';
-import HeroStyle from '../../base/css/bulma';
+import {bulma as HeroStyle, Color, colorValues, HTMLComponent, HTMLSectionProps} from '../../';
 
 export enum HeroSize {
     isSmall = 'isSmall',
@@ -20,16 +17,16 @@ export enum HeroSize {
 export interface HeroProps extends HTMLSectionProps {
     color?: string | Color;
     isBold?: boolean;
-    size?: string | HeroSize;
+    bSize?: string | HeroSize;
 }
 
 const Hero: React.SFC<HeroProps> = (props: HeroProps) => {
 
-    const {size, color, isBold, className, ...heroProps} = props;
+    const {bSize, color, isBold, className, ...heroProps} = props;
 
     const classNames = ClassNames(
         HeroStyle.hero,
-        HeroStyle[size],
+        HeroStyle[bSize],
         HeroStyle[color],
         {
             [`${HeroStyle.isBold}`]: isBold
@@ -48,7 +45,7 @@ Hero.propTypes = {
     ...HTMLComponent.propTypes,
     color: PropTypes.oneOf(colorValues),
     isBold: PropTypes.bool,
-    size: PropTypes.oneOf(Objects.values(HeroSize)),
+    bSize: PropTypes.oneOf(Objects.values(HeroSize)),
 };
 
 Hero.defaultProps = {

@@ -1,8 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-
-import HTMLComponent, {HTMLThProps} from '../../base/html/HTML';
-import TableStyle from '../../base/css/bulma';
+import {bulma as TableStyle, HTMLComponent, HTMLThProps} from '../../';
 
 /**
  * Refers Html Props and Additional Props.

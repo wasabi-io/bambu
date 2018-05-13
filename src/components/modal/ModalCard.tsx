@@ -1,8 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import ModalStyle from '../../base/css/bulma';
+import {bulma as ModalStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 export interface ModalCardProps extends HTMLDivProps {
     isActive?: boolean;
@@ -19,12 +17,14 @@ const ModalCard: React.SFC<ModalCardProps> = (props: ModalCardProps) => {
         className
     );
 
-    return <div className={classNames} {...modalCardProps}>
-        <div className={ModalStyle.modalBackground}></div>
-        <div className={ModalStyle.modalCard}>
-            {props.children}
+    return (
+        <div className={classNames} {...modalCardProps}>
+            <div className={ModalStyle.modalBackground} />
+            <div className={ModalStyle.modalCard}>
+                {props.children}
+            </div>
         </div>
-    </div>
+    );
 };
 
 ModalCard.propTypes = {

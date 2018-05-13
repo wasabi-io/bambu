@@ -1,6 +1,6 @@
 {
   "name": "bambu",
-  "version": "0.6.201-beta.1",
+  "version": "0.6.201-beta.2",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index",

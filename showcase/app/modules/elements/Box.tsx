@@ -31,7 +31,7 @@ export default class Box extends Stateless<{}> {
                         <Media>
                             <MediaLeft>
                                 <Image
-                                    size={ImageSize.is64X64}
+                                    bSize={ImageSize.is64X64}
                                     src="https://bulma.io/images/placeholders/128x128.png"
                                     alt="Image"
                                 />

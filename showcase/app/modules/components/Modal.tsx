@@ -40,7 +40,7 @@ export default class Modal extends Stateful<{}, { activeImageModal: boolean, act
                 <Snippet borderless>
                     <Button
                         color={Color.primary}
-                        size={Size.large}
+                        bSize={Size.large}
                         onClick={toggleImageModal}
                     >
                         Launch image modal
@@ -58,7 +58,7 @@ export default class Modal extends Stateful<{}, { activeImageModal: boolean, act
                 <Snippet borderless>
                     <Button
                         color={Color.primary}
-                        size={Size.large}
+                        bSize={Size.large}
                         onClick={toggleCardModal}
                     >
                         Launch modal card

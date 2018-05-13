@@ -3,9 +3,13 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Objects from 'wasabi-common/lib/types/Objects';
 
-import {Size12, Size12Values} from '../../base/css';
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import TileStyle from '../../base/css/bulma';
+import {
+    Size12,
+    size12Values,
+    HTMLComponent,
+    HTMLDivProps,
+    bulma as TileStyle
+} from '../../';
 
 export enum TileContext {
     ancestor = 'isAncestor',
@@ -20,16 +24,16 @@ export interface TileProps extends HTMLDivProps {
     context?: string | TileContext;
     isDesktop?: boolean;
     isVertical?: boolean;
-    size?: string | Size12;
+    bSize?: string | Size12;
 }
 
 const Tile: React.SFC<TileProps> = (props: TileProps) => {
 
-    const {context, isDesktop, size, isVertical, className, ...tileProps} = props;
+    const {context, isDesktop, bSize, isVertical, className, ...tileProps} = props;
 
     const classNames = ClassNames(
         TileStyle.tile,
-        TileStyle[size],
+        TileStyle[bSize],
         TileStyle[context],
         {
             [`${TileStyle.isVertical}`]: isVertical,
@@ -48,7 +52,7 @@ const Tile: React.SFC<TileProps> = (props: TileProps) => {
 Tile.propTypes = {
     ...HTMLComponent.propTypes,
     context: PropTypes.oneOf(Objects.values(TileContext)),
-    size: PropTypes.oneOf(Objects.values(Size12Values)),
+    bSize: PropTypes.oneOf(Objects.values(size12Values)),
     isVertical: PropTypes.bool,
     isDesktop: PropTypes.bool,
 };

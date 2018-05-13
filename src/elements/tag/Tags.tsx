@@ -1,10 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-
-import {Color, colorValues, Size, SizeValues} from '../../base/css';
-import HTMLComponent, {HTMLSpanProps} from '../../base/html/HTML';
-import TagStyle from '../../base/css/bulma';
+import {bulma as TagStyle, colorValues, HTMLComponent, HTMLSpanProps} from '../../';
 
 /**
  * Refers Html Props and Additional Props.

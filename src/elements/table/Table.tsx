@@ -1,9 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-
-import HTMLComponent, {HTMLTableProps} from '../../base/html/HTML';
-import TableStyle from '../../base/css/bulma';
+import {bulma as TableStyle, HTMLComponent, HTMLTableProps} from '../../';
 
 export interface TableProps extends HTMLTableProps {
     isBordered?: boolean;

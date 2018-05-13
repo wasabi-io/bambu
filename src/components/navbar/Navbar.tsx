@@ -1,11 +1,8 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { Objects, Strings } from 'wasabi-common';
-
-import { Color, colorValues, Vertical, verticalValues } from '../../base/css';
-import NavbarStyle from '../../base/css/bulma';
-import HTMLComponent, { HTMLNavProps } from '../../base/html/HTML';
+import {Objects, Strings} from 'wasabi-common';
+import {bulma as NavbarStyle, Color, colorValues, HTMLComponent, HTMLNavProps, Vertical, verticalValues} from "../../";
 
 export enum navBarArialLabel {
     main = 'main',
@@ -27,7 +24,7 @@ export interface NavbarProps extends HTMLNavProps {
 
 const Navbar: React.SFC<NavbarProps> = (props: NavbarProps) => {
 
-    const { color, arialLabel, isFixed, hasShadow, isTransparent, className, ...navbarProps } = props;
+    const {color, arialLabel, isFixed, hasShadow, isTransparent, className, ...navbarProps} = props;
 
     const fixedClassName = Strings.has(isFixed) ? `isFixed${Strings.capitalizeFirstLetter(isFixed)}` : undefined;
 

@@ -1,9 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-
-import NavbarStyle from '../../base/css/bulma';
-import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
+import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export interface NavbarBrandProps extends HTMLDivProps {
     hasShadow?: boolean;
@@ -11,7 +9,7 @@ export interface NavbarBrandProps extends HTMLDivProps {
 
 const NavbarBrand: React.SFC<NavbarBrandProps> = (props: NavbarBrandProps) => {
 
-    const { hasShadow, className, ...inputProps } = props;
+    const {hasShadow, className, ...inputProps} = props;
 
     const classNames = ClassNames(
         NavbarStyle.navbarBrand,

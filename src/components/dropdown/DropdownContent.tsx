@@ -1,9 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
-
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import DropdownStyle from '../../base/css/bulma';
+import {bulma as DropdownStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 /**
  * Refers Html Props and Additional Props.

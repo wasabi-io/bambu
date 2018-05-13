@@ -1,26 +1,23 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-
-import {Size6, Size6Values} from '../../base/css';
-import HTMLComponent, {HTMLPProps} from '../../base/html/HTML';
-import TitleStyle from '../../base/css/bulma';
+import {bulma as TitleStyle, HTMLComponent, HTMLPProps, Size6, size6Values} from '../../';
 
 /**
  * Refers Html Props and Additional Props.
  */
 export interface SubTitleProps extends HTMLPProps {
-    size?: string | Size6;
+    bSize?: string | Size6;
     tagName?: string;
 }
 
 const SubTitle: React.SFC<SubTitleProps> = (props: SubTitleProps) => {
 
-    const {tagName, size, className, ...subTitleProps} = props;
+    const {tagName, bSize, className, ...subTitleProps} = props;
 
     const classNames = ClassNames(
         TitleStyle.subtitle,
-        TitleStyle[size],
+        TitleStyle[bSize],
         className
     );
     (subTitleProps as any).className = classNames;
@@ -29,7 +26,8 @@ const SubTitle: React.SFC<SubTitleProps> = (props: SubTitleProps) => {
 
 SubTitle.propTypes = {
     ...HTMLComponent.propTypes,
-    size: PropTypes.oneOf(Size6Values),
+    bSize: PropTypes.oneOf(size6Values),
+    tagName: PropTypes.string
 };
 
 SubTitle.defaultProps = {

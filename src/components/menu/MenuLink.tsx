@@ -1,9 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-
-import MenuStyle from '../../base/css/bulma';
-import HTMLComponent, { HTMLAProps } from '../../base/html/HTML';
+import {bulma as MenuStyle, HTMLAProps, HTMLComponent} from '../../';
 
 export interface MenuLinkProps extends HTMLAProps {
     isActive?: boolean;
@@ -12,7 +10,7 @@ export interface MenuLinkProps extends HTMLAProps {
 
 const MenuLink: React.SFC<MenuLinkProps> = (props: MenuLinkProps) => {
 
-    const { isActive, className, ...inputProps } = props;
+    const {isActive, className, ...inputProps} = props;
 
     const classNames = ClassNames(
         {

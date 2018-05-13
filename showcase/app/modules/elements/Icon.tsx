@@ -95,7 +95,7 @@ export default class Icon extends Stateless<{}> {
                             <code>1em</code>
                         </td>
                         <td>
-                            <BaseIcon icon="fa-home" size={Size.small}/>
+                            <BaseIcon icon="fa-home" bSize={Size.small}/>
                         </td>
                     </tr>
                     <tr>
@@ -140,7 +140,7 @@ export default class Icon extends Stateless<{}> {
                             <code>1em</code>
                         </td>
                         <td>
-                            <BaseIcon icon="fa-home" size={Size.medium}/>
+                            <BaseIcon icon="fa-home" bSize={Size.medium}/>
                         </td>
                     </tr>
                     <tr>
@@ -151,7 +151,7 @@ export default class Icon extends Stateless<{}> {
                             <code>1.33em</code>
                         </td>
                         <td>
-                            <BaseIcon icon="fa-home fa-lg" size={Size.medium}/>
+                            <BaseIcon icon="fa-home fa-lg" bSize={Size.medium}/>
                         </td>
                     </tr>
                     <tr>
@@ -162,7 +162,7 @@ export default class Icon extends Stateless<{}> {
                             <code>2em</code>
                         </td>
                         <td>
-                            <BaseIcon icon="fa-home fa-2x" size={Size.medium}/>
+                            <BaseIcon icon="fa-home fa-2x" bSize={Size.medium}/>
                         </td>
                     </tr>
                     <tr>
@@ -179,7 +179,7 @@ export default class Icon extends Stateless<{}> {
                             <code>1em</code>
                         </td>
                         <td>
-                            <BaseIcon icon="fa-home" size={Size.large}/>
+                            <BaseIcon icon="fa-home" bSize={Size.large}/>
                         </td>
                     </tr>
                     <tr>
@@ -190,7 +190,7 @@ export default class Icon extends Stateless<{}> {
                             <code>1.33em</code>
                         </td>
                         <td>
-                            <BaseIcon icon="fa-home fa-lg" size={Size.large}/>
+                            <BaseIcon icon="fa-home fa-lg" bSize={Size.large}/>
                         </td>
                     </tr>
                     <tr>
@@ -201,7 +201,7 @@ export default class Icon extends Stateless<{}> {
                             <code>2em</code>
                         </td>
                         <td>
-                            <BaseIcon icon="fa-home fa-2x" size={Size.large}/>
+                            <BaseIcon icon="fa-home fa-2x" bSize={Size.large}/>
                         </td>
                     </tr>
                     <tr>
@@ -212,7 +212,7 @@ export default class Icon extends Stateless<{}> {
                             <code>3em</code>
                         </td>
                         <td>
-                            <BaseIcon icon="fa-home fa-3x" size={Size.large}/>
+                            <BaseIcon icon="fa-home fa-3x" bSize={Size.large}/>
                         </td>
                     </tr>
                     </tbody>

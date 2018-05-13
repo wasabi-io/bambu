@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-import HTMLComponent, {HTMLHrProps} from '../../base/html/HTML';
-import NavbarStyle from '../../base/css/bulma';
+import {bulma as NavbarStyle, HTMLComponent, HTMLHrProps} from "../../";
 
 export type NavbarDividerProps = HTMLHrProps;
 

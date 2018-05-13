@@ -1,9 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Color, colorValues, Size, SizeValues} from '../../base/css';
-import HTMLComponent, {HTMLProgressProps} from '../../base/html/HTML';
-import ProgressStyle from '../../base/css/bulma';
+import {bulma as ProgressStyle, Color, colorValues, HTMLComponent, HTMLProgressProps, Size, sizeValues} from '../../';
 
 /**
  * Refers Html Props and Additional Props.
@@ -11,17 +9,17 @@ import ProgressStyle from '../../base/css/bulma';
 export interface ProgressProps extends HTMLProgressProps {
     color?: string | Color;
     max: number;
-    size?: string | Size;
+    bSize?: string | Size;
     value: number;
 }
 
 const Progress: React.SFC<ProgressProps> = (props: ProgressProps) => {
 
-    const {size, color, className, ...inputProps} = props;
+    const {bSize, color, className, ...inputProps} = props;
 
     const classNames = ClassNames([
         ProgressStyle.progress,
-        ProgressStyle[size],
+        ProgressStyle[bSize],
         ProgressStyle[color],
         className
     ]);
@@ -35,7 +33,7 @@ Progress.propTypes = {
     ...HTMLComponent.propTypes,
     color: PropTypes.oneOf(colorValues),
     max: PropTypes.number,
-    size: PropTypes.oneOf(SizeValues),
+    bSize: PropTypes.oneOf(sizeValues),
     value: PropTypes.number,
 };
 

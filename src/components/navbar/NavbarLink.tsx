@@ -1,8 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import HTMLComponent, {HTMLAProps} from '../../base/html/HTML';
-import NavbarStyle from '../../base/css/bulma';
+import {bulma as NavbarStyle, HTMLAProps, HTMLComponent} from '../../';
 
 export interface NavbarLinkProps extends HTMLAProps {
     href?: string;

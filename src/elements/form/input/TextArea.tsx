@@ -1,16 +1,14 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Color, colorValues, Size, SizeValues, State, StateValues} from '../../../base/css';
-import HTMLComponent, {HTMLTextareaProps} from '../../../base/html/HTML';
-import FormStyle from '../../../base/css/bulma';
+import {bulma as FormStyle, Color, colorValues, HTMLComponent, HTMLTextareaProps, Size, sizeValues, State, stateValues} from '../../../';
 
 /**
  * Refers Html Props and Additional Props.
  */
 export interface TextAreaProps extends HTMLTextareaProps {
     color?: string | Color;
-    size?: string | Size;
+    bSize?: string | Size;
     state?: string | State;
 }
 
@@ -18,7 +16,7 @@ const TextArea: React.SFC<TextAreaProps> = (props: TextAreaProps) => {
 
     const {
         color,
-        size,
+        bSize,
         state,
         className,
         ...inputProps
@@ -27,7 +25,7 @@ const TextArea: React.SFC<TextAreaProps> = (props: TextAreaProps) => {
     const classNames = ClassNames(
         FormStyle.textarea,
         FormStyle[color],
-        FormStyle[size],
+        FormStyle[bSize],
         FormStyle[state],
         className
     );
@@ -42,8 +40,8 @@ const TextArea: React.SFC<TextAreaProps> = (props: TextAreaProps) => {
 TextArea.propTypes = {
     ...HTMLComponent.propTypes,
     color: PropTypes.oneOf(colorValues),
-    size: PropTypes.oneOf(SizeValues),
-    state: PropTypes.oneOf(StateValues),
+    bSize: PropTypes.oneOf(sizeValues),
+    state: PropTypes.oneOf(stateValues),
 };
 
 TextArea.defaultProps = HTMLComponent.defaultProps;

@@ -73,14 +73,14 @@ export default class Card extends Stateless<{}> {
                             <Media>
                                 <MediaLeft>
                                     <Image
-                                        size={ImageSize.is48X48}
+                                        bSize={ImageSize.is48X48}
                                         src="https://bulma.io/images/placeholders/96x96.png"
                                         alt="Placeholder image"
                                     />
                                 </MediaLeft>
                                 <MediaContent>
-                                    <Title size={Size6.is4}>John Smith</Title>
-                                    <SubTitle size={Size6.is6}>@johnsmith</SubTitle>
+                                    <Title bSize={Size6.is4}>John Smith</Title>
+                                    <SubTitle bSize={Size6.is6}>@johnsmith</SubTitle>
                                 </MediaContent>
                             </Media>
                             <Content>

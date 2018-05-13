@@ -1,1 +1,2 @@
-export * from './HTML';
+export * from "./HTML";
+export { default as HTMLComponent } from "./HTML";

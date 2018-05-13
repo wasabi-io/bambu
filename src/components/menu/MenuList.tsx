@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-import HTMLComponent, {HTMLUlProps} from '../../base/html/HTML';
-import MenuStyle from '../../base/css/bulma';
+import {bulma as MenuStyle, HTMLComponent, HTMLUlProps} from '../../';
 
 export type MenuListProps = HTMLUlProps;
 

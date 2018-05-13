@@ -1,10 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-
-import {Size, SizeValues} from '../../base/css';
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import ModalStyle from '../../base/css/bulma';
+import {bulma as ModalStyle, HTMLComponent, HTMLDivProps, Size, sizeValues} from '../../';
 
 export interface ModalProps extends HTMLDivProps {
     isActive?: boolean;
@@ -26,17 +23,17 @@ const Modal: React.SFC<ModalProps> = (props: ModalProps) => {
 
     return (
         <div className={classNames} {...modalProps}>
-            <div className={ModalStyle.modalBackground} />
+            <div className={ModalStyle.modalBackground}/>
             <div className={ModalStyle.modalContent}>
                 {props.children}
             </div>
-        {hasCloseButton && <button onClick={onCloseButtonClick} className={ClassNames(ModalStyle.modalClose, ModalStyle[buttonSize])} aria-label="close" />}
-    </div>);
+            {hasCloseButton && <button onClick={onCloseButtonClick} className={ClassNames(ModalStyle.modalClose, ModalStyle[buttonSize])} aria-label="close"/>}
+        </div>);
 };
 
 Modal.propTypes = {
     ...HTMLComponent.propTypes,
-    buttonSize: PropTypes.oneOf(SizeValues),
+    buttonSize: PropTypes.oneOf(sizeValues),
     hasCloseButton: PropTypes.bool,
     onCloseButtonClick: PropTypes.func,
 };

@@ -3,10 +3,8 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {has} from 'wasabi-common';
 import JSXUtil from 'wasabi-ui/lib/jsx/JSXUtil';
-
-import HTMLComponent, {HTMLSpanProps} from '../../base/html/HTML';
+import {bulma as IconStyle, HTMLComponent, HTMLSpanProps} from '../../';
 import FaIcon, {FaIconProps, IconSize, IconSizeValues} from './FaIcon';
-import IconStyle from '../../base/css/bulma';
 
 export type IconOptions = string | FaIconProps | JSX.Element;
 
@@ -15,24 +13,24 @@ export type IconOptions = string | FaIconProps | JSX.Element;
  */
 export interface IconProps extends HTMLSpanProps {
     icon: string | IconOptions;
-    size?: string | IconSize;
+    bSize?: string | IconSize;
 }
 
 export default class Icon extends HTMLComponent<IconProps> {
     public static propTypes = {
         ...HTMLComponent.propTypes,
         icon: PropTypes.any,
-        size: PropTypes.oneOf(IconSizeValues),
+        bSize: PropTypes.oneOf(IconSizeValues),
     };
 
     public static defaultProps = HTMLComponent.defaultProps;
 
-    public static renderIcon(icon: IconOptions, size?: string | IconSize) {
+    public static renderIcon(icon: IconOptions, bSize?: string | IconSize) {
         if (!has(icon)) {
             return null;
         }
         if (typeof icon === 'string') {
-            return <FaIcon name={icon} size={size}/>;
+            return <FaIcon name={icon} bSize={bSize}/>;
         }
         if ((icon as any).type) {
             if (JSXUtil.isJsx(icon)) {
@@ -44,13 +42,13 @@ export default class Icon extends HTMLComponent<IconProps> {
     }
 
     public render() {
-        const {size, icon, className, ...props} = this.props;
+        const {bSize, icon, className, ...props} = this.props;
 
         const classNames = ClassNames(
             IconStyle.icon,
             className
         );
 
-        return <span className={classNames} {...props} >{Icon.renderIcon(icon, size)}</span>;
+        return <span className={classNames} {...props} >{Icon.renderIcon(icon, bSize)}</span>;
     }
 }

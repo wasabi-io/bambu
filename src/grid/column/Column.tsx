@@ -1,26 +1,24 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import ColumnsStyle from '../../base/css/bulma';
+import {bulma as ColumnsStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 /**
  * Refers Html Props and Additional Props.
  */
 export interface ColumnProps extends HTMLDivProps {
     isNarrow?: boolean;
-    size?: string;
+    bSize?: string;
     offset?: string;
 }
 
 const Column: React.SFC<ColumnProps> = (props: ColumnProps) => {
 
-    const {isNarrow, size, offset, className, ...inputProps} = props;
+    const {isNarrow, bSize, offset, className, ...inputProps} = props;
 
     const classNames = ClassNames(
         ColumnsStyle.column,
-        ColumnsStyle[size],
+        ColumnsStyle[bSize],
         ColumnsStyle[offset],
         {
             [`${ColumnsStyle.isNarrow}`]: isNarrow,
@@ -39,7 +37,7 @@ Column.propTypes = {
     ...HTMLComponent.propTypes,
     isNarrow: PropTypes.bool,
     offset: PropTypes.string,
-    size: PropTypes.string,
+    bSize: PropTypes.string,
 };
 
 Column.defaultProps = {

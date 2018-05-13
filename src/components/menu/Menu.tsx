@@ -1,8 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
 import {StatelessFC} from 'wasabi-ui/lib/Stateless';
-import HTMLComponent, {HTMLAsideProps} from '../../base/html/HTML';
-import MenuStyle from '../../base/css/bulma';
+import {bulma as MenuStyle, HTMLAsideProps, HTMLComponent} from '../../';
 
 export type MenuProps = HTMLAsideProps;
 

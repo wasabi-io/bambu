@@ -1,10 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-
-import {Size, SizeValues} from '../../base/css';
-import HTMLComponent, {HTMLAllAttributes} from '../../base/html/HTML';
-import DeleteStyle from '../../base/css/bulma';
+import {bulma as DeleteStyle, HTMLAllAttributes, HTMLComponent, Size, sizeValues} from '../../';
 
 export interface DeleteProps extends HTMLAllAttributes {
     tagName?: string;
@@ -25,7 +22,7 @@ const Delete: React.SFC<DeleteProps> = (props: DeleteProps) => {
 Delete.propTypes = {
     ...HTMLComponent.propTypes,
     tagName: PropTypes.string,
-    bSize: PropTypes.oneOf(SizeValues),
+    bSize: PropTypes.oneOf(sizeValues),
 };
 
 Delete.defaultProps = {

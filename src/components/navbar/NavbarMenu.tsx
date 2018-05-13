@@ -1,8 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import NavbarStyle from '../../base/css/bulma';
+import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export interface NavbarMenuProps extends HTMLDivProps {
     isActive?: boolean;

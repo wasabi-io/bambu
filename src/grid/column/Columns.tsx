@@ -2,10 +2,7 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Objects from 'wasabi-common/lib/types/Objects';
-
-import {Responsive} from '../../base/css';
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import ColumnsStyle from '../../base/css/bulma';
+import {bulma as ColumnsStyle, HTMLComponent, HTMLDivProps, Responsive} from '../../';
 
 /**
  * Refers Html Props and Additional Props.

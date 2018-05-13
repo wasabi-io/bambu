@@ -1,9 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Alignment, AlignmentValues} from '../../base/css';
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import TabGroupStyle from '../../base/css/bulma';
+import {Alignment, alignmentValues, bulma as TabGroupStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 export interface TabGroupProps extends HTMLDivProps {
     alignment?: string | Alignment;
@@ -27,7 +25,7 @@ const TabGroup: React.SFC<TabGroupProps> = (props: TabGroupProps) => {
 
 TabGroup.propTypes = {
     ...HTMLComponent.propTypes,
-    alignment: PropTypes.oneOf(AlignmentValues),
+    alignment: PropTypes.oneOf(alignmentValues),
 };
 
 TabGroup.defaultProps = HTMLComponent.defaultProps;

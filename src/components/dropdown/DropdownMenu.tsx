@@ -1,9 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
-
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import DropdownStyle from '../../base/css/bulma';
+import {bulma as DropdownStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 /**
  * Refers Html Props and Additional Props.
@@ -26,9 +23,7 @@ const DropdownMenu: React.SFC<DropdownMenuProps> = (props: DropdownMenuProps) =>
     );
 };
 
-DropdownMenu.propTypes = {
-    ...HTMLComponent.propTypes,
-}
+DropdownMenu.propTypes = HTMLComponent.propTypes;
 
 DropdownMenu.defaultProps = HTMLComponent.defaultProps;
 

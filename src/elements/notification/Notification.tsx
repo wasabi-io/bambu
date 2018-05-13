@@ -1,9 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Color} from '../../base/css';
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import NotificationStyle from '../../base/css/bulma';
+import {bulma as NotificationStyle, Color, HTMLComponent, HTMLDivProps} from '../../';
 
 export interface NotificationProps extends HTMLDivProps {
     color?: string | Color;

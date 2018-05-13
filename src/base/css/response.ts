@@ -6,4 +6,4 @@ export enum Responsive {
     tablet = 'isTablet'
 }
 
-export const ResponsiveValues = Objects.values(Responsive);
+export const responsiveValues = Objects.values(Responsive);

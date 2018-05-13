@@ -6,5 +6,5 @@ export enum Alignment {
     right = 'isRight'
 }
 
-export const AlignmentValues = Objects.values(Alignment);
+export const alignmentValues = Objects.values(Alignment);
 

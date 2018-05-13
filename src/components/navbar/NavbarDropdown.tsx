@@ -1,9 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-
-import NavbarStyle from '../../base/css/bulma';
-import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
+import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export interface NavbarDropdownProps extends HTMLDivProps {
     isActive?: boolean;

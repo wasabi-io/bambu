@@ -2,11 +2,8 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Objects from 'wasabi-common/lib/types/Objects';
-
-import {Color, colorValues, Size, SizeValues, State, StateValues} from '../../base/css';
-import HTMLComponent, {HTMLElementProps} from '../../base/html/HTML';
+import {bulma as ButtonStyle, Color, colorValues, HTMLComponent, HTMLElementProps, Size, sizeValues, State, stateValues} from '../../';
 import Icon, {IconOptions} from '../icon/Icon';
-import ButtonStyle from '../../base/css/bulma';
 
 export enum ButtonTagNames {
     a = 'a',
@@ -20,7 +17,7 @@ export interface ButtonProps extends HTMLElementProps {
     value?: string;
     color?: string | Color;
     icon?: IconOptions;
-    size?: string | Size;
+    bSize?: string | Size;
     state?: string | State;
     isOutlined?: boolean;
     isInverted?: boolean;
@@ -33,7 +30,7 @@ const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
     const {
         tagName, isOutlined,
         isRounded, isInverted,
-        icon, state, color, size,
+        icon, state, color, bSize,
         className, children,
         disabled, onClick, ...buttonProps,
     } = props;
@@ -42,7 +39,7 @@ const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
         ButtonStyle.button,
         ButtonStyle[state],
         ButtonStyle[color],
-        ButtonStyle[size],
+        ButtonStyle[bSize],
         {
             [`${ButtonStyle.isOutlined}`]: isOutlined,
             [`${ButtonStyle.isInverted}`]: isInverted,
@@ -64,15 +61,15 @@ const Button: React.SFC<ButtonProps> = (props: ButtonProps) => {
         onClick: disabled ? null : onClick,
         className: classNames,
         ...buttonProps,
-    }, icon && <Icon icon={icon} size={size}/>, children);
+    }, icon && <Icon icon={icon} bSize={bSize}/>, children);
 };
 
 Button.propTypes = {
     ...HTMLComponent.propTypes,
     tagName: PropTypes.oneOf(Objects.values(ButtonTagNames)),
     color: PropTypes.oneOf(colorValues),
-    size: PropTypes.oneOf(SizeValues),
-    state: PropTypes.oneOf(StateValues),
+    bSize: PropTypes.oneOf(sizeValues),
+    state: PropTypes.oneOf(stateValues),
 };
 
 Button.defaultProps = {

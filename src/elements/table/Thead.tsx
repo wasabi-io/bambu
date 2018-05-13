@@ -1,8 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-
-import HTMLComponent, {HTMLTheadProps} from '../../base/html/HTML';
-import TableStyle from '../../base/css/bulma';
+import {bulma as TableStyle, HTMLComponent, HTMLTheadProps} from '../../';
 
 export type THeadProps = HTMLTheadProps;
 

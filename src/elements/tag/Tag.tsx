@@ -1,10 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-
-import {Color, colorValues, Size, SizeValues} from '../../base/css';
-import HTMLComponent, {HTMLAllAttributes} from '../../base/html/HTML';
-import TagStyle from '../../base/css/bulma';
+import {bulma as TagStyle, Color, colorValues, HTMLAllAttributes, HTMLComponent, Size, sizeValues} from '../../';
 
 /**
  * Refers Html Props and Additional Props.
@@ -33,7 +30,7 @@ const Tag: React.SFC<TagProps> = (props: TagProps) => {
 Tag.propTypes = {
     ...HTMLComponent.propTypes,
     color: PropTypes.oneOf(colorValues),
-    bSize: PropTypes.oneOf(SizeValues)
+    bSize: PropTypes.oneOf(sizeValues)
 };
 
 Tag.defaultProps = {

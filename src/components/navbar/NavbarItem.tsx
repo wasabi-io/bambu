@@ -1,8 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import HTMLComponent, {HTMLAllAttributes} from '../../base/html/HTML';
-import NavbarStyle from '../../base/css/bulma';
+import {bulma as NavbarStyle, HTMLAllAttributes, HTMLComponent} from "../../";
 
 export interface NavbarItemProps extends HTMLAllAttributes {
     isActive?: boolean;

@@ -1,11 +1,9 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { has } from 'wasabi-common';
-
-import PanelStyle from '../../base/css/bulma';
-import HTMLComponent, { HTMLDivProps, HTMLSpanProps } from '../../base/html/HTML';
-import { Icon, IconOptions, IconSize, IconSizeValues } from '../../elements/icon';
+import {has} from 'wasabi-common';
+import {bulma as PanelStyle, HTMLComponent, HTMLDivProps, HTMLSpanProps} from '../../';
+import {Icon, IconOptions, IconSize, IconSizeValues} from '../../elements/icon';
 
 /**
  * Refers Html Props and Additional Props.
@@ -47,12 +45,12 @@ export default class PanelBlock extends HTMLComponent<PanelBlockProps> {
             return null;
         }
 
-        const { className, ...iconParentProps } = iconParent;
+        const {className, ...iconParentProps} = iconParent;
 
         const classNames = ClassNames([PanelStyle.panelIcon, className]);
 
         return (
-            <Icon className={classNames} icon={icon} size={iconSize}  {...iconParentProps} />
+            <Icon className={classNames} icon={icon} bSize={iconSize}  {...iconParentProps} />
         );
     }
 
@@ -62,7 +60,7 @@ export default class PanelBlock extends HTMLComponent<PanelBlockProps> {
      */
     public render(): JSX.Element {
 
-        const { isActive, icon, iconSize, iconParent, className, ...inputProps } = this.props;
+        const {isActive, icon, iconSize, iconParent, className, ...inputProps} = this.props;
 
         const classNames = ClassNames(
             PanelStyle.panelBlock,

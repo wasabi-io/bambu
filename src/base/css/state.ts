@@ -8,4 +8,4 @@ export enum State {
     static = 'isStatic'
 }
 
-export const StateValues = Objects.values(State);
+export const stateValues = Objects.values(State);

@@ -1,9 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import FormStyle from '../../base/css/bulma';
+import {bulma as FormStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 /**
  * Refers Html Props and Additional Props.

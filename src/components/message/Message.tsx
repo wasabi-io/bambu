@@ -1,22 +1,20 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Color, Size} from '../../base/css';
-import HTMLComponent, {HTMLArticleProps} from '../../base/html/HTML';
-import MessageStyle from '../../base/css/bulma';
+import {bulma as MessageStyle, Color, HTMLArticleProps, HTMLComponent, Size, sizeValues} from '../../';
 
 export interface MessageProps extends HTMLArticleProps {
     color?: string | Color;
-    size?: string | Size;
+    bSize?: string | Size;
 }
 
 const Message: React.SFC<MessageProps> = (props: MessageProps) => {
-    const {children, className, color, size, ...ownProps} = props;
+    const {children, className, color, bSize, ...ownProps} = props;
 
     const classNames = ClassNames(
         MessageStyle.message,
         MessageStyle[color],
-        MessageStyle[size],
+        MessageStyle[bSize],
         className
     );
 
@@ -30,6 +28,7 @@ const Message: React.SFC<MessageProps> = (props: MessageProps) => {
 Message.propTypes = {
     ...HTMLComponent.propTypes,
     color: PropTypes.string,
+    bSize: PropTypes.oneOf(sizeValues),
 };
 
 Message.defaultProps = {

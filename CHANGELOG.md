@@ -1,5 +1,10 @@
 ## CHANGELOG
 
+#### v0.6.201-beta.2
+* solved https://github.com/wasabi-io/bambu/issues/6
+* added missing *propTypes*
+* fixed wrong *propTypes*
+
 #### v0.6.201-beta.1
 
 * fixed **Showcase** docs path problem.

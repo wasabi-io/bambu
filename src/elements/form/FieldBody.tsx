@@ -1,29 +1,26 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Size, SizeValues} from '../../base/css';
-
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import FormStyle from '../../base/css/bulma';
+import {bulma as FormStyle, HTMLComponent, HTMLDivProps, Size, sizeValues} from '../../';
 
 /**
  * Refers Html Props and Additional Props.
  */
 export interface FieldBodyProps extends HTMLDivProps {
-    size?: string | Size;
+    bSize?: string | Size;
 }
 
 const FieldBody: React.SFC<FieldBodyProps> = (props: FieldBodyProps) => {
 
     const {
-        size,
+        bSize,
         className,
         ...inputProps
     } = props;
 
     const classNames = ClassNames([
         FormStyle.fieldBody,
-        FormStyle[size],
+        FormStyle[bSize],
         className
     ]);
 
@@ -36,7 +33,7 @@ const FieldBody: React.SFC<FieldBodyProps> = (props: FieldBodyProps) => {
 
 FieldBody.propTypes = {
     ...HTMLComponent.propTypes,
-    size: PropTypes.oneOf(SizeValues),
+    bSize: PropTypes.oneOf(sizeValues),
 };
 
 FieldBody.defaultProps = HTMLComponent.defaultProps;

@@ -2,10 +2,7 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Objects from 'wasabi-common/lib/types/Objects';
-
-import {Alignment, AlignmentValues, Size, SizeValues} from '../../base/css';
-import HTMLComponent, {HTMLElementProps} from '../../base/html/HTML';
-import BreadCrumbStyle from '../../base/css/bulma';
+import {Alignment, alignmentValues, bulma as BreadCrumbStyle, HTMLComponent, HTMLElementProps, Size, sizeValues} from '../../';
 
 export enum BreadCrumbSeperator {
     arrow = 'hasArrowSeparator',
@@ -20,18 +17,18 @@ export enum BreadCrumbSeperator {
 export interface BreadCrumbProps extends HTMLElementProps {
     alignment?: string | Alignment;
     separator?: string | BreadCrumbSeperator;
-    size?: string | Size;
+    bSize?: string | Size;
 }
 
 const BreadCrumb: React.SFC<BreadCrumbProps> = (props: BreadCrumbProps) => {
 
-    const {alignment, size, separator, className, ...breadCrumbProps} = props;
+    const {alignment, bSize, separator, className, ...breadCrumbProps} = props;
 
     const classNames = ClassNames(
         BreadCrumbStyle.breadcrumb,
         BreadCrumbStyle[alignment],
         BreadCrumbStyle[separator],
-        BreadCrumbStyle[size],
+        BreadCrumbStyle[bSize],
         className,
     );
 
@@ -46,9 +43,9 @@ const BreadCrumb: React.SFC<BreadCrumbProps> = (props: BreadCrumbProps) => {
 
 BreadCrumb.propTypes = {
     ...HTMLComponent.propTypes,
-    alignment: PropTypes.oneOf(AlignmentValues),
+    alignment: PropTypes.oneOf(alignmentValues),
     separator: PropTypes.oneOf(Objects.values(BreadCrumbSeperator)),
-    size: PropTypes.oneOf(SizeValues),
+    bSize: PropTypes.oneOf(sizeValues),
 };
 
 BreadCrumb.defaultProps = {

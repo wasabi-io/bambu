@@ -1,9 +1,8 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import CardStyle from '../../base/css/bulma';
+import {bulma as CardStyle, HTMLAProps, HTMLComponent} from '../../';
 import Icon, {IconOptions} from '../../elements/icon/Icon';
-import HTMLComponent, {HTMLAProps} from '../../base/html/HTML';
 
 /**
  * Refers Html Props and Additional Props.

@@ -1,10 +1,8 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
+import {bulma as ModalStyle, HTMLComponent, HTMLFooterProps} from '../../';
 
-import HTMLComponent, {HTMLSectionProps} from '../../base/html/HTML';
-import ModalStyle from '../../base/css/bulma';
-
-export interface ModalCardFooterProps extends HTMLSectionProps {
+export interface ModalCardFooterProps extends HTMLFooterProps {
 }
 
 const ModalCardFooter: React.SFC<ModalCardFooterProps> = (props: ModalCardFooterProps) => {

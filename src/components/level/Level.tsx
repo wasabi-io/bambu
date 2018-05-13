@@ -1,10 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Responsive, ResponsiveValues} from '../../base/css';
-
-import HTMLComponent, {HTMLElementProps} from '../../base/html/HTML';
-import LevelStyle from '../../base/css/bulma';
+import {bulma as LevelStyle, HTMLComponent, HTMLElementProps, Responsive, responsiveValues} from '../../';
 
 /**
  * Refers Html Props and Additional Props.
@@ -31,7 +28,7 @@ const Level: React.SFC<LevelProps> = (props: LevelProps) => {
 
 Level.propTypes = {
     ...HTMLComponent.propTypes,
-    responsive: PropTypes.oneOf(ResponsiveValues),
+    responsive: PropTypes.oneOf(responsiveValues),
 };
 
 Level.defaultProps = HTMLComponent.defaultProps;

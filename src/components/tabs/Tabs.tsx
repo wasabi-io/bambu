@@ -2,27 +2,25 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Objects from 'wasabi-common/lib/types/Objects';
-import {Alignment, AlignmentValues, Size, SizeValues} from '../../base/css';
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import TabsStyle from '../../base/css/bulma';
+import {Alignment, alignmentValues, bulma as TabsStyle, HTMLComponent, HTMLDivProps, Size, sizeValues} from '../../';
 
 export enum tabsStyle { boxed = 'isBoxed', toggle = 'isToggle' }
 
 export interface TabsProps extends HTMLDivProps {
     alignment?: string | Alignment;
     isFullwidth?: boolean;
-    size?: string | Size;
+    bSize?: string | Size;
     tabStyle?: string | tabsStyle;
 }
 
 const Tabs: React.SFC<TabsProps> = (props: TabsProps) => {
 
-    const {isFullwidth, alignment, size, tabStyle, className, ...inputProps} = props;
+    const {isFullwidth, alignment, bSize, tabStyle, className, ...inputProps} = props;
 
     const classNames = ClassNames(
         TabsStyle.tabs,
         TabsStyle[alignment],
-        TabsStyle[size],
+        TabsStyle[bSize],
         TabsStyle[tabStyle],
         {
             [`${TabsStyle.isFullwidth}`]: isFullwidth,
@@ -41,15 +39,15 @@ const Tabs: React.SFC<TabsProps> = (props: TabsProps) => {
 
 Tabs.propTypes = {
     ...HTMLComponent.propTypes,
-    alignment: PropTypes.oneOf(AlignmentValues),
+    alignment: PropTypes.oneOf(alignmentValues),
     isFullwidth: PropTypes.bool,
-    size: PropTypes.oneOf(SizeValues),
+    bSize: PropTypes.oneOf(sizeValues),
     tabStyle: PropTypes.oneOf(Objects.values(tabsStyle))
 };
 
 Tabs.defaultProps = {
     ...HTMLComponent.defaultProps,
-    isFullwidth: false,
+    isFullwidth: false
 };
 
 Tabs.displayName = 'Tabs';

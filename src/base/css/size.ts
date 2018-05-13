@@ -6,7 +6,7 @@ export enum Size {
     large = 'isLarge'
 }
 
-export const SizeValues = Objects.values(Size);
+export const sizeValues = Objects.values(Size);
 
 export enum Size6 {
     is1 = 'is1',
@@ -17,7 +17,7 @@ export enum Size6 {
     is6 = 'is6'
 }
 
-export const Size6Values = Objects.values(Size6);
+export const size6Values = Objects.values(Size6);
 
 export enum Size12 {
     is1 = 'is1',
@@ -34,6 +34,6 @@ export enum Size12 {
     is12 = 'is12'
 }
 
-export const Size12Values = Objects.values(Size12);
+export const size12Values = Objects.values(Size12);
 
 

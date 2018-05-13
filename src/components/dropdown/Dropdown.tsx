@@ -1,9 +1,8 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Stateless from 'wasabi-ui/lib/Stateless';
-
-import DropdownStyle from '../../base/css/bulma';
-import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
+import {bulma as DropdownStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 /**
  * Refers Html Props and Additional Props.
@@ -16,20 +15,30 @@ export interface DropdownProps extends HTMLDivProps {
 }
 
 export default class Dropdown extends Stateless<DropdownProps> {
-    dropdownRef: HTMLDivElement;
+    public dropdownRef: HTMLDivElement;
+
+    public static propTypes = {
+        ...HTMLComponent.propTypes,
+        isActive: PropTypes.bool,
+        isHoverable: PropTypes.bool,
+        isRight: PropTypes.bool,
+        isUp: PropTypes.bool
+    };
+
+    public static defaultProps = HTMLComponent.defaultProps;
 
     constructor(props: DropdownProps) {
         super(props);
         this.onDropDown = this.onDropDown.bind(this);
     }
 
-    onDropDown(e: any) {
+    public onDropDown(e: any) {
         e.stopPropagation();
         this.dropdownRef.classList.toggle(DropdownStyle.isActive);
     }
 
-    render() {
-        const { children, className, isActive, isHoverable, isRight, isUp, ...dropdownProps } = this.props;
+    public render() {
+        const {children, className, isActive, isHoverable, isRight, isUp, ...dropdownProps} = this.props;
         const classNames = ClassNames(
             DropdownStyle.dropdown,
             {

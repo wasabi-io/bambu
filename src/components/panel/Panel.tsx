@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-import HTMLComponent, {HTMLNavProps} from '../../base/html/HTML';
-import PanelStyle from '../../base/css/bulma';
+import {bulma as PanelStyle, HTMLComponent, HTMLNavProps} from '../../';
 
 export type PanelProps = HTMLNavProps;
 

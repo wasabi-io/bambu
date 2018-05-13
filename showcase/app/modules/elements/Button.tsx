@@ -73,10 +73,10 @@ export default class Button extends Stateless<{}> {
                 <hr/>
                 <h3><b><a>#</a> Sizes</b></h3>
                 <Snippet>
-                    <BaseButton size={Size.small}>Small</BaseButton>
+                    <BaseButton bSize={Size.small}>Small</BaseButton>
                     <BaseButton>Normal</BaseButton>
-                    <BaseButton size={Size.medium}>Medium</BaseButton>
-                    <BaseButton size={Size.large}>Large</BaseButton>
+                    <BaseButton bSize={Size.medium}>Medium</BaseButton>
+                    <BaseButton bSize={Size.large}>Large</BaseButton>
                 </Snippet>
                 <hr/>
                 <h3><b><a>#</a> Styles</b></h3>
@@ -197,17 +197,17 @@ export default class Button extends Stateless<{}> {
                 <br/>
                 <h4>With Font Awesome icons</h4>
                 <Snippet>
-                    <BaseButton><Icon size={Size.small} icon="fa-bold"/></BaseButton>
-                    <BaseButton><Icon size={Size.small} icon="fa-italic"/></BaseButton>
-                    <BaseButton><Icon size={Size.small} icon="fa-underline"/></BaseButton>
-                    <BaseButton><Icon size={Size.small} icon="fa-github"/>Github</BaseButton>
-                    <BaseButton color={Color.primary}><Icon size={Size.small} icon="fa-twitter"/>Twitter</BaseButton>
-                    <BaseButton color={Color.success}><Icon size={Size.small} icon="fa-check"/>Save</BaseButton>
-                    <BaseButton isOutlined color={Color.danger}>Delete<Icon size={Size.small} icon="fa-times"/></BaseButton>
-                    <BaseButton size={Size.small}><Icon icon="fa-github"/>Github</BaseButton>
+                    <BaseButton><Icon bSize={Size.small} icon="fa-bold"/></BaseButton>
+                    <BaseButton><Icon bSize={Size.small} icon="fa-italic"/></BaseButton>
+                    <BaseButton><Icon bSize={Size.small} icon="fa-underline"/></BaseButton>
+                    <BaseButton><Icon bSize={Size.small} icon="fa-github"/>Github</BaseButton>
+                    <BaseButton color={Color.primary}><Icon bSize={Size.small} icon="fa-twitter"/>Twitter</BaseButton>
+                    <BaseButton color={Color.success}><Icon bSize={Size.small} icon="fa-check"/>Save</BaseButton>
+                    <BaseButton isOutlined color={Color.danger}>Delete<Icon bSize={Size.small} icon="fa-times"/></BaseButton>
+                    <BaseButton bSize={Size.small}><Icon icon="fa-github"/>Github</BaseButton>
                     <BaseButton><Icon icon="fa-github"/>Github</BaseButton>
-                    <BaseButton size={Size.medium}><Icon size={Size.small} icon="fa-github"/>Github</BaseButton>
-                    <BaseButton size={Size.large}><Icon size={Size.small} icon="fa-github"/>Github</BaseButton>
+                    <BaseButton bSize={Size.medium}><Icon bSize={Size.small} icon="fa-github"/>Github</BaseButton>
+                    <BaseButton bSize={Size.large}><Icon bSize={Size.small} icon="fa-github"/>Github</BaseButton>
                 </Snippet>
             </Page>
         );

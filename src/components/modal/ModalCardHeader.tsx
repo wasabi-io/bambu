@@ -1,8 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-
-import HTMLComponent, {HTMLHeaderProps} from '../../base/html/HTML';
-import ModalStyle from '../../base/css/bulma';
+import {bulma as ModalStyle, HTMLComponent, HTMLHeaderProps} from '../../';
 
 export interface ModalCardHeaderProps extends HTMLHeaderProps {
     header?: string;

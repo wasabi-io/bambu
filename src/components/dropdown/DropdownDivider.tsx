@@ -1,9 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-import * as PropTypes from 'prop-types';
-
-import HTMLComponent, {HTMLHrProps} from '../../base/html/HTML';
-import DropdownStyle from '../../base/css/bulma';
+import {bulma as DropdownStyle, HTMLComponent, HTMLHrProps} from '../../';
 
 /**
  * Refers Html Props and Additional Props.
@@ -24,9 +21,7 @@ const DropdownDivider: React.SFC<DropdownDividerProps> = (props: DropdownDivider
     );
 };
 
-DropdownDivider.propTypes = {
-    ...HTMLComponent.propTypes,
-}
+DropdownDivider.propTypes = HTMLComponent.propTypes;
 
 DropdownDivider.defaultProps = HTMLComponent.defaultProps;
 

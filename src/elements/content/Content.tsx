@@ -1,20 +1,20 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
 import HTMLComponent, {HTMLElementProps} from '../../base/html/HTML';
-import {Size} from '../../base/css';
-import ContentStyle from '../../base/css/bulma';
+import {bulma as ContentStyle, Size, sizeValues} from '../../';
+import * as PropTypes from "prop-types";
 
 export interface ContentProps extends HTMLElementProps {
-    size?: string | Size;
+    bSize?: string | Size;
 }
 
 const Content: React.SFC<ContentProps> = (props: ContentProps) => {
 
-    const {className, size, ...inputProps} = props;
+    const {className, bSize, ...inputProps} = props;
 
     const classNames = ClassNames(
         ContentStyle.content,
-        ContentStyle[size],
+        ContentStyle[bSize],
         className
     );
 
@@ -25,7 +25,10 @@ const Content: React.SFC<ContentProps> = (props: ContentProps) => {
     );
 };
 
-Content.propTypes = HTMLComponent.propTypes;
+Content.propTypes = {
+    ...HTMLComponent.propTypes,
+    bSize: PropTypes.oneOf(sizeValues)
+};
 
 Content.defaultProps = HTMLComponent.defaultProps;
 

@@ -1,23 +1,20 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Size, SizeValues} from '../../base/css';
-
-import HTMLComponent, {HTMLLabelProps} from '../../base/html/HTML';
-import FormStyle from '../../base/css/bulma';
+import {Size, sizeValues, HTMLComponent, HTMLLabelProps, bulma as FormStyle} from '../../';
 
 /**
  * Refers Html Props and Additional Props.
  */
 export interface ControlLabelProps extends HTMLLabelProps {
-    size?: string | Size;
-    isRadio?: boolean
+    bSize?: string | Size;
+    isRadio?: boolean;
 }
 
 const ControlLabel: React.SFC<ControlLabelProps> = (props: ControlLabelProps) => {
 
     const {
-        size,
+        bSize,
         className,
         isRadio,
         ...inputProps
@@ -28,7 +25,7 @@ const ControlLabel: React.SFC<ControlLabelProps> = (props: ControlLabelProps) =>
             [`${FormStyle.label}`]: !isRadio,
             [`${FormStyle.radio}`]: isRadio,
         },
-        FormStyle[size],
+        FormStyle[bSize],
         className
     );
 
@@ -41,7 +38,8 @@ const ControlLabel: React.SFC<ControlLabelProps> = (props: ControlLabelProps) =>
 
 ControlLabel.propTypes = {
     ...HTMLComponent.propTypes,
-    size: PropTypes.oneOf(SizeValues),
+    bSize: PropTypes.oneOf(sizeValues),
+    isRadio: PropTypes.bool
 };
 
 ControlLabel.defaultProps = {

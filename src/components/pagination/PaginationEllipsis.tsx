@@ -1,8 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-
-import HTMLComponent, {HTMLSpanProps} from '../../base/html/HTML';
-import PaginationStyle from '../../base/css/bulma';
+import {bulma as PaginationStyle, HTMLComponent, HTMLSpanProps} from '../../';
 
 export interface PaginationEllipsisProps extends HTMLSpanProps {
 }

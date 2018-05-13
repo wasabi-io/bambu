@@ -3,7 +3,7 @@ import 'font-awesome/css/font-awesome.css';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {has, Objects, Strings} from 'wasabi-common';
-import {Horizontal, Orientation} from '../../base/css';
+import {Horizontal, Orientation} from '../../';
 import HTMLComponent, {HTMLIProps} from '../../base/html/HTML';
 
 export enum IconSize { lg = 'lg', x2 = '2x', x3 = '3x', x4 = '4x', x5 = '5x' }
@@ -25,7 +25,7 @@ export interface FaIconProps extends HTMLIProps {
     name: string;
     pull?: string | Horizontal;
     rotate?: number;
-    size?: string | IconSize;
+    bSize?: string | IconSize;
     stack?: string | IconStack;
 
     [key: string]: any;
@@ -45,7 +45,7 @@ export default class FaIcon extends HTMLComponent<FaIconProps> {
         name: PropTypes.string.isRequired,
         pull: PropTypes.oneOf(Objects.values(Horizontal)),
         rotate: PropTypes.number,
-        size: PropTypes.oneOf(Objects.values(IconSize)),
+        bSize: PropTypes.oneOf(Objects.values(IconSize)),
         stack: PropTypes.oneOf(Objects.values(IconStack)),
     };
 
@@ -110,7 +110,7 @@ export default class FaIcon extends HTMLComponent<FaIconProps> {
             name,
             pull,
             rotate,
-            size,
+            bSize,
             stack,
             ...props,
         } = this.props;
@@ -121,7 +121,7 @@ export default class FaIcon extends HTMLComponent<FaIconProps> {
             FaIcon.iconName(name),
             FaIcon.prePull(pull),
             FaIcon.preRotate(rotate),
-            FaIcon.preSize(size),
+            FaIcon.preSize(bSize),
             FaIcon.preStack(stack),
             {
                 'fa-border': border,

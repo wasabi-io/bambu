@@ -1,10 +1,8 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import Objects, { Props } from 'wasabi-common/lib/types/Objects';
-
-import ImageStyle from '../../base/css/bulma';
-import HTMLComponent, { HTMLImgProps } from '../../base/html/HTML';
+import Objects, {Props} from 'wasabi-common/lib/types/Objects';
+import {bulma as ImageStyle, HTMLComponent, HTMLImgProps} from '../../';
 
 export enum ImageSize {
     is16X16 = 'is16X16',
@@ -33,17 +31,17 @@ export interface ImageProps extends HTMLImgProps {
     pClassName?: string;
     pStyle?: Props;
     ratio?: string | ImageRatio;
-    size?: string | ImageSize;
+    bSize?: string | ImageSize;
     src: string;
 }
 
 const Image: React.SFC<ImageProps> = (props: ImageProps) => {
 
-    const { size, ratio, pClassName, pStyle, ...inputProps } = props;
+    const {bSize, ratio, pClassName, pStyle, ...inputProps} = props;
 
     const classNames = ClassNames(
         ImageStyle.image,
-        ImageStyle[size],
+        ImageStyle[bSize],
         ImageStyle[ratio],
         pClassName,
     );
@@ -63,7 +61,7 @@ Image.propTypes = {
     pClassName: PropTypes.string,
     pStyle: PropTypes.object,
     ratio: PropTypes.oneOf(Objects.values(ImageRatio)),
-    size: PropTypes.oneOf(Objects.values(ImageSize)),
+    bSize: PropTypes.oneOf(Objects.values(ImageSize)),
     src: PropTypes.string.isRequired
 };
 

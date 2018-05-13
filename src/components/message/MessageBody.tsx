@@ -1,8 +1,6 @@
 import * as ClassNames from 'classnames';
-import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import MessageStyle from '../../base/css/bulma';
+import {bulma as MessageStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export type MessageBodyProps = HTMLDivProps;
 
@@ -21,13 +19,9 @@ const MessageBody: React.SFC<MessageBodyProps> = (props: MessageBodyProps) => {
     );
 };
 
-MessageBody.propTypes = {
-    ...HTMLComponent.propTypes,
-};
+MessageBody.propTypes = HTMLComponent.propTypes;
 
-MessageBody.defaultProps = {
-    ...HTMLComponent.defaultProps,
-};
+MessageBody.defaultProps = HTMLComponent.defaultProps;
 
 MessageBody.displayName = 'MessageBody';
 

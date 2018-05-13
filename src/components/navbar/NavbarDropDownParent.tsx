@@ -2,9 +2,7 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Strings from 'wasabi-common/lib/types/Strings';
-
-import NavbarStyle from '../../base/css/bulma';
-import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
+import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export enum ShowingState {
     active = 'active',

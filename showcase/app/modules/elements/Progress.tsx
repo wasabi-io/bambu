@@ -33,10 +33,10 @@ export default class Progress extends Stateless<{}> {
                 <hr/>
                 <h3><b><a>#</a> Sizes</b></h3>
                 <Snippet slices>
-                    <BaseProgress size={Size.small} value={15} max={100}>15%</BaseProgress>
+                    <BaseProgress bSize={Size.small} value={15} max={100}>15%</BaseProgress>
                     <BaseProgress value={30} max={100}>30%</BaseProgress>
-                    <BaseProgress size={Size.medium} value={45} max={100}>45%</BaseProgress>
-                    <BaseProgress size={Size.large} value={60} max={100}>60%</BaseProgress>
+                    <BaseProgress bSize={Size.medium} value={45} max={100}>45%</BaseProgress>
+                    <BaseProgress bSize={Size.large} value={60} max={100}>60%</BaseProgress>
                 </Snippet>
             </Page>
         );

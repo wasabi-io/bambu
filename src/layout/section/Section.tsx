@@ -1,21 +1,19 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Size, SizeValues} from '../../base/css';
-import HTMLComponent, {HTMLSectionProps} from '../../base/html/HTML';
-import SectionStyle from '../../base/css/bulma';
+import {bulma as SectionStyle, HTMLComponent, HTMLSectionProps, Size, sizeValues} from '../../';
 
 export interface SectionProps extends HTMLSectionProps {
-    size?: string | Size;
+    bSize?: string | Size;
 }
 
 const Section: React.SFC<SectionProps> = (props: SectionProps) => {
 
-    const {size, className, ...sectionProps} = props;
+    const {bSize, className, ...sectionProps} = props;
 
     const classNames = ClassNames(
         SectionStyle.section,
-        SectionStyle[size],
+        SectionStyle[bSize],
         className
     );
 
@@ -28,7 +26,7 @@ const Section: React.SFC<SectionProps> = (props: SectionProps) => {
 
 Section.propTypes = {
     ...HTMLComponent.propTypes,
-    size: PropTypes.oneOf(SizeValues)
+    bSize: PropTypes.oneOf(sizeValues)
 };
 
 Section.defaultProps = {

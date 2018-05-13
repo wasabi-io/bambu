@@ -3,9 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import ControlLabel, {ControlLabelProps} from '../../elements/form/ControlLabel';
 import Objects from 'wasabi-common/lib/types/Objects';
-
-import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
-import FormStyle from '../../base/css/bulma';
+import {bulma as FormStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 export enum FieldLabelSize {
     normal = 'isNormal',
@@ -18,14 +16,14 @@ export enum FieldLabelSize {
  * Refers Html Props and Additional Props.
  */
 export interface FieldLabelProps extends HTMLDivProps {
-    size?: string | FieldLabelSize;
+    bSize?: string | FieldLabelSize;
     labelProps?: ControlLabelProps;
 }
 
 const FieldLabel: React.SFC<FieldLabelProps> = (props: FieldLabelProps) => {
 
     const {
-        size,
+        bSize,
         className,
         labelProps,
         ...inputProps
@@ -33,7 +31,7 @@ const FieldLabel: React.SFC<FieldLabelProps> = (props: FieldLabelProps) => {
 
     const classNames = ClassNames([
         FormStyle.fieldLabel,
-        FormStyle[size],
+        FormStyle[bSize],
         className
     ]);
 
@@ -48,12 +46,13 @@ const FieldLabel: React.SFC<FieldLabelProps> = (props: FieldLabelProps) => {
 
 FieldLabel.propTypes = {
     ...HTMLComponent.propTypes,
-    size: PropTypes.oneOf(Objects.values(FieldLabelSize)),
+    bSize: PropTypes.oneOf(Objects.values(FieldLabelSize)),
+    labelProps: PropTypes.object
 };
 
 FieldLabel.defaultProps = {
     ...HTMLComponent.defaultProps,
-    size: FieldLabelSize.normal
+    bSize: FieldLabelSize.normal
 };
 
 FieldLabel.displayName = 'FieldLabel';

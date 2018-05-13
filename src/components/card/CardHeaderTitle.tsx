@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as React from 'react';
-import CardStyle from '../../base/css/bulma';
-import HTMLComponent, {HTMLPProps} from '../../base/html/HTML';
+import {bulma as CardStyle, HTMLComponent, HTMLPProps} from '../../';
 
 export type CardHeaderTitleProps = HTMLPProps;
 

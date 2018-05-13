@@ -1,13 +1,11 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Alignment, Size} from '../../base/css';
-
-import HTMLComponent, {HTMLNavProps} from '../../base/html/HTML';
-import PaginationStyle from '../../base/css/bulma';
+import {Alignment, bulma as PaginationStyle, HTMLComponent, HTMLNavProps, Size, sizeValues} from '../../';
 
 export interface PaginationProps extends HTMLNavProps {
     alignment?: string | Alignment;
-    size?: string | Size;
+    bSize?: string | Size;
     isRounded?: boolean;
     previous?: boolean;
     previousText?: string;
@@ -17,11 +15,11 @@ export interface PaginationProps extends HTMLNavProps {
 
 const Pagination: React.SFC<PaginationProps> = (props: PaginationProps) => {
 
-    const {previous, previousText, next, nextText, size, alignment, isRounded, className, ...paginationProps} = props;
+    const {previous, previousText, next, nextText, bSize, alignment, isRounded, className, ...paginationProps} = props;
 
     const classNames = ClassNames(
         PaginationStyle.pagination,
-        PaginationStyle[size],
+        PaginationStyle[bSize],
         PaginationStyle[alignment],
         className,
         {[`${PaginationStyle.isRounded}`]: isRounded},
@@ -37,7 +35,14 @@ const Pagination: React.SFC<PaginationProps> = (props: PaginationProps) => {
 };
 
 Pagination.propTypes = {
-    ...HTMLComponent.propTypes
+    ...HTMLComponent.propTypes,
+    alignment: PropTypes.string,
+    bSize: PropTypes.oneOf(sizeValues),
+    isRounded: PropTypes.bool,
+    previous: PropTypes.bool,
+    previousText: PropTypes.string,
+    next: PropTypes.bool,
+    nextText: PropTypes.string,
 };
 
 Pagination.defaultProps = {

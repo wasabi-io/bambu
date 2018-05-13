@@ -121,7 +121,7 @@ export default class Content extends Stateless<{}> {
                 <h3><b><a>#</a> Size</b></h3>
                 <p>You can use the <code>isSmall</code>, <code>isMedium</code> and <code>isLarge</code> modifiers to change the font size.</p>
                 <Snippet slices scrolless>
-                    <BaseContent size={Size.small}>
+                    <BaseContent bSize={Size.small}>
                         <h1>Hello World</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel
                             erat vel, interdum mattis neque.</p>
@@ -137,7 +137,7 @@ export default class Content extends Stateless<{}> {
                     </BaseContent>
                 </Snippet>
                 <Snippet slices scrolless>
-                    <BaseContent size={Size.medium}>
+                    <BaseContent bSize={Size.medium}>
                         <h1>Hello World</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel
                             erat vel, interdum mattis neque.</p>
@@ -153,7 +153,7 @@ export default class Content extends Stateless<{}> {
                     </BaseContent>
                 </Snippet>
                 <Snippet slices scrolless>
-                    <BaseContent size={Size.large}>
+                    <BaseContent bSize={Size.large}>
                         <h1>Hello World</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla accumsan, metus ultrices eleifend gravida, nulla nunc varius lectus, nec rutrum justo nibh eu lectus. Ut vulputate semper dui. Fusce erat odio, sollicitudin vel
                             erat vel, interdum mattis neque.</p>

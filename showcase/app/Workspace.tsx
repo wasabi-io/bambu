@@ -34,7 +34,7 @@ class Workspace extends Stateless<WorkspaceProps> {
                                 </h1>
                             </NavbarItem>
                             <NavbarItem href="https://github.com/wasabi-io/bambu" target="_blank">
-                                <Icon icon="github" size={IconSize.lg} style={{display: 'inline'}}/>
+                                <Icon icon="github" bSize={IconSize.lg} style={{display: 'inline'}}/>
                             </NavbarItem>
                         </NavbarBrand>
                     </Container>
