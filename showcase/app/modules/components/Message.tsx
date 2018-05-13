@@ -232,7 +232,7 @@ export default class Message extends Stateless<{}> {
                 <hr/>
                 <h3><b><a>#</a> Message body only </b></h3>
                 <Snippet slices scrolless>
-                    <BaseMessage size={Size.small}>
+                    <BaseMessage bSize={Size.small}>
                         <MessageHeader>
                             <p>Small message</p>
                             <Delete/>
@@ -266,7 +266,7 @@ export default class Message extends Stateless<{}> {
                     </BaseMessage>
                 </Snippet>
                 <Snippet slices scrolless>
-                    <BaseMessage size={Size.medium}>
+                    <BaseMessage bSize={Size.medium}>
                         <MessageHeader>
                             <p>Medium message</p>
                             <Delete/>
@@ -283,7 +283,7 @@ export default class Message extends Stateless<{}> {
                     </BaseMessage>
                 </Snippet>
                 <Snippet slices scrolless>
-                    <BaseMessage size={Size.large}>
+                    <BaseMessage bSize={Size.large}>
                         <MessageHeader>
                             <p>Large message</p>
                             <Delete/>

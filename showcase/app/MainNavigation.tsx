@@ -7,6 +7,7 @@ import Stateless from 'wasabi-ui/lib/Stateless';
 import Navigation from './Navigation';
 import locationStore from './stores/LocationStore';
 import WorkspaceStyle from './WorkspaceStyle';
+import Strings from "wasabi-common/lib/types/Strings";
 
 const navigaions: Navigation[] = require('./navigations.json');
 
@@ -28,7 +29,7 @@ export default class MainNavigation extends Stateless<{}> {
 
     private configureTab(locationPath: string, path: string) {
         const config: any = {};
-        if (path.startsWith(`/${locationPath}`)) {
+        if (Strings.startsWith(path, `/${locationPath}`)) {
             config['isActive'] = true;
         } else {
             config['className'] = WorkspaceStyle.isFirstTabIsNotActive;

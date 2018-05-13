@@ -1,4 +1,5 @@
 import {action, observable} from 'mobx';
+import Strings from "wasabi-common/lib/types/Strings";
 
 export interface LocationProps {
     pathname?: string;
@@ -17,7 +18,7 @@ class LocationStore {
 
     @action
     public setLocation(location: LocationProps) {
-        if (!location.pathname.endsWith('/')) {
+        if (!Strings.endsWith(location.pathname, '/')) {
             location.pathname += '/';
         }
         this._location = location;
@@ -25,8 +26,9 @@ class LocationStore {
 
     public getPaths() {
         return this._location.pathname.split('/').filter((item: any) => {
-            if (item && isNaN(item))
+            if (item && isNaN(item)) {
                 return item;
+            }
         });
     }
 }

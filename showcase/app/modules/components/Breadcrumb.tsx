@@ -90,7 +90,7 @@ export default class Breadcrumb extends Stateless<{}> {
                 <h3><b><a>#</a> Sizes</b></h3>
                 <span>You can choose between 3 additional sizes: isSmall isMedium and isLarge.</span>
                 <Snippet>
-                    <BreadCrumb size={Size.small}>
+                    <BreadCrumb bSize={Size.small}>
                         <BreadCrumbItem><Icon icon="home"/>bambu</BreadCrumbItem>
                         <BreadCrumbItem><Icon icon="book"/>Documantation</BreadCrumbItem>
                         <BreadCrumbItem><Icon icon="puzzle-piece"/>Components</BreadCrumbItem>
@@ -98,7 +98,7 @@ export default class Breadcrumb extends Stateless<{}> {
                     </BreadCrumb>
                 </Snippet>
                 <Snippet>
-                    <BreadCrumb size={Size.medium}>
+                    <BreadCrumb bSize={Size.medium}>
                         <BreadCrumbItem><Icon icon="home"/>bambu</BreadCrumbItem>
                         <BreadCrumbItem><Icon icon="book"/>Documantation</BreadCrumbItem>
                         <BreadCrumbItem><Icon icon="puzzle-piece"/>Components</BreadCrumbItem>
@@ -106,7 +106,7 @@ export default class Breadcrumb extends Stateless<{}> {
                     </BreadCrumb>
                 </Snippet>
                 <Snippet>
-                    <BreadCrumb size={Size.large}>
+                    <BreadCrumb bSize={Size.large}>
                         <BreadCrumbItem><Icon icon="home"/>bambu</BreadCrumbItem>
                         <BreadCrumbItem><Icon icon="book"/>Documantation</BreadCrumbItem>
                         <BreadCrumbItem><Icon icon="puzzle-piece"/>Components</BreadCrumbItem>

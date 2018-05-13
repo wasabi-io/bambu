@@ -17,7 +17,7 @@ export interface WorkspaceProps {
     location?: LocationProps;
 }
 
-class Workspace extends Stateless<WorkspaceProps> {
+export class Workspace extends Stateless<WorkspaceProps> {
     constructor(props: any) {
         super(props);
     }

@@ -132,11 +132,7 @@ export default class FaIcon extends HTMLComponent<FaIconProps> {
             className
         );
         return (
-            <i
-                className={classNames}
-                aria-hidden={ariaHidden}
-                {...props}
-            />
+            <i className={classNames} aria-hidden={ariaHidden} {...props} />
         );
     }
 }

@@ -1,6 +1,6 @@
 import * as React from 'react';
-
-import StatelessComponent, {Navigation} from '../../StatelessComponent';
+import StatelessComponent from '../../StatelessComponent';
+import Navigation from "../../Navigation";
 
 export default class Components extends StatelessComponent {
     getNavigations(): Navigation[] {
