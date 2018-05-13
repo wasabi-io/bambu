@@ -1,6 +1,14 @@
 ## CHANGELOG
 
-#### v0.0.1-alpha.02 developing...
+#### v0.6.201-beta.1
+
+* fixed **Showcase** docs path problem.
+* changed importing *bulma* css file.
+* removed *font-awesome* css from index.html.
+* changed version of the project as *bulma* version.
+* changed version of *bambu* from alpha as beta.
+
+#### v0.0.1-alpha.02
 
 * changed **bulma.sass** as **bulma.scss**
 
@@ -16,9 +24,5 @@
 * fixed building library.
 * added installation to *README*.
 * changed library name as **bambu**
-* fixed **Showcase** docs path problem.
-* changed importing *bulma* css file.
-* removed *font-awesome* css from index.html.
-* changed version of the project as *bulma* version.
-* changed version of *bambu* from alpha as beta.
+
 
