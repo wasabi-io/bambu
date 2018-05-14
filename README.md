@@ -65,7 +65,7 @@ const getLocalIdent = require("css-loader/lib/getLocalIdent");
 ```
 
 if you have some problem to do all css files as modules then add the the following configuration.
-This configuration provide to applied css modules just for files which is filename include *bulma.css*.
+This configuration provide to applied css modules just for files which filename is contains *bulma.css*.
 
 ```javascript
 {
