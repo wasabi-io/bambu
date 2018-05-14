@@ -45,6 +45,11 @@ yarn add --dev style-loader css-modules-loader sass-loader
 * add css loader with [modules:true] parameter.
 
 ```javascript
+
+const getLocalIdent = require("css-loader/lib/getLocalIdent");
+
+...
+
 {
     test: /\.css$/,
     use: [
