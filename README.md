@@ -36,24 +36,46 @@ yarn add bambu
 
 #### conversion of **bulma** css file.
 
-* webpack
+##### for webpack
 
 ```bash
 yarn add --dev style-loader css-modules-loader sass-loader
 ```
 
-For Javascript :
+* add css loader with [modules:true] parameter.
 
 ```javascript
-{test: /\.css$/,
+{
+    test: /\.css$/,
     use: [
         "style-loader",
         {
             loader: 'css-loader',
             options: {
-                modules: true,
+                modules: true
+            }
+        }
+    ]
+}
+```
+
+if you have some problem to do all css files as modules then add the the following configuration.
+This configuration provide to applied css modules just for files which is filename include *bulma.css*.
+
+```javascript
+{
+    test: /\.css$/,
+    use: [
+        "style-loader",
+        {
+            loader: 'css-loader',
+            options: {
+                modules: true
                 getLocalIdent: (context, localIdentName, localName, options) => {
-                    return localName;
+                   if(context.resource && context.resource.indexOf("bulma.css") !== -1) {
+                       return getLocalIdent(context, localIdentName, localName, options);
+                   }
+                   return localName;
                 }
             }
         }
