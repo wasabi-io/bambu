@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as TableStyle, HTMLComponent, HTMLTdProps} from '../../';
 
 /**
@@ -10,35 +11,27 @@ export interface CellProps extends HTMLTdProps {
     isIcon?: boolean;
 }
 
-const Cell: React.SFC<CellProps> = (props: CellProps) => {
+export default class Cell extends React.Component<CellProps, {}> {
 
-    const {isIcon, className, ...cellProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        isIcon: PropTypes.bool
+    };
 
-    const classNames = ClassNames(
-        TableStyle.td,
-        {
-            [`${TableStyle.isIcon}`]: isIcon,
-        },
-        className
-    );
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isIcon: false
+    };
 
-    return (
-        <td className={classNames} {...cellProps}>
-            {props.children}
-        </td>
-    );
-};
+    public render(): JSX.Element {
+        const {isIcon, className, children, ...cellProps} = this.props;
 
-Cell.propTypes = {
-    ...HTMLComponent.propTypes,
-    isIcon: PropTypes.bool
-};
+        const classNames = ClassNames(TableStyle.td, {[`${TableStyle.isIcon}`]: isIcon}, className);
 
-Cell.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isIcon: false
-};
-
-Cell.displayName = 'Cell';
-
-export default Cell;
+        return (
+            <td className={classNames} {...cellProps}>
+                {children}
+            </td>
+        );
+    }
+}

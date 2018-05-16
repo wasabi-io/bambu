@@ -1,29 +1,26 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from 'wasabi-common';
 import {bulma as PanelStyle, HTMLComponent, HTMLPProps} from '../../';
 
 export type PanelTabsProps = HTMLPProps;
 
-const PanelTabs: React.SFC<PanelTabsProps> = (props: PanelTabsProps) => {
+export default class PanelTabs extends React.Component<PanelTabsProps, {}> {
 
-    const {className, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames([
-        PanelStyle.panelTabs,
-        className
-    ]);
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <p className={classNames} {...inputProps}>
-            {props.children}
-        </p>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...inputProps} = this.props;
 
-PanelTabs.propTypes = HTMLComponent.propTypes;
+        const classNames = ClassNames([PanelStyle.panelTabs, className]);
 
-PanelTabs.defaultProps = HTMLComponent.defaultProps;
-
-PanelTabs.displayName = 'PanelTabs';
-
-export default PanelTabs;
+        return (
+            <p className={classNames} {...inputProps}>
+                {children}
+            </p>
+        );
+    }
+}

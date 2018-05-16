@@ -2,6 +2,7 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Stateless from 'wasabi-ui/lib/Stateless';
+import {Props} from "wasabi-common";
 import {bulma as DropdownStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 /**
@@ -15,17 +16,15 @@ export interface DropdownProps extends HTMLDivProps {
 }
 
 export default class Dropdown extends Stateless<DropdownProps> {
-    public dropdownRef: HTMLDivElement;
-
-    public static propTypes = {
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
         ...HTMLComponent.propTypes,
         isActive: PropTypes.bool,
         isHoverable: PropTypes.bool,
         isRight: PropTypes.bool,
         isUp: PropTypes.bool
     };
-
     public static defaultProps = HTMLComponent.defaultProps;
+    public dropdownRef: HTMLDivElement;
 
     constructor(props: DropdownProps) {
         super(props);

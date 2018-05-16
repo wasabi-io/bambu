@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from 'wasabi-common';
 import {bulma as FormStyle, Color, colorValues, HTMLComponent, HTMLPProps} from '../../';
 
 /**
@@ -10,34 +11,33 @@ export interface FieldHelpProps extends HTMLPProps {
     color?: string | Color;
 }
 
-const FieldHelp: React.SFC<FieldHelpProps> = (props: FieldHelpProps) => {
+export default class FieldHelp extends React.Component<FieldHelpProps, {}> {
 
-    const {
-        color,
-        className,
-        ...fieldHelpProps
-    } = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        color: PropTypes.oneOf(colorValues),
+    };
 
-    const classNames = ClassNames([
-        FormStyle.help,
-        FormStyle[color],
-        className
-    ]);
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <p className={classNames} {...fieldHelpProps} >
-            {props.children}
-        </p>
-    );
-};
+    public render(): JSX.Element {
+        const {
+            color,
+            className,
+            children,
+            ...fieldHelpProps
+        } = this.props;
 
-FieldHelp.propTypes = {
-    ...HTMLComponent.propTypes,
-    color: PropTypes.oneOf(colorValues),
-};
+        const classNames = ClassNames([
+            FormStyle.help,
+            FormStyle[color],
+            className
+        ]);
 
-FieldHelp.defaultProps = HTMLComponent.defaultProps;
-
-FieldHelp.displayName = 'FieldHelp';
-
-export default FieldHelp;
+        return (
+            <p className={classNames} {...fieldHelpProps} >
+                {children}
+            </p>
+        );
+    }
+}

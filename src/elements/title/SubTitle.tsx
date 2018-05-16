@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as TitleStyle, HTMLComponent, HTMLPProps, Size6, size6Values} from '../../';
 
 /**
@@ -11,30 +12,32 @@ export interface SubTitleProps extends HTMLPProps {
     tagName?: string;
 }
 
-const SubTitle: React.SFC<SubTitleProps> = (props: SubTitleProps) => {
+export default class SubTitle extends React.Component<SubTitleProps, {}> {
 
-    const {tagName, bSize, className, ...subTitleProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        bSize: PropTypes.oneOf(size6Values),
+        tagName: PropTypes.string
+    };
 
-    const classNames = ClassNames(
-        TitleStyle.subtitle,
-        TitleStyle[bSize],
-        className
-    );
-    (subTitleProps as any).className = classNames;
-    return React.createElement(tagName, subTitleProps, props.children);
-};
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        tagName: 'h2'
+    };
 
-SubTitle.propTypes = {
-    ...HTMLComponent.propTypes,
-    bSize: PropTypes.oneOf(size6Values),
-    tagName: PropTypes.string
-};
+    public render(): JSX.Element {
+        const {tagName, bSize, className, children, ...subTitleProps} = this.props;
 
-SubTitle.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    tagName: 'h2'
-};
+        const classNames = ClassNames(
+            TitleStyle.subtitle,
+            TitleStyle[bSize],
+            className
+        );
+        (subTitleProps as any).className = classNames;
+        return React.createElement(tagName, {
+            className: classNames,
+            ...subTitleProps
+        }, children);
+    }
+}
 
-SubTitle.displayName = 'SubTitle';
-
-export default SubTitle;

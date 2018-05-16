@@ -1,37 +1,36 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from 'wasabi-common';
 import HTMLComponent, {HTMLElementProps} from '../../base/html/HTML';
 import {bulma as ContentStyle, Size, sizeValues} from '../../';
-import * as PropTypes from "prop-types";
 
 export interface ContentProps extends HTMLElementProps {
     bSize?: string | Size;
 }
 
-const Content: React.SFC<ContentProps> = (props: ContentProps) => {
+export default class Content extends React.Component<ContentProps, {}> {
 
-    const {className, bSize, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        bSize: PropTypes.oneOf(sizeValues)
+    };
 
-    const classNames = ClassNames(
-        ContentStyle.content,
-        ContentStyle[bSize],
-        className
-    );
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <div className={classNames} {...inputProps} >
-            {props.children}
-        </div>
-    );
-};
+    public render(): JSX.Element {
+        const {className, bSize, children, ...inputProps} = this.props;
 
-Content.propTypes = {
-    ...HTMLComponent.propTypes,
-    bSize: PropTypes.oneOf(sizeValues)
-};
+        const classNames = ClassNames(
+            ContentStyle.content,
+            ContentStyle[bSize],
+            className
+        );
 
-Content.defaultProps = HTMLComponent.defaultProps;
-
-Content.displayName = 'Content';
-
-export default Content;
+        return (
+            <div className={classNames} {...inputProps} >
+                {children}
+            </div>
+        );
+    }
+}

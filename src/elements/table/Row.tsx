@@ -1,40 +1,33 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as TableStyle, HTMLComponent, HTMLTrProps} from '../../';
 
 export interface RowProps extends HTMLTrProps {
-    isSelected?: boolean
+    isSelected?: boolean;
 }
 
-const Row: React.SFC<RowProps> = (props: RowProps) => {
+export default class Row extends React.Component<RowProps, {}> {
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        isSelected: PropTypes.bool
+    };
 
-    const {className, isSelected, ...rowProps} = props;
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isSelected: false
+    };
 
-    const classNames = ClassNames(
-        TableStyle.tr,
-        className,
-        {[`${TableStyle.isSelected}`]: isSelected},
-    );
+    public render(): JSX.Element {
+        const {className, isSelected, children, ...rowProps} = this.props;
 
-    return (
-        <tr className={classNames} {...rowProps} >
-            {props.children}
-        </tr>
-    );
-};
+        const classNames = ClassNames(TableStyle.tr, className, {[`${TableStyle.isSelected}`]: isSelected});
 
-
-Row.propTypes = {
-    ...HTMLComponent.propTypes,
-    isSelected: PropTypes.bool
-};
-
-Row.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isSelected: false
-};
-
-Row.displayName = 'Row';
-
-export default Row;
+        return (
+            <tr className={classNames} {...rowProps} >
+                {children}
+            </tr>
+        );
+    }
+}

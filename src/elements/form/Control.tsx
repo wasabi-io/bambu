@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from 'wasabi-common';
 import {bulma as FormStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 /**
@@ -13,50 +14,50 @@ export interface ControlProps extends HTMLDivProps {
     isLoading?: boolean;
 }
 
-const Control: React.SFC<ControlProps> = (props: ControlProps) => {
+export default class Control extends React.Component<ControlProps, {}> {
 
-    const {
-        isExpanded,
-        hasIconsLeft,
-        hasIconsRight,
-        isLoading,
-        className,
-        ...inputProps
-    } = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        hasIconsLeft: PropTypes.bool,
+        hasIconsRight: PropTypes.bool,
+        isExpanded: PropTypes.bool,
+    };
 
-    const classNames = ClassNames(
-        FormStyle.control,
-        {
-            [`${FormStyle.isExpanded}`]: isExpanded,
-            [`${FormStyle.hasIconsLeft}`]: hasIconsLeft,
-            [`${FormStyle.hasIconsRight}`]: hasIconsRight,
-            [`${FormStyle.isLoading}`]: isLoading,
-        },
-        className
-    );
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        hasIconsLeft: false,
+        hasIconsRight: false,
+        isExpanded: false,
+        isLoading: false,
+    };
 
-    return (
-        <div className={classNames} {...inputProps} >
-            {props.children}
-        </div>
-    );
-};
+    public render(): JSX.Element {
+        const {
+            isExpanded,
+            hasIconsLeft,
+            hasIconsRight,
+            isLoading,
+            className,
+            children,
+            ...inputProps
+        } = this.props;
 
-Control.propTypes = {
-    ...HTMLComponent.propTypes,
-    hasIconsLeft: PropTypes.bool,
-    hasIconsRight: PropTypes.bool,
-    isExpanded: PropTypes.bool,
-};
+        const classNames = ClassNames(
+            FormStyle.control,
+            {
+                [`${FormStyle.isExpanded}`]: isExpanded,
+                [`${FormStyle.hasIconsLeft}`]: hasIconsLeft,
+                [`${FormStyle.hasIconsRight}`]: hasIconsRight,
+                [`${FormStyle.isLoading}`]: isLoading,
+            },
+            className
+        );
 
-Control.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    hasIconsLeft: false,
-    hasIconsRight: false,
-    isExpanded: false,
-    isLoading: false,
-};
+        return (
+            <div className={classNames} {...inputProps} >
+                {children}
+            </div>
+        );
+    }
+}
 
-Control.displayName = 'Control';
-
-export default Control;

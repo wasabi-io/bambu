@@ -1,28 +1,30 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as MessageStyle, HTMLComponent, HTMLDivProps} from "../../";
 
-export type MessageBodyProps = HTMLDivProps;
+export interface MessageBodyProps extends HTMLDivProps {
+}
 
-const MessageBody: React.SFC<MessageBodyProps> = (props: MessageBodyProps) => {
-    const {children, className, ...ownProps} = props;
+export default class MessageBody extends React.Component<MessageBodyProps, {}> {
 
-    const classNames = ClassNames(
-        MessageStyle.messageBody,
-        className
-    );
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    return (
-        <div className={classNames} {...ownProps} >
-            {children}
-        </div>
-    );
-};
+    public static defaultProps = HTMLComponent.defaultProps;
 
-MessageBody.propTypes = HTMLComponent.propTypes;
+    public render(): JSX.Element {
+        const {className, children, ...ownProps} = this.props;
 
-MessageBody.defaultProps = HTMLComponent.defaultProps;
+        const classNames = ClassNames(
+            MessageStyle.messageBody,
+            className
+        );
 
-MessageBody.displayName = 'MessageBody';
-
-export default MessageBody;
+        return (
+            <div className={classNames} {...ownProps} >
+                {children}
+            </div>
+        );
+    }
+}

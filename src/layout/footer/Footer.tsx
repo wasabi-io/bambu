@@ -1,26 +1,27 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {HTMLComponent, HTMLFooterProps, bulma as FooterStyle} from '../../';
+import {Props} from "wasabi-common";
+import {bulma as FooterStyle, HTMLComponent, HTMLFooterProps} from '../../';
 
-export type FooterProps = HTMLFooterProps;
+export interface FooterProps extends HTMLFooterProps {
+}
 
-const Footer: React.SFC<FooterProps> = (props: FooterProps) => {
+export default class Footer extends React.Component<FooterProps, {}> {
 
-    const {className, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames([FooterStyle.footer, className]);
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <footer className={classNames} {...inputProps} >
-            {props.children}
-        </footer>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...inputProps} = this.props;
 
-Footer.propTypes = HTMLComponent.propTypes;
+        const classNames = ClassNames([FooterStyle.footer, className]);
 
-Footer.defaultProps = HTMLComponent.defaultProps;
-
-Footer.displayName = 'Footer';
-
-export default Footer;
+        return (
+            <footer className={classNames} {...inputProps} >
+                {children}
+            </footer>
+        );
+    }
+}

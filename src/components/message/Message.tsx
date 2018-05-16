@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as MessageStyle, Color, HTMLArticleProps, HTMLComponent, Size, sizeValues} from '../../';
 
 export interface MessageProps extends HTMLArticleProps {
@@ -8,33 +9,26 @@ export interface MessageProps extends HTMLArticleProps {
     bSize?: string | Size;
 }
 
-const Message: React.SFC<MessageProps> = (props: MessageProps) => {
-    const {children, className, color, bSize, ...ownProps} = props;
+export default class Message extends React.Component<MessageProps, {}> {
 
-    const classNames = ClassNames(
-        MessageStyle.message,
-        MessageStyle[color],
-        MessageStyle[bSize],
-        className
-    );
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        color: PropTypes.string,
+        bSize: PropTypes.oneOf(sizeValues),
+    };
 
-    return (
-        <article className={classNames} {...ownProps} >
-            {children}
-        </article>
-    );
-};
+    public static defaultProps = HTMLComponent.defaultProps;
 
-Message.propTypes = {
-    ...HTMLComponent.propTypes,
-    color: PropTypes.string,
-    bSize: PropTypes.oneOf(sizeValues),
-};
+    public render(): JSX.Element {
+        const {className, color, bSize, children, ...ownProps} = this.props;
 
-Message.defaultProps = {
-    ...HTMLComponent.defaultProps,
-};
+        const classNames = ClassNames(MessageStyle.message, MessageStyle[color], MessageStyle[bSize], className);
 
-Message.displayName = 'Message';
+        return (
+            <article className={classNames} {...ownProps} >
+                {children}
+            </article>
+        );
+    }
+}
 
-export default Message;

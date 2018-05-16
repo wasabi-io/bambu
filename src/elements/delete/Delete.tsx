@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from 'wasabi-common';
 import {bulma as DeleteStyle, HTMLAllAttributes, HTMLComponent, Size, sizeValues} from '../../';
 
 export interface DeleteProps extends HTMLAllAttributes {
@@ -8,28 +9,32 @@ export interface DeleteProps extends HTMLAllAttributes {
     bSize?: string | Size;
 }
 
-const Delete: React.SFC<DeleteProps> = (props: DeleteProps) => {
-    const {tagName, bSize, className, ...deleteProps} = props;
-    const classNames = ClassNames(
-        DeleteStyle.delete,
-        DeleteStyle[bSize],
-        className
-    );
-    (deleteProps as any).className = classNames;
-    return React.createElement(tagName, deleteProps, props.children);
-};
+export default class Delete extends React.Component<DeleteProps, {}> {
 
-Delete.propTypes = {
-    ...HTMLComponent.propTypes,
-    tagName: PropTypes.string,
-    bSize: PropTypes.oneOf(sizeValues),
-};
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        tagName: PropTypes.string,
+        bSize: PropTypes.oneOf(sizeValues),
+    };
 
-Delete.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    tagName: 'a'
-};
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        tagName: 'a'
+    };
 
-Delete.displayName = 'Delete';
+    public render(): JSX.Element {
+        const {tagName, bSize, className, children, ...deleteProps} = this.props;
 
-export default Delete;
+        const classNames = ClassNames(
+            DeleteStyle.delete,
+            DeleteStyle[bSize],
+            className
+        );
+
+        return React.createElement(tagName, {
+            className: classNames,
+            ...deleteProps
+        }, children);
+    }
+}
+

@@ -1,41 +1,34 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export interface NavbarBrandProps extends HTMLDivProps {
     hasShadow?: boolean;
 }
 
-const NavbarBrand: React.SFC<NavbarBrandProps> = (props: NavbarBrandProps) => {
+export default class NavbarBrand extends React.Component<NavbarBrandProps, {}> {
 
-    const {hasShadow, className, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        hasShadow: PropTypes.bool
+    };
 
-    const classNames = ClassNames(
-        NavbarStyle.navbarBrand,
-        {
-            [`${NavbarStyle.hasShadow}`]: hasShadow
-        },
-        className
-    );
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        hasShadow: false,
+    };
 
-    return (
-        <div className={classNames} {...inputProps}>
-            {props.children}
-        </div>
-    );
-};
+    public render(): JSX.Element {
+        const {hasShadow, className, children, ...inputProps} = this.props;
 
-NavbarBrand.propTypes = {
-    ...HTMLComponent.propTypes,
-    hasShadow: PropTypes.bool
-};
+        const classNames = ClassNames(NavbarStyle.navbarBrand, {[`${NavbarStyle.hasShadow}`]: hasShadow}, className);
 
-NavbarBrand.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    hasShadow: false,
-};
-
-NavbarBrand.displayName = 'NavbarBrand';
-
-export default NavbarBrand;
+        return (
+            <div className={classNames} {...inputProps}>
+                {children}
+            </div>
+        );
+    }
+}

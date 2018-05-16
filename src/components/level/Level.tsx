@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as LevelStyle, HTMLComponent, HTMLElementProps, Responsive, responsiveValues} from '../../';
 
 /**
@@ -10,29 +11,29 @@ export interface LevelProps extends HTMLElementProps {
     responsive?: Responsive;
 }
 
-const Level: React.SFC<LevelProps> = (props: LevelProps) => {
-    const {responsive, className, ...levelProps} = props;
+export default class Level extends React.Component<LevelProps, {}> {
 
-    const classNames = ClassNames(
-        LevelStyle.level,
-        LevelStyle[responsive],
-        className
-    );
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        responsive: PropTypes.oneOf(responsiveValues),
+    };
 
-    return (
-        <nav className={classNames} {...levelProps} >
-            {props.children}
-        </nav>
-    );
-};
+    public static defaultProps = HTMLComponent.defaultProps;
 
-Level.propTypes = {
-    ...HTMLComponent.propTypes,
-    responsive: PropTypes.oneOf(responsiveValues),
-};
+    public render(): JSX.Element {
+        const {responsive, className, children, ...levelProps} = this.props;
 
-Level.defaultProps = HTMLComponent.defaultProps;
+        const classNames = ClassNames(
+            LevelStyle.level,
+            LevelStyle[responsive],
+            className
+        );
 
-Level.displayName = 'Level';
+        return (
+            <nav className={classNames} {...levelProps} >
+                {children}
+            </nav>
+        );
+    }
+}
 
-export default Level;

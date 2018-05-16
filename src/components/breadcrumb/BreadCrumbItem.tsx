@@ -1,38 +1,34 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as BreadCrumbStyle, HTMLAProps, HTMLComponent} from '../../';
 
 export interface BreadCrumbItemProps extends HTMLAProps {
     isActive?: boolean;
 }
 
-const BreadCrumbItem: React.SFC<BreadCrumbItemProps> = (props: BreadCrumbItemProps) => {
+export default class BreadCrumbItem extends React.Component<BreadCrumbItemProps, {}> {
 
-    const {isActive, ...breadCrumbItemProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames(
-        {
-            [`${BreadCrumbStyle.isActive}`]: isActive,
-        }
-    );
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <li className={classNames}>
-            <a {...breadCrumbItemProps}>
-                {props.children}
-            </a>
-        </li>
-    );
-};
+    public render(): JSX.Element {
+        const {isActive, children, ...breadCrumbItemProps} = this.props;
 
-BreadCrumbItem.propTypes = {
-    ...HTMLComponent.propTypes
-};
+        const classNames = ClassNames(
+            {
+                [`${BreadCrumbStyle.isActive}`]: isActive,
+            }
+        );
 
-BreadCrumbItem.defaultProps = {
-    ...HTMLComponent.defaultProps,
-};
-
-BreadCrumbItem.displayName = 'BreadCrumbItem';
-
-export default BreadCrumbItem;
+        return (
+            <li className={classNames}>
+                <a {...breadCrumbItemProps}>
+                    {children}
+                </a>
+            </li>
+        );
+    }
+}

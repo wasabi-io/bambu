@@ -1,27 +1,27 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {StatelessFC} from 'wasabi-ui/lib/Stateless';
+import {Props} from "wasabi-common";
 import {bulma as MenuStyle, HTMLAsideProps, HTMLComponent} from '../../';
 
-export type MenuProps = HTMLAsideProps;
+export interface MenuProps extends HTMLAsideProps {
+}
 
-const Menu: StatelessFC<MenuProps> = (props: MenuProps) => {
+export default class Menu extends React.Component<MenuProps, {}> {
 
-    const {className, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames([MenuStyle.menu, className]);
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <aside className={classNames} {...inputProps}>
-            {props.children}
-        </aside>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...inputProps} = this.props;
 
-Menu.propTypes = HTMLComponent.propTypes;
+        const classNames = ClassNames([MenuStyle.menu, className]);
 
-Menu.defaultProps = HTMLComponent.defaultProps;
-
-Menu.displayName = 'Menu';
-
-export default Menu;
+        return (
+            <aside className={classNames} {...inputProps}>
+                {children}
+            </aside>
+        );
+    }
+}

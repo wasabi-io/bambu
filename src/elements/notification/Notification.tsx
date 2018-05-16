@@ -1,36 +1,35 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as NotificationStyle, Color, HTMLComponent, HTMLDivProps} from '../../';
 
 export interface NotificationProps extends HTMLDivProps {
     color?: string | Color;
 }
 
-const Notification: React.SFC<NotificationProps> = (props: NotificationProps) => {
-    const {color, children, className, ...ownProps} = props;
+export default class Notification extends React.Component<NotificationProps, {}> {
 
-    const classNames = ClassNames(
-        NotificationStyle.notification,
-        NotificationStyle[color],
-        className
-    );
-    return (
-        <div className={classNames} {...ownProps} >
-            {children}
-        </div>
-    );
-};
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        color: PropTypes.string,
+    };
 
-Notification.propTypes = {
-    ...HTMLComponent.propTypes,
-    color: PropTypes.string,
-};
+    public static defaultProps = HTMLComponent.defaultProps;
 
-Notification.defaultProps = {
-    ...HTMLComponent.defaultProps,
-};
+    public render(): JSX.Element {
+        const {color, children, className, ...ownProps} = this.props;
 
-Notification.displayName = 'Notification';
+        const classNames = ClassNames(
+            NotificationStyle.notification,
+            NotificationStyle[color],
+            className
+        );
+        return (
+            <div className={classNames} {...ownProps} >
+                {children}
+            </div>
+        );
+    }
+}
 
-export default Notification;

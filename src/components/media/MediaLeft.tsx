@@ -1,29 +1,27 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as MediaStyle, HTMLComponent, HTMLDivProps} from '../../';
 
-export type MediaLeftProps = HTMLDivProps;
+export interface MediaLeftProps extends HTMLDivProps {
+}
 
-const MediaLeft: React.SFC<MediaLeftProps> = (props: MediaLeftProps) => {
+export default class MediaLeft extends React.Component<MediaLeftProps, {}> {
 
-    const {className, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames([
-        MediaStyle.mediaLeft,
-        className
-    ]);
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <div {...inputProps} className={classNames}>
-            {props.children}
-        </div>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...inputProps} = this.props;
 
-MediaLeft.propTypes = HTMLComponent.propTypes;
+        const classNames = ClassNames([MediaStyle.mediaLeft, className]);
 
-MediaLeft.defaultProps = HTMLComponent.defaultProps;
-
-MediaLeft.displayName = 'MediaContent';
-
-export default MediaLeft;
+        return (
+            <div className={classNames} {...inputProps}>
+                {children}
+            </div>
+        );
+    }
+}

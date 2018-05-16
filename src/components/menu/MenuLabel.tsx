@@ -1,29 +1,27 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as MenuStyle, HTMLComponent, HTMLPProps} from '../../';
 
-export type MenuLabelProps = HTMLPProps;
+export interface MenuLabelProps extends HTMLPProps {
+}
 
-const MenuLabel: React.SFC<MenuLabelProps> = (props: MenuLabelProps) => {
+export default class MenuLabel extends React.Component<MenuLabelProps, {}> {
 
-    const {className, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames([
-        MenuStyle.menuLabel,
-        className
-    ]);
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <p className={classNames} {...inputProps} >
-            {props.children}
-        </p>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...inputProps} = this.props;
 
-MenuLabel.propTypes = HTMLComponent.propTypes;
+        const classNames = ClassNames([MenuStyle.menuLabel, className]);
 
-MenuLabel.defaultProps = HTMLComponent.defaultProps;
-
-MenuLabel.displayName = 'MenuLabel';
-
-export default MenuLabel;
+        return (
+            <p className={classNames} {...inputProps} >
+                {children}
+            </p>
+        );
+    }
+}

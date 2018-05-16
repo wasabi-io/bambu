@@ -1,28 +1,31 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as CardStyle, HTMLComponent, HTMLElementProps} from '../../';
 
-export type CardFooterProps = HTMLElementProps;
+export interface CardFooterProps extends HTMLElementProps {
+}
 
-const CardFooter: React.SFC<CardFooterProps> = (props: CardFooterProps) => {
-    const {className, ...cardFooterProps} = props;
+export default class CardFooter extends React.Component<CardFooterProps, {}> {
 
-    const classNames = ClassNames([
-        CardStyle.cardFooter,
-        className
-    ]);
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    return (
-        <footer className={classNames} {...cardFooterProps} >
-            {props.children}
-        </footer>
-    );
-};
+    public static defaultProps = HTMLComponent.defaultProps;
 
-CardFooter.propTypes = HTMLComponent.propTypes;
+    public render(): JSX.Element {
+        const {className, children, ...cardFooterProps} = this.props;
 
-CardFooter.defaultProps = HTMLComponent.defaultProps;
+        const classNames = ClassNames([
+            CardStyle.cardFooter,
+            className
+        ]);
 
-CardFooter.displayName = 'CardFooter';
+        return (
+            <footer className={classNames} {...cardFooterProps} >
+                {children}
+            </footer>
+        );
+    }
+}
 
-export default CardFooter;

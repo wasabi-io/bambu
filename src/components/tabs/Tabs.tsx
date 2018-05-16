@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import Objects from 'wasabi-common/lib/types/Objects';
+import {Objects, Props} from 'wasabi-common';
 import {Alignment, alignmentValues, bulma as TabsStyle, HTMLComponent, HTMLDivProps, Size, sizeValues} from '../../';
 
 export enum tabsStyle { boxed = 'isBoxed', toggle = 'isToggle' }
@@ -13,43 +13,39 @@ export interface TabsProps extends HTMLDivProps {
     tabStyle?: string | tabsStyle;
 }
 
-const Tabs: React.SFC<TabsProps> = (props: TabsProps) => {
+export default class Tabs extends React.Component<TabsProps, {}> {
 
-    const {isFullwidth, alignment, bSize, tabStyle, className, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        alignment: PropTypes.oneOf(alignmentValues),
+        isFullwidth: PropTypes.bool,
+        bSize: PropTypes.oneOf(sizeValues),
+        tabStyle: PropTypes.oneOf(Objects.values(tabsStyle))
+    };
 
-    const classNames = ClassNames(
-        TabsStyle.tabs,
-        TabsStyle[alignment],
-        TabsStyle[bSize],
-        TabsStyle[tabStyle],
-        {
-            [`${TabsStyle.isFullwidth}`]: isFullwidth,
-        },
-        className
-    );
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isFullwidth: false
+    };
 
-    return (
-        <div className={classNames} {...inputProps}>
-            <ul>
-                {props.children}
-            </ul>
-        </div>
-    );
-};
+    public render(): JSX.Element {
+        const {isFullwidth, alignment, bSize, tabStyle, className, children, ...inputProps} = this.props;
 
-Tabs.propTypes = {
-    ...HTMLComponent.propTypes,
-    alignment: PropTypes.oneOf(alignmentValues),
-    isFullwidth: PropTypes.bool,
-    bSize: PropTypes.oneOf(sizeValues),
-    tabStyle: PropTypes.oneOf(Objects.values(tabsStyle))
-};
+        const classNames = ClassNames(
+            TabsStyle.tabs,
+            TabsStyle[alignment],
+            TabsStyle[bSize],
+            TabsStyle[tabStyle],
+            {[`${TabsStyle.isFullwidth}`]: isFullwidth},
+            className
+        );
 
-Tabs.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isFullwidth: false
-};
-
-Tabs.displayName = 'Tabs';
-
-export default Tabs;
+        return (
+            <div className={classNames} {...inputProps}>
+                <ul>
+                    {children}
+                </ul>
+            </div>
+        );
+    }
+}

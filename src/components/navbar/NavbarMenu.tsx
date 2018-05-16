@@ -1,41 +1,35 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export interface NavbarMenuProps extends HTMLDivProps {
     isActive?: boolean;
 }
 
-const NavbarMenu: React.SFC<NavbarMenuProps> = (props: NavbarMenuProps) => {
+export default class NavbarMenu extends React.Component<NavbarMenuProps, {}> {
 
-    const {isActive, className, ...navbarMenuProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        isActive: PropTypes.bool
+    };
 
-    const classNames = ClassNames(
-        NavbarStyle.navbarMenu,
-        {
-            [`${NavbarStyle.isActive}`]: isActive,
-        },
-        className
-    );
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isActive: false
+    };
 
-    return (
-        <div className={classNames} {...navbarMenuProps}>
-            {props.children}
-        </div>
-    );
-};
+    public render(): JSX.Element {
+        const {isActive, className, children, ...navbarMenuProps} = this.props;
 
-NavbarMenu.propTypes = {
-    ...HTMLComponent.propTypes,
-    isActive: PropTypes.bool
-};
+        const classNames = ClassNames(NavbarStyle.navbarMenu, {[`${NavbarStyle.isActive}`]: isActive,}, className);
 
-NavbarMenu.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isActive: false
-};
+        return (
+            <div className={classNames} {...navbarMenuProps}>
+                {children}
+            </div>
+        );
+    }
+}
 
-NavbarMenu.displayName = 'NavbarMenu';
-
-export default NavbarMenu;

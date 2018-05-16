@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as CardStyle, HTMLAProps, HTMLComponent} from '../../';
 import Icon, {IconOptions} from '../../elements/icon/Icon';
 
@@ -11,31 +12,28 @@ export interface CardHeaderIconProps extends HTMLAProps {
     icon?: IconOptions;
 }
 
-const CardHeaderIcon: React.SFC<CardHeaderIconProps> = (props: CardHeaderIconProps) => {
-    const {icon, className, ...inputProps} = props;
+export default class CardHeaderIcon extends React.Component<CardHeaderIconProps, {}> {
 
-    const classNames = ClassNames([
-        CardStyle.cardHeaderIcon,
-        className
-    ]);
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        icon: PropTypes.any,
+    };
 
-    return (
-        <a className={classNames} {...inputProps}>
-            {icon && <Icon icon={icon}/>}
-            {props.children}
-        </a>
-    );
-};
+    public static defaultProps = HTMLComponent.defaultProps;
 
-CardHeaderIcon.propTypes = {
-    ...HTMLComponent.propTypes,
-    icon: PropTypes.any,
-};
+    public render(): JSX.Element {
+        const {icon, className, children, ...inputProps} = this.props;
 
-CardHeaderIcon.defaultProps = {
-    ...HTMLComponent.defaultProps
-};
+        const classNames = ClassNames([
+            CardStyle.cardHeaderIcon,
+            className
+        ]);
 
-CardHeaderIcon.displayName = 'CardHeaderIcon';
-
-export default CardHeaderIcon;
+        return (
+            <a className={classNames} {...inputProps}>
+                {icon && <Icon icon={icon}/>}
+                {children}
+            </a>
+        );
+    }
+}

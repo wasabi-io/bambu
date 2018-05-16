@@ -1,7 +1,9 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 
-import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
+import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
 
 /**
  * Refers Html Props and Additional Props.
@@ -9,27 +11,25 @@ import HTMLComponent, { HTMLDivProps } from '../../base/html/HTML';
 export interface DropdownTriggerProps extends HTMLDivProps {
 }
 
-const DropdownTrigger: React.SFC<DropdownTriggerProps> = (props: DropdownTriggerProps) => {
-    const { children, className, ...ownProps } = props;
+export default class DropdownTrigger extends React.Component<DropdownTriggerProps, {}> {
 
-    const classNames = ClassNames(
-        'dropdown-trigger',
-        className
-    );
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {...HTMLComponent.propTypes};
+;
 
-    return (
-        <div className={classNames} {...ownProps}>
-            {children}
-        </div>
-    );
-};
+    public static defaultProps = HTMLComponent.defaultProps;
 
-DropdownTrigger.propTypes = {
-    ...HTMLComponent.propTypes,
-};
+    public render(): JSX.Element {
+        const {children, className, ...ownProps} = this.props;
 
-DropdownTrigger.defaultProps = HTMLComponent.defaultProps;
+        const classNames = ClassNames(
+            'dropdown-trigger',
+            className
+        );
 
-DropdownTrigger.displayName = 'DropdownTrigger';
-
-export default DropdownTrigger;
+        return (
+            <div className={classNames} {...ownProps}>
+                {children}
+            </div>
+        );
+    }
+}

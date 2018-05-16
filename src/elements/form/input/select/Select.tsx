@@ -1,17 +1,8 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {
-    Color,
-    colorValues,
-    Size,
-    sizeValues,
-    State,
-    stateValues,
-    bulma,
-
-} from '../../../../';
-import HTMLComponent, {HTMLDivProps, HTMLSelectProps} from '../../../../base/html/HTML';
+import {bulma, Color, colorValues, Size, sizeValues, State, stateValues,} from '../../../../';
+import HTMLComponent, {HTMLDivProps} from '../../../../base/html/HTML';
 
 export interface SelectProps extends HTMLDivProps {
     color?: string | Color;
@@ -46,7 +37,7 @@ const Select: React.SFC<SelectProps> = (props: SelectProps) => {
     } = props;
 
     const classNames = ClassNames(
-        { [`${bulma.isMultiple}`]: multiple },
+        {[`${bulma.isMultiple}`]: multiple},
         bulma.select,
         bulma[color],
         bulma[bSize],

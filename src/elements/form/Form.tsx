@@ -1,22 +1,23 @@
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
-
+import {Props} from 'wasabi-common';
 import HTMLComponent, {HTMLFormProps} from '../../base/html/HTML';
 
-export type FormProps = HTMLFormProps;
+export interface FormProps extends HTMLFormProps {
+}
 
-const Form: React.SFC<FormProps> = (props: FormProps) => {
+export default class Form extends React.Component<FormProps, {}> {
 
-    return (
-        <form {...props} >
-            {props.children}
-        </form>
-    );
-};
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-Form.propTypes = HTMLComponent.propTypes;
+    public static defaultProps = HTMLComponent.defaultProps;
 
-Form.defaultProps = HTMLComponent.defaultProps;
-
-Form.displayName = 'Form';
-
-export default Form;
+    public render(): JSX.Element {
+        const {children, ...props} = this.props;
+        return (
+            <form {...props} >
+                {children}
+            </form>
+        );
+    }
+}

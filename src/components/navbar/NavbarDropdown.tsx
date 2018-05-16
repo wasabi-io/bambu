@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export interface NavbarDropdownProps extends HTMLDivProps {
@@ -9,41 +10,39 @@ export interface NavbarDropdownProps extends HTMLDivProps {
     isRight?: boolean;
 }
 
-const NavbarDropdown: React.SFC<NavbarDropdownProps> = (props: NavbarDropdownProps) => {
+export default class NavbarDropdown extends React.Component<NavbarDropdownProps, {}> {
 
-    const { isActive, isBoxed, isRight, className, ...inputProps } = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        isActive: PropTypes.bool,
+        isBoxed: PropTypes.bool,
+        isRight: PropTypes.bool
+    };
 
-    const classNames = ClassNames(
-        NavbarStyle.navbarDropdown,
-        {
-            [`${NavbarStyle.isActive}`]: isActive,
-            [`${NavbarStyle.isBoxed}`]: isBoxed,
-            [`${NavbarStyle.isRight}`]: isRight,
-        },
-        className
-    );
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isActive: false,
+        isBoxed: false,
+        isRight: false
+    };
 
-    return (
-        <div className={classNames} {...inputProps}>
-            {props.children}
-        </div>
-    );
-};
+    public render(): JSX.Element {
+        const {isActive, isBoxed, isRight, className, children, ...inputProps} = this.props;
 
-NavbarDropdown.propTypes = {
-    ...HTMLComponent.propTypes,
-    isActive: PropTypes.bool,
-    isBoxed: PropTypes.bool,
-    isRight: PropTypes.bool
-};
+        const classNames = ClassNames(
+            NavbarStyle.navbarDropdown,
+            {
+                [`${NavbarStyle.isActive}`]: isActive,
+                [`${NavbarStyle.isBoxed}`]: isBoxed,
+                [`${NavbarStyle.isRight}`]: isRight,
+            },
+            className
+        );
 
-NavbarDropdown.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isActive: false,
-    isBoxed: false,
-    isRight: false
-};
-
-NavbarDropdown.displayName = 'NavbarDropdown';
-
-export default NavbarDropdown;
+        return (
+            <div className={classNames} {...inputProps}>
+                {children}
+            </div>
+        );
+    }
+}

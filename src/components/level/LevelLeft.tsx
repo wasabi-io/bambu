@@ -1,33 +1,30 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as LevelStyle, HTMLAllAttributes, HTMLComponent} from '../../';
 
 export interface LevelLeftProps extends HTMLAllAttributes {
     tagName?: string;
 }
 
-const LevelLeft: React.SFC<LevelLeftProps> = (props: LevelLeftProps) => {
+export default class LevelLeft extends React.Component<LevelLeftProps, {}> {
 
-    const {tagName, className, ...levelLeftProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        tagName: PropTypes.string
+    };
 
-    const classNames = ClassNames(
-        LevelStyle.levelLeft,
-        className
-    );
-    (levelLeftProps as any).className = classNames;
-    return React.createElement(tagName, levelLeftProps, props.children);
-};
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        tagName: 'div'
+    };
 
-LevelLeft.propTypes = {
-    ...HTMLComponent.propTypes
-};
-
-LevelLeft.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    tagName: 'div'
-};
-
-LevelLeft.displayName = 'LevelLeft';
-
-export default LevelLeft;
-
+    public render(): JSX.Element {
+        const {tagName, className, children, ...levelLeftProps} = this.props;
+        return React.createElement(tagName, {
+            className: ClassNames(LevelStyle.levelLeft, className),
+            ...levelLeftProps
+        }, children);
+    }
+}

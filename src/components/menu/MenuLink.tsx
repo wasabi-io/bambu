@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as MenuStyle, HTMLAProps, HTMLComponent} from '../../';
 
 export interface MenuLinkProps extends HTMLAProps {
@@ -8,35 +9,28 @@ export interface MenuLinkProps extends HTMLAProps {
     href?: string;
 }
 
-const MenuLink: React.SFC<MenuLinkProps> = (props: MenuLinkProps) => {
+export default class MenuLink extends React.Component<MenuLinkProps, {}> {
 
-    const {isActive, className, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        isActive: PropTypes.bool,
+        href: PropTypes.string
+    };
 
-    const classNames = ClassNames(
-        {
-            [`${MenuStyle.isActive}`]: isActive
-        },
-        className
-    );
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isActive: false
+    };
 
-    return (
-        <a className={classNames} {...inputProps}>
-            {props.children}
-        </a>
-    );
-};
+    public render(): JSX.Element {
+        const {isActive, className, children, ...inputProps} = this.props;
 
-MenuLink.propTypes = {
-    ...HTMLComponent.propTypes,
-    isActive: PropTypes.bool,
-    href: PropTypes.string
-};
+        const classNames = ClassNames({[`${MenuStyle.isActive}`]: isActive}, className);
 
-MenuLink.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isActive: false
-};
-
-MenuLink.displayName = 'MenuLink';
-
-export default MenuLink;
+        return (
+            <a className={classNames} {...inputProps}>
+                {children}
+            </a>
+        );
+    }
+}

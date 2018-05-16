@@ -1,33 +1,27 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as ModalStyle, HTMLComponent, HTMLFooterProps} from '../../';
 
 export interface ModalCardFooterProps extends HTMLFooterProps {
 }
 
-const ModalCardFooter: React.SFC<ModalCardFooterProps> = (props: ModalCardFooterProps) => {
-    const {className, ...modalCardFooterProps} = props;
+export default class ModalCardFooter extends React.Component<ModalCardFooterProps, {}> {
 
-    const classNames = ClassNames(
-        ModalStyle.modalCardFoot,
-        className
-    );
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    return (
-        <footer className={classNames} {...modalCardFooterProps}>
-            {props.children}
-        </footer>
-    );
-};
+    public static defaultProps = HTMLComponent.defaultProps;
 
-ModalCardFooter.propTypes = {
-    ...HTMLComponent.propTypes
-};
+    public render(): JSX.Element {
+        const {className, children, ...modalCardFooterProps} = this.props;
 
-ModalCardFooter.defaultProps = {
-    ...HTMLComponent.defaultProps
-};
+        const classNames = ClassNames(ModalStyle.modalCardFoot, className);
 
-ModalCardFooter.displayName = 'ModalCardFooter';
-
-export default ModalCardFooter;
+        return (
+            <footer className={classNames} {...modalCardFooterProps}>
+                {children}
+            </footer>
+        );
+    }
+}

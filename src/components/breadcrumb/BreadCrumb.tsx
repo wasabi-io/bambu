@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import Objects from 'wasabi-common/lib/types/Objects';
+import {Objects, Props} from "wasabi-common";
 import {Alignment, alignmentValues, bulma as BreadCrumbStyle, HTMLComponent, HTMLElementProps, Size, sizeValues} from '../../';
 
 export enum BreadCrumbSeperator {
@@ -20,38 +20,34 @@ export interface BreadCrumbProps extends HTMLElementProps {
     bSize?: string | Size;
 }
 
-const BreadCrumb: React.SFC<BreadCrumbProps> = (props: BreadCrumbProps) => {
+export default class BreadCrumb extends React.Component<BreadCrumbProps, {}> {
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        alignment: PropTypes.oneOf(alignmentValues),
+        separator: PropTypes.oneOf(Objects.values(BreadCrumbSeperator)),
+        bSize: PropTypes.oneOf(sizeValues),
+    };
 
-    const {alignment, bSize, separator, className, ...breadCrumbProps} = props;
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    const classNames = ClassNames(
-        BreadCrumbStyle.breadcrumb,
-        BreadCrumbStyle[alignment],
-        BreadCrumbStyle[separator],
-        BreadCrumbStyle[bSize],
-        className,
-    );
+    public render(): JSX.Element {
 
-    return (
-        <nav className={classNames} {...breadCrumbProps} >
-            <ul>
-                {props.children}
-            </ul>
-        </nav>
-    );
-};
+        const {alignment, bSize, separator, className, children, ...breadCrumbProps} = this.props;
 
-BreadCrumb.propTypes = {
-    ...HTMLComponent.propTypes,
-    alignment: PropTypes.oneOf(alignmentValues),
-    separator: PropTypes.oneOf(Objects.values(BreadCrumbSeperator)),
-    bSize: PropTypes.oneOf(sizeValues),
-};
+        const classNames = ClassNames(
+            BreadCrumbStyle.breadcrumb,
+            BreadCrumbStyle[alignment],
+            BreadCrumbStyle[separator],
+            BreadCrumbStyle[bSize],
+            className,
+        );
 
-BreadCrumb.defaultProps = {
-    ...HTMLComponent.defaultProps,
-};
-
-BreadCrumb.displayName = 'BreadCrumb';
-
-export default BreadCrumb;
+        return (
+            <nav className={classNames} {...breadCrumbProps} >
+                <ul>
+                    {children}
+                </ul>
+            </nav>
+        );
+    }
+}

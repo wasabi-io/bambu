@@ -1,7 +1,9 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as DropdownStyle, HTMLComponent, HTMLDivProps} from '../../';
+
 /**
  * Refers Html Props and Additional Props.
  */
@@ -10,35 +12,35 @@ export interface DropdownItemProps extends HTMLDivProps {
     isActive?: boolean;
 }
 
-const DropdownItem: React.SFC<DropdownItemProps> = (props: DropdownItemProps) => {
-    const { tagName, isActive, children, className, ...ownProps } = props;
+export default class DropdownItem extends React.Component<DropdownItemProps, {}> {
 
-    const classNames = ClassNames(
-        DropdownStyle.dropdownItem,
-        {
-            [`${DropdownStyle.isActive}`]: isActive
-        },
-        className
-    );
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        tagName: PropTypes.string,
+        isActive: PropTypes.bool,
+    };
 
-    return React.createElement(tagName, {
-        className: classNames,
-        ...ownProps
-    }, children);
-};
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        tagName: 'a',
+        isActive: false,
+    };
 
-DropdownItem.propTypes = {
-    ...HTMLComponent.propTypes,
-    tagName: PropTypes.string,
-    isActive: PropTypes.bool,
-};
+    public render(): JSX.Element {
+        const {tagName, isActive, children, className, ...ownProps} = this.props;
 
-DropdownItem.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    tagName: 'a',
-    isActive: false,
-};
+        const classNames = ClassNames(
+            DropdownStyle.dropdownItem,
+            {
+                [`${DropdownStyle.isActive}`]: isActive
+            },
+            className
+        );
 
-DropdownItem.displayName = 'DropdownItem';
+        return React.createElement(tagName, {
+            className: classNames,
+            ...ownProps
+        }, children);
+    }
+}
 
-export default DropdownItem;

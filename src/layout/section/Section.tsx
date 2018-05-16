@@ -1,38 +1,35 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from 'wasabi-common';
 import {bulma as SectionStyle, HTMLComponent, HTMLSectionProps, Size, sizeValues} from '../../';
 
 export interface SectionProps extends HTMLSectionProps {
     bSize?: string | Size;
 }
 
-const Section: React.SFC<SectionProps> = (props: SectionProps) => {
+export default class Section extends React.Component<SectionProps, {}> {
 
-    const {bSize, className, ...sectionProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        bSize: PropTypes.oneOf(sizeValues)
+    };
 
-    const classNames = ClassNames(
-        SectionStyle.section,
-        SectionStyle[bSize],
-        className
-    );
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <section className={classNames} {...sectionProps} >
-            {props.children}
-        </section>
-    );
-};
+    public render(): JSX.Element {
+        const {bSize, className, children, ...sectionProps} = this.props;
 
-Section.propTypes = {
-    ...HTMLComponent.propTypes,
-    bSize: PropTypes.oneOf(sizeValues)
-};
+        const classNames = ClassNames(
+            SectionStyle.section,
+            SectionStyle[bSize],
+            className
+        );
 
-Section.defaultProps = {
-    ...HTMLComponent.defaultProps,
-};
-
-Section.displayName = 'Section';
-
-export default Section;
+        return (
+            <section className={classNames} {...sectionProps} >
+                {children}
+            </section>
+        );
+    }
+}

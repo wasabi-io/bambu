@@ -1,26 +1,27 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from "../../";
 
-export type NavbarEndProps = HTMLDivProps;
+export interface NavbarEndProps extends HTMLDivProps {
+}
 
-const NavbarEnd: React.SFC<NavbarEndProps> = (props: NavbarEndProps) => {
+export default class NavbarEnd extends React.Component<NavbarEndProps, {}> {
 
-    const {className, ...navbarEndProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames(NavbarStyle.navbarEnd, className);
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <div className={classNames} {...navbarEndProps}>
-            {props.children}
-        </div>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...navbarEndProps} = this.props;
 
-NavbarEnd.propTypes = HTMLComponent.propTypes;
+        const classNames = ClassNames(NavbarStyle.navbarEnd, className);
 
-NavbarEnd.defaultProps = HTMLComponent.defaultProps;
-
-NavbarEnd.displayName = 'NavbarEnd';
-
-export default NavbarEnd;
+        return (
+            <div className={classNames} {...navbarEndProps}>
+                {children}
+            </div>
+        );
+    }
+}

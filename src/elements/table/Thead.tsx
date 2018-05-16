@@ -1,27 +1,27 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as TableStyle, HTMLComponent, HTMLTheadProps} from '../../';
 
-export type THeadProps = HTMLTheadProps;
+export interface THeadProps extends HTMLTheadProps {
+}
 
-const THead: React.SFC<THeadProps> = (props: THeadProps) => {
+export default class THead extends React.Component<THeadProps, {}> {
 
-    const {className, ...tHeadProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames(
-        TableStyle.tr,
-        className
-    );
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <thead className={classNames} {...tHeadProps} >
-        {props.children}
-        </thead>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...tHeadProps} = this.props;
 
-THead.propTypes = HTMLComponent.propTypes;
-THead.defaultProps = HTMLComponent.defaultProps;
-THead.displayName = 'THead';
+        const classNames = ClassNames(TableStyle.tr, className);
 
-export default THead;
+        return (
+            <thead className={classNames} {...tHeadProps} >
+            {children}
+            </thead>
+        );
+    }
+}

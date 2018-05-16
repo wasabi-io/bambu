@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import Strings from 'wasabi-common/lib/types/Strings';
+import {Props, Strings} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export enum ShowingState {
@@ -15,40 +15,39 @@ export interface NavbarDropdownParentProps extends HTMLDivProps {
     state?: ShowingState;
 }
 
-const NavbarDropdownParent: React.SFC<NavbarDropdownParentProps> = (props: NavbarDropdownParentProps) => {
+export default class NavbarDropdownParent extends React.Component<NavbarDropdownParentProps, {}> {
 
-    const { isActive, hasDropdownUp, state, className, ...inputProps } = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        isActive: PropTypes.bool,
+        hasDropdownUp: PropTypes.bool
+    };
 
-    const classNames = ClassNames(
-        NavbarStyle.navbarItem,
-        NavbarStyle.hasDropdown,
-        {
-            [`${NavbarStyle.isActive}`]: isActive,
-            [`${NavbarStyle.hasDropdownUp}`]: hasDropdownUp,
-            [`${NavbarStyle[`is${Strings.capitalizeFirstLetter(state)}`]}`]: Strings.has(state),
-        },
-        className
-    );
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isActive: false,
+        hasDropdownUp: false
+    };
 
-    return (
-        <div className={classNames} {...inputProps}>
-            {props.children}
-        </div>
-    );
-};
+    public render(): JSX.Element {
+        const {isActive, hasDropdownUp, state, className, children, ...inputProps} = this.props;
 
-NavbarDropdownParent.propTypes = {
-    ...HTMLComponent.propTypes,
-    isActive: PropTypes.bool,
-    hasDropdownUp: PropTypes.bool
-};
+        const classNames = ClassNames(
+            NavbarStyle.navbarItem,
+            NavbarStyle.hasDropdown,
+            {
+                [`${NavbarStyle.isActive}`]: isActive,
+                [`${NavbarStyle.hasDropdownUp}`]: hasDropdownUp,
+                [`${NavbarStyle[`is${Strings.capitalizeFirstLetter(state)}`]}`]: Strings.has(state),
+            },
+            className
+        );
 
-NavbarDropdownParent.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isActive: false,
-    hasDropdownUp: false
-};
+        return (
+            <div className={classNames} {...inputProps}>
+                {children}
+            </div>
+        );
+    }
+}
 
-NavbarDropdownParent.displayName = 'NavbarDropdownParent';
-
-export default NavbarDropdownParent;

@@ -1,29 +1,27 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as MediaStyle, HTMLComponent, HTMLDivProps} from '../../';
 
-export type MediaRightProps = HTMLDivProps;
+export interface MediaRightProps extends HTMLDivProps {
+}
 
-const MediaRight: React.SFC<MediaRightProps> = (props: MediaRightProps) => {
+export default class MediaRight extends React.Component<MediaRightProps, {}> {
 
-    const {className, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames([
-        MediaStyle.mediaRight,
-        className
-    ]);
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <div className={classNames} {...inputProps}>
-            {props.children}
-        </div>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...inputProps} = this.props;
 
-MediaRight.propTypes = HTMLComponent.propTypes;
+        const classNames = ClassNames([MediaStyle.mediaRight, className]);
 
-MediaRight.defaultProps = HTMLComponent.defaultProps;
-
-MediaRight.displayName = 'MediaRight';
-
-export default MediaRight;
+        return (
+            <div className={classNames} {...inputProps}>
+                {children}
+            </div>
+        );
+    }
+}

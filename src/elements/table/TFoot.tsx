@@ -1,28 +1,29 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as TableStyle, HTMLComponent, HTMLTfootProps} from '../../';
 
 
-export type TFootProps = HTMLTfootProps;
+export interface TFootProps extends HTMLTfootProps {
+}
 
-const TFoot: React.SFC<TFootProps> = (props: TFootProps) => {
+export default class Class extends React.Component<TFootProps, {}> {
 
-    const {className, ...tFootProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames(
-        TableStyle.tfoot,
-        className
-    );
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <tfoot className={classNames} {...tFootProps} >
-        {props.children}
-        </tfoot>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...tFootProps} = this.props;
 
-TFoot.propTypes = HTMLComponent.propTypes;
-TFoot.defaultProps = HTMLComponent.defaultProps;
-TFoot.displayName = 'TFoot';
+        const classNames = ClassNames(TableStyle.tfoot, className);
 
-export default TFoot;
+        return (
+            <tfoot className={classNames} {...tFootProps} >
+            {children}
+            </tfoot>
+        );
+    }
+}
+

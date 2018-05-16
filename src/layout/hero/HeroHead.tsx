@@ -1,26 +1,28 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {HTMLSectionProps, HTMLComponent, bulma as HeroStyle} from '../../';
+import {Props} from "wasabi-common";
+import {bulma as HeroStyle, HTMLComponent, HTMLHeaderProps} from '../../';
 
-export type HeroHeadProps = HTMLSectionProps;
+export interface HeroHeadProps extends HTMLHeaderProps {
+}
 
-const HeroHead: React.SFC<HeroHeadProps> = (props: HeroHeadProps) => {
+export default class HeroHead extends React.Component<HeroHeadProps, {}> {
 
-    const {className, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames([HeroStyle.heroHead, className]);
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <section className={classNames} {...inputProps} >
-            {props.children}
-        </section>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...inputProps} = this.props;
 
-HeroHead.propTypes = HTMLComponent.propTypes;
+        const classNames = ClassNames([HeroStyle.heroHead, className]);
 
-HeroHead.defaultProps = HTMLComponent.defaultProps;
+        return (
+            <header className={classNames} {...inputProps} >
+                {children}
+            </header>
+        );
+    }
+}
 
-HeroHead.displayName = 'HeroHead';
-
-export default HeroHead;

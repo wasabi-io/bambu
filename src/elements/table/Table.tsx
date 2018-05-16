@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as TableStyle, HTMLComponent, HTMLTableProps} from '../../';
 
 export interface TableProps extends HTMLTableProps {
@@ -11,47 +12,47 @@ export interface TableProps extends HTMLTableProps {
     isFullwidth?: boolean;
 }
 
-const Table: React.SFC<TableProps> = (props: TableProps) => {
 
-    const {isBordered, isStriped, isHoverable, isNarrow, isFullwidth, className, ...tableProps} = props;
+export default class Table extends React.Component<TableProps, {}> {
 
-    const classNames = ClassNames(
-        TableStyle.table,
-        className,
-        {
-            [`${TableStyle.isBordered}`]: isBordered,
-            [`${TableStyle.isStriped}`]: isStriped,
-            [`${TableStyle.isNarrow}`]: isNarrow,
-            [`${TableStyle.isHoverable}`]: isHoverable,
-            [`${TableStyle.isFullwidth}`]: isFullwidth,
-        }
-    );
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        isBordered: PropTypes.bool,
+        isNarrow: PropTypes.bool,
+        isStriped: PropTypes.bool,
+        isHoverable: PropTypes.bool,
+        isFullwidth: PropTypes.bool,
+    };
 
-    return (
-        <table className={classNames} {...tableProps}>
-            {props.children}
-        </table>
-    );
-};
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isBordered: false,
+        isNarrow: false,
+        isStriped: false,
+        isHoverable: false,
+        isFullwidth: false,
+    };
 
-Table.propTypes = {
-    ...HTMLComponent.propTypes,
-    isBordered: PropTypes.bool,
-    isNarrow: PropTypes.bool,
-    isStriped: PropTypes.bool,
-    isHoverable: PropTypes.bool,
-    isFullwidth: PropTypes.bool,
-};
+    public render(): JSX.Element {
+        const {isBordered, isStriped, isHoverable, isNarrow, isFullwidth, className, children, ...tableProps} = this.props;
 
-Table.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isBordered: false,
-    isNarrow: false,
-    isStriped: false,
-    isHoverable: false,
-    isFullwidth: false,
-};
+        const classNames = ClassNames(
+            TableStyle.table,
+            className,
+            {
+                [`${TableStyle.isBordered}`]: isBordered,
+                [`${TableStyle.isStriped}`]: isStriped,
+                [`${TableStyle.isNarrow}`]: isNarrow,
+                [`${TableStyle.isHoverable}`]: isHoverable,
+                [`${TableStyle.isFullwidth}`]: isFullwidth,
+            }
+        );
 
-Table.displayName = 'Table';
+        return (
+            <table className={classNames} {...tableProps}>
+                {children}
+            </table>
+        );
+    }
+}
 
-export default Table;

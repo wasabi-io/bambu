@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {has} from 'wasabi-common';
+import {has, Props} from 'wasabi-common';
 import {bulma as PanelStyle, HTMLComponent, HTMLDivProps, HTMLSpanProps} from '../../';
 import {Icon, IconOptions, IconSize, IconSizeValues} from '../../elements/icon';
 
@@ -22,10 +22,10 @@ export default class PanelBlock extends HTMLComponent<PanelBlockProps> {
     /**
      * Desribe propTypes
      */
-    public static propTypes = {
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
         ...HTMLComponent.propTypes,
         icon: PropTypes.any,
-        iconParent: {},
+        iconParent: PropTypes.object,
         iconSize: PropTypes.oneOf(IconSizeValues),
         isActive: PropTypes.bool
     };
@@ -40,11 +40,9 @@ export default class PanelBlock extends HTMLComponent<PanelBlockProps> {
     };
 
     public static renderIcon(icon: IconOptions, iconSize: IconSize, iconParent: HTMLSpanProps) {
-
         if (!has(icon)) {
             return null;
         }
-
         const {className, ...iconParentProps} = iconParent;
 
         const classNames = ClassNames([PanelStyle.panelIcon, className]);

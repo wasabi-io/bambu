@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Objects, Strings} from 'wasabi-common';
+import {Objects, Props, Strings} from "wasabi-common";
 import {bulma as NavbarStyle, Color, colorValues, HTMLComponent, HTMLNavProps, Vertical, verticalValues} from "../../";
 
 export enum navBarArialLabel {
@@ -20,50 +20,52 @@ export interface NavbarProps extends HTMLNavProps {
     hasShadow?: boolean;
     role?: navBarRole | string;
     isTransparent?: boolean;
+    isSpaced?: boolean;
 }
 
-const Navbar: React.SFC<NavbarProps> = (props: NavbarProps) => {
+export default class Navbar extends React.Component<NavbarProps, {}> {
 
-    const {color, arialLabel, isFixed, hasShadow, isTransparent, className, ...navbarProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        arialLabel: PropTypes.oneOf(Objects.values(navBarArialLabel)),
+        color: PropTypes.oneOf(colorValues),
+        isFixed: PropTypes.oneOf(verticalValues),
+        hasShadow: PropTypes.bool,
+        role: PropTypes.oneOf(Objects.values(navBarRole)),
+        isTransparent: PropTypes.bool,
+        isSpaced: PropTypes.bool
+    };
 
-    const fixedClassName = Strings.has(isFixed) ? `isFixed${Strings.capitalizeFirstLetter(isFixed)}` : undefined;
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        arialLabel: 'main',
+        hasShadow: false,
+        role: navBarRole.navigation,
+        isTransparent: false,
+        isSpaced: false
+    };
 
-    const classNames = ClassNames(
-        NavbarStyle.navbar,
-        NavbarStyle[fixedClassName],
-        {
-            [`${NavbarStyle.hasShadow}`]: hasShadow,
-            [`${NavbarStyle.isTransparent}`]: isTransparent,
-            [`${NavbarStyle[color]}`]: color ? true : false,
-        },
-        className
-    );
+    public render(): JSX.Element {
+        const {color, arialLabel, isFixed, hasShadow, isTransparent, isSpaced, className, children, ...navbarProps} = this.props;
 
-    return (
-        <nav className={classNames} aria-label={`${arialLabel} navigation`} {...navbarProps}>
-            {props.children}
-        </nav>
-    );
-};
+        const fixedClassName = Strings.has(isFixed) ? `isFixed${Strings.capitalizeFirstLetter(isFixed)}` : undefined;
 
-Navbar.propTypes = {
-    ...HTMLComponent.propTypes,
-    arialLabel: PropTypes.oneOf(Objects.values(navBarArialLabel)),
-    color: PropTypes.oneOf(colorValues),
-    isFixed: PropTypes.oneOf(verticalValues),
-    hasShadow: PropTypes.bool,
-    role: PropTypes.oneOf(Objects.values(navBarRole)),
-    isTransparent: PropTypes.bool
-};
+        const classNames = ClassNames(
+            NavbarStyle.navbar,
+            NavbarStyle[fixedClassName],
+            {
+                [`${NavbarStyle.hasShadow}`]: hasShadow,
+                [`${NavbarStyle.isTransparent}`]: isTransparent,
+                [`${NavbarStyle[color]}`]: !!(color),
+                [`${NavbarStyle.isSpaced}`]: isSpaced,
+            },
+            className
+        );
 
-Navbar.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    arialLabel: 'main',
-    hasShadow: false,
-    role: navBarRole.navigation,
-    isTransparent: false
-};
-
-Navbar.displayName = 'Navbar';
-
-export default Navbar;
+        return (
+            <nav className={classNames} aria-label={`${arialLabel} navigation`} {...navbarProps}>
+                {children}
+            </nav>
+        );
+    }
+}

@@ -1,30 +1,29 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as TableStyle, HTMLComponent, HTMLThProps} from '../../';
 
 /**
  * Refers Html Props and Additional Props.
  */
-export type HCellProps = HTMLThProps;
+export interface HCellProps extends HTMLThProps {
+}
 
-const HCell: React.SFC<HCellProps> = (props: HCellProps) => {
+export default class HCell extends React.Component<HCellProps, {}> {
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const {className, ...hCellProps} = props;
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    const classNames = ClassNames(
-        TableStyle.th,
-        className
-    );
+    public render(): JSX.Element {
+        const {className, children, ...hCellProps} = this.props;
 
-    return (
-        <th className={classNames} {...hCellProps} >
-            {props.children}
-        </th>
-    );
-};
+        const classNames = ClassNames(TableStyle.th, className);
 
-HCell.propTypes = HTMLComponent.propTypes;
-HCell.defaultProps = HTMLComponent.defaultProps;
-HCell.displayName = 'HCell';
-
-export default HCell;
+        return (
+            <th className={classNames} {...hCellProps} >
+                {children}
+            </th>
+        );
+    }
+}

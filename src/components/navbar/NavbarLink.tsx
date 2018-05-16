@@ -1,37 +1,31 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLAProps, HTMLComponent} from '../../';
 
 export interface NavbarLinkProps extends HTMLAProps {
     href?: string;
 }
 
-const NavbarLink: React.SFC<NavbarLinkProps> = (props: NavbarLinkProps) => {
+export default class NavbarLink extends React.Component<NavbarLinkProps, {}> {
 
-    const {className, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        href: PropTypes.string
+    };
 
-    const classNames = ClassNames([
-        NavbarStyle.navbarLink,
-        className
-    ]);
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <a className={classNames} {...inputProps}>
-            {props.children}
-        </a>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...inputProps} = this.props;
 
-NavbarLink.propTypes = {
-    ...HTMLComponent.propTypes,
-    href: PropTypes.string
-};
+        const classNames = ClassNames([NavbarStyle.navbarLink, className]);
 
-NavbarLink.defaultProps = {
-    ...HTMLComponent.defaultProps
-};
-
-NavbarLink.displayName = 'NavbarLink';
-
-export default NavbarLink;
+        return (
+            <a className={classNames} {...inputProps}>
+                {children}
+            </a>
+        );
+    }
+}

@@ -1,41 +1,49 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLAllAttributes, HTMLComponent} from "../../";
 
 export interface NavbarItemLinkProps extends HTMLAllAttributes {
     isActive?: boolean;
+    isHiddenDesktop?: boolean;
+    isHiddenMobile?: boolean;
 }
 
-const NavbarItemLink: React.SFC<NavbarItemLinkProps> = (props: NavbarItemLinkProps) => {
 
-    const {isActive, className, ...inputProps} = props;
+export default class NavbarItemLink extends React.Component<NavbarItemLinkProps, {}> {
 
-    const classNames = ClassNames(
-        NavbarStyle.navbarItem,
-        {
-            [`${NavbarStyle.isActive}`]: isActive
-        },
-        className
-    );
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        isActive: PropTypes.bool,
+        isHiddenDesktop: PropTypes.bool,
+        isHiddenMobile: PropTypes.bool
+    };
 
-    return (
-        <a className={classNames} {...inputProps}>
-            {props.children}
-        </a>
-    );
-};
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isActive: false,
+        isHiddenDesktop: false,
+        isHiddenMobile: false
+    };
 
-NavbarItemLink.propTypes = {
-    ...HTMLComponent.propTypes,
-    isActive: PropTypes.bool
-};
+    public render(): JSX.Element {
+        const {isActive, isHiddenDesktop, isHiddenMobile, className, children, ...inputProps} = this.props;
 
-NavbarItemLink.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isActive: false
-};
+        const classNames = ClassNames(
+            NavbarStyle.navbarItem,
+            {
+                [`${NavbarStyle.isActive}`]: isActive,
+                [`${NavbarStyle.isHiddenDesktop}`]: isHiddenDesktop,
+                [`${NavbarStyle.isHiddenMobile}`]: isHiddenMobile
+            },
+            className
+        );
 
-NavbarItemLink.displayName = 'NavbarItemLink';
-
-export default NavbarItemLink;
+        return (
+            <a className={classNames} {...inputProps}>
+                {children}
+            </a>
+        );
+    }
+}

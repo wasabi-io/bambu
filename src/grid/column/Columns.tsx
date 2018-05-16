@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import Objects from 'wasabi-common/lib/types/Objects';
+import {Objects, Props} from "wasabi-common";
 import {bulma as ColumnsStyle, HTMLComponent, HTMLDivProps, Responsive} from '../../';
 
 /**
@@ -14,40 +14,39 @@ export interface ColumnsProps extends HTMLDivProps {
     responsive?: string | Responsive;
 }
 
-const Columns: React.SFC<ColumnsProps> = (props: ColumnsProps) => {
 
-    const {responsive, isMultiline, isVcentered, isGapless, className, ...inputProps} = props;
-    const classNames = ClassNames(
-        ColumnsStyle.columns,
-        ColumnsStyle[responsive],
-        {
-            [`${ColumnsStyle.isMultiline}`]: isMultiline,
-            [`${ColumnsStyle.isVcentered}`]: isVcentered,
-            [`${ColumnsStyle.isGapless}`]: isGapless,
-        },
-        className,
-    );
+export default class Columns extends React.Component<ColumnsProps, {}> {
 
-    return (
-        <div className={classNames} {...inputProps} >
-            {props.children}
-        </div>
-    );
-};
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        isGapless: PropTypes.bool,
+        isMultiline: PropTypes.bool,
+        responsive: PropTypes.oneOf(Objects.values(Responsive)),
+    };
 
-Columns.propTypes = {
-    ...HTMLComponent.propTypes,
-    isGapless: PropTypes.bool,
-    isMultiline: PropTypes.bool,
-    responsive: PropTypes.oneOf(Objects.values(Responsive)),
-};
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isGapless: false,
+        isMultiline: false,
+    };
 
-Columns.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isGapless: false,
-    isMultiline: false,
-};
+    public render(): JSX.Element {
+        const {responsive, isMultiline, isVcentered, isGapless, className, children, ...inputProps} = this.props;
+        const classNames = ClassNames(
+            ColumnsStyle.columns,
+            ColumnsStyle[responsive],
+            {
+                [`${ColumnsStyle.isMultiline}`]: isMultiline,
+                [`${ColumnsStyle.isVcentered}`]: isVcentered,
+                [`${ColumnsStyle.isGapless}`]: isGapless
+            },
+            className,
+        );
 
-Columns.displayName = 'Columns';
-
-export default Columns;
+        return (
+            <div className={classNames} {...inputProps} >
+                {children}
+            </div>
+        );
+    }
+}

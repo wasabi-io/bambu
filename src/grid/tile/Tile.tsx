@@ -1,15 +1,9 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import Objects from 'wasabi-common/lib/types/Objects';
+import {Objects, Props} from "wasabi-common";
 
-import {
-    Size12,
-    size12Values,
-    HTMLComponent,
-    HTMLDivProps,
-    bulma as TileStyle
-} from '../../';
+import {bulma as TileStyle, HTMLComponent, HTMLDivProps, Size12, size12Values} from '../../';
 
 export enum TileContext {
     ancestor = 'isAncestor',
@@ -27,42 +21,41 @@ export interface TileProps extends HTMLDivProps {
     bSize?: string | Size12;
 }
 
-const Tile: React.SFC<TileProps> = (props: TileProps) => {
+export default class Tile extends React.Component<TileProps, {}> {
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        context: PropTypes.oneOf(Objects.values(TileContext)),
+        bSize: PropTypes.oneOf(Objects.values(size12Values)),
+        isVertical: PropTypes.bool,
+        isDesktop: PropTypes.bool,
+    };
 
-    const {context, isDesktop, bSize, isVertical, className, ...tileProps} = props;
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isDesktop: false,
+        isVertical: false
+    };
 
-    const classNames = ClassNames(
-        TileStyle.tile,
-        TileStyle[bSize],
-        TileStyle[context],
-        {
-            [`${TileStyle.isVertical}`]: isVertical,
-            [`${TileStyle.isDesktop}`]: isDesktop,
-        },
-        className
-    );
+    public render(): JSX.Element {
+        const {context, isDesktop, bSize, isVertical, className, children, ...tileProps} = this.props;
 
-    return (
-        <div className={classNames} {...tileProps} >
-            {props.children}
-        </div>
-    );
-};
+        const classNames = ClassNames(
+            TileStyle.tile,
+            TileStyle[bSize],
+            TileStyle[context],
+            {
+                [`${TileStyle.isVertical}`]: isVertical,
+                [`${TileStyle.isDesktop}`]: isDesktop,
+            },
+            className
+        );
 
-Tile.propTypes = {
-    ...HTMLComponent.propTypes,
-    context: PropTypes.oneOf(Objects.values(TileContext)),
-    bSize: PropTypes.oneOf(Objects.values(size12Values)),
-    isVertical: PropTypes.bool,
-    isDesktop: PropTypes.bool,
-};
+        return (
+            <div className={classNames} {...tileProps} >
+                {children}
+            </div>
+        );
+    }
+}
 
-Tile.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isDesktop: false,
-    isVertical: false
-};
 
-Tile.displayName = 'Tile';
-
-export default Tile;

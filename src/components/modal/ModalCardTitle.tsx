@@ -1,34 +1,30 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as ModalStyle, HTMLComponent, HTMLHeaderProps} from '../../';
 
 export interface ModalCardTitleProps extends HTMLHeaderProps {
     header?: string;
 }
 
-const ModalCardTitle: React.SFC<ModalCardTitleProps> = (props: ModalCardTitleProps) => {
-    const {className, ...modalCardTitleProps} = props;
+export default class ModalCardTitle extends React.Component<ModalCardTitleProps, {}> {
 
-    const classNames = ClassNames(
-        ModalStyle.modalCardTitle,
-        className
-    );
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        header: PropTypes.string
+    };
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <header className={classNames} {...modalCardTitleProps}>
-            {props.children}
-        </header>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...modalCardTitleProps} = this.props;
 
-ModalCardTitle.propTypes = {
-    ...HTMLComponent.propTypes
-};
+        const classNames = ClassNames(ModalStyle.modalCardTitle, className);
 
-ModalCardTitle.defaultProps = {
-    ...HTMLComponent.defaultProps
-};
-
-ModalCardTitle.displayName = 'ModalCardTitle';
-
-export default ModalCardTitle;
+        return (
+            <header className={classNames} {...modalCardTitleProps}>
+                {children}
+            </header>
+        );
+    }
+}

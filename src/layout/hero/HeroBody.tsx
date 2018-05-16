@@ -1,29 +1,29 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as HeroStyle, HTMLComponent, HTMLSectionProps} from '../../';
 
-export type HeroBodyProps = HTMLSectionProps;
+export interface HeroBodyProps extends HTMLSectionProps {
+}
 
-const HeroBody: React.SFC<HeroBodyProps> = (props: HeroBodyProps) => {
+export default class HeroBody extends React.Component<HeroBodyProps, {}> {
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const {className, ...heroBodyProps} = props;
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    const classNames = ClassNames(
-        HeroStyle.heroBody,
-        className
-    );
+    public render(): JSX.Element {
+        const {className, children, ...heroBodyProps} = this.props;
 
-    return (
-        <section className={classNames} {...heroBodyProps} >
-            {props.children}
-        </section>
-    );
-};
+        const classNames = ClassNames(
+            HeroStyle.heroBody,
+            className
+        );
 
-HeroBody.propTypes = HTMLComponent.propTypes;
-
-HeroBody.defaultProps = HTMLComponent.defaultProps;
-
-HeroBody.displayName = 'HeroBody';
-
-export default HeroBody;
+        return (
+            <section className={classNames} {...heroBodyProps} >
+                {children}
+            </section>
+        );
+    }
+}

@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import 'font-awesome/css/font-awesome.css';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {has, Objects, Strings} from 'wasabi-common';
+import {has, Objects, Props, Strings} from 'wasabi-common';
 import {Horizontal, Orientation} from '../../';
 import HTMLComponent, {HTMLIProps} from '../../base/html/HTML';
 
@@ -33,7 +33,7 @@ export interface FaIconProps extends HTMLIProps {
 
 export default class FaIcon extends HTMLComponent<FaIconProps> {
 
-    public static propTypes = {
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
         ...HTMLComponent.propTypes,
         ariaHidden: PropTypes.bool,
         border: PropTypes.bool,
@@ -64,12 +64,12 @@ export default class FaIcon extends HTMLComponent<FaIconProps> {
         }
         const prefix = name.substring(0, 3);
         switch (prefix) {
-        case 'fa ':
-            return name;
-        case 'fa-':
-            return 'fa ' + name;
-        default:
-            return 'fa fa-' + name;
+            case 'fa ':
+                return name;
+            case 'fa-':
+                return 'fa ' + name;
+            default:
+                return 'fa fa-' + name;
         }
     }
 

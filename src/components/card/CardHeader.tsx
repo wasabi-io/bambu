@@ -1,28 +1,31 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as CardStyle, HTMLComponent, HTMLElementProps} from '../../';
 
-export type CardHeaderProps = HTMLElementProps;
+export interface CardHeaderProps extends HTMLElementProps {
 
-const CardHeader: React.SFC<CardHeaderProps> = (props: CardHeaderProps) => {
-    const {className, ...cardHeaderProps} = props;
+}
 
-    const classNames = ClassNames([
-        CardStyle.cardHeader,
-        className
-    ]);
+export default class CardHeader extends React.Component<CardHeaderProps, {}> {
 
-    return (
-        <header className={classNames} {...cardHeaderProps} >
-            {props.children}
-        </header>
-    );
-};
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-CardHeader.propTypes = HTMLComponent.propTypes;
+    public static defaultProps = HTMLComponent.defaultProps;
 
-CardHeader.defaultProps = HTMLComponent.defaultProps;
+    public render(): JSX.Element {
+        const {className, children, ...cardHeaderProps} = this.props;
 
-CardHeader.displayName = 'CardHeader';
+        const classNames = ClassNames([
+            CardStyle.cardHeader,
+            className
+        ]);
 
-export default CardHeader;
+        return (
+            <header className={classNames} {...cardHeaderProps} >
+                {children}
+            </header>
+        );
+    }
+}

@@ -1,29 +1,29 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLComponent, HTMLHrProps} from "../../";
 
 export type NavbarDividerProps = HTMLHrProps;
 
-const NavbarDivider: React.SFC<NavbarDividerProps> = (props: NavbarDividerProps) => {
+export default class NavbarDivider extends React.Component<NavbarDividerProps, {}> {
 
-    const {className, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames([
-        NavbarStyle.navbarDivider,
-        className
-    ]);
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <hr className={classNames} {...inputProps}>
-            {props.children}
-        </hr>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...inputProps} = this.props;
 
-NavbarDivider.propTypes = HTMLComponent.propTypes;
+        const classNames = ClassNames([
+            NavbarStyle.navbarDivider,
+            className
+        ]);
 
-NavbarDivider.defaultProps = HTMLComponent.defaultProps;
-
-NavbarDivider.displayName = 'NavbarDivider';
-
-export default NavbarDivider;
+        return (
+            <hr className={classNames} {...inputProps}>
+                {children}
+            </hr>
+        );
+    }
+}

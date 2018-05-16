@@ -1,27 +1,27 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as TableStyle, HTMLComponent, HTMLTbodyProps} from '../../';
 
-export type TBodyProps = HTMLTbodyProps;
+export interface TBodyProps extends HTMLTbodyProps {
+}
 
-const TBody: React.SFC<TBodyProps> = (props: TBodyProps) => {
+export default class TBody extends React.Component<TBodyProps, {}> {
 
-    const {className, ...tBodyProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames(
-        TableStyle.tr,
-        className
-    );
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <tbody className={classNames} {...tBodyProps} >
-        {props.children}
-        </tbody>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...tBodyProps} = this.props;
 
-TBody.propTypes = HTMLComponent.propTypes;
-TBody.defaultProps = HTMLComponent.defaultProps;
-TBody.displayName = 'TBody';
+        const classNames = ClassNames(TableStyle.tr, className);
 
-export default TBody;
+        return (
+            <tbody className={classNames} {...tBodyProps} >
+            {children}
+            </tbody>
+        );
+    }
+}

@@ -1,36 +1,33 @@
 import * as ClassNames from 'classnames';
-import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as CardStyle, HTMLComponent, HTMLElementProps} from '../../';
 
 export interface CardFooterItemProps extends HTMLElementProps {
     tagName?: string;
 }
 
-const CardFooterItem: React.SFC<CardFooterItemProps> = (props: CardFooterItemProps) => {
-    const {tagName, children, className, ...cardFooterItemProps} = props;
+export default class CardFooterItem extends React.Component<CardFooterItemProps, {}> {
 
-    const classNames = ClassNames([
-        CardStyle.cardFooterItem,
-        className
-    ]);
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        tagName: PropTypes.string,
+    };
 
-    return React.createElement(tagName, {
-        className: classNames,
-        ...cardFooterItemProps
-    }, children);
-};
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        tagName: 'span',
+    };
 
-CardFooterItem.propTypes = {
-    ...HTMLComponent.propTypes,
-    tagName: PropTypes.string,
-};
+    public render(): JSX.Element {
+        const {tagName, children, className, ...cardFooterItemProps} = this.props;
 
-CardFooterItem.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    tagName: 'span',
-};
+        const classNames = ClassNames([
+            CardStyle.cardFooterItem,
+            className
+        ]);
 
-CardFooterItem.displayName = 'CardFooterItem';
-
-export default CardFooterItem;
+        return React.createElement(tagName, {className: classNames, ...cardFooterItemProps}, children);
+    }
+}

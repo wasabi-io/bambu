@@ -1,40 +1,35 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {bulma as PaginationStyle, HTMLComponent, HTMLAProps} from '../../';
+import {Props} from "wasabi-common";
+import {bulma as PaginationStyle, HTMLAProps, HTMLComponent} from '../../';
 
 export interface PaginationLinkProps extends HTMLAProps {
     isCurrent?: boolean;
     page: string | number;
+    arialLabel: string;
 }
 
-const PaginationLink: React.SFC<PaginationLinkProps> = (props: PaginationLinkProps) => {
-    const {page, isCurrent, className, ...paginationLinkProps} = props;
+export default class PaginationLink extends React.Component<PaginationLinkProps, {}> {
 
-    const classNames = ClassNames(
-        PaginationStyle.paginationLink,
-        className,
-        {
-            [`${PaginationStyle.isCurrent}`]: isCurrent,
-        });
-    return (
-        <li>
-            <a className={classNames} aria-label={`Goto Page ${page}`}>{page}</a>
-        </li>
-    );
-};
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        isCurrent: PropTypes.bool,
+        page: PropTypes.oneOf([PropTypes.string, PropTypes.number]).isRequired,
+    };
 
-PaginationLink.propTypes = {
-    ...HTMLComponent.propTypes,
-    isCurrent: PropTypes.bool,
-    page: PropTypes.oneOf([PropTypes.string, PropTypes.number]).isRequired,
-};
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isCurrent: false,
+    };
 
-PaginationLink.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isCurrent: false,
-};
+    public render(): JSX.Element {
+        const {isCurrent, className, children, ...paginationLinkProps} = this.props;
 
-PaginationLink.displayName = 'PaginationLink';
+        const classNames = ClassNames(PaginationStyle.paginationLink, className, {[`${PaginationStyle.isCurrent}`]: isCurrent});
 
-export default PaginationLink;
+        return (<li><a className={classNames} {...paginationLinkProps}>{children}</a></li>);
+    }
+}
+
+

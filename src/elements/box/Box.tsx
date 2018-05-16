@@ -1,26 +1,27 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from 'wasabi-common';
 import {bulma as BoxStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 export type BoxProps = HTMLDivProps;
 
-const Box: React.SFC<BoxProps> = (props: BoxProps) => {
+export default class Box extends React.Component<BoxProps, {}> {
 
-    const {className, ...boxProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames(BoxStyle.box, className);
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <div className={classNames} {...boxProps} >
-            {props.children}
-        </div>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...boxProps} = this.props;
 
-Box.propTypes = HTMLComponent.propTypes;
+        const classNames = ClassNames(BoxStyle.box, className);
 
-Box.defaultProps = HTMLComponent.defaultProps;
+        return (
+            <div className={classNames} {...boxProps} >
+                {children}
+            </div>
+        );
+    }
+}
 
-Box.displayName = 'Box';
-
-export default Box;

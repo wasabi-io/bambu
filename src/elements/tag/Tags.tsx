@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as TagStyle, colorValues, HTMLComponent, HTMLSpanProps} from '../../';
 
 /**
@@ -10,32 +11,23 @@ export interface TagsProps extends HTMLSpanProps {
     hasAddons?: boolean;
 }
 
-const Tags: React.SFC<TagsProps> = (props: TagsProps) => {
+export default class Tags extends React.Component<TagsProps, {}> {
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        color: PropTypes.oneOf(colorValues)
+    };
 
-    const {hasAddons, className, ...tagsProps} = props;
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    const classNames = ClassNames(
-        TagStyle.tags,
-        {
-            [`${TagStyle.hasAddons}`]: hasAddons,
-        },
-        className
-    );
+    public render(): JSX.Element {
+        const {hasAddons, className, children, ...tagsProps} = this.props;
 
-    return (
-        <div className={classNames} {...tagsProps}>
-            {props.children}
-        </div>
-    );
-};
+        const classNames = ClassNames(TagStyle.tags, {[`${TagStyle.hasAddons}`]: hasAddons,}, className);
 
-Tags.propTypes = {
-    ...HTMLComponent.propTypes,
-    color: PropTypes.oneOf(colorValues)
-};
-
-Tags.defaultProps = HTMLComponent.defaultProps;
-
-Tags.displayName = 'Tag';
-
-export default Tags;
+        return (
+            <div className={classNames} {...tagsProps}>
+                {children}
+            </div>
+        );
+    }
+}

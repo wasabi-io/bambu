@@ -1,40 +1,39 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from 'wasabi-common';
 import {bulma as TabsStyle, HTMLComponent, HTMLLiProps} from '../../';
 
 export interface TabProps extends HTMLLiProps {
     isActive?: boolean;
 }
 
-const Tab: React.SFC<TabProps> = (props: TabProps) => {
+export default class Tab extends React.Component<TabProps, {}> {
 
-    const {isActive, className, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        isActive: PropTypes.bool
+    };
 
-    const classNames = ClassNames(
-        {
-            [`${TabsStyle.isActive}`]: isActive,
-        },
-        className
-    );
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isActive: false,
+    };
 
-    return (
-        <li className={classNames} {...inputProps}>
-            {props.children}
-        </li>
-    );
-};
+    public render(): JSX.Element {
+        const {isActive, className, children, ...inputProps} = this.props;
 
-Tab.propTypes = {
-    ...HTMLComponent.propTypes,
-    isActive: PropTypes.bool
-};
+        const classNames = ClassNames(
+            {
+                [`${TabsStyle.isActive}`]: isActive,
+            },
+            className
+        );
 
-Tab.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isActive: false,
-};
-
-Tab.displayName = 'Tab';
-
-export default Tab;
+        return (
+            <li className={classNames} {...inputProps}>
+                {children}
+            </li>
+        );
+    }
+}

@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from 'wasabi-common';
 import {bulma as FormStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 /**
@@ -18,71 +19,70 @@ export interface FieldProps extends HTMLDivProps {
     isNarrow?: boolean;
 }
 
-const Field: React.SFC<FieldProps> = (props: FieldProps) => {
+export default class Field extends React.Component<FieldProps, {}> {
 
-    const {
-        isHorizontal,
-        hasAddons,
-        hasAddonsCentered,
-        hasAddonsRight,
-        isGrouped,
-        isGroupedCentered,
-        isGroupedRight,
-        isGroupedMultiline,
-        isNarrow,
-        className,
-        ...inputProps
-    } = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        hasAddons: PropTypes.bool,
+        hasAddonsCentered: PropTypes.bool,
+        hasAddonsRight: PropTypes.bool,
+        isHorizontal: PropTypes.bool,
+        isGrouped: PropTypes.bool,
+        isGroupedCentered: PropTypes.bool,
+        isGroupedMultiline: PropTypes.bool,
+        isGroupedRight: PropTypes.bool,
+        isNarrow: PropTypes.bool,
+    };
 
-    const classNames = ClassNames(
-        FormStyle.field,
-        {
-            [`${FormStyle.isHorizontal}`]: isHorizontal,
-            [`${FormStyle.hasAddons}`]: hasAddons,
-            [`${FormStyle.hasAddonsCentered}`]: hasAddonsCentered,
-            [`${FormStyle.hasAddonsRight}`]: hasAddonsRight,
-            [`${FormStyle.isGrouped}`]: isGrouped,
-            [`${FormStyle.isGroupedCentered}`]: isGroupedCentered,
-            [`${FormStyle.isGroupedRight}`]: isGroupedRight,
-            [`${FormStyle.isGroupedMultiline}`]: isGroupedMultiline,
-            [`${FormStyle.isNarrow}`]: isNarrow,
-        },
-        className
-    );
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        hasAddons: false,
+        hasAddonsCentered: false,
+        hasAddonsRight: false,
+        isHorizontal: false,
+        isGrouped: false,
+        isGroupedCentered: false,
+        isGroupedMultiline: false,
+        isGroupedRight: false,
+        isNarrow: false,
+    };
 
-    return (
-        <div className={classNames} {...inputProps} >
-            {props.children}
-        </div>
-    );
-};
+    public render(): JSX.Element {
+        const {
+            isHorizontal,
+            hasAddons,
+            hasAddonsCentered,
+            hasAddonsRight,
+            isGrouped,
+            isGroupedCentered,
+            isGroupedRight,
+            isGroupedMultiline,
+            isNarrow,
+            className,
+            children,
+            ...inputProps
+        } = this.props;
 
-Field.propTypes = {
-    ...HTMLComponent.propTypes,
-    hasAddons: PropTypes.bool,
-    hasAddonsCentered: PropTypes.bool,
-    hasAddonsRight: PropTypes.bool,
-    isHorizontal: PropTypes.bool,
-    isGrouped: PropTypes.bool,
-    isGroupedCentered: PropTypes.bool,
-    isGroupedMultiline: PropTypes.bool,
-    isGroupedRight: PropTypes.bool,
-    isNarrow: PropTypes.bool,
-};
+        const classNames = ClassNames(
+            FormStyle.field,
+            {
+                [`${FormStyle.isHorizontal}`]: isHorizontal,
+                [`${FormStyle.hasAddons}`]: hasAddons,
+                [`${FormStyle.hasAddonsCentered}`]: hasAddonsCentered,
+                [`${FormStyle.hasAddonsRight}`]: hasAddonsRight,
+                [`${FormStyle.isGrouped}`]: isGrouped,
+                [`${FormStyle.isGroupedCentered}`]: isGroupedCentered,
+                [`${FormStyle.isGroupedRight}`]: isGroupedRight,
+                [`${FormStyle.isGroupedMultiline}`]: isGroupedMultiline,
+                [`${FormStyle.isNarrow}`]: isNarrow,
+            },
+            className
+        );
 
-Field.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    hasAddons: false,
-    hasAddonsCentered: false,
-    hasAddonsRight: false,
-    isHorizontal: false,
-    isGrouped: false,
-    isGroupedCentered: false,
-    isGroupedMultiline: false,
-    isGroupedRight: false,
-    isNarrow: false,
-};
-
-Field.displayName = 'Field';
-
-export default Field;
+        return (
+            <div className={classNames} {...inputProps} >
+                {children}
+            </div>
+        );
+    }
+}

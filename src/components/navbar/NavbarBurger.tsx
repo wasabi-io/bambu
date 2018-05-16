@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, Color, colorValues, HTMLAllAttributes, HTMLComponent} from "../../";
 
 export interface NavbarBurgerProps extends HTMLAllAttributes {
@@ -10,35 +11,42 @@ export interface NavbarBurgerProps extends HTMLAllAttributes {
     tagName?: string;
 }
 
-const NavbarBurger: React.SFC<NavbarBurgerProps> = (props: NavbarBurgerProps) => {
+export default class NavbarBurger extends React.Component<NavbarBurgerProps, {}> {
 
-    const {tagName, isActive, color, className, dataTarget, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        color: PropTypes.oneOf(colorValues),
+        isActive: PropTypes.bool,
+        tagName: PropTypes.string
+    };
 
-    const classNames = ClassNames(
-        NavbarStyle.navbarBurger,
-        {
-            [`${NavbarStyle.isActive}`]: isActive,
-            [`${NavbarStyle[color]}`]: !!color,
-        },
-        className
-    );
-    (inputProps as any).className = classNames;
-    return React.createElement(tagName, inputProps, [props.children, <span key="navbar-burger-span-0"/>, <span key="navbar-burger-span-1"/>, <span key="navbar-burger-span-2"/>]);
-};
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isActive: false,
+        tagName: 'button'
+    };
 
-NavbarBurger.propTypes = {
-    ...HTMLComponent.propTypes,
-    color: PropTypes.oneOf(colorValues),
-    isActive: PropTypes.bool,
-    tagName: PropTypes.string
-};
+    public render(): JSX.Element {
+        const {tagName, isActive, color, className, children, dataTarget, ...inputProps} = this.props;
 
-NavbarBurger.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isActive: false,
-    tagName: 'button'
-};
+        const classNames = ClassNames(
+            NavbarStyle.navbarBurger,
+            {[`${NavbarStyle.isActive}`]: isActive, [`${NavbarStyle[color]}`]: !!color},
+            className
+        );
 
-NavbarBurger.displayName = 'NavbarBurger';
-
-export default NavbarBurger;
+        return React.createElement(
+            tagName, {
+                className: classNames,
+                'data-target': dataTarget,
+                ...inputProps
+            },
+            [
+                children,
+                <span key="navbar-burger-span-0"/>,
+                <span key="navbar-burger-span-1"/>,
+                <span key="navbar-burger-span-2"/>
+            ]
+        );
+    }
+}

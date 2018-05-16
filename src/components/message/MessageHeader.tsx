@@ -1,32 +1,30 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as MessageStyle, HTMLComponent, HTMLDivProps} from "../../";
 
-export type MessageHeaderProps = HTMLDivProps;
+export interface MessageHeaderProps extends HTMLDivProps {
+}
 
-const MessageHeader: React.SFC<MessageHeaderProps> = (props: MessageHeaderProps) => {
-    const {children, className, ...ownProps} = props;
+export default class MessageHeader extends React.Component<MessageHeaderProps, {}> {
 
-    const classNames = ClassNames(
-        MessageStyle.messageHeader,
-        className
-    );
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    return (
-        <div className={classNames} {...ownProps} >
-            {children}
-        </div>
-    );
-};
+    public static defaultProps = HTMLComponent.defaultProps;
 
-MessageHeader.propTypes = {
-    ...HTMLComponent.propTypes,
-};
+    public render(): JSX.Element {
+        const {className, children, ...ownProps} = this.props;
 
-MessageHeader.defaultProps = {
-    ...HTMLComponent.defaultProps,
-};
+        const classNames = ClassNames(
+            MessageStyle.messageHeader,
+            className
+        );
 
-MessageHeader.displayName = 'MessageHeader';
-
-export default MessageHeader;
+        return (
+            <div className={classNames} {...ownProps} >
+                {children}
+            </div>
+        );
+    }
+}

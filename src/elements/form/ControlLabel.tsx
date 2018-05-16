@@ -1,7 +1,8 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Size, sizeValues, HTMLComponent, HTMLLabelProps, bulma as FormStyle} from '../../';
+import {Props} from 'wasabi-common';
+import {bulma as FormStyle, HTMLComponent, HTMLLabelProps, Size, sizeValues} from '../../';
 
 /**
  * Refers Html Props and Additional Props.
@@ -11,42 +12,41 @@ export interface ControlLabelProps extends HTMLLabelProps {
     isRadio?: boolean;
 }
 
-const ControlLabel: React.SFC<ControlLabelProps> = (props: ControlLabelProps) => {
+export default class ControlLabel extends React.Component<ControlLabelProps, {}> {
 
-    const {
-        bSize,
-        className,
-        isRadio,
-        ...inputProps
-    } = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        bSize: PropTypes.oneOf(sizeValues),
+        isRadio: PropTypes.bool
+    };
 
-    const classNames = ClassNames(
-        {
-            [`${FormStyle.label}`]: !isRadio,
-            [`${FormStyle.radio}`]: isRadio,
-        },
-        FormStyle[bSize],
-        className
-    );
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isRadio: false
+    };
 
-    return (
-        <label className={classNames} {...inputProps} >
-            {props.children}
-        </label>
-    );
-};
+    public render(): JSX.Element {
+        const {
+            bSize,
+            className,
+            isRadio,
+            children,
+            ...inputProps
+        } = this.props;
 
-ControlLabel.propTypes = {
-    ...HTMLComponent.propTypes,
-    bSize: PropTypes.oneOf(sizeValues),
-    isRadio: PropTypes.bool
-};
+        const classNames = ClassNames(
+            {
+                [`${FormStyle.label}`]: !isRadio,
+                [`${FormStyle.radio}`]: isRadio,
+            },
+            FormStyle[bSize],
+            className
+        );
 
-ControlLabel.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isRadio: false
-};
-
-ControlLabel.displayName = 'ControlLabel';
-
-export default ControlLabel;
+        return (
+            <label className={classNames} {...inputProps} >
+                {children}
+            </label>
+        );
+    }
+}

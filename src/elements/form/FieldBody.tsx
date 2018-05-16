@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from 'wasabi-common';
 import {bulma as FormStyle, HTMLComponent, HTMLDivProps, Size, sizeValues} from '../../';
 
 /**
@@ -10,34 +11,33 @@ export interface FieldBodyProps extends HTMLDivProps {
     bSize?: string | Size;
 }
 
-const FieldBody: React.SFC<FieldBodyProps> = (props: FieldBodyProps) => {
+export default class FieldBody extends React.Component<FieldBodyProps, {}> {
 
-    const {
-        bSize,
-        className,
-        ...inputProps
-    } = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        bSize: PropTypes.oneOf(sizeValues),
+    };
 
-    const classNames = ClassNames([
-        FormStyle.fieldBody,
-        FormStyle[bSize],
-        className
-    ]);
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <div className={classNames} {...inputProps} >
-            {props.children}
-        </div>
-    );
-};
+    public render(): JSX.Element {
+        const {
+            bSize,
+            className,
+            children,
+            ...inputProps
+        } = this.props;
 
-FieldBody.propTypes = {
-    ...HTMLComponent.propTypes,
-    bSize: PropTypes.oneOf(sizeValues),
-};
+        const classNames = ClassNames([
+            FormStyle.fieldBody,
+            FormStyle[bSize],
+            className
+        ]);
 
-FieldBody.defaultProps = HTMLComponent.defaultProps;
-
-FieldBody.displayName = 'FieldBody';
-
-export default FieldBody;
+        return (
+            <div className={classNames} {...inputProps} >
+                {children}
+            </div>
+        );
+    }
+}

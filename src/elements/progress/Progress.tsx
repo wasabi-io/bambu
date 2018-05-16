@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as ProgressStyle, Color, colorValues, HTMLComponent, HTMLProgressProps, Size, sizeValues} from '../../';
 
 /**
@@ -13,32 +14,34 @@ export interface ProgressProps extends HTMLProgressProps {
     value: number;
 }
 
-const Progress: React.SFC<ProgressProps> = (props: ProgressProps) => {
 
-    const {bSize, color, className, ...inputProps} = props;
+export default class Progress extends React.Component<ProgressProps, {}> {
 
-    const classNames = ClassNames([
-        ProgressStyle.progress,
-        ProgressStyle[bSize],
-        ProgressStyle[color],
-        className
-    ]);
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        color: PropTypes.oneOf(colorValues),
+        max: PropTypes.number,
+        bSize: PropTypes.oneOf(sizeValues),
+        value: PropTypes.number,
+    };
 
-    return (
-        <progress className={classNames} {...inputProps} />
-    );
-};
+    public static defaultProps = HTMLComponent.defaultProps;
 
-Progress.propTypes = {
-    ...HTMLComponent.propTypes,
-    color: PropTypes.oneOf(colorValues),
-    max: PropTypes.number,
-    bSize: PropTypes.oneOf(sizeValues),
-    value: PropTypes.number,
-};
+    public render(): JSX.Element {
+        const {bSize, color, className, children, ...inputProps} = this.props;
 
-Progress.defaultProps = HTMLComponent.defaultProps;
+        const classNames = ClassNames([
+            ProgressStyle.progress,
+            ProgressStyle[bSize],
+            ProgressStyle[color],
+            className
+        ]);
 
-Progress.displayName = 'Progress';
+        return (
+            <progress className={classNames} {...inputProps}>
+                {children}
+            </progress>
+        );
+    }
+}
 
-export default Progress;

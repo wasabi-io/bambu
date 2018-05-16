@@ -1,23 +1,26 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as PaginationStyle, HTMLComponent, HTMLSpanProps} from '../../';
 
 export interface PaginationEllipsisProps extends HTMLSpanProps {
 }
 
-const PaginationEllipsis: React.SFC<PaginationEllipsisProps> = (props: PaginationEllipsisProps) => {
-    const {className, ...paginationEllipsisProps} = props;
+export default class PaginationEllipsis extends React.Component<PaginationEllipsisProps, {}> {
 
-    const classNames = ClassNames(
-        PaginationStyle.paginationEllipsis,
-        className
-    );
-    return (
-        <li><span className={classNames}>&hellip;</span></li>
-    );
-};
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-PaginationEllipsis.propTypes = HTMLComponent.propTypes;
-PaginationEllipsis.defaultProps = HTMLComponent.defaultProps;
-PaginationEllipsis.displayName = 'PaginationEllipsis';
-export default PaginationEllipsis;
+    public static defaultProps = HTMLComponent.defaultProps;
+
+    public render(): JSX.Element {
+        const {className, ...paginationEllipsisProps} = this.props;
+
+        const classNames = ClassNames(PaginationStyle.paginationEllipsis, className);
+
+        return (
+            <li><span className={classNames}>&hellip;</span></li>
+        );
+    }
+}
+

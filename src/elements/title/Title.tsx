@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as TitleStyle, HTMLComponent, HTMLPProps, Size6, size6Values} from '../../';
 
 /**
@@ -11,31 +12,31 @@ export interface TitleProps extends HTMLPProps {
     tagName?: string;
 }
 
-const Title: React.SFC<TitleProps> = (props: TitleProps) => {
+export default class Title extends React.Component<TitleProps, {}> {
 
-    const {tagName, bSize, className, ...titleProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        bSize: PropTypes.oneOf(size6Values),
+        tagName: PropTypes.string
+    };
 
-    const classNames = ClassNames([
-        TitleStyle.title,
-        TitleStyle[bSize],
-        className
-    ]);
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        tagName: 'h1'
+    };
 
-    (titleProps as any).className = classNames;
-    return React.createElement(tagName, titleProps, props.children);
-};
+    public render(): JSX.Element {
+        const {tagName, bSize, className, children, ...titleProps} = this.props;
 
-Title.propTypes = {
-    ...HTMLComponent.propTypes,
-    bSize: PropTypes.oneOf(size6Values),
-    tagName: PropTypes.string
-};
+        const classNames = ClassNames([
+            TitleStyle.title,
+            TitleStyle[bSize],
+            className
+        ]);
 
-Title.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    tagName: 'h1'
-};
-
-Title.displayName = 'Title';
-
-export default Title;
+        return React.createElement(tagName, {
+            className: classNames,
+            ...titleProps
+        }, children);
+    }
+}

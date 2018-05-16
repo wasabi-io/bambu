@@ -1,29 +1,30 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as CardStyle, HTMLComponent, HTMLDivProps} from '../../';
 
-export type CardContentProps = HTMLDivProps;
+export interface CardContentProps extends HTMLDivProps {
+}
 
-const CardContent: React.SFC<CardContentProps> = (props: CardContentProps) => {
+export default class CardContent extends React.Component<CardContentProps, {}> {
 
-    const {className, ...cardContentProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames([
-        CardStyle.cardContent,
-        className
-    ]);
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <div className={classNames} {...cardContentProps} >
-            {props.children}
-        </div>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...cardContentProps} = this.props;
 
-CardContent.propTypes = HTMLComponent.propTypes;
+        const classNames = ClassNames([
+            CardStyle.cardContent,
+            className
+        ]);
 
-CardContent.defaultProps = HTMLComponent.defaultProps;
-
-CardContent.displayName = 'CardContent';
-
-export default CardContent;
+        return (
+            <div className={classNames} {...cardContentProps} >
+                {children}
+            </div>
+        );
+    }
+}

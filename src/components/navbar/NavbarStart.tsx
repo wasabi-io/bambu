@@ -1,25 +1,25 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 export type NavbarStartProps = HTMLDivProps;
 
-const NavbarStart: React.SFC<NavbarStartProps> = (props: NavbarStartProps) => {
+export default class NavbarStart extends React.Component<NavbarStartProps, {}> {
 
-    const {className, ...navbarStartProps} = props;
-    const classNames = ClassNames(NavbarStyle.navbarStart, className);
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    return (
-        <div className={classNames} role="navigation" aria-label="main navigation" {...navbarStartProps}>
-            {props.children}
-        </div>
-    );
-};
+    public static defaultProps = HTMLComponent.defaultProps;
 
-NavbarStart.propTypes = HTMLComponent.propTypes;
+    public render(): JSX.Element {
+        const {className, children, ...navbarStartProps} = this.props;
+        const classNames = ClassNames(NavbarStyle.navbarStart, className);
 
-NavbarStart.defaultProps = HTMLComponent.defaultProps;
-
-NavbarStart.displayName = 'NavbarStart';
-
-export default NavbarStart;
+        return (
+            <div className={classNames} role="navigation" aria-label="main navigation" {...navbarStartProps}>
+                {children}
+            </div>
+        );
+    }
+}

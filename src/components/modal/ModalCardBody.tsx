@@ -1,33 +1,27 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as ModalStyle, HTMLComponent, HTMLSectionProps} from '../../';
 
 export interface ModalCardBodyProps extends HTMLSectionProps {
 }
 
-const ModalCardBody: React.SFC<ModalCardBodyProps> = (props: ModalCardBodyProps) => {
-    const {className, ...modalCardBodyProps} = props;
+export default class ModalCardBody extends React.Component<ModalCardBodyProps, {}> {
 
-    const classNames = ClassNames(
-        ModalStyle.modalCardBody,
-        className
-    );
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    return (
-        <section className={classNames} {...modalCardBodyProps}>
-            {props.children}
-        </section>
-    );
-};
+    public static defaultProps = HTMLComponent.defaultProps;
 
-ModalCardBody.propTypes = {
-    ...HTMLComponent.propTypes
-};
+    public render(): JSX.Element {
+        const {className, children, ...modalCardBodyProps} = this.props;
 
-ModalCardBody.defaultProps = {
-    ...HTMLComponent.defaultProps
-};
+        const classNames = ClassNames(ModalStyle.modalCardBody, className);
 
-ModalCardBody.displayName = 'ModalCardBody';
-
-export default ModalCardBody;
+        return (
+            <section className={classNames} {...modalCardBodyProps}>
+                {children}
+            </section>
+        );
+    }
+}

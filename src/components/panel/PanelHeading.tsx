@@ -1,29 +1,30 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from 'wasabi-common';
 import {bulma as PanelStyle, HTMLComponent, HTMLPProps} from '../../';
 
-export type PanelHeadingProps = HTMLPProps;
+export interface PanelHeadingProps extends HTMLPProps {
+}
 
-const PanelHeading: React.SFC<PanelHeadingProps> = (props: PanelHeadingProps) => {
+export default class PanelHeading extends React.Component<PanelHeadingProps, {}> {
 
-    const {className, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames([
-        PanelStyle.panelHeading,
-        className
-    ]);
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <p className={classNames} {...inputProps}>
-            {props.children}
-        </p>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...inputProps} = this.props;
 
-PanelHeading.propTypes = HTMLComponent.propTypes;
+        const classNames = ClassNames([
+            PanelStyle.panelHeading,
+            className
+        ]);
 
-PanelHeading.defaultProps = HTMLComponent.defaultProps;
-
-PanelHeading.displayName = 'PanelHeading';
-
-export default PanelHeading;
+        return (
+            <p className={classNames} {...inputProps}>
+                {children}
+            </p>
+        );
+    }
+}

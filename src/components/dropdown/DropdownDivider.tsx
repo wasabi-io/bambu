@@ -1,5 +1,7 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as DropdownStyle, HTMLComponent, HTMLHrProps} from '../../';
 
 /**
@@ -8,23 +10,23 @@ import {bulma as DropdownStyle, HTMLComponent, HTMLHrProps} from '../../';
 export interface DropdownDividerProps extends HTMLHrProps {
 }
 
-const DropdownDivider: React.SFC<DropdownDividerProps> = (props: DropdownDividerProps) => {
-    const {className, ...ownProps} = props;
+export default class DropdownDivider extends React.Component<DropdownDividerProps, {}> {
 
-    const classNames = ClassNames(
-        DropdownStyle.dropdownDivider,
-        className
-    );
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {...HTMLComponent.propTypes};
+;
 
-    return (
-        <hr className={classNames} {...ownProps} />
-    );
-};
+    public static defaultProps = HTMLComponent.defaultProps;
 
-DropdownDivider.propTypes = HTMLComponent.propTypes;
+    public render(): JSX.Element {
+        const {className, ...ownProps} = this.props;
 
-DropdownDivider.defaultProps = HTMLComponent.defaultProps;
+        const classNames = ClassNames(
+            DropdownStyle.dropdownDivider,
+            className
+        );
 
-DropdownDivider.displayName = 'DropdownDivider';
-
-export default DropdownDivider;
+        return (
+            <hr className={classNames} {...ownProps} />
+        );
+    }
+}

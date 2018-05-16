@@ -1,5 +1,7 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as DropdownStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 /**
@@ -8,25 +10,25 @@ import {bulma as DropdownStyle, HTMLComponent, HTMLDivProps} from '../../';
 export interface DropdownMenuProps extends HTMLDivProps {
 }
 
-const DropdownMenu: React.SFC<DropdownMenuProps> = (props: DropdownMenuProps) => {
-    const {children, className, ...ownProps} = props;
+export default class DropdownMenu extends React.Component<DropdownMenuProps, {}> {
 
-    const classNames = ClassNames(
-        DropdownStyle.dropdownMenu,
-        className
-    );
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {...HTMLComponent.propTypes};
+;
 
-    return (
-        <div className={classNames} {...ownProps}>
-            {children}
-        </div>
-    );
-};
+    public static defaultProps = HTMLComponent.defaultProps;
 
-DropdownMenu.propTypes = HTMLComponent.propTypes;
+    public render(): JSX.Element {
+        const {children, className, ...ownProps} = this.props;
 
-DropdownMenu.defaultProps = HTMLComponent.defaultProps;
+        const classNames = ClassNames(
+            DropdownStyle.dropdownMenu,
+            className
+        );
 
-DropdownMenu.displayName = 'DropdownMenu';
-
-export default DropdownMenu;
+        return (
+            <div className={classNames} {...ownProps}>
+                {children}
+            </div>
+        );
+    }
+}

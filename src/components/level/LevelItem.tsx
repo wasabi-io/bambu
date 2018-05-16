@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as LevelStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 /**
@@ -10,35 +11,34 @@ export interface LevelItemProps extends HTMLDivProps {
     hasTextCentered?: boolean;
 }
 
-const LevelItem: React.SFC<LevelItemProps> = (props: LevelItemProps) => {
+export default class LevelItem extends React.Component<LevelItemProps, {}> {
 
-    const {hasTextCentered, className, ...levelItemProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        hasTextCentered: PropTypes.bool
+    };
 
-    const classNames = ClassNames(
-        LevelStyle.levelItem,
-        {
-            [`${LevelStyle.hasTextCentered}`]: hasTextCentered,
-        },
-        className
-    );
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        hasTextCentered: false
+    };
 
-    return (
-        <div className={classNames} {...levelItemProps} >
-            {props.children}
-        </div>
-    );
-};
+    public render(): JSX.Element {
+        const {hasTextCentered, className, children, ...levelItemProps} = this.props;
 
-LevelItem.propTypes = {
-    ...HTMLComponent.propTypes,
-    hasTextCentered: PropTypes.bool
-};
+        const classNames = ClassNames(
+            LevelStyle.levelItem,
+            {
+                [`${LevelStyle.hasTextCentered}`]: hasTextCentered,
+            },
+            className
+        );
 
-LevelItem.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    hasTextCentered: false
-};
+        return (
+            <div className={classNames} {...levelItemProps} >
+                {children}
+            </div>
+        );
+    }
+}
 
-LevelItem.displayName = 'LevelItem';
-
-export default LevelItem;

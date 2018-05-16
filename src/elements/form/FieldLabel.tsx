@@ -1,8 +1,8 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Objects, Props} from 'wasabi-common';
 import ControlLabel, {ControlLabelProps} from '../../elements/form/ControlLabel';
-import Objects from 'wasabi-common/lib/types/Objects';
 import {bulma as FormStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 export enum FieldLabelSize {
@@ -20,41 +20,40 @@ export interface FieldLabelProps extends HTMLDivProps {
     labelProps?: ControlLabelProps;
 }
 
-const FieldLabel: React.SFC<FieldLabelProps> = (props: FieldLabelProps) => {
+export default class FieldLabel extends React.Component<FieldLabelProps, {}> {
 
-    const {
-        bSize,
-        className,
-        labelProps,
-        ...inputProps
-    } = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        bSize: PropTypes.oneOf(Objects.values(FieldLabelSize)),
+        labelProps: PropTypes.object
+    };
 
-    const classNames = ClassNames([
-        FormStyle.fieldLabel,
-        FormStyle[bSize],
-        className
-    ]);
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        bSize: FieldLabelSize.normal
+    };
 
-    return (
-        <div className={classNames} {...inputProps} >
-            <ControlLabel {...labelProps}>
-                {props.children}
-            </ControlLabel>
-        </div>
-    );
-};
+    public render(): JSX.Element {
+        const {
+            bSize,
+            className,
+            labelProps,
+            children,
+            ...inputProps
+        } = this.props;
 
-FieldLabel.propTypes = {
-    ...HTMLComponent.propTypes,
-    bSize: PropTypes.oneOf(Objects.values(FieldLabelSize)),
-    labelProps: PropTypes.object
-};
+        const classNames = ClassNames([
+            FormStyle.fieldLabel,
+            FormStyle[bSize],
+            className
+        ]);
 
-FieldLabel.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    bSize: FieldLabelSize.normal
-};
-
-FieldLabel.displayName = 'FieldLabel';
-
-export default FieldLabel;
+        return (
+            <div className={classNames} {...inputProps} >
+                <ControlLabel {...labelProps}>
+                    {children}
+                </ControlLabel>
+            </div>
+        );
+    }
+}

@@ -1,33 +1,31 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from "prop-types";
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as LevelStyle, HTMLAllAttributes, HTMLComponent} from '../../';
 
 export interface LevelRightProps extends HTMLAllAttributes {
     tagName?: string;
 }
 
-const LevelRight: React.SFC<LevelRightProps> = (props: LevelRightProps) => {
+export default class LevelRight extends React.Component<LevelRightProps, {}> {
 
-    const {tagName, className, ...levelRightProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        tagName: PropTypes.string
+    };
 
-    const classNames = ClassNames(
-        LevelStyle.levelRight,
-        className
-    );
-    (levelRightProps as any).className = classNames;
-    return React.createElement(tagName, levelRightProps, props.children);
-};
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        tagName: 'div'
+    };
 
-LevelRight.propTypes = {
-    ...HTMLComponent.propTypes
-};
-
-LevelRight.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    tagName: 'div'
-};
-
-LevelRight.displayName = 'LevelRight';
-
-export default LevelRight;
+    public render(): JSX.Element {
+        const {tagName, className, children, ...levelRightProps} = this.props;
+        return React.createElement(tagName, {
+            className: ClassNames(LevelStyle.levelRight, className),
+            ...levelRightProps
+        }, children);
+    }
+}
 

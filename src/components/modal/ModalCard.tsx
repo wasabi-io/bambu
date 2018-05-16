@@ -1,40 +1,37 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as ModalStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 export interface ModalCardProps extends HTMLDivProps {
     isActive?: boolean;
 }
 
-const ModalCard: React.SFC<ModalCardProps> = (props: ModalCardProps) => {
-    const {isActive, className, ...modalCardProps} = props;
+export default class ModalCard extends React.Component<ModalCardProps, {}> {
 
-    const classNames = ClassNames(
-        ModalStyle.modal,
-        {
-            [`${ModalStyle.isActive}`]: isActive,
-        },
-        className
-    );
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        isActive: PropTypes.bool
+    };
 
-    return (
-        <div className={classNames} {...modalCardProps}>
-            <div className={ModalStyle.modalBackground} />
-            <div className={ModalStyle.modalCard}>
-                {props.children}
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isActive: false
+    };
+
+    public render(): JSX.Element {
+        const {isActive, className, children, ...modalCardProps} = this.props;
+
+        const classNames = ClassNames(ModalStyle.modal, {[`${ModalStyle.isActive}`]: isActive}, className);
+
+        return (
+            <div className={classNames} {...modalCardProps}>
+                <div className={ModalStyle.modalBackground}/>
+                <div className={ModalStyle.modalCard}>
+                    {children}
+                </div>
             </div>
-        </div>
-    );
-};
-
-ModalCard.propTypes = {
-    ...HTMLComponent.propTypes
-};
-
-ModalCard.defaultProps = {
-    ...HTMLComponent.defaultProps
-};
-
-ModalCard.displayName = 'ModalCard';
-
-export default ModalCard;
+        );
+    }
+}

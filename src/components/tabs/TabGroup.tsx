@@ -1,35 +1,35 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from 'wasabi-common';
 import {Alignment, alignmentValues, bulma as TabGroupStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 export interface TabGroupProps extends HTMLDivProps {
     alignment?: string | Alignment;
 }
 
-const TabGroup: React.SFC<TabGroupProps> = (props: TabGroupProps) => {
 
-    const {alignment, className, ...inputProps} = props;
+export default class TabGroup extends React.Component<TabGroupProps, {}> {
 
-    const classNames = ClassNames(
-        TabGroupStyle[alignment],
-        className
-    );
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        alignment: PropTypes.oneOf(alignmentValues),
+    };
 
-    return (
-        <div className={classNames} {...inputProps}>
-            {props.children}
-        </div>
-    );
-};
+    public static defaultProps = HTMLComponent.defaultProps;
 
-TabGroup.propTypes = {
-    ...HTMLComponent.propTypes,
-    alignment: PropTypes.oneOf(alignmentValues),
-};
+    public render(): JSX.Element {
+        const {alignment, className, children, ...inputProps} = this.props;
 
-TabGroup.defaultProps = HTMLComponent.defaultProps;
+        const classNames = ClassNames(
+            TabGroupStyle[alignment],
+            className
+        );
 
-TabGroup.displayName = 'TabGroup';
-
-export default TabGroup;
+        return (
+            <div className={classNames} {...inputProps}>
+                {children}
+            </div>
+        );
+    }
+}

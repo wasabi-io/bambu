@@ -35,38 +35,36 @@ export interface ImageProps extends HTMLImgProps {
     src: string;
 }
 
-const Image: React.SFC<ImageProps> = (props: ImageProps) => {
+export default class Image extends React.Component<ImageProps, {}> {
 
-    const {bSize, ratio, pClassName, pStyle, ...inputProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        alt: PropTypes.string,
+        pClassName: PropTypes.string,
+        pStyle: PropTypes.object,
+        ratio: PropTypes.oneOf(Objects.values(ImageRatio)),
+        bSize: PropTypes.oneOf(Objects.values(ImageSize)),
+        src: PropTypes.string.isRequired
+    };
 
-    const classNames = ClassNames(
-        ImageStyle.image,
-        ImageStyle[bSize],
-        ImageStyle[ratio],
-        pClassName,
-    );
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <figure className={classNames} style={pStyle}>
-            <img {...inputProps}>
-                {props.children}
-            </img>
-        </figure>
-    );
-};
+    public render(): JSX.Element {
+        const {bSize, ratio, pClassName, pStyle, children, ...inputProps} = this.props;
 
-Image.propTypes = {
-    ...HTMLComponent.propTypes,
-    alt: PropTypes.string,
-    pClassName: PropTypes.string,
-    pStyle: PropTypes.object,
-    ratio: PropTypes.oneOf(Objects.values(ImageRatio)),
-    bSize: PropTypes.oneOf(Objects.values(ImageSize)),
-    src: PropTypes.string.isRequired
-};
+        const classNames = ClassNames(
+            ImageStyle.image,
+            ImageStyle[bSize],
+            ImageStyle[ratio],
+            pClassName,
+        );
 
-Image.defaultProps = HTMLComponent.defaultProps;
-
-Image.displayName = 'Image';
-
-export default Image;
+        return (
+            <figure className={classNames} style={pStyle}>
+                <img {...inputProps}>
+                    {children}
+                </img>
+            </figure>
+        );
+    }
+}

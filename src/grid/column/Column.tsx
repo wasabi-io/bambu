@@ -1,6 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {Props} from "wasabi-common";
 import {bulma as ColumnsStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 /**
@@ -12,39 +13,36 @@ export interface ColumnProps extends HTMLDivProps {
     offset?: string;
 }
 
-const Column: React.SFC<ColumnProps> = (props: ColumnProps) => {
+export default class Column extends React.Component<ColumnProps, {}> {
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+        ...HTMLComponent.propTypes,
+        isNarrow: PropTypes.bool,
+        offset: PropTypes.string,
+        bSize: PropTypes.string,
+    };
 
-    const {isNarrow, bSize, offset, className, ...inputProps} = props;
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        isNarrow: false,
+    };
 
-    const classNames = ClassNames(
-        ColumnsStyle.column,
-        ColumnsStyle[bSize],
-        ColumnsStyle[offset],
-        {
-            [`${ColumnsStyle.isNarrow}`]: isNarrow,
-        },
-        className,
-    );
+    public render(): JSX.Element {
+        const {isNarrow, bSize, offset, className, children, ...inputProps} = this.props;
 
-    return (
-        <div className={classNames} {...inputProps} >
-            {props.children}
-        </div>
-    );
-};
+        const classNames = ClassNames(
+            ColumnsStyle.column,
+            ColumnsStyle[bSize],
+            ColumnsStyle[offset],
+            {
+                [`${ColumnsStyle.isNarrow}`]: isNarrow,
+            },
+            className,
+        );
 
-Column.propTypes = {
-    ...HTMLComponent.propTypes,
-    isNarrow: PropTypes.bool,
-    offset: PropTypes.string,
-    bSize: PropTypes.string,
-};
-
-Column.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    isNarrow: false,
-};
-
-Column.displayName = 'Column';
-
-export default Column;
+        return (
+            <div className={classNames} {...inputProps} >
+                {children}
+            </div>
+        );
+    }
+}

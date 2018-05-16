@@ -1,26 +1,27 @@
 import * as ClassNames from 'classnames';
+import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {bulma as HeroStyle, HTMLComponent, HTMLSectionProps} from '../../';
+import {Props} from "wasabi-common";
+import {bulma as HeroStyle, HTMLComponent, HTMLFooterProps} from '../../';
 
-export type HeroFootProps = HTMLSectionProps;
+export interface HeroFootProps extends HTMLFooterProps {
+}
 
-const HeroFoot: React.SFC<HeroFootProps> = (props: HeroFootProps) => {
+export default class HeroFoot extends React.Component<HeroFootProps, {}> {
 
-    const {className, ...heroFootProps} = props;
+    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
 
-    const classNames = ClassNames(HeroStyle.heroFoot, className);
+    public static defaultProps = HTMLComponent.defaultProps;
 
-    return (
-        <section className={classNames} {...heroFootProps} >
-            {props.children}
-        </section>
-    );
-};
+    public render(): JSX.Element {
+        const {className, children, ...heroFootProps} = this.props;
 
-HeroFoot.propTypes = HTMLComponent.propTypes;
+        const classNames = ClassNames(HeroStyle.heroFoot, className);
 
-HeroFoot.defaultProps = HTMLComponent.defaultProps;
-
-HeroFoot.displayName = 'HeroFoot';
-
-export default HeroFoot;
+        return (
+            <footer className={classNames} {...heroFootProps} >
+                {children}
+            </footer>
+        );
+    }
+}
