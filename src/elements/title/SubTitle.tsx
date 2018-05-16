@@ -10,6 +10,7 @@ import {bulma as TitleStyle, HTMLComponent, HTMLPProps, Size6, size6Values} from
 export interface SubTitleProps extends HTMLPProps {
     bSize?: string | Size6;
     tagName?: string;
+    elementRef?: any;
 }
 
 export default class SubTitle extends React.Component<SubTitleProps, {}> {
@@ -26,7 +27,7 @@ export default class SubTitle extends React.Component<SubTitleProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {tagName, bSize, className, children, ...subTitleProps} = this.props;
+        const {tagName, bSize, className, children, elementRef, ...subTitleProps} = this.props;
 
         const classNames = ClassNames(
             TitleStyle.subtitle,
@@ -36,6 +37,7 @@ export default class SubTitle extends React.Component<SubTitleProps, {}> {
         (subTitleProps as any).className = classNames;
         return React.createElement(tagName, {
             className: classNames,
+            ref: elementRef,
             ...subTitleProps
         }, children);
     }

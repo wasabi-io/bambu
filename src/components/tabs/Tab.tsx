@@ -6,6 +6,7 @@ import {bulma as TabsStyle, HTMLComponent, HTMLLiProps} from '../../';
 
 export interface TabProps extends HTMLLiProps {
     isActive?: boolean;
+    elementRef?: any;
 }
 
 export default class Tab extends React.Component<TabProps, {}> {
@@ -21,7 +22,7 @@ export default class Tab extends React.Component<TabProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {isActive, className, children, ...inputProps} = this.props;
+        const {isActive, className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames(
             {
@@ -31,7 +32,7 @@ export default class Tab extends React.Component<TabProps, {}> {
         );
 
         return (
-            <li className={classNames} {...inputProps}>
+            <li className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </li>
         );

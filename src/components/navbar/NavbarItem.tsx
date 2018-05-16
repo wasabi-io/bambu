@@ -9,6 +9,7 @@ export interface NavbarItemProps extends HTMLAllAttributes {
     isHoverable?: boolean;
     hasDropdown?: boolean;
     tagName?: string;
+    elementRef?: any;
 }
 
 export default class NavbarItem extends React.Component<NavbarItemProps, {}> {
@@ -30,7 +31,7 @@ export default class NavbarItem extends React.Component<NavbarItemProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {tagName, isActive, isHoverable, hasDropdown, className, children, ...navbarItemProps} = this.props;
+        const {tagName, isActive, isHoverable, hasDropdown, className, children, elementRef, ...navbarItemProps} = this.props;
         const classNames = ClassNames(
             NavbarStyle.navbarItem,
             {
@@ -43,6 +44,7 @@ export default class NavbarItem extends React.Component<NavbarItemProps, {}> {
 
         return React.createElement(tagName, {
             className: classNames,
+            ref: elementRef,
             ...navbarItemProps
         }, children);
     }

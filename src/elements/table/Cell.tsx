@@ -9,6 +9,7 @@ import {bulma as TableStyle, HTMLComponent, HTMLTdProps} from '../../';
  */
 export interface CellProps extends HTMLTdProps {
     isIcon?: boolean;
+    elementRef?: any;
 }
 
 export default class Cell extends React.Component<CellProps, {}> {
@@ -24,12 +25,12 @@ export default class Cell extends React.Component<CellProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {isIcon, className, children, ...cellProps} = this.props;
+        const {isIcon, className, children, elementRef, ...cellProps} = this.props;
 
         const classNames = ClassNames(TableStyle.td, {[`${TableStyle.isIcon}`]: isIcon}, className);
 
         return (
-            <td className={classNames} {...cellProps}>
+            <td className={classNames} {...cellProps} ref={elementRef}>
                 {children}
             </td>
         );

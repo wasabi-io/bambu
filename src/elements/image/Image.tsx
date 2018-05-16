@@ -33,6 +33,7 @@ export interface ImageProps extends HTMLImgProps {
     ratio?: string | ImageRatio;
     bSize?: string | ImageSize;
     src: string;
+    elementRef?: any;
 }
 
 export default class Image extends React.Component<ImageProps, {}> {
@@ -50,7 +51,7 @@ export default class Image extends React.Component<ImageProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {bSize, ratio, pClassName, pStyle, children, ...inputProps} = this.props;
+        const {bSize, ratio, pClassName, pStyle, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames(
             ImageStyle.image,
@@ -60,7 +61,7 @@ export default class Image extends React.Component<ImageProps, {}> {
         );
 
         return (
-            <figure className={classNames} style={pStyle}>
+            <figure className={classNames} style={pStyle} ref={elementRef}>
                 <img {...inputProps}>
                     {children}
                 </img>

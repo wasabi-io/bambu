@@ -5,6 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as HeroStyle, HTMLComponent, HTMLHeaderProps} from '../../';
 
 export interface HeroHeadProps extends HTMLHeaderProps {
+    elementRef?: any;
 }
 
 export default class HeroHead extends React.Component<HeroHeadProps, {}> {
@@ -14,12 +15,12 @@ export default class HeroHead extends React.Component<HeroHeadProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...inputProps} = this.props;
+        const {className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames([HeroStyle.heroHead, className]);
 
         return (
-            <header className={classNames} {...inputProps} >
+            <header className={classNames} {...inputProps} ref={elementRef} >
                 {children}
             </header>
         );

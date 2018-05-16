@@ -92,4 +92,5 @@ typings/
 tsconfig.json
 tsconfig-lib.json
 tslint.json
+styleguide.config.js
 

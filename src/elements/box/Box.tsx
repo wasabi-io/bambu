@@ -4,7 +4,9 @@ import * as React from 'react';
 import {Props} from 'wasabi-common';
 import {bulma as BoxStyle, HTMLComponent, HTMLDivProps} from '../../';
 
-export type BoxProps = HTMLDivProps;
+export interface BoxProps extends HTMLDivProps{
+    elementRef?: any;
+}
 
 export default class Box extends React.Component<BoxProps, {}> {
 
@@ -13,12 +15,12 @@ export default class Box extends React.Component<BoxProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...boxProps} = this.props;
+        const {className, children, elementRef, ...boxProps} = this.props;
 
         const classNames = ClassNames(BoxStyle.box, className);
 
         return (
-            <div className={classNames} {...boxProps} >
+            <div className={classNames} {...boxProps} ref={elementRef} >
                 {children}
             </div>
         );

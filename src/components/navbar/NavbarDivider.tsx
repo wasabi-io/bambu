@@ -4,7 +4,9 @@ import * as React from 'react';
 import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLComponent, HTMLHrProps} from "../../";
 
-export type NavbarDividerProps = HTMLHrProps;
+export interface NavbarDividerProps extends HTMLHrProps{
+    elementRef?: any;
+}
 
 export default class NavbarDivider extends React.Component<NavbarDividerProps, {}> {
 
@@ -13,7 +15,7 @@ export default class NavbarDivider extends React.Component<NavbarDividerProps, {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...inputProps} = this.props;
+        const {className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames([
             NavbarStyle.navbarDivider,
@@ -21,7 +23,7 @@ export default class NavbarDivider extends React.Component<NavbarDividerProps, {
         ]);
 
         return (
-            <hr className={classNames} {...inputProps}>
+            <hr className={classNames} {...inputProps}  ref={elementRef}>
                 {children}
             </hr>
         );

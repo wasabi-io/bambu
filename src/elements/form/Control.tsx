@@ -12,6 +12,7 @@ export interface ControlProps extends HTMLDivProps {
     hasIconsRight?: boolean;
     isExpanded?: boolean;
     isLoading?: boolean;
+    elementRef?: any;
 }
 
 export default class Control extends React.Component<ControlProps, {}> {
@@ -39,7 +40,8 @@ export default class Control extends React.Component<ControlProps, {}> {
             isLoading,
             className,
             children,
-            ...inputProps
+            elementRef,
+            ...props
         } = this.props;
 
         const classNames = ClassNames(
@@ -54,7 +56,7 @@ export default class Control extends React.Component<ControlProps, {}> {
         );
 
         return (
-            <div className={classNames} {...inputProps} >
+            <div className={classNames} {...props} ref={elementRef} >
                 {children}
             </div>
         );

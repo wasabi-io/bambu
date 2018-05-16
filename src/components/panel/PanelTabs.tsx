@@ -4,7 +4,9 @@ import * as React from 'react';
 import {Props} from 'wasabi-common';
 import {bulma as PanelStyle, HTMLComponent, HTMLPProps} from '../../';
 
-export type PanelTabsProps = HTMLPProps;
+export interface PanelTabsProps extends HTMLPProps{
+    elementRef?: any;
+}
 
 export default class PanelTabs extends React.Component<PanelTabsProps, {}> {
 
@@ -13,12 +15,12 @@ export default class PanelTabs extends React.Component<PanelTabsProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...inputProps} = this.props;
+        const {className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames([PanelStyle.panelTabs, className]);
 
         return (
-            <p className={classNames} {...inputProps}>
+            <p className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </p>
         );

@@ -7,6 +7,7 @@ import {bulma as ContentStyle, Size, sizeValues} from '../../';
 
 export interface ContentProps extends HTMLElementProps {
     bSize?: string | Size;
+    elementRef?: any;
 }
 
 export default class Content extends React.Component<ContentProps, {}> {
@@ -19,7 +20,7 @@ export default class Content extends React.Component<ContentProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, bSize, children, ...inputProps} = this.props;
+        const {className, bSize, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames(
             ContentStyle.content,
@@ -28,7 +29,7 @@ export default class Content extends React.Component<ContentProps, {}> {
         );
 
         return (
-            <div className={classNames} {...inputProps} >
+            <div className={classNames} {...inputProps} ref={elementRef} >
                 {children}
             </div>
         );

@@ -6,6 +6,7 @@ import {bulma as TableStyle, HTMLComponent, HTMLTrProps} from '../../';
 
 export interface RowProps extends HTMLTrProps {
     isSelected?: boolean;
+    elementRef?: any;
 }
 
 export default class Row extends React.Component<RowProps, {}> {
@@ -20,12 +21,12 @@ export default class Row extends React.Component<RowProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {className, isSelected, children, ...rowProps} = this.props;
+        const {className, isSelected, children, elementRef, ...rowProps} = this.props;
 
         const classNames = ClassNames(TableStyle.tr, className, {[`${TableStyle.isSelected}`]: isSelected});
 
         return (
-            <tr className={classNames} {...rowProps} >
+            <tr className={classNames} {...rowProps} ref={elementRef}>
                 {children}
             </tr>
         );

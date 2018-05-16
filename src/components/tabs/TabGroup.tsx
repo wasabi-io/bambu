@@ -6,6 +6,7 @@ import {Alignment, alignmentValues, bulma as TabGroupStyle, HTMLComponent, HTMLD
 
 export interface TabGroupProps extends HTMLDivProps {
     alignment?: string | Alignment;
+    elementRef?: any;
 }
 
 
@@ -19,7 +20,7 @@ export default class TabGroup extends React.Component<TabGroupProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {alignment, className, children, ...inputProps} = this.props;
+        const {alignment, className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames(
             TabGroupStyle[alignment],
@@ -27,7 +28,7 @@ export default class TabGroup extends React.Component<TabGroupProps, {}> {
         );
 
         return (
-            <div className={classNames} {...inputProps}>
+            <div className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </div>
         );

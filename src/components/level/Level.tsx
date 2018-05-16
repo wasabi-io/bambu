@@ -9,6 +9,7 @@ import {bulma as LevelStyle, HTMLComponent, HTMLElementProps, Responsive, respon
  */
 export interface LevelProps extends HTMLElementProps {
     responsive?: Responsive;
+    elementRef?: any;
 }
 
 export default class Level extends React.Component<LevelProps, {}> {
@@ -21,7 +22,7 @@ export default class Level extends React.Component<LevelProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {responsive, className, children, ...levelProps} = this.props;
+        const {responsive, className, children, elementRef, ...levelProps} = this.props;
 
         const classNames = ClassNames(
             LevelStyle.level,
@@ -30,7 +31,7 @@ export default class Level extends React.Component<LevelProps, {}> {
         );
 
         return (
-            <nav className={classNames} {...levelProps} >
+            <nav className={classNames} {...levelProps} ref={elementRef} >
                 {children}
             </nav>
         );

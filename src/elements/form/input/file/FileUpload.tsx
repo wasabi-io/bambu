@@ -17,6 +17,7 @@ export interface FileUploadProps extends HTMLInputProps {
     isFullwidth?: boolean;
     isBoxed?: boolean;
     alignment?: string | Alignment;
+    elementRef?: any;
 }
 
 const FileUpload: React.SFC<FileUploadProps> = (props: FileUploadProps) => {

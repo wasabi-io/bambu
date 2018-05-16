@@ -6,6 +6,7 @@ import {bulma as LevelStyle, HTMLAllAttributes, HTMLComponent} from '../../';
 
 export interface LevelRightProps extends HTMLAllAttributes {
     tagName?: string;
+    elementRef?: any;
 }
 
 export default class LevelRight extends React.Component<LevelRightProps, {}> {
@@ -21,9 +22,10 @@ export default class LevelRight extends React.Component<LevelRightProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {tagName, className, children, ...levelRightProps} = this.props;
+        const {tagName, className, children, elementRef, ...levelRightProps} = this.props;
         return React.createElement(tagName, {
             className: ClassNames(LevelStyle.levelRight, className),
+            ref: elementRef,
             ...levelRightProps
         }, children);
     }

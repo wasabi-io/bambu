@@ -4,7 +4,9 @@ import * as React from 'react';
 import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from '../../';
 
-export type NavbarStartProps = HTMLDivProps;
+export interface NavbarStartProps extends HTMLDivProps{
+    elementRef?: any;
+}
 
 export default class NavbarStart extends React.Component<NavbarStartProps, {}> {
 
@@ -13,11 +15,11 @@ export default class NavbarStart extends React.Component<NavbarStartProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...navbarStartProps} = this.props;
+        const {className, children, elementRef, ...navbarStartProps} = this.props;
         const classNames = ClassNames(NavbarStyle.navbarStart, className);
 
         return (
-            <div className={classNames} role="navigation" aria-label="main navigation" {...navbarStartProps}>
+            <div className={classNames} role="navigation" aria-label="main navigation" {...navbarStartProps} ref={elementRef}>
                 {children}
             </div>
         );

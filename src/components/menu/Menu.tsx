@@ -5,6 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as MenuStyle, HTMLAsideProps, HTMLComponent} from '../../';
 
 export interface MenuProps extends HTMLAsideProps {
+    elementRef?: any;
 }
 
 export default class Menu extends React.Component<MenuProps, {}> {
@@ -14,12 +15,12 @@ export default class Menu extends React.Component<MenuProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...inputProps} = this.props;
+        const {className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames([MenuStyle.menu, className]);
 
         return (
-            <aside className={classNames} {...inputProps}>
+            <aside className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </aside>
         );

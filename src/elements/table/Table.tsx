@@ -10,6 +10,7 @@ export interface TableProps extends HTMLTableProps {
     isNarrow?: boolean;
     isHoverable?: boolean;
     isFullwidth?: boolean;
+    elementRef?: any;
 }
 
 
@@ -34,7 +35,7 @@ export default class Table extends React.Component<TableProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {isBordered, isStriped, isHoverable, isNarrow, isFullwidth, className, children, ...tableProps} = this.props;
+        const {isBordered, isStriped, isHoverable, isNarrow, isFullwidth, className, children, elementRef, ...tableProps} = this.props;
 
         const classNames = ClassNames(
             TableStyle.table,
@@ -49,7 +50,7 @@ export default class Table extends React.Component<TableProps, {}> {
         );
 
         return (
-            <table className={classNames} {...tableProps}>
+            <table className={classNames} {...tableProps} ref={elementRef}>
                 {children}
             </table>
         );

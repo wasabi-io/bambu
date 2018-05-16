@@ -9,6 +9,7 @@ import {bulma as FormStyle, Color, colorValues, HTMLComponent, HTMLPProps} from 
  */
 export interface FieldHelpProps extends HTMLPProps {
     color?: string | Color;
+    elementRef?: any;
 }
 
 export default class FieldHelp extends React.Component<FieldHelpProps, {}> {
@@ -25,6 +26,7 @@ export default class FieldHelp extends React.Component<FieldHelpProps, {}> {
             color,
             className,
             children,
+            elementRef,
             ...fieldHelpProps
         } = this.props;
 
@@ -35,7 +37,7 @@ export default class FieldHelp extends React.Component<FieldHelpProps, {}> {
         ]);
 
         return (
-            <p className={classNames} {...fieldHelpProps} >
+            <p className={classNames} {...fieldHelpProps} ref={elementRef}>
                 {children}
             </p>
         );

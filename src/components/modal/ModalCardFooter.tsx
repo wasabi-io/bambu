@@ -5,6 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as ModalStyle, HTMLComponent, HTMLFooterProps} from '../../';
 
 export interface ModalCardFooterProps extends HTMLFooterProps {
+    elementRef?: any;
 }
 
 export default class ModalCardFooter extends React.Component<ModalCardFooterProps, {}> {
@@ -14,12 +15,12 @@ export default class ModalCardFooter extends React.Component<ModalCardFooterProp
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...modalCardFooterProps} = this.props;
+        const {className, children, elementRef, ...modalCardFooterProps} = this.props;
 
         const classNames = ClassNames(ModalStyle.modalCardFoot, className);
 
         return (
-            <footer className={classNames} {...modalCardFooterProps}>
+            <footer className={classNames} {...modalCardFooterProps}  ref={elementRef}>
                 {children}
             </footer>
         );

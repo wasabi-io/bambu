@@ -6,6 +6,7 @@ import {bulma as ModalStyle, HTMLComponent, HTMLHeaderProps} from '../../';
 
 export interface ModalCardTitleProps extends HTMLHeaderProps {
     header?: string;
+    elementRef?: any;
 }
 
 export default class ModalCardTitle extends React.Component<ModalCardTitleProps, {}> {
@@ -17,12 +18,12 @@ export default class ModalCardTitle extends React.Component<ModalCardTitleProps,
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...modalCardTitleProps} = this.props;
+        const {className, children, elementRef, ...modalCardTitleProps} = this.props;
 
         const classNames = ClassNames(ModalStyle.modalCardTitle, className);
 
         return (
-            <header className={classNames} {...modalCardTitleProps}>
+            <header className={classNames} {...modalCardTitleProps}  ref={elementRef}>
                 {children}
             </header>
         );

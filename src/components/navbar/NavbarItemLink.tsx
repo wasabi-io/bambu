@@ -8,6 +8,7 @@ export interface NavbarItemLinkProps extends HTMLAllAttributes {
     isActive?: boolean;
     isHiddenDesktop?: boolean;
     isHiddenMobile?: boolean;
+    elementRef?: any;
 }
 
 
@@ -28,7 +29,7 @@ export default class NavbarItemLink extends React.Component<NavbarItemLinkProps,
     };
 
     public render(): JSX.Element {
-        const {isActive, isHiddenDesktop, isHiddenMobile, className, children, ...inputProps} = this.props;
+        const {isActive, isHiddenDesktop, isHiddenMobile, className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames(
             NavbarStyle.navbarItem,
@@ -41,7 +42,7 @@ export default class NavbarItemLink extends React.Component<NavbarItemLinkProps,
         );
 
         return (
-            <a className={classNames} {...inputProps}>
+            <a className={classNames} {...inputProps}  ref={elementRef}>
                 {children}
             </a>
         );

@@ -5,6 +5,7 @@ import {Props} from 'wasabi-common';
 import {bulma as PanelStyle, HTMLComponent, HTMLPProps} from '../../';
 
 export interface PanelHeadingProps extends HTMLPProps {
+    elementRef?: any;
 }
 
 export default class PanelHeading extends React.Component<PanelHeadingProps, {}> {
@@ -14,7 +15,7 @@ export default class PanelHeading extends React.Component<PanelHeadingProps, {}>
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...inputProps} = this.props;
+        const {className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames([
             PanelStyle.panelHeading,
@@ -22,7 +23,7 @@ export default class PanelHeading extends React.Component<PanelHeadingProps, {}>
         ]);
 
         return (
-            <p className={classNames} {...inputProps}>
+            <p className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </p>
         );

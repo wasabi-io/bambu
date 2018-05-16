@@ -12,6 +12,7 @@ export interface ProgressProps extends HTMLProgressProps {
     max: number;
     bSize?: string | Size;
     value: number;
+    elementRef?: any;
 }
 
 
@@ -28,7 +29,7 @@ export default class Progress extends React.Component<ProgressProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {bSize, color, className, children, ...inputProps} = this.props;
+        const {bSize, color, className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames([
             ProgressStyle.progress,
@@ -38,7 +39,7 @@ export default class Progress extends React.Component<ProgressProps, {}> {
         ]);
 
         return (
-            <progress className={classNames} {...inputProps}>
+            <progress className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </progress>
         );

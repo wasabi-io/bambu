@@ -13,6 +13,7 @@ export interface NavbarDropdownParentProps extends HTMLDivProps {
     isActive?: boolean;
     hasDropdownUp?: boolean;
     state?: ShowingState;
+    elementRef?: any;
 }
 
 export default class NavbarDropdownParent extends React.Component<NavbarDropdownParentProps, {}> {
@@ -30,7 +31,7 @@ export default class NavbarDropdownParent extends React.Component<NavbarDropdown
     };
 
     public render(): JSX.Element {
-        const {isActive, hasDropdownUp, state, className, children, ...inputProps} = this.props;
+        const {isActive, hasDropdownUp, state, className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames(
             NavbarStyle.navbarItem,
@@ -44,7 +45,7 @@ export default class NavbarDropdownParent extends React.Component<NavbarDropdown
         );
 
         return (
-            <div className={classNames} {...inputProps}>
+            <div className={classNames} {...inputProps}  ref={elementRef}>
                 {children}
             </div>
         );

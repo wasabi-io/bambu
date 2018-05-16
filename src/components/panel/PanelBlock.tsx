@@ -13,6 +13,7 @@ export interface PanelBlockProps extends HTMLDivProps {
     icon?: IconOptions;
     iconSize?: IconSize;
     iconParent?: HTMLSpanProps;
+    elementRef?: any;
 }
 
 /**
@@ -58,7 +59,7 @@ export default class PanelBlock extends HTMLComponent<PanelBlockProps> {
      */
     public render(): JSX.Element {
 
-        const {isActive, icon, iconSize, iconParent, className, ...inputProps} = this.props;
+        const {isActive, icon, iconSize, iconParent, className, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames(
             PanelStyle.panelBlock,
@@ -69,7 +70,7 @@ export default class PanelBlock extends HTMLComponent<PanelBlockProps> {
         );
 
         return (
-            <span className={classNames} {...inputProps}>
+            <span className={classNames} {...inputProps} ref={elementRef}>
                 {PanelBlock.renderIcon(icon, iconSize, iconParent)}
                 {this.props.children}
             </span>

@@ -6,6 +6,7 @@ import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export interface NavbarBrandProps extends HTMLDivProps {
     hasShadow?: boolean;
+    elementRef?: any;
 }
 
 export default class NavbarBrand extends React.Component<NavbarBrandProps, {}> {
@@ -21,12 +22,12 @@ export default class NavbarBrand extends React.Component<NavbarBrandProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {hasShadow, className, children, ...inputProps} = this.props;
+        const {hasShadow, className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames(NavbarStyle.navbarBrand, {[`${NavbarStyle.hasShadow}`]: hasShadow}, className);
 
         return (
-            <div className={classNames} {...inputProps}>
+            <div className={classNames} {...inputProps}  ref={elementRef}>
                 {children}
             </div>
         );

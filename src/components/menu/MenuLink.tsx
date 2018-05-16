@@ -7,6 +7,7 @@ import {bulma as MenuStyle, HTMLAProps, HTMLComponent} from '../../';
 export interface MenuLinkProps extends HTMLAProps {
     isActive?: boolean;
     href?: string;
+    elementRef?: any;
 }
 
 export default class MenuLink extends React.Component<MenuLinkProps, {}> {
@@ -23,12 +24,12 @@ export default class MenuLink extends React.Component<MenuLinkProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {isActive, className, children, ...inputProps} = this.props;
+        const {isActive, className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames({[`${MenuStyle.isActive}`]: isActive}, className);
 
         return (
-            <a className={classNames} {...inputProps}>
+            <a className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </a>
         );

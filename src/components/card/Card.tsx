@@ -8,6 +8,7 @@ import {bulma as CardStyle, HTMLComponent, HTMLDivProps} from '../../';
  * Refers Html Props and Additional Props.
  */
 export interface CardProps extends HTMLDivProps {
+    elementRef?: any;
 }
 
 export default class Card extends React.Component<CardProps, {}> {
@@ -17,7 +18,7 @@ export default class Card extends React.Component<CardProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...cardProps} = this.props;
+        const {className, elementRef, children, ...cardProps} = this.props;
 
         const classNames = ClassNames([
             CardStyle.card,
@@ -25,7 +26,7 @@ export default class Card extends React.Component<CardProps, {}> {
         ]);
 
         return (
-            <div className={classNames} {...cardProps} >
+            <div className={classNames} {...cardProps} ref={elementRef} >
                 {children}
             </div>
         );

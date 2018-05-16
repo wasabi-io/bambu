@@ -8,6 +8,7 @@ import {bulma as DropdownStyle, HTMLComponent, HTMLDivProps} from '../../';
  * Refers Html Props and Additional Props.
  */
 export interface DropdownContentProps extends HTMLDivProps {
+    elementRef?: any;
 }
 
 export default class DropdownContent extends React.Component<DropdownContentProps, {}> {
@@ -17,7 +18,7 @@ export default class DropdownContent extends React.Component<DropdownContentProp
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {children, className, ...ownProps} = this.props;
+        const {children, className, elementRef, ...ownProps} = this.props;
 
         const classNames = ClassNames(
             DropdownStyle.dropdownContent,
@@ -25,7 +26,7 @@ export default class DropdownContent extends React.Component<DropdownContentProp
         );
 
         return (
-            <div className={classNames} {...ownProps}>
+            <div className={classNames} {...ownProps} ref={elementRef}>
                 {children}
             </div>
         );

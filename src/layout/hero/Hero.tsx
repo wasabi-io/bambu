@@ -20,6 +20,7 @@ export interface HeroProps extends HTMLSectionProps {
     isBold?: boolean;
     isMedium?: boolean;
     bSize?: string | HeroSize;
+    elementRef?: any;
 }
 
 export default class Hero extends React.Component<HeroProps, {}> {
@@ -39,7 +40,7 @@ export default class Hero extends React.Component<HeroProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {bSize, color, isBold, isMedium, className, children, ...heroProps} = this.props;
+        const {bSize, color, isBold, isMedium, className, children, elementRef, ...heroProps} = this.props;
 
         const classNames = ClassNames(
             HeroStyle.hero,
@@ -53,7 +54,7 @@ export default class Hero extends React.Component<HeroProps, {}> {
         );
 
         return (
-            <section className={classNames} {...heroProps} >
+            <section className={classNames} {...heroProps} ref={elementRef} >
                 {children}
             </section>
         );

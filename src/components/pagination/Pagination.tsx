@@ -12,6 +12,7 @@ export interface PaginationProps extends HTMLNavProps {
     previousText?: string;
     next?: boolean;
     nextText?: string;
+    elementRef?: any;
 }
 
 export default class Pagination extends React.Component<PaginationProps, {}> {
@@ -46,6 +47,7 @@ export default class Pagination extends React.Component<PaginationProps, {}> {
             isRounded,
             className,
             children,
+            elementRef,
             ...paginationProps
         } = this.props;
 
@@ -58,7 +60,7 @@ export default class Pagination extends React.Component<PaginationProps, {}> {
         );
 
         return (
-            <nav role="navigation" aria-label="pagination" className={classNames} {...paginationProps}>
+            <nav role="navigation" aria-label="pagination" className={classNames} {...paginationProps} ref={elementRef}>
                 {previous && <a className={PaginationStyle.paginationPrevious}>{previousText}</a>}
                 {next && <a className={PaginationStyle.paginationNext}>{nextText}</a>}
                 {children}

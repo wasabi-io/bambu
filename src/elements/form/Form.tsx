@@ -4,6 +4,7 @@ import {Props} from 'wasabi-common';
 import HTMLComponent, {HTMLFormProps} from '../../base/html/HTML';
 
 export interface FormProps extends HTMLFormProps {
+    elementRef?: any;
 }
 
 export default class Form extends React.Component<FormProps, {}> {
@@ -13,9 +14,9 @@ export default class Form extends React.Component<FormProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {children, ...props} = this.props;
+        const {children, elementRef, ...props} = this.props;
         return (
-            <form {...props} >
+            <form {...props} ref={elementRef} >
                 {children}
             </form>
         );

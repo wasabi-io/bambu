@@ -10,6 +10,7 @@ import {bulma as DropdownStyle, HTMLComponent, HTMLDivProps} from '../../';
 export interface DropdownItemProps extends HTMLDivProps {
     tagName?: string;
     isActive?: boolean;
+    elementRef?: any;
 }
 
 export default class DropdownItem extends React.Component<DropdownItemProps, {}> {
@@ -27,7 +28,7 @@ export default class DropdownItem extends React.Component<DropdownItemProps, {}>
     };
 
     public render(): JSX.Element {
-        const {tagName, isActive, children, className, ...ownProps} = this.props;
+        const {tagName, isActive, children, className, elementRef, ...ownProps} = this.props;
 
         const classNames = ClassNames(
             DropdownStyle.dropdownItem,
@@ -39,6 +40,7 @@ export default class DropdownItem extends React.Component<DropdownItemProps, {}>
 
         return React.createElement(tagName, {
             className: classNames,
+            ref: elementRef,
             ...ownProps
         }, children);
     }

@@ -13,6 +13,7 @@ export interface DropdownProps extends HTMLDivProps {
     isHoverable?: boolean;
     isRight?: boolean;
     isUp?: boolean;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Dropdown extends Stateless<DropdownProps> {
@@ -37,7 +38,7 @@ export default class Dropdown extends Stateless<DropdownProps> {
     }
 
     public render() {
-        const {children, className, isActive, isHoverable, isRight, isUp, ...dropdownProps} = this.props;
+        const {children, className, isActive, isHoverable, isRight, isUp, elementRef, ...dropdownProps} = this.props;
         const classNames = ClassNames(
             DropdownStyle.dropdown,
             {
@@ -53,11 +54,18 @@ export default class Dropdown extends Stateless<DropdownProps> {
             <div
                 className={classNames}
                 {...dropdownProps}
-                ref={ref => this.dropdownRef = ref}
+                ref={this.createRef}
                 onClick={this.onDropDown}
             >
                 {children}
             </div>
         );
+    }
+
+    private createRef = (ref: any) => {
+        this.dropdownRef = ref;
+        if (this.props.elementRef) {
+            this.props.elementRef(ref);
+        }
     }
 }

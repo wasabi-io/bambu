@@ -10,6 +10,7 @@ import {bulma as TitleStyle, HTMLComponent, HTMLPProps, Size6, size6Values} from
 export interface TitleProps extends HTMLPProps {
     bSize?: string | Size6;
     tagName?: string;
+    elementRef?: any;
 }
 
 export default class Title extends React.Component<TitleProps, {}> {
@@ -26,7 +27,7 @@ export default class Title extends React.Component<TitleProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {tagName, bSize, className, children, ...titleProps} = this.props;
+        const {tagName, bSize, className, children, elementRef, ...titleProps} = this.props;
 
         const classNames = ClassNames([
             TitleStyle.title,
@@ -36,6 +37,7 @@ export default class Title extends React.Component<TitleProps, {}> {
 
         return React.createElement(tagName, {
             className: classNames,
+            ref: elementRef,
             ...titleProps
         }, children);
     }

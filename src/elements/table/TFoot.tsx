@@ -6,6 +6,7 @@ import {bulma as TableStyle, HTMLComponent, HTMLTfootProps} from '../../';
 
 
 export interface TFootProps extends HTMLTfootProps {
+    elementRef?: any;
 }
 
 export default class Class extends React.Component<TFootProps, {}> {
@@ -15,12 +16,12 @@ export default class Class extends React.Component<TFootProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...tFootProps} = this.props;
+        const {className, children, elementRef, ...tFootProps} = this.props;
 
         const classNames = ClassNames(TableStyle.tfoot, className);
 
         return (
-            <tfoot className={classNames} {...tFootProps} >
+            <tfoot className={classNames} {...tFootProps} ref={elementRef} >
             {children}
             </tfoot>
         );

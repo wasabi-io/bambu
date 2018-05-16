@@ -11,6 +11,7 @@ export interface TagProps extends HTMLAllAttributes {
     color?: string | Color;
     bSize?: string | Size;
     tagName?: string;
+    elementRef?: any;
 }
 
 export default class Tag extends React.Component<TagProps, {}> {
@@ -27,7 +28,7 @@ export default class Tag extends React.Component<TagProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {tagName, bSize, color, className, children, ...tagProps} = this.props;
+        const {tagName, bSize, color, className, children, elementRef, ...tagProps} = this.props;
 
         const classNames = ClassNames([
             TagStyle.tag,
@@ -38,6 +39,7 @@ export default class Tag extends React.Component<TagProps, {}> {
 
         return React.createElement(tagName, {
             className: classNames,
+            ref: elementRef,
             ...tagProps
         }, children);
     }

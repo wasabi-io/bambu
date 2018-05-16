@@ -5,7 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as CardStyle, HTMLComponent, HTMLElementProps} from '../../';
 
 export interface CardHeaderProps extends HTMLElementProps {
-
+    elementRef?: any;
 }
 
 export default class CardHeader extends React.Component<CardHeaderProps, {}> {
@@ -15,7 +15,7 @@ export default class CardHeader extends React.Component<CardHeaderProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...cardHeaderProps} = this.props;
+        const {className, elementRef, children, ...cardHeaderProps} = this.props;
 
         const classNames = ClassNames([
             CardStyle.cardHeader,
@@ -23,7 +23,7 @@ export default class CardHeader extends React.Component<CardHeaderProps, {}> {
         ]);
 
         return (
-            <header className={classNames} {...cardHeaderProps} >
+            <header className={classNames} {...cardHeaderProps} ref={elementRef} >
                 {children}
             </header>
         );

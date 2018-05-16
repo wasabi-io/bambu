@@ -5,6 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as PanelStyle, HTMLComponent, HTMLNavProps} from '../../';
 
 export interface PanelProps extends HTMLNavProps {
+    elementRef?: any;
 }
 
 export default class Panel extends React.Component<PanelProps, {}> {
@@ -14,12 +15,12 @@ export default class Panel extends React.Component<PanelProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...inputProps} = this.props;
+        const {className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames([PanelStyle.panel, className]);
 
         return (
-            <nav className={classNames} {...inputProps}>
+            <nav className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </nav>
         );

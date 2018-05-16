@@ -18,6 +18,7 @@ export interface BreadCrumbProps extends HTMLElementProps {
     alignment?: string | Alignment;
     separator?: string | BreadCrumbSeperator;
     bSize?: string | Size;
+    elementRef?: any;
 }
 
 export default class BreadCrumb extends React.Component<BreadCrumbProps, {}> {
@@ -32,7 +33,7 @@ export default class BreadCrumb extends React.Component<BreadCrumbProps, {}> {
 
     public render(): JSX.Element {
 
-        const {alignment, bSize, separator, className, children, ...breadCrumbProps} = this.props;
+        const {alignment, bSize, separator, className, elementRef, children, ...breadCrumbProps} = this.props;
 
         const classNames = ClassNames(
             BreadCrumbStyle.breadcrumb,
@@ -43,7 +44,7 @@ export default class BreadCrumb extends React.Component<BreadCrumbProps, {}> {
         );
 
         return (
-            <nav className={classNames} {...breadCrumbProps} >
+            <nav className={classNames} {...breadCrumbProps} ref={elementRef} >
                 <ul>
                     {children}
                 </ul>

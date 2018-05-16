@@ -14,6 +14,7 @@ export type IconOptions = string | FaIconProps | JSX.Element;
 export interface IconProps extends HTMLSpanProps {
     icon: string | IconOptions;
     bSize?: string | IconSize;
+    elementRef?: any;
 }
 
 export default class Icon extends HTMLComponent<IconProps> {
@@ -42,13 +43,13 @@ export default class Icon extends HTMLComponent<IconProps> {
     }
 
     public render() {
-        const {bSize, icon, className, ...props} = this.props;
+        const {bSize, icon, className, elementRef, ...props} = this.props;
 
         const classNames = ClassNames(
             IconStyle.icon,
             className
         );
 
-        return <span className={classNames} {...props} >{Icon.renderIcon(icon, bSize)}</span>;
+        return <span className={classNames} {...props} ref={elementRef}>{Icon.renderIcon(icon, bSize)}</span>;
     }
 }

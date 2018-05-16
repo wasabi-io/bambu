@@ -5,6 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as PaginationStyle, HTMLComponent, HTMLSpanProps} from '../../';
 
 export interface PaginationEllipsisProps extends HTMLSpanProps {
+    elementRef?: any;
 }
 
 export default class PaginationEllipsis extends React.Component<PaginationEllipsisProps, {}> {
@@ -14,12 +15,12 @@ export default class PaginationEllipsis extends React.Component<PaginationEllips
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, ...paginationEllipsisProps} = this.props;
+        const {className, elementRef, ...paginationEllipsisProps} = this.props;
 
         const classNames = ClassNames(PaginationStyle.paginationEllipsis, className);
 
         return (
-            <li><span className={classNames}>&hellip;</span></li>
+            <li><span className={classNames} {...paginationEllipsisProps} ref={elementRef}>&hellip;</span></li>
         );
     }
 }

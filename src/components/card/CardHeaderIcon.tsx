@@ -10,6 +10,7 @@ import Icon, {IconOptions} from '../../elements/icon/Icon';
  */
 export interface CardHeaderIconProps extends HTMLAProps {
     icon?: IconOptions;
+    elementRef?: any;
 }
 
 export default class CardHeaderIcon extends React.Component<CardHeaderIconProps, {}> {
@@ -22,7 +23,7 @@ export default class CardHeaderIcon extends React.Component<CardHeaderIconProps,
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {icon, className, children, ...inputProps} = this.props;
+        const {icon, className, elementRef, children, ...inputProps} = this.props;
 
         const classNames = ClassNames([
             CardStyle.cardHeaderIcon,
@@ -30,7 +31,7 @@ export default class CardHeaderIcon extends React.Component<CardHeaderIconProps,
         ]);
 
         return (
-            <a className={classNames} {...inputProps}>
+            <a className={classNames} {...inputProps} ref={elementRef}>
                 {icon && <Icon icon={icon}/>}
                 {children}
             </a>

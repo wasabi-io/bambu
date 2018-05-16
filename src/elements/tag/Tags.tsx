@@ -9,6 +9,7 @@ import {bulma as TagStyle, colorValues, HTMLComponent, HTMLSpanProps} from '../.
  */
 export interface TagsProps extends HTMLSpanProps {
     hasAddons?: boolean;
+    elementRef?: any;
 }
 
 export default class Tags extends React.Component<TagsProps, {}> {
@@ -20,12 +21,12 @@ export default class Tags extends React.Component<TagsProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {hasAddons, className, children, ...tagsProps} = this.props;
+        const {hasAddons, className, children, elementRef, ...tagsProps} = this.props;
 
         const classNames = ClassNames(TagStyle.tags, {[`${TagStyle.hasAddons}`]: hasAddons,}, className);
 
         return (
-            <div className={classNames} {...tagsProps}>
+            <div className={classNames} {...tagsProps} ref={elementRef}>
                 {children}
             </div>
         );

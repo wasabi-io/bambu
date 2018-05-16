@@ -3,6 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {Props} from 'wasabi-common';
 import {bulma as FormStyle, Color, colorValues, HTMLComponent, HTMLInputProps, Size, sizeValues, State, stateValues} from '../../../';
+import Stateless from "wasabi-ui/lib/Stateless";
 
 /**
  * Refers Html Props and Additional Props.
@@ -12,9 +13,10 @@ export interface InputProps extends HTMLInputProps {
     bSize?: string | Size;
     state?: string | State;
     onChange?: any;
+    elementRef?: any;
 }
 
-export default class Input extends React.Component<InputProps, {}> {
+export default class Input extends Stateless<InputProps> {
     public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
         ...HTMLComponent.propTypes,
         color: PropTypes.oneOf(colorValues),
@@ -32,6 +34,8 @@ export default class Input extends React.Component<InputProps, {}> {
             state,
             type,
             className,
+            elementRef,
+            children,
             ...inputProps
         } = this.props;
 
@@ -47,8 +51,8 @@ export default class Input extends React.Component<InputProps, {}> {
         );
 
         return (
-            <input type={type} className={classNames} {...inputProps} >
-                {this.props.children}
+            <input type={type} className={classNames} {...inputProps} ref={this.props.elementRef} >
+                {children}
             </input>
         );
     }

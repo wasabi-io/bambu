@@ -11,6 +11,7 @@ export interface ColumnProps extends HTMLDivProps {
     isNarrow?: boolean;
     bSize?: string;
     offset?: string;
+    elementRef?: any;
 }
 
 export default class Column extends React.Component<ColumnProps, {}> {
@@ -27,7 +28,7 @@ export default class Column extends React.Component<ColumnProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {isNarrow, bSize, offset, className, children, ...inputProps} = this.props;
+        const {isNarrow, bSize, offset, className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames(
             ColumnsStyle.column,
@@ -40,7 +41,7 @@ export default class Column extends React.Component<ColumnProps, {}> {
         );
 
         return (
-            <div className={classNames} {...inputProps} >
+            <div className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </div>
         );

@@ -12,6 +12,7 @@ export interface ColumnsProps extends HTMLDivProps {
     isVcentered?: boolean;
     isGapless?: boolean;
     responsive?: string | Responsive;
+    elementRef?: any;
 }
 
 
@@ -31,7 +32,7 @@ export default class Columns extends React.Component<ColumnsProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {responsive, isMultiline, isVcentered, isGapless, className, children, ...inputProps} = this.props;
+        const {responsive, isMultiline, isVcentered, isGapless, className, children, elementRef, ...inputProps} = this.props;
         const classNames = ClassNames(
             ColumnsStyle.columns,
             ColumnsStyle[responsive],
@@ -44,7 +45,7 @@ export default class Columns extends React.Component<ColumnsProps, {}> {
         );
 
         return (
-            <div className={classNames} {...inputProps} >
+            <div className={classNames} {...inputProps} ref={elementRef} >
                 {children}
             </div>
         );

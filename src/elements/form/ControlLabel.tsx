@@ -10,6 +10,7 @@ import {bulma as FormStyle, HTMLComponent, HTMLLabelProps, Size, sizeValues} fro
 export interface ControlLabelProps extends HTMLLabelProps {
     bSize?: string | Size;
     isRadio?: boolean;
+    elementRef?: any;
 }
 
 export default class ControlLabel extends React.Component<ControlLabelProps, {}> {
@@ -31,6 +32,7 @@ export default class ControlLabel extends React.Component<ControlLabelProps, {}>
             className,
             isRadio,
             children,
+            elementRef,
             ...inputProps
         } = this.props;
 
@@ -44,7 +46,7 @@ export default class ControlLabel extends React.Component<ControlLabelProps, {}>
         );
 
         return (
-            <label className={classNames} {...inputProps} >
+            <label className={classNames} {...inputProps} ref={elementRef} >
                 {children}
             </label>
         );

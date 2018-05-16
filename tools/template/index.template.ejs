@@ -3,9 +3,24 @@
 
 <head>
     <script>
-        if(window.location.pathname.indexOf("bambu/") === 0) {
-            document.write('<base href="/bambu/"/>');
+        var index = window.location.pathname.indexOf("#");
+        if(index === -1) {
+            index = window.location.pathname.length;
         }
+
+        var basePath = window.location.pathname.substring(0, index - 1);
+        index = basePath.indexOf("index.html");
+        if(index !== -1) {
+            basePath = window.location.pathname.substring(0, index - 1);
+        }
+
+        if(basePath.length > 1) {
+            if(basePath.lastIndexOf("/") !== basePath.length -1 ) {
+                basePath = basePath + "/";
+            }
+            document.write('<base href="' + basePath + '"/>');
+        }
+        window.basePath = basePath || "/";
     </script>
     <!-- version: <%= htmlWebpackPlugin.options.version %> -->
     <!-- build time: <%= htmlWebpackPlugin.options.lastModified %> -->

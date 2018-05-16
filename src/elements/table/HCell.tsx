@@ -8,6 +8,7 @@ import {bulma as TableStyle, HTMLComponent, HTMLThProps} from '../../';
  * Refers Html Props and Additional Props.
  */
 export interface HCellProps extends HTMLThProps {
+    elementRef?: any;
 }
 
 export default class HCell extends React.Component<HCellProps, {}> {
@@ -16,12 +17,12 @@ export default class HCell extends React.Component<HCellProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...hCellProps} = this.props;
+        const {className, children, elementRef, ...hCellProps} = this.props;
 
         const classNames = ClassNames(TableStyle.th, className);
 
         return (
-            <th className={classNames} {...hCellProps} >
+            <th className={classNames} {...hCellProps} ref={elementRef} >
                 {children}
             </th>
         );

@@ -5,6 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as ModalStyle, HTMLComponent, HTMLSectionProps} from '../../';
 
 export interface ModalCardBodyProps extends HTMLSectionProps {
+    elementRef?: any;
 }
 
 export default class ModalCardBody extends React.Component<ModalCardBodyProps, {}> {
@@ -14,12 +15,12 @@ export default class ModalCardBody extends React.Component<ModalCardBodyProps, {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...modalCardBodyProps} = this.props;
+        const {className, children, elementRef, ...modalCardBodyProps} = this.props;
 
         const classNames = ClassNames(ModalStyle.modalCardBody, className);
 
         return (
-            <section className={classNames} {...modalCardBodyProps}>
+            <section className={classNames} {...modalCardBodyProps}  ref={elementRef}>
                 {children}
             </section>
         );

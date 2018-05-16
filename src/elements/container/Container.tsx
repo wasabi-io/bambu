@@ -12,6 +12,7 @@ export interface ContainerProps extends HTMLDivProps {
     isFullhd?: boolean;
     isTextCentered?: boolean;
     isWidescreen?: boolean;
+    elementRef?: any;
 }
 
 export default class Container extends React.Component<ContainerProps, {}> {
@@ -32,7 +33,7 @@ export default class Container extends React.Component<ContainerProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {isFluid, isFullhd, isWidescreen, isTextCentered, className, children, ...inputProps} = this.props;
+        const {isFluid, isFullhd, isWidescreen, isTextCentered, className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames(
             ContainerStyle.container,
@@ -46,7 +47,7 @@ export default class Container extends React.Component<ContainerProps, {}> {
         );
 
         return (
-            <div className={classNames} {...inputProps} >
+            <div className={classNames} {...inputProps} ref={elementRef} >
                 {children}
             </div>
         );

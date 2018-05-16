@@ -9,6 +9,7 @@ import {bulma as LevelStyle, HTMLComponent, HTMLDivProps} from '../../';
  */
 export interface LevelItemProps extends HTMLDivProps {
     hasTextCentered?: boolean;
+    elementRef?: any;
 }
 
 export default class LevelItem extends React.Component<LevelItemProps, {}> {
@@ -24,7 +25,7 @@ export default class LevelItem extends React.Component<LevelItemProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {hasTextCentered, className, children, ...levelItemProps} = this.props;
+        const {hasTextCentered, className, children, elementRef, ...levelItemProps} = this.props;
 
         const classNames = ClassNames(
             LevelStyle.levelItem,
@@ -35,7 +36,7 @@ export default class LevelItem extends React.Component<LevelItemProps, {}> {
         );
 
         return (
-            <div className={classNames} {...levelItemProps} >
+            <div className={classNames} {...levelItemProps} ref={elementRef}>
                 {children}
             </div>
         );

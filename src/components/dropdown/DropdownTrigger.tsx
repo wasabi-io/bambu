@@ -9,6 +9,7 @@ import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
  * Refers Html Props and Additional Props.
  */
 export interface DropdownTriggerProps extends HTMLDivProps {
+    elementRef?: any;
 }
 
 export default class DropdownTrigger extends React.Component<DropdownTriggerProps, {}> {
@@ -19,7 +20,7 @@ export default class DropdownTrigger extends React.Component<DropdownTriggerProp
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {children, className, ...ownProps} = this.props;
+        const {children, className, elementRef, ...ownProps} = this.props;
 
         const classNames = ClassNames(
             'dropdown-trigger',
@@ -27,7 +28,7 @@ export default class DropdownTrigger extends React.Component<DropdownTriggerProp
         );
 
         return (
-            <div className={classNames} {...ownProps}>
+            <div className={classNames} {...ownProps}  ref={elementRef}>
                 {children}
             </div>
         );

@@ -19,6 +19,7 @@ export interface TileProps extends HTMLDivProps {
     isDesktop?: boolean;
     isVertical?: boolean;
     bSize?: string | Size12;
+    elementRef?: any;
 }
 
 export default class Tile extends React.Component<TileProps, {}> {
@@ -37,7 +38,7 @@ export default class Tile extends React.Component<TileProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {context, isDesktop, bSize, isVertical, className, children, ...tileProps} = this.props;
+        const {context, isDesktop, bSize, isVertical, className, children, elementRef, ...tileProps} = this.props;
 
         const classNames = ClassNames(
             TileStyle.tile,
@@ -51,7 +52,7 @@ export default class Tile extends React.Component<TileProps, {}> {
         );
 
         return (
-            <div className={classNames} {...tileProps} >
+            <div className={classNames} {...tileProps} ref={elementRef} >
                 {children}
             </div>
         );

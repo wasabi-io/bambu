@@ -27,7 +27,7 @@ export interface FaIconProps extends HTMLIProps {
     rotate?: number;
     bSize?: string | IconSize;
     stack?: string | IconStack;
-
+    elementRef?: any;
     [key: string]: any;
 }
 
@@ -64,12 +64,12 @@ export default class FaIcon extends HTMLComponent<FaIconProps> {
         }
         const prefix = name.substring(0, 3);
         switch (prefix) {
-            case 'fa ':
-                return name;
-            case 'fa-':
-                return 'fa ' + name;
-            default:
-                return 'fa fa-' + name;
+        case 'fa ':
+            return name;
+        case 'fa-':
+            return 'fa ' + name;
+        default:
+            return 'fa fa-' + name;
         }
     }
 
@@ -112,6 +112,7 @@ export default class FaIcon extends HTMLComponent<FaIconProps> {
             rotate,
             bSize,
             stack,
+            elementRef,
             ...props,
         } = this.props;
 
@@ -132,7 +133,7 @@ export default class FaIcon extends HTMLComponent<FaIconProps> {
             className
         );
         return (
-            <i className={classNames} aria-hidden={ariaHidden} {...props} />
+            <i className={classNames} aria-hidden={ariaHidden} {...props} ref={elementRef} />
         );
     }
 }

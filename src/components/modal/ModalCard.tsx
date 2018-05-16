@@ -6,6 +6,7 @@ import {bulma as ModalStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 export interface ModalCardProps extends HTMLDivProps {
     isActive?: boolean;
+    elementRef?: any;
 }
 
 export default class ModalCard extends React.Component<ModalCardProps, {}> {
@@ -21,12 +22,12 @@ export default class ModalCard extends React.Component<ModalCardProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {isActive, className, children, ...modalCardProps} = this.props;
+        const {isActive, className, children, elementRef, ...modalCardProps} = this.props;
 
         const classNames = ClassNames(ModalStyle.modal, {[`${ModalStyle.isActive}`]: isActive}, className);
 
         return (
-            <div className={classNames} {...modalCardProps}>
+            <div className={classNames} {...modalCardProps}  ref={elementRef}>
                 <div className={ModalStyle.modalBackground}/>
                 <div className={ModalStyle.modalCard}>
                     {children}

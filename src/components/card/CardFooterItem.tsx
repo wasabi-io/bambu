@@ -6,6 +6,7 @@ import {bulma as CardStyle, HTMLComponent, HTMLElementProps} from '../../';
 
 export interface CardFooterItemProps extends HTMLElementProps {
     tagName?: string;
+    elementRef?: any;
 }
 
 export default class CardFooterItem extends React.Component<CardFooterItemProps, {}> {
@@ -21,13 +22,13 @@ export default class CardFooterItem extends React.Component<CardFooterItemProps,
     };
 
     public render(): JSX.Element {
-        const {tagName, children, className, ...cardFooterItemProps} = this.props;
+        const {tagName, className, elementRef, children, ...cardFooterItemProps} = this.props;
 
         const classNames = ClassNames([
             CardStyle.cardFooterItem,
             className
         ]);
 
-        return React.createElement(tagName, {className: classNames, ...cardFooterItemProps}, children);
+        return React.createElement(tagName, {className: classNames, ref: elementRef, ...cardFooterItemProps}, children);
     }
 }

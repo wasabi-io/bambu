@@ -21,6 +21,7 @@ export interface NavbarProps extends HTMLNavProps {
     role?: navBarRole | string;
     isTransparent?: boolean;
     isSpaced?: boolean;
+    elementRef?: any;
 }
 
 export default class Navbar extends React.Component<NavbarProps, {}> {
@@ -46,7 +47,7 @@ export default class Navbar extends React.Component<NavbarProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {color, arialLabel, isFixed, hasShadow, isTransparent, isSpaced, className, children, ...navbarProps} = this.props;
+        const {color, arialLabel, isFixed, hasShadow, isTransparent, isSpaced, className, children, elementRef, ...navbarProps} = this.props;
 
         const fixedClassName = Strings.has(isFixed) ? `isFixed${Strings.capitalizeFirstLetter(isFixed)}` : undefined;
 
@@ -63,7 +64,7 @@ export default class Navbar extends React.Component<NavbarProps, {}> {
         );
 
         return (
-            <nav className={classNames} aria-label={`${arialLabel} navigation`} {...navbarProps}>
+            <nav className={classNames} aria-label={`${arialLabel} navigation`} {...navbarProps}  ref={elementRef}>
                 {children}
             </nav>
         );

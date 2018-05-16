@@ -8,6 +8,7 @@ export interface PaginationLinkProps extends HTMLAProps {
     isCurrent?: boolean;
     page: string | number;
     arialLabel: string;
+    elementRef?: any;
 }
 
 export default class PaginationLink extends React.Component<PaginationLinkProps, {}> {
@@ -24,11 +25,11 @@ export default class PaginationLink extends React.Component<PaginationLinkProps,
     };
 
     public render(): JSX.Element {
-        const {isCurrent, className, children, ...paginationLinkProps} = this.props;
+        const {isCurrent, className, children, elementRef, ...paginationLinkProps} = this.props;
 
         const classNames = ClassNames(PaginationStyle.paginationLink, className, {[`${PaginationStyle.isCurrent}`]: isCurrent});
 
-        return (<li><a className={classNames} {...paginationLinkProps}>{children}</a></li>);
+        return (<li><a className={classNames} {...paginationLinkProps}  ref={elementRef}>{children}</a></li>);
     }
 }
 

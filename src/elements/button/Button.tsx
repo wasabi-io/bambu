@@ -24,6 +24,7 @@ export interface ButtonProps extends HTMLAllAttributes {
     disabled?: boolean;
     isRounded?: boolean;
     onClick?: any;
+    elementRef?: any;
 }
 
 
@@ -48,7 +49,7 @@ export default class Button extends React.Component<ButtonProps, {}> {
             isRounded, isInverted,
             icon, state, color, bSize,
             className, children,
-            disabled, onClick, ...buttonProps,
+            disabled, onClick, elementRef, ...buttonProps,
         } = this.props;
 
         const classNames = ClassNames(
@@ -76,6 +77,7 @@ export default class Button extends React.Component<ButtonProps, {}> {
             disabled,
             onClick: disabled ? null : onClick,
             className: classNames,
+            ref: elementRef,
             ...buttonProps,
         }, icon && <Icon icon={icon} bSize={bSize}/>, children);
     }

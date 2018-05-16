@@ -5,6 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as FooterStyle, HTMLComponent, HTMLFooterProps} from '../../';
 
 export interface FooterProps extends HTMLFooterProps {
+    elementRef?: any;
 }
 
 export default class Footer extends React.Component<FooterProps, {}> {
@@ -14,12 +15,12 @@ export default class Footer extends React.Component<FooterProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...inputProps} = this.props;
+        const {className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames([FooterStyle.footer, className]);
 
         return (
-            <footer className={classNames} {...inputProps} >
+            <footer className={classNames} {...inputProps} ref={elementRef} >
                 {children}
             </footer>
         );

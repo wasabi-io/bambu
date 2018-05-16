@@ -5,6 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as MediaStyle, HTMLArticleProps, HTMLComponent} from '../../';
 
 export interface MediaProps extends HTMLArticleProps {
+    elementRef?: any;
 }
 
 export default class Media extends React.Component<MediaProps, {}> {
@@ -14,7 +15,7 @@ export default class Media extends React.Component<MediaProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...inputProps} = this.props;
+        const {className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames(
             MediaStyle.media,
@@ -22,7 +23,7 @@ export default class Media extends React.Component<MediaProps, {}> {
         );
 
         return (
-            <article className={classNames} {...inputProps}>
+            <article className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </article>
         );

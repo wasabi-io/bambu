@@ -5,6 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as MessageStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export interface MessageHeaderProps extends HTMLDivProps {
+    elementRef?: any;
 }
 
 export default class MessageHeader extends React.Component<MessageHeaderProps, {}> {
@@ -14,7 +15,7 @@ export default class MessageHeader extends React.Component<MessageHeaderProps, {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...ownProps} = this.props;
+        const {className, children, elementRef, ...ownProps} = this.props;
 
         const classNames = ClassNames(
             MessageStyle.messageHeader,
@@ -22,7 +23,7 @@ export default class MessageHeader extends React.Component<MessageHeaderProps, {
         );
 
         return (
-            <div className={classNames} {...ownProps} >
+            <div className={classNames} {...ownProps}  ref={elementRef}>
                 {children}
             </div>
         );

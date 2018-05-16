@@ -5,6 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as TableStyle, HTMLComponent, HTMLTheadProps} from '../../';
 
 export interface THeadProps extends HTMLTheadProps {
+    elementRef?: any;
 }
 
 export default class THead extends React.Component<THeadProps, {}> {
@@ -14,12 +15,12 @@ export default class THead extends React.Component<THeadProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...tHeadProps} = this.props;
+        const {className, children, elementRef, ...tHeadProps} = this.props;
 
         const classNames = ClassNames(TableStyle.tr, className);
 
         return (
-            <thead className={classNames} {...tHeadProps} >
+            <thead className={classNames} {...tHeadProps} ref={elementRef} >
             {children}
             </thead>
         );

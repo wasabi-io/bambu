@@ -11,6 +11,7 @@ export interface TabsProps extends HTMLDivProps {
     isFullwidth?: boolean;
     bSize?: string | Size;
     tabStyle?: string | tabsStyle;
+    elementRef?: any;
 }
 
 export default class Tabs extends React.Component<TabsProps, {}> {
@@ -29,7 +30,7 @@ export default class Tabs extends React.Component<TabsProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {isFullwidth, alignment, bSize, tabStyle, className, children, ...inputProps} = this.props;
+        const {isFullwidth, alignment, bSize, tabStyle, className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames(
             TabsStyle.tabs,
@@ -41,7 +42,7 @@ export default class Tabs extends React.Component<TabsProps, {}> {
         );
 
         return (
-            <div className={classNames} {...inputProps}>
+            <div className={classNames} {...inputProps} ref={elementRef}>
                 <ul>
                     {children}
                 </ul>

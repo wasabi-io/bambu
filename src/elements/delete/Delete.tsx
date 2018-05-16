@@ -7,6 +7,7 @@ import {bulma as DeleteStyle, HTMLAllAttributes, HTMLComponent, Size, sizeValues
 export interface DeleteProps extends HTMLAllAttributes {
     tagName?: string;
     bSize?: string | Size;
+    elementRef?: any;
 }
 
 export default class Delete extends React.Component<DeleteProps, {}> {
@@ -23,7 +24,7 @@ export default class Delete extends React.Component<DeleteProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {tagName, bSize, className, children, ...deleteProps} = this.props;
+        const {tagName, bSize, className, children, elementRef, ...deleteProps} = this.props;
 
         const classNames = ClassNames(
             DeleteStyle.delete,
@@ -33,6 +34,7 @@ export default class Delete extends React.Component<DeleteProps, {}> {
 
         return React.createElement(tagName, {
             className: classNames,
+            ref: elementRef,
             ...deleteProps
         }, children);
     }

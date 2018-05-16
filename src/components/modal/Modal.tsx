@@ -9,6 +9,7 @@ export interface ModalProps extends HTMLDivProps {
     hasCloseButton?: boolean;
     buttonSize?: string | Size;
     onCloseButtonClick?: any;
+    elementRef?: any;
 }
 
 export default class Modal extends React.Component<ModalProps, {}> {
@@ -27,13 +28,13 @@ export default class Modal extends React.Component<ModalProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {isActive, hasCloseButton, onCloseButtonClick, buttonSize, className, children, ...modalProps} = this.props;
+        const {isActive, hasCloseButton, onCloseButtonClick, buttonSize, className, children, elementRef, ...modalProps} = this.props;
 
         const classNames = ClassNames(ModalStyle.modal, {[`${ModalStyle.isActive}`]: isActive}, className
         );
 
         return (
-            <div className={classNames} {...modalProps}>
+            <div className={classNames} {...modalProps}  ref={elementRef}>
                 <div className={ModalStyle.modalBackground}/>
                 <div className={ModalStyle.modalContent}>
                     {children}

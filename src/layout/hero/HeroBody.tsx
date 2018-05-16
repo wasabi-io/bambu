@@ -5,6 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as HeroStyle, HTMLComponent, HTMLSectionProps} from '../../';
 
 export interface HeroBodyProps extends HTMLSectionProps {
+    elementRef?: any;
 }
 
 export default class HeroBody extends React.Component<HeroBodyProps, {}> {
@@ -13,7 +14,7 @@ export default class HeroBody extends React.Component<HeroBodyProps, {}> {
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, children, ...heroBodyProps} = this.props;
+        const {className, children, elementRef, ...heroBodyProps} = this.props;
 
         const classNames = ClassNames(
             HeroStyle.heroBody,
@@ -21,7 +22,7 @@ export default class HeroBody extends React.Component<HeroBodyProps, {}> {
         );
 
         return (
-            <section className={classNames} {...heroBodyProps} >
+            <section className={classNames} {...heroBodyProps} ref={elementRef} >
                 {children}
             </section>
         );

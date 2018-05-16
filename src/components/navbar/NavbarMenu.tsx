@@ -6,6 +6,7 @@ import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export interface NavbarMenuProps extends HTMLDivProps {
     isActive?: boolean;
+    elementRef?: any;
 }
 
 export default class NavbarMenu extends React.Component<NavbarMenuProps, {}> {
@@ -21,12 +22,12 @@ export default class NavbarMenu extends React.Component<NavbarMenuProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {isActive, className, children, ...navbarMenuProps} = this.props;
+        const {isActive, className, elementRef, children, ...navbarMenuProps} = this.props;
 
         const classNames = ClassNames(NavbarStyle.navbarMenu, {[`${NavbarStyle.isActive}`]: isActive,}, className);
 
         return (
-            <div className={classNames} {...navbarMenuProps}>
+            <div className={classNames} {...navbarMenuProps} ref={elementRef}>
                 {children}
             </div>
         );

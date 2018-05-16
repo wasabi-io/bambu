@@ -9,6 +9,7 @@ export interface NavbarBurgerProps extends HTMLAllAttributes {
     color?: string | Color;
     dataTarget?: string;
     tagName?: string;
+    elementRef?: any;
 }
 
 export default class NavbarBurger extends React.Component<NavbarBurgerProps, {}> {
@@ -27,7 +28,7 @@ export default class NavbarBurger extends React.Component<NavbarBurgerProps, {}>
     };
 
     public render(): JSX.Element {
-        const {tagName, isActive, color, className, children, dataTarget, ...inputProps} = this.props;
+        const {tagName, isActive, color, className, children, dataTarget, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames(
             NavbarStyle.navbarBurger,
@@ -39,6 +40,7 @@ export default class NavbarBurger extends React.Component<NavbarBurgerProps, {}>
             tagName, {
                 className: classNames,
                 'data-target': dataTarget,
+                ref: elementRef,
                 ...inputProps
             },
             [

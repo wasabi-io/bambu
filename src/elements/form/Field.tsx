@@ -17,6 +17,7 @@ export interface FieldProps extends HTMLDivProps {
     isGroupedMultiline?: boolean;
     isGroupedRight?: boolean;
     isNarrow?: boolean;
+    elementRef?: any;
 }
 
 export default class Field extends React.Component<FieldProps, {}> {
@@ -60,6 +61,7 @@ export default class Field extends React.Component<FieldProps, {}> {
             isNarrow,
             className,
             children,
+            elementRef,
             ...inputProps
         } = this.props;
 
@@ -80,7 +82,7 @@ export default class Field extends React.Component<FieldProps, {}> {
         );
 
         return (
-            <div className={classNames} {...inputProps} >
+            <div className={classNames} {...inputProps} ref={elementRef} >
                 {children}
             </div>
         );
