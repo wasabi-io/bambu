@@ -7,6 +7,7 @@ import {Alignment, bulma as PaginationStyle, HTMLComponent, HTMLNavProps, Size, 
 export interface PaginationProps extends HTMLNavProps {
     alignment?: string | Alignment;
     bSize?: string | Size;
+    centered: boolean;
     isRounded?: boolean;
     previous?: boolean;
     previousText?: string;
@@ -21,6 +22,7 @@ export default class Pagination extends React.Component<PaginationProps, {}> {
         ...HTMLComponent.propTypes,
         alignment: PropTypes.string,
         bSize: PropTypes.oneOf(sizeValues),
+        centered: PropTypes.bool,
         isRounded: PropTypes.bool,
         previous: PropTypes.bool,
         previousText: PropTypes.string,
@@ -30,6 +32,7 @@ export default class Pagination extends React.Component<PaginationProps, {}> {
 
     public static defaultProps = {
         ...HTMLComponent.defaultProps,
+        centered: true,
         previous: true,
         previousText: 'Previous',
         next: true,
@@ -38,6 +41,7 @@ export default class Pagination extends React.Component<PaginationProps, {}> {
 
     public render(): JSX.Element {
         const {
+            centered,
             previous,
             previousText,
             next,
@@ -57,6 +61,7 @@ export default class Pagination extends React.Component<PaginationProps, {}> {
             PaginationStyle[alignment],
             className,
             {[`${PaginationStyle.isRounded}`]: isRounded},
+            {[`${PaginationStyle.isCentered}`]: centered},
         );
 
         return (

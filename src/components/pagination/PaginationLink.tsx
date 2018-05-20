@@ -6,8 +6,6 @@ import {bulma as PaginationStyle, HTMLAProps, HTMLComponent} from '../../';
 
 export interface PaginationLinkProps extends HTMLAProps {
     isCurrent?: boolean;
-    page: string | number;
-    arialLabel: string;
     elementRef?: any;
 }
 
@@ -15,8 +13,7 @@ export default class PaginationLink extends React.Component<PaginationLinkProps,
 
     public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
         ...HTMLComponent.propTypes,
-        isCurrent: PropTypes.bool,
-        page: PropTypes.oneOf([PropTypes.string, PropTypes.number]).isRequired,
+        isCurrent: PropTypes.bool
     };
 
     public static defaultProps = {
@@ -26,10 +23,8 @@ export default class PaginationLink extends React.Component<PaginationLinkProps,
 
     public render(): JSX.Element {
         const {isCurrent, className, children, elementRef, ...paginationLinkProps} = this.props;
-
         const classNames = ClassNames(PaginationStyle.paginationLink, className, {[`${PaginationStyle.isCurrent}`]: isCurrent});
-
-        return (<li><a className={classNames} {...paginationLinkProps}  ref={elementRef}>{children}</a></li>);
+        return (<li><a className={classNames} {...paginationLinkProps} ref={elementRef}>{children}</a></li>);
     }
 }
 
