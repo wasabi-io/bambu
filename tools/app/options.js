@@ -27,7 +27,7 @@ module.exports = {
         "bambu$": "./src/index",
         "bambu/lib": "./src",
         "bulma": "./node_modules/bulma",
-        "modules": "./showcase/app/modules/"
+        "*": "./showcase",
     },
     copy: {
         move: [

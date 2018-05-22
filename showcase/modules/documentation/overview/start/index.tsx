@@ -1,5 +1,29 @@
+import * as classNames from "classnames";
 import * as React from "react";
 import {Stateless} from "wasabi-ui";
+import {Media, MediaContent, MediaLeft} from "bambu/lib/components/media";
+import {bulma, Color, Size6} from "bambu";
+import {Title} from "bambu/lib/elements/title";
+import Highlight from "component/code/highlight/Highlight";
+import {Message, MessageBody, MessageHeader} from "bambu/lib/components/message";
+import bulmaDocs from "../../../../css/bulmaDocs";
+import {Content} from "bambu/lib/elements/content";
+import Icon from "bambu/lib/elements/icon/Icon";
+
+const packageJson = require("../../../../../package.json");
+
+const webpackCssModuleText = `{
+    test: /\.css$/,
+    use: [
+        "style-loader",
+        {
+            loader: 'css-loader',
+            options: {
+                modules: true
+            }
+        }
+    ]
+}`;
 
 export default class Index extends Stateless <any> {
     public render() {
@@ -7,190 +31,153 @@ export default class Index extends Stateless <any> {
             <div>
                 <div className="content">
                     <p>
-                        There are several ways to <strong>get started</strong> with Bulma. You can either:
+                        <h2>Installation</h2>
+                        There are required <strong>3</strong> steps to <strong>get started</strong> with <strong>bambu</strong>. You have to:
                     </p>
                     <ol>
                         <li>
-                            use <strong>npm</strong> to install the Bulma package
+                            use <strong>npm</strong> or <strong>yarn</strong> to install dependencies of the <strong>bambu</strong> package.
+                            <ul>
+                                <li><strong>bulma :</strong> ( version {packageJson.peerDependencies["bulma"]} )</li>
+                                <li><strong>font-awesome :</strong> ( version {packageJson.peerDependencies["font-awesome"]} )</li>
+                                <li><strong>react :</strong> ( version {packageJson.peerDependencies["react"]} )</li>
+                                <li><strong>prop-types :</strong> ( version {packageJson.peerDependencies["prop-types"]} )</li>
+                            </ul>
                         </li>
                         <li>
-                            use the cdnjs <strong>CDN</strong> to link to the Bulma stylesheet
+                            use <strong>npm</strong> or <strong>yarn</strong> to install the <strong>bambu</strong> package
                         </li>
                         <li>
-                            use the <strong>GitHub repository</strong> to get the latest development version
+                            provide reading <strong>css</strong> files as modules.
+                            <div><strong>Note :</strong> <strong>bambu</strong> use <strong>bulma.css</strong> from under of node_modules.
+                                <Highlight language="javascript">
+                                    import bulma from "bulma/css/bulma.css"
+                                </Highlight>
+                            </div>
                         </li>
                     </ol>
                 </div>
 
-                <article className="media is-large">
-                    <div className="media-left">
-                        <p className="title is-5">1</p>
-                    </div>
-                    <div className="media-content">
-                        <p className="title is-5">
-                            Use <strong>NPM</strong> <em>(recommended)</em>:
-                        </p>
-                        <figure className="highlight">
-                            <pre><code className="language-bash" data-lang="bash">npm install bulma</code></pre>
-                            <button className="button is-small bd-copy">Copy</button>
-                        </figure>
-                    </div>
-                </article>
+                <Media className={bulma.isLarge}>
+                    <MediaLeft>
+                        <Title bSize={Size6.is5}>1</Title>
+                    </MediaLeft>
+                    <MediaContent>
+                        <Title bSize={Size6.is5}>
+                            Use <strong>npm / yarn</strong>:
+                        </Title>
+                        <Highlight language="bash">
+                            npm install bulma font-awesome react prop-types
+                        </Highlight>
+                        <br/>
+                        <Highlight language="bash">
+                            yarn bulma font-awesome react prop-types
+                        </Highlight>
+                    </MediaContent>
+                </Media>
 
-                <article className="media is-large">
-                    <div className="media-left">
-                        <p className="title is-5">2</p>
-                    </div>
-                    <div className="media-content">
-                        <p className="title is-5">
-                            Use the <a href="https://cdnjs.com/" target="_blank">cdnjs</a> <strong>CDN</strong>
-                            <br/>
-                            <a href="https://cdnjs.com/libraries/bulma">https://cdnjs.com/libraries/bulma</a>
-                        </p>
-                    </div>
-                </article>
+                <Media className={bulma.isLarge}>
+                    <MediaLeft>
+                        <Title bSize={Size6.is5}>2</Title>
+                    </MediaLeft>
+                    <MediaContent>
+                        <Title bSize={Size6.is5}>
+                            Use <strong>npm / yarn</strong>:
+                        </Title>
+                        <Highlight language="bash">
+                            npm install bambu
+                        </Highlight>
+                        <br/>
+                        <Highlight language="bash">
+                            yarn bambu
+                        </Highlight>
+                    </MediaContent>
+                </Media>
 
-                <article className="media is-large">
-                    <div className="media-left">
-                        <p className="title is-5">3</p>
-                    </div>
-                    <div className="media-content">
-                        <p className="title is-5">
-                            Download from the <strong>repository</strong>
-                            <br/>
-                            <a href="https://github.com/jgthms/bulma/tree/master/css">https://github.com/jgthms/bulma/tree/master/css</a>
-                        </p>
-                    </div>
-                </article>
+                <Media className={bulma.isLarge}>
+                    <MediaLeft>
+                        <Title bSize={Size6.is5}>3</Title>
+                    </MediaLeft>
+                    <MediaContent>
+                        <Title bSize={Size6.is5}>
+                            For <strong>webpack</strong>:
+                        </Title>
+                        <Highlight language="bash">
+                            yarn add --dev style-loader css-modules-loader sass-loader
+                        </Highlight>
+                        <br/>
+                        <Highlight language="bash">
+                            {webpackCssModuleText}
+                        </Highlight>
+                    </MediaContent>
+                </Media>
 
                 <hr/>
 
-                <div className="message is-info">
-                    <div className="message-header">
+                <Message color={Color.info}>
+                    <MessageHeader>
                         Font Awesome icons
-                    </div>
-                    <div className="message-body">
-                        <p>If you want to use icons with Bulma, don't forget to include <a href="https://fontawesome.com">Font Awesome 5</a>:</p>
-                        <figure className="highlight">
-                            <pre><code className="language-html" data-lang="html"><span className="nt">&lt;script </span><span className="na">defer</span> <span className="na">src=</span><span className="s">"https://use.fontawesome.com/releases/v5.0.7/js/all.js"</span><span className="nt">&gt;&lt;/script&gt;</span></code></pre>
-                            <button className="button is-small bd-copy">Copy</button>
-                        </figure>
-                    </div>
-                </div>
+                    </MessageHeader>
+                    <MessageBody>
+                        <p>If you want to use icons with bambu, don't forget to install <a href="https://fontawesome.com">Font Awesome 5</a>:</p>
+                        <Highlight language="bash">
+                            npm install font-awesome
+                        </Highlight>
+                    </MessageBody>
+                </Message>
 
                 <hr className="hr" style={{
                     marginBottom: 0
                 }}/>
 
-                <h3 id="code-requirements" className="title is-4 is-spaced bd-anchor-title">
-  <span className="bd-anchor-name">
-    Code requirements
-  </span>
+                <h3 id="code-requirements" className={classNames(bulma.title, bulma.is4, bulma.isSpaced, bulmaDocs.bdAnchorTitle)}>
+                    <span className="bd-anchor-name">
+                        Code requirements
+                    </span>
                     <a className="bd-anchor-link" href="#code-requirements">
                         #
                     </a>
                 </h3>
-                <div className="content">
+                <Content>
                     <p>
-                        For Bulma to work correctly, you need to make your webpage <strong>responsive</strong>.
+                        For <strong>bambu</strong> to work correctly, you need to make your webpage <strong>responsive</strong>.
                     </p>
-                </div>
+                </Content>
 
-                <article className="media is-large">
-                    <div className="media-left">
-                        <p className="title is-5">1</p>
-                    </div>
-                    <div className="media-content">
-                        <p className="title is-5">
+                <Media className={bulma.isLarge}>
+                    <MediaLeft>
+                        <Title bSize={Size6.is5}>1</Title>
+                    </MediaLeft>
+                    <MediaContent>
+                        <Title bSize={Size6.is5}>
                             Use the <strong>HTML5 doctype</strong>
-                        </p>
-                        <figure className="highlight">
-                            <pre><code className="language-html" data-lang="html"><span className="cp">&lt;!DOCTYPE html&gt;</span></code></pre>
-                            <button className="button is-small bd-copy">Copy</button>
-                        </figure>
-                    </div>
-                </article>
+                        </Title>
+                        <Highlight language="html">
+                            <span className="cp">&lt;!DOCTYPE html&gt;</span>
+                        </Highlight>
+                    </MediaContent>
+                </Media>
 
-                <article className="media is-large">
-                    <div className="media-left">
-                        <p className="title is-5">2</p>
-                    </div>
-                    <div className="media-content">
-                        <p className="title is-5">
+                <Media className={bulma.isLarge}>
+                    <MediaLeft>
+                        <Title bSize={Size6.is5}>2</Title>
+                    </MediaLeft>
+                    <MediaContent>
+                        <Title bSize={Size6.is5}>
                             Add the responsive <strong>viewport</strong> meta tag
-                        </p>
-                        <figure className="highlight">
-                            <pre><code className="language-html" data-lang="html"><span className="nt">&lt;meta</span> <span className="na">name=</span><span className="s">"viewport"</span> <span className="na">content=</span><span className="s">"width=device-width, initial-scale=1"</span><span className="nt">&gt;</span></code></pre>
-                            <button className="button is-small bd-copy">Copy</button>
-                        </figure>
-                    </div>
-                </article>
-
-                <hr className="hr" style={{
-                    marginBottom: 0
-                }}/>
-
-                <h3 id="starter-template" className="title is-4 is-spaced bd-anchor-title">
-  <span className="bd-anchor-name">
-    Starter template
-  </span>
-                    <a className="bd-anchor-link" href="#starter-template">
-                        #
-                    </a>
-                </h3>
-                <div className="content">
-                    <p>
-                        If you want to get started <strong>right away</strong>, you can use this <strong>HTML starter template</strong>. Just copy/paste this code in a file and save it on your computer.
-                    </p>
-                </div>
-
-                <div className="bd-example highlight-full">
-                    <figure className="highlight"><pre><code className="language-html" data-lang="html"><span className="cp">&lt;!DOCTYPE html&gt;</span>
-<span className="nt">&lt;html&gt;</span>
-  <span className="nt">&lt;head&gt;</span>
-    <span className="nt">&lt;meta</span> <span className="na">charset=</span><span className="s">"utf-8"</span><span className="nt">&gt;</span>
-    <span className="nt">&lt;meta</span> <span className="na">name=</span><span className="s">"viewport"</span> <span className="na">content=</span><span className="s">"width=device-width, initial-scale=1"</span><span className="nt">&gt;</span>
-    <span className="nt">&lt;title&gt;</span>Hello Bulma!<span className="nt">&lt;/title&gt;</span>
-    <span className="nt">&lt;link</span> <span className="na">rel=</span><span className="s">"stylesheet"</span> <span className="na">href=</span><span className="s">"https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css"</span><span className="nt">&gt;</span>
-    <span className="nt">&lt;script </span><span className="na">defer</span> <span className="na">src=</span><span className="s">"https://use.fontawesome.com/releases/v5.0.7/js/all.js"</span><span className="nt">&gt;&lt;/script&gt;</span>
-  <span className="nt">&lt;/head&gt;</span>
-  <span className="nt">&lt;body&gt;</span>
-  <span className="nt">&lt;section</span> <span className="na">class=</span><span className="s">"section"</span><span className="nt">&gt;</span>
-    <span className="nt">&lt;div</span> <span className="na">class=</span><span className="s">"container"</span><span className="nt">&gt;</span>
-      <span className="nt">&lt;h1</span> <span className="na">class=</span><span className="s">"title"</span><span className="nt">&gt;</span>
-        Hello World
-      <span className="nt">&lt;/h1&gt;</span>
-      <span className="nt">&lt;p</span> <span className="na">class=</span><span className="s">"subtitle"</span><span className="nt">&gt;</span>
-        My first website with <span className="nt">&lt;strong&gt;</span>Bulma<span className="nt">&lt;/strong&gt;</span>!
-      <span className="nt">&lt;/p&gt;</span>
-    <span className="nt">&lt;/div&gt;</span>
-  <span className="nt">&lt;/section&gt;</span>
-  <span className="nt">&lt;/body&gt;</span>
-<span className="nt">&lt;/html&gt;</span></code></pre>
-                        <button className="button is-small bd-copy">Copy</button>
-                    </figure>
-                </div>
-
-                <hr className="hr" style={{
-                    marginBottom: 0
-                }}/>
-
-                <h3 id="bulma-start" className="title is-4 is-spaced bd-anchor-title">
-  <span className="bd-anchor-name">
-    bulma-start
-  </span>
-                    <a className="bd-anchor-link" href="#bulma-start">
-                        #
-                    </a>
-                </h3>
-                <div className="content">
-                    <p>
-                        <code><a href="/bulma-start/">bulma-start</a></code> is a tiny npm package that includes the <code>npm</code> dependencies you need to build your own website with Bulma.
-                    </p>
-                    <p>
-                        <a className="button is-link" href="/bulma-start/">Check it out</a>
-                    </p>
-                </div>
+                        </Title>
+                        <Highlight language="html">
+                            <span className="nt">&lt;meta</span> <span className="na">name=</span><span className="s">"viewport"</span> <span className="na">content=</span><span className="s">"width=device-width, initial-scale=1"</span><span className="nt">&gt;</span>
+                        </Highlight>
+                    </MediaContent>
+                </Media>
+                <hr />
+                <Message color={Color.success}>
+                    <MessageBody>
+                        Completed ! Now lets started.
+                        <span className={bulma.hasTextWarning}><Icon icon="thumbs-up" /></span>
+                    </MessageBody>
+                </Message>
             </div>
         );
     }

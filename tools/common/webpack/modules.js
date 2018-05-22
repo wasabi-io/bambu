@@ -62,8 +62,6 @@ const getScssLoader = function () {
             {
                 loader: "typings-for-css-modules-loader",
                 options: {
-                    namedExport: true,
-                    camelCase: true,
                     modules: true
                 }
             },

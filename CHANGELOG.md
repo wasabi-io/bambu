@@ -1,5 +1,18 @@
 ## CHANGELOG
 
+#### v0.7.1-beta.1 Developing...
+
+* created new showcase.
+* fixed some problem.
+* added *CodeMirror* component to show code as editable.
+* added *transformer* to transform code from typescript & react to es5 javascript.
+* added *Preview* component to show result of executed code.
+* created *Editor* component for showcase playground code.
+* fixed *Highlight* component problems.
+* added *Layer* component to show children as vertical parts which are  wrapped with *Content* in a *Box* component.
+* added finding modules in bambu and generating modules json object.
+
+
 #### v0.6.201-beta.2
 * solved https://github.com/wasabi-io/bambu/issues/6
 * added missing *propTypes*
