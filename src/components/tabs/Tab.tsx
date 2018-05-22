@@ -6,7 +6,7 @@ import {bulma as TabsStyle, HTMLComponent, HTMLLiProps} from '../../';
 
 export interface TabProps extends HTMLLiProps {
     isActive?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Tab extends React.Component<TabProps, {}> {

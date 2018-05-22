@@ -12,7 +12,7 @@ export interface ColumnsProps extends HTMLDivProps {
     isVcentered?: boolean;
     isGapless?: boolean;
     responsive?: string | Responsive;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 

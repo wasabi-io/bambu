@@ -9,7 +9,7 @@ import {bulma as FormStyle, HTMLComponent, HTMLDivProps, Size, sizeValues} from 
  */
 export interface FieldBodyProps extends HTMLDivProps {
     bSize?: string | Size;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class FieldBody extends React.Component<FieldBodyProps, {}> {

@@ -5,7 +5,7 @@ import {Props} from 'wasabi-common';
 import {bulma as BoxStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 export interface BoxProps extends HTMLDivProps{
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Box extends React.Component<BoxProps, {}> {

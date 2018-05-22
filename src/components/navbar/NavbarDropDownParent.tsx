@@ -13,7 +13,7 @@ export interface NavbarDropdownParentProps extends HTMLDivProps {
     isActive?: boolean;
     hasDropdownUp?: boolean;
     state?: ShowingState;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class NavbarDropdownParent extends React.Component<NavbarDropdownParentProps, {}> {

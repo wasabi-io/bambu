@@ -7,7 +7,7 @@ import {bulma as DeleteStyle, HTMLAllAttributes, HTMLComponent, Size, sizeValues
 export interface DeleteProps extends HTMLAllAttributes {
     tagName?: string;
     bSize?: string | Size;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Delete extends React.Component<DeleteProps, {}> {

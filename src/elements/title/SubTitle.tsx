@@ -10,7 +10,7 @@ import {bulma as TitleStyle, HTMLComponent, HTMLPProps, Size6, size6Values} from
 export interface SubTitleProps extends HTMLPProps {
     bSize?: string | Size6;
     tagName?: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class SubTitle extends React.Component<SubTitleProps, {}> {

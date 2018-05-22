@@ -8,7 +8,7 @@ import {bulma as CardStyle, HTMLComponent, HTMLDivProps} from '../../';
  * Refers Html Props and Additional Props.
  */
 export interface CardProps extends HTMLDivProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Card extends React.Component<CardProps, {}> {

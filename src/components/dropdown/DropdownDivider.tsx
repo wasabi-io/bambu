@@ -8,7 +8,7 @@ import {bulma as DropdownStyle, HTMLComponent, HTMLHrProps} from '../../';
  * Refers Html Props and Additional Props.
  */
 export interface DropdownDividerProps extends HTMLHrProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class DropdownDivider extends React.Component<DropdownDividerProps, {}> {

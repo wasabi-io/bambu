@@ -11,7 +11,7 @@ export interface TagProps extends HTMLAllAttributes {
     color?: string | Color;
     bSize?: string | Size;
     tagName?: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Tag extends React.Component<TagProps, {}> {

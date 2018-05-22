@@ -6,7 +6,7 @@ import {bulma as NavbarStyle, HTMLAProps, HTMLComponent} from '../../';
 
 export interface NavbarLinkProps extends HTMLAProps {
     href?: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class NavbarLink extends React.Component<NavbarLinkProps, {}> {

@@ -6,7 +6,7 @@ import {Alignment, alignmentValues, bulma as TabGroupStyle, HTMLComponent, HTMLD
 
 export interface TabGroupProps extends HTMLDivProps {
     alignment?: string | Alignment;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 

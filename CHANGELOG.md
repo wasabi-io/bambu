@@ -11,7 +11,7 @@
 * fixed *Highlight* component problems.
 * added *Layer* component to show children as vertical parts which are  wrapped with *Content* in a *Box* component.
 * added finding modules in bambu and generating modules json object.
-
+* changed `elementRef` property type as function.
 
 #### v0.6.201-beta.2
 * solved https://github.com/wasabi-io/bambu/issues/6

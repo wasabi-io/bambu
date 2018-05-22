@@ -9,7 +9,7 @@ import {bulma as TableStyle, HTMLComponent, HTMLTdProps} from '../../';
  */
 export interface CellProps extends HTMLTdProps {
     isIcon?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Cell extends React.Component<CellProps, {}> {

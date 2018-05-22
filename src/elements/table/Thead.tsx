@@ -5,7 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as TableStyle, HTMLComponent, HTMLTheadProps} from '../../';
 
 export interface THeadProps extends HTMLTheadProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class THead extends React.Component<THeadProps, {}> {

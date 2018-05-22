@@ -12,7 +12,7 @@ export interface ProgressProps extends HTMLProgressProps {
     max: number;
     bSize?: string | Size;
     value: number;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 

@@ -17,7 +17,7 @@ export interface FieldProps extends HTMLDivProps {
     isGroupedMultiline?: boolean;
     isGroupedRight?: boolean;
     isNarrow?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Field extends React.Component<FieldProps, {}> {

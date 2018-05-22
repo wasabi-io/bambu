@@ -5,7 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as FooterStyle, HTMLComponent, HTMLFooterProps} from '../../';
 
 export interface FooterProps extends HTMLFooterProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Footer extends React.Component<FooterProps, {}> {

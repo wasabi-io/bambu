@@ -5,7 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as ModalStyle, HTMLComponent, HTMLFooterProps} from '../../';
 
 export interface ModalCardFooterProps extends HTMLFooterProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class ModalCardFooter extends React.Component<ModalCardFooterProps, {}> {

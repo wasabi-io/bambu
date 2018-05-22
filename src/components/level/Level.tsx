@@ -9,7 +9,7 @@ import {bulma as LevelStyle, HTMLComponent, HTMLElementProps, Responsive, respon
  */
 export interface LevelProps extends HTMLElementProps {
     responsive?: Responsive;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Level extends React.Component<LevelProps, {}> {

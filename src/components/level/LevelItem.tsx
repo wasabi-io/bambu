@@ -9,7 +9,7 @@ import {bulma as LevelStyle, HTMLComponent, HTMLDivProps} from '../../';
  */
 export interface LevelItemProps extends HTMLDivProps {
     hasTextCentered?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class LevelItem extends React.Component<LevelItemProps, {}> {

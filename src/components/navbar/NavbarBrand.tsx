@@ -6,7 +6,7 @@ import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export interface NavbarBrandProps extends HTMLDivProps {
     hasShadow?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class NavbarBrand extends React.Component<NavbarBrandProps, {}> {

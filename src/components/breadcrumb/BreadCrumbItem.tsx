@@ -6,7 +6,7 @@ import {bulma as BreadCrumbStyle, HTMLAProps, HTMLComponent} from '../../';
 
 export interface BreadCrumbItemProps extends HTMLAProps {
     isActive?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class BreadCrumbItem extends React.Component<BreadCrumbItemProps, {}> {

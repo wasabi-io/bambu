@@ -9,7 +9,7 @@ import {bulma as FormStyle, Color, colorValues, HTMLComponent, HTMLPProps} from 
  */
 export interface FieldHelpProps extends HTMLPProps {
     color?: string | Color;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class FieldHelp extends React.Component<FieldHelpProps, {}> {

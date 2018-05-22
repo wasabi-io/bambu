@@ -13,7 +13,7 @@ export interface PanelBlockProps extends HTMLDivProps {
     icon?: IconOptions;
     iconSize?: IconSize;
     iconParent?: HTMLSpanProps;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 /**

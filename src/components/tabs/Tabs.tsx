@@ -11,7 +11,7 @@ export interface TabsProps extends HTMLDivProps {
     isFullwidth?: boolean;
     bSize?: string | Size;
     tabStyle?: string | tabsStyle;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Tabs extends React.Component<TabsProps, {}> {

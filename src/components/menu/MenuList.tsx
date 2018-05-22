@@ -5,7 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as MenuStyle, HTMLComponent, HTMLUlProps} from '../../';
 
 export interface MenuListProps extends HTMLUlProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class MenuList extends React.Component<MenuListProps, {}> {

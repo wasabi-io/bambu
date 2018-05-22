@@ -6,7 +6,7 @@ import {bulma as NotificationStyle, Color, HTMLComponent, HTMLDivProps} from '..
 
 export interface NotificationProps extends HTMLDivProps {
     color?: string | Color;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Notification extends React.Component<NotificationProps, {}> {

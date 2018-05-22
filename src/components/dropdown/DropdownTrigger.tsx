@@ -9,7 +9,7 @@ import HTMLComponent, {HTMLDivProps} from '../../base/html/HTML';
  * Refers Html Props and Additional Props.
  */
 export interface DropdownTriggerProps extends HTMLDivProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class DropdownTrigger extends React.Component<DropdownTriggerProps, {}> {

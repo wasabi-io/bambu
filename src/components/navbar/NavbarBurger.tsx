@@ -9,7 +9,7 @@ export interface NavbarBurgerProps extends HTMLAllAttributes {
     color?: string | Color;
     dataTarget?: string;
     tagName?: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class NavbarBurger extends React.Component<NavbarBurgerProps, {}> {

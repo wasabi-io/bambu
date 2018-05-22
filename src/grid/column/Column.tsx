@@ -11,7 +11,7 @@ export interface ColumnProps extends HTMLDivProps {
     isNarrow?: boolean;
     bSize?: string;
     offset?: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Column extends React.Component<ColumnProps, {}> {

@@ -6,7 +6,7 @@ import {bulma as CardStyle, HTMLComponent, HTMLElementProps} from '../../';
 
 export interface CardFooterItemProps extends HTMLElementProps {
     tagName?: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class CardFooterItem extends React.Component<CardFooterItemProps, {}> {

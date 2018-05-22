@@ -27,7 +27,7 @@ export interface FaIconProps extends HTMLIProps {
     rotate?: number;
     bSize?: string | IconSize;
     stack?: string | IconStack;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
     [key: string]: any;
 }
 

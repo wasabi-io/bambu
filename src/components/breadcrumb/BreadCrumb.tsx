@@ -18,7 +18,7 @@ export interface BreadCrumbProps extends HTMLElementProps {
     alignment?: string | Alignment;
     separator?: string | BreadCrumbSeperator;
     bSize?: string | Size;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class BreadCrumb extends React.Component<BreadCrumbProps, {}> {

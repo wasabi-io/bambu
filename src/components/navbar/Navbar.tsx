@@ -21,7 +21,7 @@ export interface NavbarProps extends HTMLNavProps {
     role?: navBarRole | string;
     isTransparent?: boolean;
     isSpaced?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Navbar extends React.Component<NavbarProps, {}> {

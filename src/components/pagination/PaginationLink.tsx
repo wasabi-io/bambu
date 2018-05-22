@@ -6,7 +6,7 @@ import {bulma as PaginationStyle, HTMLAProps, HTMLComponent} from '../../';
 
 export interface PaginationLinkProps extends HTMLAProps {
     isCurrent?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class PaginationLink extends React.Component<PaginationLinkProps, {}> {

@@ -20,7 +20,7 @@ export interface HeroProps extends HTMLSectionProps {
     isBold?: boolean;
     isMedium?: boolean;
     bSize?: string | HeroSize;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Hero extends React.Component<HeroProps, {}> {

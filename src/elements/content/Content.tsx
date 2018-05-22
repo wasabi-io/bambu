@@ -7,7 +7,7 @@ import {bulma as ContentStyle, Size, sizeValues} from '../../';
 
 export interface ContentProps extends HTMLElementProps {
     bSize?: string | Size;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Content extends React.Component<ContentProps, {}> {

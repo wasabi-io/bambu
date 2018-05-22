@@ -9,7 +9,7 @@ export interface NavbarItemProps extends HTMLAllAttributes {
     isHoverable?: boolean;
     hasDropdown?: boolean;
     tagName?: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class NavbarItem extends React.Component<NavbarItemProps, {}> {

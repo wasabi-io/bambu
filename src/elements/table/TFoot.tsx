@@ -6,7 +6,7 @@ import {bulma as TableStyle, HTMLComponent, HTMLTfootProps} from '../../';
 
 
 export interface TFootProps extends HTMLTfootProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Class extends React.Component<TFootProps, {}> {

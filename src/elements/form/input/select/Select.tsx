@@ -16,7 +16,7 @@ export interface SelectProps extends HTMLDivProps {
     size?: number;
     value?: string | string[] | number;
     onChange?: any;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 const Select: React.SFC<SelectProps> = (props: SelectProps) => {

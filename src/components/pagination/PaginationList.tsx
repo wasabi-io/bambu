@@ -5,7 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as PaginationStyle, HTMLComponent, HTMLUlProps} from '../../';
 
 export interface PaginationListProps extends HTMLUlProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class PaginationList extends React.Component<PaginationListProps, {}> {

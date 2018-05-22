@@ -6,7 +6,7 @@ import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export interface NavbarMenuProps extends HTMLDivProps {
     isActive?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class NavbarMenu extends React.Component<NavbarMenuProps, {}> {

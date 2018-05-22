@@ -24,7 +24,7 @@ export interface ButtonProps extends HTMLAllAttributes {
     disabled?: boolean;
     isRounded?: boolean;
     onClick?: any;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 

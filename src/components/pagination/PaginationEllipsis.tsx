@@ -5,7 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as PaginationStyle, HTMLComponent, HTMLSpanProps} from '../../';
 
 export interface PaginationEllipsisProps extends HTMLSpanProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class PaginationEllipsis extends React.Component<PaginationEllipsisProps, {}> {

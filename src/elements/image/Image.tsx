@@ -33,7 +33,7 @@ export interface ImageProps extends HTMLImgProps {
     ratio?: string | ImageRatio;
     bSize?: string | ImageSize;
     src: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Image extends React.Component<ImageProps, {}> {

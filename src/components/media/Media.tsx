@@ -5,7 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as MediaStyle, HTMLArticleProps, HTMLComponent} from '../../';
 
 export interface MediaProps extends HTMLArticleProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Media extends React.Component<MediaProps, {}> {

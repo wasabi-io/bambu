@@ -5,7 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as HeroStyle, HTMLComponent, HTMLFooterProps} from '../../';
 
 export interface HeroFootProps extends HTMLFooterProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class HeroFoot extends React.Component<HeroFootProps, {}> {

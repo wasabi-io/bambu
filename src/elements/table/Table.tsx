@@ -10,7 +10,7 @@ export interface TableProps extends HTMLTableProps {
     isNarrow?: boolean;
     isHoverable?: boolean;
     isFullwidth?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 

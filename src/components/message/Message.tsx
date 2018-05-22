@@ -7,7 +7,7 @@ import {bulma as MessageStyle, Color, HTMLArticleProps, HTMLComponent, Size, siz
 export interface MessageProps extends HTMLArticleProps {
     color?: string | Color;
     bSize?: string | Size;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Message extends React.Component<MessageProps, {}> {

@@ -6,7 +6,7 @@ import {bulma as ModalStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 export interface ModalCardProps extends HTMLDivProps {
     isActive?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class ModalCard extends React.Component<ModalCardProps, {}> {

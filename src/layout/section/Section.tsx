@@ -6,7 +6,7 @@ import {bulma as SectionStyle, HTMLComponent, HTMLSectionProps, Size, sizeValues
 
 export interface SectionProps extends HTMLSectionProps {
     bSize?: string | Size;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Section extends React.Component<SectionProps, {}> {

@@ -6,7 +6,7 @@ import {bulma as ModalStyle, HTMLComponent, HTMLHeaderProps} from '../../';
 
 export interface ModalCardTitleProps extends HTMLHeaderProps {
     header?: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class ModalCardTitle extends React.Component<ModalCardTitleProps, {}> {

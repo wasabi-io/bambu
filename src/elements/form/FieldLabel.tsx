@@ -18,7 +18,7 @@ export enum FieldLabelSize {
 export interface FieldLabelProps extends HTMLDivProps {
     bSize?: string | FieldLabelSize;
     labelProps?: ControlLabelProps;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class FieldLabel extends React.Component<FieldLabelProps, {}> {

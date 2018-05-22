@@ -13,7 +13,7 @@ export interface PaginationProps extends HTMLNavProps {
     previousText?: string;
     next?: boolean;
     nextText?: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Pagination extends React.Component<PaginationProps, {}> {

@@ -5,7 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as ModalStyle, HTMLComponent, HTMLSectionProps} from '../../';
 
 export interface ModalCardBodyProps extends HTMLSectionProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class ModalCardBody extends React.Component<ModalCardBodyProps, {}> {

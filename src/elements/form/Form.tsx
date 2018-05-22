@@ -4,7 +4,7 @@ import {Props} from 'wasabi-common';
 import HTMLComponent, {HTMLFormProps} from '../../base/html/HTML';
 
 export interface FormProps extends HTMLFormProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Form extends React.Component<FormProps, {}> {

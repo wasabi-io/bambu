@@ -8,7 +8,7 @@ export interface NavbarItemLinkProps extends HTMLAllAttributes {
     isActive?: boolean;
     isHiddenDesktop?: boolean;
     isHiddenMobile?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 

@@ -9,7 +9,7 @@ import {bulma as TagStyle, colorValues, HTMLComponent, HTMLSpanProps} from '../.
  */
 export interface TagsProps extends HTMLSpanProps {
     hasAddons?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Tags extends React.Component<TagsProps, {}> {

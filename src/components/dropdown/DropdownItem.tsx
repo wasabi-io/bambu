@@ -10,7 +10,7 @@ import {bulma as DropdownStyle, HTMLComponent, HTMLDivProps} from '../../';
 export interface DropdownItemProps extends HTMLDivProps {
     tagName?: string;
     isActive?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class DropdownItem extends React.Component<DropdownItemProps, {}> {

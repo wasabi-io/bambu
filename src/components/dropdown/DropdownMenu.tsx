@@ -8,7 +8,7 @@ import {bulma as DropdownStyle, HTMLComponent, HTMLDivProps} from '../../';
  * Refers Html Props and Additional Props.
  */
 export interface DropdownMenuProps extends HTMLDivProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class DropdownMenu extends React.Component<DropdownMenuProps, {}> {

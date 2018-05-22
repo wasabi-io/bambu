@@ -5,7 +5,7 @@ import {Props} from 'wasabi-common';
 import {bulma as PanelStyle, HTMLComponent, HTMLPProps} from '../../';
 
 export interface PanelHeadingProps extends HTMLPProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class PanelHeading extends React.Component<PanelHeadingProps, {}> {

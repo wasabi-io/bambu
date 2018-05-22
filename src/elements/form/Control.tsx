@@ -12,7 +12,7 @@ export interface ControlProps extends HTMLDivProps {
     hasIconsRight?: boolean;
     isExpanded?: boolean;
     isLoading?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Control extends React.Component<ControlProps, {}> {

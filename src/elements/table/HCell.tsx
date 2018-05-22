@@ -8,7 +8,7 @@ import {bulma as TableStyle, HTMLComponent, HTMLThProps} from '../../';
  * Refers Html Props and Additional Props.
  */
 export interface HCellProps extends HTMLThProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class HCell extends React.Component<HCellProps, {}> {

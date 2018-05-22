@@ -13,7 +13,7 @@ export interface InputProps extends HTMLInputProps {
     bSize?: string | Size;
     state?: string | State;
     onChange?: any;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Input extends Stateless<InputProps> {

@@ -10,7 +10,7 @@ export interface TextAreaProps extends HTMLTextareaProps {
     color?: string | Color;
     bSize?: string | Size;
     state?: string | State;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 const TextArea: React.SFC<TextAreaProps> = (props: TextAreaProps) => {

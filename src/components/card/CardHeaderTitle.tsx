@@ -5,7 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as CardStyle, HTMLComponent, HTMLPProps} from '../../';
 
 export interface CardHeaderTitleProps extends HTMLPProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class CardHeaderTitle extends React.Component<CardHeaderTitleProps, {}> {

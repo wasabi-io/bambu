@@ -6,7 +6,7 @@ import {bulma as TableStyle, HTMLComponent, HTMLTrProps} from '../../';
 
 export interface RowProps extends HTMLTrProps {
     isSelected?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Row extends React.Component<RowProps, {}> {

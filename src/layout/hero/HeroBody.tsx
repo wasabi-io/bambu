@@ -5,7 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as HeroStyle, HTMLComponent, HTMLSectionProps} from '../../';
 
 export interface HeroBodyProps extends HTMLSectionProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class HeroBody extends React.Component<HeroBodyProps, {}> {

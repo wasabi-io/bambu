@@ -5,7 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLComponent, HTMLHrProps} from "../../";
 
 export interface NavbarDividerProps extends HTMLHrProps{
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class NavbarDivider extends React.Component<NavbarDividerProps, {}> {

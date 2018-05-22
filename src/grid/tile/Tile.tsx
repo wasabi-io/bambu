@@ -19,7 +19,7 @@ export interface TileProps extends HTMLDivProps {
     isDesktop?: boolean;
     isVertical?: boolean;
     bSize?: string | Size12;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Tile extends React.Component<TileProps, {}> {

@@ -10,7 +10,7 @@ import Icon, {IconOptions} from '../../elements/icon/Icon';
  */
 export interface CardHeaderIconProps extends HTMLAProps {
     icon?: IconOptions;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class CardHeaderIcon extends React.Component<CardHeaderIconProps, {}> {

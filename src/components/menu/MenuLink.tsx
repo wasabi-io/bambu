@@ -7,7 +7,7 @@ import {bulma as MenuStyle, HTMLAProps, HTMLComponent} from '../../';
 export interface MenuLinkProps extends HTMLAProps {
     isActive?: boolean;
     href?: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class MenuLink extends React.Component<MenuLinkProps, {}> {

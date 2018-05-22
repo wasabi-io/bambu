@@ -12,7 +12,7 @@ export interface ContainerProps extends HTMLDivProps {
     isFullhd?: boolean;
     isTextCentered?: boolean;
     isWidescreen?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Container extends React.Component<ContainerProps, {}> {
@@ -22,6 +22,7 @@ export default class Container extends React.Component<ContainerProps, {}> {
         isFullhd: PropTypes.bool,
         isTextCentered: PropTypes.bool,
         isWidescreen: PropTypes.bool,
+        elementRef: PropTypes.func
     };
 
     public static defaultProps = {

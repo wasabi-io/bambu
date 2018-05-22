@@ -6,7 +6,7 @@ import {bulma as LevelStyle, HTMLAllAttributes, HTMLComponent} from '../../';
 
 export interface LevelRightProps extends HTMLAllAttributes {
     tagName?: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class LevelRight extends React.Component<LevelRightProps, {}> {

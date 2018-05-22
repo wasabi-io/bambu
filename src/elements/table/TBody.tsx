@@ -5,7 +5,7 @@ import {Props} from "wasabi-common";
 import {bulma as TableStyle, HTMLComponent, HTMLTbodyProps} from '../../';
 
 export interface TBodyProps extends HTMLTbodyProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class TBody extends React.Component<TBodyProps, {}> {

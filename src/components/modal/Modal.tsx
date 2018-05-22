@@ -9,7 +9,7 @@ export interface ModalProps extends HTMLDivProps {
     hasCloseButton?: boolean;
     buttonSize?: string | Size;
     onCloseButtonClick?: any;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Modal extends React.Component<ModalProps, {}> {

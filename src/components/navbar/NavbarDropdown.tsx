@@ -8,7 +8,7 @@ export interface NavbarDropdownProps extends HTMLDivProps {
     isActive?: boolean;
     isBoxed?: boolean;
     isRight?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class NavbarDropdown extends React.Component<NavbarDropdownProps, {}> {
