@@ -44,13 +44,14 @@ export default class Index extends Stateless <any> {
                 {Index.renderSizes()}
                 <hr/>
                 {Index.renderFontAwesome()}
-                <p>For more information
-                    <a href="https://bulma.io/documentation/elements/icon/">
-                        https://bulma.io/documentation/elements/icon/
-                    </a>
-                </p>
                 <hr/>
                 {Index.renderMaterialDesign()}
+                <hr />
+                <p>For more information <a href="https://bulma.io/documentation/elements/icon/">
+                        https://bulma.io/documentation
+                        <wbr/>/elements/icon/
+                    </a>
+                </p>
             </div>
         );
     }

@@ -5,7 +5,7 @@ export default class Index extends React.Component<{}, {}> {
     public render() {
         return (
             <BreadCrumb isRight>
-                <BreadCrumbItem href="#">Bulma</BreadCrumbItem>
+                <BreadCrumbItem href="#">Home</BreadCrumbItem>
                 <BreadCrumbItem href="#">Documentation</BreadCrumbItem>
                 <BreadCrumbItem href="#">Components</BreadCrumbItem>
                 <BreadCrumbItem href="#" isActive={true}>Breadcrumb</BreadCrumbItem>

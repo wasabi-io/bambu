@@ -11,6 +11,14 @@ const codes = {
     isActive: require("!raw-loader?modules!./code/1-isActive"),
     isCentered: require("!raw-loader?modules!./code/2-isCentered"),
     isRight: require("!raw-loader?modules!./code/3-isRight"),
+    icon: require("!raw-loader?modules!./code/4-icon"),
+    hasArrowSeparator: require("!raw-loader?modules!./code/5-has-arrow-separator"),
+    hasBulletSeparator: require("!raw-loader?modules!./code/6-has-bullet-separator"),
+    hasDotSeparator: require("!raw-loader?modules!./code/7-has-dot-separator"),
+    hasSucceedsSeparator: require("!raw-loader?modules!./code/8-has-succeeds-separator"),
+    sizeSmall: require("!raw-loader?modules!./code/9-size-small"),
+    sizeMedium: require("!raw-loader?modules!./code/10-size-medium"),
+    sizeLarge: require("!raw-loader?modules!./code/11-size-large"),
 };
 
 const breadCrumbImport = `import { BreadCrumb, BreadCrumbItem } from "bambu/lib/components/breadcrumb";`;
@@ -28,6 +36,16 @@ export default class Index extends Stateless <any> {
                 {Index.renderAlignment()}
                 <hr/>
                 {Index.renderIcon()}
+                <hr/>
+                {Index.renderSeparator()}
+                <hr/>
+                {Index.renderSizes()}
+                <hr />
+                <p>For more information <a href="https://bulma.io/documentation/components/breadcrumb/">
+                        https://bulma.io/documentation
+                        <wbr/>/components/breadcrumb/
+                    </a>
+                </p>
             </div>
         );
     }
@@ -99,9 +117,53 @@ export default class Index extends Stateless <any> {
                 </Title>
                 <p>You can use any of the <a href="https://fontawesome.com/" target="_blank">Font Awesome</a> <strong>icons</strong>.</p>
                 <br/>
-                <Editor isSnippet code={codes.isCentered}/>
+                <Editor isSnippet code={codes.icon}/>
+            </div>
+        );
+    }
+
+    public static renderSeparator() {
+        return (
+            <div>
+                <Title bSize={Size6.is4} className={classNames(bulma.isSpaced, bulmaDocs.bdAnchorTitle)}>
+                    <span className={bulmaDocs.bdAnchorName}>
+                        Alternative separators
+                    </span>
+                    <a className={bulmaDocs.bdAnchorLink}>
+                        #
+                    </a>
+                </Title>
+                <p>You can choose between <strong>4 additional separators</strong>: <code>has-arrow-separator</code> <code>has-bullet-separator</code> <code>has-dot-separator</code> and <code>has-succeeds-separator</code>.</p>
                 <br/>
-                <Editor isSnippet code={codes.isRight}/>
+                <Editor isSnippet code={codes.hasArrowSeparator}/>
+                <br/>
+                <Editor isSnippet code={codes.hasBulletSeparator}/>
+                <br/>
+                <Editor isSnippet code={codes.hasDotSeparator}/>
+                <br/>
+                <Editor isSnippet code={codes.hasSucceedsSeparator}/>
+            </div>
+        );
+    }
+
+    public static renderSizes() {
+        return (
+            <div>
+                <Title bSize={Size6.is4} className={classNames(bulma.isSpaced, bulmaDocs.bdAnchorTitle)}>
+                    <span className={bulmaDocs.bdAnchorName}>
+                        Sizes
+                    </span>
+                    <a className={bulmaDocs.bdAnchorLink}>
+                        #
+                    </a>
+                </Title>
+                <p>You can choose between <strong>3 additional sizes</strong>: <code>is-small</code> <code>is-medium</code> and <code>is-large</code>.</p>
+                <br/>
+                <Editor isSnippet code={codes.sizeSmall}/>
+                <br/>
+                <Editor isSnippet code={codes.sizeMedium}/>
+                <br/>
+                <Editor isSnippet code={codes.sizeLarge}/>
             </div>
         );
     }
