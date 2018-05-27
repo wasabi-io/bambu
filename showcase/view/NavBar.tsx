@@ -52,7 +52,7 @@ export default class NavBar extends Stateless<NavBarProps> {
                             </NavbarStart>
                             <NavbarEnd>
                                 <NavbarItemLink href="https://github.com/wasabi-io/bambu" target="_blank" isHiddenMobile>
-                                    <Icon className={bulmaDocs.bdHasTextRss}><FaIcon name="github-alt"/></Icon>
+                                    <Icon className={bulmaDocs.bdHasTextRss}><FaIcon name="code" /></Icon>
                                 </NavbarItemLink>
                             </NavbarEnd>
                         </NavbarMenu>
