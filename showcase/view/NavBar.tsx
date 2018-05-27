@@ -35,7 +35,7 @@ export default class NavBar extends Stateless<NavBarProps> {
                                 }}>&lt;b@mbu&gt;</b>
                             </NavbarItemLink>
                             <NavbarItemLink href="https://github.com/wasabi-io/bambu" target="_blank" isHiddenDesktop>
-                                <Icon className={bulmaDocs.bdHasTextRss}><FaIcon name="github-alt"/></Icon>
+                                <Icon className={bulmaDocs.bdHasTextRss}><FaIcon name="code"/></Icon>
                             </NavbarItemLink>
                             <NavbarBurger onClick={this.onClick}/>
                         </NavbarBrand>
