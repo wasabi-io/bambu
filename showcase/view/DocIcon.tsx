@@ -1,6 +1,6 @@
 import * as React from "react";
 import Stateless from "wasabi-ui/lib/Stateless";
-import {FaIcon, FaIconSize, Icon} from "bambu/lib/elements/icon";
+import {FaIcon, FaIconSize, FaIconStyle, Icon} from "bambu/lib/elements/icon";
 import {Size} from "bambu";
 
 export interface DocIconProps {
@@ -8,6 +8,7 @@ export interface DocIconProps {
     bSize: Size;
     className?: string;
     iconSize: FaIconSize;
+    iconStyle?: FaIconStyle;
     iconClassName?: string;
 }
 
@@ -16,7 +17,7 @@ export default class DocIcon extends Stateless<DocIconProps> {
         return (
             <figure className={this.props.className}>
                 <Icon className={this.props.iconClassName} bSize={this.props.bSize}>
-                    <FaIcon name={this.props.name} bSize={this.props.iconSize}/>
+                    <FaIcon iconStyle={this.props.iconStyle} name={this.props.name} bSize={this.props.iconSize}/>
                 </Icon>
             </figure>
         );

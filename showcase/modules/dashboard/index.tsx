@@ -5,7 +5,7 @@ import {Container} from "bambu/lib/elements/container/index";
 import {Stateless} from "wasabi-ui";
 import bulmaDocs from "../../css/bulmaDocs";
 import bulma from "bambu/lib/base/css/bulma";
-import {FaIcon, FaIconSize, Icon} from "bambu/lib/elements/icon";
+import {FaIcon, FaIconSize, FaIconStyle, Icon} from "bambu/lib/elements/icon";
 import {Size} from "bambu";
 import DocIcon from "../../view/DocIcon";
 
@@ -82,6 +82,7 @@ export default class DashBoard extends Stateless<{}> {
                                     </p>
                                     <DocIcon
                                         name="css3"
+                                        iconStyle={FaIconStyle.brands}
                                         className={bulmaDocs.bdFocusIcon}
                                         bSize={Size.large}
                                         iconClassName={bulmaDocs.bdFocusCss3}
@@ -100,6 +101,7 @@ export default class DashBoard extends Stateless<{}> {
                                         name="github-alt"
                                         className={bulmaDocs.bdFocusIcon}
                                         bSize={Size.large}
+                                        iconStyle={FaIconStyle.brands}
                                         iconClassName={bulmaDocs.bdFocusGithub}
                                         iconSize={FaIconSize.is3x}
                                     />

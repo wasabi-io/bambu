@@ -4,7 +4,7 @@ import Container from "bambu/lib/elements/container/Container";
 import {Navbar, NavbarBrand, NavbarBurger, NavbarEnd, NavbarItemLink, NavbarMenu, NavbarStart} from "bambu/lib/components/navbar/index";
 import {action, observable} from "mobx";
 import {observer} from "mobx-react";
-import {FaIcon, Icon} from "bambu/lib/elements/icon/index";
+import {FaIcon, FaIconStyle, Icon} from "bambu/lib/elements/icon/index";
 import {bulma, Vertical} from "bambu";
 import bulmaDocs from "../css/bulmaDocs";
 
@@ -35,7 +35,7 @@ export default class NavBar extends Stateless<NavBarProps> {
                                 }}>&lt;b@mbu&gt;</b>
                             </NavbarItemLink>
                             <NavbarItemLink href="https://github.com/wasabi-io/bambu" target="_blank" isHiddenDesktop>
-                                <Icon className={bulmaDocs.bdHasTextRss}><FaIcon name="code"/></Icon>
+                                <Icon><FaIcon iconStyle={FaIconStyle.brands} name="github-alt" /></Icon>
                             </NavbarItemLink>
                             <NavbarBurger onClick={this.onClick}/>
                         </NavbarBrand>
@@ -52,7 +52,7 @@ export default class NavBar extends Stateless<NavBarProps> {
                             </NavbarStart>
                             <NavbarEnd>
                                 <NavbarItemLink href="https://github.com/wasabi-io/bambu" target="_blank" isHiddenMobile>
-                                    <Icon className={bulmaDocs.bdHasTextRss}><FaIcon name="code" /></Icon>
+                                    <Icon><FaIcon iconStyle={FaIconStyle.brands} name="github-alt" /></Icon>
                                 </NavbarItemLink>
                             </NavbarEnd>
                         </NavbarMenu>

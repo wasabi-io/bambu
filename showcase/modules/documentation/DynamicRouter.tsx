@@ -138,7 +138,7 @@ export default class DynamicRouter extends Stateless<DynamicRouterProps> {
         for (const key in childs) {
             if (childs.hasOwnProperty(key)) {
                 const child = childs[key];
-                const {name, title, subTitle, module, children, icon, iconClassName, ...props} = child;
+                const {name, title, subTitle, module, children, icon, iconStyle, iconClassName, ...props} = child;
                 const paths = breads.slice(0);
                 paths.push(name);
                 const href = paths.join("/");
@@ -148,7 +148,7 @@ export default class DynamicRouter extends Stateless<DynamicRouterProps> {
                             <figure className={bulmaDocs.bdLinkFigure}>
                                 {icon !== "linkCounter" ? (
                                     <span className={classNames(bulmaDocs.bdLinkIcon, iconClassName)}>
-                                        <Icon><FaIcon name={icon}></FaIcon></Icon>
+                                        <Icon><FaIcon iconStyle={iconStyle} name={icon} /></Icon>
                                     </span>
                                 ) : <span className={bulmaDocs.bdLinkCounter}/>}
                             </figure>

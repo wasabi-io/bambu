@@ -1,6 +1,7 @@
 import * as React from "react";
 import {Props} from "wasabi-common";
 import bulmaDocs from "../../css/bulmaDocs";
+import {FaIconStyle} from "bambu/lib/elements/icon";
 
 export interface DocumentProps {
     module?: string;
@@ -8,6 +9,7 @@ export interface DocumentProps {
     title: string;
     subTitle: JSX.Element | string;
     icon?: string;
+    iconStyle?: FaIconStyle;
     iconClassName?: string;
     children?: Props<DocumentProps>;
 }
@@ -48,6 +50,7 @@ const components: Props<DocumentProps> = {
                         name: "classes",
                         title: "Classes",
                         icon: "css3",
+                        iconStyle: FaIconStyle.brands,
                         iconClassName: bulmaDocs.hasTextLink,
                         subTitle: <span>Bulma is simply a <strong>collection</strong> of CSS classes. Write the HTML code you want.</span>
                     },
