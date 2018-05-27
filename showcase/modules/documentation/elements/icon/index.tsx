@@ -9,9 +9,10 @@ import {Cell, Row, Table, TBody} from "bambu/lib/elements/table";
 import THead from "bambu/lib/elements/table/Thead";
 import HCell from "bambu/lib/elements/table/HCell";
 import Icon from "bambu/lib/elements/icon/Icon";
-import {IconEffect, IconFlip} from "bambu/lib/elements/icon/FaIcon";
+import {default as FaIcon, FaIconEffect, FaIconFlip, FaIconSize} from "bambu/lib/elements/icon/FaIcon";
 import {Highlight} from "../../../../component/code/highlight";
 import transformer from "../../../../component/code/transform/transformer";
+import {MaIcon, MaIconSize} from "bambu/lib/elements/icon";
 
 const codes = {
     icon: require("!raw-loader?modules!./code/1-icon"),
@@ -20,12 +21,9 @@ const codes = {
     stack2: require("!raw-loader?modules!./code/3-stack2")
 };
 
-const iconSizeWrapper = (bSize?: string, fSize?: string) => {
+const iconSizeWrapper = (bSize?: string) => {
     if (bSize) {
         return <code>{`bSize={${bSize}}`}</code>;
-    }
-    if (fSize) {
-        return <code>{`iconSize={${fSize}}`}</code>;
     }
     return null;
 };
@@ -46,12 +44,13 @@ export default class Index extends Stateless <any> {
                 {Index.renderSizes()}
                 <hr/>
                 {Index.renderFontAwesome()}
-                <hr />
                 <p>For more information
                     <a href="https://bulma.io/documentation/elements/icon/">
                         https://bulma.io/documentation/elements/icon/
                     </a>
                 </p>
+                <hr/>
+                {Index.renderMaterialDesign()}
             </div>
         );
     }
@@ -117,12 +116,12 @@ export default class Index extends Stateless <any> {
                     </THead>
                     <TBody>
                     <Row>
-                        <Cell>{iconSizeWrapper('Size.small', null)}</Cell>
+                        <Cell>{iconSizeWrapper('Size.small')}</Cell>
                         <Cell><code>1rem x 1rem</code></Cell>
                         <Cell>{iconSizeWrapper()}</Cell>
                         <Cell><code>1em</code></Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon name="home" bSize={Size.small} iconClassName="fa-w18"/>
+                            <Icon bSize={Size.small}><FaIcon name="home" className="fa-w18"/></Icon>
                         </Cell>
                     </Row>
                     <Row>
@@ -131,37 +130,37 @@ export default class Index extends Stateless <any> {
                         <Cell>{iconSizeWrapper()}</Cell>
                         <Cell><code>1em</code></Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon name="home" bSize={Size.small} iconClassName="fa-w18"/>
+                            <Icon bSize={Size.small}><FaIcon name="home" className="fa-w18"/></Icon>
                         </Cell>
                     </Row>
                     <Row>
-                        <Cell>{iconSizeWrapper(null, 'IconSize.isLg')}</Cell>
+                        <Cell>{iconSizeWrapper('FaIconSize.isLg')}</Cell>
                         <Cell><code>1.33em</code></Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon name="home" bSize={Size.small} iconClassName="fa-w18"/>
+                            <Icon bSize={Size.small}><FaIcon name="home" className="fa-w18"/></Icon>
                         </Cell>
                     </Row>
                     <Row>
-                        <Cell rowSpan={3}>{iconSizeWrapper('Size.medium', null)}</Cell>
+                        <Cell rowSpan={3}>{iconSizeWrapper('Size.medium')}</Cell>
                         <Cell rowSpan={3}><code>2rem x 2rem</code></Cell>
                         <Cell>{iconSizeWrapper()}</Cell>
                         <Cell><code>1em</code></Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon name="home" bSize={Size.medium} iconClassName="fa-w18"/>
+                            <Icon bSize={Size.medium}><FaIcon name="home" className="fa-w18"/></Icon>
                         </Cell>
                     </Row>
                     <Row>
-                        <Cell>{iconSizeWrapper(null, 'IconSize.isLg')}</Cell>
+                        <Cell>{iconSizeWrapper('FaIconSize.isLg')}</Cell>
                         <Cell><code>1.33em</code></Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon name="home" bSize={Size.medium} iconClassName="fa-w18"/>
+                            <Icon bSize={Size.medium}><FaIcon name="home" className="fa-w18"/></Icon>
                         </Cell>
                     </Row>
                     <Row>
-                        <Cell>{iconSizeWrapper(null, 'IconSize.is2x')}</Cell>
+                        <Cell>{iconSizeWrapper('FaIconSize.is2x')}</Cell>
                         <Cell><code>2em</code></Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon name="home" bSize={Size.medium} iconClassName="fa-w18"/>
+                            <Icon bSize={Size.medium}><FaIcon name="home" className="fa-w18"/></Icon>
                         </Cell>
                     </Row>
                     <Row>
@@ -170,28 +169,28 @@ export default class Index extends Stateless <any> {
                         <Cell>{iconSizeWrapper()}</Cell>
                         <Cell><code>1em</code></Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon name="home" bSize={Size.large} iconClassName="fa-w18"/>
+                            <Icon bSize={Size.large}><FaIcon name="home" className="fa-w18"/></Icon>
                         </Cell>
                     </Row>
                     <Row>
-                        <Cell>{iconSizeWrapper('IconSize.isLg')}}</Cell>
+                        <Cell>{iconSizeWrapper('FaIconSize.isLg')}}</Cell>
                         <Cell><code>1.33em</code></Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon name="home" bSize={Size.large} iconClassName="fa-w18"/>
+                            <Icon bSize={Size.large}><FaIcon name="home" className="fa-w18"/></Icon>
                         </Cell>
                     </Row>
                     <Row>
-                        <Cell>{iconSizeWrapper(null, 'IconSize.is2x')}</Cell>
+                        <Cell>{iconSizeWrapper('FaIconSize.is2x')}</Cell>
                         <Cell><code>2em</code></Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon name="home" bSize={Size.large} iconClassName="fa-w18"/>
+                            <Icon bSize={Size.large}><FaIcon name="home" className="fa-w18"/></Icon>
                         </Cell>
                     </Row>
                     <Row>
-                        <Cell>{iconSizeWrapper(null, 'IconSize.is3x')}</Cell>
+                        <Cell>{iconSizeWrapper('FaIconSize.is3x')}</Cell>
                         <Cell><code>3em</code></Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon name="home" bSize={Size.large} iconClassName="fa-w18"/>
+                            <Icon bSize={Size.large}><FaIcon name="home" className="fa-w18"/></Icon>
                         </Cell>
                     </Row>
                     </TBody>
@@ -249,7 +248,7 @@ export default class Index extends Stateless <any> {
                             <code>fixed={braces(true)}</code>
                         </Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon name="home" fixed/>
+                            <Icon><FaIcon name="home" fixed/></Icon>
                         </Cell>
                     </Row>
                     <Row>
@@ -260,7 +259,7 @@ export default class Index extends Stateless <any> {
                             <code>border={braces(true)}</code>
                         </Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon border name="home" iconClassName="fa-w18"/>
+                            <Icon><FaIcon border name="home" className="fa-w18"/></Icon>
                         </Cell>
                     </Row>
                     <Row>
@@ -270,8 +269,8 @@ export default class Index extends Stateless <any> {
                         <Cell key={"cell2"}>
                             <code>spinner={braces(true)} pulse={braces(true)}</code>
                         </Cell>
-                        <Cell  key={"cell3"} className={bulmaDocs.bdIconSize}>
-                            <Icon effect={IconEffect.pulse} name="spinner" iconClassName="fa-spinner"/>
+                        <Cell key={"cell3"} className={bulmaDocs.bdIconSize}>
+                            <Icon><FaIcon effect={FaIconEffect.pulse} name="spinner"/></Icon>
                         </Cell>
                     </Row>
                     <Row>
@@ -287,12 +286,12 @@ export default class Index extends Stateless <any> {
                             <code>name="shield-alt"</code> <code>flip={braces(`IconFlip.vertical`)}</code>
                         </Cell>
                         <Cell key={"cell3"} className={bulmaDocs.bdIconSize}>
-                            <Icon name="shield-alt"/><br/>
-                            <Icon name="shield-alt" rotate={90}/><br/>
-                            <Icon name="shield-alt" rotate={180}/><br/>
-                            <Icon name="shield-alt" rotate={270}/><br/>
-                            <Icon name="shield-alt" flip={IconFlip.horizontal}/><br/>
-                            <Icon name="shield-alt" flip={IconFlip.vertical}/><br/>
+                            <Icon><FaIcon name="shield-alt"/></Icon><br/>
+                            <Icon><FaIcon name="shield-alt" rotate={90}/></Icon><br/>
+                            <Icon><FaIcon name="shield-alt" rotate={180}/></Icon><br/>
+                            <Icon><FaIcon name="shield-alt" rotate={270}/></Icon><br/>
+                            <Icon><FaIcon name="shield-alt" flip={FaIconFlip.horizontal}/></Icon><br/>
+                            <Icon><FaIcon name="shield-alt" flip={FaIconFlip.vertical}/></Icon><br/>
                         </Cell>
                     </Row>
                     <Row>
@@ -328,9 +327,195 @@ export default class Index extends Stateless <any> {
         );
     }
 
+    public static renderMaterialDesign() {
+        return (
+            <div>
+                <Title bSize={Size6.is4} className={classNames(bulma.isSpaced, bulmaDocs.bdAnchorTitle)}>
+                    <span className={bulmaDocs.bdAnchorName}>
+                        Material Design Icons
+                    </span>
+                    <a className={bulmaDocs.bdAnchorLink}>
+                        #
+                    </a>
+                </Title>
+                <p>
+                    Here is how the <code>icon</code> container can be used with <a href="https://materialdesignicons.com">Material Design Icons</a>.
+                </p>
+                <br/>
+                <Table isBordered>
+                    <THead>
+                    <Row>
+                        <HCell>Icon Component</HCell>
+                        <HCell>Container size</HCell>
+                        <HCell>MDI Component</HCell>
+                        <HCell>Icon size</HCell>
+                        <HCell>Result</HCell>
+                    </Row>
+                    </THead>
+                    <TBody>
+                    <Row>
+                        <Cell>
+                            <code>{iconSizeWrapper('Size.small')}</code>
+                        </Cell>
+                        <Cell>
+                            <code>1rem x 1rem</code>
+                        </Cell>
+                        <Cell/>
+                        <Cell>
+                            <code>1em</code>
+                        </Cell>
+                        <Cell className={bulmaDocs.bdIconSize}>
+                            <Icon bSize={Size.small}><MaIcon name="bell"/></Icon>
+                        </Cell>
+                    </Row>
+                    <Row>
+                        <Cell rowSpan={2}>
+
+                        </Cell>
+                        <Cell rowSpan={2}>
+                            <code>1.5rem x 1.5rem</code>
+                        </Cell>
+                        <Cell>
+                            <code>{iconSizeWrapper('MaIconSize.is18px')}</code>
+                        </Cell>
+                        <Cell>
+                            <code>18px</code>
+                        </Cell>
+                        <Cell className={bulmaDocs.bdIconSize}>
+                            <Icon><MaIcon bSize={MaIconSize.is18px} name="bell"/></Icon>
+                        </Cell>
+                    </Row>
+                    <Row>
+                        <Cell>
+                            <code>{iconSizeWrapper('MaIconSize.is24px')}</code>
+                        </Cell>
+                        <Cell>
+                            <code>24px</code>
+                        </Cell>
+                        <Cell className={bulmaDocs.bdIconSize}>
+                            <Icon><MaIcon bSize={MaIconSize.is24px} name="bell"/></Icon>
+                        </Cell>
+                    </Row>
+                    <Row>
+                        <Cell rowSpan={4}>
+                            <code>{iconSizeWrapper('Size.medium')}</code>
+                        </Cell>
+                        <Cell rowSpan={4}>
+                            <code>2rem x 2rem</code>
+                        </Cell>
+                        <Cell>
+                            {iconSizeWrapper('MaIconSize.is24px')}
+                        </Cell>
+                        <Cell>
+                            <code>1em</code>
+                        </Cell>
+                        <Cell className={bulmaDocs.bdIconSize}>
+                            <Icon bSize={Size.medium}><MaIcon bSize={MaIconSize.is24px} name="bell"/></Icon>
+                        </Cell>
+                    </Row>
+                    <Row>
+                        <Cell>
+                            <code>{iconSizeWrapper('MaIconSize.is18px')}</code>
+                        </Cell>
+                        <Cell>
+                            <code>18px</code>
+                        </Cell>
+                        <Cell className={bulmaDocs.bdIconSize}>
+                            <Icon bSize={Size.medium}><MaIcon bSize={MaIconSize.is18px} name="bell"/></Icon>
+                        </Cell>
+                    </Row>
+                    <Row>
+                        <Cell>
+                            <code>{iconSizeWrapper('MaIconSize.is24px')}</code>
+                        </Cell>
+                        <Cell>
+                            <code>24px</code>
+                        </Cell>
+                        <Cell className={bulmaDocs.bdIconSize}>
+                            <Icon bSize={Size.medium}><MaIcon bSize={MaIconSize.is24px} name="bell"/></Icon>
+                        </Cell>
+                    </Row>
+                    <Row>
+                        <Cell>
+                            <code>{iconSizeWrapper('MaIconSize.is36px')}</code>
+                        </Cell>
+                        <Cell>
+                            <code>36px</code>
+                        </Cell>
+                        <Cell className={bulmaDocs.bdIconSize}>
+                            <Icon bSize={Size.medium}><MaIcon bSize={MaIconSize.is36px} name="bell"/></Icon>
+                        </Cell>
+                    </Row>
+                    <Row>
+                        <Cell rowSpan={5}>
+                            <code>{iconSizeWrapper('Size.large')}</code>
+                        </Cell>
+                        <Cell rowSpan={5}>
+                            <code>3rem x 3rem</code>
+                        </Cell>
+                        <Cell>
+                            <code>mdi</code>
+                        </Cell>
+                        <Cell>
+                            <code>1em</code>
+                        </Cell>
+                        <Cell className={bulmaDocs.bdIconSize}>
+                            <Icon bSize={Size.large}><MaIcon name="bell"/></Icon>
+                        </Cell>
+                    </Row>
+                    <Row>
+                        <Cell>
+                            <code>{iconSizeWrapper('MaIconSize.is18px')}</code>
+                        </Cell>
+                        <Cell>
+                            <code>18px</code>
+                        </Cell>
+                        <Cell className={bulmaDocs.bdIconSize}>
+                            <Icon bSize={Size.large}><MaIcon bSize={MaIconSize.is18px} name="bell"/></Icon>
+                        </Cell>
+                    </Row>
+                    <Row>
+                        <Cell>
+                            <code>{iconSizeWrapper('MaIconSize.is24px')}</code>
+                        </Cell>
+                        <Cell>
+                            <code>24px</code>
+                        </Cell>
+                        <Cell className={bulmaDocs.bdIconSize}>
+                            <Icon bSize={Size.large}><MaIcon bSize={MaIconSize.is24px} name="bell"/></Icon>
+                        </Cell>
+                    </Row>
+                    <Row>
+                        <Cell>
+                            <code>{iconSizeWrapper('MaIconSize.is36px')}</code>
+                        </Cell>
+                        <Cell>
+                            <code>36px</code>
+                        </Cell>
+                        <Cell className={bulmaDocs.bdIconSize}>
+                            <Icon bSize={Size.large}><MaIcon bSize={MaIconSize.is36px} name="bell"/></Icon>
+                        </Cell>
+                    </Row>
+                    <Row>
+                        <Cell>
+                            <code>{iconSizeWrapper('MaIconSize.is48px')}</code>
+                        </Cell>
+                        <Cell>
+                            <code>48px</code>
+                        </Cell>
+                        <Cell className={bulmaDocs.bdIconSize}>
+                            <Icon bSize={Size.large}><MaIcon bSize={MaIconSize.is48px} name="bell"/></Icon>
+                        </Cell>
+                    </Row>
+                    </TBody>
+                </Table>
+            </div>
+        );
+    }
+
     private static createComponent(code: string) {
         const result = transformer.execute(code);
         const Component: any = result.Component;
-        return <Component />;
+        return <Component/>;
     }
 }

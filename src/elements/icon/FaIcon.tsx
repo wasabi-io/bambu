@@ -5,7 +5,7 @@ import {has, Objects, Props, Strings} from 'wasabi-common';
 import {Horizontal, horizontalValues} from '../../';
 import HTMLComponent, {HTMLIProps} from '../../base/html/HTML';
 
-export enum IconSize {
+export enum FaIconSize {
     isXs = 'xs',
     isSm = 'sm',
     isLg = 'lg',
@@ -20,31 +20,31 @@ export enum IconSize {
     is10x = '10x'
 }
 
-export const iconSizeValues = Objects.values(IconSize);
+export const faIconSizeValues = Objects.values(FaIconSize);
 
-export enum IconStyle {
+export enum FaIconStyle {
     solid = "fas",
     regular = "far",
     light = "fal",
     brands = "fab"
 }
 
-export const iconStyleValues = Objects.values(IconStyle);
+export const faIconStyleValues = Objects.values(FaIconStyle);
 
-export enum IconFlip {
+export enum FaIconFlip {
     horizontal = "horizontal",
     vertical = "vertical",
 }
 
-export const iconFlipValues = Objects.values(IconFlip);
+export const faIconFlipValues = Objects.values(FaIconFlip);
 
-export enum IconEffect { spin = 'spin', pulse = 'pulse' }
+export enum FaIconEffect { spin = 'spin', pulse = 'pulse' }
 
-export const iconEffectValues = Objects.values(IconEffect);
+export const faIconEffectValues = Objects.values(FaIconEffect);
 
-export enum IconStack { x1 = '1x', x2 = '2x' }
+export enum FaIconStack { x1 = '1x', x2 = '2x' }
 
-export const iconStackValues = Objects.values(IconStack);
+export const faIconStackValues = Objects.values(FaIconStack);
 
 /**
  * Refers FaIcon Props.
@@ -52,16 +52,16 @@ export const iconStackValues = Objects.values(IconStack);
 export interface FaIconProps extends HTMLIProps {
     ariaHidden?: boolean;
     border?: boolean;
-    effect?: string | IconEffect;
+    effect?: string | FaIconEffect;
     fixed?: boolean;
-    flip?: string | IconFlip;
-    iconStyle?: string | IconStyle;
+    flip?: string | FaIconFlip;
+    iconStyle?: string | FaIconStyle;
     inverse?: boolean;
     name: string;
     pull?: string | Horizontal;
     rotate?: number;
-    bSize?: string | IconSize;
-    stack?: string | IconStack;
+    bSize?: string | FaIconSize;
+    stack?: string | FaIconStack;
     elementRef?: (ref: any) => any;
 }
 
@@ -74,18 +74,18 @@ export default class FaIcon extends HTMLComponent<FaIconProps> {
 
     public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
         ...HTMLComponent.propTypes,
-        iconStyle: PropTypes.oneOf(iconStyleValues),
+        iconStyle: PropTypes.oneOf(faIconStyleValues),
         ariaHidden: PropTypes.bool,
         border: PropTypes.bool,
-        effect: PropTypes.oneOf(iconEffectValues),
+        effect: PropTypes.oneOf(faIconEffectValues),
         fixed: PropTypes.bool,
-        flip: PropTypes.oneOf(iconFlipValues),
+        flip: PropTypes.oneOf(faIconFlipValues),
         inverse: PropTypes.bool,
         name: PropTypes.string.isRequired,
         pull: PropTypes.oneOf(horizontalValues),
         rotate: PropTypes.number,
-        bSize: PropTypes.oneOf(iconSizeValues),
-        stack: PropTypes.oneOf(iconStackValues),
+        bSize: PropTypes.oneOf(faIconSizeValues),
+        stack: PropTypes.oneOf(faIconStackValues),
     };
 
     public static defaultProps = {
@@ -93,7 +93,7 @@ export default class FaIcon extends HTMLComponent<FaIconProps> {
         ariaHidden: false,
         border: false,
         fixed: false,
-        iconStyle: IconStyle.solid,
+        iconStyle: FaIconStyle.solid,
         inverse: false
     };
 

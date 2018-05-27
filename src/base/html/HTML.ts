@@ -13,6 +13,7 @@ abstract class AbstractDom<P extends HTMLElementProps> extends Stateless<P> {
     public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
         className: PropTypes.string,
         style: PropTypes.object,
+        elementRef: PropTypes.func
     };
 
     public static defaultProps = {

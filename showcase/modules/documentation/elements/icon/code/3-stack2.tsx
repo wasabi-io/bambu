@@ -1,16 +1,15 @@
 import * as React from "react";
-import {Icon} from "bambu/lib/elements/icon";
+import {FaIcon, Icon} from "bambu/lib/elements/icon";
 import {bulma, Size} from "bambu";
-import {IconStack} from "bambu/lib/elements/icon/FaIcon";
-import IconStacker from "bambu/lib/elements/icon/IconStacker";
+import {FaIconSize, FaIconStack} from "bambu/lib/elements/icon/FaIcon";
 
 export default class Index extends React.Component<{}, {}> {
     public render() {
         return (
-           <IconStacker>
-               <Icon name="camera" bSize={Size.medium} stack={IconStack.x1} />
-               <Icon name="ban" bSize={Size.medium} stack={IconStack.x2} className={bulma.hasTextDanger} />
-           </IconStacker>
+            <Icon stack bSize={Size.large} iconSize={FaIconSize.isLg}>
+                <FaIcon name={"camera"} stack={FaIconStack.x1} />
+                <FaIcon name={"ban"} className={bulma.hasTextDanger} stack={FaIconStack.x2} />
+            </Icon>
         );
     }
 }
