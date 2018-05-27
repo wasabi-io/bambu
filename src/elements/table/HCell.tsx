@@ -22,7 +22,7 @@ export default class HCell extends React.Component<HCellProps, {}> {
         const classNames = ClassNames(TableStyle.th, className);
 
         return (
-            <th className={classNames} {...hCellProps} ref={elementRef} >
+            <th className={classNames} {...hCellProps} ref={elementRef}>
                 {children}
             </th>
         );

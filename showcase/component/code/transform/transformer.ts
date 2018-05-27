@@ -1,5 +1,3 @@
-import * as React from "react";
-import * as WasabiUI from "wasabi-ui";
 import * as ts from "typescript";
 import {Props} from "wasabi-common";
 
@@ -34,7 +32,7 @@ class Transformer {
     }
 
     public addModules(props: Props<any>) {
-        modules = { ...modules, ...props };
+        modules = {...modules, ...props};
     }
 
     public transformTypescript(code: string) {

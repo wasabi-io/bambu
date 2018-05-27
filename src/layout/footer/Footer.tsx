@@ -20,7 +20,7 @@ export default class Footer extends React.Component<FooterProps, {}> {
         const classNames = ClassNames([FooterStyle.footer, className]);
 
         return (
-            <footer className={classNames} {...inputProps} ref={elementRef} >
+            <footer className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </footer>
         );

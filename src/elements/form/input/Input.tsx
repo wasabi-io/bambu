@@ -51,7 +51,7 @@ export default class Input extends Stateless<InputProps> {
         );
 
         return (
-            <input type={type} className={classNames} {...inputProps} ref={this.props.elementRef} >
+            <input type={type} className={classNames} {...inputProps} ref={this.props.elementRef}>
                 {children}
             </input>
         );

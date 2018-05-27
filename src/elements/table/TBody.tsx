@@ -20,7 +20,7 @@ export default class TBody extends React.Component<TBodyProps, {}> {
         const classNames = ClassNames(TableStyle.tr, className);
 
         return (
-            <tbody className={classNames} {...tBodyProps} ref={elementRef} >
+            <tbody className={classNames} {...tBodyProps} ref={elementRef}>
             {children}
             </tbody>
         );

@@ -1,4 +1,4 @@
-import {Arrays, has, Props, Strings} from "wasabi-common";
+import {Arrays, has, Props} from "wasabi-common";
 
 export interface ParsedHash {
     paths: string[];

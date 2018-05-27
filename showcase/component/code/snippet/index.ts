@@ -1,1 +1,1 @@
-export { default as Snippet} from './Snippet';
+export {default as Snippet} from './Snippet';

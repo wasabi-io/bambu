@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {Objects, Props} from 'wasabi-common';
 import {bulma as ButtonStyle, Color, colorValues, HTMLAllAttributes, HTMLComponent, Size, sizeValues, State, stateValues} from '../../';
-import Icon, {IconOptions} from '../icon/Icon';
+import {FaIcon, FaIconProps, Icon} from '../icon';
 
 export enum ButtonTagNames {
     a = 'a',
@@ -16,7 +16,7 @@ export interface ButtonProps extends HTMLAllAttributes {
     type?: string;
     value?: string;
     color?: string | Color;
-    icon?: IconOptions;
+    icon?: string | FaIconProps;
     bSize?: string | Size;
     state?: string | State;
     isOutlined?: boolean;
@@ -79,6 +79,6 @@ export default class Button extends React.Component<ButtonProps, {}> {
             className: classNames,
             ref: elementRef,
             ...buttonProps,
-        }, icon && <Icon icon={icon} bSize={bSize}/>, children);
+        }, icon && <Icon bSize={bSize}>{typeof icon === "string" ? <FaIcon name={icon}/> : <FaIcon {...icon} />}</Icon>, children);
     }
 }

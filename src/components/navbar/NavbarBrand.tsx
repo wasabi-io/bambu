@@ -27,7 +27,7 @@ export default class NavbarBrand extends React.Component<NavbarBrandProps, {}> {
         const classNames = ClassNames(NavbarStyle.navbarBrand, {[`${NavbarStyle.hasShadow}`]: hasShadow}, className);
 
         return (
-            <div className={classNames} {...inputProps}  ref={elementRef}>
+            <div className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </div>
         );

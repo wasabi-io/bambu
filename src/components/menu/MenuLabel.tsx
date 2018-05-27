@@ -20,7 +20,7 @@ export default class MenuLabel extends React.Component<MenuLabelProps, {}> {
         const classNames = ClassNames([MenuStyle.menuLabel, className]);
 
         return (
-            <p className={classNames} {...inputProps} ref={elementRef} >
+            <p className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </p>
         );

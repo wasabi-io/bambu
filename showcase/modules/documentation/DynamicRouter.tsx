@@ -12,7 +12,7 @@ import NotFound from "../../view/NotFound";
 import {toJS} from "mobx";
 import {Props} from "wasabi-common";
 import * as classNames from "classnames";
-import {Icon} from "bambu/lib/elements/icon";
+import {FaIcon, Icon} from "bambu/lib/elements/icon";
 import {Container} from "bambu/lib/elements/container/index";
 import Strings from "wasabi-common/lib/types/Strings";
 
@@ -25,6 +25,7 @@ export interface ComponentResult {
     path: string;
     siblings?: Props<DocumentProps>;
 }
+
 @observer
 export default class DynamicRouter extends Stateless<DynamicRouterProps> {
 
@@ -114,8 +115,8 @@ export default class DynamicRouter extends Stateless<DynamicRouterProps> {
         }
         return (
             <nav className={bulmaDocs.bdPrevNextBis}>
-                {left && this.renderNextPreviousLink(left, paths, props.siblings[left].title, true) }
-                {right && this.renderNextPreviousLink(right, paths, props.siblings[right].title, false) }
+                {left && this.renderNextPreviousLink(left, paths, props.siblings[left].title, true)}
+                {right && this.renderNextPreviousLink(right, paths, props.siblings[right].title, false)}
             </nav>
         );
     }
@@ -123,14 +124,15 @@ export default class DynamicRouter extends Stateless<DynamicRouterProps> {
     public static renderNextPreviousLink(link: string, paths: string[], title: string, isPrevious: boolean) {
         const linkPaths = paths.slice(0, paths.length - 1);
         linkPaths.push(link);
-        const text = isPrevious ? `← ${title}` :  `${title} →`;
-        const className = isPrevious ? bulmaDocs.bdPrevNextBisPrevious :  bulmaDocs.bdPrevNextBisNext;
+        const text = isPrevious ? `← ${title}` : `${title} →`;
+        const className = isPrevious ? bulmaDocs.bdPrevNextBisPrevious : bulmaDocs.bdPrevNextBisNext;
         return (
             <a className={className} href={`#/${linkPaths.join("/")}`} title={title}>
                 {text}
             </a>
         );
     }
+
     public static renderReferences(childs: Props<any>, breads: string[]) {
         const elements: JSX.Element[] = [];
         for (const key in childs) {
@@ -146,7 +148,7 @@ export default class DynamicRouter extends Stateless<DynamicRouterProps> {
                             <figure className={bulmaDocs.bdLinkFigure}>
                                 {icon !== "linkCounter" ? (
                                     <span className={classNames(bulmaDocs.bdLinkIcon, iconClassName)}>
-                                        <Icon icon={icon}/>
+                                        <Icon><FaIcon name={icon}></FaIcon></Icon>
                                     </span>
                                 ) : <span className={bulmaDocs.bdLinkCounter}/>}
                             </figure>

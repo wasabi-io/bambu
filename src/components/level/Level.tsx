@@ -31,7 +31,7 @@ export default class Level extends React.Component<LevelProps, {}> {
         );
 
         return (
-            <nav className={classNames} {...levelProps} ref={elementRef} >
+            <nav className={classNames} {...levelProps} ref={elementRef}>
                 {children}
             </nav>
         );

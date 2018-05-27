@@ -46,7 +46,7 @@ export default class ControlLabel extends React.Component<ControlLabelProps, {}>
         );
 
         return (
-            <label className={classNames} {...inputProps} ref={elementRef} >
+            <label className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </label>
         );

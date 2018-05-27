@@ -20,7 +20,7 @@ export default class HeroHead extends React.Component<HeroHeadProps, {}> {
         const classNames = ClassNames([HeroStyle.heroHead, className]);
 
         return (
-            <header className={classNames} {...inputProps} ref={elementRef} >
+            <header className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </header>
         );

@@ -20,7 +20,7 @@ export default class NavbarEnd extends React.Component<NavbarEndProps, {}> {
         const classNames = ClassNames(NavbarStyle.navbarEnd, className);
 
         return (
-            <div className={classNames} {...navbarEndProps}  ref={elementRef}>
+            <div className={classNames} {...navbarEndProps} ref={elementRef}>
                 {children}
             </div>
         );

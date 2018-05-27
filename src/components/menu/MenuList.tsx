@@ -20,7 +20,7 @@ export default class MenuList extends React.Component<MenuListProps, {}> {
         const classNames = ClassNames([MenuStyle.menuList, className]);
 
         return (
-            <ul className={classNames} {...inputProps} ref={elementRef} >
+            <ul className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </ul>
         );

@@ -54,7 +54,7 @@ export default class Hero extends React.Component<HeroProps, {}> {
         );
 
         return (
-            <section className={classNames} {...heroProps} ref={elementRef} >
+            <section className={classNames} {...heroProps} ref={elementRef}>
                 {children}
             </section>
         );

@@ -20,7 +20,7 @@ export default class THead extends React.Component<THeadProps, {}> {
         const classNames = ClassNames(TableStyle.tr, className);
 
         return (
-            <thead className={classNames} {...tHeadProps} ref={elementRef} >
+            <thead className={classNames} {...tHeadProps} ref={elementRef}>
             {children}
             </thead>
         );

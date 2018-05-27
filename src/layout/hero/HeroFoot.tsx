@@ -20,7 +20,7 @@ export default class HeroFoot extends React.Component<HeroFootProps, {}> {
         const classNames = ClassNames(HeroStyle.heroFoot, className);
 
         return (
-            <footer className={classNames} {...heroFootProps} ref={elementRef} >
+            <footer className={classNames} {...heroFootProps} ref={elementRef}>
                 {children}
             </footer>
         );

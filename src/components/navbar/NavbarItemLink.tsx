@@ -42,7 +42,7 @@ export default class NavbarItemLink extends React.Component<NavbarItemLinkProps,
         );
 
         return (
-            <a className={classNames} {...inputProps}  ref={elementRef}>
+            <a className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </a>
         );

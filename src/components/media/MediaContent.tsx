@@ -23,7 +23,7 @@ export default class MediaContent extends React.Component<MediaContentProps, {}>
         ]);
 
         return (
-            <div className={classNames} {...inputProps} ref={elementRef} >
+            <div className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </div>
         );

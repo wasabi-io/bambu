@@ -4,7 +4,7 @@ import * as React from 'react';
 import {Props} from 'wasabi-common';
 import {bulma as PanelStyle, HTMLComponent, HTMLPProps} from '../../';
 
-export interface PanelTabsProps extends HTMLPProps{
+export interface PanelTabsProps extends HTMLPProps {
     elementRef?: (ref: any) => any;
 }
 

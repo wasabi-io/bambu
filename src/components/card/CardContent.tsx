@@ -23,7 +23,7 @@ export default class CardContent extends React.Component<CardContentProps, {}> {
         ]);
 
         return (
-            <div className={classNames} {...cardContentProps} ref={elementRef} >
+            <div className={classNames} {...cardContentProps} ref={elementRef}>
                 {children}
             </div>
         );

@@ -28,7 +28,7 @@ export default class DropdownTrigger extends React.Component<DropdownTriggerProp
         );
 
         return (
-            <div className={classNames} {...ownProps}  ref={elementRef}>
+            <div className={classNames} {...ownProps} ref={elementRef}>
                 {children}
             </div>
         );

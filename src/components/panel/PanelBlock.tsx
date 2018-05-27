@@ -3,7 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {Props} from 'wasabi-common';
 import {bulma as PanelStyle, HTMLComponent} from '../../';
-import {Icon, IconProps} from '../../elements/icon';
+import {FaIcon, FaIconProps, Icon, IconProps} from '../../elements/icon';
 
 /**
  * Refers PanelBlockProps.
@@ -11,6 +11,7 @@ import {Icon, IconProps} from '../../elements/icon';
 export interface PanelBlockProps extends IconProps {
     isActive?: boolean;
     hasIcon?: boolean;
+    icon: string | FaIconProps;
     elementRef?: (ref: any) => any;
 }
 
@@ -39,9 +40,7 @@ export default class PanelBlock extends HTMLComponent<PanelBlockProps> {
      */
     public render(): JSX.Element {
         const {
-            isActive, hasIcon, ariaHidden, border, effect, fixed, flip, iconStyle, inverse,
-            name, pull, rotate, bSize, stack, iconClassName, iconSize, isList,
-            listClassName, elementRef, className, ...props
+            isActive, hasIcon, icon, iconClassName, bSize, stack, elementRef, className, ...props
         } = this.props;
 
         const classNames = ClassNames(
@@ -55,12 +54,9 @@ export default class PanelBlock extends HTMLComponent<PanelBlockProps> {
         return (
             <span className={classNames} {...props} ref={elementRef}>
                 {hasIcon && (
-                    <Icon
-                        ariaHidden={ariaHidden} border={border} effect={effect} fixed={fixed}
-                        flip={flip} iconStyle={iconStyle} inverse={inverse} name={name}
-                        pull={pull} rotate={rotate} bSize={bSize} stack={stack} iconClassName={iconClassName}
-                        iconSize={iconSize} isList={isList} listClassName={listClassName}
-                    />
+                    <Icon iconClassName={iconClassName} bSize={bSize} stack={stack}>
+                        {typeof icon === "string" ? <FaIcon name={icon}/> : <FaIcon {...icon} />}
+                    </Icon>
                 )}
                 {this.props.children}
             </span>

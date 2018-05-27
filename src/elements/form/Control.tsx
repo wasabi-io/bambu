@@ -56,7 +56,7 @@ export default class Control extends React.Component<ControlProps, {}> {
         );
 
         return (
-            <div className={classNames} {...props} ref={elementRef} >
+            <div className={classNames} {...props} ref={elementRef}>
                 {children}
             </div>
         );

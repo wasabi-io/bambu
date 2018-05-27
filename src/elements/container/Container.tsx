@@ -48,7 +48,7 @@ export default class Container extends React.Component<ContainerProps, {}> {
         );
 
         return (
-            <div className={classNames} {...inputProps} ref={elementRef} >
+            <div className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </div>
         );

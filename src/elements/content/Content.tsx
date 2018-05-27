@@ -29,7 +29,7 @@ export default class Content extends React.Component<ContentProps, {}> {
         );
 
         return (
-            <div className={classNames} {...inputProps} ref={elementRef} >
+            <div className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </div>
         );

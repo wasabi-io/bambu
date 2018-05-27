@@ -21,7 +21,7 @@ export default class Class extends React.Component<TFootProps, {}> {
         const classNames = ClassNames(TableStyle.tfoot, className);
 
         return (
-            <tfoot className={classNames} {...tFootProps} ref={elementRef} >
+            <tfoot className={classNames} {...tFootProps} ref={elementRef}>
             {children}
             </tfoot>
         );

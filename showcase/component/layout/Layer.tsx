@@ -23,7 +23,7 @@ export default class Layer extends Stateless<LayerProps> {
     };
 
     public render() {
-        const { isSeparate, separatorRenderer, className, ...props} = this.props;
+        const {isSeparate, separatorRenderer, className, ...props} = this.props;
         const separator = separatorRenderer || Layer.separatorRenderer;
         const classnames = classNames(
             layerStyle.messagePreview,
@@ -42,6 +42,6 @@ export default class Layer extends Stateless<LayerProps> {
         );
     }
 
-    public static separatorRenderer = (key: any)  => <hr key={key} style={{ marginBottom: 0 }} />;
+    public static separatorRenderer = (key: any) => <hr key={key} style={{marginBottom: 0}}/>;
 
 }

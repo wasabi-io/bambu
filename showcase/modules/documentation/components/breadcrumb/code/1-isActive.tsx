@@ -1,5 +1,5 @@
 import * as React from "react";
-import { BreadCrumb, BreadCrumbItem } from "bambu/lib/components/breadcrumb";
+import {BreadCrumb, BreadCrumbItem} from "bambu/lib/components/breadcrumb";
 
 export default class Index extends React.Component<{}, {}> {
     public render() {

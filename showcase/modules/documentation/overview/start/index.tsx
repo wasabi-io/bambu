@@ -8,7 +8,7 @@ import Highlight from "component/code/highlight/Highlight";
 import {Message, MessageBody, MessageHeader} from "bambu/lib/components/message";
 import bulmaDocs from "../../../../css/bulmaDocs";
 import {Content} from "bambu/lib/elements/content";
-import Icon from "bambu/lib/elements/icon/Icon";
+import {FaIcon, Icon} from "bambu/lib/elements/icon";
 
 const packageJson = require("../../../../../package.json");
 
@@ -171,11 +171,13 @@ export default class Index extends Stateless <any> {
                         </Highlight>
                     </MediaContent>
                 </Media>
-                <hr />
+                <hr/>
                 <Message color={Color.success}>
                     <MessageBody>
                         Completed ! Now lets started.
-                        <span className={bulma.hasTextWarning}><Icon name="thumbs-up" /></span>
+                        <Icon className={bulma.hasTextWarning}>
+                            <FaIcon name="thumbs-up"/>
+                        </Icon>
                     </MessageBody>
                 </Message>
             </div>

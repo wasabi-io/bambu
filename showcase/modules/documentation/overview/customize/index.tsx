@@ -96,8 +96,8 @@ export default class Index extends Stateless <any> {
                             As <code>$blue</code> has been updated, and since <code>$blue-invert</code> is automatically calculated with the <strong>function</strong> <code>$blue-invert: findColorInvert($blue)</code>, the <code>$blue-invert</code> is now black instead of white</p>
                         <p></p>
                         <figure>
-                            <img width="640" height="640" src="https://bulma.io/images/customize-before.png" alt="Customizing Bulma with Sass" />
-                                <img width="640" height="640" src="https://bulma.io/images/customize-after.png" alt="Customizing Bulma with Sass" />
+                            <img width="640" height="640" src="https://bulma.io/images/customize-before.png" alt="Customizing Bulma with Sass"/>
+                            <img width="640" height="640" src="https://bulma.io/images/customize-after.png" alt="Customizing Bulma with Sass"/>
                         </figure>
                     </div>
                 </article>

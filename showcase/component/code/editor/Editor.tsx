@@ -6,7 +6,7 @@ import CodeMirror, {CodeMirrorStore} from "../mirror/CodeMirror";
 import Preview, {PreviewStore} from "../preview/Preview";
 import transformer from "../transform/transformer";
 import {IInstance} from "react-codemirror2";
-import Layer, {LayerProps} from "../../layout/Layer";
+import {LayerProps} from "../../layout/Layer";
 import Style from "../Styles";
 import classNames = require("classnames");
 

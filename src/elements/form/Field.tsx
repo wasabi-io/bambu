@@ -82,7 +82,7 @@ export default class Field extends React.Component<FieldProps, {}> {
         );
 
         return (
-            <div className={classNames} {...inputProps} ref={elementRef} >
+            <div className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </div>
         );

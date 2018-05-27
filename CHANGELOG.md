@@ -14,6 +14,7 @@
 * changed `elementRef` property type as function.
 * removed *FaIcon* from *Icon* component. You should give it as a children.
 * removed *MaIcon* component. https://materialdesignicons.com/getting-started
+* fixed *Icon* problems in library and documentation.
 
 
 #### v0.6.201-beta.2

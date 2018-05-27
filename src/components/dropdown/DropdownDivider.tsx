@@ -27,7 +27,7 @@ export default class DropdownDivider extends React.Component<DropdownDividerProp
         );
 
         return (
-            <hr className={classNames} {...ownProps} ref={elementRef} />
+            <hr className={classNames} {...ownProps} ref={elementRef}/>
         );
     }
 }

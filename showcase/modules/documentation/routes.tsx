@@ -7,9 +7,7 @@ export interface DRoute {
 const routes: Props<DRoute> = {
     Documentation: {
         Children: {
-            Columns: {
-
-            },
+            Columns: {},
             Components: {},
             Elements: {},
             Form: {},

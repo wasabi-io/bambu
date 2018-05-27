@@ -78,7 +78,7 @@ export default class Preview extends Stateless<PreviewProps> {
             this.component = this.renderErrorMessage(Component.message);
         }
         return (
-            <div id={this.id} style={{ padding: "10px", width: "100%" }} />
+            <div id={this.id} style={{padding: "10px", width: "100%"}}/>
         );
     }
 
@@ -93,7 +93,7 @@ export default class Preview extends Stateless<PreviewProps> {
     private renderComponent() {
         try {
             document.getElementById(this.id).innerHTML = ReactDOMServer.renderToString(this.component);
-        }catch (e) {
+        } catch (e) {
             console.log(e);
             document.getElementById(this.id).innerHTML = ReactDOMServer.renderToString(this.renderErrorMessage(e.message));
         }

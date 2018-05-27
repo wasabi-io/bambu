@@ -23,7 +23,7 @@ export default class ModalCardTitle extends React.Component<ModalCardTitleProps,
         const classNames = ClassNames(ModalStyle.modalCardTitle, className);
 
         return (
-            <header className={classNames} {...modalCardTitleProps}  ref={elementRef}>
+            <header className={classNames} {...modalCardTitleProps} ref={elementRef}>
                 {children}
             </header>
         );

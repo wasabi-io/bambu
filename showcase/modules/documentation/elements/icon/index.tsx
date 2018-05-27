@@ -510,7 +510,7 @@ export default class Index extends Stateless <any> {
                         </Row>
                         </TBody>
                     </Table>
-                    <br />
+                    <br/>
                 </div>
                 <div>
                     <p>
@@ -524,7 +524,7 @@ export default class Index extends Stateless <any> {
                             rotated &amp; flipped icons
                         </li>
                     </ul>
-                    <br />
+                    <br/>
                     <Table isBordered>
                         <THead>
                         <Row>
@@ -616,12 +616,12 @@ export default class Index extends Stateless <any> {
                         </TBody>
                     </Table>
                 </div>
-                <br />
+                <br/>
                 <p> For more information
                     <a href="https://bulma.io/documentation/elements/icon/">
                         https://bulma.io/documentation/
-                        <wbr />elements/
-                        <wbr />icon/
+                        <wbr/>elements/
+                        <wbr/>icon/
                     </a>
                 </p>
             </div>

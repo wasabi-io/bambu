@@ -23,7 +23,7 @@ export default class CardHeader extends React.Component<CardHeaderProps, {}> {
         ]);
 
         return (
-            <header className={classNames} {...cardHeaderProps} ref={elementRef} >
+            <header className={classNames} {...cardHeaderProps} ref={elementRef}>
                 {children}
             </header>
         );

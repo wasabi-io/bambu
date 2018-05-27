@@ -4,8 +4,9 @@ import Container from "bambu/lib/elements/container/Container";
 import {Navbar, NavbarBrand, NavbarBurger, NavbarEnd, NavbarItemLink, NavbarMenu, NavbarStart} from "bambu/lib/components/navbar/index";
 import {action, observable} from "mobx";
 import {observer} from "mobx-react";
-import {Icon} from "bambu/lib/elements/icon/index";
-import {Vertical} from "bambu";
+import {FaIcon, Icon} from "bambu/lib/elements/icon/index";
+import {bulma, Vertical} from "bambu";
+import bulmaDocs from "../css/bulmaDocs";
 
 export interface NavBarProps {
     basePath: string;
@@ -34,32 +35,24 @@ export default class NavBar extends Stateless<NavBarProps> {
                                 }}>&lt;b@mbu&gt;</b>
                             </NavbarItemLink>
                             <NavbarItemLink href="https://github.com/wasabi-io/bambu" target="_blank" isHiddenDesktop>
-                                 <span className="icon bd-has-text-rss">
-                                  <Icon name="github-alt"/>
-                              </span>
+                                <Icon className={bulmaDocs.bdHasTextRss}><FaIcon name="github-alt"/></Icon>
                             </NavbarItemLink>
                             <NavbarBurger onClick={this.onClick}/>
                         </NavbarBrand>
                         <NavbarMenu isActive={this.isActive}>
                             <NavbarStart>
                                 <a className="navbar-item bd-navbar-item-documentation " href={this.getUrl("#documentation")}>
-                                <span className="icon has-text-primary">
-                                    <Icon name="book"/>
-                                </span>
+                                    <Icon className={bulma.hasTextPrimary}><FaIcon name="book"/></Icon>
                                     <span>Showcase</span>
                                 </a>
                                 <a className="navbar-item bd-navbar-item-blog " href={this.getUrl("react-docs")}>
-                              <span className="icon  has-text-warning">
-                                  <Icon name="file-text"/>
-                              </span>
+                                    <Icon className={bulma.hasTextWarning}><FaIcon name="file"/></Icon>
                                     <span>React Docs</span>
                                 </a>
                             </NavbarStart>
                             <NavbarEnd>
                                 <NavbarItemLink href="https://github.com/wasabi-io/bambu" target="_blank" isHiddenMobile>
-                                 <span className="icon bd-has-text-rss">
-                                  <Icon name="github-alt"/>
-                              </span>
+                                    <Icon className={bulmaDocs.bdHasTextRss}><FaIcon name="github-alt"/></Icon>
                                 </NavbarItemLink>
                             </NavbarEnd>
                         </NavbarMenu>

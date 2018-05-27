@@ -64,7 +64,7 @@ export default class Navbar extends React.Component<NavbarProps, {}> {
         );
 
         return (
-            <nav className={classNames} aria-label={`${arialLabel} navigation`} {...navbarProps}  ref={elementRef}>
+            <nav className={classNames} aria-label={`${arialLabel} navigation`} {...navbarProps} ref={elementRef}>
                 {children}
             </nav>
         );

@@ -52,7 +52,7 @@ export default class Tile extends React.Component<TileProps, {}> {
         );
 
         return (
-            <div className={classNames} {...tileProps} ref={elementRef} >
+            <div className={classNames} {...tileProps} ref={elementRef}>
                 {children}
             </div>
         );

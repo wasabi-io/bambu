@@ -2,7 +2,7 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {Alignment, alignmentValues, bulma as FormStyle, Color, colorValues, HTMLComponent, HTMLInputProps, Size, sizeValues} from '../../../../';
-import {Icon, IconOptions} from '../../../icon';
+import {FaIcon, FaIconProps, Icon} from '../../../icon';
 import {has} from 'wasabi-common/lib';
 import Strings from 'wasabi-common/lib/types/Strings';
 import ControlLabel from '../../ControlLabel';
@@ -11,7 +11,7 @@ export interface FileUploadProps extends HTMLInputProps {
     color?: string | Color;
     bSize?: string | Size;
     label?: string;
-    icon?: IconOptions;
+    icon?: string | FaIconProps;
     iconSize?: string | Size;
     hasName?: boolean;
     isFullwidth?: boolean;
@@ -56,7 +56,9 @@ const FileUpload: React.SFC<FileUploadProps> = (props: FileUploadProps) => {
             <ControlLabel className={FormStyle.fileLabel}>
                 <input className={FormStyle.fileInput} {...fileUploadProps} type="file"/>
                 {(hasIcon || hasLabel) && <span className={FormStyle.fileCta}>
-          {hasIcon && <span className={FormStyle.fileIcon}><Icon icon={icon} bSize={iconSize}/></span>}
+          {hasIcon && <span className={FormStyle.fileIcon}>
+              <Icon bSize={iconSize}>{typeof icon === "string" ? <FaIcon name={icon}/> : <FaIcon {...icon} />}</Icon>
+          </span>}
                     {hasLabel && <span className={FormStyle.fileLabel}> {label}</span>}
         </span>}
                 {hasName && Strings.has(placeholder) && <span className={FormStyle.fileName}>{placeholder}</span>}

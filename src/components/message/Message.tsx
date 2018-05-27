@@ -26,7 +26,7 @@ export default class Message extends React.Component<MessageProps, {}> {
         const classNames = ClassNames(MessageStyle.message, MessageStyle[color], MessageStyle[bSize], className);
 
         return (
-            <article className={classNames} {...ownProps}  ref={elementRef}>
+            <article className={classNames} {...ownProps} ref={elementRef}>
                 {children}
             </article>
         );

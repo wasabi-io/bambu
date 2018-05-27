@@ -3,7 +3,6 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {Objects, Props} from "wasabi-common";
 import {Alignment, alignmentValues, bulma as BreadCrumbStyle, HTMLComponent, HTMLElementProps, Size, sizeValues} from '../../';
-import {bulma as ModalStyle} from "bambu";
 
 export enum BreadCrumbSeperator {
     arrow = 'hasArrowSeparator',
@@ -51,7 +50,7 @@ export default class BreadCrumb extends React.Component<BreadCrumbProps, {}> {
         );
 
         return (
-            <nav className={classNames} {...breadCrumbProps} ref={elementRef} >
+            <nav className={classNames} {...breadCrumbProps} ref={elementRef}>
                 <ul>
                     {children}
                 </ul>

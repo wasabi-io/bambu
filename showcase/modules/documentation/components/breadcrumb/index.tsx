@@ -20,13 +20,13 @@ export default class Index extends Stateless <any> {
         return (
             <div>
                 {Index.renderTitle()}
-                <hr />
+                <hr/>
                 {Index.renderImporting()}
-                <hr />
+                <hr/>
                 {Index.renderIsActive()}
-                <hr />
+                <hr/>
                 {Index.renderAlignment()}
-                <hr />
+                <hr/>
                 {Index.renderIcon()}
             </div>
         );
@@ -44,11 +44,12 @@ export default class Index extends Stateless <any> {
             </div>
         );
     }
+
     public static renderImporting() {
         return (
             <div>
                 <p>Importing <strong>BreadCrumb</strong>, <strong>BreadCrumbItem</strong> components</p>
-                <br />
+                <br/>
                 <Highlight language={"javascript"}>
                     {breadCrumbImport}
                 </Highlight>
@@ -60,10 +61,11 @@ export default class Index extends Stateless <any> {
         return (
             <div>
                 <p>You can inform the current page using the <code>isActive</code> property in <strong>BreadCrumbItem</strong> component. It will disable the navigation of inner links.</p>
-                <Editor isSnippet code={codes.isActive} />
+                <Editor isSnippet code={codes.isActive}/>
             </div>
         );
     }
+
     public static renderAlignment() {
         return (
             <div>
@@ -76,10 +78,10 @@ export default class Index extends Stateless <any> {
                     </a>
                 </Title>
                 <p>For alternative alignments, use the <code>isCentered</code> and <code>isRight</code> <strong>boolean</strong> properties on the <code>BreadCrumb</code> component</p>
-                <br />
-                <Editor isSnippet code={codes.isCentered} />
-                <br />
-                <Editor isSnippet code={codes.isRight} />
+                <br/>
+                <Editor isSnippet code={codes.isCentered}/>
+                <br/>
+                <Editor isSnippet code={codes.isRight}/>
             </div>
         );
     }
@@ -96,10 +98,10 @@ export default class Index extends Stateless <any> {
                     </a>
                 </Title>
                 <p>You can use any of the <a href="https://fontawesome.com/" target="_blank">Font Awesome</a> <strong>icons</strong>.</p>
-                <br />
-                <Editor isSnippet code={codes.isCentered} />
-                <br />
-                <Editor isSnippet code={codes.isRight} />
+                <br/>
+                <Editor isSnippet code={codes.isCentered}/>
+                <br/>
+                <Editor isSnippet code={codes.isRight}/>
             </div>
         );
     }

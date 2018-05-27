@@ -20,7 +20,7 @@ export default class ModalCardBody extends React.Component<ModalCardBodyProps, {
         const classNames = ClassNames(ModalStyle.modalCardBody, className);
 
         return (
-            <section className={classNames} {...modalCardBodyProps}  ref={elementRef}>
+            <section className={classNames} {...modalCardBodyProps} ref={elementRef}>
                 {children}
             </section>
         );

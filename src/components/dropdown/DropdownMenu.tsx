@@ -27,7 +27,7 @@ export default class DropdownMenu extends React.Component<DropdownMenuProps, {}>
         );
 
         return (
-            <div className={classNames} {...ownProps}  ref={elementRef}>
+            <div className={classNames} {...ownProps} ref={elementRef}>
                 {children}
             </div>
         );

@@ -5,9 +5,9 @@ import {Container} from "bambu/lib/elements/container/index";
 import {Stateless} from "wasabi-ui";
 import bulmaDocs from "../../css/bulmaDocs";
 import bulma from "bambu/lib/base/css/bulma";
-import {Icon} from "bambu/lib/elements/icon";
-import {IconSize} from "../../../lib/elements/icon";
-
+import {FaIcon, FaIconSize, Icon} from "bambu/lib/elements/icon";
+import {Size} from "bambu";
+import DocIcon from "../../view/DocIcon";
 
 export default class DashBoard extends Stateless<{}> {
 
@@ -42,13 +42,13 @@ export default class DashBoard extends Stateless<{}> {
                                     <p className={classNames(bulma.subtitle, bulma.is6)}>Designed for <strong>mobile</strong> first</p>
                                     <figure className="bd-focus-icon">
                                         <span className="bd-focus-mobile icon is-large">
-                                            <Icon icon="mobile-alt" bSize={IconSize.lg}/>
+                                            <Icon><FaIcon name="mobile-alt" bSize={FaIconSize.isLg}/></Icon>
                                         </span>
                                         <span className="bd-focus-tablet icon is-large">
-                                             <Icon icon="tablet-alt" bSize={IconSize.x2}/>
+                                            <Icon><FaIcon name="tablet-alt" bSize={FaIconSize.is2x}/></Icon>
                                         </span>
                                         <span className="bd-focus-desktop icon is-large">
-                                             <Icon icon="desktop" bSize={IconSize.x3}/>
+                                             <Icon><FaIcon name="desktop" bSize={FaIconSize.is3x}/></Icon>
                                         </span>
                                     </figure>
                                 </a>
@@ -62,13 +62,13 @@ export default class DashBoard extends Stateless<{}> {
                                     </p>
                                     <figure className="bd-focus-cubes bd-focus-icon">
                                         <span className="bd-focus-cube bd-focus-cube-1 icon is-large">
-                                             <Icon icon="cube" bSize={IconSize.x2}/>
+                                            <Icon><FaIcon name="cube" bSize={FaIconSize.is2x}/></Icon>
                                         </span>
                                         <span className="bd-focus-cube bd-focus-cube-2 icon is-large">
-                                           <Icon icon="cube" bSize={IconSize.x2}/>
+                                            <Icon><FaIcon name="cube" bSize={FaIconSize.is2x}/></Icon>
                                         </span>
                                         <span className="bd-focus-cube bd-focus-cube-3 icon is-large">
-                                          <Icon icon="cube" bSize={IconSize.x2}/>
+                                           <Icon><FaIcon name="cube" bSize={FaIconSize.is2x}/></Icon>
                                         </span>
                                     </figure>
                                 </a>
@@ -80,11 +80,13 @@ export default class DashBoard extends Stateless<{}> {
                                     <p className="subtitle is-6">
                                         Built with <strong>FlexBox</strong>
                                     </p>
-                                    <figure className="bd-focus-icon">
-                                        <span className="bd-focus-css3 icon is-large">
-                                             <Icon icon="css3" bSize={IconSize.x3}/>
-                                        </span>
-                                    </figure>
+                                    <DocIcon
+                                        name="css3"
+                                        className={bulmaDocs.bdFocusIcon}
+                                        bSize={Size.large}
+                                        iconClassName={bulmaDocs.bdFocusCss3}
+                                        iconSize={FaIconSize.is3x}
+                                    />
                                 </a>
 
                                 <a className="bd-focus-item column has-text-centered" href="https://github.com/wasabi-io/bambu" target="_blank">
@@ -94,11 +96,13 @@ export default class DashBoard extends Stateless<{}> {
                                     <p className="subtitle is-6">
                                         Open source on <strong>GitHub</strong>
                                     </p>
-                                    <figure className="bd-focus-icon">
-                                        <span className="bd-focus-github icon is-large">
-                                             <Icon icon="github-alt" bSize={IconSize.x3}/>
-                                        </span>
-                                    </figure>
+                                    <DocIcon
+                                        name="github-alt"
+                                        className={bulmaDocs.bdFocusIcon}
+                                        bSize={Size.large}
+                                        iconClassName={bulmaDocs.bdFocusGithub}
+                                        iconSize={FaIconSize.is3x}
+                                    />
                                 </a>
                             </nav>
                         </div>

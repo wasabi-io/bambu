@@ -7,8 +7,8 @@ export default class Index extends React.Component<{}, {}> {
     public render() {
         return (
             <Icon stack bSize={Size.large} iconSize={FaIconSize.isLg}>
-                <FaIcon name={"camera"} stack={FaIconStack.x1} />
-                <FaIcon name={"ban"} className={bulma.hasTextDanger} stack={FaIconStack.x2} />
+                <FaIcon name={"camera"} stack={FaIconStack.x1}/>
+                <FaIcon name={"ban"} className={bulma.hasTextDanger} stack={FaIconStack.x2}/>
             </Icon>
         );
     }

@@ -34,7 +34,7 @@ export default class Modal extends React.Component<ModalProps, {}> {
         );
 
         return (
-            <div className={classNames} {...modalProps}  ref={elementRef}>
+            <div className={classNames} {...modalProps} ref={elementRef}>
                 <div className={ModalStyle.modalBackground}/>
                 <div className={ModalStyle.modalContent}>
                     {children}

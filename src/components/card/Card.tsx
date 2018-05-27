@@ -26,7 +26,7 @@ export default class Card extends React.Component<CardProps, {}> {
         ]);
 
         return (
-            <div className={classNames} {...cardProps} ref={elementRef} >
+            <div className={classNames} {...cardProps} ref={elementRef}>
                 {children}
             </div>
         );

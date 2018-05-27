@@ -24,7 +24,7 @@ export default class NavbarLink extends React.Component<NavbarLinkProps, {}> {
         const classNames = ClassNames([NavbarStyle.navbarLink, className]);
 
         return (
-            <a className={classNames} {...inputProps}  ref={elementRef}>
+            <a className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </a>
         );

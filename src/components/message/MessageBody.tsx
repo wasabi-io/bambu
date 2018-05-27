@@ -23,7 +23,7 @@ export default class MessageBody extends React.Component<MessageBodyProps, {}> {
         );
 
         return (
-            <div className={classNames} {...ownProps}  ref={elementRef}>
+            <div className={classNames} {...ownProps} ref={elementRef}>
                 {children}
             </div>
         );

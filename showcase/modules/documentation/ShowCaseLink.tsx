@@ -2,7 +2,7 @@ import * as classNames from 'classnames';
 import * as React from 'react';
 import {Stateless} from "wasabi-ui";
 import bulmaDocs from "../../css/bulmaDocs";
-import {Icon} from "bambu/lib/elements/icon";
+import {FaIcon, Icon} from "bambu/lib/elements/icon";
 
 export interface ShowcaseLinkProps {
     href: string;
@@ -26,7 +26,9 @@ export default class ShowCaseLink extends Stateless<ShowcaseLinkProps> {
                 <h2 className={bulmaDocs.bdLinkName}>
                     <figure className={bulmaDocs.bdLinkFigure}>
                         <span className={classNames(bulmaDocs.bdLinkIcon, iconClassName)}>
-                            <Icon icon={icon}/>
+                            <Icon>
+                                <FaIcon name={icon}/>
+                            </Icon>
                         </span>
                     </figure>
                     {title}

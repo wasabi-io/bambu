@@ -41,7 +41,7 @@ export default class NavbarDropdown extends React.Component<NavbarDropdownProps,
         );
 
         return (
-            <div className={classNames} {...inputProps}  ref={elementRef}>
+            <div className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </div>
         );

@@ -8,7 +8,7 @@ export default class Index extends Stateless <any> {
     public render() {
         return (
             <div>
-                <Editor code={codeText} />
+                <Editor code={codeText}/>
             </div>
         );
     }

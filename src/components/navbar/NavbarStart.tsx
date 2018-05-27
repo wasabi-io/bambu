@@ -4,7 +4,7 @@ import * as React from 'react';
 import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from '../../';
 
-export interface NavbarStartProps extends HTMLDivProps{
+export interface NavbarStartProps extends HTMLDivProps {
     elementRef?: (ref: any) => any;
 }
 

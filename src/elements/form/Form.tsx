@@ -16,7 +16,7 @@ export default class Form extends React.Component<FormProps, {}> {
     public render(): JSX.Element {
         const {children, elementRef, ...props} = this.props;
         return (
-            <form {...props} ref={elementRef} >
+            <form {...props} ref={elementRef}>
                 {children}
             </form>
         );

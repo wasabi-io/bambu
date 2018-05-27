@@ -12,8 +12,7 @@ import {observable} from "mobx";
 import {observer} from "mobx-react";
 import {bulma} from "bambu";
 import {Button} from "bambu/lib/elements/button";
-import {Icon} from "bambu/lib/elements/icon";
-import {Box} from "bambu/lib/elements/box";
+import {FaIcon, Icon} from "bambu/lib/elements/icon";
 import {Stateless} from "wasabi-ui";
 import CssUtil from "../../../util/CssUtil";
 
@@ -131,7 +130,7 @@ export default class CodeMirror extends Stateless<Props> {
                         <Button onClick={this.show} tagName="button" className={Style.bdShow}>
                             <div>
                                 <span className="icon">
-                                    <Icon name="code"/>
+                                    <Icon><FaIcon name="code"></FaIcon></Icon>
                                 </span>
                                 <strong>Show code</strong>
                             </div>

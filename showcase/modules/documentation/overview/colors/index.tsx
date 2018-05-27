@@ -9,7 +9,7 @@ export default class Index extends Stateless <any> {
 
         return (
             <Highlight language="es6">
-                { codeText }
+                {codeText}
             </Highlight>
         );
     }

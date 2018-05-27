@@ -20,7 +20,7 @@ export default class ModalCardFooter extends React.Component<ModalCardFooterProp
         const classNames = ClassNames(ModalStyle.modalCardFoot, className);
 
         return (
-            <footer className={classNames} {...modalCardFooterProps}  ref={elementRef}>
+            <footer className={classNames} {...modalCardFooterProps} ref={elementRef}>
                 {children}
             </footer>
         );

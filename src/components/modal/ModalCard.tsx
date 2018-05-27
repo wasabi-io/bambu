@@ -27,7 +27,7 @@ export default class ModalCard extends React.Component<ModalCardProps, {}> {
         const classNames = ClassNames(ModalStyle.modal, {[`${ModalStyle.isActive}`]: isActive}, className);
 
         return (
-            <div className={classNames} {...modalCardProps}  ref={elementRef}>
+            <div className={classNames} {...modalCardProps} ref={elementRef}>
                 <div className={ModalStyle.modalBackground}/>
                 <div className={ModalStyle.modalCard}>
                     {children}

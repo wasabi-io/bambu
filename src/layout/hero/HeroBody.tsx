@@ -22,7 +22,7 @@ export default class HeroBody extends React.Component<HeroBodyProps, {}> {
         );
 
         return (
-            <section className={classNames} {...heroBodyProps} ref={elementRef} >
+            <section className={classNames} {...heroBodyProps} ref={elementRef}>
                 {children}
             </section>
         );

@@ -14,4 +14,4 @@ export {
     faIconStyleValues
 } from './FaIcon';
 export {default as MaIcon, MaIconFlip, MaIconColor, maIconFlipValues, MaIconProps, MaIconSize} from "./MaIcon";
-export {default as FaIconList } from "./FaIconList";
+export {default as FaIconList} from "./FaIconList";

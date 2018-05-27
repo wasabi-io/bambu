@@ -45,7 +45,7 @@ export default class Columns extends React.Component<ColumnsProps, {}> {
         );
 
         return (
-            <div className={classNames} {...inputProps} ref={elementRef} >
+            <div className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </div>
         );
