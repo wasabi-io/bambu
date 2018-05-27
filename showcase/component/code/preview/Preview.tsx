@@ -6,8 +6,6 @@ import {observer} from "mobx-react";
 import {has} from "wasabi-common";
 import {Message, MessageBody} from "bambu/lib/components/message";
 import {Color} from "bambu";
-import {Content} from "bambu/lib/elements/content";
-import Style from "../Styles";
 
 export interface PreviewStoreProps {
     phase?: "Transform" | "Execute";
@@ -80,10 +78,7 @@ export default class Preview extends Stateless<PreviewProps> {
             this.component = this.renderErrorMessage(Component.message);
         }
         return (
-            <div className={Style.bdExample}>
-                <Content id={this.id} style={{ width: "100%" }}>
-                </Content>
-            </div>
+            <div id={this.id} style={{ padding: "10px", width: "100%" }} />
         );
     }
 

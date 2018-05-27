@@ -20,6 +20,8 @@ export enum Horizontal {
     right = 'right'
 }
 
+export const horizontalValues = Objects.values(DirectionH);
+
 export enum Vertical {
     top = 'top',
     bottom = 'bottom'

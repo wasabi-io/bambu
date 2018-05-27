@@ -4,7 +4,7 @@ import {Stateless} from "wasabi-ui";
 export default class Index extends Stateless<{}> {
     public render() {
         return (
-            <div>Showcase</div>
+            <div></div>
         );
     }
 }

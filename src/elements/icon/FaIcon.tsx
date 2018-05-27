@@ -1,52 +1,91 @@
 import * as ClassNames from 'classnames';
-import 'font-awesome/css/font-awesome.css';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {has, Objects, Props, Strings} from 'wasabi-common';
-import {Horizontal, Orientation} from '../../';
+import {Horizontal, horizontalValues} from '../../';
 import HTMLComponent, {HTMLIProps} from '../../base/html/HTML';
 
-export enum IconSize { lg = 'lg', x2 = '2x', x3 = '3x', x4 = '4x', x5 = '5x' }
+export enum IconSize {
+    isXs = 'xs',
+    isSm = 'sm',
+    isLg = 'lg',
+    is2x = '2x',
+    is3x = '3x',
+    is4x = '4x',
+    is5x = '5x',
+    is6x = '6x',
+    is7x = '7x',
+    is8x = '8x',
+    is9x = '9x',
+    is10x = '10x'
+}
 
-export const IconSizeValues = Objects.values(IconSize);
+export const iconSizeValues = Objects.values(IconSize);
 
-export enum IconStack { x1 = 'x1', x2 = 'x2' }
+export enum IconStyle {
+    solid = "fas",
+    regular = "far",
+    light = "fal",
+    brands = "fab"
+}
+
+export const iconStyleValues = Objects.values(IconStyle);
+
+export enum IconFlip {
+    horizontal = "horizontal",
+    vertical = "vertical",
+}
+
+export const iconFlipValues = Objects.values(IconFlip);
 
 export enum IconEffect { spin = 'spin', pulse = 'pulse' }
 
+export const iconEffectValues = Objects.values(IconEffect);
+
+export enum IconStack { x1 = '1x', x2 = '2x' }
+
+export const iconStackValues = Objects.values(IconStack);
+
+/**
+ * Refers FaIcon Props.
+ */
 export interface FaIconProps extends HTMLIProps {
     ariaHidden?: boolean;
     border?: boolean;
     effect?: string | IconEffect;
     fixed?: boolean;
-    flip?: string | Orientation;
+    flip?: string | IconFlip;
+    iconStyle?: string | IconStyle;
     inverse?: boolean;
-    isList?: boolean;
     name: string;
     pull?: string | Horizontal;
     rotate?: number;
     bSize?: string | IconSize;
     stack?: string | IconStack;
     elementRef?: (ref: any) => any;
-    [key: string]: any;
 }
 
+/**
+ * FaIcon component
+ * <i class="fas fa-home fa-fw" style="background:MistyRose"></i>
+ * more https://fontawesome.com/how-to-use/svg-with-js#additional-styling
+ */
 export default class FaIcon extends HTMLComponent<FaIconProps> {
 
     public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
         ...HTMLComponent.propTypes,
+        iconStyle: PropTypes.oneOf(iconStyleValues),
         ariaHidden: PropTypes.bool,
         border: PropTypes.bool,
-        effect: PropTypes.oneOf(Objects.values(IconEffect)),
+        effect: PropTypes.oneOf(iconEffectValues),
         fixed: PropTypes.bool,
-        flip: PropTypes.oneOf(Objects.values(Orientation)),
+        flip: PropTypes.oneOf(iconFlipValues),
         inverse: PropTypes.bool,
-        isList: PropTypes.bool,
         name: PropTypes.string.isRequired,
-        pull: PropTypes.oneOf(Objects.values(Horizontal)),
+        pull: PropTypes.oneOf(horizontalValues),
         rotate: PropTypes.number,
-        bSize: PropTypes.oneOf(Objects.values(IconSize)),
-        stack: PropTypes.oneOf(Objects.values(IconStack)),
+        bSize: PropTypes.oneOf(iconSizeValues),
+        stack: PropTypes.oneOf(iconStackValues),
     };
 
     public static defaultProps = {
@@ -54,48 +93,9 @@ export default class FaIcon extends HTMLComponent<FaIconProps> {
         ariaHidden: false,
         border: false,
         fixed: false,
-        inverse: false,
-        isList: false,
+        iconStyle: IconStyle.solid,
+        inverse: false
     };
-
-    public static iconName(name: string) {
-        if (!has(name)) {
-            return '';
-        }
-        const prefix = name.substring(0, 3);
-        switch (prefix) {
-        case 'fa ':
-            return name;
-        case 'fa-':
-            return 'fa ' + name;
-        default:
-            return 'fa fa-' + name;
-        }
-    }
-
-    public static preEffect(effect: string) {
-        return Strings.has(effect) ? `fa-${effect}` : undefined;
-    }
-
-    public static preFlip(flip: string | Orientation) {
-        return has(flip) ? `fa-${flip}` : undefined;
-    }
-
-    public static prePull(pull: string | Horizontal) {
-        return has(pull) ? `fa-pull-${pull}` : undefined;
-    }
-
-    public static preRotate(rotate: number) {
-        return has(rotate) ? `fa-rotate-${rotate}` : undefined;
-    }
-
-    public static preSize(size: string) {
-        return Strings.has(size) ? `fa-${size}` : undefined;
-    }
-
-    public static preStack(stack: string) {
-        return Strings.has(stack) ? `fa-stack-${stack}` : undefined;
-    }
 
     public render(): JSX.Element {
         const {
@@ -105,35 +105,40 @@ export default class FaIcon extends HTMLComponent<FaIconProps> {
             effect,
             fixed,
             flip,
+            iconStyle,
             inverse,
-            isList,
             name,
             pull,
             rotate,
             bSize,
             stack,
             elementRef,
+            children,
             ...props,
         } = this.props;
 
+        const icon = Strings.startsWith(name, "fa-") ? name : `fa-${name}`;
+
         const classNames = ClassNames(
-            FaIcon.preEffect(effect),
-            FaIcon.preFlip(flip),
-            FaIcon.iconName(name),
-            FaIcon.prePull(pull),
-            FaIcon.preRotate(rotate),
-            FaIcon.preSize(bSize),
-            FaIcon.preStack(stack),
+            iconStyle,
+            icon,
             {
+                [`fa-flip-${flip}`]: Strings.has(flip),
+                [`fa-pull-${pull}`]: Strings.has(pull),
+                [`fa-rotate-${rotate}`]: has(rotate),
+                [`fa-${bSize}`]: Strings.has(bSize),
+                [`fa-stack-${stack}`]: Strings.has(stack),
+                [`fa-${effect}`]: Strings.has(effect),
                 'fa-border': border,
                 'fa-fw': fixed,
-                'fa-inverse': inverse,
-                'fa-li': isList,
+                'fa-inverse': inverse
             },
             className
         );
         return (
-            <i className={classNames} aria-hidden={ariaHidden} {...props} ref={elementRef} />
+            <i className={classNames} aria-hidden={ariaHidden} data-fa-transform={flip} {...props} ref={elementRef}>
+                {children}
+            </i>
         );
     }
 }

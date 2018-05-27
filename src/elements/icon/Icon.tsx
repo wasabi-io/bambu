@@ -1,55 +1,72 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {has, Props} from 'wasabi-common';
-import JSXUtil from 'wasabi-ui/lib/jsx/JSXUtil';
-import {bulma as IconStyle, HTMLComponent, HTMLSpanProps} from '../../';
-import FaIcon, {FaIconProps, IconSize, IconSizeValues} from './FaIcon';
+import {Props} from 'wasabi-common';
+import {bulma as IconStyle, HTMLComponent, Size, sizeValues} from '../../';
+import FaIcon, {FaIconProps} from './FaIcon';
+import {IconSize} from "bambu/lib/elements/icon/FaIcon";
+import bulma from "bambu/lib/base/css/bulma";
 
 export type IconOptions = string | FaIconProps | JSX.Element;
 
 /**
- * Refers Html Props and Additional Props.
+ * Refers Icon Props.
  */
-export interface IconProps extends HTMLSpanProps {
-    icon: string | IconOptions;
-    bSize?: string | IconSize;
+export interface IconProps extends FaIconProps {
+    iconClassName?: string;
+    bSize?: string | Size;
+    iconSize?: string | string | IconSize;
+    isList?: boolean;
+    listClassName?: string;
     elementRef?: (ref: any) => any;
 }
 
 export default class Icon extends HTMLComponent<IconProps> {
     public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
-        ...HTMLComponent.propTypes,
-        icon: PropTypes.any,
-        bSize: PropTypes.oneOf(IconSizeValues),
+        ...FaIcon.propTypes,
+        bSize: PropTypes.oneOf(sizeValues),
+        iconSize: FaIcon.propTypes.bSize,
+        isList: PropTypes.bool,
+        listClassName: PropTypes.string,
+        iconClassName: PropTypes.string
     };
 
-    public static defaultProps = HTMLComponent.defaultProps;
-
-    public static renderIcon(icon: IconOptions, bSize?: string | IconSize) {
-        if (!has(icon)) {
-            return null;
-        }
-        if (typeof icon === 'string') {
-            return <FaIcon name={icon} bSize={bSize}/>;
-        }
-        if ((icon as any).type) {
-            if (JSXUtil.isJsx(icon)) {
-                return icon as JSX.Element;
-            }
-        }
-
-        return <FaIcon {...icon as FaIconProps} />;
-    }
+    public static defaultProps = FaIcon.defaultProps;
 
     public render() {
-        const {bSize, icon, className, elementRef, ...props} = this.props;
+        const {
+            iconStyle, ariaHidden, border, effect, fixed, flip,
+            inverse, name, pull, stack, iconClassName, iconSize,
+            rotate, bSize, isList, className, elementRef,
+            children, ...props
+        } = this.props;
 
         const classNames = ClassNames(
             IconStyle.icon,
+            bulma[bSize],
+            {'fa-li': isList},
             className
         );
 
-        return <span className={classNames} {...props} ref={elementRef}>{Icon.renderIcon(icon, bSize)}</span>;
+        return (
+            <span className={classNames} {...props} ref={elementRef}>
+                <FaIcon
+                    bSize={iconSize}
+                    iconStyle={iconStyle}
+                    ariaHidden={ariaHidden}
+                    border={border}
+                    effect={effect}
+                    fixed={fixed}
+                    flip={flip}
+                    inverse={inverse}
+                    name={name}
+                    pull={pull}
+                    stack={stack}
+                    rotate={rotate}
+                    className={iconClassName}
+                />
+                {children}
+            </span>
+        );
     }
 }

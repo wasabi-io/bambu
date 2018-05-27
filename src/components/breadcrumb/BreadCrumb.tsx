@@ -3,6 +3,7 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {Objects, Props} from "wasabi-common";
 import {Alignment, alignmentValues, bulma as BreadCrumbStyle, HTMLComponent, HTMLElementProps, Size, sizeValues} from '../../';
+import {bulma as ModalStyle} from "bambu";
 
 export enum BreadCrumbSeperator {
     arrow = 'hasArrowSeparator',
@@ -18,6 +19,8 @@ export interface BreadCrumbProps extends HTMLElementProps {
     alignment?: string | Alignment;
     separator?: string | BreadCrumbSeperator;
     bSize?: string | Size;
+    isCentered?: boolean;
+    isRight?: boolean;
     elementRef?: (ref: any) => any;
 }
 
@@ -33,13 +36,17 @@ export default class BreadCrumb extends React.Component<BreadCrumbProps, {}> {
 
     public render(): JSX.Element {
 
-        const {alignment, bSize, separator, className, elementRef, children, ...breadCrumbProps} = this.props;
+        const {alignment, bSize, separator, className, isCentered, isRight, elementRef, children, ...breadCrumbProps} = this.props;
 
         const classNames = ClassNames(
             BreadCrumbStyle.breadcrumb,
             BreadCrumbStyle[alignment],
             BreadCrumbStyle[separator],
             BreadCrumbStyle[bSize],
+            {
+                [`${BreadCrumbStyle.isCentered}`]: isCentered,
+                [`${BreadCrumbStyle.isRight}`]: isRight
+            },
             className,
         );
 

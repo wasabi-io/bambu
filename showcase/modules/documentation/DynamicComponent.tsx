@@ -1,6 +1,7 @@
 import * as React from 'react';
 import SCStore from "./SCStore";
 import {observer} from "mobx-react";
+import {Box} from "bambu/lib/elements/box";
 
 export interface DynamicComponentProps {
     store: SCStore;
@@ -14,8 +15,13 @@ export default class DynamicComponent extends React.Component<DynamicComponentPr
 
     public render() {
         const {Component} = this.props.store;
+        if (!Component) {
+            return null;
+        }
         return (
-            <div> {Component ? <Component/> : null} </div>
+            <Box style={{margin: 0, padding: 50, marginTop: 10}}>
+                <Component/>
+            </Box>
         );
     }
 }

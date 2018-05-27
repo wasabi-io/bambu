@@ -35,7 +35,7 @@ export default class NavBar extends Stateless<NavBarProps> {
                             </NavbarItemLink>
                             <NavbarItemLink href="https://github.com/wasabi-io/bambu" target="_blank" isHiddenDesktop>
                                  <span className="icon bd-has-text-rss">
-                                  <Icon icon="github-alt"/>
+                                  <Icon name="github-alt"/>
                               </span>
                             </NavbarItemLink>
                             <NavbarBurger onClick={this.onClick}/>
@@ -44,13 +44,13 @@ export default class NavBar extends Stateless<NavBarProps> {
                             <NavbarStart>
                                 <a className="navbar-item bd-navbar-item-documentation " href={this.getUrl("#documentation")}>
                                 <span className="icon has-text-primary">
-                                    <Icon icon="book"/>
+                                    <Icon name="book"/>
                                 </span>
                                     <span>Showcase</span>
                                 </a>
                                 <a className="navbar-item bd-navbar-item-blog " href={this.getUrl("react-docs")}>
                               <span className="icon  has-text-warning">
-                                  <Icon icon="file-text"/>
+                                  <Icon name="file-text"/>
                               </span>
                                     <span>React Docs</span>
                                 </a>
@@ -58,7 +58,7 @@ export default class NavBar extends Stateless<NavBarProps> {
                             <NavbarEnd>
                                 <NavbarItemLink href="https://github.com/wasabi-io/bambu" target="_blank" isHiddenMobile>
                                  <span className="icon bd-has-text-rss">
-                                  <Icon icon="github-alt"/>
+                                  <Icon name="github-alt"/>
                               </span>
                                 </NavbarItemLink>
                             </NavbarEnd>

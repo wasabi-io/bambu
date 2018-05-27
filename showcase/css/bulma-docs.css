@@ -10146,10 +10146,11 @@ label.panel-block:hover {
 }
 
 .bd-prev-next-bis {
-    border-top: 2px solid whitesmoke;
+    border-bottom: 2px solid whitesmoke;
     display: flex;
     justify-content: space-between;
-    margin-top: 3rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
 }
 
 .bd-prev-next-bis a {
@@ -10165,9 +10166,8 @@ label.panel-block:hover {
 }
 
 .bd-header {
-    border-bottom: 2px solid whitesmoke;
-    margin-bottom: 3rem;
-    padding-bottom: 3rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
 }
 
 .bd-header .subtitle {

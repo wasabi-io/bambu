@@ -175,7 +175,7 @@ export default class Index extends Stateless <any> {
                 <Message color={Color.success}>
                     <MessageBody>
                         Completed ! Now lets started.
-                        <span className={bulma.hasTextWarning}><Icon icon="thumbs-up" /></span>
+                        <span className={bulma.hasTextWarning}><Icon name="thumbs-up" /></span>
                     </MessageBody>
                 </Message>
             </div>

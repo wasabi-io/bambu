@@ -96,7 +96,7 @@ export default class CodeMirror extends Stateless<Props> {
         const codeClassName = !isActive ? Style.isShow : null;
 
         return (
-            <Box className={`${classNames(Style.CodeMirror, Style.box, bulma.hasTextLeft, className)}`} style={styled}>
+            <div className={`${classNames(Style.CodeMirror, Style.box, bulma.hasTextLeft, className)}`} style={styled}>
                 <div className={clsName}>
                     <figure id={this.figureId} className={classNames(Style.highlight)}>
                         <div className={codeClassName}>
@@ -131,7 +131,7 @@ export default class CodeMirror extends Stateless<Props> {
                         <Button onClick={this.show} tagName="button" className={Style.bdShow}>
                             <div>
                                 <span className="icon">
-                                    <Icon icon="code"/>
+                                    <Icon name="code"/>
                                 </span>
                                 <strong>Show code</strong>
                             </div>
@@ -139,7 +139,7 @@ export default class CodeMirror extends Stateless<Props> {
                         }
                     </figure>
                 </div>
-            </Box>
+            </div>
         );
     }
 

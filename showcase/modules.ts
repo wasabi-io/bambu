@@ -155,7 +155,10 @@ import * as _elements_form_input_ from "bambu/lib/elements/form/input/";
 import * as _elements_form_input from "bambu/lib/elements/form/input";
 import * as _elements_form_input_select_Select from "bambu/lib/elements/form/input/select/Select";
 import * as _elements_icon_FaIcon from "bambu/lib/elements/icon/FaIcon";
+import * as _elements_icon_FaIconList from "bambu/lib/elements/icon/FaIconList";
+import * as _elements_icon_FaIconListItem from "bambu/lib/elements/icon/FaIconListItem";
 import * as _elements_icon_Icon from "bambu/lib/elements/icon/Icon";
+import * as _elements_icon_IconStacker from "bambu/lib/elements/icon/IconStacker";
 import * as _elements_icon_index from "bambu/lib/elements/icon/index";
 import * as _elements_icon_ from "bambu/lib/elements/icon/";
 import * as _elements_icon from "bambu/lib/elements/icon";
@@ -375,7 +378,10 @@ const modules = {
     "bambu/lib/elements/form/input": _elements_form_input,
     "bambu/lib/elements/form/input/select/Select": _elements_form_input_select_Select,
     "bambu/lib/elements/icon/FaIcon": _elements_icon_FaIcon,
+    "bambu/lib/elements/icon/FaIconList": _elements_icon_FaIconList,
+    "bambu/lib/elements/icon/FaIconListItem": _elements_icon_FaIconListItem,
     "bambu/lib/elements/icon/Icon": _elements_icon_Icon,
+    "bambu/lib/elements/icon/IconStacker": _elements_icon_IconStacker,
     "bambu/lib/elements/icon/index": _elements_icon_index,
     "bambu/lib/elements/icon/": _elements_icon_,
     "bambu/lib/elements/icon": _elements_icon,

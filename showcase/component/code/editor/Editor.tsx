@@ -13,7 +13,7 @@ import classNames = require("classnames");
 export interface EditorProps extends LayerProps {
     preview?: boolean;
     isSnippet?: boolean;
-    code: string;
+    code?: string;
 }
 
 export default class Editor extends Stateless<EditorProps> {
@@ -33,11 +33,25 @@ export default class Editor extends Stateless<EditorProps> {
     public constructor(props: EditorProps) {
         super(props);
         this.codeMirrorStore = new CodeMirrorStore({
-            code: this.props.code
+            code: this.getCode()
         });
         if (this.props.preview) {
             this.previewStore = Editor.createPreviewStore(this.props.code);
         }
+    }
+
+    private getCode() {
+        let code = this.props.code;
+        if (!code) {
+            code = this.props.children as any;
+        }
+        if (typeof code === "string") {
+            return code;
+        }
+        if (typeof code === "function") {
+            return code();
+        }
+        return null;
     }
 
     private static createPreviewStore(code: string) {
@@ -47,12 +61,12 @@ export default class Editor extends Stateless<EditorProps> {
 
     public render() {
         const {preview, isSnippet, code, className, ...props} = this.props;
-        const classnames = classNames({[`${Style.snippet}`]: isSnippet}, className);
+        const classnames = classNames({[`${Style.bdSnippet}`]: isSnippet}, className);
         return (
-            <Layer className={classnames}>
+            <div className={classnames}>
                 {Editor.renderPreview(this.previewStore, preview)}
                 {this.renderEditor()}
-            </Layer>
+            </div>
         );
     }
 

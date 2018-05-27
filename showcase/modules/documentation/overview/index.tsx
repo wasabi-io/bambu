@@ -6,7 +6,7 @@ export default class Index extends Stateless<{}> {
     public render() {
         return (
             <Content>
-                OverView
+
             </Content>
         );
     }

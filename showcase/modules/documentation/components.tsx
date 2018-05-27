@@ -2,7 +2,17 @@ import * as React from "react";
 import {Props} from "wasabi-common";
 import bulmaDocs from "../../css/bulmaDocs";
 
-const components: Props<any> = {
+export interface DocumentProps {
+    module?: string;
+    name: string;
+    title: string;
+    subTitle: JSX.Element | string;
+    icon?: string;
+    iconClassName?: string;
+    children?: Props<DocumentProps>;
+}
+
+const components: Props<DocumentProps> = {
     documentation: {
         module: ".",
         name: "documentation",

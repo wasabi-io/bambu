@@ -5,7 +5,7 @@ import {BreadCrumb, BreadCrumbItem} from "bambu/lib/components/breadcrumb";
 import {SubTitle, Title} from "bambu/lib/elements/title";
 import bulmaDocs from "../../css/bulmaDocs";
 import {Size6} from "bambu";
-import components from "./components";
+import components, {DocumentProps} from "./components";
 import DynamicComponent from "./DynamicComponent";
 import {observer} from "mobx-react";
 import NotFound from "../../view/NotFound";
@@ -20,6 +20,11 @@ export interface DynamicRouterProps {
     store: SCStore;
 }
 
+export interface ComponentResult {
+    component: DocumentProps;
+    path: string;
+    siblings?: Props<DocumentProps>;
+}
 @observer
 export default class DynamicRouter extends Stateless<DynamicRouterProps> {
 
@@ -27,7 +32,7 @@ export default class DynamicRouter extends Stateless<DynamicRouterProps> {
         const {paths} = this.props.store;
         const breads = toJS(paths);
         const props = DynamicRouter.getComponent(paths);
-        if (!props) {
+        if (!props || !props.component) {
             console.log();
             return (
                 <NotFound/>
@@ -43,21 +48,22 @@ export default class DynamicRouter extends Stateless<DynamicRouterProps> {
                             <header className={bulmaDocs.bdHeader}>
                                 <div className={bulmaDocs.bdHeaderTitles}>
                                     <Title>
-                                        {props.title}
+                                        {props.component.title}
                                     </Title>
                                     <SubTitle bSize={Size6.is4}>
-                                        {props.subTitle}
+                                        {props.component.subTitle}
                                     </SubTitle>
                                 </div>
                             </header>
                             <div className={bulmaDocs.bdContent}>
-                                {props.children &&
-                                <nav key={`nav-${props.title}`} className={bulmaDocs.bdLinks}>
-                                    {DynamicRouter.renderReferences(props.children, breads)}
+                                {props.component.children &&
+                                <nav key={`nav-${props.component.title}`} className={bulmaDocs.bdLinks}>
+                                    {DynamicRouter.renderReferences(props.component.children, breads)}
                                 </nav>
                                 }
-                                {DynamicRouter.renderModule(props.module, this.props.store)}
+                                {DynamicRouter.renderModule(props.component.module, this.props.store)}
                                 {this.props.children}
+                                {DynamicRouter.renderNextPrevious(props, paths)}
                             </div>
                         </div>
                     </div>
@@ -85,6 +91,46 @@ export default class DynamicRouter extends Stateless<DynamicRouterProps> {
         );
     }
 
+    public static renderNextPrevious(props: ComponentResult, paths: string[]) {
+        if (!props.siblings) {
+            return null;
+        }
+        const siblings: string[] = [];
+        let indexOf = 0;
+        let index = 0;
+        for (const key in props.siblings) {
+            if (props.siblings.hasOwnProperty(key)) {
+                siblings.push(key);
+                if (props.path === key.toLocaleLowerCase()) {
+                    indexOf = index;
+                }
+                index = index + 1;
+            }
+        }
+        const left = indexOf > 0 ? siblings[indexOf - 1] : null;
+        const right = indexOf < siblings.length ? siblings[indexOf + 1] : null;
+        if (!right && !left) {
+            return null;
+        }
+        return (
+            <nav className={bulmaDocs.bdPrevNextBis}>
+                {left && this.renderNextPreviousLink(left, paths, props.siblings[left].title, true) }
+                {right && this.renderNextPreviousLink(right, paths, props.siblings[right].title, false) }
+            </nav>
+        );
+    }
+
+    public static renderNextPreviousLink(link: string, paths: string[], title: string, isPrevious: boolean) {
+        const linkPaths = paths.slice(0, paths.length - 1);
+        linkPaths.push(link);
+        const text = isPrevious ? `← ${title}` :  `${title} →`;
+        const className = isPrevious ? bulmaDocs.bdPrevNextBisPrevious :  bulmaDocs.bdPrevNextBisNext;
+        return (
+            <a className={className} href={`#/${linkPaths.join("/")}`} title={title}>
+                {text}
+            </a>
+        );
+    }
     public static renderReferences(childs: Props<any>, breads: string[]) {
         const elements: JSX.Element[] = [];
         for (const key in childs) {
@@ -116,19 +162,29 @@ export default class DynamicRouter extends Stateless<DynamicRouterProps> {
         return elements;
     }
 
-    public static getComponent(paths: string[]) {
+    public static getComponent(paths: string[]): ComponentResult {
         let comp = components[paths[0]];
+
+        let siblings = null;
+        let lastPath = null;
         for (let i = 1; i < paths.length; i = i + 1) {
             const path = paths[i];
+
             if (!comp) {
                 throw new Error("Component Not Found");
             }
             if (!comp.children) {
                 throw new Error("Component Children Not Found");
             }
-            comp = comp.children[path.toLocaleLowerCase()];
+            siblings = comp.children;
+            lastPath = path.toLocaleLowerCase();
+            comp = comp.children[lastPath];
         }
-        return comp;
+        return {
+            siblings,
+            path: lastPath,
+            component: comp,
+        };
     }
 
     public static renderModule(module: string, store: SCStore) {
