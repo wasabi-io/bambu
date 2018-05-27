@@ -12,7 +12,7 @@ import Icon from "bambu/lib/elements/icon/Icon";
 import {default as FaIcon, FaIconEffect, FaIconFlip, FaIconSize} from "bambu/lib/elements/icon/FaIcon";
 import {Highlight} from "../../../../component/code/highlight";
 import transformer from "../../../../component/code/transform/transformer";
-import {MaIcon, MaIconSize} from "bambu/lib/elements/icon";
+import {MaIcon, MaIconColor, MaIconFlip, MaIconSize} from "bambu/lib/elements/icon";
 
 const codes = {
     icon: require("!raw-loader?modules!./code/1-icon"),
@@ -21,9 +21,9 @@ const codes = {
     stack2: require("!raw-loader?modules!./code/3-stack2")
 };
 
-const iconSizeWrapper = (bSize?: string) => {
-    if (bSize) {
-        return <code>{`bSize={${bSize}}`}</code>;
+const iconSizeWrapper = (name?: string, value?: any) => {
+    if (value) {
+        return <code>{`${name}={${value}}`}</code>;
     }
     return null;
 };
@@ -116,7 +116,7 @@ export default class Index extends Stateless <any> {
                     </THead>
                     <TBody>
                     <Row>
-                        <Cell>{iconSizeWrapper('Size.small')}</Cell>
+                        <Cell>{iconSizeWrapper('bSize', 'Size.small')}</Cell>
                         <Cell><code>1rem x 1rem</code></Cell>
                         <Cell>{iconSizeWrapper()}</Cell>
                         <Cell><code>1em</code></Cell>
@@ -134,14 +134,14 @@ export default class Index extends Stateless <any> {
                         </Cell>
                     </Row>
                     <Row>
-                        <Cell>{iconSizeWrapper('FaIconSize.isLg')}</Cell>
+                        <Cell>{iconSizeWrapper('bSize', 'FaIconSize.isLg')}</Cell>
                         <Cell><code>1.33em</code></Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
                             <Icon bSize={Size.small}><FaIcon name="home" className="fa-w18"/></Icon>
                         </Cell>
                     </Row>
                     <Row>
-                        <Cell rowSpan={3}>{iconSizeWrapper('Size.medium')}</Cell>
+                        <Cell rowSpan={3}>{iconSizeWrapper('bSize', 'Size.medium')}</Cell>
                         <Cell rowSpan={3}><code>2rem x 2rem</code></Cell>
                         <Cell>{iconSizeWrapper()}</Cell>
                         <Cell><code>1em</code></Cell>
@@ -150,21 +150,21 @@ export default class Index extends Stateless <any> {
                         </Cell>
                     </Row>
                     <Row>
-                        <Cell>{iconSizeWrapper('FaIconSize.isLg')}</Cell>
+                        <Cell>{iconSizeWrapper('bSize', 'FaIconSize.isLg')}</Cell>
                         <Cell><code>1.33em</code></Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
                             <Icon bSize={Size.medium}><FaIcon name="home" className="fa-w18"/></Icon>
                         </Cell>
                     </Row>
                     <Row>
-                        <Cell>{iconSizeWrapper('FaIconSize.is2x')}</Cell>
+                        <Cell>{iconSizeWrapper('bSize', 'FaIconSize.is2x')}</Cell>
                         <Cell><code>2em</code></Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
                             <Icon bSize={Size.medium}><FaIcon name="home" className="fa-w18"/></Icon>
                         </Cell>
                     </Row>
                     <Row>
-                        <Cell rowSpan={4}>{iconSizeWrapper('Size.large')}</Cell>
+                        <Cell rowSpan={4}>{iconSizeWrapper('bSize', 'Size.large')}</Cell>
                         <Cell rowSpan={4}><code>3rem x 3rem</code></Cell>
                         <Cell>{iconSizeWrapper()}</Cell>
                         <Cell><code>1em</code></Cell>
@@ -173,21 +173,21 @@ export default class Index extends Stateless <any> {
                         </Cell>
                     </Row>
                     <Row>
-                        <Cell>{iconSizeWrapper('FaIconSize.isLg')}}</Cell>
+                        <Cell>{iconSizeWrapper('bSize', 'FaIconSize.isLg')}}</Cell>
                         <Cell><code>1.33em</code></Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
                             <Icon bSize={Size.large}><FaIcon name="home" className="fa-w18"/></Icon>
                         </Cell>
                     </Row>
                     <Row>
-                        <Cell>{iconSizeWrapper('FaIconSize.is2x')}</Cell>
+                        <Cell>{iconSizeWrapper('bSize', 'FaIconSize.is2x')}</Cell>
                         <Cell><code>2em</code></Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
                             <Icon bSize={Size.large}><FaIcon name="home" className="fa-w18"/></Icon>
                         </Cell>
                     </Row>
                     <Row>
-                        <Cell>{iconSizeWrapper('FaIconSize.is3x')}</Cell>
+                        <Cell>{iconSizeWrapper('bSize', 'FaIconSize.is3x')}</Cell>
                         <Cell><code>3em</code></Cell>
                         <Cell className={bulmaDocs.bdIconSize}>
                             <Icon bSize={Size.large}><FaIcon name="home" className="fa-w18"/></Icon>
@@ -213,7 +213,7 @@ export default class Index extends Stateless <any> {
                 <p>
                     Font Awesome also provides modifier classes for:
                 </p>
-                <ul>
+                <ul style={{listStyleType: "circle"}}>
                     <li>
                         fixed width icons
                     </li>
@@ -330,185 +330,300 @@ export default class Index extends Stateless <any> {
     public static renderMaterialDesign() {
         return (
             <div>
-                <Title bSize={Size6.is4} className={classNames(bulma.isSpaced, bulmaDocs.bdAnchorTitle)}>
+                <div>
+                    <Title bSize={Size6.is4} className={classNames(bulma.isSpaced, bulmaDocs.bdAnchorTitle)}>
                     <span className={bulmaDocs.bdAnchorName}>
                         Material Design Icons
                     </span>
-                    <a className={bulmaDocs.bdAnchorLink}>
-                        #
-                    </a>
-                </Title>
-                <p>
-                    Here is how the <code>icon</code> container can be used with <a href="https://materialdesignicons.com">Material Design Icons</a>.
-                </p>
-                <br/>
-                <Table isBordered>
-                    <THead>
-                    <Row>
-                        <HCell>Icon Component</HCell>
-                        <HCell>Container size</HCell>
-                        <HCell>MDI Component</HCell>
-                        <HCell>Icon size</HCell>
-                        <HCell>Result</HCell>
-                    </Row>
-                    </THead>
-                    <TBody>
-                    <Row>
-                        <Cell>
-                            <code>{iconSizeWrapper('Size.small')}</code>
-                        </Cell>
-                        <Cell>
-                            <code>1rem x 1rem</code>
-                        </Cell>
-                        <Cell/>
-                        <Cell>
-                            <code>1em</code>
-                        </Cell>
-                        <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon bSize={Size.small}><MaIcon name="bell"/></Icon>
-                        </Cell>
-                    </Row>
-                    <Row>
-                        <Cell rowSpan={2}>
+                        <a className={bulmaDocs.bdAnchorLink}>
+                            #
+                        </a>
+                    </Title>
+                    <p>
+                        Here is how the <code>icon</code> container can be used with <a href="https://materialdesignicons.com">Material Design Icons</a>.
+                    </p>
+                    <br/>
+                    <Table isBordered>
+                        <THead>
+                        <Row>
+                            <HCell>Icon Component</HCell>
+                            <HCell>Container size</HCell>
+                            <HCell>MDI Component</HCell>
+                            <HCell>Icon size</HCell>
+                            <HCell>Result</HCell>
+                        </Row>
+                        </THead>
+                        <TBody>
+                        <Row>
+                            <Cell>
+                                <code>{iconSizeWrapper('bSize', 'Size.small')}</code>
+                            </Cell>
+                            <Cell>
+                                <code>1rem x 1rem</code>
+                            </Cell>
+                            <Cell/>
+                            <Cell>
+                                <code>1em</code>
+                            </Cell>
+                            <Cell className={bulmaDocs.bdIconSize}>
+                                <Icon bSize={Size.small}><MaIcon name="bell"/></Icon>
+                            </Cell>
+                        </Row>
+                        <Row>
+                            <Cell rowSpan={2}>
 
-                        </Cell>
-                        <Cell rowSpan={2}>
-                            <code>1.5rem x 1.5rem</code>
-                        </Cell>
-                        <Cell>
-                            <code>{iconSizeWrapper('MaIconSize.is18px')}</code>
-                        </Cell>
-                        <Cell>
-                            <code>18px</code>
-                        </Cell>
-                        <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon><MaIcon bSize={MaIconSize.is18px} name="bell"/></Icon>
-                        </Cell>
-                    </Row>
-                    <Row>
-                        <Cell>
-                            <code>{iconSizeWrapper('MaIconSize.is24px')}</code>
-                        </Cell>
-                        <Cell>
-                            <code>24px</code>
-                        </Cell>
-                        <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon><MaIcon bSize={MaIconSize.is24px} name="bell"/></Icon>
-                        </Cell>
-                    </Row>
-                    <Row>
-                        <Cell rowSpan={4}>
-                            <code>{iconSizeWrapper('Size.medium')}</code>
-                        </Cell>
-                        <Cell rowSpan={4}>
-                            <code>2rem x 2rem</code>
-                        </Cell>
-                        <Cell>
-                            {iconSizeWrapper('MaIconSize.is24px')}
-                        </Cell>
-                        <Cell>
-                            <code>1em</code>
-                        </Cell>
-                        <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon bSize={Size.medium}><MaIcon bSize={MaIconSize.is24px} name="bell"/></Icon>
-                        </Cell>
-                    </Row>
-                    <Row>
-                        <Cell>
-                            <code>{iconSizeWrapper('MaIconSize.is18px')}</code>
-                        </Cell>
-                        <Cell>
-                            <code>18px</code>
-                        </Cell>
-                        <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon bSize={Size.medium}><MaIcon bSize={MaIconSize.is18px} name="bell"/></Icon>
-                        </Cell>
-                    </Row>
-                    <Row>
-                        <Cell>
-                            <code>{iconSizeWrapper('MaIconSize.is24px')}</code>
-                        </Cell>
-                        <Cell>
-                            <code>24px</code>
-                        </Cell>
-                        <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon bSize={Size.medium}><MaIcon bSize={MaIconSize.is24px} name="bell"/></Icon>
-                        </Cell>
-                    </Row>
-                    <Row>
-                        <Cell>
-                            <code>{iconSizeWrapper('MaIconSize.is36px')}</code>
-                        </Cell>
-                        <Cell>
-                            <code>36px</code>
-                        </Cell>
-                        <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon bSize={Size.medium}><MaIcon bSize={MaIconSize.is36px} name="bell"/></Icon>
-                        </Cell>
-                    </Row>
-                    <Row>
-                        <Cell rowSpan={5}>
-                            <code>{iconSizeWrapper('Size.large')}</code>
-                        </Cell>
-                        <Cell rowSpan={5}>
-                            <code>3rem x 3rem</code>
-                        </Cell>
-                        <Cell>
-                            <code>mdi</code>
-                        </Cell>
-                        <Cell>
-                            <code>1em</code>
-                        </Cell>
-                        <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon bSize={Size.large}><MaIcon name="bell"/></Icon>
-                        </Cell>
-                    </Row>
-                    <Row>
-                        <Cell>
-                            <code>{iconSizeWrapper('MaIconSize.is18px')}</code>
-                        </Cell>
-                        <Cell>
-                            <code>18px</code>
-                        </Cell>
-                        <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon bSize={Size.large}><MaIcon bSize={MaIconSize.is18px} name="bell"/></Icon>
-                        </Cell>
-                    </Row>
-                    <Row>
-                        <Cell>
-                            <code>{iconSizeWrapper('MaIconSize.is24px')}</code>
-                        </Cell>
-                        <Cell>
-                            <code>24px</code>
-                        </Cell>
-                        <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon bSize={Size.large}><MaIcon bSize={MaIconSize.is24px} name="bell"/></Icon>
-                        </Cell>
-                    </Row>
-                    <Row>
-                        <Cell>
-                            <code>{iconSizeWrapper('MaIconSize.is36px')}</code>
-                        </Cell>
-                        <Cell>
-                            <code>36px</code>
-                        </Cell>
-                        <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon bSize={Size.large}><MaIcon bSize={MaIconSize.is36px} name="bell"/></Icon>
-                        </Cell>
-                    </Row>
-                    <Row>
-                        <Cell>
-                            <code>{iconSizeWrapper('MaIconSize.is48px')}</code>
-                        </Cell>
-                        <Cell>
-                            <code>48px</code>
-                        </Cell>
-                        <Cell className={bulmaDocs.bdIconSize}>
-                            <Icon bSize={Size.large}><MaIcon bSize={MaIconSize.is48px} name="bell"/></Icon>
-                        </Cell>
-                    </Row>
-                    </TBody>
-                </Table>
+                            </Cell>
+                            <Cell rowSpan={2}>
+                                <code>1.5rem x 1.5rem</code>
+                            </Cell>
+                            <Cell>
+                                <code>{iconSizeWrapper('bSize', 'MaIconSize.is18px')}</code>
+                            </Cell>
+                            <Cell>
+                                <code>18px</code>
+                            </Cell>
+                            <Cell className={bulmaDocs.bdIconSize}>
+                                <Icon><MaIcon bSize={MaIconSize.is18px} name="bell"/></Icon>
+                            </Cell>
+                        </Row>
+                        <Row>
+                            <Cell>
+                                <code>{iconSizeWrapper('bSize', 'MaIconSize.is24px')}</code>
+                            </Cell>
+                            <Cell>
+                                <code>24px</code>
+                            </Cell>
+                            <Cell className={bulmaDocs.bdIconSize}>
+                                <Icon><MaIcon bSize={MaIconSize.is24px} name="bell"/></Icon>
+                            </Cell>
+                        </Row>
+                        <Row>
+                            <Cell rowSpan={4}>
+                                <code>{iconSizeWrapper('bSize', 'Size.medium')}</code>
+                            </Cell>
+                            <Cell rowSpan={4}>
+                                <code>2rem x 2rem</code>
+                            </Cell>
+                            <Cell>
+                                {iconSizeWrapper('bSize', 'MaIconSize.is24px')}
+                            </Cell>
+                            <Cell>
+                                <code>1em</code>
+                            </Cell>
+                            <Cell className={bulmaDocs.bdIconSize}>
+                                <Icon bSize={Size.medium}><MaIcon bSize={MaIconSize.is24px} name="bell"/></Icon>
+                            </Cell>
+                        </Row>
+                        <Row>
+                            <Cell>
+                                <code>{iconSizeWrapper('bSize', 'MaIconSize.is18px')}</code>
+                            </Cell>
+                            <Cell>
+                                <code>18px</code>
+                            </Cell>
+                            <Cell className={bulmaDocs.bdIconSize}>
+                                <Icon bSize={Size.medium}><MaIcon bSize={MaIconSize.is18px} name="bell"/></Icon>
+                            </Cell>
+                        </Row>
+                        <Row>
+                            <Cell>
+                                <code>{iconSizeWrapper('bSize', 'MaIconSize.is24px')}</code>
+                            </Cell>
+                            <Cell>
+                                <code>24px</code>
+                            </Cell>
+                            <Cell className={bulmaDocs.bdIconSize}>
+                                <Icon bSize={Size.medium}><MaIcon bSize={MaIconSize.is24px} name="bell"/></Icon>
+                            </Cell>
+                        </Row>
+                        <Row>
+                            <Cell>
+                                <code>{iconSizeWrapper('bSize', 'MaIconSize.is36px')}</code>
+                            </Cell>
+                            <Cell>
+                                <code>36px</code>
+                            </Cell>
+                            <Cell className={bulmaDocs.bdIconSize}>
+                                <Icon bSize={Size.medium}><MaIcon bSize={MaIconSize.is36px} name="bell"/></Icon>
+                            </Cell>
+                        </Row>
+                        <Row>
+                            <Cell rowSpan={5}>
+                                <code>{iconSizeWrapper('bSize', 'Size.large')}</code>
+                            </Cell>
+                            <Cell rowSpan={5}>
+                                <code>3rem x 3rem</code>
+                            </Cell>
+                            <Cell>
+                                <code>mdi</code>
+                            </Cell>
+                            <Cell>
+                                <code>1em</code>
+                            </Cell>
+                            <Cell className={bulmaDocs.bdIconSize}>
+                                <Icon bSize={Size.large}><MaIcon name="bell"/></Icon>
+                            </Cell>
+                        </Row>
+                        <Row>
+                            <Cell>
+                                <code>{iconSizeWrapper('bSize', 'MaIconSize.is18px')}</code>
+                            </Cell>
+                            <Cell>
+                                <code>18px</code>
+                            </Cell>
+                            <Cell className={bulmaDocs.bdIconSize}>
+                                <Icon bSize={Size.large}><MaIcon bSize={MaIconSize.is18px} name="bell"/></Icon>
+                            </Cell>
+                        </Row>
+                        <Row>
+                            <Cell>
+                                <code>{iconSizeWrapper('bSize', 'MaIconSize.is24px')}</code>
+                            </Cell>
+                            <Cell>
+                                <code>24px</code>
+                            </Cell>
+                            <Cell className={bulmaDocs.bdIconSize}>
+                                <Icon bSize={Size.large}><MaIcon bSize={MaIconSize.is24px} name="bell"/></Icon>
+                            </Cell>
+                        </Row>
+                        <Row>
+                            <Cell>
+                                <code>{iconSizeWrapper('bSize', 'MaIconSize.is36px')}</code>
+                            </Cell>
+                            <Cell>
+                                <code>36px</code>
+                            </Cell>
+                            <Cell className={bulmaDocs.bdIconSize}>
+                                <Icon bSize={Size.large}><MaIcon bSize={MaIconSize.is36px} name="bell"/></Icon>
+                            </Cell>
+                        </Row>
+                        <Row>
+                            <Cell>
+                                <code>{iconSizeWrapper('bSize', 'MaIconSize.is48px')}</code>
+                            </Cell>
+                            <Cell>
+                                <code>48px</code>
+                            </Cell>
+                            <Cell className={bulmaDocs.bdIconSize}>
+                                <Icon bSize={Size.large}><MaIcon bSize={MaIconSize.is48px} name="bell"/></Icon>
+                            </Cell>
+                        </Row>
+                        </TBody>
+                    </Table>
+                    <br />
+                </div>
+                <div>
+                    <p>
+                        MDI also provides modifier classes for:
+                    </p>
+                    <ul style={{listStyleType: "circle"}}>
+                        <li>
+                            light and dark icons
+                        </li>
+                        <li>
+                            rotated &amp; flipped icons
+                        </li>
+                    </ul>
+                    <br />
+                    <Table isBordered>
+                        <THead>
+                        <Row>
+                            <HCell>Type</HCell>
+                            <HCell>Material Design Icon Component</HCell>
+                            <HCell>Result</HCell>
+                        </Row>
+                        </THead>
+                        <TBody>
+                        <Row>
+                            <Cell>
+                                Light color
+                            </Cell>
+                            <Cell>
+                                <code>{iconSizeWrapper("color", 'MaIconColor.light')}</code>
+                            </Cell>
+                            <Cell className="bd-icon-size">
+                                <Icon bSize={Size.large}><MaIcon color={MaIconColor.light} name="signal-4g"/></Icon>
+                            </Cell>
+                        </Row>
+                        <Row>
+                            <Cell>
+                                Dark color
+                            </Cell>
+                            <Cell>
+                                <code>{iconSizeWrapper("color", 'MaIconColor.dark')}</code>
+                            </Cell>
+                            <Cell className="bd-icon-size">
+                                <Icon bSize={Size.large}><MaIcon color={MaIconColor.dark} name="signal-4g"/></Icon>
+                            </Cell>
+                        </Row>
+                        <Row>
+                            <Cell>
+                                Light inactive color
+                            </Cell>
+                            <Cell>
+                                <code>{iconSizeWrapper("color", 'MaIconColor.light')} {iconSizeWrapper("inactive", true)}</code>
+                            </Cell>
+                            <Cell className="bd-icon-size">
+                                <Icon bSize={Size.large}><MaIcon color={MaIconColor.light} name="signal-4g" inactive/></Icon>
+                            </Cell>
+                        </Row>
+                        <Row>
+                            <Cell>
+                                Dark inactive color
+                            </Cell>
+                            <Cell>
+                                <code>{iconSizeWrapper("color", 'MaIconColor.dark')} {iconSizeWrapper("inactive", true)}</code>
+                                <code>mdi mdi-dark mdi-inactive</code>
+                            </Cell>
+                            <Cell className="bd-icon-size">
+                                <Icon bSize={Size.large}><MaIcon color={MaIconColor.dark} name="signal-4g" inactive/></Icon>
+                            </Cell>
+                        </Row>
+                        <Row>
+                            <Cell>
+                                Flipped
+                            </Cell>
+                            <Cell>
+                                <code>{iconSizeWrapper("flip", 'MaIconFlip.horizontal')}</code>
+                                <br/>
+                                <code>{iconSizeWrapper("flip", 'MaIconFlip.vertical')}</code>
+                            </Cell>
+                            <Cell className="bd-icon-size">
+                                <Icon bSize={Size.large}><MaIcon name="signal-4g" flip={MaIconFlip.horizontal}/></Icon>
+                                <br/>
+                                <Icon bSize={Size.large}><MaIcon name="signal-4g" flip={MaIconFlip.vertical}/></Icon>
+                            </Cell>
+                        </Row>
+                        <Row>
+                            <Cell>
+                                Rotated
+                            </Cell>
+                            <Cell>
+                                <code>{iconSizeWrapper("rotate", 45)}</code>
+                                <br/>
+                                <code>{iconSizeWrapper("rotate", 90)}</code>
+                                <br/>
+                                <code>{iconSizeWrapper("rotate", 180)}</code>
+                            </Cell>
+                            <Cell className="bd-icon-size">
+                                <Icon bSize={Size.large}><MaIcon name="signal-4g" rotate={45}/></Icon>
+                                <br/>
+                                <Icon bSize={Size.large}><MaIcon name="signal-4g" rotate={90}/></Icon>
+                                <br/>
+                                <Icon bSize={Size.large}><MaIcon name="signal-4g" rotate={180}/></Icon>
+                            </Cell>
+                        </Row>
+                        </TBody>
+                    </Table>
+                </div>
+                <br />
+                <p> For more information
+                    <a href="https://bulma.io/documentation/elements/icon/">
+                        https://bulma.io/documentation/
+                        <wbr />elements/
+                        <wbr />icon/
+                    </a>
+                </p>
             </div>
         );
     }
