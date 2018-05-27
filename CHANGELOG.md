@@ -15,7 +15,7 @@
 * removed *FaIcon* from *Icon* component. You should give it as a children.
 * removed *MaIcon* component. https://materialdesignicons.com/getting-started
 * fixed *Icon* problems in library and documentation.
-
+* added `fontawesome` and `materialdesignicons` information to *README.md* file.
 
 #### v0.6.201-beta.2
 * solved https://github.com/wasabi-io/bambu/issues/6

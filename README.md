@@ -88,6 +88,29 @@ This configuration provide to applied css modules just for files which filename 
 }
 ```
 
+
+#### fontawesome.
+
+* add css link to index.html file
+
+```html
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+```
+
+
+* For more information https://fontawesome.com/get-started
+
+#### materialdesignicons.
+
+* add css link to index.html file
+
+```html
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/2.4.85/css/materialdesignicons.min.css" crossorigin="anonymous" />
+```
+
+
+* For more information https://materialdesignicons.com/
+
 ## Documentation ( Showcase )
 
 #### Development
