@@ -49,7 +49,7 @@ export default class Accordion extends Stateless<AccordionProps> {
                     return (
                         <AccordionTab key={tab.name} {...tab} getContent={getContent} activeTab={this.activeTab} onToggle={(name: string) => {
                             console.log(name);
-                            this.activeTab = name;
+                            this.activeTab = (this.activeTab === name) ? null : name ;
                         }}/>
                     );
                 })}

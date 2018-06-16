@@ -37,7 +37,7 @@ export default class ReactDocViewer extends Stateless<ReactDocViewerProps> {
         for (const component in components) {
             tabs.push({
                 name: component,
-                header: component
+                header: `<${component} />`
             });
         }
         return (
