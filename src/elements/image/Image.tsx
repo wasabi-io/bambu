@@ -38,7 +38,7 @@ export interface ImageProps extends HTMLImgProps {
 
 export default class Image extends React.Component<ImageProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         alt: PropTypes.string,
         pClassName: PropTypes.string,

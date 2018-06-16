@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as ProgressStyle, Color, colorValues, HTMLComponent, HTMLProgressProps, Size, sizeValues} from '../../';
 
 /**
@@ -18,7 +17,7 @@ export interface ProgressProps extends HTMLProgressProps {
 
 export default class Progress extends React.Component<ProgressProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         color: PropTypes.oneOf(colorValues),
         max: PropTypes.number,

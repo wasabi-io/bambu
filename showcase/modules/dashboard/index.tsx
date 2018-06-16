@@ -3,29 +3,30 @@ import * as React from 'react';
 import {Hero, HeroBody} from "bambu/lib/layout/hero/index";
 import {Container} from "bambu/lib/elements/container/index";
 import {Stateless} from "wasabi-ui";
-import bulmaDocs from "../../css/bulmaDocs";
 import bulma from "bambu/lib/base/css/bulma";
 import {FaIcon, FaIconSize, FaIconStyle, Icon} from "bambu/lib/elements/icon";
-import {Size} from "bambu";
-import DocIcon from "../../view/DocIcon";
+import {Size, Size6} from "bambu";
+import {SubTitle, Title} from "bambu/lib/elements/title";
+import pageStyle from "css/pageStyle";
+import DocIcon from "../view/icon/DocIcon";
 
 export default class DashBoard extends Stateless<{}> {
 
     public render() {
         return (
-            <Hero className={bulmaDocs.intro} isMedium>
+            <Hero className={pageStyle.intro} isMedium>
                 <HeroBody>
                     <Container>
-                        <div className={bulmaDocs.introColumns}>
-                            <div className={classNames(bulmaDocs.introColumn, bulmaDocs.isContent)}>
-                                <div className={bulmaDocs.introContent}>
+                        <div className={pageStyle.introColumns}>
+                            <div className={classNames(pageStyle.introColumn, pageStyle.isContent)}>
+                                <div className={pageStyle.introContent}>
                                     <h1 className="title intro-title">
                                         <strong>Bambu</strong> is an open source Javascript framework that provide base components for <strong>react-web applications</strong> built with <strong>typescript</strong> on top of bulma css framework.
                                     </h1>
                                 </div>
                             </div>
-                            <div className={classNames(bulmaDocs.introColumn, bulmaDocs.isContent)}>
-                                <div className={bulmaDocs.introContent}>
+                            <div className={classNames(pageStyle.introColumn, pageStyle.isContent)}>
+                                <div className={pageStyle.introContent}>
                                     <h1 className="title intro-title">
                                         <img src="./assets/combine.png"/>
                                     </h1>
@@ -33,43 +34,37 @@ export default class DashBoard extends Stateless<{}> {
                             </div>
                         </div>
 
-                        <div className={bulmaDocs.bdFocus}>
+                        <div className={pageStyle.bdFocus}>
                             <nav className={bulma.columns}>
-                                <a className={classNames(bulmaDocs.bdFocusItem, bulma.column, bulma.hasTextCentered)} href="#">
-                                    <p className={classNames(bulma.title, bulma.is4)}>
-                                        <strong>100% Responsive</strong>
-                                    </p>
-                                    <p className={classNames(bulma.subtitle, bulma.is6)}>Designed for <strong>mobile</strong> first</p>
-                                    <figure className="bd-focus-icon">
-                                        <span className="bd-focus-mobile icon is-large">
-                                            <Icon><FaIcon name="mobile-alt" bSize={FaIconSize.isLg}/></Icon>
-                                        </span>
-                                        <span className="bd-focus-tablet icon is-large">
-                                            <Icon><FaIcon name="tablet-alt" bSize={FaIconSize.is2x}/></Icon>
-                                        </span>
-                                        <span className="bd-focus-desktop icon is-large">
-                                             <Icon><FaIcon name="desktop" bSize={FaIconSize.is3x}/></Icon>
-                                        </span>
+                                <a className={classNames(pageStyle.bdFocusItem, bulma.column, bulma.hasTextCentered)} href="#">
+                                    <Title bSize={Size6.is4}><strong>100% Responsive</strong></Title>
+                                    <SubTitle bSize={Size6.is6}>Designed for <strong>mobile</strong> first</SubTitle>
+                                    <figure className={pageStyle.bdFocusIcon}>
+                                        <Icon bSize={Size.large} className={pageStyle.bdFocusMobile}>
+                                            <FaIcon name="mobile-alt" bSize={FaIconSize.isLg}/>
+                                        </Icon>
+                                        <Icon bSize={Size.large} className={pageStyle.bdFocusTablet}>
+                                            <FaIcon name="tablet-alt" bSize={FaIconSize.is2x}/>
+                                        </Icon>
+                                        <Icon bSize={Size.large} className={pageStyle.bdFocusDesktop}>
+                                            <FaIcon name="desktop" bSize={FaIconSize.is3x}/>
+                                        </Icon>
                                     </figure>
                                 </a>
 
-                                <a className="bd-focus-item column has-text-centered" href="https://reactjs.org/docs/react-component.html" target="_blank">
-                                    <p className="title is-4">
-                                        <strong>Component Based</strong>
-                                    </p>
-                                    <p className="subtitle is-6">
-                                        Just import what you <strong>need</strong>
-                                    </p>
-                                    <figure className="bd-focus-cubes bd-focus-icon">
-                                        <span className="bd-focus-cube bd-focus-cube-1 icon is-large">
-                                            <Icon><FaIcon name="cube" bSize={FaIconSize.is2x}/></Icon>
-                                        </span>
-                                        <span className="bd-focus-cube bd-focus-cube-2 icon is-large">
-                                            <Icon><FaIcon name="cube" bSize={FaIconSize.is2x}/></Icon>
-                                        </span>
-                                        <span className="bd-focus-cube bd-focus-cube-3 icon is-large">
-                                           <Icon><FaIcon name="cube" bSize={FaIconSize.is2x}/></Icon>
-                                        </span>
+                                <a className={classNames(pageStyle.bdFocusItem, bulma.column, bulma.hasTextCentered)} href="https://reactjs.org/docs/react-component.html" target="_blank">
+                                    <Title bSize={Size6.is4}>Component Based</Title>
+                                    <SubTitle bSize={Size6.is6}>Just import what you <strong>need</strong></SubTitle>
+                                    <figure className={classNames(pageStyle.bdFocusCubes, pageStyle.bdFocusIcon)}>
+                                        <Icon bSize={Size.large} className={classNames(pageStyle.bdFocusCube, pageStyle.bdFocusCube1)}>
+                                            <FaIcon name="cube" bSize={FaIconSize.is2x}/>
+                                        </Icon>
+                                        <Icon bSize={Size.large} className={classNames(pageStyle.bdFocusCube, pageStyle.bdFocusCube2)}>
+                                            <FaIcon name="cube" bSize={FaIconSize.is2x}/>
+                                        </Icon>
+                                        <Icon bSize={Size.large} className={classNames(pageStyle.bdFocusCube, pageStyle.bdFocusCube3)}>
+                                            <FaIcon name="cube" bSize={FaIconSize.is2x}/>
+                                        </Icon>
                                     </figure>
                                 </a>
 
@@ -83,9 +78,9 @@ export default class DashBoard extends Stateless<{}> {
                                     <DocIcon
                                         name="css3"
                                         iconStyle={FaIconStyle.brands}
-                                        className={bulmaDocs.bdFocusIcon}
+                                        className={pageStyle.bdFocusIcon}
                                         bSize={Size.large}
-                                        iconClassName={bulmaDocs.bdFocusCss3}
+                                        iconClassName={pageStyle.bdFocusCss3}
                                         iconSize={FaIconSize.is3x}
                                     />
                                 </a>
@@ -99,10 +94,10 @@ export default class DashBoard extends Stateless<{}> {
                                     </p>
                                     <DocIcon
                                         name="github-alt"
-                                        className={bulmaDocs.bdFocusIcon}
+                                        className={pageStyle.bdFocusIcon}
                                         bSize={Size.large}
                                         iconStyle={FaIconStyle.brands}
-                                        iconClassName={bulmaDocs.bdFocusGithub}
+                                        iconClassName={pageStyle.bdFocusGithub}
                                         iconSize={FaIconSize.is3x}
                                     />
                                 </a>

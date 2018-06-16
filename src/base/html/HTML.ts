@@ -2,7 +2,6 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Stateless from 'wasabi-ui/lib/Stateless';
-import {Props} from "wasabi-common";
 
 /**
  * Provides abstraction from HTML Elements.
@@ -10,7 +9,7 @@ import {Props} from "wasabi-common";
 
 abstract class AbstractDom<P extends HTMLElementProps> extends Stateless<P> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         className: PropTypes.string,
         style: PropTypes.object,
         elementRef: PropTypes.func

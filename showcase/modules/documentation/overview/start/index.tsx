@@ -1,16 +1,16 @@
 import * as classNames from "classnames";
 import * as React from "react";
 import {Stateless} from "wasabi-ui";
-import {Media, MediaContent, MediaLeft} from "bambu/lib/components/media";
-import {bulma, Color, Size6} from "bambu";
-import {Title} from "bambu/lib/elements/title";
+import {bulma, Color} from "bambu";
 import Highlight from "component/code/highlight/Highlight";
-import {Message, MessageBody, MessageHeader} from "bambu/lib/components/message";
-import bulmaDocs from "../../../../css/bulmaDocs";
+import {Message, MessageBody} from "bambu/lib/components/message";
 import {Content} from "bambu/lib/elements/content";
 import {FaIcon, Icon} from "bambu/lib/elements/icon";
+import pageStyle from "css/pageStyle";
+import DocMediaHighlight from "../../../view/highlight/DocMediaHighlight";
+import DocMessageHighlight from "../../../view/highlight/DocMessageHighlight";
 
-const packageJson = require("../../../../../package.json");
+const packageJson = require("../../../../../../package.json");
 
 const webpackCssModuleText = `{
     test: /\.css$/,
@@ -24,6 +24,8 @@ const webpackCssModuleText = `{
         }
     ]
 }`;
+
+const fontAwesomeScript = '<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>';
 
 export default class Index extends Stateless <any> {
     public render() {
@@ -58,79 +60,45 @@ export default class Index extends Stateless <any> {
                     </ol>
                 </div>
 
-                <Media className={bulma.isLarge}>
-                    <MediaLeft>
-                        <Title bSize={Size6.is5}>1</Title>
-                    </MediaLeft>
-                    <MediaContent>
-                        <Title bSize={Size6.is5}>
-                            Use <strong>npm / yarn</strong>:
-                        </Title>
-                        <Highlight language="bash">
-                            npm install bulma font-awesome react prop-types
-                        </Highlight>
-                        <br/>
-                        <Highlight language="bash">
-                            yarn bulma font-awesome react prop-types
-                        </Highlight>
-                    </MediaContent>
-                </Media>
+                <DocMediaHighlight
+                    title="2"
+                    contentTitle={<span>Use <strong>npm / yarn</strong>:</span>}
+                    codes={[
+                        'npm install bulma font-awesome react prop-types',
+                        'yarn bulma font-awesome react prop-types'
+                    ]}
+                />
 
-                <Media className={bulma.isLarge}>
-                    <MediaLeft>
-                        <Title bSize={Size6.is5}>2</Title>
-                    </MediaLeft>
-                    <MediaContent>
-                        <Title bSize={Size6.is5}>
-                            Use <strong>npm / yarn</strong>:
-                        </Title>
-                        <Highlight language="bash">
-                            npm install bambu
-                        </Highlight>
-                        <br/>
-                        <Highlight language="bash">
-                            yarn bambu
-                        </Highlight>
-                    </MediaContent>
-                </Media>
+                <DocMediaHighlight
+                    lang="bash"
+                    title="1"
+                    contentTitle={<span>Use <strong>npm / yarn</strong>:</span>}
+                    codes={[
+                        'npm install bambu',
+                        'yarn bambu'
+                    ]}
+                />
 
-                <Media className={bulma.isLarge}>
-                    <MediaLeft>
-                        <Title bSize={Size6.is5}>3</Title>
-                    </MediaLeft>
-                    <MediaContent>
-                        <Title bSize={Size6.is5}>
-                            For <strong>webpack</strong>:
-                        </Title>
-                        <Highlight language="bash">
-                            yarn add --dev style-loader css-modules-loader sass-loader
-                        </Highlight>
-                        <br/>
-                        <Highlight language="bash">
-                            {webpackCssModuleText}
-                        </Highlight>
-                    </MediaContent>
-                </Media>
-
+                <DocMediaHighlight
+                    lang="bash"
+                    title="3"
+                    contentTitle={<span>For <strong>webpack</strong>:</span>}
+                    codes={[
+                        'yarn add --dev style-loader css-modules-loader sass-loader',
+                        webpackCssModuleText
+                    ]}
+                />
                 <hr/>
 
-                <Message color={Color.info}>
-                    <MessageHeader>
-                        Font Awesome icons
-                    </MessageHeader>
-                    <MessageBody>
-                        <p>If you want to use icons with bambu, don't forget to install <a href="https://fontawesome.com">Font Awesome 5</a>:</p>
-                        <Highlight language="bash">
-                            npm install font-awesome
-                        </Highlight>
-                    </MessageBody>
-                </Message>
+                <DocMessageHighlight color={Color.info} header="Font Awesome icons" codes={[fontAwesomeScript]}>
+                    <p>If you want to use icons with bambu, don't forget to add <a href="https://fontawesome.com">Font Awesome 5</a>:</p>
+                </DocMessageHighlight>
 
                 <hr className="hr" style={{
                     marginBottom: 0
                 }}/>
 
-                <h3 id="code-requirements" className={classNames(bulma.title, bulma.is4, bulma.isSpaced, bulmaDocs.bdAnchorTitle)}>
+                <h3 id="code-requirements" className={classNames(bulma.title, bulma.is4, bulma.isSpaced, pageStyle.bdAnchorTitle)}>
                     <span className="bd-anchor-name">
                         Code requirements
                     </span>
@@ -144,33 +112,19 @@ export default class Index extends Stateless <any> {
                     </p>
                 </Content>
 
-                <Media className={bulma.isLarge}>
-                    <MediaLeft>
-                        <Title bSize={Size6.is5}>1</Title>
-                    </MediaLeft>
-                    <MediaContent>
-                        <Title bSize={Size6.is5}>
-                            Use the <strong>HTML5 doctype</strong>
-                        </Title>
-                        <Highlight language="html">
-                            <span className="cp">&lt;!DOCTYPE html&gt;</span>
-                        </Highlight>
-                    </MediaContent>
-                </Media>
+                <DocMediaHighlight
+                    lang="html"
+                    title="1"
+                    contentTitle={<span>Use the <strong>HTML5 doctype</strong></span>}
+                    codes={['<!DOCTYPE html>']}
+                />
 
-                <Media className={bulma.isLarge}>
-                    <MediaLeft>
-                        <Title bSize={Size6.is5}>2</Title>
-                    </MediaLeft>
-                    <MediaContent>
-                        <Title bSize={Size6.is5}>
-                            Add the responsive <strong>viewport</strong> meta tag
-                        </Title>
-                        <Highlight language="html">
-                            <span className="nt">&lt;meta</span> <span className="na">name=</span><span className="s">"viewport"</span> <span className="na">content=</span><span className="s">"width=device-width, initial-scale=1"</span><span className="nt">&gt;</span>
-                        </Highlight>
-                    </MediaContent>
-                </Media>
+                <DocMediaHighlight
+                    lang="html"
+                    title="2"
+                    contentTitle={<span>Add the responsive <strong>viewport</strong> meta tag</span>}
+                    codes={['<meta name="viewport" content="width=device-width, initial-scale=1">']}
+                />
                 <hr/>
                 <Message color={Color.success}>
                     <MessageBody>

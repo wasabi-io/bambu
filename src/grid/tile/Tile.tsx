@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Objects, Props} from "wasabi-common";
+import {Objects} from "wasabi-common";
 
 import {bulma as TileStyle, HTMLComponent, HTMLDivProps, Size12, size12Values} from '../../';
 
@@ -23,7 +23,8 @@ export interface TileProps extends HTMLDivProps {
 }
 
 export default class Tile extends React.Component<TileProps, {}> {
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         context: PropTypes.oneOf(Objects.values(TileContext)),
         bSize: PropTypes.oneOf(Objects.values(size12Values)),

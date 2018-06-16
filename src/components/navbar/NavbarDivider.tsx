@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLComponent, HTMLHrProps} from "../../";
 
 export interface NavbarDividerProps extends HTMLHrProps {
@@ -10,7 +9,10 @@ export interface NavbarDividerProps extends HTMLHrProps {
 
 export default class NavbarDivider extends React.Component<NavbarDividerProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
+    public static propTypes = {
+        ...HTMLComponent.propTypes,
+        elementRef: PropTypes.func
+    };
 
     public static defaultProps = HTMLComponent.defaultProps;
 

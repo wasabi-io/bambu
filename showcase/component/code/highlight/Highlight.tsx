@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import * as ReactDOM from 'react-dom';
 import Style from './Style';
 import Stateless from "wasabi-ui/lib/Stateless";
 import {observable} from "mobx";
@@ -19,7 +18,7 @@ export interface HighlightProps extends HTMLDivProps {
 export default class Highlight extends Stateless<HighlightProps> {
     @observable
     private isHovered: any = false;
-
+    private nodeId: string = `highlight-${this.id}`;
     public static propTypes = {
         withScroll: PropTypes.bool
     };
@@ -51,7 +50,7 @@ export default class Highlight extends Stateless<HighlightProps> {
             [`${Style.hljsPreScroll}`]: this.props.withScroll
         });
         return (
-            <div className={ClassNames(Style.hljsContent, className)}>
+            <div id={this.nodeId} className={ClassNames(Style.hljsContent, className)}>
                 <button
                     className={buttonClassName}
                     onMouseOver={() => this.isHovered = true}
@@ -69,10 +68,12 @@ export default class Highlight extends Stateless<HighlightProps> {
     }
 
     public highlightCode() {
-        const domNode = ReactDOM.findDOMNode(this);
-        const nodes = domNode.querySelectorAll('pre code');
-        for (let i = 0; i < nodes.length; i = +1) {
-            highlight.highlightBlock(nodes[i]);
+        const node = document.getElementById(this.nodeId);
+        if (node) {
+            const nodes = node.querySelectorAll('pre code');
+            for (let i = 0; i < nodes.length; i = +1) {
+                highlight.highlightBlock(nodes[i]);
+            }
         }
     }
 

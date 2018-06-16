@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import Objects from 'wasabi-common/lib/types/Objects';
 import {bulma as HeroStyle, Color, colorValues, HTMLComponent, HTMLSectionProps} from '../../';
 
@@ -25,7 +24,7 @@ export interface HeroProps extends HTMLSectionProps {
 
 export default class Hero extends React.Component<HeroProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         color: PropTypes.oneOf(colorValues),
         isBold: PropTypes.bool,

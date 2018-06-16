@@ -16,7 +16,16 @@
 * removed *MaIcon* component. https://materialdesignicons.com/getting-started
 * fixed *Icon* problems in library and documentation.
 * added `fontawesome` and `materialdesignicons` information to *README.md* file.
-* added *BreadCrumb* documentation.
+* Added [Documentation](./md/Documentation.md)  for Some component.
+* Added [Tests](./md/Tests.md)  for Some component.
+* Added React Doc Generator to Generator React Docs.
+* Upgraded webpack version to build Documentation.
+* Upgraded all dependencies.
+* Changed getting style of `bulma`.
+* reconfigured test. changed from `mocha` as `jest`.
+* added *Props Generator*
+* added `Grid` component to show Props.
+* added js-criteria to query properties on datagrid.
 
 #### v0.6.201-beta.2
 * solved https://github.com/wasabi-io/bambu/issues/6

@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as MediaStyle, HTMLArticleProps, HTMLComponent} from '../../';
 
 export interface MediaProps extends HTMLArticleProps {
@@ -10,7 +9,10 @@ export interface MediaProps extends HTMLArticleProps {
 
 export default class Media extends React.Component<MediaProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
+    public static propTypes = {
+        ...HTMLComponent.propTypes,
+        elementRef: PropTypes.func
+    };
 
     public static defaultProps = HTMLComponent.defaultProps;
 

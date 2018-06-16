@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export interface NavbarDropdownProps extends HTMLDivProps {
@@ -13,11 +12,12 @@ export interface NavbarDropdownProps extends HTMLDivProps {
 
 export default class NavbarDropdown extends React.Component<NavbarDropdownProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         isActive: PropTypes.bool,
         isBoxed: PropTypes.bool,
-        isRight: PropTypes.bool
+        isRight: PropTypes.bool,
+        elementRef: PropTypes.func
     };
 
     public static defaultProps = {

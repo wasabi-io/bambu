@@ -1,29 +1,12 @@
 const fs = require("fs");
 const path = require("path");
+const Files = require("./common/util/Files");
 const fileExtension = require('file-extension');
 // List all files in a directory in Node.js recursively in a synchronous fashion
-const walkSync = function (dir, filelist, extensions, ignore) {
-    const files = fs.readdirSync(dir);
-    filelist = filelist || [];
-    files.forEach(function (file) {
-        const ext = fileExtension(file);
-        if (ignore.indexOf(ext) === -1) {
-            if (fs.statSync(path.resolve(dir, file)).isDirectory()) {
-                filelist = walkSync(path.resolve(dir, file) + '/', filelist, extensions, ignore);
-            }
-            else {
-                if (extensions.indexOf(ext) !== -1) {
-                    filelist.push(dir + file);
-                }
-            }
-        }
-    });
-    return filelist;
-};
 
 const startPath = path.resolve(__dirname, "../src");
 
-const list = walkSync(startPath, [], ["ts", "tsx"], ["ds_store"]);
+const list = Files.walkSync(startPath, [], ["ts", "tsx"], ["ds_store"]);
 const importList = [];
 list.forEach((file, index) => {
     const ext = fileExtension(file);
@@ -48,16 +31,24 @@ function toModule(moduleList) {
 }
 
 const moduleList = [
+    `import * as ClassNames from "classnames";`,
+    `import * as PropTypes from "prop-types";`,
     `import * as React from "react";`,
     `import * as ReactDOM from "react-dom";`,
     `import * as bambu from "bambu";`,
-    `import * as wasabiUi from "wasabi-ui";`
+    `import * as mobxReact from "mobx-react";`,
+    `import * as mobx from "mobx";`,
+    `import * as wasabiCommon from "wasabi-common";`
 ];
 const jsonList = [
+    `    "classnames": ClassNames`,
+    `    "prop-types": PropTypes`,
     `    "react": React`,
     `    "react-dom": ReactDOM`,
     `    "bambu": bambu`,
-    `    "wasabi-ui": wasabiUi`
+    `    "mobx": mobx`,
+    `    "mobx-react": mobxReact`,
+    `    "wasabi-common": wasabiCommon`
 ];
 
 importList.forEach((importPath) => {

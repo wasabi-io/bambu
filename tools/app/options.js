@@ -36,10 +36,6 @@ module.exports = {
                 to: "./vendor/bulma/css/"
             },
             {
-                from: "../node_modules/font-awesome",
-                to: "./vendor/font-awesome/"
-            },
-            {
                 from: "../assets",
                 to: "./assets"
             }

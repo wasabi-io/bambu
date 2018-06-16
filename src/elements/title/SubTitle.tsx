@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as TitleStyle, HTMLComponent, HTMLPProps, Size6, size6Values} from '../../';
 
 /**
@@ -15,7 +14,7 @@ export interface SubTitleProps extends HTMLPProps {
 
 export default class SubTitle extends React.Component<SubTitleProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         bSize: PropTypes.oneOf(size6Values),
         tagName: PropTypes.string
@@ -42,4 +41,3 @@ export default class SubTitle extends React.Component<SubTitleProps, {}> {
         }, children);
     }
 }
-

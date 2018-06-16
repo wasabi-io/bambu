@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {has, Objects, Props, Strings} from 'wasabi-common';
+import {has, Objects, Strings} from 'wasabi-common';
 import {HTMLAllAttributes} from '../../';
 import HTMLComponent from '../../base/html/HTML';
 
@@ -49,7 +49,7 @@ export interface MaIconProps extends HTMLAllAttributes {
  */
 export default class MaIcon extends HTMLComponent<MaIconProps> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         name: PropTypes.string.isRequired,
         color: PropTypes.oneOf(maIconColorValues),
@@ -78,7 +78,7 @@ export default class MaIcon extends HTMLComponent<MaIconProps> {
             className,
             elementRef,
             children,
-            ...props,
+            ...props
         } = this.props;
 
         const icon = Strings.startsWith(name, "mdi-") ? name : `mdi-${name}`;

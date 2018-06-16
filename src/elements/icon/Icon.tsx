@@ -1,10 +1,8 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from 'wasabi-common';
 import {bulma as IconStyle, HTMLComponent, HTMLSpanProps, Size, sizeValues} from '../../';
 import {FaIconProps} from './FaIcon';
-import bulma from "bambu/lib/base/css/bulma";
 
 export type IconOptions = string | FaIconProps | JSX.Element;
 
@@ -19,7 +17,8 @@ export interface IconProps extends HTMLSpanProps {
 }
 
 export default class Icon extends HTMLComponent<IconProps> {
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         bSize: PropTypes.oneOf(sizeValues),
         stack: PropTypes.bool,
@@ -40,7 +39,7 @@ export default class Icon extends HTMLComponent<IconProps> {
 
         const classNames = ClassNames(
             IconStyle.icon,
-            bulma[bSize],
+            IconStyle[bSize],
             className
         );
 

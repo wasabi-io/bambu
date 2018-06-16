@@ -3,7 +3,7 @@ import * as React from "react";
 import {Stateless} from "wasabi-ui";
 import {Box} from "bambu/lib/elements/box";
 import layerStyle from "./LayerStyle";
-import ReactUtil from "../../util/ReactUtil";
+import ReactUtil from "modules/router/util/ReactUtil";
 import {Content} from "bambu/lib/elements/content";
 import {BoxProps} from "bambu/lib/elements/box/Box";
 import classNames = require("classnames");

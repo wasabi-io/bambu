@@ -1,12 +1,12 @@
 import * as React from "react";
 import {Stateless} from "wasabi-ui";
-import bulmaDocs from "../../css/bulmaDocs";
 import {Content} from "bambu/lib/elements/content";
+import pageStyle from "css/pageStyle";
 
 export default class DocContent extends Stateless<{}> {
     public render() {
         return (
-            <div className={bulmaDocs.bdContent}>
+            <div className={pageStyle.bdContent}>
                 <Content>
                     <p>
                         Bulma is a <strong>CSS</strong> framework, meaning that the end result is simply a <strong>single</strong> <code>.css</code> file:

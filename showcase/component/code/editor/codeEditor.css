@@ -1,0 +1,118 @@
+.code-editor {
+
+}
+
+.code-editor .ce-columns {
+    margin: 0px;
+}
+
+.code-editor .ce-columns .ce-preview {
+    margin: 20px;
+}
+
+.code-editor .ce-columns .ce-code-mirror {
+    margin: 0px;
+    border-radius: 5px;
+    border: 1px solid whitesmoke;
+}
+
+.code-editor .ce-columns .ce-column {
+    padding: 0px;
+    margin: 0px;
+}
+
+.code-editor .ce-snippet {
+    border: 1px solid whitesmoke;
+    position: relative;
+}
+
+.code-editor .ce-snippet::before {
+    background: #ffdd57;
+    border-radius: 2px 2px 0 0;
+    bottom: 100%;
+    color: rgba(0, 0, 0, 0.7);
+    content: "Example";
+    display: inline-block;
+    font-size: 7px;
+    font-weight: bold;
+    left: -1px;
+    letter-spacing: 1px;
+    margin-left: -1px;
+    padding: 3px 5px;
+    position: absolute;
+    text-transform: uppercase;
+    vertical-align: top;
+}
+
+@media screen and (min-width: 769px), print {
+    .code-editor .ce-snippet.is-fullwidth {
+        border-left: none;
+        border-right: none;
+        padding: 0;
+    }
+}
+
+.code-editor .ce-snippet {
+    margin-top: 2rem;
+    position: relative;
+    border-radius: 2px;
+    box-shadow: 0 0 0 1px #ffdd57;
+}
+
+.code-editor .ce-snippet::before {
+    content: "Snippet";
+    align-items: stretch;
+    display: flex;
+}
+
+.code-editor .ce-show-icon.ce-is-horizontal {
+    display: grid;
+    margin-bottom: 0;
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.code-editor .ce-show-icon.ce-is-vertical {
+    display: grid;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.code-editor .ce-snippet-code.ce-is-more.ce-is-more-clipped .highlight {
+    height: 2em;
+    overflow: hidden;
+}
+
+.code-editor .ce-snippet-code.ce-is-more.ce-is-more-clipped .highlight pre {
+    overflow: hidden;
+}
+
+.code-editor .ce-snippet-code.ce-is-more.ce-is-more-clipped .highlight .ce-show {
+    display: flex;
+}
+
+.code-editor .ce-snippet.ce-is-horizontal {
+    border-radius: 6px;
+    border-top-left-radius: 0;
+}
+
+.code-editor .ce-snippet.ce-is-horizontal .ce-snippet-code .highlight {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.code-editor .ce-snippet.ce-is-horizontal .ce-snippet-code.ce-is-more.ce-is-more-clipped .highlight pre {
+    padding-top: 0.325rem;
+}
+
+.code-editor .ce-snippet.ce-is-clipped .ce-snippet-code {
+    overflow: auto;
+}
+
+.ce-snippet.ce-is-fullwidth {
+    border-radius: 0;
+    border-width: 1px 0;
+}

@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as NotificationStyle, Color, HTMLComponent, HTMLDivProps} from '../../';
 
 export interface NotificationProps extends HTMLDivProps {
@@ -11,7 +10,7 @@ export interface NotificationProps extends HTMLDivProps {
 
 export default class Notification extends React.Component<NotificationProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         color: PropTypes.string,
     };

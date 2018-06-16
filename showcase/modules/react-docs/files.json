@@ -1,0 +1,185 @@
+{
+  "components": {
+    "breadcrumb": {
+      "BreadCrumb": 1,
+      "BreadCrumbItem": 1
+    },
+    "card": {
+      "Card": 1,
+      "CardContent": 1,
+      "CardFooter": 1,
+      "CardFooterItem": 1,
+      "CardHeader": 1,
+      "CardHeaderIcon": 1,
+      "CardHeaderTitle": 1,
+      "CardImage": 1
+    },
+    "dropdown": {
+      "Dropdown": 1,
+      "DropdownContent": 1,
+      "DropdownDivider": 1,
+      "DropdownItem": 1,
+      "DropdownMenu": 1,
+      "DropdownTrigger": 1
+    },
+    "level": {
+      "Level": 1,
+      "LevelItem": 1,
+      "LevelLeft": 1,
+      "LevelRight": 1
+    },
+    "media": {
+      "Media": 1,
+      "MediaContent": 1,
+      "MediaLeft": 1,
+      "MediaRight": 1
+    },
+    "menu": {
+      "Menu": 1,
+      "MenuLabel": 1,
+      "MenuLink": 1,
+      "MenuList": 1,
+      "MenuListItem": 1
+    },
+    "message": {
+      "Message": 1,
+      "MessageBody": 1,
+      "MessageHeader": 1
+    },
+    "modal": {
+      "Modal": 1,
+      "ModalCard": 1,
+      "ModalCardBody": 1,
+      "ModalCardFooter": 1,
+      "ModalCardHeader": 1,
+      "ModalCardTitle": 1,
+      "ModalClose": 1,
+      "ModalContent": 1
+    },
+    "navbar": {
+      "Navbar": 1,
+      "NavbarBrand": 1,
+      "NavbarBurger": 1,
+      "NavbarDivider": 1,
+      "NavbarDropdown": 1,
+      "NavbarEnd": 1,
+      "NavbarItem": 1,
+      "NavbarItemLink": 1,
+      "NavbarLink": 1,
+      "NavbarMenu": 1,
+      "NavbarStart": 1
+    },
+    "pagination": {
+      "Pagination": 1,
+      "PaginationEllipsis": 1,
+      "PaginationLink": 1,
+      "PaginationList": 1,
+      "PaginationNext": 1,
+      "PaginationPrevoius": 1
+    },
+    "panel": {
+      "Panel": 1,
+      "PanelBlock": 1,
+      "PanelHeading": 1,
+      "PanelIcon": 1,
+      "PanelTabs": 1
+    },
+    "tabs": {
+      "Tab": 1,
+      "TabGroup": 1,
+      "Tabs": 1
+    }
+  },
+  "elements": {
+    "box": {
+      "Box": 1
+    },
+    "button": {
+      "Button": 1
+    },
+    "container": {
+      "Container": 1
+    },
+    "content": {
+      "Content": 1
+    },
+    "delete": {
+      "Delete": 1
+    },
+    "form": {
+      "Control": 1,
+      "ControlLabel": 1,
+      "Field": 1,
+      "FieldBody": 1,
+      "FieldHelp": 1,
+      "FieldLabel": 1,
+      "Form": 1,
+      "input": {
+        "Input": 1,
+        "TextArea": 1,
+        "file": {
+          "FileUpload": 1
+        },
+        "select": {
+          "Select": 1
+        }
+      }
+    },
+    "icon": {
+      "FaIcon": 1,
+      "FaIconList": 1,
+      "FaIconListItem": 1,
+      "Icon": 1,
+      "MaIcon": 1
+    },
+    "image": {
+      "Image": 1
+    },
+    "notification": {
+      "Notification": 1
+    },
+    "progress": {
+      "Progress": 1
+    },
+    "table": {
+      "Cell": 1,
+      "HCell": 1,
+      "Row": 1,
+      "TBody": 1,
+      "TFoot": 1,
+      "Table": 1,
+      "Thead": 1
+    },
+    "tag": {
+      "Tag": 1,
+      "Tags": 1
+    },
+    "title": {
+      "SubTitle": 1,
+      "Title": 1
+    }
+  },
+  "grid": {
+    "column": {
+      "Column": 1,
+      "Columns": 1
+    },
+    "tile": {
+      "Tile": 1
+    }
+  },
+  "layout": {
+    "footer": {
+      "Footer": 1
+    },
+    "hero": {
+      "Hero": 1,
+      "HeroBody": 1,
+      "HeroFoot": 1,
+      "HeroHead": 1
+    },
+    "section": {
+      "Section": 1
+    }
+  }
+}

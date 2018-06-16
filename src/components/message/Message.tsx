@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as MessageStyle, Color, HTMLArticleProps, HTMLComponent, Size, sizeValues} from '../../';
 
 export interface MessageProps extends HTMLArticleProps {
@@ -12,10 +11,11 @@ export interface MessageProps extends HTMLArticleProps {
 
 export default class Message extends React.Component<MessageProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         color: PropTypes.string,
         bSize: PropTypes.oneOf(sizeValues),
+        elementRef: PropTypes.func
     };
 
     public static defaultProps = HTMLComponent.defaultProps;

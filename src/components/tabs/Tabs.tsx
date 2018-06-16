@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Objects, Props} from 'wasabi-common';
+import {Objects} from 'wasabi-common';
 import {Alignment, alignmentValues, bulma as TabsStyle, HTMLComponent, HTMLDivProps, Size, sizeValues} from '../../';
 
 export enum tabsStyle { boxed = 'isBoxed', toggle = 'isToggle' }
@@ -11,17 +11,27 @@ export interface TabsProps extends HTMLDivProps {
     isFullwidth?: boolean;
     bSize?: string | Size;
     tabStyle?: string | tabsStyle;
+    isCentered?: boolean;
+    isRight?: boolean;
+    isBoxed?: boolean;
+    isToggle?: boolean;
+    isToggleRounded?: boolean;
     elementRef?: (ref: any) => any;
 }
 
 export default class Tabs extends React.Component<TabsProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         alignment: PropTypes.oneOf(alignmentValues),
         isFullwidth: PropTypes.bool,
         bSize: PropTypes.oneOf(sizeValues),
-        tabStyle: PropTypes.oneOf(Objects.values(tabsStyle))
+        tabStyle: PropTypes.oneOf(Objects.values(tabsStyle)),
+        isCentered: PropTypes.bool,
+        isRight: PropTypes.bool,
+        isBoxed: PropTypes.bool,
+        isToggle: PropTypes.bool,
+        isToggleRounded: PropTypes.bool
     };
 
     public static defaultProps = {
@@ -30,7 +40,7 @@ export default class Tabs extends React.Component<TabsProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {isFullwidth, alignment, bSize, tabStyle, className, children, elementRef, ...inputProps} = this.props;
+        const {isFullwidth, alignment, bSize, tabStyle, isCentered, isRight, isBoxed, isToggle, isToggleRounded, className, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames(
             TabsStyle.tabs,
@@ -38,6 +48,11 @@ export default class Tabs extends React.Component<TabsProps, {}> {
             TabsStyle[bSize],
             TabsStyle[tabStyle],
             {[`${TabsStyle.isFullwidth}`]: isFullwidth},
+            {[`${TabsStyle.isCentered}`]: isCentered},
+            {[`${TabsStyle.isRight}`]: isRight},
+            {[`${TabsStyle.isBoxed}`]: isBoxed},
+            {[`${TabsStyle.isToggle}`]: isToggle},
+            {[`${TabsStyle.isToggleRounded}`]: isToggleRounded},
             className
         );
 

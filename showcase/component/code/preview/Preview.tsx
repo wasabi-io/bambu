@@ -1,21 +1,25 @@
+import * as ReactDOMServer from "react-dom/server";
 import * as React from "react";
-import * as ReactDOMServer from 'react-dom/server';
 import {Stateless} from "wasabi-ui";
-import {observable} from "mobx";
+import {action, observable} from "mobx";
 import {observer} from "mobx-react";
 import {has} from "wasabi-common";
-import {Message, MessageBody} from "bambu/lib/components/message";
-import {Color} from "bambu";
+import {Message, MessageBody} from "bambu/lib/components/message/index";
+import {Color, HTMLDivProps} from "bambu";
+import previewStyle from "./previewStyle";
 
 export interface PreviewStoreProps {
-    phase?: "Transform" | "Execute";
+    phase?: "Initial" | "Transform" | "Execute";
     Component: any;
     success: boolean;
 }
 
 export class PreviewStore {
-    private _phase?: "Transform" | "Execute";
-    @observable private _Component: any;
+    @observable
+    private _phase?: "Initial" | "Transform" | "Execute";
+    @observable
+    private _Component: any;
+    @observable
     private _success: boolean;
 
     public constructor(props: PreviewStoreProps) {
@@ -46,6 +50,7 @@ export class PreviewStore {
         this._Component = value;
     }
 
+    @action
     public setResult(result: PreviewStoreProps) {
         this._Component = result.Component;
         this._success = has(result.success) ? result.success : true;
@@ -53,7 +58,11 @@ export class PreviewStore {
     }
 }
 
-export interface PreviewProps {
+export interface PreviewOptionalProps extends HTMLDivProps {
+
+}
+
+export interface PreviewProps extends PreviewOptionalProps {
     store: PreviewStore;
 }
 
@@ -62,44 +71,49 @@ export default class Preview extends Stateless<PreviewProps> {
     private component: any;
 
     public render() {
-        const {
-            Component,
-            phase,
-            success
-        } = this.props.store;
-
+        const {store, ...props} = this.props;
+        const {Component, phase, success} = store;
+        console.log({success, Component, phase});
         if (success) {
-            try {
-                this.component = <Component/>;
-            } catch (e) {
-                this.component = this.renderErrorMessage(e.messsage);
+            if (store.phase === "Initial") {
+                this.component = <div>Loading...</div>;
+            } else {
+                try {
+                    this.component = <Component/>;
+                } catch (e) {
+                    this.component = Preview.createErrorComponent(e.message);
+                }
             }
         } else {
-            this.component = this.renderErrorMessage(Component.message);
+            this.component = Preview.createErrorComponent(Component.message);
         }
         return (
-            <div id={this.id} style={{padding: "10px", width: "100%"}}/>
+            <div className={previewStyle.cePreview} id={this.id} {...props} />
         );
     }
 
     public componentDidMount() {
-        this.renderComponent();
+        this.tryToRenderComponent();
     }
 
     public componentDidUpdate() {
-        this.renderComponent();
+        this.tryToRenderComponent();
     }
 
-    private renderComponent() {
+    public tryToRenderComponent() {
         try {
-            document.getElementById(this.id).innerHTML = ReactDOMServer.renderToString(this.component);
+            this.renderComponent();
         } catch (e) {
-            console.log(e);
-            document.getElementById(this.id).innerHTML = ReactDOMServer.renderToString(this.renderErrorMessage(e.message));
+            this.component = Preview.createErrorComponent(e.message);
+            this.renderComponent();
         }
     }
 
-    public renderErrorMessage(data: string) {
+    public renderComponent() {
+        document.getElementById(this.id).innerHTML = ReactDOMServer.renderToString(this.component);
+    }
+
+    public static createErrorComponent(data: string) {
         return (
             <Message color={Color.danger}>
                 <MessageBody>

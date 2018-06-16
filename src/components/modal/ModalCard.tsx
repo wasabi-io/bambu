@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as ModalStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 export interface ModalCardProps extends HTMLDivProps {
@@ -11,9 +10,10 @@ export interface ModalCardProps extends HTMLDivProps {
 
 export default class ModalCard extends React.Component<ModalCardProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
-        isActive: PropTypes.bool
+        isActive: PropTypes.bool,
+        elementRef: PropTypes.func
     };
 
     public static defaultProps = {

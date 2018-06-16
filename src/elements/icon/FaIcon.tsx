@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {has, Objects, Props, Strings} from 'wasabi-common';
+import {has, Objects, Strings} from 'wasabi-common';
 import {Horizontal, horizontalValues} from '../../';
 import HTMLComponent, {HTMLIProps} from '../../base/html/HTML';
 
@@ -72,7 +72,7 @@ export interface FaIconProps extends HTMLIProps {
  */
 export default class FaIcon extends HTMLComponent<FaIconProps> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         iconStyle: PropTypes.oneOf(faIconStyleValues),
         ariaHidden: PropTypes.bool,
@@ -114,7 +114,7 @@ export default class FaIcon extends HTMLComponent<FaIconProps> {
             stack,
             elementRef,
             children,
-            ...props,
+            ...props
         } = this.props;
 
         const icon = Strings.startsWith(name, "fa-") ? name : `fa-${name}`;

@@ -6,7 +6,6 @@ import {action, observable} from "mobx";
 import {observer} from "mobx-react";
 import {FaIcon, FaIconStyle, Icon} from "bambu/lib/elements/icon/index";
 import {bulma, Vertical} from "bambu";
-import bulmaDocs from "../css/bulmaDocs";
 
 export interface NavBarProps {
     basePath: string;
@@ -35,7 +34,7 @@ export default class NavBar extends Stateless<NavBarProps> {
                                 }}>&lt;b@mbu&gt;</b>
                             </NavbarItemLink>
                             <NavbarItemLink href="https://github.com/wasabi-io/bambu" target="_blank" isHiddenDesktop>
-                                <Icon><FaIcon iconStyle={FaIconStyle.brands} name="github-alt" /></Icon>
+                                <Icon><FaIcon iconStyle={FaIconStyle.brands} name="github-alt"/></Icon>
                             </NavbarItemLink>
                             <NavbarBurger onClick={this.onClick}/>
                         </NavbarBrand>
@@ -52,7 +51,7 @@ export default class NavBar extends Stateless<NavBarProps> {
                             </NavbarStart>
                             <NavbarEnd>
                                 <NavbarItemLink href="https://github.com/wasabi-io/bambu" target="_blank" isHiddenMobile>
-                                    <Icon><FaIcon iconStyle={FaIconStyle.brands} name="github-alt" /></Icon>
+                                    <Icon><FaIcon iconStyle={FaIconStyle.brands} name="github-alt"/></Icon>
                                 </NavbarItemLink>
                             </NavbarEnd>
                         </NavbarMenu>

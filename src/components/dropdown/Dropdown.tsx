@@ -2,7 +2,6 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Stateless from 'wasabi-ui/lib/Stateless';
-import {Props} from "wasabi-common";
 import {bulma as DropdownStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 /**
@@ -17,24 +16,19 @@ export interface DropdownProps extends HTMLDivProps {
 }
 
 export default class Dropdown extends Stateless<DropdownProps> {
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         isActive: PropTypes.bool,
         isHoverable: PropTypes.bool,
         isRight: PropTypes.bool,
-        isUp: PropTypes.bool
+        isUp: PropTypes.bool,
+        elementRef: PropTypes.func
     };
+
     public static defaultProps = HTMLComponent.defaultProps;
-    public dropdownRef: HTMLDivElement;
 
     constructor(props: DropdownProps) {
         super(props);
-        this.onDropDown = this.onDropDown.bind(this);
-    }
-
-    public onDropDown(e: any) {
-        e.stopPropagation();
-        this.dropdownRef.classList.toggle(DropdownStyle.isActive);
     }
 
     public render() {
@@ -53,19 +47,11 @@ export default class Dropdown extends Stateless<DropdownProps> {
         return (
             <div
                 className={classNames}
+                ref={elementRef}
                 {...dropdownProps}
-                ref={this.createRef}
-                onClick={this.onDropDown}
             >
                 {children}
             </div>
         );
-    }
-
-    private createRef = (ref: any) => {
-        this.dropdownRef = ref;
-        if (this.props.elementRef) {
-            this.props.elementRef(ref);
-        }
     }
 }

@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from 'wasabi-common';
 import {HTMLComponent, HTMLLiProps} from '../../';
 
 /**
@@ -18,8 +17,10 @@ export interface FaIconListItemProps extends HTMLLiProps {
  * more https://fontawesome.com/how-to-use/svg-with-js#additional-styling
  */
 export default class FaIconListItem extends HTMLComponent<FaIconListItemProps> {
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
-        ...HTMLComponent.propTypes
+
+    public static propTypes = {
+        ...HTMLComponent.propTypes,
+        listClassName: PropTypes.string
     };
 
     public static defaultProps = HTMLComponent.defaultProps;

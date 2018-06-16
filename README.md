@@ -34,59 +34,23 @@ yarn add bulma react prop-types
 yarn add bambu
 ```
 
-#### conversion of **bulma** css file.
+#### **bulma** css file.
 
-##### for webpack
+* import `bulma.css` css in html file.
 
-```bash
-yarn add --dev style-loader css-modules-loader sass-loader
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css">
 ```
 
-* add css loader with [modules:true] parameter.
+* if you are using bulma as css module then you have add bulma css module
 
 ```javascript
+import {bulma} from "bambu";
 
-const getLocalIdent = require("css-loader/lib/getLocalIdent");
-
-...
-
-{
-    test: /\.css$/,
-    use: [
-        "style-loader",
-        {
-            loader: 'css-loader',
-            options: {
-                modules: true
-            }
-        }
-    ]
-}
+bulma.$putAll(require('bulma/css/bulma.css'));
 ```
 
-if you have some problem to do all css files as modules then add the the following configuration.
-This configuration provide to applied css modules just for files which filename is contains *bulma.css*.
-
-```javascript
-{
-    test: /\.css$/,
-    use: [
-        "style-loader",
-        {
-            loader: 'css-loader',
-            options: {
-                modules: true
-                getLocalIdent: (context, localIdentName, localName, options) => {
-                   if(context.resource && context.resource.indexOf("bulma.css") !== -1) {
-                       return getLocalIdent(context, localIdentName, localName, options);
-                   }
-                   return localName;
-                }
-            }
-        }
-    ]
-}
-```
+* For more information https://bulma.io/documentation/overview/start/
 
 
 #### fontawesome.

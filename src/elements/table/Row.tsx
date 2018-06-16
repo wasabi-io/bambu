@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as TableStyle, HTMLComponent, HTMLTrProps} from '../../';
 
 export interface RowProps extends HTMLTrProps {
@@ -10,7 +9,8 @@ export interface RowProps extends HTMLTrProps {
 }
 
 export default class Row extends React.Component<RowProps, {}> {
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         isSelected: PropTypes.bool
     };

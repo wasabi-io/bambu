@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as DropdownStyle, HTMLComponent, HTMLHrProps} from '../../';
 
 /**
@@ -13,8 +12,10 @@ export interface DropdownDividerProps extends HTMLHrProps {
 
 export default class DropdownDivider extends React.Component<DropdownDividerProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {...HTMLComponent.propTypes};
-;
+    public static propTypes = {
+        ...HTMLComponent.propTypes,
+        elementRef: PropTypes.func
+    };
 
     public static defaultProps = HTMLComponent.defaultProps;
 

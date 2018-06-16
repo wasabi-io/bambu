@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from 'wasabi-common';
 import {bulma as FormStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 /**
@@ -22,7 +21,7 @@ export interface FieldProps extends HTMLDivProps {
 
 export default class Field extends React.Component<FieldProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         hasAddons: PropTypes.bool,
         hasAddonsCentered: PropTypes.bool,

@@ -1,6 +1,12 @@
+process.env.NODE_ENV = process.env.NODE_ENV || "development";
 const appPath = require('app-root-path');
 const path = require("path");
+
+
+
+
 module.exports = {
+    mode: process.env.NODE_ENV,
     entry: "./src/index.tsx",
     output: {
         filename: "bundle.js",
@@ -14,14 +20,13 @@ module.exports = {
             "bambu$": path.resolve(appPath.path, "./src/index"),
             "bambu/lib": path.resolve(appPath.path, "./src")
         },
-        // Add ".ts" and ".tsx" as resolvable extensions.
-        extensions: [".ts", ".tsx", ".js", ".json"]
+        extensions: [".ts", ".tsx", ".js", ".jsx", ".json"]
     },
 
     module: {
         rules: [
             // All files with a ".ts" or ".tsx" extension will be handled by "awesome-typescript-loader".
-            {test: /\.tsx?$/, loader: "awesome-typescript-loader"},
+            {test: /\.tsx?$/, loader: "ts-loader"},
             {test: /\.css$/,
                 use: [
                     "style-loader",
@@ -35,6 +40,12 @@ module.exports = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules/,
+                include: /node_modules\/react-styleguidist/,
+                use: ['babel-loader']
             },
             {
                 test: /\.scss$/, use: [

@@ -1,45 +1,53 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
-import {bulma as ModalStyle, HTMLComponent, HTMLDivProps, Size, sizeValues} from '../../';
+import {bulma, HTMLComponent, HTMLDivProps} from '../../';
 
 export interface ModalProps extends HTMLDivProps {
     isActive?: boolean;
-    hasCloseButton?: boolean;
-    buttonSize?: string | Size;
-    onCloseButtonClick?: any;
+    backgroundColor?: string;
+    backgroundClassName?: string;
+    backgroundStyle?: React.CSSProperties;
+    close?: JSX.Element;
+    onBackgroundClick?: (e?: any) => any;
     elementRef?: (ref: any) => any;
 }
 
 export default class Modal extends React.Component<ModalProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
-        buttonSize: PropTypes.oneOf(sizeValues),
-        hasCloseButton: PropTypes.bool,
-        onCloseButtonClick: PropTypes.func,
+        isActive: PropTypes.bool,
+        backgroundColor: PropTypes.string,
+        backgroundClassName: PropTypes.string,
+        backgroundStyle: PropTypes.object,
+        close: PropTypes.node,
+        onBackgroundClick: PropTypes.func,
+        elementRef: PropTypes.func
     };
 
     public static defaultProps = {
         ...HTMLComponent.defaultProps,
-        buttonSize: 'isLarge',
-        hasCloseButton: true
+        isActive: false
     };
 
     public render(): JSX.Element {
-        const {isActive, hasCloseButton, onCloseButtonClick, buttonSize, className, children, elementRef, ...modalProps} = this.props;
+        const {isActive, backgroundColor, backgroundClassName, backgroundStyle, close, className, children, onBackgroundClick, elementRef, ...modalProps} = this.props;
 
-        const classNames = ClassNames(ModalStyle.modal, {[`${ModalStyle.isActive}`]: isActive}, className
-        );
+        const classNames = ClassNames(bulma.modal, {[`${bulma.isActive}`]: isActive}, className);
 
+        const backgroundStyles = {
+            ...backgroundStyle
+        };
+        if (backgroundColor) {
+            backgroundStyles.backgroundColor = backgroundColor;
+        }
         return (
-            <div className={classNames} {...modalProps} ref={elementRef}>
-                <div className={ModalStyle.modalBackground}/>
-                <div className={ModalStyle.modalContent}>
-                    {children}
+            <div className={classNames} ref={elementRef} {...modalProps}>
+                <div onClick={onBackgroundClick} className={ClassNames(bulma.modalBackground, backgroundClassName)} style={backgroundStyles}>
+                    {close}
                 </div>
-                {hasCloseButton && <button onClick={onCloseButtonClick} className={ClassNames(ModalStyle.modalClose, ModalStyle[buttonSize])} aria-label="close"/>}
+                {children}
             </div>
         );
     }

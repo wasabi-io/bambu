@@ -1,0 +1,120 @@
+.b-grid-container {
+    background-color: white;
+    border-radius: 1px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    color: #4a4a4a;
+    display: block;
+}
+
+.b-grid-container .td {
+    border: 1px solid whitesmoke;
+}
+
+.b-grid-table {
+    margin: 0px;
+    width: 100%;
+}
+
+.b-grid-header {
+    width: 100%;
+}
+
+.b-grid-body {
+    height: 400px;
+    width: 100%;
+}
+
+.b-grid-header-cell {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.b-grid-header-cell-container {
+    width: 100%;
+    display: block;
+    position: relative;
+    vertical-align: top;
+}
+
+.b-grid-header-cell-container.is-active .dropdown-menu, .dropdown.is-hoverable:hover .dropdown-menu {
+    display: block;
+}
+
+.b-grid-header-cell-container .dropdown-menu {
+    right: 0;
+    left: 0;
+}
+
+.b-grid-header-cell-container.is-right .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+
+.b-grid-header-cell-container.is-up .dropdown-menu {
+    bottom: 100%;
+    padding-bottom: 4px;
+    padding-top: initial;
+    top: auto;
+}
+
+.b-grid-header-cell-button {
+    margin: 0px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.b-grid-header-cell-name {
+    width: 100%;
+    cursor: default;
+}
+
+.b-grid-header-cell-right {
+    padding-left: 3px;
+    padding-right: 3px;
+    cursor: pointer;
+}
+
+.b-grid-header-cell-right:active {
+    border-left: 1px;
+}
+
+.b-grid-header-cell-right:disabled {
+    opacity: 0.5;
+    -moz-opacity: 50;
+}
+
+.b-grid-header-cell-menu {
+    position: absolute;
+}
+
+.b-grid-header-cell-menu .is-active {
+
+}
+
+.b-grid-header-cell .tag:not(body) {
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+}
+
+.b-grid-body {
+
+}
+
+.b-grid-row {
+
+}
+
+.b-grid-row-cell {
+
+}
+
+.b-grid-row-single {
+    background-color: lightyellow;
+}
+
+.b-grid-row-pair {
+    background-color: whitesmoke;
+}
+
+

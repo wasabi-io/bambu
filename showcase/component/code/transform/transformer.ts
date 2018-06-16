@@ -7,9 +7,9 @@ function execute(value: string) {
     let exports: any;
     const require = (name: string) => {
         const module = modules[name];
-        if (module === null) {
-            console.log(modules);
-            throw new Error(`${name} module not found in the defined modules ! Check modules at console.`);
+        if (!module) {
+            console.log("moduleList", modules);
+            throw new Error(`${name} module not found in the defined module list ! Check moduleList at console.`);
         }
         return module;
     };

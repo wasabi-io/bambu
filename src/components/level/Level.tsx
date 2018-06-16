@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as LevelStyle, HTMLComponent, HTMLElementProps, Responsive, responsiveValues} from '../../';
 
 /**
@@ -14,9 +13,10 @@ export interface LevelProps extends HTMLElementProps {
 
 export default class Level extends React.Component<LevelProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         responsive: PropTypes.oneOf(responsiveValues),
+        elementRef: PropTypes.func
     };
 
     public static defaultProps = HTMLComponent.defaultProps;

@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Objects, Props} from 'wasabi-common';
+import {Objects} from 'wasabi-common';
 import ControlLabel, {ControlLabelProps} from '../../elements/form/ControlLabel';
 import {bulma as FormStyle, HTMLComponent, HTMLDivProps} from '../../';
 
@@ -23,7 +23,7 @@ export interface FieldLabelProps extends HTMLDivProps {
 
 export default class FieldLabel extends React.Component<FieldLabelProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         bSize: PropTypes.oneOf(Objects.values(FieldLabelSize)),
         labelProps: PropTypes.object
