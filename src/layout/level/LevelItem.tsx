@@ -11,6 +11,9 @@ export interface LevelItemProps extends HTMLDivProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * For each individual element in <code>{&lt;LevelLeft />} or  {<LevelRight /&gt;}</code> components.
+ */
 export default class LevelItem extends React.Component<LevelItemProps, {}> {
 
     public static propTypes = {

@@ -53,7 +53,6 @@ export default class Index extends React.Component <{}, {}> {
     }
 
     public onClick = (e: any) => {
-        console.log("clicked");
         this.isActive = !this.isActive;
     }
 }

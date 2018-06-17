@@ -11,11 +11,11 @@ import XDocEditor from "../../../view/editor/XDocEditor";
 import {Highlight} from "component/code/highlight";
 
 const codes = {
-    brand: require("!raw-loader?modules!./code/1-brand.jsx"),
+    brand: require("!raw-loader?modules!./code/1-brand.html"),
     brand2: require("!raw-loader?modules!./code/2-brand"),
-    menu3: require("!raw-loader?modules!./code/3-menu.jsx"),
-    menu4: require("!raw-loader?modules!./code/4-menu.jsx"),
-    startEnd5: require("!raw-loader?modules!./code/5-startend.jsx"),
+    menu3: require("!raw-loader?modules!./code/3-menu.html"),
+    menu4: require("!raw-loader?modules!./code/4-menu.html"),
+    startEnd5: require("!raw-loader?modules!./code/5-startend.html"),
     narbarItem: require("./code/6-navbarItem"),
     transparent: require("!raw-loader?modules!./code/7-transparent"),
     fixed: require("!raw-loader?modules!./code/8-fixed"),

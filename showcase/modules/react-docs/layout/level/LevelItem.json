@@ -1,15 +1,17 @@
 [
   {
-    "description": "",
-    "displayName": "Level",
+    "description": "For each individual element in <code>{&lt;LevelLeft />} or  {<LevelRight /&gt;}</code> components.",
+    "displayName": "LevelItem",
     "props": [
       {
-        "defaultValue": null,
+        "defaultValue": {
+          "value": "false"
+        },
         "description": "",
-        "name": "responsive",
+        "name": "hasTextCentered",
         "required": false,
         "type": {
-          "name": "Responsive",
+          "name": "boolean",
           "value": null
         }
       },
@@ -949,7 +951,7 @@
         "name": "onCopy",
         "required": false,
         "type": {
-          "name": "(event: ClipboardEvent<HTMLElement>) => void",
+          "name": "(event: ClipboardEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -959,7 +961,7 @@
         "name": "onCopyCapture",
         "required": false,
         "type": {
-          "name": "(event: ClipboardEvent<HTMLElement>) => void",
+          "name": "(event: ClipboardEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -969,7 +971,7 @@
         "name": "onCut",
         "required": false,
         "type": {
-          "name": "(event: ClipboardEvent<HTMLElement>) => void",
+          "name": "(event: ClipboardEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -979,7 +981,7 @@
         "name": "onCutCapture",
         "required": false,
         "type": {
-          "name": "(event: ClipboardEvent<HTMLElement>) => void",
+          "name": "(event: ClipboardEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -989,7 +991,7 @@
         "name": "onPaste",
         "required": false,
         "type": {
-          "name": "(event: ClipboardEvent<HTMLElement>) => void",
+          "name": "(event: ClipboardEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -999,7 +1001,7 @@
         "name": "onPasteCapture",
         "required": false,
         "type": {
-          "name": "(event: ClipboardEvent<HTMLElement>) => void",
+          "name": "(event: ClipboardEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1009,7 +1011,7 @@
         "name": "onCompositionEnd",
         "required": false,
         "type": {
-          "name": "(event: CompositionEvent<HTMLElement>) => void",
+          "name": "(event: CompositionEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1019,7 +1021,7 @@
         "name": "onCompositionEndCapture",
         "required": false,
         "type": {
-          "name": "(event: CompositionEvent<HTMLElement>) => void",
+          "name": "(event: CompositionEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1029,7 +1031,7 @@
         "name": "onCompositionStart",
         "required": false,
         "type": {
-          "name": "(event: CompositionEvent<HTMLElement>) => void",
+          "name": "(event: CompositionEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1039,7 +1041,7 @@
         "name": "onCompositionStartCapture",
         "required": false,
         "type": {
-          "name": "(event: CompositionEvent<HTMLElement>) => void",
+          "name": "(event: CompositionEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1049,7 +1051,7 @@
         "name": "onCompositionUpdate",
         "required": false,
         "type": {
-          "name": "(event: CompositionEvent<HTMLElement>) => void",
+          "name": "(event: CompositionEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1059,7 +1061,7 @@
         "name": "onCompositionUpdateCapture",
         "required": false,
         "type": {
-          "name": "(event: CompositionEvent<HTMLElement>) => void",
+          "name": "(event: CompositionEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1069,7 +1071,7 @@
         "name": "onFocus",
         "required": false,
         "type": {
-          "name": "(event: FocusEvent<HTMLElement>) => void",
+          "name": "(event: FocusEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1079,7 +1081,7 @@
         "name": "onFocusCapture",
         "required": false,
         "type": {
-          "name": "(event: FocusEvent<HTMLElement>) => void",
+          "name": "(event: FocusEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1089,7 +1091,7 @@
         "name": "onBlur",
         "required": false,
         "type": {
-          "name": "(event: FocusEvent<HTMLElement>) => void",
+          "name": "(event: FocusEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1099,7 +1101,7 @@
         "name": "onBlurCapture",
         "required": false,
         "type": {
-          "name": "(event: FocusEvent<HTMLElement>) => void",
+          "name": "(event: FocusEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1109,7 +1111,7 @@
         "name": "onChange",
         "required": false,
         "type": {
-          "name": "(event: FormEvent<HTMLElement>) => void",
+          "name": "(event: FormEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1119,7 +1121,7 @@
         "name": "onChangeCapture",
         "required": false,
         "type": {
-          "name": "(event: FormEvent<HTMLElement>) => void",
+          "name": "(event: FormEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1129,7 +1131,7 @@
         "name": "onInput",
         "required": false,
         "type": {
-          "name": "(event: FormEvent<HTMLElement>) => void",
+          "name": "(event: FormEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1139,7 +1141,7 @@
         "name": "onInputCapture",
         "required": false,
         "type": {
-          "name": "(event: FormEvent<HTMLElement>) => void",
+          "name": "(event: FormEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1149,7 +1151,7 @@
         "name": "onReset",
         "required": false,
         "type": {
-          "name": "(event: FormEvent<HTMLElement>) => void",
+          "name": "(event: FormEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1159,7 +1161,7 @@
         "name": "onResetCapture",
         "required": false,
         "type": {
-          "name": "(event: FormEvent<HTMLElement>) => void",
+          "name": "(event: FormEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1169,7 +1171,7 @@
         "name": "onSubmit",
         "required": false,
         "type": {
-          "name": "(event: FormEvent<HTMLElement>) => void",
+          "name": "(event: FormEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1179,7 +1181,7 @@
         "name": "onSubmitCapture",
         "required": false,
         "type": {
-          "name": "(event: FormEvent<HTMLElement>) => void",
+          "name": "(event: FormEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1189,7 +1191,7 @@
         "name": "onInvalid",
         "required": false,
         "type": {
-          "name": "(event: FormEvent<HTMLElement>) => void",
+          "name": "(event: FormEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1199,7 +1201,7 @@
         "name": "onInvalidCapture",
         "required": false,
         "type": {
-          "name": "(event: FormEvent<HTMLElement>) => void",
+          "name": "(event: FormEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1209,7 +1211,7 @@
         "name": "onLoad",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1219,7 +1221,7 @@
         "name": "onLoadCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1229,7 +1231,7 @@
         "name": "onError",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1239,7 +1241,7 @@
         "name": "onErrorCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1249,7 +1251,7 @@
         "name": "onKeyDown",
         "required": false,
         "type": {
-          "name": "(event: KeyboardEvent<HTMLElement>) => void",
+          "name": "(event: KeyboardEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1259,7 +1261,7 @@
         "name": "onKeyDownCapture",
         "required": false,
         "type": {
-          "name": "(event: KeyboardEvent<HTMLElement>) => void",
+          "name": "(event: KeyboardEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1269,7 +1271,7 @@
         "name": "onKeyPress",
         "required": false,
         "type": {
-          "name": "(event: KeyboardEvent<HTMLElement>) => void",
+          "name": "(event: KeyboardEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1279,7 +1281,7 @@
         "name": "onKeyPressCapture",
         "required": false,
         "type": {
-          "name": "(event: KeyboardEvent<HTMLElement>) => void",
+          "name": "(event: KeyboardEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1289,7 +1291,7 @@
         "name": "onKeyUp",
         "required": false,
         "type": {
-          "name": "(event: KeyboardEvent<HTMLElement>) => void",
+          "name": "(event: KeyboardEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1299,7 +1301,7 @@
         "name": "onKeyUpCapture",
         "required": false,
         "type": {
-          "name": "(event: KeyboardEvent<HTMLElement>) => void",
+          "name": "(event: KeyboardEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1309,7 +1311,7 @@
         "name": "onAbort",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1319,7 +1321,7 @@
         "name": "onAbortCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1329,7 +1331,7 @@
         "name": "onCanPlay",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1339,7 +1341,7 @@
         "name": "onCanPlayCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1349,7 +1351,7 @@
         "name": "onCanPlayThrough",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1359,7 +1361,7 @@
         "name": "onCanPlayThroughCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1369,7 +1371,7 @@
         "name": "onDurationChange",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1379,7 +1381,7 @@
         "name": "onDurationChangeCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1389,7 +1391,7 @@
         "name": "onEmptied",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1399,7 +1401,7 @@
         "name": "onEmptiedCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1409,7 +1411,7 @@
         "name": "onEncrypted",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1419,7 +1421,7 @@
         "name": "onEncryptedCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1429,7 +1431,7 @@
         "name": "onEnded",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1439,7 +1441,7 @@
         "name": "onEndedCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1449,7 +1451,7 @@
         "name": "onLoadedData",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1459,7 +1461,7 @@
         "name": "onLoadedDataCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1469,7 +1471,7 @@
         "name": "onLoadedMetadata",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1479,7 +1481,7 @@
         "name": "onLoadedMetadataCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1489,7 +1491,7 @@
         "name": "onLoadStart",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1499,7 +1501,7 @@
         "name": "onLoadStartCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1509,7 +1511,7 @@
         "name": "onPause",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1519,7 +1521,7 @@
         "name": "onPauseCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1529,7 +1531,7 @@
         "name": "onPlay",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1539,7 +1541,7 @@
         "name": "onPlayCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1549,7 +1551,7 @@
         "name": "onPlaying",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1559,7 +1561,7 @@
         "name": "onPlayingCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1569,7 +1571,7 @@
         "name": "onProgress",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1579,7 +1581,7 @@
         "name": "onProgressCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1589,7 +1591,7 @@
         "name": "onRateChange",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1599,7 +1601,7 @@
         "name": "onRateChangeCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1609,7 +1611,7 @@
         "name": "onSeeked",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1619,7 +1621,7 @@
         "name": "onSeekedCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1629,7 +1631,7 @@
         "name": "onSeeking",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1639,7 +1641,7 @@
         "name": "onSeekingCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1649,7 +1651,7 @@
         "name": "onStalled",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1659,7 +1661,7 @@
         "name": "onStalledCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1669,7 +1671,7 @@
         "name": "onSuspend",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1679,7 +1681,7 @@
         "name": "onSuspendCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1689,7 +1691,7 @@
         "name": "onTimeUpdate",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1699,7 +1701,7 @@
         "name": "onTimeUpdateCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1709,7 +1711,7 @@
         "name": "onVolumeChange",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1719,7 +1721,7 @@
         "name": "onVolumeChangeCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1729,7 +1731,7 @@
         "name": "onWaiting",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1739,7 +1741,7 @@
         "name": "onWaitingCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1749,7 +1751,7 @@
         "name": "onClick",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1759,7 +1761,7 @@
         "name": "onClickCapture",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1769,7 +1771,7 @@
         "name": "onContextMenu",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1779,7 +1781,7 @@
         "name": "onContextMenuCapture",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1789,7 +1791,7 @@
         "name": "onDoubleClick",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1799,7 +1801,7 @@
         "name": "onDoubleClickCapture",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1809,7 +1811,7 @@
         "name": "onDrag",
         "required": false,
         "type": {
-          "name": "(event: DragEvent<HTMLElement>) => void",
+          "name": "(event: DragEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1819,7 +1821,7 @@
         "name": "onDragCapture",
         "required": false,
         "type": {
-          "name": "(event: DragEvent<HTMLElement>) => void",
+          "name": "(event: DragEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1829,7 +1831,7 @@
         "name": "onDragEnd",
         "required": false,
         "type": {
-          "name": "(event: DragEvent<HTMLElement>) => void",
+          "name": "(event: DragEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1839,7 +1841,7 @@
         "name": "onDragEndCapture",
         "required": false,
         "type": {
-          "name": "(event: DragEvent<HTMLElement>) => void",
+          "name": "(event: DragEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1849,7 +1851,7 @@
         "name": "onDragEnter",
         "required": false,
         "type": {
-          "name": "(event: DragEvent<HTMLElement>) => void",
+          "name": "(event: DragEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1859,7 +1861,7 @@
         "name": "onDragEnterCapture",
         "required": false,
         "type": {
-          "name": "(event: DragEvent<HTMLElement>) => void",
+          "name": "(event: DragEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1869,7 +1871,7 @@
         "name": "onDragExit",
         "required": false,
         "type": {
-          "name": "(event: DragEvent<HTMLElement>) => void",
+          "name": "(event: DragEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1879,7 +1881,7 @@
         "name": "onDragExitCapture",
         "required": false,
         "type": {
-          "name": "(event: DragEvent<HTMLElement>) => void",
+          "name": "(event: DragEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1889,7 +1891,7 @@
         "name": "onDragLeave",
         "required": false,
         "type": {
-          "name": "(event: DragEvent<HTMLElement>) => void",
+          "name": "(event: DragEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1899,7 +1901,7 @@
         "name": "onDragLeaveCapture",
         "required": false,
         "type": {
-          "name": "(event: DragEvent<HTMLElement>) => void",
+          "name": "(event: DragEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1909,7 +1911,7 @@
         "name": "onDragOver",
         "required": false,
         "type": {
-          "name": "(event: DragEvent<HTMLElement>) => void",
+          "name": "(event: DragEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1919,7 +1921,7 @@
         "name": "onDragOverCapture",
         "required": false,
         "type": {
-          "name": "(event: DragEvent<HTMLElement>) => void",
+          "name": "(event: DragEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1929,7 +1931,7 @@
         "name": "onDragStart",
         "required": false,
         "type": {
-          "name": "(event: DragEvent<HTMLElement>) => void",
+          "name": "(event: DragEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1939,7 +1941,7 @@
         "name": "onDragStartCapture",
         "required": false,
         "type": {
-          "name": "(event: DragEvent<HTMLElement>) => void",
+          "name": "(event: DragEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1949,7 +1951,7 @@
         "name": "onDrop",
         "required": false,
         "type": {
-          "name": "(event: DragEvent<HTMLElement>) => void",
+          "name": "(event: DragEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1959,7 +1961,7 @@
         "name": "onDropCapture",
         "required": false,
         "type": {
-          "name": "(event: DragEvent<HTMLElement>) => void",
+          "name": "(event: DragEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1969,7 +1971,7 @@
         "name": "onMouseDown",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1979,7 +1981,7 @@
         "name": "onMouseDownCapture",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1989,7 +1991,7 @@
         "name": "onMouseEnter",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -1999,7 +2001,7 @@
         "name": "onMouseLeave",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2009,7 +2011,7 @@
         "name": "onMouseMove",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2019,7 +2021,7 @@
         "name": "onMouseMoveCapture",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2029,7 +2031,7 @@
         "name": "onMouseOut",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2039,7 +2041,7 @@
         "name": "onMouseOutCapture",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2049,7 +2051,7 @@
         "name": "onMouseOver",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2059,7 +2061,7 @@
         "name": "onMouseOverCapture",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2069,7 +2071,7 @@
         "name": "onMouseUp",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2079,7 +2081,7 @@
         "name": "onMouseUpCapture",
         "required": false,
         "type": {
-          "name": "(event: MouseEvent<HTMLElement>) => void",
+          "name": "(event: MouseEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2089,7 +2091,7 @@
         "name": "onSelect",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2099,7 +2101,7 @@
         "name": "onSelectCapture",
         "required": false,
         "type": {
-          "name": "(event: SyntheticEvent<HTMLElement>) => void",
+          "name": "(event: SyntheticEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2109,7 +2111,7 @@
         "name": "onTouchCancel",
         "required": false,
         "type": {
-          "name": "(event: TouchEvent<HTMLElement>) => void",
+          "name": "(event: TouchEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2119,7 +2121,7 @@
         "name": "onTouchCancelCapture",
         "required": false,
         "type": {
-          "name": "(event: TouchEvent<HTMLElement>) => void",
+          "name": "(event: TouchEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2129,7 +2131,7 @@
         "name": "onTouchEnd",
         "required": false,
         "type": {
-          "name": "(event: TouchEvent<HTMLElement>) => void",
+          "name": "(event: TouchEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2139,7 +2141,7 @@
         "name": "onTouchEndCapture",
         "required": false,
         "type": {
-          "name": "(event: TouchEvent<HTMLElement>) => void",
+          "name": "(event: TouchEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2149,7 +2151,7 @@
         "name": "onTouchMove",
         "required": false,
         "type": {
-          "name": "(event: TouchEvent<HTMLElement>) => void",
+          "name": "(event: TouchEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2159,7 +2161,7 @@
         "name": "onTouchMoveCapture",
         "required": false,
         "type": {
-          "name": "(event: TouchEvent<HTMLElement>) => void",
+          "name": "(event: TouchEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2169,7 +2171,7 @@
         "name": "onTouchStart",
         "required": false,
         "type": {
-          "name": "(event: TouchEvent<HTMLElement>) => void",
+          "name": "(event: TouchEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2179,7 +2181,7 @@
         "name": "onTouchStartCapture",
         "required": false,
         "type": {
-          "name": "(event: TouchEvent<HTMLElement>) => void",
+          "name": "(event: TouchEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2189,7 +2191,7 @@
         "name": "onScroll",
         "required": false,
         "type": {
-          "name": "(event: UIEvent<HTMLElement>) => void",
+          "name": "(event: UIEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2199,7 +2201,7 @@
         "name": "onScrollCapture",
         "required": false,
         "type": {
-          "name": "(event: UIEvent<HTMLElement>) => void",
+          "name": "(event: UIEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2209,7 +2211,7 @@
         "name": "onWheel",
         "required": false,
         "type": {
-          "name": "(event: WheelEvent<HTMLElement>) => void",
+          "name": "(event: WheelEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2219,7 +2221,7 @@
         "name": "onWheelCapture",
         "required": false,
         "type": {
-          "name": "(event: WheelEvent<HTMLElement>) => void",
+          "name": "(event: WheelEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2229,7 +2231,7 @@
         "name": "onAnimationStart",
         "required": false,
         "type": {
-          "name": "(event: AnimationEvent<HTMLElement>) => void",
+          "name": "(event: AnimationEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2239,7 +2241,7 @@
         "name": "onAnimationStartCapture",
         "required": false,
         "type": {
-          "name": "(event: AnimationEvent<HTMLElement>) => void",
+          "name": "(event: AnimationEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2249,7 +2251,7 @@
         "name": "onAnimationEnd",
         "required": false,
         "type": {
-          "name": "(event: AnimationEvent<HTMLElement>) => void",
+          "name": "(event: AnimationEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2259,7 +2261,7 @@
         "name": "onAnimationEndCapture",
         "required": false,
         "type": {
-          "name": "(event: AnimationEvent<HTMLElement>) => void",
+          "name": "(event: AnimationEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2269,7 +2271,7 @@
         "name": "onAnimationIteration",
         "required": false,
         "type": {
-          "name": "(event: AnimationEvent<HTMLElement>) => void",
+          "name": "(event: AnimationEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2279,7 +2281,7 @@
         "name": "onAnimationIterationCapture",
         "required": false,
         "type": {
-          "name": "(event: AnimationEvent<HTMLElement>) => void",
+          "name": "(event: AnimationEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2289,7 +2291,7 @@
         "name": "onTransitionEnd",
         "required": false,
         "type": {
-          "name": "(event: TransitionEvent<HTMLElement>) => void",
+          "name": "(event: TransitionEvent<HTMLDivElement>) => void",
           "value": null
         }
       },
@@ -2299,7 +2301,7 @@
         "name": "onTransitionEndCapture",
         "required": false,
         "type": {
-          "name": "(event: TransitionEvent<HTMLElement>) => void",
+          "name": "(event: TransitionEvent<HTMLDivElement>) => void",
           "value": null
         }
       }

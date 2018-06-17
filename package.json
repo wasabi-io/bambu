@@ -6,6 +6,7 @@
   "typings": "lib/index",
   "scripts": {
     "start": "node ./tools/app/start.js",
+    "watch:file": "node ./tools/FileWatcher.js",
     "start:app": "webpack-dev-server --port 8383 --config tools/app/dev/webpack.js --colors",
     "showcase:build": "rimraf ./docs && node ./tools/app/build.js",
     "showcase:serve": "http-server ./docs -p 8282",
@@ -46,6 +47,7 @@
     "bulma": "0.7.1",
     "chai": "^4.1.2",
     "chai-enzyme": "^1.0.0-beta.0",
+    "chokidar": "^2.0.3",
     "codemirror": "5.38.0",
     "colors": "1.3.0",
     "copy-webpack-plugin": "4.5.1",

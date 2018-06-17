@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "The toggable menu, hidden by default in <code>{&lt;Dropdown /&gt;}</code> component.",
     "displayName": "DropdownMenu",
     "props": [
       {

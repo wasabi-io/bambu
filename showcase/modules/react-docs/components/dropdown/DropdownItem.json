@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "Each single item of the dropdown, which can either be a `a` or a `div` in <code>{&lt;DropdownContent/&gt;}</code> component.",
     "displayName": "DropdownItem",
     "props": [
       {

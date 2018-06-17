@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "<p>The <strong>Card</strong> component comprises several elements that you can mix and match:</p>\n<code>&lt;Card /&gt;</code>: the main container",
     "displayName": "Card",
     "props": [
       {

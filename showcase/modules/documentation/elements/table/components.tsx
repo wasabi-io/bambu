@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./elements/table",
+    module: "/elements/table",
     name: "table",
     title: "Table",
     subTitle: <span>The inevitable HTML <strong>table</strong>, with special case cells</span>,

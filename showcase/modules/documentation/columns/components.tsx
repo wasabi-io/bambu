@@ -3,7 +3,7 @@ import pageStyle from "css/pageStyle";
 import PagesProps from "../PagesProps";
 
 const components: PagesProps = {
-    module: "./columns",
+    module: "/columns",
     name: "columns",
     title: "Columns",
     icon: {
@@ -13,7 +13,7 @@ const components: PagesProps = {
     subTitle: <span>The power of <strong>Flexbox</strong> in a simple interface</span>,
     children: {
         basics: {
-            module: "./columns/basics",
+            module: "/columns/basics",
             name: "basics",
             title: "Basics",
             subTitle: <span>A simple way to build <strong>responsive columns</strong></span>,
@@ -23,7 +23,7 @@ const components: PagesProps = {
             }
         },
         sizes: {
-            module: "./columns/sizes",
+            module: "/columns/sizes",
             name: "sizes",
             title: "Sizes",
             subTitle: <span>Define the <strong>size</strong> of each column <strong>individually</strong></span>,
@@ -33,7 +33,7 @@ const components: PagesProps = {
             }
         },
         responsiveness: {
-            module: "./columns/responsiveness",
+            module: "/columns/responsiveness",
             name: "responsiveness",
             title: "Responsiveness",
             subTitle: <span>Handle <strong>different</strong> column layouts for each <strong>breakpoint</strong></span>,
@@ -43,7 +43,7 @@ const components: PagesProps = {
             }
         },
         nesting: {
-            module: "./columns/nesting",
+            module: "/columns/nesting",
             name: "nesting",
             title: "Nesting",
             subTitle: <span>A simple way to build <strong>responsive columns</strong></span>,
@@ -53,7 +53,7 @@ const components: PagesProps = {
             }
         },
         gap: {
-            module: "./columns/gap",
+            module: "/columns/gap",
             name: "gap",
             title: "Gap",
             subTitle: <span>Customize the <strong>gap</strong> between the columns</span>,
@@ -63,7 +63,7 @@ const components: PagesProps = {
             }
         },
         options: {
-            module: "./columns/options",
+            module: "/columns/options",
             name: "options",
             title: "Options",
             subTitle: <span>Design different <strong>types</strong> of column layouts</span>,

@@ -7,6 +7,9 @@ export interface ModalCardFooterProps extends HTMLFooterProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * The foot of <code>{&lt;ModalCard /&gt;}</code>
+ */
 export default class ModalCardFooter extends React.Component<ModalCardFooterProps, {}> {
 
     public static propTypes = {

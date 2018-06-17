@@ -11,6 +11,9 @@ export interface LevelProps extends HTMLElementProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * A multi-purpose horizontal level, which can contain almost any other element
+ */
 export default class Level extends React.Component<LevelProps, {}> {
 
     public static propTypes = {

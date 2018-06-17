@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "Consists of link which is child of <code>{&lt;BreadCrumb  /&gt;}</code> component.",
     "displayName": "BreadCrumbItem",
     "props": [
       {

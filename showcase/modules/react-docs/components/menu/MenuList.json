@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "A group of menu items in <code>{&lt;Menu />} or in {<MenuListItem /&gt;}</code> components.",
     "displayName": "MenuList",
     "props": [
       {

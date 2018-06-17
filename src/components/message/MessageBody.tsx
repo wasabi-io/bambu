@@ -7,6 +7,9 @@ export interface MessageBodyProps extends HTMLDivProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * The content of <code>{&lt;Message /&gt;}</code> component.
+ */
 export default class MessageBody extends React.Component<MessageBodyProps, {}> {
 
     public static propTypes = {

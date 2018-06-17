@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./elements/delete",
+    module: "/elements/delete",
     name: "delete",
     title: "Delete",
     subTitle: <span> A versatile <strong>delete</strong> cross</span>,

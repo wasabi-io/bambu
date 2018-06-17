@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "A `fullwidth` container for a responsive image in <code>{&lt;Card /&gt;}</code> component.",
     "displayName": "CardImage",
     "props": [
       {

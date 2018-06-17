@@ -7,6 +7,9 @@ export interface MenuListProps extends HTMLUlProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * A group of menu items in <code>{&lt;Menu />} or in {<MenuListItem /&gt;}</code> components.
+ */
 export default class MenuList extends React.Component<MenuListProps, {}> {
 
     public static propTypes = {

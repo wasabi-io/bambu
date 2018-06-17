@@ -11,6 +11,9 @@ export interface DropdownTriggerProps extends HTMLDivProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * The container for a button in <code>{&lt;Dropdown /&gt;}</code>
+ */
 export default class DropdownTrigger extends React.Component<DropdownTriggerProps, {}> {
 
     public static propTypes = {

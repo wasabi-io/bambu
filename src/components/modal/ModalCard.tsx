@@ -8,6 +8,9 @@ export interface ModalCardProps extends HTMLDivProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * A more classic modal, with a head, a body and a foot.
+ */
 export default class ModalCard extends React.Component<ModalCardProps, {}> {
 
     public static propTypes = {

@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "The header of <code>{&lt;Message /&gt;}</code> component.",
     "displayName": "MessageHeader",
     "props": [
       {

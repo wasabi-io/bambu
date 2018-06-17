@@ -1,185 +1,730 @@
 {
-  "components": {
-    "breadcrumb": {
-      "BreadCrumb": 1,
-      "BreadCrumbItem": 1
+  "grid": {
+    "tile": {
+      "Tile": [
+        {
+          "displayName": "Tile",
+          "description": ""
+        }
+      ]
     },
-    "card": {
-      "Card": 1,
-      "CardContent": 1,
-      "CardFooter": 1,
-      "CardFooterItem": 1,
-      "CardHeader": 1,
-      "CardHeaderIcon": 1,
-      "CardHeaderTitle": 1,
-      "CardImage": 1
-    },
-    "dropdown": {
-      "Dropdown": 1,
-      "DropdownContent": 1,
-      "DropdownDivider": 1,
-      "DropdownItem": 1,
-      "DropdownMenu": 1,
-      "DropdownTrigger": 1
-    },
-    "level": {
-      "Level": 1,
-      "LevelItem": 1,
-      "LevelLeft": 1,
-      "LevelRight": 1
-    },
-    "media": {
-      "Media": 1,
-      "MediaContent": 1,
-      "MediaLeft": 1,
-      "MediaRight": 1
-    },
-    "menu": {
-      "Menu": 1,
-      "MenuLabel": 1,
-      "MenuLink": 1,
-      "MenuList": 1,
-      "MenuListItem": 1
-    },
-    "message": {
-      "Message": 1,
-      "MessageBody": 1,
-      "MessageHeader": 1
-    },
-    "modal": {
-      "Modal": 1,
-      "ModalCard": 1,
-      "ModalCardBody": 1,
-      "ModalCardFooter": 1,
-      "ModalCardHeader": 1,
-      "ModalCardTitle": 1,
-      "ModalClose": 1,
-      "ModalContent": 1
-    },
-    "navbar": {
-      "Navbar": 1,
-      "NavbarBrand": 1,
-      "NavbarBurger": 1,
-      "NavbarDivider": 1,
-      "NavbarDropdown": 1,
-      "NavbarEnd": 1,
-      "NavbarItem": 1,
-      "NavbarItemLink": 1,
-      "NavbarLink": 1,
-      "NavbarMenu": 1,
-      "NavbarStart": 1
-    },
-    "pagination": {
-      "Pagination": 1,
-      "PaginationEllipsis": 1,
-      "PaginationLink": 1,
-      "PaginationList": 1,
-      "PaginationNext": 1,
-      "PaginationPrevoius": 1
-    },
-    "panel": {
-      "Panel": 1,
-      "PanelBlock": 1,
-      "PanelHeading": 1,
-      "PanelIcon": 1,
-      "PanelTabs": 1
-    },
-    "tabs": {
-      "Tab": 1,
-      "TabGroup": 1,
-      "Tabs": 1
+    "column": {
+      "Column": [
+        {
+          "displayName": "Column",
+          "description": ""
+        }
+      ],
+      "Columns": [
+        {
+          "displayName": "Columns",
+          "description": ""
+        }
+      ]
     }
   },
   "elements": {
     "box": {
-      "Box": 1
+      "Box": [
+        {
+          "displayName": "Box",
+          "description": ""
+        }
+      ]
     },
     "button": {
-      "Button": 1
-    },
-    "container": {
-      "Container": 1
-    },
-    "content": {
-      "Content": 1
+      "Button": [
+        {
+          "displayName": "Button",
+          "description": ""
+        }
+      ]
     },
     "delete": {
-      "Delete": 1
+      "Delete": [
+        {
+          "displayName": "Delete",
+          "description": ""
+        }
+      ]
+    },
+    "container": {
+      "Container": [
+        {
+          "displayName": "Container",
+          "description": ""
+        }
+      ]
+    },
+    "content": {
+      "Content": [
+        {
+          "displayName": "Content",
+          "description": ""
+        }
+      ]
+    },
+    "icon": {
+      "FaIcon": [
+        {
+          "displayName": "FaIcon",
+          "description": "FaIcon component\n<i class=\"fas fa-home fa-fw\" style=\"background:MistyRose\"></i>\nmore https://fontawesome.com/how-to-use/svg-with-js#additional-styling"
+        }
+      ],
+      "FaIconList": [
+        {
+          "displayName": "FaIconList",
+          "description": "FaIconList component\n<ul class=\"fa-ul\">...</ul>\nmore https://fontawesome.com/how-to-use/svg-with-js#additional-styling"
+        }
+      ],
+      "FaIconListItem": [
+        {
+          "displayName": "FaIconListItem",
+          "description": "FaIconListItem component\n<li><span class=\"fa-li\">...</span>List icons can</li>\nmore https://fontawesome.com/how-to-use/svg-with-js#additional-styling"
+        }
+      ],
+      "Icon": [
+        {
+          "displayName": "Icon",
+          "description": ""
+        }
+      ],
+      "MaIcon": [
+        {
+          "displayName": "MaIcon",
+          "description": "Material Icon\n<i class=\"mdi mdi-bell\" />\nmore https://materialdesignicons.com/"
+        }
+      ]
     },
     "form": {
-      "Control": 1,
-      "ControlLabel": 1,
-      "Field": 1,
-      "FieldBody": 1,
-      "FieldHelp": 1,
-      "FieldLabel": 1,
-      "Form": 1,
+      "Control": [
+        {
+          "displayName": "Control",
+          "description": ""
+        }
+      ],
+      "ControlLabel": [
+        {
+          "displayName": "ControlLabel",
+          "description": ""
+        }
+      ],
+      "Field": [
+        {
+          "displayName": "Field",
+          "description": ""
+        }
+      ],
+      "FieldBody": [
+        {
+          "displayName": "FieldBody",
+          "description": ""
+        }
+      ],
+      "FieldHelp": [
+        {
+          "displayName": "FieldHelp",
+          "description": ""
+        }
+      ],
+      "FieldLabel": [
+        {
+          "displayName": "FieldLabel",
+          "description": ""
+        }
+      ],
+      "Form": [
+        {
+          "displayName": "Form",
+          "description": ""
+        }
+      ],
       "input": {
-        "Input": 1,
-        "TextArea": 1,
-        "file": {
-          "FileUpload": 1
-        },
+        "Input": [
+          {
+            "displayName": "Input",
+            "description": ""
+          }
+        ],
+        "TextArea": [
+          {
+            "displayName": "TextArea",
+            "description": ""
+          }
+        ],
         "select": {
-          "Select": 1
+          "Select": [
+            {
+              "displayName": "Select",
+              "description": ""
+            }
+          ]
+        },
+        "file": {
+          "FileUpload": [
+            {
+              "displayName": "FileUpload",
+              "description": ""
+            }
+          ]
         }
       }
     },
-    "icon": {
-      "FaIcon": 1,
-      "FaIconList": 1,
-      "FaIconListItem": 1,
-      "Icon": 1,
-      "MaIcon": 1
-    },
     "image": {
-      "Image": 1
-    },
-    "notification": {
-      "Notification": 1
+      "Image": [
+        {
+          "displayName": "Image",
+          "description": ""
+        }
+      ]
     },
     "progress": {
-      "Progress": 1
+      "Progress": [
+        {
+          "displayName": "Progress",
+          "description": ""
+        }
+      ]
+    },
+    "notification": {
+      "Notification": [
+        {
+          "displayName": "Notification",
+          "description": ""
+        }
+      ]
     },
     "table": {
-      "Cell": 1,
-      "HCell": 1,
-      "Row": 1,
-      "TBody": 1,
-      "TFoot": 1,
-      "Table": 1,
-      "Thead": 1
+      "Cell": [
+        {
+          "displayName": "Cell",
+          "description": ""
+        }
+      ],
+      "HCell": [
+        {
+          "displayName": "HCell",
+          "description": ""
+        }
+      ],
+      "Row": [
+        {
+          "displayName": "Row",
+          "description": ""
+        }
+      ],
+      "TBody": [
+        {
+          "displayName": "TBody",
+          "description": ""
+        }
+      ],
+      "TFoot": [
+        {
+          "displayName": "TFoot",
+          "description": ""
+        }
+      ],
+      "Table": [
+        {
+          "displayName": "Table",
+          "description": ""
+        }
+      ],
+      "Thead": [
+        {
+          "displayName": "Thead",
+          "description": ""
+        }
+      ]
     },
     "tag": {
-      "Tag": 1,
-      "Tags": 1
+      "Tag": [
+        {
+          "displayName": "Tag",
+          "description": ""
+        }
+      ],
+      "Tags": [
+        {
+          "displayName": "Tags",
+          "description": ""
+        }
+      ]
     },
     "title": {
-      "SubTitle": 1,
-      "Title": 1
-    }
-  },
-  "grid": {
-    "column": {
-      "Column": 1,
-      "Columns": 1
-    },
-    "tile": {
-      "Tile": 1
+      "SubTitle": [
+        {
+          "displayName": "SubTitle",
+          "description": ""
+        }
+      ],
+      "Title": [
+        {
+          "displayName": "Title",
+          "description": ""
+        }
+      ]
     }
   },
   "layout": {
     "footer": {
-      "Footer": 1
+      "Footer": [
+        {
+          "displayName": "Footer",
+          "description": ""
+        }
+      ]
+    },
+    "level": {
+      "Level": [
+        {
+          "displayName": "Level",
+          "description": "A multi-purpose horizontal level, which can contain almost any other element"
+        }
+      ],
+      "LevelItem": [
+        {
+          "displayName": "LevelItem",
+          "description": "For each individual element in <code>{&lt;LevelLeft />} or  {<LevelRight /&gt;}</code> components."
+        }
+      ],
+      "LevelLeft": [
+        {
+          "displayName": "LevelLeft",
+          "description": "For the left side in <code>{&lt;Level /&gt;}</code> component."
+        }
+      ],
+      "LevelRight": [
+        {
+          "displayName": "LevelRight",
+          "description": "For the right side in <code>{&lt;Level /&gt;}</code> component."
+        }
+      ]
     },
     "hero": {
-      "Hero": 1,
-      "HeroBody": 1,
-      "HeroFoot": 1,
-      "HeroHead": 1
+      "Hero": [
+        {
+          "displayName": "Hero",
+          "description": ""
+        }
+      ],
+      "HeroBody": [
+        {
+          "displayName": "HeroBody",
+          "description": ""
+        }
+      ],
+      "HeroFoot": [
+        {
+          "displayName": "HeroFoot",
+          "description": ""
+        }
+      ],
+      "HeroHead": [
+        {
+          "displayName": "HeroHead",
+          "description": ""
+        }
+      ]
     },
     "section": {
-      "Section": 1
+      "Section": [
+        {
+          "displayName": "Section",
+          "description": ""
+        }
+      ]
+    }
+  },
+  "components": {
+    "breadcrumb": {
+      "BreadCrumb": [
+        {
+          "displayName": "BreadCrumb",
+          "description": "The BreadCrumb component consists of links which are aligned side by side and separated by a divider."
+        }
+      ],
+      "BreadCrumbItem": [
+        {
+          "displayName": "BreadCrumbItem",
+          "description": "Consists of link which is child of <code>{&lt;BreadCrumb  /&gt;}</code> component."
+        }
+      ]
+    },
+    "dropdown": {
+      "Dropdown": [
+        {
+          "displayName": "Dropdown",
+          "description": "Is a container for a <code>{&lt;DropdownTrigger />} and a {<DropdownMenu /&gt;}</code>."
+        }
+      ],
+      "DropdownContent": [
+        {
+          "displayName": "DropdownContent",
+          "description": "The dropdown box, with a white background and a shadow in <code>{&lt;DropdownMenu /&gt;}</code> component."
+        }
+      ],
+      "DropdownDivider": [
+        {
+          "displayName": "DropdownDivider",
+          "description": "A horizontal line to separate {<DropdownItem>} components."
+        }
+      ],
+      "DropdownItem": [
+        {
+          "displayName": "DropdownItem",
+          "description": "Each single item of the dropdown, which can either be a `a` or a `div` in <code>{&lt;DropdownContent/&gt;}</code> component."
+        }
+      ],
+      "DropdownMenu": [
+        {
+          "displayName": "DropdownMenu",
+          "description": "The toggable menu, hidden by default in <code>{&lt;Dropdown /&gt;}</code> component."
+        }
+      ],
+      "DropdownTrigger": [
+        {
+          "displayName": "DropdownTrigger",
+          "description": "The container for a button in <code>{&lt;Dropdown /&gt;}</code>"
+        }
+      ]
+    },
+    "menu": {
+      "Menu": [
+        {
+          "displayName": "Menu",
+          "description": "A simple menu, for any type of vertical navigation."
+        }
+      ],
+      "MenuLabel": [
+        {
+          "displayName": "MenuLabel",
+          "description": "Label for each top <code>{&lt;MenuList />} in {<Menu /&gt;}</code> component."
+        }
+      ],
+      "MenuLink": [
+        {
+          "displayName": "MenuLink",
+          "description": "Is a menu item or menu label for child components."
+        }
+      ],
+      "MenuList": [
+        {
+          "displayName": "MenuList",
+          "description": "A group of menu items in <code>{&lt;Menu />} or in {<MenuListItem /&gt;}</code> components."
+        }
+      ],
+      "MenuListItem": [
+        {
+          "displayName": "MenuListItem",
+          "description": "Is used like <code>{&lt;Menu /&gt;}</code> for child components."
+        }
+      ]
+    },
+    "media": {
+      "Media": [
+        {
+          "displayName": "Media",
+          "description": ""
+        }
+      ],
+      "MediaContent": [
+        {
+          "displayName": "MediaContent",
+          "description": ""
+        }
+      ],
+      "MediaLeft": [
+        {
+          "displayName": "MediaLeft",
+          "description": ""
+        }
+      ],
+      "MediaRight": [
+        {
+          "displayName": "MediaRight",
+          "description": ""
+        }
+      ]
+    },
+    "card": {
+      "Card": [
+        {
+          "displayName": "Card",
+          "description": "<p>The <strong>Card</strong> component comprises several elements that you can mix and match:</p>\n<code>&lt;Card /&gt;</code>: the main container"
+        }
+      ],
+      "CardContent": [
+        {
+          "displayName": "CardContent",
+          "description": "A multi-purpose container for any other element in <code>{&lt;Card  /&gt;}</code> component."
+        }
+      ],
+      "CardFooter": [
+        {
+          "displayName": "CardFooter",
+          "description": "A horizontal list of controls in <code>{&lt;Card/&gt;}</code> component."
+        }
+      ],
+      "CardFooterItem": [
+        {
+          "displayName": "CardFooterItem",
+          "description": "A repeatable list item in <code>{&lt;CardFooter /&gt;}</code> component."
+        }
+      ],
+      "CardHeader": [
+        {
+          "displayName": "CardHeader",
+          "description": "A horizontal bar with a shadow in <code>{&lt;Card/&gt;}</code> component."
+        }
+      ],
+      "CardHeaderIcon": [
+        {
+          "displayName": "CardHeaderIcon",
+          "description": "A placeholder for an icon in <code>{&lt;CardHeader /&gt;}</code> component."
+        }
+      ],
+      "CardHeaderTitle": [
+        {
+          "displayName": "CardHeaderTitle",
+          "description": "A `left-aligned` bold text in <code>{&lt;CardHeader /&gt;}</code> component."
+        }
+      ],
+      "CardImage": [
+        {
+          "displayName": "CardImage",
+          "description": "A `fullwidth` container for a responsive image in <code>{&lt;Card /&gt;}</code> component."
+        }
+      ]
+    },
+    "message": {
+      "Message": [
+        {
+          "displayName": "Message",
+          "description": "Colored message blocks, to emphasize part of your page"
+        }
+      ],
+      "MessageBody": [
+        {
+          "displayName": "MessageBody",
+          "description": "The content of <code>{&lt;Message /&gt;}</code> component."
+        }
+      ],
+      "MessageHeader": [
+        {
+          "displayName": "MessageHeader",
+          "description": "The header of <code>{&lt;Message /&gt;}</code> component."
+        }
+      ]
+    },
+    "modal": {
+      "Modal": [
+        {
+          "displayName": "Modal",
+          "description": "A classic modal overlay, in which you can include any content you want."
+        }
+      ],
+      "ModalCard": [
+        {
+          "displayName": "ModalCard",
+          "description": "A more classic modal, with a head, a body and a foot."
+        }
+      ],
+      "ModalCardBody": [
+        {
+          "displayName": "ModalCardBody",
+          "description": "The body of <code>{&lt;ModalCard /&gt;}</code>"
+        }
+      ],
+      "ModalCardFooter": [
+        {
+          "displayName": "ModalCardFooter",
+          "description": "The foot of <code>{&lt;ModalCard /&gt;}</code>"
+        }
+      ],
+      "ModalCardHeader": [
+        {
+          "displayName": "ModalCardHeader",
+          "description": "The header of <code>{&lt;ModalCard /&gt;}</code>"
+        }
+      ],
+      "ModalCardTitle": [
+        {
+          "displayName": "ModalCardTitle",
+          "description": "The title of <code>{&lt;ModalCard />} in {<ModalCardHeader /&gt;}</code>"
+        }
+      ],
+      "ModalClose": [
+        {
+          "displayName": "ModalClose",
+          "description": "A simple cross located in the top right corner in <code>{&lt;Modal /&gt;}</code> component."
+        }
+      ],
+      "ModalContent": [
+        {
+          "displayName": "ModalContent",
+          "description": "A horizontally and vertically centered container, with a maximum width of 640px, in which you can include any content in <code>{&lt;Modal /&gt;}</code> component."
+        }
+      ]
+    },
+    "panel": {
+      "Panel": [
+        {
+          "displayName": "Panel",
+          "description": ""
+        }
+      ],
+      "PanelBlock": [
+        {
+          "displayName": "PanelBlock",
+          "description": "PanelBlock Component."
+        }
+      ],
+      "PanelHeading": [
+        {
+          "displayName": "PanelHeading",
+          "description": ""
+        }
+      ],
+      "PanelIcon": [
+        {
+          "displayName": "PanelIcon",
+          "description": ""
+        }
+      ],
+      "PanelTabs": [
+        {
+          "displayName": "PanelTabs",
+          "description": ""
+        }
+      ]
+    },
+    "tabs": {
+      "Tab": [
+        {
+          "displayName": "Tab",
+          "description": ""
+        }
+      ],
+      "TabGroup": [
+        {
+          "displayName": "TabGroup",
+          "description": ""
+        }
+      ],
+      "Tabs": [
+        {
+          "displayName": "Tabs",
+          "description": ""
+        }
+      ]
+    },
+    "pagination": {
+      "Pagination": [
+        {
+          "displayName": "Pagination",
+          "description": ""
+        }
+      ],
+      "PaginationEllipsis": [
+        {
+          "displayName": "PaginationEllipsis",
+          "description": ""
+        }
+      ],
+      "PaginationLink": [
+        {
+          "displayName": "PaginationLink",
+          "description": ""
+        }
+      ],
+      "PaginationList": [
+        {
+          "displayName": "PaginationList",
+          "description": ""
+        }
+      ],
+      "PaginationNext": [
+        {
+          "displayName": "PaginationNext",
+          "description": ""
+        }
+      ],
+      "PaginationPrevious": [
+        {
+          "displayName": "PaginationPrevious",
+          "description": ""
+        }
+      ]
+    },
+    "navbar": {
+      "Navbar": [
+        {
+          "displayName": "Navbar",
+          "description": ""
+        }
+      ],
+      "NavbarBrand": [
+        {
+          "displayName": "NavbarBrand",
+          "description": ""
+        }
+      ],
+      "NavbarBurger": [
+        {
+          "displayName": "NavbarBurger",
+          "description": ""
+        }
+      ],
+      "NavbarDivider": [
+        {
+          "displayName": "NavbarDivider",
+          "description": ""
+        }
+      ],
+      "NavbarDropdown": [
+        {
+          "displayName": "NavbarDropdown",
+          "description": ""
+        }
+      ],
+      "NavbarEnd": [
+        {
+          "displayName": "NavbarEnd",
+          "description": ""
+        }
+      ],
+      "NavbarItem": [
+        {
+          "displayName": "NavbarItem",
+          "description": ""
+        }
+      ],
+      "NavbarItemLink": [
+        {
+          "displayName": "NavbarItemLink",
+          "description": ""
+        }
+      ],
+      "NavbarLink": [
+        {
+          "displayName": "NavbarLink",
+          "description": ""
+        }
+      ],
+      "NavbarMenu": [
+        {
+          "displayName": "NavbarMenu",
+          "description": ""
+        }
+      ],
+      "NavbarStart": [
+        {
+          "displayName": "NavbarStart",
+          "description": ""
+        }
+      ]
     }
   }
 }

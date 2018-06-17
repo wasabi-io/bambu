@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./components/pagination",
+    module: "/components/pagination",
     name: "pagination",
     title: "Pagination",
     subTitle: <span key="components-pagination-parent"> A responsive, usable, and flexible <strong>pagination</strong></span>,

@@ -7,6 +7,9 @@ export interface CardHeaderProps extends HTMLElementProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * A horizontal bar with a shadow in <code>{&lt;Card/&gt;}</code> component.
+ */
 export default class CardHeader extends React.Component<CardHeaderProps, {}> {
 
     public static propTypes = {

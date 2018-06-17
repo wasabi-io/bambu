@@ -7,6 +7,9 @@ export interface CardFooterProps extends HTMLElementProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * A horizontal list of controls in <code>{&lt;Card/&gt;}</code> component.
+ */
 export default class CardFooter extends React.Component<CardFooterProps, {}> {
 
     public static propTypes = {

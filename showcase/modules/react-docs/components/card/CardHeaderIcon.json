@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "A placeholder for an icon in <code>{&lt;CardHeader /&gt;}</code> component.",
     "displayName": "CardHeaderIcon",
     "props": [
       {

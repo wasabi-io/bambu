@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./columns/gap",
+    module: "/columns/gap",
     name: "gap",
     title: "Gap",
     subTitle: <span>Customize the <strong>gap</strong> between the columns</span>,

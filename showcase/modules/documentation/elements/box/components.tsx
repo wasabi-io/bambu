@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./elements/box",
+    module: "/elements/box",
     name: "box",
     title: "Box",
     subTitle: <span>A white <strong>box</strong> to contain other elements</span>,

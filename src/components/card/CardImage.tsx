@@ -7,6 +7,9 @@ export interface CardImageProps extends HTMLDivProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * A `fullwidth` container for a responsive image in <code>{&lt;Card /&gt;}</code> component.
+ */
 export default class CardImage extends React.Component<CardImageProps, {}> {
 
     public static propTypes = {

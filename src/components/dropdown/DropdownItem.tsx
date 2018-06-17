@@ -12,6 +12,9 @@ export interface DropdownItemProps extends HTMLAllAttributes {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * Each single item of the dropdown, which can either be a `a` or a `div` in <code>{&lt;DropdownContent/&gt;}</code> component.
+ */
 export default class DropdownItem extends React.Component<DropdownItemProps, {}> {
 
     public static propTypes = {

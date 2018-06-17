@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "The BreadCrumb component consists of links which are aligned side by side and separated by a divider.",
     "displayName": "BreadCrumb",
     "props": [
       {

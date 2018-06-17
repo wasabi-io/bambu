@@ -10,6 +10,9 @@ export interface ModalCloseProps extends DeleteProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * A simple cross located in the top right corner in <code>{&lt;Modal /&gt;}</code> component.
+ */
 export default class ModalClose extends React.Component<ModalCloseProps, {}> {
 
     public static propTypes = {

@@ -10,6 +10,9 @@ export interface DropdownMenuProps extends HTMLDivProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * The toggable menu, hidden by default in <code>{&lt;Dropdown /&gt;}</code> component.
+ */
 export default class DropdownMenu extends React.Component<DropdownMenuProps, {}> {
 
     public static propTypes = {

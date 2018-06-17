@@ -10,6 +10,9 @@ export interface DropdownContentProps extends HTMLDivProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * The dropdown box, with a white background and a shadow in <code>{&lt;DropdownMenu /&gt;}</code> component.
+ */
 export default class DropdownContent extends React.Component<DropdownContentProps, {}> {
 
     public static propTypes = {

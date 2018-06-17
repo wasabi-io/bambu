@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "A `left-aligned` bold text in <code>{&lt;CardHeader /&gt;}</code> component.",
     "displayName": "CardHeaderTitle",
     "props": [
       {

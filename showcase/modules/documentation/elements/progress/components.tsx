@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./elements/progress",
+    module: "/elements/progress",
     name: "progress",
     title: "Progress Bar",
     subTitle: <span>Native HTML <strong>progress</strong> bars</span>,

@@ -9,6 +9,9 @@ export interface MessageProps extends HTMLArticleProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * Colored message blocks, to emphasize part of your page
+ */
 export default class Message extends React.Component<MessageProps, {}> {
 
     public static propTypes = {

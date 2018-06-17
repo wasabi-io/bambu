@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./elements/notification",
+    module: "/elements/notification",
     name: "notification",
     title: "Notification",
     subTitle: <span>Bold <strong>notification</strong> blocks, to alert your users of something</span>,

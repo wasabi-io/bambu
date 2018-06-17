@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "A multi-purpose container for any other element in <code>{&lt;Card  /&gt;}</code> component.",
     "displayName": "CardContent",
     "props": [
       {

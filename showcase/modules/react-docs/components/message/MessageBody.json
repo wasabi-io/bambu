@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "The content of <code>{&lt;Message /&gt;}</code> component.",
     "displayName": "MessageBody",
     "props": [
       {

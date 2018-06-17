@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "A repeatable list item in <code>{&lt;CardFooter /&gt;}</code> component.",
     "displayName": "CardFooterItem",
     "props": [
       {

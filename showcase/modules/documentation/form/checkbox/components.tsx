@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./form/checkbox",
+    module: "/form/checkbox",
     name: "checkbox",
     title: "CheckBox",
     subTitle: <span>The 2-state <strong>checkbox</strong> in its native format</span>,

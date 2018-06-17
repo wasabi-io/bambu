@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "Is used like <code>{&lt;Menu /&gt;}</code> for child components.",
     "displayName": "MenuListItem",
     "props": [
       {

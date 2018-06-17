@@ -7,6 +7,9 @@ export interface MessageHeaderProps extends HTMLDivProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * The header of <code>{&lt;Message /&gt;}</code> component.
+ */
 export default class MessageHeader extends React.Component<MessageHeaderProps, {}> {
 
     public static propTypes = {

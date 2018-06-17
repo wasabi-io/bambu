@@ -1,14 +1,17 @@
 import * as ClassNames from 'classnames';
-import * as PropTypes from 'prop-types';
+import * as PropTypes from "prop-types";
 import * as React from 'react';
 import {bulma as LevelStyle, HTMLAllAttributes, HTMLComponent} from '../../';
 
-export interface LevelLeftProps extends HTMLAllAttributes {
+export interface LevelRightProps extends HTMLAllAttributes {
     tagName?: string;
     elementRef?: (ref: any) => any;
 }
 
-export default class LevelLeft extends React.Component<LevelLeftProps, {}> {
+/**
+ * For the right side in <code>{&lt;Level /&gt;}</code> component.
+ */
+export default class LevelRight extends React.Component<LevelRightProps, {}> {
 
     public static propTypes = {
         ...HTMLComponent.propTypes,
@@ -22,11 +25,12 @@ export default class LevelLeft extends React.Component<LevelLeftProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {tagName, className, children, elementRef, ...levelLeftProps} = this.props;
+        const {tagName, className, children, elementRef, ...levelRightProps} = this.props;
         return React.createElement(tagName, {
-            className: ClassNames(LevelStyle.levelLeft, className),
+            className: ClassNames(LevelStyle.levelRight, className),
             ref: elementRef,
-            ...levelLeftProps
+            ...levelRightProps
         }, children);
     }
 }
+

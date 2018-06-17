@@ -73,7 +73,7 @@ export default class Preview extends Stateless<PreviewProps> {
     public render() {
         const {store, ...props} = this.props;
         const {Component, phase, success} = store;
-        console.log({success, Component, phase});
+
         if (success) {
             if (store.phase === "Initial") {
                 this.component = <div>Loading...</div>;

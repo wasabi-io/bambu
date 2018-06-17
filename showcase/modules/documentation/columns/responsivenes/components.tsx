@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./columns/responsiveness",
+    module: "/columns/responsiveness",
     name: "responsiveness",
     title: "Responsiveness",
     subTitle: <span>Handle <strong>different</strong> column layouts for each <strong>breakpoint</strong></span>,

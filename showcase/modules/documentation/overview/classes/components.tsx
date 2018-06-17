@@ -4,7 +4,7 @@ import PagesProps from "../../PagesProps";
 import {FaIconStyle} from "bambu/lib/elements/icon";
 
 const components: PagesProps = {
-    module: "./overview/classes",
+    module: "/overview/classes",
     name: "classes",
     title: "Classes",
     subTitle: <span>Bulma is simply a <strong>collection</strong> of CSS classes. Write the HTML code you want.</span>,

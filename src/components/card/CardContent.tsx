@@ -7,6 +7,9 @@ export interface CardContentProps extends HTMLDivProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * A multi-purpose container for any other element in <code>{&lt;Card  /&gt;}</code> component.
+ */
 export default class CardContent extends React.Component<CardContentProps, {}> {
 
     public static propTypes = {

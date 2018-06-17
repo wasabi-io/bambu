@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./components/menu",
+    module: "/components/menu",
     name: "menu",
     title: "Menu",
     subTitle: <span key="components-menu-parent">A simple <strong>menu</strong>, for any type of vertical navigation</span>,

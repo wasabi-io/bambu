@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "The body of <code>{&lt;ModalCard /&gt;}</code>",
     "displayName": "ModalCardBody",
     "props": [
       {

@@ -28,7 +28,6 @@ export default class Loading extends Stateless<LoadingProps> {
     }
 
     public onClick = (e: any) => {
-        console.log("clicked");
         this.isActive = !this.isActive;
     }
 }

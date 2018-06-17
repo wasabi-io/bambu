@@ -10,7 +10,7 @@ import pageStyle from "css/pageStyle";
 import DocMediaHighlight from "../../../view/highlight/DocMediaHighlight";
 import DocMessageHighlight from "../../../view/highlight/DocMessageHighlight";
 
-const packageJson = require("../../../../../../package.json");
+const packageJson = require("../../../../../package.json");
 
 const webpackCssModuleText = `{
     test: /\.css$/,

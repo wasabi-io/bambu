@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "A horizontal line to separate {<DropdownItem>} components.",
     "displayName": "DropdownDivider",
     "props": [
       {

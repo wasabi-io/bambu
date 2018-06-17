@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./components/message",
+    module: "/components/message",
     name: "message",
     title: "Message",
     subTitle: <span key="components-message-parent">Colored <strong>message</strong> blocks, to emphasize part of your page</span>,

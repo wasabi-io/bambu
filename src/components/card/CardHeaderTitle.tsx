@@ -8,6 +8,9 @@ export interface CardHeaderTitleProps extends HTMLPProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * A `left-aligned` bold text in <code>{&lt;CardHeader /&gt;}</code> component.
+ */
 export default class CardHeaderTitle extends React.Component<CardHeaderTitleProps, {}> {
 
     public static propTypes = {

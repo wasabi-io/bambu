@@ -51,7 +51,7 @@ export default class Page extends Stateless<PageProps> {
             return (
                 <SubTitle key={`page-subtitle-${this.id}`} bSize={this.props.subTitleSize}>
                     {Page.renderIcon(this.props.icon)}
-                    <span key={`page-subtitle-span-${this.id}`}>${this.props.subTitle}</span>
+                    <span key={`page-subtitle-span-${this.id}`}>{this.props.subTitle}</span>
                 </SubTitle>
             );
         }

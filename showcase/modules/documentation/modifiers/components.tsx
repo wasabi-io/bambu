@@ -3,7 +3,7 @@ import pageStyle from "css/pageStyle";
 import PagesProps from "../PagesProps";
 
 const components: PagesProps = {
-    module: "./modifiers",
+    module: "/modifiers",
     name: "modifiers",
     title: "Modifiers",
     icon: {
@@ -13,7 +13,7 @@ const components: PagesProps = {
     subTitle: <span>An <strong>easy-to-read</strong> naming system designed for humans</span>,
     children: {
         syntax: {
-            module: "./modifiers/syntax",
+            module: "/modifiers/syntax",
             name: "syntax",
             title: "Syntax",
             subTitle: <span>Most Bulma elements have <strong>alternative</strong> styles. To apply them, you only need to append one of the <strong>modifier classes</strong>. They all start with <code>is-</code> or <code>has-</code>.</span>,
@@ -23,7 +23,7 @@ const components: PagesProps = {
             }
         },
         helpers: {
-            module: "./modifiers/helpers",
+            module: "/modifiers/helpers",
             name: "helpers",
             title: "Helper",
             subTitle: <span>Apply <strong>helper classes</strong> to almost any element, in order to alter its style</span>,
@@ -33,7 +33,7 @@ const components: PagesProps = {
             }
         },
         "responsive-helpers": {
-            module: "./modifiers/responsive-helpers",
+            module: "/modifiers/responsive-helpers",
             name: "responsive-helpers",
             title: "Responsive Helpers",
             subTitle: <span><strong>Show/hide content</strong> depending on the width of the viewport</span>,
@@ -43,7 +43,7 @@ const components: PagesProps = {
             }
         },
         "color-helpers": {
-            module: "./modifiers/color-helpers",
+            module: "/modifiers/color-helpers",
             name: "color-helpers",
             title: "Color Helpers",
             subTitle: <span>Change the <strong>color</strong> of the text and/or background</span>,
@@ -53,7 +53,7 @@ const components: PagesProps = {
             }
         },
         "typography-helpers": {
-            module: "./modifiers/typography-helpers",
+            module: "/modifiers/typography-helpers",
             name: "typography-helpers",
             title: "Typography Helpers",
             subTitle: <span>Change the <strong>size</strong> and <strong>color</strong> of the text for one or multiple viewport width</span>,

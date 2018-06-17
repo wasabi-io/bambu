@@ -4,14 +4,15 @@ import * as React from 'react';
 import {bulma as CardStyle, HTMLAProps, HTMLComponent} from '../../';
 import Icon, {IconProps} from '../../elements/icon/Icon';
 
-/**
- * Refers Html Props and Additional Props.
- */
+
 export interface CardHeaderIconProps extends HTMLAProps {
     icon?: IconProps;
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * A placeholder for an icon in <code>{&lt;CardHeader /&gt;}</code> component.
+ */
 export default class CardHeaderIcon extends React.Component<CardHeaderIconProps, {}> {
 
     public static propTypes = {

@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./form/general",
+    module: "/form/general",
     name: "general",
     title: "General",
     subTitle: <span>All generic <strong>form controls</strong>, designed for consistency</span>,

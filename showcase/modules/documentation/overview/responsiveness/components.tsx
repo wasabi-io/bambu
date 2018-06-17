@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./overview/responsiveness",
+    module: "/overview/responsiveness",
     name: "responsiveness",
     title: "Responsiveness",
     subTitle: <span>Bulma is a <strong>mobile-first</strong> framework</span>,

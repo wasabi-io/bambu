@@ -8,6 +8,9 @@ export interface ModalCardTitleProps extends HTMLHeaderProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * The title of <code>{&lt;ModalCard />} in {<ModalCardHeader /&gt;}</code>
+ */
 export default class ModalCardTitle extends React.Component<ModalCardTitleProps, {}> {
 
     public static propTypes = {

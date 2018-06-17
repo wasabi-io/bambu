@@ -4,7 +4,7 @@ import PagesProps from "../PagesProps";
 import {bulma} from "bambu";
 
 const components: PagesProps = {
-    module: "./elements",
+    module: "/elements",
     name: "elements",
     title: "Elements",
     icon: {
@@ -14,7 +14,7 @@ const components: PagesProps = {
     subTitle: <span>Essential interface elements that only require a <strong>single CSS class</strong></span>,
     children: {
         box: {
-            module: "./elements/box",
+            module: "/elements/box",
             name: "box",
             title: "Box",
             subTitle: <span>A white <strong>box</strong> to contain other elements</span>,
@@ -24,7 +24,7 @@ const components: PagesProps = {
             },
         },
         button: {
-            module: "./elements/button",
+            module: "/elements/button",
             name: "button",
             title: "Button",
             subTitle: <span>The classic <strong>button</strong>, in different colors, sizes, and states</span>,
@@ -34,7 +34,7 @@ const components: PagesProps = {
             }
         },
         content: {
-            module: "./elements/content",
+            module: "/elements/content",
             name: "content",
             title: "Content",
             subTitle: <span>A single class to handle <strong>WYSIWYG</strong> generated content, where only <strong>HTML tags</strong> are available</span>,
@@ -44,7 +44,7 @@ const components: PagesProps = {
             }
         },
         delete: {
-            module: "./elements/delete",
+            module: "/elements/delete",
             name: "delete",
             title: "Delete",
             subTitle: <span> A versatile <strong>delete</strong> cross</span>,
@@ -54,7 +54,7 @@ const components: PagesProps = {
             }
         },
         icon: {
-            module: "./elements/icon",
+            module: "/elements/icon",
             name: "icon",
             title: "Icon",
             subTitle: <span>Compatible with all icon font libraries, including <strong>Font Awesome 5</strong></span>,
@@ -64,7 +64,7 @@ const components: PagesProps = {
             }
         },
         image: {
-            module: "./elements/image",
+            module: "/elements/image",
             name: "image",
             title: "Image",
             subTitle: <span>A container for <strong>responsive images</strong></span>,
@@ -74,7 +74,7 @@ const components: PagesProps = {
             }
         },
         notification: {
-            module: "./elements/notification",
+            module: "/elements/notification",
             name: "notification",
             title: "Notification",
             subTitle: <span>Bold <strong>notification</strong> blocks, to alert your users of something</span>,
@@ -84,7 +84,7 @@ const components: PagesProps = {
             }
         },
         progress: {
-            module: "./elements/progress",
+            module: "/elements/progress",
             name: "progress",
             title: "Progress Bar",
             subTitle: <span>Native HTML <strong>progress</strong> bars</span>,
@@ -94,7 +94,7 @@ const components: PagesProps = {
             }
         },
         table: {
-            module: "./elements/table",
+            module: "/elements/table",
             name: "table",
             title: "Table",
             subTitle: <span>The inevitable HTML <strong>table</strong>, with special case cells</span>,
@@ -104,7 +104,7 @@ const components: PagesProps = {
             }
         },
         tag: {
-            module: "./elements/tag",
+            module: "/elements/tag",
             name: "tag",
             title: "Tag",
             subTitle: <span>Small <strong>tag labels</strong> to insert anywhere</span>,
@@ -114,7 +114,7 @@ const components: PagesProps = {
             }
         },
         title: {
-            module: "./elements/title",
+            module: "/elements/title",
             name: "title",
             title: "Title",
             subTitle: <span>Simple <strong>headings</strong> to add depth to your page</span>,
@@ -122,7 +122,7 @@ const components: PagesProps = {
                 name: "heading",
                 iconClassName: pageStyle.hasTextBlack
             }
-        },
+        }
     }
 };
 

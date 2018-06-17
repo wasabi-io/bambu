@@ -10,6 +10,9 @@ export interface DropdownDividerProps extends HTMLHrProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * A horizontal line to separate {<DropdownItem>} components.
+ */
 export default class DropdownDivider extends React.Component<DropdownDividerProps, {}> {
 
     public static propTypes = {

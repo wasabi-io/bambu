@@ -7,6 +7,9 @@ export interface ModalContentProps extends HTMLDivProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * A horizontally and vertically centered container, with a maximum width of 640px, in which you can include any content in <code>{&lt;Modal /&gt;}</code> component.
+ */
 export default class ModalContent extends React.Component<ModalContentProps, {}> {
 
     public static propTypes = {

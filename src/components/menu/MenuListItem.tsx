@@ -6,6 +6,9 @@ export interface MenuListItemProps extends HTMLLiProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * Is used like <code>{&lt;Menu /&gt;}</code> for child components.
+ */
 export default class MenuListItem extends React.Component<MenuListItemProps, {}> {
 
     public static propTypes = {

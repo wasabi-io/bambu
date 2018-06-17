@@ -10,6 +10,9 @@ PipeTasks(
                     api: "http://localhost:3000"
                 }
             }
+        },
+        {
+            command: "watch:file"
         }
     ]
 ).execute();

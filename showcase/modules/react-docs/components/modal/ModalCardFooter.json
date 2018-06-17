@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "The foot of <code>{&lt;ModalCard /&gt;}</code>",
     "displayName": "ModalCardFooter",
     "props": [
       {

@@ -7,6 +7,9 @@ export interface ModalCardBodyProps extends HTMLSectionProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * The body of <code>{&lt;ModalCard /&gt;}</code>
+ */
 export default class ModalCardBody extends React.Component<ModalCardBodyProps, {}> {
 
     public static propTypes = {

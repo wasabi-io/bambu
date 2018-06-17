@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./columns/nesting",
+    module: "/columns/nesting",
     name: "nesting",
     title: "Nesting",
     subTitle: <span>A simple way to build <strong>responsive columns</strong></span>,

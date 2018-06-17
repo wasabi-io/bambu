@@ -7,6 +7,9 @@ export interface MenuLabelProps extends HTMLPProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * Label for each top <code>{&lt;MenuList />} in {<Menu /&gt;}</code> component.
+ */
 export default class MenuLabel extends React.Component<MenuLabelProps, {}> {
 
     public static propTypes = {

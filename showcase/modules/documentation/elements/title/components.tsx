@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./elements/title",
+    module: "/elements/title",
     name: "title",
     title: "Title",
     subTitle: <span>Simple <strong>headings</strong> to add depth to your page</span>,

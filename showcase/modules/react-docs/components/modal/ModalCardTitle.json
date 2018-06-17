@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "The title of <code>{&lt;ModalCard />} in {<ModalCardHeader /&gt;}</code>",
     "displayName": "ModalCardTitle",
     "props": [
       {

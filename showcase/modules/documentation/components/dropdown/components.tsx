@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./components/dropdown",
+    module: "/components/dropdown",
     name: "dropdown",
     title: "Dropdown",
     subTitle: <span key="components-dropdown-parent">An interactive <strong>dropdown menu</strong> for discoverable content</span>,

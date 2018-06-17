@@ -1,3 +1,6 @@
+blockquote, blockquote p {
+    word-wrap: break-word;
+}
 .b-page-container {
     background-color: white;
     color: #4a4a4a;

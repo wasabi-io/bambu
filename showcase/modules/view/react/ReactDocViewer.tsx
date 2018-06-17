@@ -7,6 +7,14 @@ import {Props} from "wasabi-common";
 import {AccordionTabProps} from "../../../component/layout/accordion";
 import ReactDoc from "./ReactDoc";
 import {observable} from "mobx";
+import {SubTitle, Title} from "bambu/lib/elements/title";
+import AccordionTab from "../../../component/layout/accordion/AccordionTab";
+import {Size, Size6} from "bambu";
+import {Tile} from "bambu/lib/grid/tile";
+import {Tags} from "bambu/lib/elements/tag";
+import Tag from "bambu/lib/elements/tag/Tag";
+import {Column, Columns} from "bambu/lib/grid/column";
+import bulma from "bambu/lib/base/css/bulma";
 
 export interface ReactDocViewerProps {
     path: string;
@@ -35,13 +43,53 @@ export default class ReactDocViewer extends Stateless<ReactDocViewerProps> {
     public renderAccordion(path: string, components: Props<any>) {
         const tabs: AccordionTabProps[] = [];
         for (const component in components) {
+            const values = components[component];
+            const header = `<${component} />`;
             tabs.push({
                 name: component,
-                header: `<${component} />`
+                renderer: (id: string, props: AccordionTabProps) => ReactDocViewer.renderDocDescription(id, props, values),
+                header: <code>{header}</code>
             });
         }
         return (
             <Accordion tabs={tabs} getContent={ReactDocViewer.getContent.bind(this, path)}/>
+        );
+    }
+
+    public static renderDocDescription(id: string, props: AccordionTabProps, values: any) {
+        const key = `at-${props.name}-${id}`;
+        return (
+            <>
+                <input key={key} id={key} onChange={(e?: any) => {
+                    e.target.value = e.target.checked;
+                    props.onToggle(props.name);
+                }} type="checkbox" checked={props.name === props.activeTab} name={props.name}/>
+                <label  style={{backgroundColor: "whitesmoke"}} key={`${key}-label`} htmlFor={key}>
+                    <Tags style={{margin: 0, padding: "5px"}}>
+                        <Tag><SubTitle bSize={Size6.is5}>{props.header}</SubTitle></Tag>
+                        <Tag style={{display: "contents"}}><blockquote>
+                            <small
+                                dangerouslySetInnerHTML={{ __html: ReactDocViewer.renderSubTitles(props, values).join("\n") }}
+                            />
+                        </blockquote></Tag>
+                    </Tags>
+                </label>
+            </>
+        );
+    }
+
+    public static renderSubTitles(props: AccordionTabProps, values: any) {
+        if (!Array.isArray(values)) {
+            return null;
+        }
+        const elements = [];
+        for (const item of values) {
+            if (item.description)  {
+                elements.push(item.description);
+            }
+        }
+        return (
+            elements
         );
     }
 

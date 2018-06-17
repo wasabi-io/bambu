@@ -7,6 +7,9 @@ export interface MenuProps extends HTMLAsideProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * A simple menu, for any type of vertical navigation.
+ */
 export default class Menu extends React.Component<MenuProps, {}> {
 
     public static propTypes = {

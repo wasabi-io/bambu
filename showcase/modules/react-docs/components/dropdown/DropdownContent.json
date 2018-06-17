@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "The dropdown box, with a white background and a shadow in <code>{&lt;DropdownMenu /&gt;}</code> component.",
     "displayName": "DropdownContent",
     "props": [
       {

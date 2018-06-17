@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./overview/modularity",
+    module: "/overview/modularity",
     name: "modularity",
     title: "Modularity",
     subTitle: <span>Just import what you <strong>need</strong></span>,

@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "A horizontal list of controls in <code>{&lt;Card/&gt;}</code> component.",
     "displayName": "CardFooter",
     "props": [
       {

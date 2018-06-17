@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "A more classic modal, with a head, a body and a foot.",
     "displayName": "ModalCard",
     "props": [
       {

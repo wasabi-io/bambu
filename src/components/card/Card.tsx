@@ -4,12 +4,16 @@ import * as React from 'react';
 import {bulma as CardStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 /**
- * Refers Html Props and Additional Props.
+ *  Provide a flexible and extensible content container with multiple variants and options.
  */
 export interface CardProps extends HTMLDivProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * <p>The <strong>Card</strong> component comprises several elements that you can mix and match:</p>
+ * <code>&lt;Card /&gt;</code>: the main container
+ */
 export default class Card extends React.Component<CardProps, {}> {
 
     public static propTypes = {

@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "Is a container for a <code>{&lt;DropdownTrigger />} and a {<DropdownMenu /&gt;}</code>.",
     "displayName": "Dropdown",
     "props": [
       {

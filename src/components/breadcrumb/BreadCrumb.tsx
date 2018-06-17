@@ -22,6 +22,9 @@ export interface BreadCrumbProps extends HTMLElementProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * The BreadCrumb component consists of links which are aligned side by side and separated by a divider.
+ */
 export default class BreadCrumb extends React.Component<BreadCrumbProps, {}> {
 
     public static propTypes = {

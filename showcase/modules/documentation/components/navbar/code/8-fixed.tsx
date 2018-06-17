@@ -7,7 +7,7 @@ import {FaIconStyle} from "bambu/lib/elements/icon";
 import {Color, Vertical} from "bambu";
 import {observer} from "mobx-react";
 import {observable} from "mobx";
-import {Level, LevelLeft, LevelRight} from "bambu/lib/components/level";
+import {Level, LevelLeft, LevelRight} from "bambu/lib/layout/level";
 
 @observer
 export default class Index extends React.Component <{}, {}> {

@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "A horizontal bar with a shadow in <code>{&lt;Card/&gt;}</code> component.",
     "displayName": "CardHeader",
     "props": [
       {

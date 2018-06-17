@@ -8,6 +8,9 @@ export interface ModalCardHeaderProps extends HTMLHeaderProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * The header of <code>{&lt;ModalCard /&gt;}</code>
+ */
 export default class ModalCardHeader extends React.Component<ModalCardHeaderProps, {}> {
 
     public static propTypes = {

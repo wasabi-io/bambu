@@ -149,96 +149,96 @@ export default class CodeMirror extends React.PureComponent<CodeMirrorProps> {
     }
 
     private onChange = (instance: codeMirror.Editor, change: codeMirror.EditorChangeLinkedList) => {
-        console.log("onChange", {
+        /*console.log("onChange", {
             instance,
             change,
-        });
+        });*/
         this.props.onChange(this.editor.getValue());
     }
 
     private onChanges = (instance: codeMirror.Editor, change: codeMirror.EditorChangeLinkedList[]) => {
-        console.log("onChanges", {
+        /*console.log("onChanges", {
             instance,
             change
-        });
+        });*/
     }
 
     private onBeforeChange = (instance: codeMirror.Editor, change: codeMirror.EditorChangeCancellable) => {
-        console.log("onBeforeChange", {
+        /*console.log("onBeforeChange", {
             instance,
             change
-        });
+        });*/
     }
 
     private onCursorActivity = (instance: codeMirror.Editor) => {
-        console.log("onCursorActivity", {
+        /*console.log("onCursorActivity", {
             instance
-        });
+        });*/
     }
 
     private onBeforeSelectionChange = (instance: codeMirror.Editor, selection: { head: codeMirror.Position; anchor: codeMirror.Position; }) => {
-        console.log("onBeforeSelectionChange", {
+        /*console.log("onBeforeSelectionChange", {
             instance,
             selection
-        });
+        });*/
     }
 
     private onViewportChange = (instance: codeMirror.Editor, from: number, to: number) => {
-        console.log("onViewportChange", {
+        /*console.log("onViewportChange", {
             instance,
             from,
             to
-        });
+        });*/
     }
 
     private onGutterClick = (instance: codeMirror.Editor, line: number, gutter: string, clickEvent: Event) => {
-        console.log("onGutterClick", {
+        /*console.log("onGutterClick", {
             instance,
             line,
             gutter,
             clickEvent
-        });
+        });*/
     }
 
     private onFocus = (instance: codeMirror.Editor) => {
         this.expand();
-        console.log("onFocus", {
+        /*console.log("onFocus", {
             instance
-        });
+        });*/
     }
 
     private onBlur = (instance: codeMirror.Editor) => {
-        console.log("onBlur", {
+        /*console.log("onBlur", {
             instance
-        });
+        });*/
     }
 
     private onScroll = (instance: codeMirror.Editor) => {
         // instance.cursorCoords(true, "page");
         this.expand();
-        console.log("onScroll", {
+        /*console.log("onScroll", {
             instance
-        });
+        });*/
     }
 
     private onUpdate = (instance: codeMirror.Editor) => {
-        console.log("onUpdate", {
+        /*console.log("onUpdate", {
             instance
-        });
+        });*/
     }
 
     private onRenderLine = (instance: codeMirror.Editor, line: codeMirror.LineHandle, element: HTMLElement) => {
-        console.log("onRenderLine", {
+        /*console.log("onRenderLine", {
             instance,
             line,
             element
-        });
+        });*/
     }
 
     private onEvent(instance: codeMirror.Editor, event: Event) {
-        console.log("onEvent", {
+        /*console.log("onEvent", {
             instance
-        });
+        });*/
     }
 
     public static propTypes = {

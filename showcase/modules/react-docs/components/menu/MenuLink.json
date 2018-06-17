@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "Is a menu item or menu label for child components.",
     "displayName": "MenuLink",
     "props": [
       {

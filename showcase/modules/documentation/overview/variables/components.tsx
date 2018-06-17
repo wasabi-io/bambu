@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./overview/variables",
+    module: "/overview/variables",
     name: "variables",
     title: "Variables",
     subTitle: <span>See how Bulma uses <strong>Sass variables</strong> to allow easy customization</span>,

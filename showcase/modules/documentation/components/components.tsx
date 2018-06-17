@@ -3,7 +3,7 @@ import pageStyle from "css/pageStyle";
 import PagesProps from "../PagesProps";
 
 const components: PagesProps = {
-    module: "./components",
+    module: "/components",
     name: "components",
     title: "Components",
     icon: {
@@ -13,7 +13,7 @@ const components: PagesProps = {
     subTitle: <span key="components-parent"> Advanced multi-part components with lots of possibilities</span>,
     children: {
         breadcrumb: {
-            module: "./components/breadcrumb",
+            module: "/components/breadcrumb",
             name: "breadcrumb",
             title: "BreadCrumb",
             subTitle: <span key="components-breadcrumb">A simple <strong>breadcrumb</strong> component to improve your navigation experience</span>,
@@ -23,7 +23,7 @@ const components: PagesProps = {
             }
         },
         card: {
-            module: "./components/card",
+            module: "/components/card",
             name: "card",
             title: "Card",
             subTitle: <span key="components-card">An all-around flexible and composable component</span>,
@@ -33,7 +33,7 @@ const components: PagesProps = {
             }
         },
         dropdown: {
-            module: "./components/dropdown",
+            module: "/components/dropdown",
             name: "dropdown",
             title: "Dropdown",
             subTitle: <span key="components-dropdown">An interactive <strong>dropdown menu</strong> for discoverable content</span>,
@@ -43,7 +43,7 @@ const components: PagesProps = {
             },
         },
         menu: {
-            module: "./components/menu",
+            module: "/components/menu",
             name: "menu",
             title: "Menu",
             subTitle: <span key="components-menu">A simple <strong>menu</strong>, for any type of vertical navigation</span>,
@@ -53,7 +53,7 @@ const components: PagesProps = {
             },
         },
         message: {
-            module: "./components/message",
+            module: "/components/message",
             name: "message",
             title: "Message",
             subTitle: <span key="components-message">Colored <strong>message</strong> blocks, to emphasize part of your page</span>,
@@ -63,7 +63,7 @@ const components: PagesProps = {
             },
         },
         modal: {
-            module: "./components/modal",
+            module: "/components/modal",
             name: "modal",
             title: "Modal",
             subTitle: <span key="components-modal">A classic <strong>modal</strong> overlay, in which you can include <em>any</em> content you want</span>,
@@ -73,7 +73,7 @@ const components: PagesProps = {
             },
         },
         navbar: {
-            module: "./components/navbar",
+            module: "/components/navbar",
             name: "navbar",
             title: "Navbar",
             subTitle: <span key="components-navbar">A responsive horizontal <strong>navbar</strong> that can support images, links, buttons, and dropdowns</span>,
@@ -83,7 +83,7 @@ const components: PagesProps = {
             }
         },
         pagination: {
-            module: "./components/pagination",
+            module: "/components/pagination",
             name: "pagination",
             title: "Pagination",
             subTitle: <span key="components-pagination"> A responsive, usable, and flexible <strong>pagination</strong></span>,
@@ -93,7 +93,7 @@ const components: PagesProps = {
             }
         },
         panel: {
-            module: "./components/panel",
+            module: "/components/panel",
             name: "panel",
             title: "Panel",
             subTitle: <span key="components-panel">A composable <strong>panel</strong>, for compact controls</span>,
@@ -103,7 +103,7 @@ const components: PagesProps = {
             }
         },
         tabs: {
-            module: "./components/tabs",
+            module: "/components/tabs",
             name: "tabs",
             title: "Tabs",
             subTitle: <span key="components-tabs">Simple responsive horizontal navigation <strong>tabs</strong>, with different styles</span>,
@@ -112,8 +112,7 @@ const components: PagesProps = {
                 iconClassName: pageStyle.hasTextPurple
             }
         }
-    },
-    componentPath: "components"
+    }
 };
 
 export default components;

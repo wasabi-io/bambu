@@ -10,6 +10,9 @@ export interface MenuLinkProps extends HTMLAProps {
     parent?: HTMLLiProps;
 }
 
+/**
+ * Is a menu item or menu label for child components.
+ */
 export default class MenuLink extends React.Component<MenuLinkProps, {}> {
 
     public static propTypes = {

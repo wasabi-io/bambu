@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "A horizontally and vertically centered container, with a maximum width of 640px, in which you can include any content in <code>{&lt;Modal /&gt;}</code> component.",
     "displayName": "ModalContent",
     "props": [
       {

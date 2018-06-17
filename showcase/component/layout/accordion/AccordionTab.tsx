@@ -6,7 +6,7 @@ import accordionStyle from "./accordionStyle";
 import {HTMLComponent, HTMLDivProps} from "bambu";
 import AsyncComponent from "../../lazy/AsyncComponent";
 
-export type AccordionTabHeader = string | JSX.Element;
+export type AccordionTabHeader = React.ReactChild;
 
 export interface AccordionTabProps extends HTMLDivProps {
     activeTab?: string;
@@ -15,22 +15,31 @@ export interface AccordionTabProps extends HTMLDivProps {
     elementRef?: (ref: any) => any;
     getContent?: (props?: AccordionTabProps) => Promise<JSX.Element>;
     onToggle?: (name?: string) => any;
+    renderer?: (id: string, props?: AccordionTabProps) => React.ReactChild;
 }
 
 export default class AccordionTab extends Stateless<AccordionTabProps> {
     public static propTypes = {
         ...HTMLComponent.propTypes,
-        elementRef: PropTypes.func
+        activeTab: PropTypes.string,
+        name: PropTypes.string,
+        header: PropTypes.object,
+        getContent: PropTypes.func,
+        onToggle: PropTypes.func,
+        renderer: PropTypes.func
     };
 
-    public static defaultProps = HTMLComponent.defaultProps;
+    public static defaultProps = {
+        ...HTMLComponent.defaultProps,
+        renderer: AccordionTab.renderHeader
+    };
 
     public constructor(props: AccordionTabProps) {
         super(props);
     }
 
     public render() {
-        const {activeTab, getContent, name, header, className, children, ...props} = this.props;
+        const {activeTab, getContent, name, header, renderer, className, children, ...props} = this.props;
 
         const classNames = ClassNames(
             accordionStyle.accordionTab,
@@ -39,7 +48,7 @@ export default class AccordionTab extends Stateless<AccordionTabProps> {
 
         return (
             <div className={classNames} {...props}>
-                {this.renderHeader(this.props)}
+                {renderer(this.id, this.props)}
                 <div className={accordionStyle.accordionTabContent}>
                     {
                         this.getContent()
@@ -59,14 +68,15 @@ export default class AccordionTab extends Stateless<AccordionTabProps> {
         return this.props.children;
     }
 
-    public renderHeader(props: AccordionTabProps) {
+    public static renderHeader(id: string, props: AccordionTabProps) {
+        const key = `at-${props.name}-${id}`;
         return (
             <>
-                <input id={`${props.name}${this.id}`} onChange={(e?: any) => {
+                <input key={key} id={key} onChange={(e?: any) => {
                     e.target.value = e.target.checked;
                     props.onToggle(props.name);
                 }} type="checkbox" checked={props.name === props.activeTab} name={props.name}/>
-                <label htmlFor={`${props.name}${this.id}`}>
+                <label key={`${key}-label`} htmlFor={key}>
                     {props.header}
                 </label>
             </>

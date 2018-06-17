@@ -55,13 +55,6 @@ import * as _components_dropdown_DropdownTrigger from "bambu/lib/components/drop
 import * as _components_dropdown_index from "bambu/lib/components/dropdown/index";
 import * as _components_dropdown_ from "bambu/lib/components/dropdown/";
 import * as _components_dropdown from "bambu/lib/components/dropdown";
-import * as _components_level_Level from "bambu/lib/components/level/Level";
-import * as _components_level_LevelItem from "bambu/lib/components/level/LevelItem";
-import * as _components_level_LevelLeft from "bambu/lib/components/level/LevelLeft";
-import * as _components_level_LevelRight from "bambu/lib/components/level/LevelRight";
-import * as _components_level_index from "bambu/lib/components/level/index";
-import * as _components_level_ from "bambu/lib/components/level/";
-import * as _components_level from "bambu/lib/components/level";
 import * as _components_media_Media from "bambu/lib/components/media/Media";
 import * as _components_media_MediaContent from "bambu/lib/components/media/MediaContent";
 import * as _components_media_MediaLeft from "bambu/lib/components/media/MediaLeft";
@@ -230,6 +223,13 @@ import * as _layout_hero_HeroHead from "bambu/lib/layout/hero/HeroHead";
 import * as _layout_hero_index from "bambu/lib/layout/hero/index";
 import * as _layout_hero_ from "bambu/lib/layout/hero/";
 import * as _layout_hero from "bambu/lib/layout/hero";
+import * as _layout_level_Level from "bambu/lib/layout/level/Level";
+import * as _layout_level_LevelItem from "bambu/lib/layout/level/LevelItem";
+import * as _layout_level_LevelLeft from "bambu/lib/layout/level/LevelLeft";
+import * as _layout_level_LevelRight from "bambu/lib/layout/level/LevelRight";
+import * as _layout_level_index from "bambu/lib/layout/level/index";
+import * as _layout_level_ from "bambu/lib/layout/level/";
+import * as _layout_level from "bambu/lib/layout/level";
 import * as _layout_section_Section from "bambu/lib/layout/section/Section";
 import * as _layout_section_index from "bambu/lib/layout/section/index";
 import * as _layout_section_ from "bambu/lib/layout/section/";
@@ -293,13 +293,6 @@ const modules = {
     "bambu/lib/components/dropdown/index": _components_dropdown_index,
     "bambu/lib/components/dropdown/": _components_dropdown_,
     "bambu/lib/components/dropdown": _components_dropdown,
-    "bambu/lib/components/level/Level": _components_level_Level,
-    "bambu/lib/components/level/LevelItem": _components_level_LevelItem,
-    "bambu/lib/components/level/LevelLeft": _components_level_LevelLeft,
-    "bambu/lib/components/level/LevelRight": _components_level_LevelRight,
-    "bambu/lib/components/level/index": _components_level_index,
-    "bambu/lib/components/level/": _components_level_,
-    "bambu/lib/components/level": _components_level,
     "bambu/lib/components/media/Media": _components_media_Media,
     "bambu/lib/components/media/MediaContent": _components_media_MediaContent,
     "bambu/lib/components/media/MediaLeft": _components_media_MediaLeft,
@@ -468,6 +461,13 @@ const modules = {
     "bambu/lib/layout/hero/index": _layout_hero_index,
     "bambu/lib/layout/hero/": _layout_hero_,
     "bambu/lib/layout/hero": _layout_hero,
+    "bambu/lib/layout/level/Level": _layout_level_Level,
+    "bambu/lib/layout/level/LevelItem": _layout_level_LevelItem,
+    "bambu/lib/layout/level/LevelLeft": _layout_level_LevelLeft,
+    "bambu/lib/layout/level/LevelRight": _layout_level_LevelRight,
+    "bambu/lib/layout/level/index": _layout_level_index,
+    "bambu/lib/layout/level/": _layout_level_,
+    "bambu/lib/layout/level": _layout_level,
     "bambu/lib/layout/section/Section": _layout_section_Section,
     "bambu/lib/layout/section/index": _layout_section_index,
     "bambu/lib/layout/section/": _layout_section_,

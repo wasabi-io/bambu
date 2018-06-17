@@ -1,6 +1,6 @@
 [
   {
-    "description": "",
+    "description": "For the right side in <code>{&lt;Level /&gt;}</code> component.",
     "displayName": "LevelRight",
     "props": [
       {

@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./columns/options",
+    module: "/columns/options",
     name: "options",
     title: "Options",
     subTitle: <span>Design different <strong>types</strong> of column layouts</span>,

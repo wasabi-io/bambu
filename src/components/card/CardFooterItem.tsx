@@ -8,6 +8,9 @@ export interface CardFooterItemProps extends HTMLAllAttributes {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * A repeatable list item in <code>{&lt;CardFooter /&gt;}</code> component.
+ */
 export default class CardFooterItem extends React.Component<CardFooterItemProps, {}> {
 
     public static propTypes = {

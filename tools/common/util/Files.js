@@ -40,16 +40,35 @@ function list(root, pattern, files) {
     return files;
 }
 
+function readFileSync(filePath) {
+    return fs.readFileSync(filePath, 'utf8');
+}
+
+function existSync(filePath) {
+    return fs.existsSync(filePath);
+}
+
+function removeFileSync(filePath) {
+    try {
+        fs.unlinkSync(filePath);
+        console.log("Removed " + filePath);
+        return true;
+    } catch (err) {
+        console.log(err);
+        return false;
+    }
+}
+
 function writeFileSync(filePath, content, encoding) {
     const paths = filePath.split("/");
     let lastPath = "/";
-    for(let i = 1; i < paths.length - 1; i++) {
+    for (let i = 1; i < paths.length - 1; i++) {
         try {
             lastPath = lastPath + "/" + paths[i];
             if (!fs.existsSync(lastPath)) {
                 fs.mkdirSync(lastPath);
             }
-        }catch (e) {
+        } catch (e) {
             console.log(e);
         }
     }
@@ -57,8 +76,11 @@ function writeFileSync(filePath, content, encoding) {
 }
 
 module.exports = {
-    walkSync: walkSync,
-    list: list,
+    walkSync,
+    list,
+    existSync,
+    removeFileSync,
+    readFileSync,
     writeFileSync
 };
 

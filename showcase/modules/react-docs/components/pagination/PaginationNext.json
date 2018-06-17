@@ -4,6 +4,18 @@
     "displayName": "PaginationNext",
     "props": [
       {
+        "defaultValue": {
+          "value": "false"
+        },
+        "description": "",
+        "name": "disabled",
+        "required": false,
+        "type": {
+          "name": "boolean",
+          "value": null
+        }
+      },
+      {
         "defaultValue": null,
         "description": "",
         "name": "elementRef",

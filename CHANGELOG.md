@@ -26,6 +26,8 @@
 * added *Props Generator*
 * added `Grid` component to show Props.
 * added js-criteria to query properties on datagrid.
+* added ReactDocs continuous generation. (used file watcher.)
+* added *LazyComponent* to load samples dynamically.
 
 #### v0.6.201-beta.2
 * solved https://github.com/wasabi-io/bambu/issues/6

@@ -3,7 +3,7 @@ import pageStyle from "css/pageStyle";
 import PagesProps from "../PagesProps";
 
 const components: PagesProps = {
-    module: "./form",
+    module: "/form",
     name: "form",
     title: "Form",
     subTitle: <span key={"form"}>The indispensable <strong>form controls</strong>, designed for maximum clarity</span>,
@@ -13,7 +13,7 @@ const components: PagesProps = {
     },
     children: {
         general: {
-            module: "./form/general",
+            module: "/form/general",
             name: "general",
             title: "General",
             subTitle: <span>All generic <strong>form controls</strong>, designed for consistency</span>,
@@ -23,7 +23,7 @@ const components: PagesProps = {
             }
         },
         input: {
-            module: "./form/input",
+            module: "/form/input",
             name: "input",
             title: "Input",
             subTitle: <span>The <strong>text input</strong> and its variations</span>,
@@ -33,7 +33,7 @@ const components: PagesProps = {
             }
         },
         textarea: {
-            module: "./form/textarea",
+            module: "/form/textarea",
             name: "textarea",
             title: "Textarea",
             subTitle: <span>The multiline <strong>textarea</strong> and its variations</span>,
@@ -43,7 +43,7 @@ const components: PagesProps = {
             }
         },
         select: {
-            module: "./form/select",
+            module: "/form/select",
             name: "select",
             title: "Select",
             subTitle: <span>The browser built-in <strong>select dropdown</strong>, styled accordingly</span>,
@@ -53,7 +53,7 @@ const components: PagesProps = {
             }
         },
         checkbox: {
-            module: "./form/checkbox",
+            module: "/form/checkbox",
             name: "checkbox",
             title: "CheckBox",
             subTitle: <span>The 2-state <strong>checkbox</strong> in its native format</span>,
@@ -63,7 +63,7 @@ const components: PagesProps = {
             }
         },
         radio: {
-            module: "./form/radio",
+            module: "/form/radio",
             name: "radio",
             title: "Radio",
             subTitle: <span>The mutually exclusive <strong>radio buttons</strong> in their native format</span>,
@@ -73,7 +73,7 @@ const components: PagesProps = {
             }
         },
         file: {
-            module: "./form/file",
+            module: "/form/file",
             name: "file",
             title: "File",
             subTitle: <span>A custom <strong>file upload</strong> input, without JavaScript</span>,

@@ -13,6 +13,9 @@ export interface ModalProps extends HTMLDivProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * A classic modal overlay, in which you can include any content you want.
+ */
 export default class Modal extends React.Component<ModalProps, {}> {
 
     public static propTypes = {

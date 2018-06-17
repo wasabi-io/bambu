@@ -8,6 +8,9 @@ export interface BreadCrumbItemProps extends HTMLAProps {
     elementRef?: (ref: any) => any;
 }
 
+/**
+ * Consists of link which is child of <code>{&lt;BreadCrumb  /&gt;}</code> component.
+ */
 export default class BreadCrumbItem extends React.Component<BreadCrumbItemProps, {}> {
 
     public static propTypes = {

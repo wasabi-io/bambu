@@ -5,8 +5,7 @@ import {FaIcon, Icon} from "bambu/lib/elements/icon";
 import {observer} from "mobx-react";
 import {observable} from "mobx";
 import {bulma, Size} from "bambu";
-import Level from "bambu/lib/components/level/Level";
-import {LevelItem, LevelLeft, LevelRight} from "bambu/lib/components/level";
+import {Level, LevelItem, LevelLeft, LevelRight} from "bambu/lib/layout/level";
 
 @observer
 export default class Index extends React.Component<{}, {}> {

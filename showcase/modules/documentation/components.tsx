@@ -3,7 +3,7 @@ import PagesProps from "./PagesProps";
 import pageStyle from "css/pageStyle";
 
 const components: PagesProps = {
-    module: ".",
+    module: "",
     name: "documentation",
     title: "Documentation",
     subTitle: <span key={"documentation"}>Everything you need to <strong>create a website</strong> with Bulma</span>,
@@ -13,7 +13,7 @@ const components: PagesProps = {
     },
     children: {
         overview: {
-            module: "./overview",
+            module: "/overview",
             name: "overview",
             title: "Overview",
             icon: {
@@ -23,7 +23,7 @@ const components: PagesProps = {
             subTitle: <span key={"overview"}>An overview of what Bulma as a <strong>framework</strong> is all about</span>
         },
         modifiers: {
-            module: "./modifiers",
+            module: "/modifiers",
             name: "modifiers",
             title: "Modifiers",
             icon: {
@@ -33,7 +33,7 @@ const components: PagesProps = {
             subTitle: <span key={"modifiers"}>An <strong>easy-to-read</strong> naming system designed for humans</span>,
         },
         columns: {
-            module: "./columns",
+            module: "/columns",
             name: "columns",
             title: "Columns",
             icon: {
@@ -43,7 +43,7 @@ const components: PagesProps = {
             subTitle: <span key={"columns"}>The power of <strong>Flexbox</strong> in a simple interface</span>,
         },
         layout: {
-            module: "./layout",
+            module: "/layout",
             name: "layout",
             title: "Layout",
             icon: {
@@ -53,7 +53,7 @@ const components: PagesProps = {
             subTitle: <span key={"layout"}> Design the <strong>structure</strong> of your webpage with these CSS classes</span>,
         },
         form: {
-            module: "./form",
+            module: "/form",
             name: "form",
             title: "Form",
             icon: {
@@ -63,7 +63,7 @@ const components: PagesProps = {
             subTitle: <span key={"form"}>The indispensable <strong>form controls</strong>, designed for maximum clarity</span>
         },
         elements: {
-            module: "./elements",
+            module: "/elements",
             name: "elements",
             title: "Elements",
             icon: {
@@ -73,7 +73,7 @@ const components: PagesProps = {
             subTitle: <span key={"elements"}>Essential interface elements that only require a <strong>single CSS class</strong></span>,
         },
         components: {
-            module: "./components",
+            module: "/components",
             name: "components",
             title: "Components",
             icon: {

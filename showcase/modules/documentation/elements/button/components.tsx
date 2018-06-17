@@ -3,7 +3,7 @@ import pageStyle from "../../../../css/pageStyle";
 import PagesProps from "../../PagesProps";
 
 const components: PagesProps = {
-    module: "./elements/button",
+    module: "/elements/button",
     name: "button",
     title: "Button",
     subTitle: <span>The classic <strong>button</strong>, in different colors, sizes, and states</span>,
