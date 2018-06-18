@@ -81,3 +81,4 @@ fabric.properties
 /demo
 /lib
 /.index.d.ts
+.DS_Store

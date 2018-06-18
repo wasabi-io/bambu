@@ -1,19 +1,22 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as ModalStyle, HTMLComponent, HTMLHeaderProps} from '../../';
 
 export interface ModalCardHeaderProps extends HTMLHeaderProps {
     header?: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
+/**
+ * The header of <code>{&lt;ModalCard /&gt;}</code>
+ */
 export default class ModalCardHeader extends React.Component<ModalCardHeaderProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
-        header: PropTypes.string
+        header: PropTypes.string,
+        elementRef: PropTypes.func
     };
 
     public static defaultProps = HTMLComponent.defaultProps;
@@ -24,7 +27,7 @@ export default class ModalCardHeader extends React.Component<ModalCardHeaderProp
         const classNames = ClassNames(ModalStyle.modalCardHead, className);
 
         return (
-            <header className={classNames} {...modalCardHeaderProps}  ref={elementRef}>
+            <header className={classNames} {...modalCardHeaderProps} ref={elementRef}>
                 {header && <p className={ModalStyle.modalCardTitle}>{header}</p>}
                 {children}
             </header>

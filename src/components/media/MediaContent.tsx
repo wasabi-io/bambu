@@ -1,16 +1,18 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as MediaStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 export interface MediaContentProps extends HTMLDivProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
-export default class MediaContent extends React.Component<MediaContentProps, {}> {
+export default class MediaContent extends React.Component<MediaContentProps> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
+    public static propTypes = {
+        ...HTMLComponent.propTypes,
+        elementRef: PropTypes.func
+    };
 
     public static defaultProps = HTMLComponent.defaultProps;
 
@@ -23,7 +25,7 @@ export default class MediaContent extends React.Component<MediaContentProps, {}>
         ]);
 
         return (
-            <div className={classNames} {...inputProps} ref={elementRef} >
+            <div className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </div>
         );

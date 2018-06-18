@@ -1,9 +1,7 @@
 process.env.NODE_ENV = process.env.NODE_ENV || "production";
-const webpack = require("webpack");
 const WebpackNotifierPlugin = require("webpack-notifier");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-const packageJson = require("../../../package.json");
 const {merge} = require("../../common/util/Objects");
 const configureWebpack = require("../../common/webpack/webpack");
 
@@ -23,9 +21,11 @@ jsonConfig = merge({
 
 const settings = new configureWebpack(jsonConfig);
 
+settings.webpack.mode = "production";
+
 settings.webpack.output = {
     path: settings.paths.www,
-    filename: "[name].[hash].js"
+    filename: "js/app/[name].[hash].js"
 };
 
 if (process.NODE_ENV === "development") {

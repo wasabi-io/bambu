@@ -1,21 +1,26 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
-import {bulma as MenuStyle, HTMLAProps, HTMLComponent} from '../../';
+import {bulma as MenuStyle, HTMLAProps, HTMLComponent, HTMLLiProps} from '../../';
 
 export interface MenuLinkProps extends HTMLAProps {
     isActive?: boolean;
-    href?: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
+    parentClassName?: string;
+    parent?: HTMLLiProps;
 }
 
+/**
+ * Is a menu item or menu label for child components.
+ */
 export default class MenuLink extends React.Component<MenuLinkProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         isActive: PropTypes.bool,
-        href: PropTypes.string
+        parent: PropTypes.object,
+        parentClassName: PropTypes.string,
+        elementRef: PropTypes.func
     };
 
     public static defaultProps = {
@@ -24,14 +29,16 @@ export default class MenuLink extends React.Component<MenuLinkProps, {}> {
     };
 
     public render(): JSX.Element {
-        const {isActive, className, children, elementRef, ...inputProps} = this.props;
+        const {isActive, className, parentClassName, parent, children, elementRef, ...inputProps} = this.props;
 
         const classNames = ClassNames({[`${MenuStyle.isActive}`]: isActive}, className);
 
         return (
-            <a className={classNames} {...inputProps} ref={elementRef}>
-                {children}
-            </a>
+            <li className={parentClassName} {...parent}>
+                <a className={classNames} {...inputProps} ref={elementRef}>
+                    {children}
+                </a>
+            </li>
         );
     }
 }

@@ -1,19 +1,19 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLAProps, HTMLComponent} from '../../';
 
 export interface NavbarLinkProps extends HTMLAProps {
     href?: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class NavbarLink extends React.Component<NavbarLinkProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
-        href: PropTypes.string
+        href: PropTypes.string,
+        elementRef: PropTypes.func
     };
 
     public static defaultProps = HTMLComponent.defaultProps;
@@ -24,7 +24,7 @@ export default class NavbarLink extends React.Component<NavbarLinkProps, {}> {
         const classNames = ClassNames([NavbarStyle.navbarLink, className]);
 
         return (
-            <a className={classNames} {...inputProps}  ref={elementRef}>
+            <a className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </a>
         );

@@ -1,28 +1,29 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as BreadCrumbStyle, HTMLAProps, HTMLComponent} from '../../';
 
 export interface BreadCrumbItemProps extends HTMLAProps {
     isActive?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
+/**
+ * Consists of link which is child of <code>{&lt;BreadCrumb  /&gt;}</code> component.
+ */
 export default class BreadCrumbItem extends React.Component<BreadCrumbItemProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
+    public static propTypes = {
+        ...HTMLComponent.propTypes,
+        isActive: PropTypes.bool,
+    };
 
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
         const {isActive, elementRef, children, ...breadCrumbItemProps} = this.props;
 
-        const classNames = ClassNames(
-            {
-                [`${BreadCrumbStyle.isActive}`]: isActive,
-            }
-        );
+        const classNames = ClassNames({[`${BreadCrumbStyle.isActive}`]: isActive});
 
         return (
             <li className={classNames}>

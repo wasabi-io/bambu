@@ -27,7 +27,7 @@ module.exports = {
         "bambu$": "./src/index",
         "bambu/lib": "./src",
         "bulma": "./node_modules/bulma",
-        "modules": "./showcase/app/modules/"
+        "*": "./showcase",
     },
     copy: {
         move: [
@@ -36,8 +36,8 @@ module.exports = {
                 to: "./vendor/bulma/css/"
             },
             {
-                from: "../node_modules/font-awesome",
-                to: "./vendor/font-awesome/"
+                from: "../assets",
+                to: "./assets"
             }
         ]
     }

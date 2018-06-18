@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as TableStyle, HTMLComponent, HTMLTdProps} from '../../';
 
 /**
@@ -9,12 +8,12 @@ import {bulma as TableStyle, HTMLComponent, HTMLTdProps} from '../../';
  */
 export interface CellProps extends HTMLTdProps {
     isIcon?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Cell extends React.Component<CellProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         isIcon: PropTypes.bool
     };

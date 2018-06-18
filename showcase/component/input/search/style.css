@@ -1,0 +1,46 @@
+.b-search {
+    position: relative;
+    margin-bottom: 0px;
+}
+
+.b-search-input {
+
+}
+
+.b-search-auto-complete {
+    background-color: white;
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
+    color: #4a4a4a;
+    display: block;
+}
+
+.b-search-auto-complete > div {
+    width: 100%;
+    border-bottom: 1px solid #B6C7D1;
+    display: block;
+    padding: 0 0 0 1em;
+    line-height: 2.5;
+    cursor: pointer;
+}
+
+.b-search-auto-complete > div * {
+    cursor: pointer;
+}
+
+.b-search-auto-complete > div:hover {
+    background-color: #B6C7D1;
+    cursor: pointer;
+}

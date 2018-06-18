@@ -1,24 +1,34 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as CardStyle, HTMLComponent, HTMLPProps} from '../../';
 
 export interface CardHeaderTitleProps extends HTMLPProps {
-    elementRef?: any;
+    isCentered?: boolean;
+    elementRef?: (ref: any) => any;
 }
 
+/**
+ * A `left-aligned` bold text in <code>{&lt;CardHeader /&gt;}</code> component.
+ */
 export default class CardHeaderTitle extends React.Component<CardHeaderTitleProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
+    public static propTypes = {
+        ...HTMLComponent.propTypes,
+        isCentered: PropTypes.bool,
+        elementRef: PropTypes.func
+    };
 
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
-        const {className, elementRef, children, ...inputProps} = this.props;
+        const {isCentered, className, elementRef, children, ...inputProps} = this.props;
 
         const classNames = ClassNames(
             CardStyle.cardHeaderTitle,
+            {
+                [`${CardStyle.isCentered}`]: isCentered
+            },
             className
         );
 

@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as TagStyle, colorValues, HTMLComponent, HTMLSpanProps} from '../../';
 
 /**
@@ -9,11 +8,12 @@ import {bulma as TagStyle, colorValues, HTMLComponent, HTMLSpanProps} from '../.
  */
 export interface TagsProps extends HTMLSpanProps {
     hasAddons?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Tags extends React.Component<TagsProps, {}> {
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         color: PropTypes.oneOf(colorValues)
     };

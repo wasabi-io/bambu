@@ -1,19 +1,19 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export interface NavbarBrandProps extends HTMLDivProps {
     hasShadow?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class NavbarBrand extends React.Component<NavbarBrandProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
-        hasShadow: PropTypes.bool
+        hasShadow: PropTypes.bool,
+        elementRef: PropTypes.func
     };
 
     public static defaultProps = {
@@ -27,7 +27,7 @@ export default class NavbarBrand extends React.Component<NavbarBrandProps, {}> {
         const classNames = ClassNames(NavbarStyle.navbarBrand, {[`${NavbarStyle.hasShadow}`]: hasShadow}, className);
 
         return (
-            <div className={classNames} {...inputProps}  ref={elementRef}>
+            <div className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </div>
         );

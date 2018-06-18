@@ -1,0 +1,53 @@
+.b-loading {
+    align-items: center;
+    display: none;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    z-index: 40;
+}
+
+.b-loading.is-active {
+    display: flex;
+}
+
+.b-loading-background {
+    opacity: 0.5;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,f6f6f6+30&1+1,0.5+30 */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 1%, rgba(246, 246, 246, 0.5) 30%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 1%, rgba(246, 246, 246, 0.5) 30%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 1%, rgba(246, 246, 246, 0.5) 30%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#80f6f6f6', GradientType=1); /* IE6-9 fallback on horizontal gradient */
+}
+
+.b-loading, .b-loading-background {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.b-loading-content {
+    display: grid;
+    align-items: center;
+    margin: 0 20px;
+    max-height: calc(100vh - 160px);
+    overflow: auto;
+    position: relative;
+    width: 100%;
+}
+
+@media screen and (min-width: 769px), print {
+    .b-loading-content {
+        margin: 0 auto;
+        max-height: calc(100vh - 40px);
+        width: 640px;
+    }
+}
+
+.b-loading-svg {
+    display: block;
+    width: 40%;
+    margin: auto;
+}

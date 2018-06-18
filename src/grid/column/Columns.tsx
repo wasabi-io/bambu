@@ -1,7 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Objects, Props} from "wasabi-common";
+import {Objects} from "wasabi-common";
 import {bulma as ColumnsStyle, HTMLComponent, HTMLDivProps, Responsive} from '../../';
 
 /**
@@ -12,13 +12,12 @@ export interface ColumnsProps extends HTMLDivProps {
     isVcentered?: boolean;
     isGapless?: boolean;
     responsive?: string | Responsive;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
-
 
 export default class Columns extends React.Component<ColumnsProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         isGapless: PropTypes.bool,
         isMultiline: PropTypes.bool,
@@ -45,7 +44,7 @@ export default class Columns extends React.Component<ColumnsProps, {}> {
         );
 
         return (
-            <div className={classNames} {...inputProps} ref={elementRef} >
+            <div className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </div>
         );

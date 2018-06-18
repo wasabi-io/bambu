@@ -21,6 +21,8 @@ jsonConfig = merge({
 
 const settings = new configureWebpack(jsonConfig);
 
+settings.webpack.mode = "development";
+
 settings.webpack.output = {
     filename: "[name].entry.js"
 };

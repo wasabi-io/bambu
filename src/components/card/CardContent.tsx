@@ -1,16 +1,21 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as CardStyle, HTMLComponent, HTMLDivProps} from '../../';
 
 export interface CardContentProps extends HTMLDivProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
+/**
+ * A multi-purpose container for any other element in <code>{&lt;Card  /&gt;}</code> component.
+ */
 export default class CardContent extends React.Component<CardContentProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
+    public static propTypes = {
+        ...HTMLComponent.propTypes,
+        elementRef: PropTypes.func
+    };
 
     public static defaultProps = HTMLComponent.defaultProps;
 
@@ -23,7 +28,7 @@ export default class CardContent extends React.Component<CardContentProps, {}> {
         ]);
 
         return (
-            <div className={classNames} {...cardContentProps} ref={elementRef} >
+            <div className={classNames} {...cardContentProps} ref={elementRef}>
                 {children}
             </div>
         );

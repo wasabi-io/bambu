@@ -13,13 +13,14 @@
     "experimentalDecorators": true,
     "preserveConstEnums": true,
     "allowJs": false,
+    "lib": [
+      "es2015",
+      "dom"
+    ],
     "sourceMap": true,
     "jsx": "react",
     "outDir": "lib",
     "paths": {
-      "modules/*": [
-        "./showcase/app/modules/*"
-      ],
       "bambu/lib/*": [
         "./src/*"
       ],
@@ -27,6 +28,7 @@
         "./src"
       ],
       "*": [
+        "./showcase/*",
         "./src/*"
       ]
     }

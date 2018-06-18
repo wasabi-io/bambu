@@ -1,16 +1,18 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as TableStyle, HTMLComponent, HTMLTheadProps} from '../../';
 
 export interface THeadProps extends HTMLTheadProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class THead extends React.Component<THeadProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
+    public static propTypes = {
+        ...HTMLComponent.propTypes,
+        elementRef: PropTypes.func
+    };
 
     public static defaultProps = HTMLComponent.defaultProps;
 
@@ -20,7 +22,7 @@ export default class THead extends React.Component<THeadProps, {}> {
         const classNames = ClassNames(TableStyle.tr, className);
 
         return (
-            <thead className={classNames} {...tHeadProps} ref={elementRef} >
+            <thead className={classNames} {...tHeadProps} ref={elementRef}>
             {children}
             </thead>
         );

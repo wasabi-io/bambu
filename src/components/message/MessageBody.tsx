@@ -1,16 +1,21 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as MessageStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export interface MessageBodyProps extends HTMLDivProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
+/**
+ * The content of <code>{&lt;Message /&gt;}</code> component.
+ */
 export default class MessageBody extends React.Component<MessageBodyProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
+    public static propTypes = {
+        ...HTMLComponent.propTypes,
+        elementRef: PropTypes.func
+    };
 
     public static defaultProps = HTMLComponent.defaultProps;
 
@@ -23,7 +28,7 @@ export default class MessageBody extends React.Component<MessageBodyProps, {}> {
         );
 
         return (
-            <div className={classNames} {...ownProps}  ref={elementRef}>
+            <div className={classNames} {...ownProps} ref={elementRef}>
                 {children}
             </div>
         );

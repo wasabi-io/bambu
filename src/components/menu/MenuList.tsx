@@ -1,16 +1,21 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as MenuStyle, HTMLComponent, HTMLUlProps} from '../../';
 
 export interface MenuListProps extends HTMLUlProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
+/**
+ * A group of menu items in <code>{&lt;Menu />} or in {<MenuListItem /&gt;}</code> components.
+ */
 export default class MenuList extends React.Component<MenuListProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
+    public static propTypes = {
+        ...HTMLComponent.propTypes,
+        elementRef: PropTypes.func
+    };
 
     public static defaultProps = HTMLComponent.defaultProps;
 
@@ -20,7 +25,7 @@ export default class MenuList extends React.Component<MenuListProps, {}> {
         const classNames = ClassNames([MenuStyle.menuList, className]);
 
         return (
-            <ul className={classNames} {...inputProps} ref={elementRef} >
+            <ul className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </ul>
         );

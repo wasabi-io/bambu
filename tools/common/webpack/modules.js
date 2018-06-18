@@ -3,10 +3,8 @@ const Objects = require("../util/Objects");
 const getTsLoader = function () {
     return {
         test: /\.tsx?$/,
-        loader: 'awesome-typescript-loader',
-        options: {
-            transpileOnly: true
-        }
+        loader: 'ts-loader',
+        options: {}
     }
 };
 
@@ -47,7 +45,10 @@ const getSassLoader = function () {
                 loader: "css-loader",
                 options: {
                     sass: true,
-                    modules: true
+                    modules: true,
+                    getLocalIdent: (context, localIdentName, localName, options) => {
+                        return localName;
+                    }
                 }
             },
             {loader: 'sass-loader', options: {sourceMap: true}}
@@ -62,9 +63,10 @@ const getScssLoader = function () {
             {
                 loader: "typings-for-css-modules-loader",
                 options: {
-                    namedExport: true,
-                    camelCase: true,
-                    modules: true
+                    modules: true,
+                    getLocalIdent: (context, localIdentName, localName, options) => {
+                        return localName;
+                    }
                 }
             },
             {loader: 'sass-loader', options: {sourceMap: true}}
@@ -79,13 +81,23 @@ const getUrlLoader = function () {
     };
 };
 
+const getHtmlLoader = function () {
+    return {
+        test: /\.(html)$/,
+        use: {
+            loader: 'raw-loader'
+        }
+    }
+};
+
 const rules = {
     ts: getTsLoader,
     tsLint: getTsLintLoader,
     css: getCssLoader,
     sass: getSassLoader,
     scss: getScssLoader,
-    url: getUrlLoader
+    url: getUrlLoader,
+    html: getHtmlLoader
 };
 
 const configurer = function (loader, webpackRules) {

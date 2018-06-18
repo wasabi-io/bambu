@@ -1,55 +1,65 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {has, Props} from 'wasabi-common';
-import JSXUtil from 'wasabi-ui/lib/jsx/JSXUtil';
-import {bulma as IconStyle, HTMLComponent, HTMLSpanProps} from '../../';
-import FaIcon, {FaIconProps, IconSize, IconSizeValues} from './FaIcon';
+import {bulma as IconStyle, HTMLComponent, HTMLSpanProps, Size, sizeValues} from '../../';
+import {FaIconProps} from './FaIcon';
 
 export type IconOptions = string | FaIconProps | JSX.Element;
 
 /**
- * Refers Html Props and Additional Props.
+ * Refers Icon Props.
  */
 export interface IconProps extends HTMLSpanProps {
-    icon: string | IconOptions;
-    bSize?: string | IconSize;
-    elementRef?: any;
+    iconClassName?: string;
+    bSize?: string | Size;
+    stack?: boolean;
+    isLeft?: boolean;
+    isRight?: boolean;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Icon extends HTMLComponent<IconProps> {
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+
+    public static propTypes = {
         ...HTMLComponent.propTypes,
-        icon: PropTypes.any,
-        bSize: PropTypes.oneOf(IconSizeValues),
+        bSize: PropTypes.oneOf(sizeValues),
+        stack: PropTypes.bool,
+        iconClassName: PropTypes.string,
+        isLeft: PropTypes.bool,
+        isRight: PropTypes.bool
     };
 
     public static defaultProps = HTMLComponent.defaultProps;
 
-    public static renderIcon(icon: IconOptions, bSize?: string | IconSize) {
-        if (!has(icon)) {
-            return null;
-        }
-        if (typeof icon === 'string') {
-            return <FaIcon name={icon} bSize={bSize}/>;
-        }
-        if ((icon as any).type) {
-            if (JSXUtil.isJsx(icon)) {
-                return icon as JSX.Element;
-            }
-        }
-
-        return <FaIcon {...icon as FaIconProps} />;
-    }
-
     public render() {
-        const {bSize, icon, className, elementRef, ...props} = this.props;
+        const {
+            bSize,
+            stack,
+            iconClassName,
+            isLeft,
+            isRight,
+            className,
+            elementRef,
+            children, ...props
+        } = this.props;
 
         const classNames = ClassNames(
             IconStyle.icon,
+            IconStyle[bSize],
+            {
+                [`${IconStyle.isLeft}`]: isLeft,
+                [`${IconStyle.isRight}`]: isRight
+            },
             className
         );
 
-        return <span className={classNames} {...props} ref={elementRef}>{Icon.renderIcon(icon, bSize)}</span>;
+        const iconClassNames = ClassNames({"fa-stack": stack}, iconClassName);
+        return (
+            <span className={classNames} {...props} ref={elementRef}>
+                <span className={iconClassNames}>
+                {children}
+                </span>
+            </span>
+        );
     }
 }

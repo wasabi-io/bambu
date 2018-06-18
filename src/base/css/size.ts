@@ -35,5 +35,3 @@ export enum Size12 {
 }
 
 export const size12Values = Objects.values(Size12);
-
-

@@ -1,24 +1,23 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLAllAttributes, HTMLComponent} from "../../";
 
 export interface NavbarItemLinkProps extends HTMLAllAttributes {
     isActive?: boolean;
     isHiddenDesktop?: boolean;
     isHiddenMobile?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
-
 
 export default class NavbarItemLink extends React.Component<NavbarItemLinkProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         isActive: PropTypes.bool,
         isHiddenDesktop: PropTypes.bool,
-        isHiddenMobile: PropTypes.bool
+        isHiddenMobile: PropTypes.bool,
+        elementRef: PropTypes.func
     };
 
     public static defaultProps = {
@@ -42,7 +41,7 @@ export default class NavbarItemLink extends React.Component<NavbarItemLinkProps,
         );
 
         return (
-            <a className={classNames} {...inputProps}  ref={elementRef}>
+            <a className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </a>
         );

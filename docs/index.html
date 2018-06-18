@@ -3,12 +3,27 @@
 
 <head>
     <script>
-        if(window.location.pathname.indexOf("bambu/") === 0) {
-            document.write('<base href="/bambu/"/>');
+        var index = window.location.pathname.indexOf("#");
+        if(index === -1) {
+            index = window.location.pathname.length;
         }
+
+        var basePath = window.location.pathname.substring(0, index - 1);
+        index = basePath.indexOf("index.html");
+        if(index !== -1) {
+            basePath = window.location.pathname.substring(0, index - 1);
+        }
+
+        if(basePath.length > 1) {
+            if(basePath.lastIndexOf("/") !== basePath.length -1 ) {
+                basePath = basePath + "/";
+            }
+            document.write('<base href="' + basePath + '"/>');
+        }
+        window.basePath = basePath || "/";
     </script>
-    <!-- version: 0.6.201-beta.2 -->
-    <!-- build time: Sun May 13 2018 14:34:27 GMT+0300 (+03) -->
+    <!-- version: 0.7.1-beta.1 -->
+    <!-- build time: Mon Jun 18 2018 19:23:40 GMT+0300 (+03) -->
     <meta charset="UTF-8">
     <title>
         
@@ -16,13 +31,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="expires" content="0">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/2.4.85/css/materialdesignicons.min.css" crossorigin="anonymous" />
     
+
 </head>
 
 <body>
 
 <div id="app_container"></div>
 
-<script type="text/javascript" src="app.9ab145a601354b0b7e0c.js"></script></body>
+<script type="text/javascript" src="js/app/app.15bc8ad1b55dcc14d0e6.js"></script></body>
 
 </html>

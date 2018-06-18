@@ -1,17 +1,16 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from 'wasabi-common';
 import {bulma as SectionStyle, HTMLComponent, HTMLSectionProps, Size, sizeValues} from '../../';
 
 export interface SectionProps extends HTMLSectionProps {
     bSize?: string | Size;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Section extends React.Component<SectionProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         bSize: PropTypes.oneOf(sizeValues)
     };

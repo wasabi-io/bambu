@@ -1,16 +1,18 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as FooterStyle, HTMLComponent, HTMLFooterProps} from '../../';
 
 export interface FooterProps extends HTMLFooterProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Footer extends React.Component<FooterProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
+    public static propTypes = {
+        ...HTMLComponent.propTypes,
+        elementRef: PropTypes.func
+    };
 
     public static defaultProps = HTMLComponent.defaultProps;
 
@@ -20,7 +22,7 @@ export default class Footer extends React.Component<FooterProps, {}> {
         const classNames = ClassNames([FooterStyle.footer, className]);
 
         return (
-            <footer className={classNames} {...inputProps} ref={elementRef} >
+            <footer className={classNames} {...inputProps} ref={elementRef}>
                 {children}
             </footer>
         );

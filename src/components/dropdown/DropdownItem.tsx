@@ -1,35 +1,37 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
-import {bulma as DropdownStyle, HTMLComponent, HTMLDivProps} from '../../';
+import {bulma as DropdownStyle, HTMLAllAttributes, HTMLComponent} from '../../';
 
 /**
  * Refers Html Props and Additional Props.
  */
-export interface DropdownItemProps extends HTMLDivProps {
+export interface DropdownItemProps extends HTMLAllAttributes {
     tagName?: string;
     isActive?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
+/**
+ * Each single item of the dropdown, which can either be a `a` or a `div` in <code>{&lt;DropdownContent/&gt;}</code> component.
+ */
 export default class DropdownItem extends React.Component<DropdownItemProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         tagName: PropTypes.string,
         isActive: PropTypes.bool,
+        elementRef: PropTypes.func
     };
 
     public static defaultProps = {
         ...HTMLComponent.defaultProps,
-        tagName: 'a',
         isActive: false,
     };
 
     public render(): JSX.Element {
-        const {tagName, isActive, children, className, elementRef, ...ownProps} = this.props;
-
+        const {tagName, href, isActive, children, className, elementRef, ...ownProps} = this.props;
+        const tag = tagName ? tagName : (href ? "a" : "div");
         const classNames = ClassNames(
             DropdownStyle.dropdownItem,
             {
@@ -38,7 +40,7 @@ export default class DropdownItem extends React.Component<DropdownItemProps, {}>
             className
         );
 
-        return React.createElement(tagName, {
+        return React.createElement(tag, {
             className: classNames,
             ref: elementRef,
             ...ownProps

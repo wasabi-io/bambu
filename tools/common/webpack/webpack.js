@@ -61,10 +61,6 @@ function configure(config) {
         settings
             .webpack
             .plugins
-            .push(new webpack.optimize.UglifyJsPlugin({output: {comments: false}, minimize: true}));
-        settings
-            .webpack
-            .plugins
             .push(new webpack.optimize.OccurrenceOrderPlugin());
     }
     return settings;

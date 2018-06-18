@@ -1,16 +1,18 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as PanelStyle, HTMLComponent, HTMLNavProps} from '../../';
 
 export interface PanelProps extends HTMLNavProps {
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Panel extends React.Component<PanelProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
+    public static propTypes = {
+        ...HTMLComponent.propTypes,
+        elementRef: PropTypes.func
+    };
 
     public static defaultProps = HTMLComponent.defaultProps;
 

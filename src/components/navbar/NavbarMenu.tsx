@@ -1,19 +1,19 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as NavbarStyle, HTMLComponent, HTMLDivProps} from "../../";
 
 export interface NavbarMenuProps extends HTMLDivProps {
     isActive?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class NavbarMenu extends React.Component<NavbarMenuProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
-        isActive: PropTypes.bool
+        isActive: PropTypes.bool,
+        elementRef: PropTypes.func
     };
 
     public static defaultProps = {

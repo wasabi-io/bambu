@@ -1,7 +1,6 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as TableStyle, HTMLComponent, HTMLTableProps} from '../../';
 
 export interface TableProps extends HTMLTableProps {
@@ -10,13 +9,13 @@ export interface TableProps extends HTMLTableProps {
     isNarrow?: boolean;
     isHoverable?: boolean;
     isFullwidth?: boolean;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 
 export default class Table extends React.Component<TableProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         isBordered: PropTypes.bool,
         isNarrow: PropTypes.bool,

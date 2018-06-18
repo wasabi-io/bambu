@@ -33,12 +33,12 @@ export interface ImageProps extends HTMLImgProps {
     ratio?: string | ImageRatio;
     bSize?: string | ImageSize;
     src: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
 export default class Image extends React.Component<ImageProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
         alt: PropTypes.string,
         pClassName: PropTypes.string,

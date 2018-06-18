@@ -5,8 +5,9 @@
     "no-console": [
       false
     ],
+    "no-eval": false,
     "ter-indent": [
-      true,
+      false,
       4
     ],
     "align": [

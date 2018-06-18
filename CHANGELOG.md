@@ -1,5 +1,39 @@
 ## CHANGELOG
 
+#### v0.7.1-beta.1 Developing...
+
+* created new showcase.
+* fixed some problem.
+* added *CodeMirror* component to show code as editable.
+* added *transformer* to transform code from typescript & react to es5 javascript.
+* added *Preview* component to show result of executed code.
+* created *Editor* component for showcase playground code.
+* fixed *Highlight* component problems.
+* added *Layer* component to show children as vertical parts which are  wrapped with *Content* in a *Box* component.
+* added finding modules in bambu and generating modules json object.
+* changed `elementRef` property type as function.
+* removed *FaIcon* from *Icon* component. You should give it as a children.
+* removed *MaIcon* component. https://materialdesignicons.com/getting-started
+* fixed *Icon* problems in library and documentation.
+* added `fontawesome` and `materialdesignicons` information to *README.md* file.
+* Added [Documentation](./md/Documentation.md)  for Some component.
+* Added [Tests](./md/Tests.md)  for Some component.
+* Added React Doc Generator to Generator React Docs.
+* Upgraded webpack version to build Documentation.
+* Upgraded all dependencies.
+* Changed getting style of `bulma`.
+* reconfigured test. changed from `mocha` as `jest`.
+* added *Props Generator*
+* added `Grid` component to show Props.
+* added js-criteria to query properties on datagrid.
+* added ReactDocs continuous generation. (used file watcher.)
+* added *LazyComponent* to load samples dynamically.
+* upgraded dependencies.
+* added travis configuration.
+* added `form` components documentation.
+* fixed component problems.
+* upgraded contributor guide.
+
 #### v0.6.201-beta.2
 * solved https://github.com/wasabi-io/bambu/issues/6
 * added missing *propTypes*

@@ -1,16 +1,18 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from 'wasabi-common';
 import {bulma as BoxStyle, HTMLComponent, HTMLDivProps} from '../../';
 
-export interface BoxProps extends HTMLDivProps{
-    elementRef?: any;
+export interface BoxProps extends HTMLDivProps {
+    elementRef?: (ref: any) => any;
 }
 
 export default class Box extends React.Component<BoxProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = HTMLComponent.propTypes;
+    public static propTypes = {
+        ...HTMLComponent.propTypes,
+        elementRef: PropTypes.func
+    };
 
     public static defaultProps = HTMLComponent.defaultProps;
 
@@ -20,10 +22,9 @@ export default class Box extends React.Component<BoxProps, {}> {
         const classNames = ClassNames(BoxStyle.box, className);
 
         return (
-            <div className={classNames} {...boxProps} ref={elementRef} >
+            <div className={classNames} {...boxProps} ref={elementRef}>
                 {children}
             </div>
         );
     }
 }
-

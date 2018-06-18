@@ -1,20 +1,24 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Props} from "wasabi-common";
 import {bulma as ModalStyle, HTMLComponent, HTMLHeaderProps} from '../../';
 
 export interface ModalCardTitleProps extends HTMLHeaderProps {
     header?: string;
-    elementRef?: any;
+    elementRef?: (ref: any) => any;
 }
 
+/**
+ * The title of <code>{&lt;ModalCard />} in {<ModalCardHeader /&gt;}</code>
+ */
 export default class ModalCardTitle extends React.Component<ModalCardTitleProps, {}> {
 
-    public static propTypes: Props<PropTypes.Requireable<any> | PropTypes.Validator<any>> = {
+    public static propTypes = {
         ...HTMLComponent.propTypes,
-        header: PropTypes.string
+        header: PropTypes.string,
+        elementRef: PropTypes.func
     };
+
     public static defaultProps = HTMLComponent.defaultProps;
 
     public render(): JSX.Element {
@@ -23,7 +27,7 @@ export default class ModalCardTitle extends React.Component<ModalCardTitleProps,
         const classNames = ClassNames(ModalStyle.modalCardTitle, className);
 
         return (
-            <header className={classNames} {...modalCardTitleProps}  ref={elementRef}>
+            <header className={classNames} {...modalCardTitleProps} ref={elementRef}>
                 {children}
             </header>
         );
