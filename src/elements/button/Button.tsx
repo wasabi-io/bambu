@@ -21,9 +21,11 @@ export interface ButtonProps extends HTMLAllAttributes {
     bSize?: string | Size;
     state?: string | State;
     isLink?: boolean;
+    isText?: boolean;
     isFullwidth?: boolean;
     isOutlined?: boolean;
     isInverted?: boolean;
+    isStatic?: boolean;
     disabled?: boolean;
     isRounded?: boolean;
     elementRef?: (ref: any) => any;
@@ -40,9 +42,11 @@ export default class Button extends React.Component<ButtonProps, {}> {
         bSize: PropTypes.oneOf(sizeValues),
         state: PropTypes.oneOf(stateValues),
         isLink: PropTypes.bool,
+        isText: PropTypes.bool,
         isFullwidth: PropTypes.bool,
         isOutlined: PropTypes.bool,
         isInverted: PropTypes.bool,
+        isStatic: PropTypes.bool,
         disabled: PropTypes.bool,
         isRounded: PropTypes.bool,
         elementRef: PropTypes.func
@@ -52,8 +56,8 @@ export default class Button extends React.Component<ButtonProps, {}> {
 
     public render(): JSX.Element {
         const {
-            tagName, color, icon, iconSize, iconStyle, bSize, state, isLink, isFullwidth, isOutlined,
-            isInverted, disabled, isRounded, elementRef, href, className, onClick, children, ...props
+            tagName, color, icon, iconSize, iconStyle, bSize, state, isLink, isText, isFullwidth, isOutlined,
+            isInverted, isStatic, disabled, isRounded, elementRef, href, className, onClick, children, ...props
         } = this.props;
 
         const classNames = ClassNames(
@@ -63,9 +67,11 @@ export default class Button extends React.Component<ButtonProps, {}> {
             ButtonStyle[bSize],
             {
                 [`${ButtonStyle.isLink}`]: isLink,
+                [`${ButtonStyle.isText}`]: isText,
                 [`${ButtonStyle.isFullwidth}`]: isFullwidth,
                 [`${ButtonStyle.isOutlined}`]: isOutlined,
                 [`${ButtonStyle.isInverted}`]: isInverted,
+                [`${ButtonStyle.isStatic}`]: isStatic,
                 [`${ButtonStyle.isRounded}`]: isRounded,
             },
             className,

@@ -2,12 +2,11 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import Style from './Style';
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import {observable} from "mobx";
 import * as highlight from "highlight.js";
 import {HTMLDivProps} from "bambu";
 import {observer} from "mobx-react";
-import language from "wasabi-ui/lib/i18n/Language";
 
 export interface HighlightProps extends HTMLDivProps {
     withScroll?: boolean;
@@ -43,14 +42,14 @@ export default class Highlight extends Stateless<HighlightProps> {
     }
 
     public render(): JSX.Element {
-        const {className} = this.props;
+        const {className, language} = this.props;
         const buttonClassName = ClassNames(Style.hljsCopy, {[`${Style.hljsCopyHovered}`]: this.isHovered});
         const preClassName = ClassNames(Style.hljsPre, {
             [`${Style.hljsPreHovered}`]: this.isHovered,
             [`${Style.hljsPreScroll}`]: this.props.withScroll
         });
         return (
-            <div id={this.nodeId} className={ClassNames(Style.hljsContent, className)}>
+            <div key={`highlight-layer-${this.id}`} id={this.nodeId} className={ClassNames(Style.hljsContent, className)}>
                 <button
                     className={buttonClassName}
                     onMouseOver={() => this.isHovered = true}
@@ -59,7 +58,7 @@ export default class Highlight extends Stateless<HighlightProps> {
                     copy
                 </button>
                 <pre className={preClassName}>
-                      <code id={this.codeId} className={Style[`language-${this.props.language}`]} data-lang={language}>
+                      <code id={this.codeId} className={Style[`language-${language}`]} data-lang={language}>
                         {this.props.children}
                       </code>
                 </pre>

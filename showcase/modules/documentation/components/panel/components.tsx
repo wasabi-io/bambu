@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/components/panel",
     name: "panel",
-    title: "Panel",
-    subTitle: <span key="components-panel-parent">A composable <strong>panel</strong>, for compact controls</span>,
+    title: () => "Panel",
+    subTitle: (key: string) => <span key={key}>A composable <strong>panel</strong>, for compact controls</span>,
     icon: {
         name: "list-alt",
         iconClassName: pageStyle.hasTextGreyDark

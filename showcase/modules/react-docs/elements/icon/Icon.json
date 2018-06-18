@@ -36,6 +36,26 @@
       {
         "defaultValue": null,
         "description": "",
+        "name": "isLeft",
+        "required": false,
+        "type": {
+          "name": "boolean",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "isRight",
+        "required": false,
+        "type": {
+          "name": "boolean",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
         "name": "elementRef",
         "required": false,
         "type": {

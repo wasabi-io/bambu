@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/elements/notification",
     name: "notification",
-    title: "Notification",
-    subTitle: <span>Bold <strong>notification</strong> blocks, to alert your users of something</span>,
+    title: () => "Notification",
+    subTitle: (key: string) => <span key={key}>Bold <strong>notification</strong> blocks, to alert your users of something</span>,
     icon: {
         name: "exclamation-triangle",
         iconClassName: pageStyle.hasTextOrange

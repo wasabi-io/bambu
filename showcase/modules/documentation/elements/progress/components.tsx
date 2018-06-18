@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/elements/progress",
     name: "progress",
-    title: "Progress Bar",
-    subTitle: <span>Native HTML <strong>progress</strong> bars</span>,
+    title: () => "Progress Bar",
+    subTitle: (key: string) => <span key={key}>Native HTML <strong>progress</strong> bars</span>,
     icon: {
         name: "spinner",
         iconClassName: pageStyle.hasTextWarning

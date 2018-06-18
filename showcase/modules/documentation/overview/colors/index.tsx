@@ -1,16 +1,23 @@
 import * as React from "react";
-import {Stateless} from "wasabi-ui";
-import Highlight from "component/code/highlight/Highlight";
+import Stateless from "component/Stateless";
+import {Content} from "bambu/lib/elements/content";
 
-const codeText = require("!raw-loader?modules!./index");
-
-export default class Index extends Stateless <any> {
+export default class Colors extends Stateless <any> {
     public render() {
-
         return (
-            <Highlight language="es6">
-                {codeText}
-            </Highlight>
+            <div>
+                <Content>
+                    <br/>
+                    to learn more about colors
+                    &nbsp;
+                    <wbr/>
+                    <a target="_blank" href="https://bulma.io/documentation/overview/colors/">
+                        https://bulma.io/documentation/
+                        <wbr/>overview/
+                        <wbr/>colors
+                    </a>
+                </Content>
+            </div>
         );
     }
 }

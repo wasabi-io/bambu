@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/form/radio",
     name: "radio",
-    title: "Radio",
-    subTitle: <span>The mutually exclusive <strong>radio buttons</strong> in their native format</span>,
+    title: () => "Radio",
+    subTitle: (key: string) => <span key={key}>The mutually exclusive <strong>radio buttons</strong> in their native format</span>,
     icon: {
         name: "dot-circle",
         iconClassName: pageStyle.hasTextLink

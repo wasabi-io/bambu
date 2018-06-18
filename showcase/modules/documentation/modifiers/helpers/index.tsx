@@ -1,10 +1,23 @@
 import * as React from "react";
-import {Stateless} from "wasabi-ui";
+import Stateless from "component/Stateless";
+import {Content} from "bambu/lib/elements/content";
 
-export default class Index extends Stateless <any> {
+export default class Helpers extends Stateless <any> {
     public render() {
         return (
-            <div></div>
+            <div>
+                <Content>
+                    <br/>
+                    to learn more about helpers
+                    &nbsp;
+                    <wbr/>
+                    <a target="_blank" href="https://bulma.io/documentation/modifiers/helpers/">
+                        https://bulma.io/documentation/
+                        <wbr/>modifiers/
+                        <wbr/>helpers
+                    </a>
+                </Content>
+            </div>
         );
     }
 }

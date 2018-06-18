@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/overview/variables",
     name: "variables",
-    title: "Variables",
-    subTitle: <span>See how Bulma uses <strong>Sass variables</strong> to allow easy customization</span>,
+    title: () => "Variables",
+    subTitle: (key: string) => <span key={key}>See how Bulma uses <strong>Sass variables</strong> to allow easy customization</span>,
     icon: {
         name: "cogs",
         iconClassName: pageStyle.hasTextGrey,

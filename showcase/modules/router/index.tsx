@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Stateless} from "wasabi-ui";
+import Stateless from "component/Stateless";
 import DocStore from "../store/DocStore";
 import {toJS} from "mobx";
 import pageStyle from "../../css/pageStyle";

@@ -1,6 +1,6 @@
 import * as ReactDOMServer from "react-dom/server";
 import * as React from "react";
-import {Stateless} from "wasabi-ui";
+import Stateless from "component/Stateless";
 import {action, observable} from "mobx";
 import {observer} from "mobx-react";
 import {has} from "wasabi-common";

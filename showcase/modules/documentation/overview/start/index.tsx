@@ -1,16 +1,15 @@
 import * as classNames from "classnames";
 import * as React from "react";
-import {Stateless} from "wasabi-ui";
+import Stateless from "component/Stateless";
 import {bulma, Color} from "bambu";
-import Highlight from "component/code/highlight/Highlight";
 import {Message, MessageBody} from "bambu/lib/components/message";
 import {Content} from "bambu/lib/elements/content";
 import {FaIcon, Icon} from "bambu/lib/elements/icon";
 import pageStyle from "css/pageStyle";
-import DocMediaHighlight from "../../../view/highlight/DocMediaHighlight";
-import DocMessageHighlight from "../../../view/highlight/DocMessageHighlight";
-
-const packageJson = require("../../../../../package.json");
+import DocMediaHighlight from "modules/view/highlight/DocMediaHighlight";
+import DocMessageHighlight from "modules/view/highlight/DocMessageHighlight";
+import BulletTree from "component/elements/BulletTree";
+import bulletItems from "./bulletItems";
 
 const webpackCssModuleText = `{
     test: /\.css$/,
@@ -27,37 +26,15 @@ const webpackCssModuleText = `{
 
 const fontAwesomeScript = '<script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>';
 
-export default class Index extends Stateless <any> {
+export default class GettingStarted extends Stateless <any> {
     public render() {
         return (
             <div>
                 <div className="content">
-                    <p>
-                        <h2>Installation</h2>
-                        There are required <strong>3</strong> steps to <strong>get started</strong> with <strong>bambu</strong>. You have to:
-                    </p>
-                    <ol>
-                        <li>
-                            use <strong>npm</strong> or <strong>yarn</strong> to install dependencies of the <strong>bambu</strong> package.
-                            <ul>
-                                <li><strong>bulma :</strong> ( version {packageJson.peerDependencies["bulma"]} )</li>
-                                <li><strong>font-awesome :</strong> ( version {packageJson.peerDependencies["font-awesome"]} )</li>
-                                <li><strong>react :</strong> ( version {packageJson.peerDependencies["react"]} )</li>
-                                <li><strong>prop-types :</strong> ( version {packageJson.peerDependencies["prop-types"]} )</li>
-                            </ul>
-                        </li>
-                        <li>
-                            use <strong>npm</strong> or <strong>yarn</strong> to install the <strong>bambu</strong> package
-                        </li>
-                        <li>
-                            provide reading <strong>css</strong> files as modules.
-                            <div><strong>Note :</strong> <strong>bambu</strong> use <strong>bulma.css</strong> from under of node_modules.
-                                <Highlight language="javascript">
-                                    import bulma from "bulma/css/bulma.css"
-                                </Highlight>
-                            </div>
-                        </li>
-                    </ol>
+                    <h2>Installation</h2>
+                    There are required <strong>3</strong> steps to <strong>getting started</strong> with <strong>bambu</strong>. You have to:
+
+                    <BulletTree items={bulletItems}/>
                 </div>
 
                 <DocMediaHighlight

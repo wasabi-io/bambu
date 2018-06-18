@@ -1,6 +1,6 @@
 import * as ClassNames from "classnames";
 import * as React from "react";
-import {Stateless} from "wasabi-ui";
+import Stateless from "component/Stateless";
 import SearchInput from "../../../input/search/SearchInput";
 import GridSearchItem from "../GridSearchItem";
 import searchStyle from "./searchStyle";

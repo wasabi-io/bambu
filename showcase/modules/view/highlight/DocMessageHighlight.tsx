@@ -24,12 +24,14 @@ const DocMessageHighlight: React.SFC<DocMessageHighlightProps> = ((props: DocMes
             )}
             <MessageBody>
                 {children}
-                {codes && props.codes.map((code: string, index: number) => ([
-                    <Highlight key={`highlight-${index}`} language={lang}>
-                        {code}
-                    </Highlight>,
-                    <br/>
-                ]))}
+                {codes && props.codes.map((code: string, index: number) => (
+                    <div key={`highlight-container-${index}`}>
+                        <Highlight language={lang}>
+                            {code}
+                        </Highlight>
+                        <br/>
+                    </div>
+                ))}
             </MessageBody>
         </Message>
     );

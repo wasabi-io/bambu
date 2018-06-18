@@ -1,6 +1,6 @@
 import * as React from 'react';
 import {Color, Size, State} from 'bambu/lib/base/css';
-import {Input, InputProps} from 'bambu/lib/elements/form';
+import {Input, InputProps} from 'bambu/lib/form';
 
 import BaseInput, {BaseInputProps} from './BaseInput';
 import {IEvent} from "../field/Field";

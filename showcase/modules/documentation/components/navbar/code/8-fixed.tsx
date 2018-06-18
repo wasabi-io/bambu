@@ -1,7 +1,7 @@
 import * as React from "react";
 import {Navbar, NavbarBrand, NavbarBurger, NavbarDivider, NavbarEnd, NavbarItem, NavbarLink, NavbarMenu, NavbarStart} from "bambu/lib/components/navbar";
 import NavbarDropdown from "bambu/lib/components/navbar/NavbarDropdown";
-import {Control, Field} from "bambu/lib/elements/form";
+import {Control, Field} from "bambu/lib/form";
 import {Button} from "bambu/lib/elements/button";
 import {FaIconStyle} from "bambu/lib/elements/icon";
 import {Color, Vertical} from "bambu";

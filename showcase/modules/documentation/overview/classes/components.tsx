@@ -6,8 +6,8 @@ import {FaIconStyle} from "bambu/lib/elements/icon";
 const components: PagesProps = {
     module: "/overview/classes",
     name: "classes",
-    title: "Classes",
-    subTitle: <span>Bulma is simply a <strong>collection</strong> of CSS classes. Write the HTML code you want.</span>,
+    title: () => "Classes",
+    subTitle: (key: string) => <span key={key}>Bulma is simply a <strong>collection</strong> of CSS classes. Write the HTML code you want.</span>,
     icon: {
         name: "css3",
         iconStyle: FaIconStyle.brands,

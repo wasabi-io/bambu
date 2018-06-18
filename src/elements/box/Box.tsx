@@ -28,4 +28,3 @@ export default class Box extends React.Component<BoxProps, {}> {
         );
     }
 }
-

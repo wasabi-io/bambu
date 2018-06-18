@@ -3,7 +3,7 @@ import * as PropTypes from "prop-types";
 import * as React from "react";
 import {Props} from "wasabi-common";
 import {observer} from "mobx-react";
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import {Table} from "bambu/lib/elements/table";
 import gridStyle from "./gridStyle";
 import {HTMLComponent, HTMLSectionProps, Vertical} from "bambu";

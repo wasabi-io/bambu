@@ -18,13 +18,13 @@ export default class Index extends React.Component<{}, {}> {
                 </CardImage>
                 <CardContent>
                     <Media>
-                        <MediaLeft>
+                        <MediaLeft key={`media-left-1-basic`}>
                             <Image bSize={ImageSize.is48X48}
                                    src="https://bulma.io/images/placeholders/96x96.png"
                                    alt="Placeholder image"
                             />
                         </MediaLeft>
-                        <MediaContent>
+                        <MediaContent key={`media-content-1-basic`}>
                             <Title key="title" bSize={Size6.is4}>John Smith</Title>
                             <SubTitle key={"subtitle"} bSize={Size6.is6}>@johnsmith</SubTitle>
                         </MediaContent>

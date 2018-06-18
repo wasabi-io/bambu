@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/components/breadcrumb",
     name: "breadcrumb",
-    title: "BreadCrumb",
-    subTitle: <span key="components-breadcrumb-parent">A simple <strong>breadcrumb</strong> component to improve your navigation experience</span>,
+    title: () => "BreadCrumb",
+    subTitle: (key: string) => <span key={key}>A simple <strong>breadcrumb</strong> component to improve your navigation experience</span>,
     icon: {
         name: "ellipsis-h",
         iconClassName: pageStyle.hasTextStar

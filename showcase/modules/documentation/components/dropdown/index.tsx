@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Stateless} from "wasabi-ui";
+import Stateless from "component/Stateless";
 import pageStyle from "css/pageStyle";
 import {Message, MessageBody} from "bambu/lib/components/message";
 import {Color} from "bambu";

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {Color, Size, State} from 'bambu/lib/base/css';
-import {Input, InputProps} from 'bambu/lib/elements/form';
+import {Input, InputProps} from 'bambu/lib/form';
 import BaseInput, {BaseInputProps} from '../BaseInput';
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import gridStyle from "../../grid/gridStyle";
 import * as ClassNames from "classnames";
 import searchStyle from "./searchStyle";

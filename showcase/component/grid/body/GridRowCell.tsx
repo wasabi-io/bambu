@@ -1,13 +1,14 @@
 import * as ClassNames from "classnames";
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import {Cell, CellProps} from "bambu/lib/elements/table";
 import {has, Props} from "wasabi-common";
 import GridField, {GridRowCellRenderer} from "../GridField";
 import gridStyle from "../gridStyle";
 import {observer} from "mobx-react";
 import {HTMLComponent} from "bambu";
+import {toJS} from "mobx";
 
 export interface GridRowCellProps extends CellProps {
     name: string;
@@ -33,7 +34,6 @@ export default class GridRowCell extends Stateless<GridRowCellProps> {
     };
 
     public render() {
-        console.log("GridRowCell rendered.");
         const {name, item, index, field, renderer, className, children, ...props} = this.props;
         const classNames = ClassNames(
             gridStyle.bGridRowCell,
@@ -43,7 +43,7 @@ export default class GridRowCell extends Stateless<GridRowCellProps> {
         const cellRenderer = field.renderer || renderer;
 
         return (
-            <Cell key={`grid-row-cell-${name}`} className={classNames} {...field.cell} {...props}>
+            <Cell key={`grid-row-cell-${name}`} className={classNames} {...toJS(field.cell)} {...props}>
                 {`${cellRenderer(name, item, index, field)}`}
             </Cell>
         );

@@ -1,6 +1,6 @@
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import {Column, Columns} from "bambu/lib/grid/column";
 import formManager from "./FormManager";
 import {Color} from "bambu";

@@ -28,6 +28,10 @@
 * added js-criteria to query properties on datagrid.
 * added ReactDocs continuous generation. (used file watcher.)
 * added *LazyComponent* to load samples dynamically.
+* upgraded dependencies.
+* added travis configuration.
+* added `form` components documentation.
+* fixed component problems.
 
 #### v0.6.201-beta.2
 * solved https://github.com/wasabi-io/bambu/issues/6

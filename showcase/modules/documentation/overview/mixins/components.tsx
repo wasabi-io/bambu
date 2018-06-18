@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/overview/mixins",
     name: "mixins",
-    title: "Mixins",
-    subTitle: <span>Utility mixins for custom elements and responsive helpers</span>,
+    title: () => "Mixins",
+    subTitle: (key: string) => <span key={key}>Utility mixins for custom elements and responsive helpers</span>,
     icon: {
         name: "plus",
         iconClassName: pageStyle.hasTextPurple,

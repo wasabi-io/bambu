@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/elements/image",
     name: "image",
-    title: "Image",
-    subTitle: <span>A container for <strong>responsive images</strong></span>,
+    title: () => "Image",
+    subTitle: (key: string) => <span key={key}>A container for <strong>responsive images</strong></span>,
     icon: {
         name: "image",
         iconClassName: pageStyle.hasTextPurple

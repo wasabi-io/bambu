@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/columns/nesting",
     name: "nesting",
-    title: "Nesting",
-    subTitle: <span>A simple way to build <strong>responsive columns</strong></span>,
+    title: () => "Nesting",
+    subTitle: (key: string) => <span key={key}>A simple way to build <strong>responsive columns</strong></span>,
     icon: {
         name: "sitemap",
         iconClassName: pageStyle.hasTextDanger

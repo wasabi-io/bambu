@@ -1,10 +1,10 @@
 import * as React from "react";
-import {Stateless} from "wasabi-ui";
+import Stateless from "component/Stateless";
 
 export default class Index extends Stateless<{}> {
     public render() {
         return (
-            <div>Elements</div>
+            <div></div>
         );
     }
 }

@@ -6,18 +6,18 @@ import {bulma} from "bambu";
 const components: PagesProps = {
     module: "/elements",
     name: "elements",
-    title: "Elements",
+    title: () => "Elements",
     icon: {
         name: "cube",
         iconClassName: bulma.hasTextInfo,
     },
-    subTitle: <span>Essential interface elements that only require a <strong>single CSS class</strong></span>,
+    subTitle: (key: string) => <span key={key}>Essential interface elements that only require a <strong>single CSS class</strong></span>,
     children: {
         box: {
             module: "/elements/box",
             name: "box",
-            title: "Box",
-            subTitle: <span>A white <strong>box</strong> to contain other elements</span>,
+            title: () => "Box",
+            subTitle: (key: string) => <span key={key}>A white <strong>box</strong> to contain other elements</span>,
             icon: {
                 name: "square",
                 iconClassName: pageStyle.hasTextGrey
@@ -26,8 +26,8 @@ const components: PagesProps = {
         button: {
             module: "/elements/button",
             name: "button",
-            title: "Button",
-            subTitle: <span>The classic <strong>button</strong>, in different colors, sizes, and states</span>,
+            title: () => "Button",
+            subTitle: (key: string) => <span key={key}>The classic <strong>button</strong>, in different colors, sizes, and states</span>,
             icon: {
                 name: "hand-pointer",
                 iconClassName: pageStyle.hasTextSuccess
@@ -36,8 +36,8 @@ const components: PagesProps = {
         content: {
             module: "/elements/content",
             name: "content",
-            title: "Content",
-            subTitle: <span>A single class to handle <strong>WYSIWYG</strong> generated content, where only <strong>HTML tags</strong> are available</span>,
+            title: () => "Content",
+            subTitle: (key: string) => <span key={key}>A single class to handle <strong>WYSIWYG</strong> generated content, where only <strong>HTML tags</strong> are available</span>,
             icon: {
                 name: "align-left",
                 iconClassName: pageStyle.hasTextPrimary
@@ -46,8 +46,8 @@ const components: PagesProps = {
         delete: {
             module: "/elements/delete",
             name: "delete",
-            title: "Delete",
-            subTitle: <span> A versatile <strong>delete</strong> cross</span>,
+            title: () => "Delete",
+            subTitle: (key: string) => <span key={key}> A versatile <strong>delete</strong> cross</span>,
             icon: {
                 name: "times-circle",
                 iconClassName: pageStyle.hasTextDanger
@@ -56,8 +56,8 @@ const components: PagesProps = {
         icon: {
             module: "/elements/icon",
             name: "icon",
-            title: "Icon",
-            subTitle: <span>Compatible with all icon font libraries, including <strong>Font Awesome 5</strong></span>,
+            title: () => "Icon",
+            subTitle: (key: string) => <span key={key}>Compatible with all icon font libraries, including <strong>Font Awesome 5</strong></span>,
             icon: {
                 name: "font-awesome",
                 iconClassName: pageStyle.hasTextLink
@@ -66,8 +66,8 @@ const components: PagesProps = {
         image: {
             module: "/elements/image",
             name: "image",
-            title: "Image",
-            subTitle: <span>A container for <strong>responsive images</strong></span>,
+            title: () => "Image",
+            subTitle: (key: string) => <span key={key}>A container for <strong>responsive images</strong></span>,
             icon: {
                 name: "image",
                 iconClassName: pageStyle.hasTextPurple
@@ -76,8 +76,8 @@ const components: PagesProps = {
         notification: {
             module: "/elements/notification",
             name: "notification",
-            title: "Notification",
-            subTitle: <span>Bold <strong>notification</strong> blocks, to alert your users of something</span>,
+            title: () => "Notification",
+            subTitle: (key: string) => <span key={key}>Bold <strong>notification</strong> blocks, to alert your users of something</span>,
             icon: {
                 name: "exclamation-triangle",
                 iconClassName: pageStyle.hasTextOrange
@@ -86,8 +86,8 @@ const components: PagesProps = {
         progress: {
             module: "/elements/progress",
             name: "progress",
-            title: "Progress Bar",
-            subTitle: <span>Native HTML <strong>progress</strong> bars</span>,
+            title: () => "Progress Bar",
+            subTitle: (key: string) => <span key={key}>Native HTML <strong>progress</strong> bars</span>,
             icon: {
                 name: "spinner",
                 iconClassName: pageStyle.hasTextWarning
@@ -96,8 +96,8 @@ const components: PagesProps = {
         table: {
             module: "/elements/table",
             name: "table",
-            title: "Table",
-            subTitle: <span>The inevitable HTML <strong>table</strong>, with special case cells</span>,
+            title: () => "Table",
+            subTitle: (key: string) => <span key={key}>The inevitable HTML <strong>table</strong>, with special case cells</span>,
             icon: {
                 name: "table",
                 iconClassName: pageStyle.hasTextInfo
@@ -106,8 +106,8 @@ const components: PagesProps = {
         tag: {
             module: "/elements/tag",
             name: "tag",
-            title: "Tag",
-            subTitle: <span>Small <strong>tag labels</strong> to insert anywhere</span>,
+            title: () => "Tag",
+            subTitle: (key: string) => <span key={key}>Small <strong>tag labels</strong> to insert anywhere</span>,
             icon: {
                 name: "tag",
                 iconClassName: pageStyle.hasTextSuccess
@@ -116,8 +116,8 @@ const components: PagesProps = {
         title: {
             module: "/elements/title",
             name: "title",
-            title: "Title",
-            subTitle: <span>Simple <strong>headings</strong> to add depth to your page</span>,
+            title: () => "Title",
+            subTitle: (key: string) => <span key={key}>Simple <strong>headings</strong> to add depth to your page</span>,
             icon: {
                 name: "heading",
                 iconClassName: pageStyle.hasTextBlack

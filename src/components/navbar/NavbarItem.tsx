@@ -47,6 +47,7 @@ export default class NavbarItem extends React.Component<NavbarItemProps, {}> {
         );
 
         return React.createElement(tag, {
+            href,
             className: classNames,
             ref: elementRef,
             ...navbarItemProps

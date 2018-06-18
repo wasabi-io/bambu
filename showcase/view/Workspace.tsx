@@ -1,5 +1,5 @@
 import * as React from "react";
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import {withRouter} from "react-router-dom";
 import NavBar from "./NavBar";
 
@@ -9,6 +9,10 @@ class Workspace extends Stateless<any> {
             <div>
                 <NavBar basePath={this.getUrl()}/>
                 {this.props.children}
+                <br/>
+                <br/>
+                <br/>
+                <br/>
             </div>
         );
     }

@@ -145,23 +145,6 @@ import * as _elements_delete_Delete from "bambu/lib/elements/delete/Delete";
 import * as _elements_delete_index from "bambu/lib/elements/delete/index";
 import * as _elements_delete_ from "bambu/lib/elements/delete/";
 import * as _elements_delete from "bambu/lib/elements/delete";
-import * as _elements_form_Control from "bambu/lib/elements/form/Control";
-import * as _elements_form_ControlLabel from "bambu/lib/elements/form/ControlLabel";
-import * as _elements_form_Field from "bambu/lib/elements/form/Field";
-import * as _elements_form_FieldBody from "bambu/lib/elements/form/FieldBody";
-import * as _elements_form_FieldHelp from "bambu/lib/elements/form/FieldHelp";
-import * as _elements_form_FieldLabel from "bambu/lib/elements/form/FieldLabel";
-import * as _elements_form_Form from "bambu/lib/elements/form/Form";
-import * as _elements_form_index from "bambu/lib/elements/form/index";
-import * as _elements_form_ from "bambu/lib/elements/form/";
-import * as _elements_form from "bambu/lib/elements/form";
-import * as _elements_form_input_Input from "bambu/lib/elements/form/input/Input";
-import * as _elements_form_input_TextArea from "bambu/lib/elements/form/input/TextArea";
-import * as _elements_form_input_file_FileUpload from "bambu/lib/elements/form/input/file/FileUpload";
-import * as _elements_form_input_index from "bambu/lib/elements/form/input/index";
-import * as _elements_form_input_ from "bambu/lib/elements/form/input/";
-import * as _elements_form_input from "bambu/lib/elements/form/input";
-import * as _elements_form_input_select_Select from "bambu/lib/elements/form/input/select/Select";
 import * as _elements_icon_FaIcon from "bambu/lib/elements/icon/FaIcon";
 import * as _elements_icon_FaIconList from "bambu/lib/elements/icon/FaIconList";
 import * as _elements_icon_FaIconListItem from "bambu/lib/elements/icon/FaIconListItem";
@@ -202,6 +185,41 @@ import * as _elements_title_Title from "bambu/lib/elements/title/Title";
 import * as _elements_title_index from "bambu/lib/elements/title/index";
 import * as _elements_title_ from "bambu/lib/elements/title/";
 import * as _elements_title from "bambu/lib/elements/title";
+import * as _form_Control from "bambu/lib/form/Control";
+import * as _form_ControlLabel from "bambu/lib/form/ControlLabel";
+import * as _form_Field from "bambu/lib/form/Field";
+import * as _form_FieldBody from "bambu/lib/form/FieldBody";
+import * as _form_FieldHelp from "bambu/lib/form/FieldHelp";
+import * as _form_FieldLabel from "bambu/lib/form/FieldLabel";
+import * as _form_Form from "bambu/lib/form/Form";
+import * as _form_index from "bambu/lib/form/index";
+import * as _form_ from "bambu/lib/form/";
+import * as _form from "bambu/lib/form";
+import * as _form_input_Input from "bambu/lib/form/input/Input";
+import * as _form_input_checkbox_CheckBox from "bambu/lib/form/input/checkbox/CheckBox";
+import * as _form_input_checkbox_index from "bambu/lib/form/input/checkbox/index";
+import * as _form_input_checkbox_ from "bambu/lib/form/input/checkbox/";
+import * as _form_input_checkbox from "bambu/lib/form/input/checkbox";
+import * as _form_input_file_FileUpload from "bambu/lib/form/input/file/FileUpload";
+import * as _form_input_file_index from "bambu/lib/form/input/file/index";
+import * as _form_input_file_ from "bambu/lib/form/input/file/";
+import * as _form_input_file from "bambu/lib/form/input/file";
+import * as _form_input_index from "bambu/lib/form/input/index";
+import * as _form_input_ from "bambu/lib/form/input/";
+import * as _form_input from "bambu/lib/form/input";
+import * as _form_input_radio_Radio from "bambu/lib/form/input/radio/Radio";
+import * as _form_input_radio_index from "bambu/lib/form/input/radio/index";
+import * as _form_input_radio_ from "bambu/lib/form/input/radio/";
+import * as _form_input_radio from "bambu/lib/form/input/radio";
+import * as _form_input_select_Select from "bambu/lib/form/input/select/Select";
+import * as _form_input_select_SelectItem from "bambu/lib/form/input/select/SelectItem";
+import * as _form_input_select_index from "bambu/lib/form/input/select/index";
+import * as _form_input_select_ from "bambu/lib/form/input/select/";
+import * as _form_input_select from "bambu/lib/form/input/select";
+import * as _form_input_textarea_TextArea from "bambu/lib/form/input/textarea/TextArea";
+import * as _form_input_textarea_index from "bambu/lib/form/input/textarea/index";
+import * as _form_input_textarea_ from "bambu/lib/form/input/textarea/";
+import * as _form_input_textarea from "bambu/lib/form/input/textarea";
 import * as _grid_column_Column from "bambu/lib/grid/column/Column";
 import * as _grid_column_Columns from "bambu/lib/grid/column/Columns";
 import * as _grid_column_index from "bambu/lib/grid/column/index";
@@ -383,23 +401,6 @@ const modules = {
     "bambu/lib/elements/delete/index": _elements_delete_index,
     "bambu/lib/elements/delete/": _elements_delete_,
     "bambu/lib/elements/delete": _elements_delete,
-    "bambu/lib/elements/form/Control": _elements_form_Control,
-    "bambu/lib/elements/form/ControlLabel": _elements_form_ControlLabel,
-    "bambu/lib/elements/form/Field": _elements_form_Field,
-    "bambu/lib/elements/form/FieldBody": _elements_form_FieldBody,
-    "bambu/lib/elements/form/FieldHelp": _elements_form_FieldHelp,
-    "bambu/lib/elements/form/FieldLabel": _elements_form_FieldLabel,
-    "bambu/lib/elements/form/Form": _elements_form_Form,
-    "bambu/lib/elements/form/index": _elements_form_index,
-    "bambu/lib/elements/form/": _elements_form_,
-    "bambu/lib/elements/form": _elements_form,
-    "bambu/lib/elements/form/input/Input": _elements_form_input_Input,
-    "bambu/lib/elements/form/input/TextArea": _elements_form_input_TextArea,
-    "bambu/lib/elements/form/input/file/FileUpload": _elements_form_input_file_FileUpload,
-    "bambu/lib/elements/form/input/index": _elements_form_input_index,
-    "bambu/lib/elements/form/input/": _elements_form_input_,
-    "bambu/lib/elements/form/input": _elements_form_input,
-    "bambu/lib/elements/form/input/select/Select": _elements_form_input_select_Select,
     "bambu/lib/elements/icon/FaIcon": _elements_icon_FaIcon,
     "bambu/lib/elements/icon/FaIconList": _elements_icon_FaIconList,
     "bambu/lib/elements/icon/FaIconListItem": _elements_icon_FaIconListItem,
@@ -440,6 +441,41 @@ const modules = {
     "bambu/lib/elements/title/index": _elements_title_index,
     "bambu/lib/elements/title/": _elements_title_,
     "bambu/lib/elements/title": _elements_title,
+    "bambu/lib/form/Control": _form_Control,
+    "bambu/lib/form/ControlLabel": _form_ControlLabel,
+    "bambu/lib/form/Field": _form_Field,
+    "bambu/lib/form/FieldBody": _form_FieldBody,
+    "bambu/lib/form/FieldHelp": _form_FieldHelp,
+    "bambu/lib/form/FieldLabel": _form_FieldLabel,
+    "bambu/lib/form/Form": _form_Form,
+    "bambu/lib/form/index": _form_index,
+    "bambu/lib/form/": _form_,
+    "bambu/lib/form": _form,
+    "bambu/lib/form/input/Input": _form_input_Input,
+    "bambu/lib/form/input/checkbox/CheckBox": _form_input_checkbox_CheckBox,
+    "bambu/lib/form/input/checkbox/index": _form_input_checkbox_index,
+    "bambu/lib/form/input/checkbox/": _form_input_checkbox_,
+    "bambu/lib/form/input/checkbox": _form_input_checkbox,
+    "bambu/lib/form/input/file/FileUpload": _form_input_file_FileUpload,
+    "bambu/lib/form/input/file/index": _form_input_file_index,
+    "bambu/lib/form/input/file/": _form_input_file_,
+    "bambu/lib/form/input/file": _form_input_file,
+    "bambu/lib/form/input/index": _form_input_index,
+    "bambu/lib/form/input/": _form_input_,
+    "bambu/lib/form/input": _form_input,
+    "bambu/lib/form/input/radio/Radio": _form_input_radio_Radio,
+    "bambu/lib/form/input/radio/index": _form_input_radio_index,
+    "bambu/lib/form/input/radio/": _form_input_radio_,
+    "bambu/lib/form/input/radio": _form_input_radio,
+    "bambu/lib/form/input/select/Select": _form_input_select_Select,
+    "bambu/lib/form/input/select/SelectItem": _form_input_select_SelectItem,
+    "bambu/lib/form/input/select/index": _form_input_select_index,
+    "bambu/lib/form/input/select/": _form_input_select_,
+    "bambu/lib/form/input/select": _form_input_select,
+    "bambu/lib/form/input/textarea/TextArea": _form_input_textarea_TextArea,
+    "bambu/lib/form/input/textarea/index": _form_input_textarea_index,
+    "bambu/lib/form/input/textarea/": _form_input_textarea_,
+    "bambu/lib/form/input/textarea": _form_input_textarea,
     "bambu/lib/grid/column/Column": _grid_column_Column,
     "bambu/lib/grid/column/Columns": _grid_column_Columns,
     "bambu/lib/grid/column/index": _grid_column_index,

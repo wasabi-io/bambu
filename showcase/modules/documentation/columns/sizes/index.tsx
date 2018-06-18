@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Stateless} from "wasabi-ui";
+import Stateless from "component/Stateless";
 import XDocEditor from "modules/view/editor/XDocEditor";
 import {Tag, Tags} from "bambu/lib/elements/tag";
 import {Color} from "bambu";

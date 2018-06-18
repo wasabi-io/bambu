@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Stateless} from "wasabi-ui";
+import Stateless from "component/Stateless";
 import {observer} from "mobx-react";
 import {observable} from "mobx";
 import {Color, Size6} from "bambu";
@@ -10,7 +10,6 @@ import Loading from "component/layout/loading/Loading";
 import Page from "component/layout/Page";
 import MessageView from "component/layout/message/MessageView";
 import {MenuViewHeaderItem} from "component/elements/MenuView";
-import AsyncComponent from "component/lazy/AsyncComponent";
 import HeaderView from "../../view/header/HeaderView";
 import NotFound from "../../../view/NotFound";
 import ReactDocViewer from "../../view/react/ReactDocViewer";
@@ -101,6 +100,9 @@ export default class DynamicPage extends Stateless <DynamicPageContentProps> {
                     <HeaderView breads={breads}>
                         <Page
                             className={pageStyle.bdHeaderSection}
+                            headerClassName={pageStyle.bPageComponentHeader}
+                            header={currentPage.title}
+                            headerSize={Size6.is4}
                             subTitle={currentPage.subTitle}
                             subTitleSize={Size6.is4}
                             icon={currentPage.icon}
@@ -116,8 +118,13 @@ export default class DynamicPage extends Stateless <DynamicPageContentProps> {
                         <ReactDocViewer path={currentPage.componentPath}/>
                     )}
                     {has(currentPage.module) && (
-                        <LazyComponent getComponent={() => DynamicPage.renderModulePage(currentPage.module)}/>
+                        <div className={pageStyle.bPageComponentContent}>
+                            <LazyComponent getComponent={() => DynamicPage.renderModulePage(currentPage.module)}/>
+                        </div>
                     )}
+                    <br/>
+                    <br/>
+                    <br/>
                 </div>
             </div>
         );
@@ -169,13 +176,11 @@ export default class DynamicPage extends Stateless <DynamicPageContentProps> {
     public static documentPageLoader = (paths: string[]): Promise<any> => {
         let docPath = paths.slice(1).join("/");
         docPath = docPath !== "" ? `/${docPath}` : "";
-        console.log(docPath);
-        return System.import(`../../documentation${docPath}/components`).then((module: any) => module.default);
+        return import(`../../documentation${docPath}/components`).then((module: any) => module.default);
     }
 
     public static renderModulePage(modulePath: string): Promise<React.ComponentClass<any>> {
-        return System
-            .import(`../../documentation${modulePath}/index`)
+        return import(`../../documentation${modulePath}/index`)
             .then((module: any) => module.default || module);
     }
 

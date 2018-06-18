@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/elements/delete",
     name: "delete",
-    title: "Delete",
-    subTitle: <span> A versatile <strong>delete</strong> cross</span>,
+    title: () => "Delete",
+    subTitle: (key: string) => <span key={key}> A versatile <strong>delete</strong> cross</span>,
     icon: {
         name: "times-circle",
         iconClassName: pageStyle.hasTextDanger

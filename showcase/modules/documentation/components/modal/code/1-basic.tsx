@@ -13,10 +13,10 @@ import ModalClose from "bambu/lib/components/modal/ModalClose";
 
 const ModalContentView: React.SFC<{}> = () => (
     <Media>
-        <MediaLeft>
+        <MediaLeft key={`media-left-1-basic`}>
             <Image src="https://bulma.io/images/placeholders/128x128.png" alt="Image" bSize={ImageSize.is48X48}/>
         </MediaLeft>
-        <MediaContent>
+        <MediaContent key={`media-content-1-basic`}>
             <Content>
                 <p>
                     <strong>John Smith</strong>

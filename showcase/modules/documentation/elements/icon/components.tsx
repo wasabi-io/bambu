@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/elements/icon",
     name: "icon",
-    title: "Icon",
-    subTitle: <span>Compatible with all icon font libraries, including <strong>Font Awesome 5</strong></span>,
+    title: () => "Icon",
+    subTitle: (key: string) => <span key={key}>Compatible with all icon font libraries, including <strong>Font Awesome 5</strong></span>,
     icon: {
         name: "font-awesome",
         iconClassName: pageStyle.hasTextLink

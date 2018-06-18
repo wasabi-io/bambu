@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/elements/content",
     name: "content",
-    title: "Content",
-    subTitle: <span>A single class to handle <strong>WYSIWYG</strong> generated content, where only <strong>HTML tags</strong> are available</span>,
+    title: () => "Content",
+    subTitle: (key: string) => <span key={key}>A single class to handle <strong>WYSIWYG</strong> generated content, where only <strong>HTML tags</strong> are available</span>,
     icon: {
         name: "align-left",
         iconClassName: pageStyle.hasTextPrimary

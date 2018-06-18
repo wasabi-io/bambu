@@ -2,7 +2,7 @@ import * as classNames from 'classnames';
 import * as React from 'react';
 import {Hero, HeroBody} from "bambu/lib/layout/hero/index";
 import {Container} from "bambu/lib/elements/container/index";
-import {Stateless} from "wasabi-ui";
+import Stateless from "component/Stateless";
 import bulma from "bambu/lib/base/css/bulma";
 import {FaIcon, FaIconSize, FaIconStyle, Icon} from "bambu/lib/elements/icon";
 import {Size, Size6} from "bambu";

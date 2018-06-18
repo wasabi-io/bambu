@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/form/input",
     name: "input",
-    title: "Input",
-    subTitle: <span>The <strong>text input</strong> and its variations</span>,
+    title: () => "Input",
+    subTitle: (key: string) => <span key={key}>The <strong>text input</strong> and its variations</span>,
     icon: {
         name: "minus",
         iconClassName: pageStyle.hasTextLink

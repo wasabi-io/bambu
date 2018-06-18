@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/overview/modularity",
     name: "modularity",
-    title: "Modularity",
-    subTitle: <span>Just import what you <strong>need</strong></span>,
+    title: () => "Modularity",
+    subTitle: (key: string) => <span key={key}>Just import what you <strong>need</strong></span>,
     icon: {
         name: "cubes",
         iconClassName: pageStyle.hasTextSuccess,

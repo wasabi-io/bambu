@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/overview/start",
     name: "start",
-    title: "Getting Started",
-    subTitle: <span>You only need <strong>1 CSS file</strong> to use Bulma</span>,
+    title: () => "Getting started with Bambu",
+    subTitle: (key: string) => <span key={key}>You only need <strong>1 CSS file</strong> to use Bambu</span>,
     icon: {
         name: "rocket",
         iconClassName: pageStyle.hasTextDanger,

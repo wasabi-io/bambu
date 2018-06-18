@@ -1,7 +1,7 @@
 import * as ClassNames from "classnames";
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import {Props} from "wasabi-common";
 import {HTMLComponent, Vertical, verticalValues} from "bambu";
 import TBody, {TBodyProps} from "bambu/lib/elements/table/TBody";
@@ -34,7 +34,6 @@ export default class GridBody extends Stateless<GridBodyProps> {
     };
 
     public render() {
-        console.log("GridBody rendered.");
         const {store, childrenAlign, rowRenderer, cellRenderer, className, children, ...props} = this.props;
 
         const classNames = ClassNames(gridStyle.bGridBody, className);

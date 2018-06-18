@@ -106,6 +106,16 @@
       {
         "defaultValue": null,
         "description": "",
+        "name": "isText",
+        "required": false,
+        "type": {
+          "name": "boolean",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
         "name": "isFullwidth",
         "required": false,
         "type": {
@@ -127,6 +137,16 @@
         "defaultValue": null,
         "description": "",
         "name": "isInverted",
+        "required": false,
+        "type": {
+          "name": "boolean",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "isStatic",
         "required": false,
         "type": {
           "name": "boolean",

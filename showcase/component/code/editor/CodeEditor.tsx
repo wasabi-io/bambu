@@ -1,7 +1,7 @@
 import * as ClassNames from "classnames";
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import {Stateless} from "wasabi-ui";
+import Stateless from "component/Stateless";
 import Style from "./codeEditorStyle";
 import {Column, Columns} from "bambu/lib/grid/column/index";
 import Preview, {PreviewStore, PreviewStoreProps} from "../preview/Preview";

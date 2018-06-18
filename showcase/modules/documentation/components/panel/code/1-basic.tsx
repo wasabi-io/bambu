@@ -1,7 +1,6 @@
 import * as React from "react";
 import {Panel, PanelBlock, PanelHeading, PanelTabs} from "bambu/lib/components/panel";
-import Control from "bambu/lib/elements/form/Control";
-import {Input} from "bambu/lib/elements/form";
+import {Control, Input} from "bambu/lib/form";
 import {Size} from "bambu";
 import {FaIcon, Icon} from "bambu/lib/elements/icon";
 import bulma from "bambu/lib/base/css/bulma";

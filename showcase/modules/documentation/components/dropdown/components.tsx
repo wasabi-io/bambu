@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/components/dropdown",
     name: "dropdown",
-    title: "Dropdown",
-    subTitle: <span key="components-dropdown-parent">An interactive <strong>dropdown menu</strong> for discoverable content</span>,
+    title: () => "Dropdown",
+    subTitle: (key: string) => <span key={key}>An interactive <strong>dropdown menu</strong> for discoverable content</span>,
     icon: {
         name: "angle-down",
         iconClassName: pageStyle.hasTextSuccess,

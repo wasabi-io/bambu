@@ -1,6 +1,6 @@
 import * as ClassNames from "classnames";
 import * as React from "react";
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import {HCell, HCellProps} from "bambu/lib/elements/table";
 import GridField, {GridFieldSearchRenderer, GridHeaderCellRenderer} from "../GridField";
 import gridStyle from "../gridStyle";
@@ -13,7 +13,7 @@ import {observer} from "mobx-react";
 import GridSearchQuery, {OrderType} from "../search/GridSearchQuery";
 import {observable, toJS} from "mobx";
 import {has} from "wasabi-common";
-import {Control, Field} from "bambu/lib/elements/form";
+import {Control, Field} from "bambu/lib/form";
 import cellSettingsManager from "./cellSettingsManager";
 import CellSettingItem from "./CellSettingItem";
 

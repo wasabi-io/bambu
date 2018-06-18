@@ -1,5 +1,5 @@
 import * as React from "react";
-import {Stateless} from "wasabi-ui";
+import Stateless from "component/Stateless";
 import {bulma, Size, Size6} from "bambu";
 import * as classNames from "classnames";
 import {Title} from "bambu/lib/elements/title";

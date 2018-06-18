@@ -1,6 +1,6 @@
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import {Stateless} from "wasabi-ui";
+import Stateless from "component/Stateless";
 import {Box} from "bambu/lib/elements/box";
 import layerStyle from "./LayerStyle";
 import ReactUtil from "modules/router/util/ReactUtil";

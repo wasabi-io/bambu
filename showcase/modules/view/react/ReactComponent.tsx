@@ -1,5 +1,5 @@
 import * as React from "react";
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import Grid from "component/grid/Grid";
 import {Props} from "wasabi-common";
 import GridField from "component/grid/GridField";
@@ -117,7 +117,6 @@ export default class ReactComponent extends Stateless<ReactComponentProps> {
             offset: 0,
             limit: 40
         });
-        console.log(props.value.props);
         this.action = new BambuGridAction<PropItem>({search});
         search.list();
     }

@@ -5,18 +5,18 @@ import PagesProps from "../PagesProps";
 const components: PagesProps = {
     module: "/components",
     name: "components",
-    title: "Components",
+    title: () => "Components",
     icon: {
         name: "cubes",
         iconClassName: pageStyle.hasTextDanger
     },
-    subTitle: <span key="components-parent"> Advanced multi-part components with lots of possibilities</span>,
+    subTitle: (key: string) => <span key={key}> Advanced multi-part components with lots of possibilities</span>,
     children: {
         breadcrumb: {
             module: "/components/breadcrumb",
             name: "breadcrumb",
-            title: "BreadCrumb",
-            subTitle: <span key="components-breadcrumb">A simple <strong>breadcrumb</strong> component to improve your navigation experience</span>,
+            title: () => "BreadCrumb",
+            subTitle: (key: string) => <span key={key}>A simple <strong>breadcrumb</strong> component to improve your navigation experience</span>,
             icon: {
                 name: "ellipsis-h",
                 iconClassName: pageStyle.hasTextStar
@@ -25,8 +25,8 @@ const components: PagesProps = {
         card: {
             module: "/components/card",
             name: "card",
-            title: "Card",
-            subTitle: <span key="components-card">An all-around flexible and composable component</span>,
+            title: () => "Card",
+            subTitle: (key: string) => <span key={key}>An all-around flexible and composable component</span>,
             icon: {
                 name: "id-card",
                 iconClassName: pageStyle.hasTextSuccess,
@@ -35,8 +35,8 @@ const components: PagesProps = {
         dropdown: {
             module: "/components/dropdown",
             name: "dropdown",
-            title: "Dropdown",
-            subTitle: <span key="components-dropdown">An interactive <strong>dropdown menu</strong> for discoverable content</span>,
+            title: () => "Dropdown",
+            subTitle: (key: string) => <span key={key}>An interactive <strong>dropdown menu</strong> for discoverable content</span>,
             icon: {
                 name: "angle-down",
                 iconClassName: pageStyle.hasTextSuccess,
@@ -45,8 +45,8 @@ const components: PagesProps = {
         menu: {
             module: "/components/menu",
             name: "menu",
-            title: "Menu",
-            subTitle: <span key="components-menu">A simple <strong>menu</strong>, for any type of vertical navigation</span>,
+            title: () => "Menu",
+            subTitle: (key: string) => <span key={key}>A simple <strong>menu</strong>, for any type of vertical navigation</span>,
             icon: {
                 name: "bars",
                 iconClassName: pageStyle.hasTextLink,
@@ -55,8 +55,8 @@ const components: PagesProps = {
         message: {
             module: "/components/message",
             name: "message",
-            title: "Message",
-            subTitle: <span key="components-message">Colored <strong>message</strong> blocks, to emphasize part of your page</span>,
+            title: () => "Message",
+            subTitle: (key: string) => <span key={key}>Colored <strong>message</strong> blocks, to emphasize part of your page</span>,
             icon: {
                 name: "window-maximize",
                 iconClassName: pageStyle.hasTextInfo,
@@ -65,8 +65,8 @@ const components: PagesProps = {
         modal: {
             module: "/components/modal",
             name: "modal",
-            title: "Modal",
-            subTitle: <span key="components-modal">A classic <strong>modal</strong> overlay, in which you can include <em>any</em> content you want</span>,
+            title: () => "Modal",
+            subTitle: (key: string) => <span key={key}>A classic <strong>modal</strong> overlay, in which you can include <em>any</em> content you want</span>,
             icon: {
                 name: "clone",
                 iconClassName: pageStyle.hasTextDanger
@@ -75,8 +75,8 @@ const components: PagesProps = {
         navbar: {
             module: "/components/navbar",
             name: "navbar",
-            title: "Navbar",
-            subTitle: <span key="components-navbar">A responsive horizontal <strong>navbar</strong> that can support images, links, buttons, and dropdowns</span>,
+            title: () => "Navbar",
+            subTitle: (key: string) => <span key={key}>A responsive horizontal <strong>navbar</strong> that can support images, links, buttons, and dropdowns</span>,
             icon: {
                 name: "minus",
                 iconClassName: pageStyle.hasTextPrimary
@@ -85,8 +85,8 @@ const components: PagesProps = {
         pagination: {
             module: "/components/pagination",
             name: "pagination",
-            title: "Pagination",
-            subTitle: <span key="components-pagination"> A responsive, usable, and flexible <strong>pagination</strong></span>,
+            title: () => "Pagination",
+            subTitle: (key: string) => <span key={key}> A responsive, usable, and flexible <strong>pagination</strong></span>,
             icon: {
                 name: "caret-square-right",
                 iconClassName: pageStyle.hasTextOrange,
@@ -95,8 +95,8 @@ const components: PagesProps = {
         panel: {
             module: "/components/panel",
             name: "panel",
-            title: "Panel",
-            subTitle: <span key="components-panel">A composable <strong>panel</strong>, for compact controls</span>,
+            title: () => "Panel",
+            subTitle: (key: string) => <span key={key}>A composable <strong>panel</strong>, for compact controls</span>,
             icon: {
                 name: "list-alt",
                 iconClassName: pageStyle.hasTextGreyDark
@@ -105,8 +105,8 @@ const components: PagesProps = {
         tabs: {
             module: "/components/tabs",
             name: "tabs",
-            title: "Tabs",
-            subTitle: <span key="components-tabs">Simple responsive horizontal navigation <strong>tabs</strong>, with different styles</span>,
+            title: () => "Tabs",
+            subTitle: (key: string) => <span key={key}>Simple responsive horizontal navigation <strong>tabs</strong>, with different styles</span>,
             icon: {
                 name: "folder",
                 iconClassName: pageStyle.hasTextPurple

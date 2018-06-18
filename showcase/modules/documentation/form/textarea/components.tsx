@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/form/textarea",
     name: "textarea",
-    title: "Textarea",
-    subTitle: <span>The multiline <strong>textarea</strong> and its variations</span>,
+    title: () => "Textarea",
+    subTitle: (key: string) => <span key={key}>The multiline <strong>textarea</strong> and its variations</span>,
     icon: {
         name: "square",
         iconClassName: pageStyle.hasTextLink

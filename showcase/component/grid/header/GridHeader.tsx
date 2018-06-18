@@ -1,6 +1,6 @@
 import * as ClassNames from "classnames";
 import * as React from "react";
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import {Row, THead, THeadProps} from "bambu/lib/elements/table";
 import {Props} from "wasabi-common";
 import GridField, {GridHeaderCellRenderer, GridHeaderRenderer} from "../GridField";

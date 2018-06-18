@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/components/pagination",
     name: "pagination",
-    title: "Pagination",
-    subTitle: <span key="components-pagination-parent"> A responsive, usable, and flexible <strong>pagination</strong></span>,
+    title: () => "Pagination",
+    subTitle: (key: string) => <span key={key}> A responsive, usable, and flexible <strong>pagination</strong></span>,
     icon: {
         name: "caret-square-right",
         iconClassName: pageStyle.hasTextOrange,

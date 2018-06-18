@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Stateless from 'wasabi-ui/lib/Stateless';
+import Stateless from 'component/Stateless';
 import Page from '../../../component/layout/Page';
 import * as reactDocs from "../../react-docs/files.json";
 import Accordion from "../../../component/layout/accordion/Accordion";
@@ -7,14 +7,10 @@ import {Props} from "wasabi-common";
 import {AccordionTabProps} from "../../../component/layout/accordion";
 import ReactDoc from "./ReactDoc";
 import {observable} from "mobx";
-import {SubTitle, Title} from "bambu/lib/elements/title";
-import AccordionTab from "../../../component/layout/accordion/AccordionTab";
-import {Size, Size6} from "bambu";
-import {Tile} from "bambu/lib/grid/tile";
+import {SubTitle} from "bambu/lib/elements/title";
+import {Size6} from "bambu";
 import {Tags} from "bambu/lib/elements/tag";
 import Tag from "bambu/lib/elements/tag/Tag";
-import {Column, Columns} from "bambu/lib/grid/column";
-import bulma from "bambu/lib/base/css/bulma";
 
 export interface ReactDocViewerProps {
     path: string;
@@ -26,7 +22,7 @@ export default class ReactDocViewer extends Stateless<ReactDocViewerProps> {
         const components = ReactDocViewer.getComponents(paths);
         if (!components) {
             return (
-                <Page title="Sorry." subTitle="Page/Module not found">
+                <Page header={() => "Sorry."} subTitle={() => "Page/Module not found"}>
                     Components not found in [file: 'modules/react-docs/files.json', path: '{this.props.path}'
                 </Page>
             );
@@ -64,14 +60,16 @@ export default class ReactDocViewer extends Stateless<ReactDocViewerProps> {
                     e.target.value = e.target.checked;
                     props.onToggle(props.name);
                 }} type="checkbox" checked={props.name === props.activeTab} name={props.name}/>
-                <label  style={{backgroundColor: "whitesmoke"}} key={`${key}-label`} htmlFor={key}>
+                <label style={{backgroundColor: "whitesmoke"}} key={`${key}-label`} htmlFor={key}>
                     <Tags style={{margin: 0, padding: "5px"}}>
                         <Tag><SubTitle bSize={Size6.is5}>{props.header}</SubTitle></Tag>
-                        <Tag style={{display: "contents"}}><blockquote>
-                            <small
-                                dangerouslySetInnerHTML={{ __html: ReactDocViewer.renderSubTitles(props, values).join("\n") }}
-                            />
-                        </blockquote></Tag>
+                        <Tag style={{display: "contents"}}>
+                            <blockquote>
+                                <small
+                                    dangerouslySetInnerHTML={{__html: ReactDocViewer.renderSubTitles(props, values).join("\n")}}
+                                />
+                            </blockquote>
+                        </Tag>
                     </Tags>
                 </label>
             </>
@@ -80,11 +78,11 @@ export default class ReactDocViewer extends Stateless<ReactDocViewerProps> {
 
     public static renderSubTitles(props: AccordionTabProps, values: any) {
         if (!Array.isArray(values)) {
-            return null;
+            return [];
         }
         const elements = [];
         for (const item of values) {
-            if (item.description)  {
+            if (item.description) {
                 elements.push(item.description);
             }
         }
@@ -94,9 +92,7 @@ export default class ReactDocViewer extends Stateless<ReactDocViewerProps> {
     }
 
     public static getContent(path: string, props: AccordionTabProps) {
-        console.log(path, name);
-        return System
-            .import(`../../react-docs/${path}/${props.name}.json`)
+        return import(`../../react-docs/${path}/${props.name}.json`)
             .then((module: Props<any>) => {
                 return <ReactDoc value={observable(module.default || module)}/>;
             });

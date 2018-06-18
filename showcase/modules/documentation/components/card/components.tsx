@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/components/card",
     name: "card",
-    title: "Card",
-    subTitle: <span key="components-card-parent">An all-around flexible and composable component</span>,
+    title: () => "Card",
+    subTitle: (key: string) => <span key={key}>An all-around flexible and composable component</span>,
     icon: {
         name: "id-card",
         iconClassName: pageStyle.hasTextSuccess,

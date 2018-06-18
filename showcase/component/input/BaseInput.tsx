@@ -1,10 +1,10 @@
 import {Alignment, bulma, Color, Size} from 'bambu/lib/base/css';
-import {Control, ControlLabel, ControlLabelProps, ControlProps, Field, FieldHelp, FieldProps,} from 'bambu/lib/elements/form';
+import {Control, ControlLabel, ControlLabelProps, ControlProps, Field, FieldHelp, FieldProps,} from 'bambu/lib/form';
 import {Icon, IconOptions} from 'bambu/lib/elements/icon';
 import * as React from 'react';
 import {has} from 'wasabi-common/lib';
 import Strings from 'wasabi-common/lib/types/Strings';
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import FaIcon from "bambu/lib/elements/icon/FaIcon";
 import {ComponentUtil} from "bambu";
 
@@ -19,7 +19,6 @@ export interface BaseInputProps extends FieldProps {
     help?: string;
     helpColor?: string | Color;
 }
-
 
 export default class BaseInput extends Stateless<BaseInputProps> {
     public render() {

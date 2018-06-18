@@ -1,7 +1,7 @@
 import * as PropTypes from "prop-types";
 import * as ClassNames from "classnames";
 import * as React from "react";
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import gridStyle from "../gridStyle";
 import PaginationView, {PaginationViewOptions} from "../../layout/pagination/PaginationView";
 import GridStore from "../GridStore";

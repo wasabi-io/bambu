@@ -4,6 +4,7 @@ PipeTasks(
     [
         {
             command: "start:app",
+            main: true,
             env: {
                 options: {
                     mountId: "app_container",
@@ -12,7 +13,7 @@ PipeTasks(
             }
         },
         {
-            command: "watch:file"
+            command: "watch:react-docs"
         }
     ]
 ).execute();

@@ -1,13 +1,22 @@
 import * as React from "react";
-import {Stateless} from "wasabi-ui";
+import Stateless from "component/Stateless";
 import {Content} from "bambu/lib/elements/content";
 
-export default class Index extends Stateless<{}> {
+export default class Overview extends Stateless<{}> {
     public render() {
         return (
-            <Content>
-
-            </Content>
+            <div>
+                <Content>
+                    <br/>
+                    to learn more about overview
+                    &nbsp;
+                    <wbr/>
+                    <a target="_blank" href="https://bulma.io/documentation/overview/">
+                        https://bulma.io/documentation/
+                        <wbr/>overview/
+                    </a>
+                </Content>
+            </div>
         );
     }
 }

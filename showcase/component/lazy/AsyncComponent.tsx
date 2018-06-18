@@ -1,7 +1,7 @@
 import * as React from "react";
 import {observable, toJS} from "mobx";
 import {observer} from "mobx-react";
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import Loading from "../layout/loading/Loading";
 import MessageView from "../layout/message/MessageView";
 

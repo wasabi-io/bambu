@@ -1,23 +1,23 @@
 import * as React from "react";
-import {Stateless} from "wasabi-ui";
-import XDocEditor from "modules/view/editor/XDocEditor";
+import Stateless from "component/Stateless";
+import {Content} from "bambu/lib/elements/content";
 
-const codes = {
-    isActive: require("!raw-loader?modules!./code/1-isActive")
-};
-
-export default class Index extends Stateless <any> {
-    public constructor(props: any) {
-        super(props);
-    }
-
+export default class Functions extends Stateless <any> {
     public render() {
         return (
-            <XDocEditor codes={[codes.isActive]}/>
+            <div>
+                <Content>
+                    <br/>
+                    to learn more about functions
+                    &nbsp;
+                    <wbr/>
+                    <a target="_blank" href="https://bulma.io/documentation/overview/functions/">
+                        https://bulma.io/documentation/
+                        <wbr/>overview/
+                        <wbr/>functions
+                    </a>
+                </Content>
+            </div>
         );
-    }
-
-    public onChange = (value: string) => {
-        console.log(value);
     }
 }

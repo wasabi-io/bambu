@@ -7,7 +7,7 @@ export interface MediaContentProps extends HTMLDivProps {
     elementRef?: (ref: any) => any;
 }
 
-export default class MediaContent extends React.Component<MediaContentProps, {}> {
+export default class MediaContent extends React.Component<MediaContentProps> {
 
     public static propTypes = {
         ...HTMLComponent.propTypes,

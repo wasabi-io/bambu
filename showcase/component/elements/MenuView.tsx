@@ -1,5 +1,5 @@
 import * as React from "react";
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import {Menu, MenuLabel, MenuLink, MenuList} from "bambu/lib/components/menu";
 
 export interface MenuViewHeaderItem {

@@ -1,8 +1,8 @@
 import * as React from "react";
-import {Stateless} from "wasabi-ui";
+import Stateless from "component/Stateless";
 import pageStyle from "css/pageStyle";
 import {Content} from "bambu/lib/elements/content";
-import XDocEditor from "../../../view/editor/XDocEditor";
+import XDocEditor from "modules/view/editor/XDocEditor";
 
 const codes = {
     basic: require("!raw-loader?modules!./code/1-basic")

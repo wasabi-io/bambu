@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/form/file",
     name: "file",
-    title: "File",
-    subTitle: <span>A custom <strong>file upload</strong> input, without JavaScript</span>,
+    title: () => "File",
+    subTitle: (key: string) => <span key={key}>A custom <strong>file upload</strong> input, without JavaScript</span>,
     icon: {
         name: "cloud-upload-alt",
         iconClassName: pageStyle.hasTextLink

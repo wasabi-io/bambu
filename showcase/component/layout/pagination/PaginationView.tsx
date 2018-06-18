@@ -1,6 +1,6 @@
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import {Pagination, PaginationEllipsis, PaginationLink, PaginationList, PaginationNext, PaginationPrevious, PaginationProps} from "bambu/lib/components/pagination";
 import BrowserUtil from "../../util/BrowserUtil";
 import {Size} from "bambu";

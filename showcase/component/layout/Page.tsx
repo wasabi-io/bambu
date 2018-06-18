@@ -1,18 +1,19 @@
 import * as React from 'react';
 import {Color, HTMLSectionProps, Size6} from 'bambu';
 import {Content} from 'bambu/lib/elements/content/index';
-import {Control, Field} from 'bambu/lib/elements/form/index';
+import {Control, Field} from 'bambu/lib/form/index';
 import {Tag, Tags} from 'bambu/lib/elements/tag/index';
 import {SubTitle, Title} from 'bambu/lib/elements/title/index';
 import {Section} from 'bambu/lib/layout/section/index';
-import Stateless from 'wasabi-ui/lib/Stateless';
+import Stateless from 'component/Stateless';
 import {PagesIconProps} from "../../modules/documentation/PagesProps";
 import {FaIcon, Icon} from "bambu/lib/elements/icon";
 
 export interface PageProps extends HTMLSectionProps {
-    title?: string;
-    titleSize?: string | Size6;
-    subTitle?: string | JSX.Element;
+    header?: (key?: string) => React.ReactChild;
+    headerSize?: string | Size6;
+    headerClassName?: string;
+    subTitle?: (key?: string) => React.ReactChild;
     subTitleSize?: string | Size6;
     hasMeta?: boolean;
     colors?: boolean;
@@ -23,11 +24,11 @@ export interface PageProps extends HTMLSectionProps {
 
 export default class Page extends Stateless<PageProps> {
     public render(): JSX.Element {
-        const {title, titleSize, subTitle, subTitleSize, children, hasMeta, colors, sizes, variables, icon, ...props} = this.props;
+        const {header, headerSize, headerClassName, subTitle, subTitleSize, children, hasMeta, colors, sizes, variables, icon, ...props} = this.props;
         return (
             <Section {...props}>
-                {title && (
-                    <Title key={`pageTitle-${this.id}`} bSize={titleSize}>{title}</Title>
+                {header && (
+                    <Title className={headerClassName} key={`page-title-${this.id}`} bSize={headerSize}>{header(`page-title-child-${this.id}`)}</Title>
                 )}
                 {this.renderSubTitle()}
                 {
@@ -47,11 +48,12 @@ export default class Page extends Stateless<PageProps> {
     }
 
     public renderSubTitle() {
-        if (this.props.subTitle) {
+        const {subTitle, subTitleSize, icon} = this.props;
+        if (subTitle) {
             return (
-                <SubTitle key={`page-subtitle-${this.id}`} bSize={this.props.subTitleSize}>
-                    {Page.renderIcon(this.props.icon)}
-                    <span key={`page-subtitle-span-${this.id}`}>{this.props.subTitle}</span>
+                <SubTitle key={`page-subtitle-${this.id}`} bSize={subTitleSize}>
+                    {Page.renderIcon(icon)}
+                    {subTitle(`page-subtitle-span-${this.id}`)}
                 </SubTitle>
             );
         }

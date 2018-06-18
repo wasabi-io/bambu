@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/columns/options",
     name: "options",
-    title: "Options",
-    subTitle: <span>Design different <strong>types</strong> of column layouts</span>,
+    title: () => "Options",
+    subTitle: (key: string) => <span key={key}>Design different <strong>types</strong> of column layouts</span>,
     icon: {
         name: "cogs",
         iconClassName: pageStyle.hasTextInfo

@@ -1,7 +1,7 @@
 import * as ClassNames from "classnames";
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import accordionStyle from "./accordionStyle";
 import {HTMLComponent, HTMLDivProps} from "bambu";
 import {AccordionTabProps} from "./AccordionTab";
@@ -48,7 +48,7 @@ export default class Accordion extends Stateless<AccordionProps> {
                 {tabs.map((tab: AccordionTabProps) => {
                     return (
                         <AccordionTab key={tab.name} {...tab} getContent={getContent} activeTab={this.activeTab} onToggle={(name: string) => {
-                            this.activeTab = (this.activeTab === name) ? null : name ;
+                            this.activeTab = (this.activeTab === name) ? null : name;
                         }}/>
                     );
                 })}

@@ -1,5 +1,5 @@
 import * as React from "react";
-import Stateless from "wasabi-ui/lib/Stateless";
+import Stateless from "component/Stateless";
 import createHistory from "history/createHashHistory";
 import {Action, Location, UnregisterCallback} from "history";
 import UrlUtil from "modules/router/util/UrlUtil";

@@ -1,6 +1,7 @@
 blockquote, blockquote p {
     word-wrap: break-word;
 }
+
 .b-page-container {
     background-color: white;
     color: #4a4a4a;
@@ -15,6 +16,16 @@ blockquote, blockquote p {
     color: #4a4a4a;
     display: block;
     padding: 5px;
+}
+
+.b-page-component-header {
+    padding-left: 1em;
+    padding-bottom: 1em;
+}
+
+.b-page-component-content {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
 }
 
 .b-page-breadcrumb {

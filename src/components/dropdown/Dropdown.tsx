@@ -1,9 +1,7 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import Stateless from 'wasabi-ui/lib/Stateless';
 import {bulma as DropdownStyle, HTMLComponent, HTMLDivProps} from '../../';
-
 
 export interface DropdownProps extends HTMLDivProps {
     isActive?: boolean;
@@ -16,7 +14,7 @@ export interface DropdownProps extends HTMLDivProps {
 /**
  * Is a container for a <code>{&lt;DropdownTrigger />} and a {<DropdownMenu /&gt;}</code>.
  */
-export default class Dropdown extends Stateless<DropdownProps> {
+export default class Dropdown extends React.Component<DropdownProps> {
     public static propTypes = {
         ...HTMLComponent.propTypes,
         isActive: PropTypes.bool,

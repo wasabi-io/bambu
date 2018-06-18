@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/overview/functions",
     name: "functions",
-    title: "Functions",
-    subTitle: <span>Utility functions to calculate colors and other values</span>,
+    title: () => "Functions",
+    subTitle: (key: string) => <span key={key}>Utility functions to calculate colors and other values</span>,
     icon: {
         name: "code",
         iconClassName: pageStyle.hasTextOrange,

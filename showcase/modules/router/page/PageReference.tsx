@@ -24,13 +24,15 @@ const PageReference: React.SFC<PageReferenceProps> = ((props: PageReferenceProps
             const iconProps: any = icon ? toJS(icon) : {};
             elements.push(
                 <a key={href} className={pageStyle.bdLink} href={`#/${href}`}>
-                    <h2 className={pageStyle.bdLinkName}>
-                        <PageReferenceIcon key={href} {...iconProps}/>
-                        {title}
+                    <h2 key={`page-reference-h2-${href}`} className={pageStyle.bdLinkName}>
+                        <PageReferenceIcon key={`page-reference-${href}`} {...iconProps}/>
+                        {title(`page-reference-h2-title-${href}`)}
                     </h2>
-                    <p className={pageStyle.bdLinkSubtitle}>
-                        {subTitle}
-                    </p>
+                    {subTitle && (
+                        <p key={`page-reference-p-${href}`} className={pageStyle.bdLinkSubtitle}>
+                            {subTitle(`page-reference-subtitle-${href}`)}
+                        </p>
+                    )}
                 </a>
             );
         }

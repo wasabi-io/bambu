@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/modifiers/responsive-helpers",
     name: "responsive-helpers",
-    title: "Responsive Helpers",
-    subTitle: <span><strong>Show/hide content</strong> depending on the width of the viewport</span>,
+    title: () => "Responsive Helpers",
+    subTitle: (key: string) => <span key={key}><strong>Show/hide content</strong> depending on the width of the viewport</span>,
     icon: {
         name: "arrows-alt-h",
         iconClassName: pageStyle.hasTextPrimary

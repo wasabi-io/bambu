@@ -5,8 +5,8 @@ import PagesProps from "../../PagesProps";
 const components: PagesProps = {
     module: "/elements/box",
     name: "box",
-    title: "Box",
-    subTitle: <span>A white <strong>box</strong> to contain other elements</span>,
+    title: () => "Box",
+    subTitle: (key: string) => <span key={key}>A white <strong>box</strong> to contain other elements</span>,
     icon: {
         name: "square",
         iconClassName: pageStyle.hasTextGrey
