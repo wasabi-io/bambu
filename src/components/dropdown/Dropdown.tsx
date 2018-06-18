@@ -44,11 +44,7 @@ export default class Dropdown extends React.Component<DropdownProps> {
         );
 
         return (
-            <div
-                className={classNames}
-                ref={elementRef}
-                {...dropdownProps}
-            >
+            <div className={classNames} ref={elementRef}{...dropdownProps}>
                 {children}
             </div>
         );

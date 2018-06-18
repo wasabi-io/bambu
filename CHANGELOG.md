@@ -32,6 +32,7 @@
 * added travis configuration.
 * added `form` components documentation.
 * fixed component problems.
+* upgraded contributor guide.
 
 #### v0.6.201-beta.2
 * solved https://github.com/wasabi-io/bambu/issues/6
