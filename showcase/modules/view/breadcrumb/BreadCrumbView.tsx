@@ -30,7 +30,7 @@ const BreadCrumbView: React.SFC<BreadCrumbViewProps> = (props: BreadCrumbViewPro
 BreadCrumbView.propTypes = {
     breads: PropTypes.arrayOf(PropTypes.string).isRequired,
     prefix: PropTypes.string
-};
+} as any;
 
 BreadCrumbView.defaultProps = {
     prefix: "#/"

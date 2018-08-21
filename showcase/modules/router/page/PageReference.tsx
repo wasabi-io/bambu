@@ -45,7 +45,7 @@ const PageReference: React.SFC<PageReferenceProps> = ((props: PageReferenceProps
 PageReference.propTypes = {
     childMap: PropTypes.object.isRequired,
     breads: PropTypes.arrayOf(PropTypes.string).isRequired
-};
+} as any;
 
 PageReference.defaultProps = {};
 

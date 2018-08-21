@@ -26,6 +26,12 @@ module.exports = {
     aliases: {
         "bambu$": "./src/index",
         "bambu/lib": "./src",
+        "bambu-form$": "./extensions/form/src/index",
+        "bambu-form/lib": "./extensions/form/src",
+        "bambu-form/showcase": "./extensions/form/showcase",
+        "bambu-grid$": "./extensions/grid/src/index",
+        "bambu-grid/lib": "./extensions/grid/src",
+        "bambu-grid/showcase": "./extensions/grid/showcase",
         "bulma": "./node_modules/bulma",
         "*": "./showcase",
     },

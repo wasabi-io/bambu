@@ -10,6 +10,7 @@ import {ComponentUtil} from "bambu";
 
 export interface BaseInputProps extends FieldProps {
     label?: string;
+    htmlFor?: string;
     labelProps?: ControlLabelProps;
     controlProps?: ControlProps;
     leftIcon?: IconOptions;
@@ -18,15 +19,16 @@ export interface BaseInputProps extends FieldProps {
     rightIconSize?: string | Size;
     help?: string;
     helpColor?: string | Color;
+    noControl?: boolean;
 }
 
 export default class BaseInput extends Stateless<BaseInputProps> {
     public render() {
-        const {controlProps, leftIcon, leftIconSize, rightIcon, rightIconSize, label, labelProps, help, helpColor, children, ...fieldProps} = this.props;
+        const {controlProps, leftIcon, leftIconSize, rightIcon, rightIconSize, label, htmlFor, labelProps, help, helpColor, children, ...fieldProps} = this.props;
 
         return (
             <Field {...fieldProps}>
-                {Strings.has(label) && <ControlLabel {...labelProps}>{label}</ControlLabel>}
+                {Strings.has(label) && <ControlLabel htmlFor={htmlFor} {...labelProps}>{label}</ControlLabel>}
                 <Control hasIconsLeft={has(leftIcon)} hasIconsRight={has(rightIcon)} {...controlProps} >
                     {children}
                     {BaseInput.renderIcon(Alignment.left, leftIconSize, leftIcon)}

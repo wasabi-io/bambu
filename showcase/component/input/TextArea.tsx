@@ -1,8 +1,7 @@
 import * as React from 'react';
 import {Color, Size, State} from 'bambu/lib/base/css';
-import {TextArea, TextAreaProps} from 'bambu/lib/form';
+import {IEvent, TextArea, TextAreaProps} from 'bambu/lib/form';
 import BaseInput, {BaseInputProps} from './BaseInput';
-import {IEvent} from "../field/Field";
 
 export interface DefaultInputProps extends BaseInputProps {
     name?: string;
@@ -33,7 +32,7 @@ const TextAreaInput: React.SFC<DefaultInputProps> = (props: DefaultInputProps) =
     );
 };
 
-TextAreaInput.propTypes = {};
+TextAreaInput.propTypes = {} as any;
 
 TextAreaInput.defaultProps = {};
 

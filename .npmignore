@@ -86,7 +86,6 @@ node_modules/
 showcase/
 src/
 tools/
-typings/
 .gitignore
 .travis.yml
 tsconfig.json
@@ -95,3 +94,4 @@ tslint.json
 styleguide.config.js
 assets/
 md/
+extensions/

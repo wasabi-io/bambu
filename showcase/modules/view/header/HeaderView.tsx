@@ -25,7 +25,7 @@ const HeaderView: React.SFC<HeaderViewProps> = (props: HeaderViewProps) => {
 
 HeaderView.propTypes = {
     breads: PropTypes.arrayOf(PropTypes.string).isRequired
-};
+} as any;
 
 HeaderView.defaultProps = {};
 

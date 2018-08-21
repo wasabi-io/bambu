@@ -1,10 +1,20 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {bulma as IconStyle, HTMLComponent, HTMLSpanProps, Size, sizeValues} from '../../';
-import {FaIconProps} from './FaIcon';
+import {Alignment, bulma as IconStyle, HTMLComponent, HTMLSpanProps, Size, sizeValues, ComponentUtil} from '../../';
+import FaIcon from './FaIcon';
+import {has} from "wasabi-common";
 
-export type IconOptions = string | FaIconProps | JSX.Element;
+export interface IconOptions {
+    bSize?: string | Size;
+    iconSize?: string;
+    name: string;
+    type?: string;
+
+    [key: string]: any;
+}
+
+export type IconType = string | JSX.Element | IconOptions;
 
 /**
  * Refers Icon Props.
@@ -60,6 +70,36 @@ export default class Icon extends HTMLComponent<IconProps> {
                 {children}
                 </span>
             </span>
+        );
+    }
+
+    public static renderIcon(icon: IconType, alignment?: Alignment) {
+        if (!has(icon)) {
+            return null;
+        }
+        const classNames = alignment ? IconStyle[alignment] : null;
+
+        if (typeof icon === "string") {
+            return (
+                <Icon className={classNames}>
+                    <FaIcon name={icon}/>
+                </Icon>
+            );
+        }
+
+        if (ComponentUtil.isElement(icon)) {
+            return (
+                <Icon className={classNames}>
+                    {icon}
+                </Icon>
+            );
+        }
+
+        const {type, bSize, ...props} = icon as IconOptions;
+        return (
+            <Icon className={IconStyle[alignment]} bSize={bSize}>
+                <FaIcon {...props} />
+            </Icon>
         );
     }
 }

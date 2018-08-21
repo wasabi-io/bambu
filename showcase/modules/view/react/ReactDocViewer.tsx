@@ -92,7 +92,7 @@ export default class ReactDocViewer extends Stateless<ReactDocViewerProps> {
     }
 
     public static getContent(path: string, props: AccordionTabProps) {
-        return import(`../../react-docs/${path}/${props.name}.json`)
+        return System.import(`../../react-docs/${path}/${props.name}.json`)
             .then((module: Props<any>) => {
                 return <ReactDoc value={observable(module.default || module)}/>;
             });

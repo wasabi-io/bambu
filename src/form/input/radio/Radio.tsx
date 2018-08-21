@@ -1,34 +1,40 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {bulma, HTMLInputProps} from '../../../index';
-import HTMLComponent from '../../../base/html/HTML';
+import {bulma} from '../../../index';
+import Input, {InputProps} from "../Input";
+import {IEvent} from "../InputField";
 
-export interface RadioProps extends HTMLInputProps {
-    elementRef?: (ref: any) => any;
+export interface RadioProps extends InputProps {
+    value?: boolean;
 }
 
 const Radio: React.SFC<RadioProps> = (props: RadioProps) => {
-    const {className, children, ...inputProps} = props;
+    const {id, value, className, onChange, children, ...inputProps} = props;
 
     const classNames = ClassNames(bulma.checkbox, className);
 
     return (
-        <label className={classNames}>
-            <input type="radio" {...inputProps}/>
+        <label htmlFor={id} className={classNames}>
+            <input id={id} type="checkbox" checked={value} {...inputProps} onClick={(e?: IEvent) => {
+                e.target.value = !value;
+                e.target.checked = !value;
+                e.target.parsedValue = !value;
+                onChange && onChange(e);
+            }}/>
             {children}
         </label>
     );
 };
 
 Radio.propTypes = {
-    ...HTMLComponent.propTypes,
-    elementRef: PropTypes.func
-};
+    ...Input.propTypes,
+    value: PropTypes.bool
+} as any;
 
 Radio.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    checked: false
+    ...Input.defaultProps,
+    value: false
 };
 
 Radio.displayName = 'Radio';

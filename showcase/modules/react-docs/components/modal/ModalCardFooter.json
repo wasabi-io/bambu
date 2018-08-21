@@ -7,6 +7,10 @@
         "defaultValue": null,
         "description": "",
         "name": "elementRef",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/src/components/modal/ModalCardFooter.tsx",
+          "name": "ModalCardFooterProps"
+        },
         "required": false,
         "type": {
           "name": "(ref: any) => any",
@@ -17,6 +21,10 @@
         "defaultValue": null,
         "description": "",
         "name": "defaultChecked",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean",
@@ -27,6 +35,10 @@
         "defaultValue": null,
         "description": "",
         "name": "defaultValue",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string | string[]",
@@ -37,6 +49,10 @@
         "defaultValue": null,
         "description": "",
         "name": "suppressContentEditableWarning",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean",
@@ -47,6 +63,10 @@
         "defaultValue": null,
         "description": "",
         "name": "suppressHydrationWarning",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean",
@@ -57,6 +77,10 @@
         "defaultValue": null,
         "description": "",
         "name": "accessKey",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -67,6 +91,10 @@
         "defaultValue": null,
         "description": "",
         "name": "className",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -77,6 +105,10 @@
         "defaultValue": null,
         "description": "",
         "name": "contentEditable",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean",
@@ -87,6 +119,10 @@
         "defaultValue": null,
         "description": "",
         "name": "contextMenu",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -97,6 +133,10 @@
         "defaultValue": null,
         "description": "",
         "name": "dir",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -107,6 +147,10 @@
         "defaultValue": null,
         "description": "",
         "name": "draggable",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean",
@@ -117,6 +161,10 @@
         "defaultValue": null,
         "description": "",
         "name": "hidden",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean",
@@ -127,6 +175,10 @@
         "defaultValue": null,
         "description": "",
         "name": "id",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -137,6 +189,10 @@
         "defaultValue": null,
         "description": "",
         "name": "lang",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -147,6 +203,10 @@
         "defaultValue": null,
         "description": "",
         "name": "placeholder",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -157,6 +217,10 @@
         "defaultValue": null,
         "description": "",
         "name": "slot",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -167,6 +231,10 @@
         "defaultValue": null,
         "description": "",
         "name": "spellCheck",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean",
@@ -177,6 +245,10 @@
         "defaultValue": null,
         "description": "",
         "name": "style",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "CSSProperties",
@@ -187,6 +259,10 @@
         "defaultValue": null,
         "description": "",
         "name": "tabIndex",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "number",
@@ -197,6 +273,10 @@
         "defaultValue": null,
         "description": "",
         "name": "title",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -207,6 +287,10 @@
         "defaultValue": null,
         "description": "",
         "name": "inputMode",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -217,6 +301,10 @@
         "defaultValue": null,
         "description": "",
         "name": "is",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -227,6 +315,10 @@
         "defaultValue": null,
         "description": "",
         "name": "radioGroup",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -237,6 +329,10 @@
         "defaultValue": null,
         "description": "",
         "name": "role",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -247,6 +343,10 @@
         "defaultValue": null,
         "description": "",
         "name": "about",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -257,6 +357,10 @@
         "defaultValue": null,
         "description": "",
         "name": "datatype",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -267,6 +371,10 @@
         "defaultValue": null,
         "description": "",
         "name": "inlist",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "any",
@@ -277,6 +385,10 @@
         "defaultValue": null,
         "description": "",
         "name": "prefix",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -287,6 +399,10 @@
         "defaultValue": null,
         "description": "",
         "name": "property",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -297,6 +413,10 @@
         "defaultValue": null,
         "description": "",
         "name": "resource",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -307,6 +427,10 @@
         "defaultValue": null,
         "description": "",
         "name": "typeof",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -317,6 +441,10 @@
         "defaultValue": null,
         "description": "",
         "name": "vocab",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -327,6 +455,10 @@
         "defaultValue": null,
         "description": "",
         "name": "autoCapitalize",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -337,6 +469,10 @@
         "defaultValue": null,
         "description": "",
         "name": "autoCorrect",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -347,6 +483,10 @@
         "defaultValue": null,
         "description": "",
         "name": "autoSave",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -357,6 +497,10 @@
         "defaultValue": null,
         "description": "",
         "name": "color",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -367,6 +511,10 @@
         "defaultValue": null,
         "description": "",
         "name": "itemProp",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -377,6 +525,10 @@
         "defaultValue": null,
         "description": "",
         "name": "itemScope",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean",
@@ -387,6 +539,10 @@
         "defaultValue": null,
         "description": "",
         "name": "itemType",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -397,6 +553,10 @@
         "defaultValue": null,
         "description": "",
         "name": "itemID",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -407,6 +567,10 @@
         "defaultValue": null,
         "description": "",
         "name": "itemRef",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -417,6 +581,10 @@
         "defaultValue": null,
         "description": "",
         "name": "results",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "number",
@@ -427,6 +595,10 @@
         "defaultValue": null,
         "description": "",
         "name": "security",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -437,6 +609,10 @@
         "defaultValue": null,
         "description": "",
         "name": "unselectable",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean",
@@ -447,6 +623,10 @@
         "defaultValue": null,
         "description": "Identifies the currently active element when DOM focus is on a composite widget, textbox, group, or application.",
         "name": "aria-activedescendant",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -457,6 +637,10 @@
         "defaultValue": null,
         "description": "Indicates whether assistive technologies will present all, or only parts of, the changed region based on the change notifications defined by the aria-relevant attribute.",
         "name": "aria-atomic",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\"",
@@ -467,6 +651,10 @@
         "defaultValue": null,
         "description": "Indicates whether inputting text could trigger display of one or more predictions of the user's intended value for an input and specifies how predictions would be\npresented if they are made.",
         "name": "aria-autocomplete",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "\"none\" | \"inline\" | \"list\" | \"both\"",
@@ -477,6 +665,10 @@
         "defaultValue": null,
         "description": "Indicates an element is being modified and that assistive technologies MAY want to wait until the modifications are complete before exposing them to the user.",
         "name": "aria-busy",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\"",
@@ -487,6 +679,10 @@
         "defaultValue": null,
         "description": "Indicates the current \"checked\" state of checkboxes, radio buttons, and other widgets.\n@see aria-pressed \n@see aria-selected.",
         "name": "aria-checked",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\" | \"mixed\"",
@@ -497,6 +693,10 @@
         "defaultValue": null,
         "description": "Defines the total number of columns in a table, grid, or treegrid.\n@see aria-colindex.",
         "name": "aria-colcount",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "number",
@@ -507,6 +707,10 @@
         "defaultValue": null,
         "description": "Defines an element's column index or position with respect to the total number of columns within a table, grid, or treegrid.\n@see aria-colcount \n@see aria-colspan.",
         "name": "aria-colindex",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "number",
@@ -517,6 +721,10 @@
         "defaultValue": null,
         "description": "Defines the number of columns spanned by a cell or gridcell within a table, grid, or treegrid.\n@see aria-colindex \n@see aria-rowspan.",
         "name": "aria-colspan",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "number",
@@ -527,6 +735,10 @@
         "defaultValue": null,
         "description": "Identifies the element (or elements) whose contents or presence are controlled by the current element.\n@see aria-owns.",
         "name": "aria-controls",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -537,6 +749,10 @@
         "defaultValue": null,
         "description": "Indicates the element that represents the current item within a container or set of related elements.",
         "name": "aria-current",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\" | \"page\" | \"step\" | \"location\" | \"date\" | \"time\"",
@@ -547,6 +763,10 @@
         "defaultValue": null,
         "description": "Identifies the element (or elements) that describes the object.\n@see aria-labelledby",
         "name": "aria-describedby",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -557,6 +777,10 @@
         "defaultValue": null,
         "description": "Identifies the element that provides a detailed, extended description for the object.\n@see aria-describedby.",
         "name": "aria-details",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -567,6 +791,10 @@
         "defaultValue": null,
         "description": "Indicates that the element is perceivable but disabled, so it is not editable or otherwise operable.\n@see aria-hidden \n@see aria-readonly.",
         "name": "aria-disabled",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\"",
@@ -577,6 +805,10 @@
         "defaultValue": null,
         "description": "Indicates what functions can be performed when a dragged object is released on the drop target.\n@deprecated in ARIA 1.1",
         "name": "aria-dropeffect",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "\"none\" | \"copy\" | \"execute\" | \"link\" | \"move\" | \"popup\"",
@@ -587,6 +819,10 @@
         "defaultValue": null,
         "description": "Identifies the element that provides an error message for the object.\n@see aria-invalid \n@see aria-describedby.",
         "name": "aria-errormessage",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -597,6 +833,10 @@
         "defaultValue": null,
         "description": "Indicates whether the element, or another grouping element it controls, is currently expanded or collapsed.",
         "name": "aria-expanded",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\"",
@@ -607,6 +847,10 @@
         "defaultValue": null,
         "description": "Identifies the next element (or elements) in an alternate reading order of content which, at the user's discretion,\nallows assistive technology to override the general default of reading in document source order.",
         "name": "aria-flowto",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -617,6 +861,10 @@
         "defaultValue": null,
         "description": "Indicates an element's \"grabbed\" state in a drag-and-drop operation.\n@deprecated in ARIA 1.1",
         "name": "aria-grabbed",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\"",
@@ -627,6 +875,10 @@
         "defaultValue": null,
         "description": "Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element.",
         "name": "aria-haspopup",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\" | \"menu\" | \"listbox\" | \"tree\" | \"grid\" | \"dialog\"",
@@ -637,6 +889,10 @@
         "defaultValue": null,
         "description": "Indicates whether the element is exposed to an accessibility API.\n@see aria-disabled.",
         "name": "aria-hidden",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\"",
@@ -647,6 +903,10 @@
         "defaultValue": null,
         "description": "Indicates the entered value does not conform to the format expected by the application.\n@see aria-errormessage.",
         "name": "aria-invalid",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\" | \"grammar\" | \"spelling\"",
@@ -657,6 +917,10 @@
         "defaultValue": null,
         "description": "Indicates keyboard shortcuts that an author has implemented to activate or give focus to an element.",
         "name": "aria-keyshortcuts",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -667,6 +931,10 @@
         "defaultValue": null,
         "description": "Defines a string value that labels the current element.\n@see aria-labelledby.",
         "name": "aria-label",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -677,6 +945,10 @@
         "defaultValue": null,
         "description": "Identifies the element (or elements) that labels the current element.\n@see aria-describedby.",
         "name": "aria-labelledby",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -687,6 +959,10 @@
         "defaultValue": null,
         "description": "Defines the hierarchical level of an element within a structure.",
         "name": "aria-level",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "number",
@@ -697,6 +973,10 @@
         "defaultValue": null,
         "description": "Indicates that an element will be updated, and describes the types of updates the user agents, assistive technologies, and user can expect from the live region.",
         "name": "aria-live",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "\"off\" | \"assertive\" | \"polite\"",
@@ -707,6 +987,10 @@
         "defaultValue": null,
         "description": "Indicates whether an element is modal when displayed.",
         "name": "aria-modal",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\"",
@@ -717,6 +1001,10 @@
         "defaultValue": null,
         "description": "Indicates whether a text box accepts multiple lines of input or only a single line.",
         "name": "aria-multiline",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\"",
@@ -727,6 +1015,10 @@
         "defaultValue": null,
         "description": "Indicates that the user may select more than one item from the current selectable descendants.",
         "name": "aria-multiselectable",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\"",
@@ -737,6 +1029,10 @@
         "defaultValue": null,
         "description": "Indicates whether the element's orientation is horizontal, vertical, or unknown/ambiguous.",
         "name": "aria-orientation",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "\"horizontal\" | \"vertical\"",
@@ -747,6 +1043,10 @@
         "defaultValue": null,
         "description": "Identifies an element (or elements) in order to define a visual, functional, or contextual parent/child relationship\nbetween DOM elements where the DOM hierarchy cannot be used to represent the relationship.\n@see aria-controls.",
         "name": "aria-owns",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -757,6 +1057,10 @@
         "defaultValue": null,
         "description": "Defines a short hint (a word or short phrase) intended to aid the user with data entry when the control has no value.\nA hint could be a sample value or a brief description of the expected format.",
         "name": "aria-placeholder",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -767,6 +1071,10 @@
         "defaultValue": null,
         "description": "Defines an element's number or position in the current set of listitems or treeitems. Not required if all elements in the set are present in the DOM.\n@see aria-setsize.",
         "name": "aria-posinset",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "number",
@@ -777,6 +1085,10 @@
         "defaultValue": null,
         "description": "Indicates the current \"pressed\" state of toggle buttons.\n@see aria-checked \n@see aria-selected.",
         "name": "aria-pressed",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\" | \"mixed\"",
@@ -787,6 +1099,10 @@
         "defaultValue": null,
         "description": "Indicates that the element is not editable, but is otherwise operable.\n@see aria-disabled.",
         "name": "aria-readonly",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\"",
@@ -797,6 +1113,10 @@
         "defaultValue": null,
         "description": "Indicates what notifications the user agent will trigger when the accessibility tree within a live region is modified.\n@see aria-atomic.",
         "name": "aria-relevant",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "\"additions\" | \"additions text\" | \"all\" | \"removals\" | \"text\"",
@@ -807,6 +1127,10 @@
         "defaultValue": null,
         "description": "Indicates that user input is required on the element before a form may be submitted.",
         "name": "aria-required",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\"",
@@ -817,6 +1141,10 @@
         "defaultValue": null,
         "description": "Defines a human-readable, author-localized description for the role of an element.",
         "name": "aria-roledescription",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -827,6 +1155,10 @@
         "defaultValue": null,
         "description": "Defines the total number of rows in a table, grid, or treegrid.\n@see aria-rowindex.",
         "name": "aria-rowcount",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "number",
@@ -837,6 +1169,10 @@
         "defaultValue": null,
         "description": "Defines an element's row index or position with respect to the total number of rows within a table, grid, or treegrid.\n@see aria-rowcount \n@see aria-rowspan.",
         "name": "aria-rowindex",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "number",
@@ -847,6 +1183,10 @@
         "defaultValue": null,
         "description": "Defines the number of rows spanned by a cell or gridcell within a table, grid, or treegrid.\n@see aria-rowindex \n@see aria-colspan.",
         "name": "aria-rowspan",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "number",
@@ -857,6 +1197,10 @@
         "defaultValue": null,
         "description": "Indicates the current \"selected\" state of various widgets.\n@see aria-checked \n@see aria-pressed.",
         "name": "aria-selected",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "boolean | \"false\" | \"true\"",
@@ -867,6 +1211,10 @@
         "defaultValue": null,
         "description": "Defines the number of items in the current set of listitems or treeitems. Not required if all elements in the set are present in the DOM.\n@see aria-posinset.",
         "name": "aria-setsize",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "number",
@@ -877,6 +1225,10 @@
         "defaultValue": null,
         "description": "Indicates if items in a table or grid are sorted in ascending or descending order.",
         "name": "aria-sort",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "\"none\" | \"ascending\" | \"descending\" | \"other\"",
@@ -887,6 +1239,10 @@
         "defaultValue": null,
         "description": "Defines the maximum allowed value for a range widget.",
         "name": "aria-valuemax",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "number",
@@ -897,6 +1253,10 @@
         "defaultValue": null,
         "description": "Defines the minimum allowed value for a range widget.",
         "name": "aria-valuemin",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "number",
@@ -907,6 +1267,10 @@
         "defaultValue": null,
         "description": "Defines the current value for a range widget.\n@see aria-valuetext.",
         "name": "aria-valuenow",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "number",
@@ -917,6 +1281,10 @@
         "defaultValue": null,
         "description": "Defines the human readable text alternative of aria-valuenow for a range widget.",
         "name": "aria-valuetext",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "HTMLAttributes"
+        },
         "required": false,
         "type": {
           "name": "string",
@@ -927,6 +1295,10 @@
         "defaultValue": null,
         "description": "",
         "name": "dangerouslySetInnerHTML",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "{ __html: string; }",
@@ -937,6 +1309,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onCopy",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: ClipboardEvent<HTMLElement>) => void",
@@ -947,6 +1323,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onCopyCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: ClipboardEvent<HTMLElement>) => void",
@@ -957,6 +1337,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onCut",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: ClipboardEvent<HTMLElement>) => void",
@@ -967,6 +1351,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onCutCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: ClipboardEvent<HTMLElement>) => void",
@@ -977,6 +1365,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onPaste",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: ClipboardEvent<HTMLElement>) => void",
@@ -987,6 +1379,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onPasteCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: ClipboardEvent<HTMLElement>) => void",
@@ -997,6 +1393,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onCompositionEnd",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: CompositionEvent<HTMLElement>) => void",
@@ -1007,6 +1407,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onCompositionEndCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: CompositionEvent<HTMLElement>) => void",
@@ -1017,6 +1421,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onCompositionStart",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: CompositionEvent<HTMLElement>) => void",
@@ -1027,6 +1435,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onCompositionStartCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: CompositionEvent<HTMLElement>) => void",
@@ -1037,6 +1449,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onCompositionUpdate",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: CompositionEvent<HTMLElement>) => void",
@@ -1047,6 +1463,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onCompositionUpdateCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: CompositionEvent<HTMLElement>) => void",
@@ -1057,6 +1477,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onFocus",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: FocusEvent<HTMLElement>) => void",
@@ -1067,6 +1491,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onFocusCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: FocusEvent<HTMLElement>) => void",
@@ -1077,6 +1505,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onBlur",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: FocusEvent<HTMLElement>) => void",
@@ -1087,6 +1519,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onBlurCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: FocusEvent<HTMLElement>) => void",
@@ -1097,6 +1533,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onChange",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: FormEvent<HTMLElement>) => void",
@@ -1107,6 +1547,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onChangeCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: FormEvent<HTMLElement>) => void",
@@ -1117,6 +1561,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onInput",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: FormEvent<HTMLElement>) => void",
@@ -1127,6 +1575,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onInputCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: FormEvent<HTMLElement>) => void",
@@ -1137,6 +1589,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onReset",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: FormEvent<HTMLElement>) => void",
@@ -1147,6 +1603,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onResetCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: FormEvent<HTMLElement>) => void",
@@ -1157,6 +1617,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onSubmit",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: FormEvent<HTMLElement>) => void",
@@ -1167,6 +1631,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onSubmitCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: FormEvent<HTMLElement>) => void",
@@ -1177,6 +1645,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onInvalid",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: FormEvent<HTMLElement>) => void",
@@ -1187,6 +1659,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onInvalidCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: FormEvent<HTMLElement>) => void",
@@ -1197,6 +1673,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onLoad",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1207,6 +1687,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onLoadCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1217,6 +1701,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onError",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1227,6 +1715,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onErrorCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1237,6 +1729,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onKeyDown",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: KeyboardEvent<HTMLElement>) => void",
@@ -1247,6 +1743,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onKeyDownCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: KeyboardEvent<HTMLElement>) => void",
@@ -1257,6 +1757,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onKeyPress",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: KeyboardEvent<HTMLElement>) => void",
@@ -1267,6 +1771,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onKeyPressCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: KeyboardEvent<HTMLElement>) => void",
@@ -1277,6 +1785,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onKeyUp",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: KeyboardEvent<HTMLElement>) => void",
@@ -1287,6 +1799,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onKeyUpCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: KeyboardEvent<HTMLElement>) => void",
@@ -1297,6 +1813,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onAbort",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1307,6 +1827,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onAbortCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1317,6 +1841,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onCanPlay",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1327,6 +1855,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onCanPlayCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1337,6 +1869,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onCanPlayThrough",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1347,6 +1883,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onCanPlayThroughCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1357,6 +1897,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDurationChange",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1367,6 +1911,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDurationChangeCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1377,6 +1925,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onEmptied",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1387,6 +1939,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onEmptiedCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1397,6 +1953,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onEncrypted",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1407,6 +1967,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onEncryptedCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1417,6 +1981,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onEnded",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1427,6 +1995,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onEndedCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1437,6 +2009,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onLoadedData",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1447,6 +2023,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onLoadedDataCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1457,6 +2037,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onLoadedMetadata",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1467,6 +2051,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onLoadedMetadataCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1477,6 +2065,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onLoadStart",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1487,6 +2079,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onLoadStartCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1497,6 +2093,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onPause",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1507,6 +2107,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onPauseCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1517,6 +2121,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onPlay",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1527,6 +2135,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onPlayCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1537,6 +2149,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onPlaying",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1547,6 +2163,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onPlayingCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1557,6 +2177,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onProgress",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1567,6 +2191,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onProgressCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1577,6 +2205,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onRateChange",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1587,6 +2219,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onRateChangeCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1597,6 +2233,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onSeeked",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1607,6 +2247,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onSeekedCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1617,6 +2261,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onSeeking",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1627,6 +2275,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onSeekingCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1637,6 +2289,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onStalled",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1647,6 +2303,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onStalledCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1657,6 +2317,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onSuspend",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1667,6 +2331,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onSuspendCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1677,6 +2345,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onTimeUpdate",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1687,6 +2359,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onTimeUpdateCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1697,6 +2373,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onVolumeChange",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1707,6 +2387,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onVolumeChangeCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1717,6 +2401,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onWaiting",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1727,6 +2415,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onWaitingCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -1737,6 +2429,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onClick",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -1747,6 +2443,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onClickCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -1757,6 +2457,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onContextMenu",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -1767,6 +2471,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onContextMenuCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -1777,6 +2485,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDoubleClick",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -1787,6 +2499,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDoubleClickCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -1797,6 +2513,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDrag",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: DragEvent<HTMLElement>) => void",
@@ -1807,6 +2527,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDragCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: DragEvent<HTMLElement>) => void",
@@ -1817,6 +2541,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDragEnd",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: DragEvent<HTMLElement>) => void",
@@ -1827,6 +2555,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDragEndCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: DragEvent<HTMLElement>) => void",
@@ -1837,6 +2569,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDragEnter",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: DragEvent<HTMLElement>) => void",
@@ -1847,6 +2583,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDragEnterCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: DragEvent<HTMLElement>) => void",
@@ -1857,6 +2597,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDragExit",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: DragEvent<HTMLElement>) => void",
@@ -1867,6 +2611,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDragExitCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: DragEvent<HTMLElement>) => void",
@@ -1877,6 +2625,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDragLeave",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: DragEvent<HTMLElement>) => void",
@@ -1887,6 +2639,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDragLeaveCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: DragEvent<HTMLElement>) => void",
@@ -1897,6 +2653,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDragOver",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: DragEvent<HTMLElement>) => void",
@@ -1907,6 +2667,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDragOverCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: DragEvent<HTMLElement>) => void",
@@ -1917,6 +2681,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDragStart",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: DragEvent<HTMLElement>) => void",
@@ -1927,6 +2695,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDragStartCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: DragEvent<HTMLElement>) => void",
@@ -1937,6 +2709,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDrop",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: DragEvent<HTMLElement>) => void",
@@ -1947,6 +2723,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onDropCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: DragEvent<HTMLElement>) => void",
@@ -1957,6 +2737,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onMouseDown",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -1967,6 +2751,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onMouseDownCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -1977,6 +2765,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onMouseEnter",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -1987,6 +2779,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onMouseLeave",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -1997,6 +2793,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onMouseMove",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -2007,6 +2807,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onMouseMoveCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -2017,6 +2821,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onMouseOut",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -2027,6 +2835,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onMouseOutCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -2037,6 +2849,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onMouseOver",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -2047,6 +2863,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onMouseOverCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -2057,6 +2877,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onMouseUp",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -2067,6 +2891,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onMouseUpCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: MouseEvent<HTMLElement>) => void",
@@ -2077,6 +2905,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onSelect",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -2087,6 +2919,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onSelectCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: SyntheticEvent<HTMLElement>) => void",
@@ -2097,6 +2933,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onTouchCancel",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: TouchEvent<HTMLElement>) => void",
@@ -2107,6 +2947,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onTouchCancelCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: TouchEvent<HTMLElement>) => void",
@@ -2117,6 +2961,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onTouchEnd",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: TouchEvent<HTMLElement>) => void",
@@ -2127,6 +2975,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onTouchEndCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: TouchEvent<HTMLElement>) => void",
@@ -2137,6 +2989,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onTouchMove",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: TouchEvent<HTMLElement>) => void",
@@ -2147,6 +3003,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onTouchMoveCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: TouchEvent<HTMLElement>) => void",
@@ -2157,6 +3017,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onTouchStart",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: TouchEvent<HTMLElement>) => void",
@@ -2167,6 +3031,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onTouchStartCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: TouchEvent<HTMLElement>) => void",
@@ -2176,7 +3044,291 @@
       {
         "defaultValue": null,
         "description": "",
+        "name": "onPointerDown",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPointerDownCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPointerMove",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPointerMoveCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPointerUp",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPointerUpCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPointerCancel",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPointerCancelCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPointerEnter",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPointerEnterCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPointerLeave",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPointerLeaveCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPointerOver",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPointerOverCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPointerOut",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onPointerOutCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onGotPointerCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onGotPointerCaptureCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onLostPointerCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
+        "name": "onLostPointerCaptureCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
+        "required": false,
+        "type": {
+          "name": "(event: PointerEvent<HTMLElement>) => void",
+          "value": null
+        }
+      },
+      {
+        "defaultValue": null,
+        "description": "",
         "name": "onScroll",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: UIEvent<HTMLElement>) => void",
@@ -2187,6 +3339,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onScrollCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: UIEvent<HTMLElement>) => void",
@@ -2197,6 +3353,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onWheel",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: WheelEvent<HTMLElement>) => void",
@@ -2207,6 +3367,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onWheelCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: WheelEvent<HTMLElement>) => void",
@@ -2217,6 +3381,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onAnimationStart",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: AnimationEvent<HTMLElement>) => void",
@@ -2227,6 +3395,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onAnimationStartCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: AnimationEvent<HTMLElement>) => void",
@@ -2237,6 +3409,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onAnimationEnd",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: AnimationEvent<HTMLElement>) => void",
@@ -2247,6 +3423,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onAnimationEndCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: AnimationEvent<HTMLElement>) => void",
@@ -2257,6 +3437,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onAnimationIteration",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: AnimationEvent<HTMLElement>) => void",
@@ -2267,6 +3451,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onAnimationIterationCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: AnimationEvent<HTMLElement>) => void",
@@ -2277,6 +3465,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onTransitionEnd",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: TransitionEvent<HTMLElement>) => void",
@@ -2287,6 +3479,10 @@
         "defaultValue": null,
         "description": "",
         "name": "onTransitionEndCapture",
+        "parent": {
+          "fileName": "/Users/kamilbukum/DEV/tvm/bambu/node_modules/@types/react/index.d.ts",
+          "name": "DOMAttributes"
+        },
         "required": false,
         "type": {
           "name": "(event: TransitionEvent<HTMLElement>) => void",

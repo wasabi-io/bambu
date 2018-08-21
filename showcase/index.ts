@@ -1,5 +1,5 @@
 import Application from './Application';
-import transformer from "./component/code/transform/transformer";
+import transformer from "./component/editor/transform/tsx/transformer";
 import * as modules from "./modules";
 import {bulma} from "bambu";
 

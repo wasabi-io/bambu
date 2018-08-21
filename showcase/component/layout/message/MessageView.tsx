@@ -27,7 +27,7 @@ const MessageView: React.SFC<MessageViewProps> = ((props: MessageViewProps) => {
 MessageView.propTypes = {
     ...Message.propTypes,
     header: PropTypes.string
-};
+} as any;
 
 MessageView.defaultProps = {
     ...Message.defaultProps,

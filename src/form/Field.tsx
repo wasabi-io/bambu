@@ -2,15 +2,15 @@ import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import {bulma as FormStyle, HTMLComponent, HTMLDivProps} from '../index';
+import {Props} from "wasabi-common";
 
 /**
  * Refers Html Props and Additional Props.
  */
-export interface FieldProps extends HTMLDivProps {
+export interface FieldProps extends Props<any> {
     hasAddons?: boolean;
     hasAddonsCentered?: boolean;
     hasAddonsRight?: boolean;
-    isExpanded?: boolean;
     isHorizontal?: boolean;
     isGrouped?: boolean;
     isGroupedCentered?: boolean;
@@ -27,7 +27,6 @@ export default class Field extends React.Component<FieldProps, {}> {
         hasAddons: PropTypes.bool,
         hasAddonsCentered: PropTypes.bool,
         hasAddonsRight: PropTypes.bool,
-        isExpanded: PropTypes.bool,
         isHorizontal: PropTypes.bool,
         isGrouped: PropTypes.bool,
         isGroupedCentered: PropTypes.bool,
@@ -41,7 +40,6 @@ export default class Field extends React.Component<FieldProps, {}> {
         hasAddons: false,
         hasAddonsCentered: false,
         hasAddonsRight: false,
-        isExpanded: false,
         isHorizontal: false,
         isGrouped: false,
         isGroupedCentered: false,
@@ -56,7 +54,6 @@ export default class Field extends React.Component<FieldProps, {}> {
             hasAddons,
             hasAddonsCentered,
             hasAddonsRight,
-            isExpanded,
             isGrouped,
             isGroupedCentered,
             isGroupedRight,
@@ -75,7 +72,6 @@ export default class Field extends React.Component<FieldProps, {}> {
                 [`${FormStyle.hasAddons}`]: hasAddons,
                 [`${FormStyle.hasAddonsCentered}`]: hasAddonsCentered,
                 [`${FormStyle.hasAddonsRight}`]: hasAddonsRight,
-                [`${FormStyle.isExpanded}`]: isExpanded,
                 [`${FormStyle.isGrouped}`]: isGrouped,
                 [`${FormStyle.isGroupedCentered}`]: isGroupedCentered,
                 [`${FormStyle.isGroupedRight}`]: isGroupedRight,

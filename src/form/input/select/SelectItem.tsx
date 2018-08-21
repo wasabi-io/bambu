@@ -8,14 +8,14 @@ export interface SelectItemProps extends HTMLOptionProps {
 
 const SelectItem: React.SFC<SelectItemProps> = (props: SelectItemProps) => {
     return (
-        <option {...props} >{props.children}</option>
+        <option {...props}>{props.children}</option>
     );
 };
 
 SelectItem.propTypes = {
     ...HTMLComponent.propTypes,
     elementRef: PropTypes.func
-};
+} as any;
 
 SelectItem.defaultProps = HTMLComponent.defaultProps;
 

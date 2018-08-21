@@ -1,15 +1,11 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Alignment, alignmentValues, bulma as FormStyle, Color, colorValues, HTMLComponent, HTMLInputProps, Size, sizeValues} from '../../../index';
-import {FaIcon, FaIconProps, Icon} from '../../../elements/icon/index';
-import {has} from 'wasabi-common/lib';
-import Strings from 'wasabi-common/lib/types/Strings';
-import ControlLabel from '../../ControlLabel';
+import {Alignment, alignmentValues, bulma as FormStyle, Size, sizeValues} from '../../../index';
+import {FaIcon, FaIconProps} from "../../../elements/icon";
+import Input, {InputProps} from "../Input";
 
-export interface FileUploadProps extends HTMLInputProps {
-    color?: string | Color;
-    bSize?: string | Size;
+export interface FileUploadProps extends InputProps {
     label?: string;
     icon?: string | FaIconProps;
     iconSize?: string | Size;
@@ -17,11 +13,13 @@ export interface FileUploadProps extends HTMLInputProps {
     isFullwidth?: boolean;
     isBoxed?: boolean;
     alignment?: string | Alignment;
-    elementRef?: (ref: any) => any;
+    labelStyle?: React.CSSProperties;
 }
 
-const FileUpload: React.SFC<FileUploadProps> = (props: FileUploadProps) => {
+const FileUpload: any = (props: FileUploadProps) => {
     const {
+        id,
+        value,
         color,
         bSize,
         className,
@@ -33,6 +31,8 @@ const FileUpload: React.SFC<FileUploadProps> = (props: FileUploadProps) => {
         isBoxed,
         alignment,
         placeholder,
+        labelStyle,
+        elementRef,
         ...fileUploadProps
     } = props;
 
@@ -45,44 +45,69 @@ const FileUpload: React.SFC<FileUploadProps> = (props: FileUploadProps) => {
         {
             [`${FormStyle.hasName}`]: hasName,
             [`${FormStyle.isFullwidth}`]: isFullwidth,
-            [`${FormStyle.isFullwidth}`]: isFullwidth,
+            [`${FormStyle.isBoxed}`]: isBoxed,
         });
-
-    const hasIcon = has(icon);
-    const hasLabel = Strings.has(label);
 
     return (
         <div className={classNames}>
-            <ControlLabel className={FormStyle.fileLabel}>
-                <input className={FormStyle.fileInput} {...fileUploadProps} type="file"/>
-                {(hasIcon || hasLabel) && <span className={FormStyle.fileCta}>
-          {hasIcon && <span className={FormStyle.fileIcon}>
-              <Icon bSize={iconSize}>{typeof icon === "string" ? <FaIcon name={icon}/> : <FaIcon {...icon} />}</Icon>
-          </span>}
-                    {hasLabel && <span className={FormStyle.fileLabel}> {label}</span>}
-        </span>}
-                {hasName && Strings.has(placeholder) && <span className={FormStyle.fileName}>{placeholder}</span>}
-            </ControlLabel>
+            <label style={labelStyle} className={FormStyle.fileLabel}>
+                <input
+                    id={id}
+                    hidden
+                    value={value}
+                    className={FormStyle.fileInput}
+                    {...fileUploadProps}
+                    type="file"
+                    ref={elementRef}
+                />
+                {
+                    (icon || label) && (
+                        <span className={FormStyle.fileCta}>
+                            {icon && (
+                                <span className={FormStyle.fileIcon}>
+                                    {typeof icon === "string" ? <FaIcon name={icon}/> : <FaIcon {...icon} bSize={iconSize}/>}
+                                </span>)
+                            }
+                            <span className={FormStyle.fileLabel}>{label}</span>
+                        </span>
+                    )
+                }
+                {value && (
+                    <span className={FormStyle.fileName}>
+                        {value}
+                    </span>
+                )}
+                {!value && (
+                    <span className={FormStyle.fileName}>
+                        {placeholder}
+                    </span>
+                )}
+            </label>
         </div>
     );
 };
 
 FileUpload.propTypes = {
-    ...HTMLComponent.propTypes,
-    color: PropTypes.oneOf(colorValues),
-    bSize: PropTypes.oneOf(sizeValues),
+    ...Input.propTypes,
     label: PropTypes.string,
-    icon: PropTypes.object,
+    icon: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.object
+    ]),
     iconSize: PropTypes.oneOf(sizeValues),
     hasName: PropTypes.bool,
     isFullwidth: PropTypes.bool,
     isBoxed: PropTypes.bool,
-    alignment: PropTypes.oneOf(alignmentValues)
+    alignment: PropTypes.oneOf(alignmentValues),
+    labelStyle: PropTypes.object
 };
+
 FileUpload.defaultProps = {
-    ...HTMLComponent.defaultProps,
-    hasName: false
+    ...Input.defaultProps,
+    hasName: false,
+    isFullwidth: true
 };
+
 FileUpload.displayName = 'FileUpload';
 
 export default FileUpload;

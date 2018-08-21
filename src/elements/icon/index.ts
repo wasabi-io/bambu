@@ -1,4 +1,4 @@
-export {default as Icon, IconProps, IconOptions} from './Icon';
+export {default as Icon, IconProps, IconOptions, IconType} from './Icon';
 export {
     default as FaIcon,
     FaIconProps,

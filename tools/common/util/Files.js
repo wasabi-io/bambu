@@ -9,11 +9,11 @@ const walkSync = function (dir, filelist, extensions, ignore) {
         const ext = fileExtension(file);
         if (ignore.indexOf(ext) === -1) {
             if (fs.statSync(path.resolve(dir, file)).isDirectory()) {
-                filelist = walkSync(path.resolve(dir, file) + '/', filelist, extensions, ignore);
+                filelist = walkSync(path.join(dir, file, "/"), filelist, extensions, ignore);
             }
             else {
                 if (extensions.indexOf(ext) !== -1) {
-                    filelist.push(dir + file);
+                    filelist.push(path.join(dir, file));
                 }
             }
         }

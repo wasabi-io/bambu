@@ -7,8 +7,8 @@ import asyncComponent from "./modules/router/util/AsyncComponent";
 export default class Router extends Stateless<{}> {
     public render() {
 
-        const dashboard = asyncComponent(() => import("./modules/dashboard/index").then((module: any) => module.default));
-        const showcase = asyncComponent(() => import("./modules/router/Switch").then((module: any) => module.default));
+        const dashboard = asyncComponent(() => System.import("./modules/dashboard/index").then((module: any) => module.default));
+        const showcase = asyncComponent(() => System.import("./modules/router/Switch").then((module: any) => module.default));
 
         return (
             <HashRouter>

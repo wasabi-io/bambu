@@ -25,7 +25,8 @@
   ],
   "exclude": [
     "__test__",
-    "showcase/**/*",
+    "showcase",
+    "extensions",
     "./build",
     "./tools",
     "./node_modules/**/*"

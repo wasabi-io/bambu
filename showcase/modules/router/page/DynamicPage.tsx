@@ -96,7 +96,7 @@ export default class DynamicPage extends Stateless <DynamicPageContentProps> {
         }
         return (
             <div>
-                <div className={pageStyle.bdContent}>
+                <div className={pageStyle.bPageContent}>
                     <HeaderView breads={breads}>
                         <Page
                             className={pageStyle.bdHeaderSection}
@@ -176,11 +176,11 @@ export default class DynamicPage extends Stateless <DynamicPageContentProps> {
     public static documentPageLoader = (paths: string[]): Promise<any> => {
         let docPath = paths.slice(1).join("/");
         docPath = docPath !== "" ? `/${docPath}` : "";
-        return import(`../../documentation${docPath}/components`).then((module: any) => module.default);
+        return System.import(`../../documentation${docPath}/components`).then((module: any) => module.default);
     }
 
     public static renderModulePage(modulePath: string): Promise<React.ComponentClass<any>> {
-        return import(`../../documentation${modulePath}/index`)
+        return System.import(`../../documentation${modulePath}/index`)
             .then((module: any) => module.default || module);
     }
 

@@ -1,392 +1,86 @@
 {
-  "components": {
-    "breadcrumb": {
-      "BreadCrumb": [
+  "form": {
+    "Control": [
+      {
+        "displayName": "Control",
+        "description": ""
+      }
+    ],
+    "ControlLabel": [
+      {
+        "displayName": "ControlLabel",
+        "description": ""
+      }
+    ],
+    "Field": [
+      {
+        "displayName": "Field",
+        "description": ""
+      }
+    ],
+    "FieldBody": [
+      {
+        "displayName": "FieldBody",
+        "description": ""
+      }
+    ],
+    "FieldHelp": [
+      {
+        "displayName": "FieldHelp",
+        "description": ""
+      }
+    ],
+    "FieldLabel": [
+      {
+        "displayName": "FieldLabel",
+        "description": ""
+      }
+    ],
+    "Form": [
+      {
+        "displayName": "Form",
+        "description": ""
+      }
+    ],
+    "input": {
+      "Input": [
         {
-          "displayName": "BreadCrumb",
-          "description": "The BreadCrumb component consists of links which are aligned side by side and separated by a divider."
-        }
-      ],
-      "BreadCrumbItem": [
-        {
-          "displayName": "BreadCrumbItem",
-          "description": "Consists of link which is child of <code>{&lt;BreadCrumb  /&gt;}</code> component."
-        }
-      ]
-    },
-    "card": {
-      "Card": [
-        {
-          "displayName": "Card",
-          "description": "<p>The <strong>Card</strong> component comprises several elements that you can mix and match:</p>\n<code>&lt;Card /&gt;</code>: the main container"
-        }
-      ],
-      "CardContent": [
-        {
-          "displayName": "CardContent",
-          "description": "A multi-purpose container for any other element in <code>{&lt;Card  /&gt;}</code> component."
-        }
-      ],
-      "CardFooter": [
-        {
-          "displayName": "CardFooter",
-          "description": "A horizontal list of controls in <code>{&lt;Card/&gt;}</code> component."
-        }
-      ],
-      "CardFooterItem": [
-        {
-          "displayName": "CardFooterItem",
-          "description": "A repeatable list item in <code>{&lt;CardFooter /&gt;}</code> component."
-        }
-      ],
-      "CardHeader": [
-        {
-          "displayName": "CardHeader",
-          "description": "A horizontal bar with a shadow in <code>{&lt;Card/&gt;}</code> component."
-        }
-      ],
-      "CardHeaderIcon": [
-        {
-          "displayName": "CardHeaderIcon",
-          "description": "A placeholder for an icon in <code>{&lt;CardHeader /&gt;}</code> component."
-        }
-      ],
-      "CardHeaderTitle": [
-        {
-          "displayName": "CardHeaderTitle",
-          "description": "A `left-aligned` bold text in <code>{&lt;CardHeader /&gt;}</code> component."
-        }
-      ],
-      "CardImage": [
-        {
-          "displayName": "CardImage",
-          "description": "A `fullwidth` container for a responsive image in <code>{&lt;Card /&gt;}</code> component."
-        }
-      ]
-    },
-    "dropdown": {
-      "Dropdown": [
-        {
-          "displayName": "Dropdown",
-          "description": "Is a container for a <code>{&lt;DropdownTrigger />} and a {<DropdownMenu /&gt;}</code>."
-        }
-      ],
-      "DropdownContent": [
-        {
-          "displayName": "DropdownContent",
-          "description": "The dropdown box, with a white background and a shadow in <code>{&lt;DropdownMenu /&gt;}</code> component."
-        }
-      ],
-      "DropdownDivider": [
-        {
-          "displayName": "DropdownDivider",
-          "description": "A horizontal line to separate {<DropdownItem>} components."
-        }
-      ],
-      "DropdownItem": [
-        {
-          "displayName": "DropdownItem",
-          "description": "Each single item of the dropdown, which can either be a `a` or a `div` in <code>{&lt;DropdownContent/&gt;}</code> component."
-        }
-      ],
-      "DropdownMenu": [
-        {
-          "displayName": "DropdownMenu",
-          "description": "The toggable menu, hidden by default in <code>{&lt;Dropdown /&gt;}</code> component."
-        }
-      ],
-      "DropdownTrigger": [
-        {
-          "displayName": "DropdownTrigger",
-          "description": "The container for a button in <code>{&lt;Dropdown /&gt;}</code>"
-        }
-      ]
-    },
-    "media": {
-      "Media": [
-        {
-          "displayName": "Media",
+          "displayName": "Input",
           "description": ""
         }
       ],
-      "MediaContent": [
-        {
-          "displayName": "MediaContent",
-          "description": ""
-        }
-      ],
-      "MediaLeft": [
-        {
-          "displayName": "MediaLeft",
-          "description": ""
-        }
-      ],
-      "MediaRight": [
-        {
-          "displayName": "MediaRight",
-          "description": ""
-        }
-      ]
-    },
-    "menu": {
-      "Menu": [
-        {
-          "displayName": "Menu",
-          "description": "A simple menu, for any type of vertical navigation."
-        }
-      ],
-      "MenuLabel": [
-        {
-          "displayName": "MenuLabel",
-          "description": "Label for each top <code>{&lt;MenuList />} in {<Menu /&gt;}</code> component."
-        }
-      ],
-      "MenuLink": [
-        {
-          "displayName": "MenuLink",
-          "description": "Is a menu item or menu label for child components."
-        }
-      ],
-      "MenuList": [
-        {
-          "displayName": "MenuList",
-          "description": "A group of menu items in <code>{&lt;Menu />} or in {<MenuListItem /&gt;}</code> components."
-        }
-      ],
-      "MenuListItem": [
-        {
-          "displayName": "MenuListItem",
-          "description": "Is used like <code>{&lt;Menu /&gt;}</code> for child components."
-        }
-      ]
-    },
-    "message": {
-      "Message": [
-        {
-          "displayName": "Message",
-          "description": "Colored message blocks, to emphasize part of your page"
-        }
-      ],
-      "MessageBody": [
-        {
-          "displayName": "MessageBody",
-          "description": "The content of <code>{&lt;Message /&gt;}</code> component."
-        }
-      ],
-      "MessageHeader": [
-        {
-          "displayName": "MessageHeader",
-          "description": "The header of <code>{&lt;Message /&gt;}</code> component."
-        }
-      ]
-    },
-    "modal": {
-      "Modal": [
-        {
-          "displayName": "Modal",
-          "description": "A classic modal overlay, in which you can include any content you want."
-        }
-      ],
-      "ModalCard": [
-        {
-          "displayName": "ModalCard",
-          "description": "A more classic modal, with a head, a body and a foot."
-        }
-      ],
-      "ModalCardBody": [
-        {
-          "displayName": "ModalCardBody",
-          "description": "The body of <code>{&lt;ModalCard /&gt;}</code>"
-        }
-      ],
-      "ModalCardFooter": [
-        {
-          "displayName": "ModalCardFooter",
-          "description": "The foot of <code>{&lt;ModalCard /&gt;}</code>"
-        }
-      ],
-      "ModalCardHeader": [
-        {
-          "displayName": "ModalCardHeader",
-          "description": "The header of <code>{&lt;ModalCard /&gt;}</code>"
-        }
-      ],
-      "ModalCardTitle": [
-        {
-          "displayName": "ModalCardTitle",
-          "description": "The title of <code>{&lt;ModalCard />} in {<ModalCardHeader /&gt;}</code>"
-        }
-      ],
-      "ModalClose": [
-        {
-          "displayName": "ModalClose",
-          "description": "A simple cross located in the top right corner in <code>{&lt;Modal /&gt;}</code> component."
-        }
-      ],
-      "ModalContent": [
-        {
-          "displayName": "ModalContent",
-          "description": "A horizontally and vertically centered container, with a maximum width of 640px, in which you can include any content in <code>{&lt;Modal /&gt;}</code> component."
-        }
-      ]
-    },
-    "navbar": {
-      "Navbar": [
-        {
-          "displayName": "Navbar",
-          "description": ""
-        }
-      ],
-      "NavbarBrand": [
-        {
-          "displayName": "NavbarBrand",
-          "description": ""
-        }
-      ],
-      "NavbarBurger": [
-        {
-          "displayName": "NavbarBurger",
-          "description": ""
-        }
-      ],
-      "NavbarDivider": [
-        {
-          "displayName": "NavbarDivider",
-          "description": ""
-        }
-      ],
-      "NavbarDropdown": [
-        {
-          "displayName": "NavbarDropdown",
-          "description": ""
-        }
-      ],
-      "NavbarEnd": [
-        {
-          "displayName": "NavbarEnd",
-          "description": ""
-        }
-      ],
-      "NavbarItem": [
-        {
-          "displayName": "NavbarItem",
-          "description": ""
-        }
-      ],
-      "NavbarItemLink": [
-        {
-          "displayName": "NavbarItemLink",
-          "description": ""
-        }
-      ],
-      "NavbarLink": [
-        {
-          "displayName": "NavbarLink",
-          "description": ""
-        }
-      ],
-      "NavbarMenu": [
-        {
-          "displayName": "NavbarMenu",
-          "description": ""
-        }
-      ],
-      "NavbarStart": [
-        {
-          "displayName": "NavbarStart",
-          "description": ""
-        }
-      ]
-    },
-    "pagination": {
-      "Pagination": [
-        {
-          "displayName": "Pagination",
-          "description": ""
-        }
-      ],
-      "PaginationEllipsis": [
-        {
-          "displayName": "PaginationEllipsis",
-          "description": ""
-        }
-      ],
-      "PaginationLink": [
-        {
-          "displayName": "PaginationLink",
-          "description": ""
-        }
-      ],
-      "PaginationList": [
-        {
-          "displayName": "PaginationList",
-          "description": ""
-        }
-      ],
-      "PaginationNext": [
-        {
-          "displayName": "PaginationNext",
-          "description": ""
-        }
-      ],
-      "PaginationPrevious": [
-        {
-          "displayName": "PaginationPrevious",
-          "description": ""
-        }
-      ]
-    },
-    "panel": {
-      "Panel": [
-        {
-          "displayName": "Panel",
-          "description": ""
-        }
-      ],
-      "PanelBlock": [
-        {
-          "displayName": "PanelBlock",
-          "description": "PanelBlock Component."
-        }
-      ],
-      "PanelHeading": [
-        {
-          "displayName": "PanelHeading",
-          "description": ""
-        }
-      ],
-      "PanelIcon": [
-        {
-          "displayName": "PanelIcon",
-          "description": ""
-        }
-      ],
-      "PanelTabs": [
-        {
-          "displayName": "PanelTabs",
-          "description": ""
-        }
-      ]
-    },
-    "tabs": {
-      "Tab": [
-        {
-          "displayName": "Tab",
-          "description": ""
-        }
-      ],
-      "TabGroup": [
-        {
-          "displayName": "TabGroup",
-          "description": ""
-        }
-      ],
-      "Tabs": [
-        {
-          "displayName": "Tabs",
-          "description": ""
-        }
-      ]
+      "checkbox": {
+        "CheckBox": [
+          {
+            "displayName": "CheckBox",
+            "description": ""
+          }
+        ]
+      },
+      "radio": {
+        "Radio": [
+          {
+            "displayName": "Radio",
+            "description": ""
+          }
+        ]
+      },
+      "select": {
+        "SelectItem": [
+          {
+            "displayName": "SelectItem",
+            "description": ""
+          }
+        ]
+      },
+      "textarea": {
+        "TextArea": [
+          {
+            "displayName": "TextArea",
+            "description": ""
+          }
+        ]
+      }
     }
   },
   "elements": {
@@ -398,18 +92,18 @@
         }
       ]
     },
-    "button": {
-      "Button": [
-        {
-          "displayName": "Button",
-          "description": ""
-        }
-      ]
-    },
     "container": {
       "Container": [
         {
           "displayName": "Container",
+          "description": ""
+        }
+      ]
+    },
+    "button": {
+      "Button": [
+        {
+          "displayName": "Button",
           "description": ""
         }
       ]
@@ -559,102 +253,288 @@
       ]
     }
   },
-  "form": {
-    "Control": [
-      {
-        "displayName": "Control",
-        "description": ""
-      }
-    ],
-    "ControlLabel": [
-      {
-        "displayName": "ControlLabel",
-        "description": ""
-      }
-    ],
-    "Field": [
-      {
-        "displayName": "Field",
-        "description": ""
-      }
-    ],
-    "FieldBody": [
-      {
-        "displayName": "FieldBody",
-        "description": ""
-      }
-    ],
-    "FieldHelp": [
-      {
-        "displayName": "FieldHelp",
-        "description": ""
-      }
-    ],
-    "FieldLabel": [
-      {
-        "displayName": "FieldLabel",
-        "description": ""
-      }
-    ],
-    "Form": [
-      {
-        "displayName": "Form",
-        "description": ""
-      }
-    ],
-    "input": {
-      "Input": [
+  "components": {
+    "breadcrumb": {
+      "BreadCrumb": [
         {
-          "displayName": "Input",
+          "displayName": "BreadCrumb",
+          "description": "The BreadCrumb component consists of links which are aligned side by side and separated by a divider."
+        }
+      ],
+      "BreadCrumbItem": [
+        {
+          "displayName": "BreadCrumbItem",
+          "description": "Consists of link which is child of <code>{&lt;BreadCrumb  /&gt;}</code> component."
+        }
+      ]
+    },
+    "media": {
+      "Media": [
+        {
+          "displayName": "Media",
           "description": ""
         }
       ],
-      "checkbox": {
-        "CheckBox": [
-          {
-            "displayName": "CheckBox",
-            "description": ""
-          }
-        ]
-      },
-      "file": {
-        "FileUpload": [
-          {
-            "displayName": "FileUpload",
-            "description": ""
-          }
-        ]
-      },
-      "radio": {
-        "Radio": [
-          {
-            "displayName": "Radio",
-            "description": ""
-          }
-        ]
-      },
-      "select": {
-        "Select": [
-          {
-            "displayName": "Select",
-            "description": ""
-          }
-        ],
-        "SelectItem": [
-          {
-            "displayName": "SelectItem",
-            "description": ""
-          }
-        ]
-      },
-      "textarea": {
-        "TextArea": [
-          {
-            "displayName": "TextArea",
-            "description": ""
-          }
-        ]
-      }
+      "MediaContent": [
+        {
+          "displayName": "MediaContent",
+          "description": ""
+        }
+      ],
+      "MediaLeft": [
+        {
+          "displayName": "MediaLeft",
+          "description": ""
+        }
+      ],
+      "MediaRight": [
+        {
+          "displayName": "MediaRight",
+          "description": ""
+        }
+      ]
+    },
+    "dropdown": {
+      "DropdownDivider": [
+        {
+          "displayName": "DropdownDivider",
+          "description": "A horizontal line to separate {<DropdownItem>} components."
+        }
+      ],
+      "DropdownItem": [
+        {
+          "displayName": "DropdownItem",
+          "description": "Each single item of the dropdown, which can either be a `a` or a `div` in <code>{&lt;DropdownContent/&gt;}</code> component."
+        }
+      ],
+      "DropdownMenu": [
+        {
+          "displayName": "DropdownMenu",
+          "description": "The toggable menu, hidden by default in <code>{&lt;Dropdown /&gt;}</code> component."
+        }
+      ]
+    },
+    "card": {
+      "Card": [
+        {
+          "displayName": "Card",
+          "description": "<p>The <strong>Card</strong> component comprises several elements that you can mix and match:</p>\n<code>&lt;Card /&gt;</code>: the main container"
+        }
+      ],
+      "CardContent": [
+        {
+          "displayName": "CardContent",
+          "description": "A multi-purpose container for any other element in <code>{&lt;Card  /&gt;}</code> component."
+        }
+      ],
+      "CardFooter": [
+        {
+          "displayName": "CardFooter",
+          "description": "A horizontal list of controls in <code>{&lt;Card/&gt;}</code> component."
+        }
+      ],
+      "CardFooterItem": [
+        {
+          "displayName": "CardFooterItem",
+          "description": "A repeatable list item in <code>{&lt;CardFooter /&gt;}</code> component."
+        }
+      ],
+      "CardHeader": [
+        {
+          "displayName": "CardHeader",
+          "description": "A horizontal bar with a shadow in <code>{&lt;Card/&gt;}</code> component."
+        }
+      ],
+      "CardHeaderIcon": [
+        {
+          "displayName": "CardHeaderIcon",
+          "description": "A placeholder for an icon in <code>{&lt;CardHeader /&gt;}</code> component."
+        }
+      ],
+      "CardHeaderTitle": [
+        {
+          "displayName": "CardHeaderTitle",
+          "description": "A `left-aligned` bold text in <code>{&lt;CardHeader /&gt;}</code> component."
+        }
+      ],
+      "CardImage": [
+        {
+          "displayName": "CardImage",
+          "description": "A `fullwidth` container for a responsive image in <code>{&lt;Card /&gt;}</code> component."
+        }
+      ]
+    },
+    "menu": {
+      "Menu": [
+        {
+          "displayName": "Menu",
+          "description": "A simple menu, for any type of vertical navigation."
+        }
+      ],
+      "MenuLabel": [
+        {
+          "displayName": "MenuLabel",
+          "description": "Label for each top <code>{&lt;MenuList />} in {<Menu /&gt;}</code> component."
+        }
+      ],
+      "MenuLink": [
+        {
+          "displayName": "MenuLink",
+          "description": "Is a menu item or menu label for child components."
+        }
+      ],
+      "MenuList": [
+        {
+          "displayName": "MenuList",
+          "description": "A group of menu items in <code>{&lt;Menu />} or in {<MenuListItem /&gt;}</code> components."
+        }
+      ],
+      "MenuListItem": [
+        {
+          "displayName": "MenuListItem",
+          "description": "Is used like <code>{&lt;Menu /&gt;}</code> for child components."
+        }
+      ]
+    },
+    "message": {
+      "Message": [
+        {
+          "displayName": "Message",
+          "description": "Colored message blocks, to emphasize part of your page"
+        }
+      ],
+      "MessageBody": [
+        {
+          "displayName": "MessageBody",
+          "description": "The content of <code>{&lt;Message /&gt;}</code> component."
+        }
+      ],
+      "MessageHeader": [
+        {
+          "displayName": "MessageHeader",
+          "description": "The header of <code>{&lt;Message /&gt;}</code> component."
+        }
+      ]
+    },
+    "pagination": {
+      "Pagination": [
+        {
+          "displayName": "Pagination",
+          "description": ""
+        }
+      ],
+      "PaginationEllipsis": [
+        {
+          "displayName": "PaginationEllipsis",
+          "description": ""
+        }
+      ],
+      "PaginationLink": [
+        {
+          "displayName": "PaginationLink",
+          "description": ""
+        }
+      ],
+      "PaginationList": [
+        {
+          "displayName": "PaginationList",
+          "description": ""
+        }
+      ],
+      "PaginationNext": [
+        {
+          "displayName": "PaginationNext",
+          "description": ""
+        }
+      ],
+      "PaginationPrevious": [
+        {
+          "displayName": "PaginationPrevious",
+          "description": ""
+        }
+      ]
+    },
+    "modal": {
+      "ModalClose": [
+        {
+          "displayName": "ModalClose",
+          "description": "A simple cross located in the top right corner in <code>{&lt;Modal /&gt;}</code> component."
+        }
+      ],
+      "ModalContent": [
+        {
+          "displayName": "ModalContent",
+          "description": "A horizontally and vertically centered container, with a maximum width of 640px, in which you can include any content in <code>{&lt;Modal /&gt;}</code> component."
+        }
+      ]
+    },
+    "navbar": {
+      "Navbar": [
+        {
+          "displayName": "Navbar",
+          "description": ""
+        }
+      ],
+      "NavbarBrand": [
+        {
+          "displayName": "NavbarBrand",
+          "description": ""
+        }
+      ],
+      "NavbarBurger": [
+        {
+          "displayName": "NavbarBurger",
+          "description": ""
+        }
+      ],
+      "NavbarDivider": [
+        {
+          "displayName": "NavbarDivider",
+          "description": ""
+        }
+      ],
+      "NavbarDropdown": [
+        {
+          "displayName": "NavbarDropdown",
+          "description": ""
+        }
+      ],
+      "NavbarEnd": [
+        {
+          "displayName": "NavbarEnd",
+          "description": ""
+        }
+      ],
+      "NavbarItem": [
+        {
+          "displayName": "NavbarItem",
+          "description": ""
+        }
+      ],
+      "NavbarItemLink": [
+        {
+          "displayName": "NavbarItemLink",
+          "description": ""
+        }
+      ],
+      "NavbarLink": [
+        {
+          "displayName": "NavbarLink",
+          "description": ""
+        }
+      ],
+      "NavbarMenu": [
+        {
+          "displayName": "NavbarMenu",
+          "description": ""
+        }
+      ],
+      "NavbarStart": [
+        {
+          "displayName": "NavbarStart",
+          "description": ""
+        }
+      ]
     }
   },
   "grid": {
@@ -739,14 +619,6 @@
         {
           "displayName": "LevelRight",
           "description": "For the right side in <code>{&lt;Level /&gt;}</code> component."
-        }
-      ]
-    },
-    "section": {
-      "Section": [
-        {
-          "displayName": "Section",
-          "description": ""
         }
       ]
     }

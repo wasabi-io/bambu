@@ -10,7 +10,7 @@ const list = Files.walkSync(startPath, [], ["ts", "tsx"], ["ds_store"]);
 const importList = [];
 list.forEach((file, index) => {
     const ext = fileExtension(file);
-    const importPath = file.substring(startPath.length, file.length - ext.length -1)
+    const importPath = file.substring(startPath.length, file.length - ext.length -1);
     importList.push(importPath);
 
     if(importPath.endsWith("index")) {
@@ -52,8 +52,8 @@ const jsonList = [
 ];
 
 importList.forEach((importPath) => {
-    const variableName = importPath.split("/").join("_");
     const imPath = path.join("bambu/lib", importPath);
+    const variableName = imPath.split("/").join("_");
     moduleList.push(`import * as ${variableName} from "${imPath}";`);
     jsonList.push(`    "${imPath}": ${variableName}`);
 });

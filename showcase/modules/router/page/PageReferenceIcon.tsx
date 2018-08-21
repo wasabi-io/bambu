@@ -38,7 +38,7 @@ const PageReferenceIcon: React.SFC<PageReferenceIconProps> = ((props: PageRefere
 PageReferenceIcon.propTypes = {
     ...FaIcon.propTypes,
     iconClassName: PropTypes.string
-};
+} as any;
 
 PageReferenceIcon.defaultProps = {};
 

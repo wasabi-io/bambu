@@ -1,23 +1,25 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {bulma, Color, colorValues, Size, sizeValues, State, stateValues} from '../../../index';
+import {bulma, Color, Size, State} from '../../../index';
 import HTMLComponent, {HTMLDivProps} from '../../../base/html/HTML';
+import Input from '../Input';
+import {InputFieldChange} from "../InputField";
 
 export interface SelectProps extends HTMLDivProps {
+    name: string;
+    value?: any;
     color?: string | Color;
     bSize?: string | Size;
+    onChange?: InputFieldChange;
     state?: string | State;
-    name?: string;
+    elementRef?: (ref: any) => any;
     isFullwidth?: boolean;
     multiple?: boolean;
     autoFocus?: boolean;
     disabled?: boolean;
     form?: string;
     size?: number;
-    value?: string | string[] | number;
-    onChange?: any;
-    elementRef?: (ref: any) => any;
 }
 
 const Select: React.SFC<SelectProps> = (props: SelectProps) => {
@@ -35,6 +37,7 @@ const Select: React.SFC<SelectProps> = (props: SelectProps) => {
         disabled,
         form,
         onChange,
+        elementRef,
         ...inputProps
     } = props;
 
@@ -59,6 +62,7 @@ const Select: React.SFC<SelectProps> = (props: SelectProps) => {
                 size={size}
                 value={value}
                 onChange={onChange}
+                ref={elementRef}
             >
                 {props.children}
             </select>
@@ -67,24 +71,14 @@ const Select: React.SFC<SelectProps> = (props: SelectProps) => {
 };
 
 Select.propTypes = {
-    ...HTMLComponent.propTypes,
-    color: PropTypes.oneOf(colorValues),
-    bSize: PropTypes.oneOf(sizeValues),
-    state: PropTypes.oneOf(stateValues),
-    name: PropTypes.bool,
+    ...Input.propTypes,
     isFullwidth: PropTypes.bool,
     multiple: PropTypes.bool,
     autoFocus: PropTypes.bool,
     disabled: PropTypes.bool,
     form: PropTypes.string,
-    value: PropTypes.oneOf([
-        PropTypes.string,
-        PropTypes.arrayOf(PropTypes.string),
-        PropTypes.number
-    ]),
-    onChange: PropTypes.func,
     size: PropTypes.number
-};
+} as any;
 
 Select.defaultProps = {
     ...HTMLComponent.defaultProps,

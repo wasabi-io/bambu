@@ -74,7 +74,7 @@ const Spinner: React.SFC<SpinnerProps> = (props: SpinnerProps) => {
     );
 };
 
-Spinner.propTypes = {};
+Spinner.propTypes = {} as any;
 
 Spinner.defaultProps = {};
 

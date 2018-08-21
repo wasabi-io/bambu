@@ -27,12 +27,10 @@ export default class PaginationView extends Stateless<PaginationViewProps> {
     public static propTypes = {
         total: PropTypes.number.isRequired,
         current: PropTypes.number.isRequired,
-        sizeOfPerSide: PropTypes.number.isRequired,
+        onPage: PropTypes.func.isRequired,
+        sizeOfPerSide: PropTypes.number,
         next: PropTypes.string,
         previous: PropTypes.string,
-        onNext: PropTypes.func,
-        onPrevious: PropTypes.func,
-        onPage: PropTypes.func.isRequired,
         pageNumberRenderer: PropTypes.func,
         rangeSeparatorRenderer: PropTypes.func
     };

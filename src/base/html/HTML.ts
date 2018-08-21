@@ -6,7 +6,7 @@ import * as React from 'react';
  * Provides abstraction from HTML Elements.
  */
 
-abstract class AbstractDom<P extends HTMLElementProps> extends React.Component<P> {
+abstract class HTMLComponent<P extends HTMLElementProps> extends React.Component<P> {
 
     public static propTypes = {
         className: PropTypes.string,
@@ -15,7 +15,6 @@ abstract class AbstractDom<P extends HTMLElementProps> extends React.Component<P
     };
 
     public static defaultProps = {
-        className: '',
         style: {},
     };
 
@@ -29,7 +28,7 @@ abstract class AbstractDom<P extends HTMLElementProps> extends React.Component<P
 
 }
 
-export default AbstractDom;
+export default HTMLComponent;
 
 /**
  * Refers properties of HTML Elements.

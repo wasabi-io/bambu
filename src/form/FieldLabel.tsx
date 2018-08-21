@@ -19,6 +19,7 @@ export interface FieldLabelProps extends HTMLDivProps {
     bSize?: string | FieldLabelSize;
     labelProps?: ControlLabelProps;
     elementRef?: (ref: any) => any;
+    htmlFor?: string;
 }
 
 export default class FieldLabel extends React.Component<FieldLabelProps, {}> {
@@ -41,6 +42,7 @@ export default class FieldLabel extends React.Component<FieldLabelProps, {}> {
             labelProps,
             children,
             elementRef,
+            htmlFor,
             ...inputProps
         } = this.props;
 
@@ -52,7 +54,7 @@ export default class FieldLabel extends React.Component<FieldLabelProps, {}> {
 
         return (
             <div className={classNames} {...inputProps} ref={elementRef}>
-                <ControlLabel {...labelProps}>
+                <ControlLabel htmlFor={htmlFor} {...labelProps}>
                     {children}
                 </ControlLabel>
             </div>

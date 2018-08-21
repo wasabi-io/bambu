@@ -13,10 +13,6 @@
     "experimentalDecorators": true,
     "preserveConstEnums": true,
     "allowJs": false,
-    "lib": [
-      "es2015",
-      "dom"
-    ],
     "sourceMap": true,
     "jsx": "react",
     "outDir": "lib",
@@ -24,8 +20,44 @@
       "bambu/lib/*": [
         "./src/*"
       ],
+      "bambu/lib/": [
+        "./src/index"
+      ],
+      "bambu/lib": [
+        "./src/index"
+      ],
       "bambu": [
         "./src"
+      ],
+      "bambu-form/lib/*": [
+        "./extensions/form/src/*"
+      ],
+      "bambu-form/showcase/*": [
+        "./extensions/form/showcase/*"
+      ],
+      "bambu-form/lib/": [
+        "./extensions/form/src/index"
+      ],
+      "bambu-form/lib": [
+        "./extensions/form/src/index"
+      ],
+      "bambu-form": [
+        "./extensions/form/src"
+      ],
+      "bambu-grid/lib/*": [
+        "./extensions/grid/src/*"
+      ],
+      "bambu-grid/showcase/*": [
+        "./extensions/grid/showcase/*"
+      ],
+      "bambu-grid/lib/": [
+        "./extensions/grid/src/index"
+      ],
+      "bambu-grid/lib": [
+        "./extensions/grid/src/index"
+      ],
+      "bambu-grid": [
+        "./extensions/grid/src"
       ],
       "*": [
         "./showcase/*",
@@ -38,6 +70,7 @@
     "typings/**/*",
     "src/**/*",
     "showcase/**/*",
+    "extensions/**/*",
     "wasabi-ui/**/*"
   ],
   "exclude": [

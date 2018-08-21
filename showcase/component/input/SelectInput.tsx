@@ -1,8 +1,7 @@
 import * as React from 'react';
 import {Color, Size, State} from 'bambu/lib/base/css';
-import {Select, SelectProps} from 'bambu/lib/form';
+import {IEvent, Select, SelectProps} from 'bambu/lib/form';
 import BaseInput, {BaseInputProps} from './BaseInput';
-import {IEvent} from "../field/Field";
 
 export interface DefaultInputProps extends BaseInputProps {
     name?: string;
@@ -33,7 +32,7 @@ const SelectInput: React.SFC<DefaultInputProps> = (props: DefaultInputProps) => 
     );
 };
 
-SelectInput.propTypes = {};
+SelectInput.propTypes = {} as any;
 
 SelectInput.defaultProps = {};
 
