@@ -15,10 +15,10 @@ import transformer from "component/code/transform/transformer";
 import pageStyle from "css/pageStyle";
 
 const codes = {
-    icon: require("!raw-loader?modules!./code/1-icon"),
-    colors: require("!raw-loader?modules!./code/2-colors"),
-    stack: require("!raw-loader?modules!./code/3-stack"),
-    stack2: require("!raw-loader?modules!./code/3-stack2")
+    icon: require("!raw-loader?./code/1-icon"),
+    colors: require("!raw-loader?./code/2-colors"),
+    stack: require("!raw-loader?./code/3-stack"),
+    stack2: require("!raw-loader?./code/3-stack2")
 };
 
 const iconSizeWrapper = (name?: string, value?: any) => {

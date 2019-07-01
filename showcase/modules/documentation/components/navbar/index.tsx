@@ -11,21 +11,21 @@ import XDocEditor from "../../../view/editor/XDocEditor";
 import {Highlight} from "component/code/highlight";
 
 const codes = {
-    brand: require("!raw-loader?modules!./code/1-brand.html"),
-    brand2: require("!raw-loader?modules!./code/2-brand"),
-    menu3: require("!raw-loader?modules!./code/3-menu.html"),
-    menu4: require("!raw-loader?modules!./code/4-menu.html"),
-    startEnd5: require("!raw-loader?modules!./code/5-startend.html"),
+    brand: require("!raw-loader?./code/1-brand.html"),
+    brand2: require("!raw-loader?./code/2-brand"),
+    menu3: require("!raw-loader?./code/3-menu.html"),
+    menu4: require("!raw-loader?./code/4-menu.html"),
+    startEnd5: require("!raw-loader?./code/5-startend.html"),
     narbarItem: require("./code/6-navbarItem"),
-    transparent: require("!raw-loader?modules!./code/7-transparent"),
-    fixed: require("!raw-loader?modules!./code/8-fixed"),
-    dropdown: require("!raw-loader?modules!./code/9-dropdown"),
+    transparent: require("!raw-loader?./code/7-transparent"),
+    fixed: require("!raw-loader?./code/8-fixed"),
+    dropdown: require("!raw-loader?./code/9-dropdown"),
     hoverable: `
          <NavbarItem isActive hasDropdown isHoverable>
             <!-- navbar-link, navbar-dropdown etc. -->
         </NavbarItem>
     `,
-    dropdown2: require("!raw-loader?modules!./code/11-dropdown"),
+    dropdown2: require("!raw-loader?./code/11-dropdown"),
     dropdownIsActive: `
          <NavbarItem isActive hasDropdown isActive>
             <!-- navbar-link, navbar-dropdown etc. -->
@@ -36,7 +36,7 @@ const codes = {
            <!-- NavbarItem, NavbarDivider etc. -->
         </NavbarDropdown>
     `,
-    dropdownRight2: require("!raw-loader?modules!./code/14-dropdown-right"),
+    dropdownRight2: require("!raw-loader?./code/14-dropdown-right"),
     dropup: `
         <NavbarItem hasDropdown hasDropdownUp isHoverable>
             <NavbarLink href="#/documentation">Docs</NavbarLink>
@@ -45,7 +45,7 @@ const codes = {
             </NavbarDropdown>
         </NavbarItem>
     `,
-    dropdownUp: require("!raw-loader?modules!./code/16-dropdown-up"),
+    dropdownUp: require("!raw-loader?./code/16-dropdown-up"),
 };
 
 const divider = (

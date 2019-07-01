@@ -58,7 +58,7 @@ const DocMediaHighlight: React.SFC<DocMediaHighlightProps> = ((props: DocMediaHi
 DocMediaHighlight.propTypes = {
     title: PropTypes.string,
     titleSize: PropTypes.oneOf(size6Values),
-    contentTitle: PropTypes.node,
+    contentTitle: PropTypes.any,
     contentTitleSize: PropTypes.oneOf(size6Values),
     contentSubTitle: PropTypes.string,
     contentSubTitleSize: PropTypes.oneOf(size6Values),

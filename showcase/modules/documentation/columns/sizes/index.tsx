@@ -8,8 +8,8 @@ import {ColumnSize} from "bambu/lib/grid/column/Column";
 import {Message, MessageBody, MessageHeader} from "bambu/lib/components/message";
 
 const codes = {
-    sizes: require("!raw-loader?modules!./code/1-sizes"),
-    columnStytem12: require("!raw-loader?modules!./code/2-columnStytem12")
+    sizes: require("!raw-loader?./code/1-sizes"),
+    columnStytem12: require("!raw-loader?./code/2-columnStytem12")
 };
 
 const braces = (value: any) => {

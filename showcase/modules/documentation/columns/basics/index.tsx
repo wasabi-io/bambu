@@ -3,7 +3,7 @@ import Stateless from "component/Stateless";
 import XDocEditor from "modules/view/editor/XDocEditor";
 
 const codes = {
-    basic: require("!raw-loader?modules!./code/1-basic")
+    basic: require("!raw-loader?./code/1-basic")
 };
 
 export default class Index extends Stateless <any> {

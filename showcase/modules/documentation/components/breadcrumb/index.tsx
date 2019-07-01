@@ -3,17 +3,17 @@ import XDocEditor from "modules/view/editor/XDocEditor";
 import DocHighlight from "modules/view/highlight/DocHighlight";
 
 const codes = {
-    isActive: require("!raw-loader?modules!./code/1-isActive"),
-    isCentered: require("!raw-loader?modules!./code/2-isCentered"),
-    isRight: require("!raw-loader?modules!./code/3-isRight"),
-    icon: require("!raw-loader?modules!./code/4-icon"),
-    hasArrowSeparator: require("!raw-loader?modules!./code/5-has-arrow-separator"),
-    hasBulletSeparator: require("!raw-loader?modules!./code/6-has-bullet-separator"),
-    hasDotSeparator: require("!raw-loader?modules!./code/7-has-dot-separator"),
-    hasSucceedsSeparator: require("!raw-loader?modules!./code/8-has-succeeds-separator"),
-    sizeSmall: require("!raw-loader?modules!./code/9-size-small"),
-    sizeMedium: require("!raw-loader?modules!./code/10-size-medium"),
-    sizeLarge: require("!raw-loader?modules!./code/11-size-large"),
+    isActive: require("!raw-loader?./code/1-isActive"),
+    isCentered: require("!raw-loader?./code/2-isCentered"),
+    isRight: require("!raw-loader?./code/3-isRight"),
+    icon: require("!raw-loader?./code/4-icon"),
+    hasArrowSeparator: require("!raw-loader?./code/5-has-arrow-separator"),
+    hasBulletSeparator: require("!raw-loader?./code/6-has-bullet-separator"),
+    hasDotSeparator: require("!raw-loader?./code/7-has-dot-separator"),
+    hasSucceedsSeparator: require("!raw-loader?./code/8-has-succeeds-separator"),
+    sizeSmall: require("!raw-loader?./code/9-size-small"),
+    sizeMedium: require("!raw-loader?./code/10-size-medium"),
+    sizeLarge: require("!raw-loader?./code/11-size-large"),
 };
 
 const breadCrumbImport = `import { BreadCrumb, BreadCrumbItem } from "bambu/lib/components/breadcrumb";`;

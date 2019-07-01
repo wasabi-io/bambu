@@ -8,38 +8,38 @@ import MessageView from "../../../../component/layout/message/MessageView";
 import {Color} from "bambu";
 
 const codes = {
-    basic: [require("!raw-loader?modules!./code/1-basic")],
-    field: [require("!raw-loader?modules!./code/2-field")],
-    fieldSpaces: [require("!raw-loader?modules!./code/3-field-spaces")],
+    basic: [require("!raw-loader?./code/1-basic")],
+    field: [require("!raw-loader?./code/2-field")],
+    fieldSpaces: [require("!raw-loader?./code/3-field-spaces")],
     elements: [
-        require("!raw-loader?modules!./code/4-input"),
-        require("!raw-loader?modules!./code/5-select"),
-        require("!raw-loader?modules!./code/6-submit")
+        require("!raw-loader?./code/4-input"),
+        require("!raw-loader?./code/5-select"),
+        require("!raw-loader?./code/6-submit")
     ],
-    withIcons: [require("!raw-loader?modules!./code/7-with-icons")],
-    withIconsSelect: [require("!raw-loader?modules!./code/8-with-icons-select")],
+    withIcons: [require("!raw-loader?./code/7-with-icons")],
+    withIconsSelect: [require("!raw-loader?./code/8-with-icons-select")],
     withIconsSize: [
-        require("!raw-loader?modules!./code/9-with-icons-small"),
-        require("!raw-loader?modules!./code/10-with-icons-normal"),
-        require("!raw-loader?modules!./code/11-with-icons-medium"),
-        require("!raw-loader?modules!./code/12-with-icons-large")
+        require("!raw-loader?./code/9-with-icons-small"),
+        require("!raw-loader?./code/10-with-icons-normal"),
+        require("!raw-loader?./code/11-with-icons-medium"),
+        require("!raw-loader?./code/12-with-icons-large")
     ],
-    withAddons: [require("!raw-loader?modules!./code/13-form-addons")],
-    withAddonsStaticBotton: [require("!raw-loader?modules!./code/14-form-addons-static-button")],
-    withAddonsExpanded: [require("!raw-loader?modules!./code/15-form-addons-expanded")],
+    withAddons: [require("!raw-loader?./code/13-form-addons")],
+    withAddonsStaticBotton: [require("!raw-loader?./code/14-form-addons-static-button")],
+    withAddonsExpanded: [require("!raw-loader?./code/15-form-addons-expanded")],
     withAddonsAlign: [
-        require("!raw-loader?modules!./code/16-form-addons-centered"),
-        require("!raw-loader?modules!./code/17-form-addons-right"),
+        require("!raw-loader?./code/16-form-addons-centered"),
+        require("!raw-loader?./code/17-form-addons-right"),
     ],
-    fieldGroup: [require("!raw-loader?modules!./code/18-form-group")],
+    fieldGroup: [require("!raw-loader?./code/18-form-group")],
     fieldGroupAlignment: [
-        require("!raw-loader?modules!./code/19-form-group-centered"),
-        require("!raw-loader?modules!./code/20-form-group-right")
+        require("!raw-loader?./code/19-form-group-centered"),
+        require("!raw-loader?./code/20-form-group-right")
     ],
-    fieldGroupExpanded: [require("!raw-loader?modules!./code/21-form-group-expanded")],
-    fieldGroupMultiline: [require("!raw-loader?modules!./code/22-form-group-multiline")],
-    fieldHorizontal: [require("!raw-loader?modules!./code/23-form-horizontal")],
-    fieldHorizontalAndAlignment: [require("!raw-loader?modules!./code/22-form-group-multiline")],
+    fieldGroupExpanded: [require("!raw-loader?./code/21-form-group-expanded")],
+    fieldGroupMultiline: [require("!raw-loader?./code/22-form-group-multiline")],
+    fieldHorizontal: [require("!raw-loader?./code/23-form-horizontal")],
+    fieldHorizontalAndAlignment: [require("!raw-loader?./code/22-form-group-multiline")],
 };
 
 export default class General extends Stateless <any> {

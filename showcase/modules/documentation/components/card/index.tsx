@@ -3,9 +3,9 @@ import {default as XDocEditor} from "modules/view/editor/XDocEditor";
 import pageStyle from "css/pageStyle";
 
 const codes = {
-    basic: require("!raw-loader?modules!./code/1-basic"),
-    basic2: require("!raw-loader?modules!./code/2-basic"),
-    basic3: require("!raw-loader?modules!./code/3-basic")
+    basic: require("!raw-loader?./code/1-basic"),
+    basic2: require("!raw-loader?./code/2-basic"),
+    basic3: require("!raw-loader?./code/3-basic")
 };
 
 const breadCrumbImport = `import { BreadCrumb, BreadCrumbItem } from "bambu/lib/components/breadcrumb";`;

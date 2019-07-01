@@ -1,7 +1,17 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {Alignment, alignmentValues, bulma as FormStyle, Color, colorValues, HTMLComponent, HTMLInputProps, Size, sizeValues} from '../../../index';
+import {
+    Alignment,
+    alignmentValues,
+    bulma as FormStyle,
+    Color,
+    colorValues,
+    HTMLComponent,
+    HTMLInputProps,
+    Size,
+    sizeValues
+} from '../../../index';
 import {FaIcon, FaIconProps, Icon} from '../../../elements/icon/index';
 import {has} from 'wasabi-common/lib';
 import Strings from 'wasabi-common/lib/types/Strings';
@@ -72,7 +82,9 @@ FileUpload.propTypes = {
     color: PropTypes.oneOf(colorValues),
     bSize: PropTypes.oneOf(sizeValues),
     label: PropTypes.string,
-    icon: PropTypes.object,
+    icon: PropTypes.oneOfType([
+        PropTypes.string, PropTypes.any
+    ]),
     iconSize: PropTypes.oneOf(sizeValues),
     hasName: PropTypes.bool,
     isFullwidth: PropTypes.bool,

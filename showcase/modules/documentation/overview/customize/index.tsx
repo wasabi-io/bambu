@@ -4,7 +4,7 @@ import {Content} from "bambu/lib/elements/content";
 import DocMediaHighlight from "modules/view/highlight/DocMediaHighlight";
 
 const codes = {
-    sass: require("!raw-loader?modules!./code/1-sass.html")
+    sass: require("!raw-loader?./code/1-sass.html")
 };
 
 export default class Index extends Stateless <any> {

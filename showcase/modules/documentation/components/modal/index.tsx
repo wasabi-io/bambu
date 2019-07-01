@@ -9,9 +9,9 @@ import {Title} from "bambu/lib/elements/title";
 import XDocEditor from "../../../view/editor/XDocEditor";
 
 const codes = {
-    basic: require("!raw-loader?modules!./code/1-basic"),
-    image: require("!raw-loader?modules!./code/2-image"),
-    modalCard: require("!raw-loader?modules!./code/3-modalCard")
+    basic: require("!raw-loader?./code/1-basic"),
+    image: require("!raw-loader?./code/2-image"),
+    modalCard: require("!raw-loader?./code/3-modalCard")
 };
 
 export default class Index extends Stateless <any> {

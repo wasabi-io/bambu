@@ -71,13 +71,13 @@ Select.propTypes = {
     color: PropTypes.oneOf(colorValues),
     bSize: PropTypes.oneOf(sizeValues),
     state: PropTypes.oneOf(stateValues),
-    name: PropTypes.bool,
+    name: PropTypes.string,
     isFullwidth: PropTypes.bool,
     multiple: PropTypes.bool,
     autoFocus: PropTypes.bool,
     disabled: PropTypes.bool,
     form: PropTypes.string,
-    value: PropTypes.oneOf([
+    value: PropTypes.oneOfType([
         PropTypes.string,
         PropTypes.arrayOf(PropTypes.string),
         PropTypes.number

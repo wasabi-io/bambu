@@ -5,28 +5,28 @@ import XDocEditor from "../../../view/editor/XDocEditor";
 import pageStyle from "css/pageStyle";
 
 const codes = {
-    basic: require("!raw-loader?modules!./code/1-basic"),
+    basic: require("!raw-loader?./code/1-basic"),
     alignment: [
-        require("!raw-loader?modules!./code/2-isCentered"),
-        require("!raw-loader?modules!./code/3-isRight")
+        require("!raw-loader?./code/2-isCentered"),
+        require("!raw-loader?./code/3-isRight")
     ],
-    icons: require("!raw-loader?modules!./code/4-icons"),
+    icons: require("!raw-loader?./code/4-icons"),
     sizes: [
-        require("!raw-loader?modules!./code/5-sizeSmall"),
-        require("!raw-loader?modules!./code/6-sizeMedium"),
-        require("!raw-loader?modules!./code/7-sizeLarge")
+        require("!raw-loader?./code/5-sizeSmall"),
+        require("!raw-loader?./code/6-sizeMedium"),
+        require("!raw-loader?./code/7-sizeLarge")
     ],
     styles: {
-        isBoxed: [require("!raw-loader?modules!./code/8-isBoxed")],
-        isToggle: [require("!raw-loader?modules!./code/9-isToggle")],
-        isToggleRounded: [require("!raw-loader?modules!./code/10-isToggleRounded")],
-        isFullwidth: [require("!raw-loader?modules!./code/11-isFullwidth")]
+        isBoxed: [require("!raw-loader?./code/8-isBoxed")],
+        isToggle: [require("!raw-loader?./code/9-isToggle")],
+        isToggleRounded: [require("!raw-loader?./code/10-isToggleRounded")],
+        isFullwidth: [require("!raw-loader?./code/11-isFullwidth")]
     },
     combining: [
-        require("!raw-loader?modules!./code/12-combining"),
-        require("!raw-loader?modules!./code/13-combining"),
-        require("!raw-loader?modules!./code/14-combining"),
-        require("!raw-loader?modules!./code/15-combining"),
+        require("!raw-loader?./code/12-combining"),
+        require("!raw-loader?./code/13-combining"),
+        require("!raw-loader?./code/14-combining"),
+        require("!raw-loader?./code/15-combining"),
     ]
 };
 

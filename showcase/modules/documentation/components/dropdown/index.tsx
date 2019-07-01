@@ -6,11 +6,11 @@ import {Color} from "bambu";
 import XDocEditor from "../../../view/editor/XDocEditor";
 
 const codes = {
-    basic: require("!raw-loader?modules!./code/1-basic"),
-    dropdownContent: require("!raw-loader?modules!./code/2-dropdownContent"),
-    hoverable: require("!raw-loader?modules!./code/3-hoverable"),
-    right: require("!raw-loader?modules!./code/4-right"),
-    dropup: require("!raw-loader?modules!./code/5-dropup")
+    basic: require("!raw-loader?./code/1-basic"),
+    dropdownContent: require("!raw-loader?./code/2-dropdownContent"),
+    hoverable: require("!raw-loader?./code/3-hoverable"),
+    right: require("!raw-loader?./code/4-right"),
+    dropup: require("!raw-loader?./code/5-dropup")
 };
 
 export default class Index extends Stateless <any> {

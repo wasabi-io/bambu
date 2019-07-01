@@ -7,14 +7,14 @@ import {Color} from "bambu";
 import XDocEditor from "../../../view/editor/XDocEditor";
 
 const codes = {
-    basic: require("!raw-loader?modules!./code/1-basic"),
-    disabled: require("!raw-loader?modules!./code/2-disabled"),
-    isCentered: require("!raw-loader?modules!./code/3-isCentered"),
-    isRight: require("!raw-loader?modules!./code/4-isRight"),
-    isRounded: require("!raw-loader?modules!./code/5-isRounded"),
-    sizeSmall: require("!raw-loader?modules!./code/6-size-small"),
-    sizeMedium: require("!raw-loader?modules!./code/7-size-medium"),
-    sizeLarge: require("!raw-loader?modules!./code/8-size-large"),
+    basic: require("!raw-loader?./code/1-basic"),
+    disabled: require("!raw-loader?./code/2-disabled"),
+    isCentered: require("!raw-loader?./code/3-isCentered"),
+    isRight: require("!raw-loader?./code/4-isRight"),
+    isRounded: require("!raw-loader?./code/5-isRounded"),
+    sizeSmall: require("!raw-loader?./code/6-size-small"),
+    sizeMedium: require("!raw-loader?./code/7-size-medium"),
+    sizeLarge: require("!raw-loader?./code/8-size-large"),
 };
 
 const divider = (

@@ -1,13 +1,11 @@
 import * as PropTypes from "prop-types";
 import * as React from "react";
-import {Props} from "wasabi-common";
-import PagesProps from "../../documentation/PagesProps";
 import pageStyle from "../../../css/pageStyle";
 import {toJS} from "mobx";
 import PageReferenceIcon from "./PageReferenceIcon";
 
 export interface PageReferenceProps {
-    childMap: Props<PagesProps>;
+    childMap: any;
     breads: string[];
 }
 

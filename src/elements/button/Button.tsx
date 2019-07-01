@@ -1,7 +1,18 @@
 import * as ClassNames from 'classnames';
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import {bulma as ButtonStyle, Color, colorValues, ComponentUtil, HTMLAllAttributes, HTMLComponent, Size, sizeValues, State, stateValues} from '../../';
+import {
+    bulma as ButtonStyle,
+    Color,
+    colorValues,
+    ComponentUtil,
+    HTMLAllAttributes,
+    HTMLComponent,
+    Size,
+    sizeValues,
+    State,
+    stateValues
+} from '../../';
 import {FaIcon, FaIconProps, FaIconStyle, Icon} from '../icon';
 
 export enum ButtonTags {
@@ -37,7 +48,7 @@ export default class Button extends React.Component<ButtonProps, {}> {
         ...HTMLComponent.propTypes,
         tagName: PropTypes.string,
         color: PropTypes.oneOf(colorValues),
-        icon: PropTypes.oneOf([PropTypes.string, PropTypes.object, PropTypes.node]),
+        icon: PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.node]),
         iconSize: PropTypes.oneOf(sizeValues),
         bSize: PropTypes.oneOf(sizeValues),
         state: PropTypes.oneOf(stateValues),
