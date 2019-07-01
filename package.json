@@ -1,6 +1,6 @@
 {
   "name": "bambu",
-  "version": "0.7.4-beta.3",
+  "version": "0.7.4-beta.4",
   "description": "",
   "main": "lib/index.js",
   "typings": "lib/index",
@@ -11,7 +11,7 @@
     "showcase:build": "rimraf ./docs && node ./tools/app/build.js",
     "showcase:serve": "http-server ./docs -p 8282",
     "build:app": "webpack --config tools/app/build/webpack.js --colors",
-    "build": "rimraf ./lib && tsc -p ./tsconfig-lib.json",
+    "build": "rimraf ./lib && tsc -p ./tsconfig-lib.json && gulp bulma-css-as-json",
     "test": "jest",
     "export:modules": "node ./tools/findAndExportModules.js",
     "export:bulma-css-as-json": "gulp bulma-css-as-json",
